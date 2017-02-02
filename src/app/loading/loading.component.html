@@ -1,0 +1,10 @@
+<div id="vvc-loading-controls" class="flex flex-none items-center">
+  <i class="vvc-close" (click)="close()"></i>
+</div>
+<div class="flex flex-auto square">
+  <div class="spin" ></div>
+  <div class="loading-type">
+    <i *ngIf='type==="chat"' class="vvc-comments"></i>
+    <i *ngIf='type==="video"' class="vvc-video-camera"></i>
+  </div>
+</div>
