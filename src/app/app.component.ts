@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       }
       this.translate.getTranslation( conf.lang ).subscribe( () => {
 
-        this.vvc.initContact();
+        this.vvc.initContact({});
 
       });
       this.translate.setDefaultLang(this.defaultLang);

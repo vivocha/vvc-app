@@ -11,7 +11,7 @@ export class VvcService {
   private serv_id: string;
   private lang: string;
 
-  constructor(@Inject(WindowService) private window: Window, private contact: VvcContactService) {
+  constructor(@Inject(WindowService) private window: Window, private contactService: VvcContactService) {
       this.parseIframeUrl();
   }
   checkForVivocha() {
@@ -24,8 +24,10 @@ export class VvcService {
   init() {
       this.checkForVivocha();
   }
-  initContact() {
-      this.contact.init();
+  initContact(confObj) {
+      this.window['vivocha'].getContact(confObj).then( contact => {
+        this.contactService.init(contact);
+      });
   }
   parseIframeUrl() {
       const hash = this.window.location.hash;
