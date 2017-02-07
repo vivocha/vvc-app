@@ -1,8 +1,6 @@
-import {Injectable, EventEmitter, Inject} from '@angular/core';
-import {WindowService} from './core.opaque-tokens';
+import {Injectable, EventEmitter} from '@angular/core';
+import {WindowRef} from './window.service';
 import {VvcContactService} from './contact.service';
-
-
 
 @Injectable()
 export class VvcService {
@@ -10,8 +8,10 @@ export class VvcService {
   private ready$: EventEmitter<any> = new EventEmitter();
   private serv_id: string;
   private lang: string;
+  private window;
 
-  constructor(@Inject(WindowService) private window: Window, private contactService: VvcContactService) {
+  constructor(private wref: WindowRef, protected contactService: VvcContactService) {
+      this.window = wref.nativeWindow;
       this.parseIframeUrl();
   }
   checkForVivocha() {
@@ -25,8 +25,11 @@ export class VvcService {
       this.checkForVivocha();
   }
   initContact(confObj) {
-      this.window['vivocha'].getContact(confObj).then( contact => {
-        this.contactService.init(contact);
+      return new Promise((resolve) => {
+          this.window['vivocha'].getContact(confObj).then( contact => {
+              this.contactService.init(contact);
+              resolve(contact);
+          });
       });
   }
   parseIframeUrl() {

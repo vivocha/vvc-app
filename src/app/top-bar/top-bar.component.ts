@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {VvcAgent} from '../core/core.interfaces';
 
 @Component({
   selector: 'vvc-top-bar',
@@ -7,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  public agent = {
-    img: 'http://s3.amazonaws.com/vivocha/u/ma/marchitos/1242260695996.0361?_=1460456503407',
-    name: 'Marco Amadori'
-  };
+  @Input() agent: VvcAgent;
 
   constructor() { }
 

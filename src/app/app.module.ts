@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import {TopBarModule} from './top-bar/top-bar.module';
 import { LoadingComponent } from './loading/loading.component';
 import {CoreModule} from './core/core.module';
+import {ChatModule} from './chat/chat.module';
+import {MediaToolsModule} from './media-tools/media-tools.module';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, '/WidgetTranslations/xl8', '.json');
@@ -30,7 +32,9 @@ export function createTranslateLoader(http: Http) {
     HttpModule,
 
     CoreModule,
-    TopBarModule
+    TopBarModule,
+    ChatModule,
+    MediaToolsModule
   ],
   providers: [
 

@@ -1,40 +1,8 @@
 import {TestBed, async, inject} from '@angular/core/testing';
 import {VvcContactService} from './contact.service';
 import {CoreModule} from './core.module';
+import {MockContact} from './mock-contact.class';
 
-class MockContact {
-
-    failOnAttach = false;
-    callbacks = {};
-    contact = { transcript: [] };
-    constructor() {
-
-    }
-    attach(file, text) {
-        if (!this.failOnAttach) {
-            return Promise.resolve(true);
-        } else {
-            return Promise.reject('error');
-        }
-    }
-    getMediaOffer() {
-        return Promise.resolve({});
-    }
-    emit(eventId, args) {
-        this.callbacks[eventId](...args);
-    }
-    mergeMedia(mediaState) {
-        return Promise.resolve({});
-    }
-    offerMedia(media) {
-        return Promise.resolve({});
-    }
-    on(eventId, callback) {
-        this.callbacks[eventId] = callback;
-    }
-    sendText(text) {}
-
-}
 
 let contact;
 beforeEach(() => {
@@ -89,10 +57,10 @@ it('should dispatch a message when text emitted', async(inject([VvcContactServic
     service.init(contact);
     const spy = spyOn(service, 'dispatch');
     service.contact.emit('text', ['ciao', 'id', 'nick', true]);
-    expect(spy).toHaveBeenCalledWith({type: 'ADD_TEXT', payload: {text: 'ciao', type: 'AGENT'}});
+    expect(spy).toHaveBeenCalledWith({type: 'ADD_TEXT', payload: {text: 'ciao', type: 'CHAT_TEXT', isAgent: true}});
 
     service.contact.emit('text', ['ciao', 'id', 'nick', false]);
-    expect(spy).toHaveBeenCalledWith({type: 'ADD_TEXT', payload: {text: 'ciao', type: 'CUSTOMER'}});
+    expect(spy).toHaveBeenCalledWith({type: 'ADD_TEXT', payload: {text: 'ciao', type: 'CHAT_TEXT', isAgent: false}});
 
     service.contact.emit('localtext', ['ciao']);
     expect(spy).toHaveBeenCalledWith({type: 'ADD_TEXT', payload: {text: 'ciao', type: 'CUSTOMER'}});

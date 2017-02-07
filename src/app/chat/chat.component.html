@@ -1,0 +1,16 @@
+<div id="vvc-chat-messages" class="p1 flex flex-auto flex-column" vvcAutoScroll>
+
+  <div *ngFor="let m of messages" [ngSwitch]="m.type">
+
+    <vvc-chat-text [msg]="m" *ngSwitchCase="'CHAT_TEXT'" ></vvc-chat-text>
+
+  </div>
+
+</div>
+<div id="vvc-chat-box" class="p1">
+  <textarea #chatInput
+            (keyup.enter)="sendMessage(chatInput);"
+            name="chatBox"
+            id="chatBox"
+            placeholder="type here..."></textarea>
+</div>

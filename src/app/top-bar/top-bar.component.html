@@ -1,5 +1,5 @@
 <div id="vvc-topbar-agent" class="flex">
-  <img [src]="agent.img" />
+  <img *ngIf="agent && agent.avatar" [src]="agent.avatar.base_url" />
 </div>
 <div id="vvc-topbar-status" class="flex flex-auto">
   <div>In Chat</div>

@@ -287,7 +287,7 @@ export class VvcContactService {
       // console.log('localcapabilities', arguments);
     });
     this.contact.on('localtext', (text) => {
-      this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CUSTOMER'}});
+      this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: false}});
     });
     this.contact.on('mediachange', (media, changed) => {
       this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
@@ -300,11 +300,7 @@ export class VvcContactService {
       });
     });
     this.contact.on('text', (text, from_id, from_nick, agent ) => {
-      if (agent) {
-        this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'AGENT'}});
-      } else {
-        this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CUSTOMER'}});
-      }
+        this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
     });
     this.contact.on('transferred', (transferred_to) => {
       this.dispatch({type: 'ADD_TEXT', payload: {

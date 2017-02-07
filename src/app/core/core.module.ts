@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VvcService } from './vvc.service';
-import {WindowService} from './core.opaque-tokens';
+
 import {VvcContactService} from './contact.service';
 import {StoreModule} from '@ngrx/store';
 import {widgetState, mediaState, mediaOffer, agent, chatMessages, dataCollections} from './core.reducers';
+import {VvcMockService} from './mock-vvc.service';
+import {WindowRef} from './window.service';
 
 
 @NgModule({
@@ -14,8 +16,9 @@ import {widgetState, mediaState, mediaOffer, agent, chatMessages, dataCollection
   ],
   declarations: [],
   providers: [
-    { provide: WindowService, useValue: window},
-    VvcService,
+    WindowRef,
+    // { provide: VvcService, useClass: VvcMockService },
+      VvcService,
     VvcContactService
   ]
 })

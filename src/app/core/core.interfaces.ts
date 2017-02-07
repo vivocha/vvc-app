@@ -81,6 +81,7 @@ export interface AgentMsg extends BaseMsg {
     text: string;
     from_id: string;
     from_nick?: string;
+    isAgent: boolean;
     agent: VvcAgent;
     status: MsgStatus;
 }
@@ -99,6 +100,7 @@ export interface CustomerMsg extends BaseMsg {
     text: string;
     from_id: string;
     from_nick?: string;
+    isAgent: boolean;
     status: MsgStatus;
 }
 export interface CustomerAttachmentMsg extends BaseMsg {

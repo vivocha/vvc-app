@@ -1,16 +1,25 @@
 <div id="vvc-widget">
-<!--
+
   <vvc-loading id="vvc-loading"
                class="flex flex-column"
-               *ngIf="loading"
+               *ngIf="isLoading()"
                [type]="initialMedia"
                (abandon)="onAbandon()"></vvc-loading>
 
-  <div id="vvc-widget-content" class="flex flex-column border-box">
+  <div *ngIf="!isLoading()" id="vvc-widget-content" class="flex flex-column border-box">
 
     <vvc-top-bar id="vvc-topbar"
-                 class="flex flex-none items-center"></vvc-top-bar>
+                 class="flex flex-none items-center"
+                 [agent]="agent$ | async"></vvc-top-bar>
 
+    <vvc-chat id="vvc-chat"
+              class="p1 flex flex-auto flex-column"
+              [messages]="messages$ | async"
+              (action)="sendChatMessage($event)"></vvc-chat>
+
+    <vvc-media-tools id="vvc-media-tools"
+                     class="p1"
+                     (emoji)="sendChatMessage($event)"></vvc-media-tools>
   </div>
-  -->
+
 </div>
