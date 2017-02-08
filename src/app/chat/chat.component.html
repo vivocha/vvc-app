@@ -3,7 +3,10 @@
   <div *ngFor="let m of messages" [ngSwitch]="m.type">
 
     <vvc-chat-text [msg]="m" *ngSwitchCase="'CHAT_TEXT'" ></vvc-chat-text>
-
+    <vvc-chat-incoming *ngSwitchCase="'MEDIA-INFO'"
+                       [msg]="m"
+                       (acceptOffer)="acceptOffer.emit($event)"
+                       (rejectOffer)="rejectOffer.emit($event)"></vvc-chat-incoming>
   </div>
 
 </div>

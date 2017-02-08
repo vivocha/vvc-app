@@ -4,6 +4,7 @@ import {TranslateService} from 'ng2-translate';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {AppState, DataCollectionState, WidgetState, VvcMediaState, VvcMediaOffer} from './core/core.interfaces';
+import {VvcContactService} from "./core/contact.service";
 
 
 @Component({
@@ -24,11 +25,45 @@ export class AppComponent implements OnInit {
   private contact;
   private lastOfferDiff;
   private incomingType: string;
+  private isNegotiating = false;
+  private mediaOnNegotiation;
+  private negotiationMessage;
 
   constructor(private vvc: VvcService,
+              private cservice: VvcContactService,
               private translate: TranslateService,
               private store: Store<AppState>) {
     this.bindStores();
+  }
+  acceptIncomingRequest(msg) {
+      if (msg.info_type === 'VIDEO' || msg.info_type === 'VOICE') {
+          this.isNegotiating = true;
+          this.mediaOnNegotiation = msg.info_type;
+          this.negotiationMessage = msg;
+          this.store.dispatch({
+              type: 'UPDATE_BY_REF',
+              payload: {
+                  ref: msg.ref,
+                  type: 'MEDIA-INFO',
+                  state: 'loading'
+              }
+          });
+          this.cservice.upgradeMedia(this.lastOfferDiff);
+      }
+      /*
+          console.log('connected?')
+          this.store.dispatch({
+              type: 'UPDATE_BY_REF',
+              payload: {
+                  ref: msgRef,
+                  type: 'MEDIA-INFO',
+                  state: 'connected'
+              }
+          });
+          */
+
+      console.log('msgRef accept', msg.ref);
+
   }
   bindStores() {
     this.store.subscribe( state => {
@@ -37,6 +72,7 @@ export class AppComponent implements OnInit {
       this.mediaOffer  = state.mediaOffer;
       this.dcs         = <DataCollectionState> state.dataCollections;
 
+      this.ckeckForNegotiationEnd();
       this.checkForIncomingRequest();
       this.listenForDowngrades();
       this.getTopBarState();
@@ -71,17 +107,56 @@ export class AppComponent implements OnInit {
               this.incomingType = 'video';
               m = 'VIDEO';
           }
-
           this.store.dispatch({
               type: 'ADD_TEXT',
               payload: {
-                  status: 'DELIVERED',
-                  text: this.translate.instant('CHAT.INCOMING_REQUEST_' + m),
+                  ref: new Date().getTime(),
                   type: 'MEDIA-INFO',
-                  info_type: m
+                  info_type: m,
+                  offer: added,
+                  state: 'request'
               }
           });
       }
+  }
+  ckeckForNegotiationEnd() {
+    if (this.isNegotiating) {
+        switch (this.mediaOnNegotiation) {
+            case 'VOICE':
+            case 'VIDEO':
+                const m = (this.mediaOnNegotiation === 'VIDEO') ? 'Video' : 'Voice';
+                if (this.mediaState &&
+                    this.mediaState[m] &&
+                    this.mediaState[m].data &&
+                    this.mediaState[m].data.tx_stream &&
+                    this.mediaState[m].data.rx_stream) {
+                    // TODO: check for optional stream
+                    this.isNegotiating = false;
+                    this.mediaOnNegotiation = null;
+                    this.store.dispatch({
+                        type: 'UPDATE_BY_REF',
+                        payload: {
+                            ref: this.negotiationMessage.ref,
+                            type: 'MEDIA-INFO',
+                            state: 'connected'
+                        }
+                    });
+                }
+                break;
+        }
+    }
+  }
+  denyIncomingRequest(msg) {
+      console.log('msgRef deny', msg.ref);
+      this.cservice.denyOffer();
+      this.store.dispatch({
+          type: 'UPDATE_BY_REF',
+          payload: {
+              ref: msg.ref,
+              type: 'MEDIA-INFO',
+              state: 'rejected'
+          }
+      });
   }
   listenForDowngrades() {
 

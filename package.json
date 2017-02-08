@@ -14,7 +14,7 @@
     "e2e": "protractor"
   },
   "pre-commit": [
-    
+
   ],
   "private": true,
   "dependencies": {

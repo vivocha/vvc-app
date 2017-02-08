@@ -15,7 +15,9 @@
     <vvc-chat id="vvc-chat"
               class="p1 flex flex-auto flex-column"
               [messages]="messages$ | async"
-              (action)="sendChatMessage($event)"></vvc-chat>
+              (action)="sendChatMessage($event)"
+              (acceptOffer)="acceptIncomingRequest($event)"
+              (rejectOffer)="denyIncomingRequest($event)"></vvc-chat>
 
     <vvc-media-tools id="vvc-media-tools"
                      class="p1"

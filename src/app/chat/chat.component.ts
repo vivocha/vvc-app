@@ -9,6 +9,8 @@ import {ChatMsg} from '../core/core.interfaces';
 export class ChatComponent implements OnInit {
   @Input() messages: Array<ChatMsg>= [];
   @Output() action = new EventEmitter();
+  @Output() acceptOffer = new EventEmitter();
+  @Output() rejectOffer = new EventEmitter();
 
   constructor() { }
 

@@ -56,6 +56,10 @@ export const chatMessages = (messages: Array<ChatMsg> = [], {type, payload}) => 
         case 'REM_BY_REF':
             messages = messages.filter(msg => msg.ref === payload.ref);
             return messages;
+        case 'UPDATE_BY_REF':
+            return messages.map( msg => {
+                return (msg.ref === payload.ref) ? Object.assign({}, msg, payload) : msg;
+            });
         default:
             return messages;
     }

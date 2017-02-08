@@ -1,0 +1,30 @@
+<div class="request-panel clearfix left"
+     [ngClass]="{ 'response': (msg.state !== 'request' && msg.state !== 'loading'), 'rejected': msg.state === 'rejected', 'connected':msg.state ==='connected'}"
+     *ngIf="msg.info_type === 'VOICE'">
+
+  <div class="request-content voice">
+
+    <div *ngIf="msg.state === 'request'">
+      <h3>L'operatore ti sta chiamando</h3>
+      <ul>
+        <li (click)="accept()"><div class="icon vvc-volume-control-phone"></div> <span class="action">accetta la chiamata</span></li>
+        <li (click)="reject()"><div class="icon vvc-times-circle close"></div> <span class="action">rifiuta la chiamata</span></li>
+      </ul>
+    </div>
+
+    <div *ngIf="msg.state === 'loading'">
+      <h3>connessione in corso...</h3>
+      <div class="loader"></div>
+    </div>
+
+
+    <div *ngIf="msg.state === 'rejected'">
+      <h3>chiamata rifiutata</h3>
+    </div>
+
+    <div *ngIf="msg.state === 'connected'">
+      <h3>chiamata in corso</h3>
+    </div>
+
+  </div>
+</div>
