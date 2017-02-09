@@ -1,0 +1,6 @@
+<audio #localAudio
+       *ngIf="getType() === 'VOICE'"
+       id="localAudio"
+       autoplay
+       [muted]="!audioEnabled"
+       [src]="getAudioTrack()"></audio>

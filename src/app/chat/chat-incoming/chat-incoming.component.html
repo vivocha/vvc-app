@@ -1,13 +1,18 @@
 <div class="request-panel clearfix left"
-     [ngClass]="{ 'response': (msg.state !== 'request' && msg.state !== 'loading'), 'rejected': msg.state === 'rejected', 'connected':msg.state ==='connected'}"
-     *ngIf="msg.info_type === 'VOICE'">
+     [ngClass]="{ 'response': (msg.state !== 'request' && msg.state !== 'loading'), 'rejected': msg.state === 'rejected', 'connected':msg.state ==='connected', 'closed':msg.state ==='closed'}"
+     *ngIf="msg">
 
-  <div class="request-content voice">
+  <div class="request-content {{msg.info_type | lowercase }}">
 
     <div *ngIf="msg.state === 'request'">
       <h3>L'operatore ti sta chiamando</h3>
-      <ul>
+      <ul *ngIf="msg.info_type === 'VOICE'">
         <li (click)="accept()"><div class="icon vvc-volume-control-phone"></div> <span class="action">accetta la chiamata</span></li>
+        <li (click)="reject()"><div class="icon vvc-times-circle close"></div> <span class="action">rifiuta la chiamata</span></li>
+      </ul>
+      <ul *ngIf="msg.info_type === 'VIDEO'">
+        <li (click)="accept()"><div class="icon vvc-video-in-out"></div> <span class="action">accetta la video chiamata</span></li>
+        <li *ngIf="msg.offer['Video']['tx'] === 'optional'" (click)="accept(true)"><div class="icon vvc-video-in"></div> <span class="action">accetta senza il mio video</span></li>
         <li (click)="reject()"><div class="icon vvc-times-circle close"></div> <span class="action">rifiuta la chiamata</span></li>
       </ul>
     </div>
@@ -24,6 +29,10 @@
 
     <div *ngIf="msg.state === 'connected'">
       <h3>chiamata in corso</h3>
+    </div>
+
+    <div *ngIf="msg.state === 'closed'">
+      <h3>chiamata terminata</h3>
     </div>
 
   </div>

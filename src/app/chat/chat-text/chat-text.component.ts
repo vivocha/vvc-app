@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ChatMsg} from '../../core/core.interfaces';
 
 @Component({
@@ -6,7 +6,17 @@ import {ChatMsg} from '../../core/core.interfaces';
   templateUrl: './chat-text.component.html',
   styleUrls: ['./chat-text.component.scss']
 })
-export class ChatTextComponent {
+export class ChatTextComponent implements OnInit {
 
-  @Input() msg: ChatMsg;
+  @Input() msg;
+  private messageAudioNotif;
+  ngOnInit() {
+    if (this.msg.isAgent) {
+      this.messageAudioNotif = new Audio();
+      this.messageAudioNotif.src = 'assets/beep.mp3';
+      this.messageAudioNotif.load();
+      this.messageAudioNotif.play();
+    }
+  }
+
 }

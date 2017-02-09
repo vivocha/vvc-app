@@ -133,11 +133,12 @@ export class VvcContactService {
   }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
+    console.log('TRANSCRIPT', transcript);
     for (const m in transcript) {
         const msg = transcript[m];
         switch (msg.type) {
             case 'text':
-                this.dispatch({type: 'ADD_TEXT', payload: {text: msg.body, type: msg.agent ? 'AGENT' : 'CUSTOMER' }});
+                this.dispatch({type: 'ADD_TEXT', payload: {text: msg.body, type: 'CHAT_TEXT', isAgent: msg.agent }});
                 break;
             case 'attachment':
                 this.dispatch({
@@ -231,12 +232,12 @@ export class VvcContactService {
   getMediaState(){
     return this.mediaState;
   }
-  getUpgradeState(mediaObject){
-        for(let m in mediaObject){
+  getUpgradeState(mediaObject) {
+        for (const m in mediaObject) {
             mediaObject[m].rx = (mediaObject[m].rx !== 'off');
             mediaObject[m].tx = (mediaObject[m].tx !== 'off');
         }
-        return mediaObject
+        return mediaObject;
     }
   init(contact) {
     this.contact = contact;

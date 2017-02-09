@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
   private mediaState: VvcMediaState;
   private mediaOffer: VvcMediaOffer;
   private dcs: DataCollectionState;
-
   private agent$: Observable<{}>;
   private messages$: Observable<{}>;
   private contact;
@@ -28,11 +27,12 @@ export class AppComponent implements OnInit {
   private isNegotiating = false;
   private mediaOnNegotiation;
   private negotiationMessage;
-
+  private messageAudioNotif;
   constructor(private vvc: VvcService,
               private cservice: VvcContactService,
               private translate: TranslateService,
               private store: Store<AppState>) {
+    this.setSounds();
     this.bindStores();
   }
   acceptIncomingRequest(msg) {
@@ -48,22 +48,11 @@ export class AppComponent implements OnInit {
                   state: 'loading'
               }
           });
+          if (msg.receiveOnly && msg.info_type === 'VIDEO') {
+            this.lastOfferDiff['Video'].tx = 'off';
+          }
           this.cservice.upgradeMedia(this.lastOfferDiff);
       }
-      /*
-          console.log('connected?')
-          this.store.dispatch({
-              type: 'UPDATE_BY_REF',
-              payload: {
-                  ref: msgRef,
-                  type: 'MEDIA-INFO',
-                  state: 'connected'
-              }
-          });
-          */
-
-      console.log('msgRef accept', msg.ref);
-
   }
   bindStores() {
     this.store.subscribe( state => {
@@ -72,7 +61,7 @@ export class AppComponent implements OnInit {
       this.mediaOffer  = state.mediaOffer;
       this.dcs         = <DataCollectionState> state.dataCollections;
 
-      this.ckeckForNegotiationEnd();
+      this.checkForNegotiationEnd();
       this.checkForIncomingRequest();
       this.listenForDowngrades();
       this.getTopBarState();
@@ -119,7 +108,7 @@ export class AppComponent implements OnInit {
           });
       }
   }
-  ckeckForNegotiationEnd() {
+  checkForNegotiationEnd() {
     if (this.isNegotiating) {
         switch (this.mediaOnNegotiation) {
             case 'VOICE':
@@ -128,9 +117,8 @@ export class AppComponent implements OnInit {
                 if (this.mediaState &&
                     this.mediaState[m] &&
                     this.mediaState[m].data &&
-                    this.mediaState[m].data.tx_stream &&
+                    (this.mediaState[m].data.tx_stream || this.negotiationMessage.receiveOnly) &&
                     this.mediaState[m].data.rx_stream) {
-                    // TODO: check for optional stream
                     this.isNegotiating = false;
                     this.mediaOnNegotiation = null;
                     this.store.dispatch({
@@ -159,15 +147,49 @@ export class AppComponent implements OnInit {
       });
   }
   listenForDowngrades() {
+      if (
+          this.mediaOffer &&
+          this.mediaOffer.diff &&
+          this.mediaOffer.diff['changed']
+      ) {
+          // console.log('NM', JSON.stringify(this.mediaOffer.diff['changed']));
+          if (this.mediaOffer.diff['changed']['Voice'] &&
+              this.mediaOffer.diff['changed']['Voice']['tx'] === 'off' &&
+              this.mediaOffer.diff['changed']['Voice']['rx'] === 'off') {
 
+              this.store.dispatch({
+                  type: 'UPDATE_BY_REF',
+                  payload: {
+                      ref: this.negotiationMessage.ref,
+                      type: 'MEDIA-INFO',
+                      state: 'closed'
+                  }
+              });
+          }
+          this.cservice.acceptOffer(this.mediaOffer.diff['changed']);
+      }
   }
   getTopBarState() {
 
   }
+  hasVideo() {
+    return (
+        this.mediaState &&
+        this.mediaState['Video'] &&
+        this.mediaState['Video']['data'] &&
+        this.mediaState['Video']['data']['rx_stream']
+    );
+  }
   sendChatMessage(msg) {
     this.contact.sendText(msg.text);
   }
-
+  setSounds() {
+      /*
+      this.messageAudioNotif = new Audio();
+      this.messageAudioNotif.src = '//assets/beep.mp3';
+      this.messageAudioNotif.load();
+      */
+  }
   ngOnInit() {
     this.vvc.ready().subscribe( conf => {
 

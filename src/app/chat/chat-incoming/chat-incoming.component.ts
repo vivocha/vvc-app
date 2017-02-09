@@ -10,17 +10,23 @@ export class ChatIncomingComponent implements OnInit {
   @Input() msg;
   @Output() rejectOffer = new EventEmitter();
   @Output() acceptOffer = new EventEmitter();
+  private messageAudioNotif;
   constructor() { }
 
-  accept() {
+  accept(receiveOnly) {
+    this.msg.receiveOnly = receiveOnly;
     this.acceptOffer.emit(this.msg);
   }
   reject() {
     this.rejectOffer.emit(this.msg);
   }
   ngOnInit() {
-    console.log('MSG', this.msg);
+    if (this.msg.state === 'request') {
+      this.messageAudioNotif = new Audio();
+      this.messageAudioNotif.src = 'assets/chime.mp3';
+      this.messageAudioNotif.load();
+      this.messageAudioNotif.play();
+    }
   }
-
 }
 
