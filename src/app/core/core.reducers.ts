@@ -1,74 +1,78 @@
-import {VvcMediaState, VvcMediaOffer, VvcAgent, ChatMsg, WidgetState, DataCollectionState} from './core.interfaces';
-
-export const widgetState = (state: WidgetState = {state: 'LOADING'}, {type, payload}) => {
-    switch (type) {
-        case 'WIDGET_STATUS':
-            return payload;
-        default: return state;
-    }
+import {VvcWidgetState} from './core.interfaces';
+const initialWidgetState: VvcWidgetState = {
+    chat: false,
+    error: false,
+    fullScreen: false,
+    lastError: '',
+    loading: true,
+    mute: false,
+    mobile: false,
+    sharing: false,
+    video: false,
+    voice: false
 };
-export const mediaState = (state: VvcMediaState, {type, payload}) => {
-    switch (type) {
-        case 'MEDIA_CHANGE':
-            state = Object.assign({}, payload);
-            return state;
-        default:
-            return state;
-    }
+const extractStateFromMedia = (payload) => {
+  const newState: { chat?: boolean, voice?: boolean, video?: boolean, sharing?: boolean} = {};
+  if (payload.Chat && payload.Chat['tx'] && payload.Chat['rx']) {
+    newState.chat = true;
+  }
+  if (payload.Sharing && payload.Sharing['tx'] && payload.Sharing['rx']) {
+    newState.sharing = true;
+  }
+  if (payload.Voice && payload.Voice['tx'] && payload.Voice['rx']) {
+    newState.voice = true;
+  }
+  if (payload.Video && (payload.Video['tx'] || payload.Video['rx'])) {
+    newState.video = true;
+  }
+  return newState;
 };
-export const mediaOffer = (state: VvcMediaOffer, {type, payload}) => {
-    switch (type) {
-        case 'MEDIA_OFFER':
-            return Object.assign({}, payload);
-        default:
-            return {};
-    }
-};
-export const agent = (currentAgent: VvcAgent, {type, payload}) => {
-    switch (type) {
-        case 'ADD_AGENT':
-            console.log('ADD_AGENT', payload);
-            currentAgent = Object.assign({}, payload);
-            return currentAgent;
-        default:
-            return currentAgent;
-    }
-};
-export const chatMessages = (messages: Array<ChatMsg> = [], {type, payload}) => {
-    switch (type) {
-        case 'ADD_TEXT':
-            const isWriting = messages.filter( msg => msg.type === 'AGENT-WRITING');
-            if (isWriting.length > 0) {
-                const payloads = [payload];
-                if (payload.agent === false) {
-                    payloads.push(isWriting[0]);
+const isIncomingRequest = (state, offer) : { askForConfirmation: boolean, offer: any} => {
+    const resp = { askForConfirmation : false, offer: {} };
+    for (const i in offer) {
+        switch (i) {
+            case 'Chat':
+            case 'Sharing':
+            case 'Voice':
+                if (!state[i.toLowerCase()]
+                    && offer[i]['tx'] !== 'off'
+                    && offer[i]['rx'] !== 'off') {
+                    resp.askForConfirmation = true;
+                    resp.offer[i] = offer[i];
                 }
-                messages = messages.filter( msg => msg.type !== 'AGENT-WRITING').concat(...payloads);
-            } else {
-                messages = messages.concat(payload);
-            }
-            return messages;
-        case 'REM_TEXT':
-            if (payload.type === 'AGENT-WRITING') {
-                messages = messages.filter(msg => msg.type !== 'AGENT-WRITING');
-            }
-            return messages;
-        case 'REM_BY_REF':
-            messages = messages.filter(msg => msg.ref === payload.ref);
-            return messages;
-        case 'UPDATE_BY_REF':
-            return messages.map( msg => {
-                return (msg.ref === payload.ref) ? Object.assign({}, msg, payload) : msg;
-            });
-        default:
-            return messages;
+                break;
+            case 'Video':
+                if (!state[i.toLowerCase()]
+                    && ( offer[i]['tx'] !== 'off' || offer[i]['rx'] !== 'off')) {
+                    resp.askForConfirmation = true;
+                    resp.offer[i] = offer[i];
+                }
+                break;
+        }
     }
+    return resp;
 };
-export const dataCollections = (dc: DataCollectionState = {state: 'hidden'}, {type, payload}) => {
+export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, payload}) => {
     switch (type) {
-        case 'NEW_DC':
-            return payload;
-        default:
-            return dc;
+        case 'INITIAL_OFFER':
+        case 'MEDIA_CHANGE':
+            const newState = extractStateFromMedia(payload);
+            return Object.assign({}, state, newState);
+        case 'JOINED':
+            if (payload) {
+                console.log(payload);
+            }
+            return Object.assign({}, state, { loading: false });
+        case 'MEDIA_OFFER':
+            const confirmation = isIncomingRequest(state, payload);
+            if (confirmation.askForConfirmation) {
+                console.log('should emit an incoming request', confirmation.offer);
+                // incomingRequest(null, {type: 'INCOMING_REQUEST', payload: confirmation.offer});
+                return Object.assign({}, state, { incomingRequest: true, incomingOffer: confirmation.offer });
+            } else {
+                console.log('should merge and go');
+            }
+            return state;
+        default: return state;
     }
 };

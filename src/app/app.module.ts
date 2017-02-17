@@ -4,14 +4,10 @@ import { FormsModule } from '@angular/forms';
 import {HttpModule, Http} from '@angular/http';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 
-import { AppComponent } from './app.component';
-import {TopBarModule} from './top-bar/top-bar.module';
-import { LoadingComponent } from './loading/loading.component';
 import {CoreModule} from './core/core.module';
-import {ChatModule} from './chat/chat.module';
-import {MediaToolsModule} from './media-tools/media-tools.module';
-import { VideoComponent } from './video/video.component';
-import { VoiceComponent } from './voice/voice.component';
+import {QueueModule} from './queue/queue.module';
+import { AppComponent } from './app.component';
+
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, '/WidgetTranslations/xl8', '.json');
@@ -19,10 +15,7 @@ export function createTranslateLoader(http: Http) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoadingComponent,
-    VideoComponent,
-    VoiceComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -31,14 +24,10 @@ export function createTranslateLoader(http: Http) {
       useFactory: (createTranslateLoader),
       deps: [Http]
     }),
-
     FormsModule,
     HttpModule,
-
     CoreModule,
-    TopBarModule,
-    ChatModule,
-    MediaToolsModule
+    QueueModule
   ],
   providers: [
 

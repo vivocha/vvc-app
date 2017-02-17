@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, trigger, transition, animate} from '@angular/core';
 import {ChatMsg} from '../core/core.interfaces';
 
 @Component({

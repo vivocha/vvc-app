@@ -1,4 +1,5 @@
 <div class="request-panel clearfix left"
+     [@ease]="state"
      [ngClass]="{ 'response': (msg.state !== 'request' && msg.state !== 'loading'), 'rejected': msg.state === 'rejected', 'connected':msg.state ==='connected', 'closed':msg.state ==='closed'}"
      *ngIf="msg">
 

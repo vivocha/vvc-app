@@ -1,0 +1,35 @@
+<div id="vvc-widget">
+
+  <vvc-loading id="vvc-loading"
+               class="flex flex-column"
+               *ngIf="isLoading()"
+               [type]="initialMedia"
+               (abandon)="onAbandon()"></vvc-loading>
+
+  <div *ngIf="!isLoading()" id="vvc-widget-content" class="flex flex-column border-box">
+
+    <vvc-top-bar id="vvc-topbar"
+                 class="flex flex-none items-center"
+                 [agent]="agent$ | async"></vvc-top-bar>
+
+    <vvc-video id="vvc-video"
+               class="flex flex-none"
+               [mediaState]="mediaState"
+               *ngIf="hasVideo()"></vvc-video>
+
+    <vvc-chat id="vvc-chat"
+              class="p1 flex flex-auto flex-column"
+              [messages]="messages$ | async"
+              (action)="sendChatMessage($event)"
+              (acceptOffer)="acceptIncomingRequest($event)"
+              (rejectOffer)="denyIncomingRequest($event)"></vvc-chat>
+
+    <vvc-media-tools id="vvc-media-tools"
+                     class="p1"
+                     (emoji)="sendChatMessage($event)"></vvc-media-tools>
+
+    <vvc-voice [mediaState]="mediaState"></vvc-voice>
+  </div>
+
+  <audio src="/assets/beep.mp3"></audio>
+</div>

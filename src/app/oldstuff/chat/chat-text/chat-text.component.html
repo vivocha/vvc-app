@@ -1,4 +1,4 @@
-<div [ngClass]="{ 'agent-msg': msg.isAgent, 'customer-msg': !msg.isAgent, 'right': !msg.isAgent }">
+<div [@ease]="state" [ngClass]="{ 'agent-msg': msg.isAgent, 'customer-msg': !msg.isAgent, 'right': !msg.isAgent }">
   <div [ngClass]="{'agent-msg-content': msg.isAgent, 'customer-msg-content': !msg.isAgent}" class="col">
     {{msg.text}}
   </div>
