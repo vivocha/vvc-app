@@ -1,6 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppState} from './core.interfaces';
+import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
+import {WidgetStateTypes, WidgetState} from '../oldstuff/core/core.interfaces';
 
 const dc2 = {};
 
@@ -14,17 +15,34 @@ export class VvcContactService {
     isWritingTimeout = 30000;
     statusMessageUpdate = 3000;
     mediaCallback;
-    mediaState;
+    incomingOffer: VvcOffer;
+    incomingId;
+    private widgetState: VvcWidgetState;
+
 
     constructor( private store: Store<AppState>,
-                 private zone: NgZone) { }
-    acceptOffer(diffOffer) {
-        for (const m in diffOffer) {
-            diffOffer[m].rx = (diffOffer[m].rx !== 'off');
-            diffOffer[m].tx = (diffOffer[m].tx !== 'off');
-        }
-        this.contact.mergeMedia(diffOffer).then(mergedMedia => {
-            this.mediaCallback(undefined, mergedMedia);
+                 private zone: NgZone) {
+       store.subscribe( state => {
+           this.widgetState = <VvcWidgetState> state.widgetState;
+       });
+    }
+    acceptOffer() {
+        const diffOffer = this.incomingOffer;
+        this.mergeOffer(diffOffer);
+        this.dispatch({
+            type: 'UPDATE_MESSAGE',
+            payload: {
+                id: this.incomingId,
+                state: 'loading'
+            }
+        });
+    }
+    addLocalVideo() {
+        this.contact.getMediaOffer().then(mediaOffer => {
+            if (mediaOffer['Video']) {
+                mediaOffer['Video'].tx = 'required';
+            }
+            this.contact.offerMedia(mediaOffer);
         });
     }
     askForUpgrade(media) {
@@ -106,6 +124,7 @@ export class VvcContactService {
     denyOffer() {
         this.mediaCallback('error', {});
     }
+    /*
     diffOffer(currentOffer, incomingOffer, flat?) {
         let hasAdded = false;
         let hasChanged = false;
@@ -146,10 +165,61 @@ export class VvcContactService {
         if (!hasRemoved) delete diff.removed;
         return (flat) ? flatDiff : diff;
     }
+    */
     dispatch(action) {
         this.zone.run( () => {
             this.store.dispatch(action);
         });
+    }
+    dispatchConnectionMessages(newMedia) {
+        const hasVideo = (newMedia['Video'] &&
+                          newMedia['Video']['data'] &&
+                          newMedia['Video']['data']['rx_stream']);
+                          // (newMedia['Video']['data']['tx_stream'] || newMedia['Video']['data']['rx_stream']));
+        const hasVoice = (newMedia['Voice'] &&
+                          newMedia['Voice']['data'] &&
+                          newMedia['Voice']['data']['tx_stream'] &&
+                          newMedia['Voice']['data']['rx_stream']);
+        if (!this.widgetState.voice && hasVoice && !hasVideo) {
+            console.log('dispatch voice connection');
+            this.dispatch({
+                type: 'UPDATE_MESSAGE',
+                payload: {
+                    id: this.incomingId,
+                    state: 'closed',
+                    text: 'connected'
+                }
+            });
+        }
+        if (!this.widgetState.video && !this.widgetState.voice && hasVideo) {
+            console.log('dispatch video connection');
+            this.dispatch({
+                type: 'UPDATE_MESSAGE',
+                payload: {
+                    id: this.incomingId,
+                    media: 'video',
+                    state: 'closed',
+                    text: 'connected'
+                }
+            });
+            console.log('dispatch video connection 2');
+        }
+        if (this.widgetState.voice && !hasVoice) {
+            console.log('dispatch voice disconnection');
+            this.dispatch({
+                type: 'NEW_MESSAGE',
+                payload: {
+                    id: new Date().getTime(),
+                    media: 'voice',
+                    state: 'closed',
+                    type: 'incoming-request',
+                    text: 'disconnected'
+                }
+            });
+        }
+        if (this.widgetState.video && !hasVideo) {
+            console.log('dispatch video disconnection');
+        }
     }
     downgrade(media) {
         if (media === 'VOICE') {
@@ -175,9 +245,6 @@ export class VvcContactService {
             });
         }
     }
-    getMediaState(){
-        return this.mediaState;
-    }
     getUpgradeState(mediaObject) {
         for (const m in mediaObject) {
             mediaObject[m].rx = (mediaObject[m].rx !== 'off');
@@ -185,8 +252,54 @@ export class VvcContactService {
         }
         return mediaObject;
     }
+    hangup() {
+        this.contact.getMediaOffer().then(mediaOffer => {
+            if (mediaOffer['Voice']) {
+                mediaOffer['Voice'].tx = 'off';
+                mediaOffer['Voice'].rx = 'off';
+            }
+            if (mediaOffer['Video']) {
+                mediaOffer['Video'].tx = 'off';
+                mediaOffer['Video'].rx = 'off';
+            }
+            this.contact.offerMedia(mediaOffer);
+        });
+    }
     init(vivocha) {
         this.vivocha = vivocha;
+    }
+    isIncomingRequest(offer): { askForConfirmation: boolean, offer: VvcOffer, media: string} {
+        const resp = { askForConfirmation : false, offer: {}, media: '' };
+        for (const i in offer) {
+            switch (i) {
+                case 'Chat':
+                case 'Sharing':
+                case 'Voice':
+                    if (!this.widgetState[i.toLowerCase()]
+                        && offer[i]['tx'] !== 'off'
+                        && offer[i]['rx'] !== 'off') {
+                        resp.askForConfirmation = true;
+                        resp.offer[i] = offer[i];
+                    }
+                    break;
+                case 'Video':
+                    if (!this.widgetState[i.toLowerCase()]
+                        && ( offer[i]['tx'] !== 'off' || offer[i]['rx'] !== 'off')) {
+                        if (!this.widgetState['voice']) {
+                            resp.askForConfirmation = true;
+                        }
+                        resp.offer[i] = offer[i];
+                    }
+                    break;
+            }
+        }
+        if (resp.offer['Voice']) {
+            resp.media = 'voice';
+        }
+        if (resp.offer['Video']) {
+            resp.media = 'video';
+        }
+        return resp;
     }
     mapContact() {
         console.log('mapping stuff on the contact');
@@ -234,29 +347,37 @@ export class VvcContactService {
             // console.log('localcapabilities', arguments);
         });
         this.contact.on('localtext', (text) => {
-            this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: false}});
+            // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: false}});
+            this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: false}});
         });
         this.contact.on('mediachange', (media, changed) => {
-            console.log('CHANGE', media, changed);
+            console.log('MEDIACHANGE', media);
+            this.dispatchConnectionMessages(media);
             this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
         });
         this.contact.on('mediaoffer', (offer, cb) => {
             console.log('OFFER', offer);
-            this.mediaCallback = cb;
-            this.dispatch({type: 'MEDIA_OFFER', payload: offer});
-            /*
-            this.contact.getMediaOffer().then( currentOffer => {
-                const diff = this.diffOffer(currentOffer, offer);
-                this.dispatch({type: 'MEDIA_OFFER', payload: { offer: offer, diff: diff }});
-            });
-            */
+            this.onMediaOffer(offer, cb);
         });
         this.contact.on('text', (text, from_id, from_nick, agent ) => {
-            this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
+            // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
+            this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
         });
         this.contact.on('transferred', (transferred_to) => {
             this.dispatch({type: 'ADD_TEXT', payload: {
                 text: 'CHAT.TRANSFER', type: 'AGENT-INFO'}});
+        });
+    }
+    mergeOffer (diffOffer) {
+        for (const m in diffOffer) {
+            if (m === 'Video' && diffOffer[m].tx === 'optional') {
+                diffOffer[m].tx = 'off';
+            }
+            diffOffer[m].rx = (diffOffer[m].rx !== 'off');
+            diffOffer[m].tx = (diffOffer[m].tx !== 'off');
+        }
+        this.contact.mergeMedia(diffOffer).then(mergedMedia => {
+            this.mediaCallback(undefined, mergedMedia);
         });
     }
     muteAudio(muted) {
@@ -308,6 +429,35 @@ export class VvcContactService {
                 this.checkForTranscript();
             });
         }
+    }
+    onMediaOffer(offer, cb) {
+
+        this.mediaCallback = cb;
+        const confirmation = this.isIncomingRequest(offer);
+        if (confirmation.askForConfirmation) {
+            this.incomingId = new Date().getTime();
+            this.incomingOffer = confirmation.offer;
+            this.dispatch({
+                type: 'NEW_MESSAGE',
+                payload: {
+                    id: this.incomingId,
+                    media: confirmation.media,
+                    state: 'open',
+                    text: 'media-requesting',
+                    type: 'incoming-request'
+                }
+            });
+        } else {
+            this.mergeOffer(offer);
+        }
+    }
+    removeLocalVideo() {
+        this.contact.getMediaOffer().then(mediaOffer => {
+            if (mediaOffer['Video']) {
+                mediaOffer['Video'].tx = 'off';
+            }
+            this.contact.offerMedia(mediaOffer);
+        });
     }
     sendAttachment(msg) {
         const ref = new Date().getTime();

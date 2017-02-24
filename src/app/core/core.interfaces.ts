@@ -17,6 +17,7 @@ export interface VvcMediaOfferDetails {
     engine?: string;
 }
 export interface VvcWidgetState {
+    changeMediaState?: boolean;
     chat: boolean;
     error: boolean;
     fullScreen: boolean;
@@ -36,5 +37,5 @@ export interface VvcWidgetState {
 }
 export interface AppState {
     widgetState: VvcWidgetState;
-    incomingRequest: VvcOffer;
+    messages: Array<any>;
 }

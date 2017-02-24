@@ -1,5 +1,58 @@
-<div>
+<div id="vvc-container">
+  <div id="vvc-full-enabled"></div>
+  <div id="vvc-widget-wrap">
 
-  <vvc-queue *ngIf="widgetState?.loading" [type]="type"></vvc-queue>
 
+    <vvc-queue *ngIf="widgetState?.loading" [type]="type"></vvc-queue>
+
+    <div>
+      <div id="vvc-top-bar"></div>
+
+
+      <div id="vvc-video-wrap">
+        <div *ngIf="widgetState?.video_rx">
+          <video style="height: 100px" [src]="trustedSrc(widgetState.video_rx.url)"></video>
+        </div>
+        <div *ngIf="widgetState?.video_tx">
+          <video style="height: 80px; border: 1px solid red" [src]="trustedSrc(widgetState.video_tx.url)"></video>
+        </div>
+      </div>
+
+
+      <div id="vvc-media-tools" *ngIf="widgetState?.voice">
+        <button (click)="setFullScreen()">maximize</button>
+        <button *ngIf="widgetState?.video_tx" (click)="removeLocalVideo()">remove video</button>
+        <button *ngIf="!widgetState?.video_tx" (click)="addLocalVideo()">add video</button>
+        <button>mute</button>
+        <button (click)="hangup()">hangup</button>
+      </div>
+
+
+      <div id="vvc-messages">
+        <div *ngFor="let m of messages" [ngSwitch]="m.type">
+          <div *ngSwitchCase="'incoming-request'">
+            Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
+            <p>{{m.text}}</p>
+            <p *ngIf="m.state === 'open'">
+              <button (click)="acceptIncomingRequest()">Accept</button> - <button (click)="denyIncomingRequest()">Deny</button>
+            </p>
+          </div>
+
+          <div *ngSwitchCase="'chat'">
+            {{m.text}}
+          </div>
+        </div>
+      </div>
+
+
+      <div id="vvc-chat-area">
+        <div *ngIf="widgetState?.chat">
+          <textarea #chatBox placeholder="type here..."></textarea>
+          <button (click)="sendChatMessage(chatBox.value)">send</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 </div>

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import {WindowRef} from './window.service';
 import {VvcContactService} from './contact.service';
 import {StoreModule} from '@ngrx/store';
-import {widgetState} from './core.reducers';
+import {widgetState, messages} from './core.reducers';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.provideStore({widgetState})
+    StoreModule.provideStore({widgetState, messages})
   ],
   declarations: [],
   providers: [
