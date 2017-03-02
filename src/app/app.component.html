@@ -1,58 +1,109 @@
-<div id="vvc-container">
-  <div id="vvc-full-enabled"></div>
-  <div id="vvc-widget-wrap">
+<div id="vvc-container"
+     class="flex"
+     style="background-color: pink; position: absolute; top:0; bottom:0; left:0; right: 0">
 
-
-    <vvc-queue *ngIf="widgetState?.loading" [type]="type"></vvc-queue>
-
-    <div>
-      <div id="vvc-top-bar"></div>
-
-
-      <div id="vvc-video-wrap">
-        <div *ngIf="widgetState?.video_rx">
-          <video style="height: 100px" [src]="trustedSrc(widgetState.video_rx.url)"></video>
-        </div>
-        <div *ngIf="widgetState?.video_tx">
-          <video style="height: 80px; border: 1px solid red" [src]="trustedSrc(widgetState.video_tx.url)"></video>
-        </div>
-      </div>
-
-
-      <div id="vvc-media-tools" *ngIf="widgetState?.voice">
-        <button (click)="setFullScreen()">maximize</button>
-        <button *ngIf="widgetState?.video_tx" (click)="removeLocalVideo()">remove video</button>
-        <button *ngIf="!widgetState?.video_tx" (click)="addLocalVideo()">add video</button>
-        <button>mute</button>
-        <button (click)="hangup()">hangup</button>
-      </div>
-
-
-      <div id="vvc-messages">
-        <div *ngFor="let m of messages" [ngSwitch]="m.type">
-          <div *ngSwitchCase="'incoming-request'">
-            Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
-            <p>{{m.text}}</p>
-            <p *ngIf="m.state === 'open'">
-              <button (click)="acceptIncomingRequest()">Accept</button> - <button (click)="denyIncomingRequest()">Deny</button>
-            </p>
-          </div>
-
-          <div *ngSwitchCase="'chat'">
-            {{m.text}}
-          </div>
-        </div>
-      </div>
-
-
-      <div id="vvc-chat-area">
-        <div *ngIf="widgetState?.chat">
-          <textarea #chatBox placeholder="type here..."></textarea>
-          <button (click)="sendChatMessage(chatBox.value)">send</button>
-        </div>
-      </div>
-
-
+  <div id="vvc-full-enabled"
+       *ngIf="widgetState?.fullScreen"
+       class="flex flex-auto flex-column"
+       style="background-color: yellow;">
+    <button (click)="setNormalScreen()">minimize</button>
+    <div *ngIf="widgetState?.video_rx">
+      <video [src]="trustedSrc(widgetState.video_rx.url)"></video>
     </div>
+    <div *ngIf="widgetState?.video_tx">
+      <video style="border: 1px solid red" [src]="trustedSrc(widgetState.video_tx.url)"></video>
+    </div>
+  </div>
+
+  <vvc-queue id="vvc-queue"
+             *ngIf="widgetState?.loading"
+             class="flex flex-none flex-column"
+             style="width: 370px; background-color: yellowgreen"
+             [type]="type"></vvc-queue>
+
+  <div id="vvc-widget-wrap"
+       *ngIf="!widgetState?.loading"
+       class="flex flex-none flex-column"
+       style="width: 370px; background-color: yellowgreen">
+
+    <div id="vvc-top-bar"
+         class="flex flex-none"
+         style="height: 80px; background-color: greenyellow">
+      top bar
+    </div>
+
+    <div id="vvc-video-wrap"
+         class="flex flex-none"
+         *ngIf="widgetState?.fullScreen === false && widgetState?.video"
+         style="height: 280px; background-color: darkslategray">
+      <div *ngIf="widgetState?.video_rx">
+        <video style="height: 100px" [src]="trustedSrc(widgetState.video_rx.url)"></video>
+      </div>
+      <div *ngIf="widgetState?.video_tx">
+        <video style="height: 80px; border: 1px solid red" [src]="trustedSrc(widgetState.video_tx.url)"></video>
+      </div>
+    </div>
+
+    <div id="vvc-media-tools"
+         *ngIf="widgetState?.voice"
+         class="flex flex-none"
+         style="height: 80px; background-color: darkgoldenrod">
+      <button (click)="setFullScreen()">maximize</button>
+      <button *ngIf="widgetState?.video_tx" (click)="removeLocalVideo()">remove video</button>
+      <button *ngIf="!widgetState?.video_tx" (click)="addLocalVideo()">add video</button>
+      <button>mute</button>
+      <button (click)="hangup()">hangup</button>
+    </div>
+
+    <div id="vvc-messages"
+         class="flex flex-auto flex-column"
+         style="background-color: lavender; overflow-y: scroll">
+      <div *ngFor="let m of messages" [ngSwitch]="m.type">
+        <div *ngSwitchCase="'incoming-request'">
+          Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
+          <p>{{m.text}}</p>
+          <p *ngIf="m.state === 'open'">
+            <button (click)="acceptIncomingRequest()">Accept</button> - <button (click)="denyIncomingRequest()">Deny</button>
+          </p>
+        </div>
+
+        <div *ngSwitchCase="'chat'">
+          {{m.text}}
+          <p *ngIf="m.meta">
+            {{m.meta | json}}
+            <img *ngIf="m.meta.originalUrl" [src]="m.meta.originalUrl">
+          </p>
+        </div>
+
+        <div *ngSwitchCase="'dc'">
+          <div *ngIf="!m.inline">
+            Compila la data collection <button>compila</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="vvc-chat-area"
+         class="flex flex-none"
+         style="height: 120px;background-color: lightcoral">
+      <div *ngIf="widgetState?.chat">
+        <textarea #chatBox placeholder="type here..."></textarea>
+        <button (click)="sendChatMessage(chatBox.value)">send</button>
+
+        <hr>
+        upload form
+        <div class="uploader" *ngIf="uploadFile">
+          <div class="uploadedFile">
+            <span class="uploadName">{{uploadFile.name}}</span> <i (click)="removeUpload()" style="position: relative; top: 2px" class="right fa fa-trash-o">remove</i>
+          </div>
+        </div>
+        <form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
+          <textarea #fileBox placeholder="type file description here..."></textarea>
+          <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
+          <button [disabled]="!uploadFile?.name" (click)="sendAttachment(fileBox.value)">send</button>
+        </form>
+      </div>
+    </div>
+
   </div>
 </div>

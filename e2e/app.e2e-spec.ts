@@ -1,6 +1,6 @@
 import { VvcWidgetPage } from './app.po';
 
-describe('vvc-widget App', function() {
+describe('vvc-widget App', () => {
   let page: VvcWidgetPage;
 
   beforeEach(() => {

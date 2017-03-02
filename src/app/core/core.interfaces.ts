@@ -19,6 +19,7 @@ export interface VvcMediaOfferDetails {
 export interface VvcWidgetState {
     changeMediaState?: boolean;
     chat: boolean;
+    dataCollectionPanel?: boolean;
     error: boolean;
     fullScreen: boolean;
     incomingRequest?: boolean;
@@ -38,4 +39,48 @@ export interface VvcWidgetState {
 export interface AppState {
     widgetState: VvcWidgetState;
     messages: Array<any>;
+}
+
+// DATA COLLECTIONS
+export type DcObjectType = 'text' | 'checkbox' | 'date' | 'email' | 'link' | 'phone' | 'nickname' | 'survey' | 'privacy';
+export type DcStates = 'hidden' | 'visible';
+export interface DataCollectionState {
+    state: DcStates;
+    dataCollection?: DataCollection;
+}
+export interface DataCollection {
+    key: string;
+    type: string;
+    inline?: boolean;
+    name: string;
+    desc: string;
+    data: Array<DcObject>;
+}
+export interface DcObject {
+    key: string;
+    controlType: string;
+    name: string;
+    desc: string;
+    type: DcObjectType;
+    value?: any;
+    checked?: boolean;
+    policy?: Object;
+    visible?: boolean;
+    editable?: boolean;
+    config?: DcConfigObject;
+}
+export interface DcConfigObject {
+    hide_from_visitor?: boolean;
+    multiline?: boolean;
+    required?: boolean;
+    default_value?: any;
+    max?: number;
+    min?: number;
+    customRegex?: string;
+    values?: Array<DcOptValue>;
+}
+export interface DcOptValue {
+    value: any;
+    text: string;
+    color?: string;
 }

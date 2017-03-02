@@ -1,0 +1,10 @@
+{
+  "/WidgetUI": {
+    "target": "http://localhost:8001",
+    "secure": false
+  },
+  "/WidgetTranslations" : {
+    "target": "http://localhost:8001",
+    "secure": false
+  }
+}

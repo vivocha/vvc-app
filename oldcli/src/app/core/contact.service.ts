@@ -1,72 +1,9 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppState, VvcWidgetState, VvcOffer, DataCollectionState} from './core.interfaces';
+import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
+import {WidgetStateTypes, WidgetState} from '../oldstuff/core/core.interfaces';
 
-const dc2: DataCollectionState = {
-    state: 'visible',
-    dataCollection: {
-        key: 'DC.USER.TITLE',
-        type: 'dc',
-        inline: false,
-        name: 'data_collection',
-        desc: 'Initial Data Collection',
-        data: [
-            {
-                key: 'DC.USER.NICKNAME',
-                controlType: 'vvc-input',
-                name: 'codiceUtente',
-                desc: 'identificativo utente',
-                type: 'nickname',
-                config: {
-                    required: true,
-                    min: 5
-                },
-                visible: true
-            },
-            {
-                key: 'DC.USER.USERID',
-                controlType: 'vvc-input',
-                name: 'polizzaUtente',
-                desc: 'codice polizza utente',
-                type: 'text',
-                config: {
-                    required: true,
-                    min: 3,
-                    max: 3
-                },
-                visible: true
-            },
-            {
-                key: 'DC.USER.USERID',
-                controlType: 'vvc-input',
-                name: 'polizzaUtente2',
-                desc: 'codice polizza utente2',
-                type: 'text',
-                config: {
-                    required: true,
-                    min: 3,
-                    max: 3
-                },
-                visible: true
-            },
-            {
-                key: 'DC.USER.PRIVACY.LABEL',
-                controlType: 'vvc-privacy',
-                name: 'privacy',
-                desc: 'accetta privacy',
-                type: 'privacy',
-                config: {
-                    required: true,
-                },
-                policy: {
-                    key: 'DC.USER.PRIVACY.POLICY',
-                    linkLabel: 'DC.USER.PRIVACY.LINK'
-
-                }
-            }
-        ]
-    }
-};
+const dc2 = {};
 
 @Injectable()
 export class VvcContactService {
@@ -557,7 +494,7 @@ export class VvcContactService {
     showDataCollection(dataId) {
         switch (dataId) {
             case 'user':
-                this.dispatch({ type: 'NEW_MESSAGE', payload: dc2.dataCollection});
+                this.dispatch({ type: 'NEW_DC', payload: dc2});
                 break;
             default: break;
         }
