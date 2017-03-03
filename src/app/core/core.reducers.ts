@@ -1,4 +1,4 @@
-import {VvcWidgetState} from './core.interfaces';
+import {VvcWidgetState, VvcMessage} from './core.interfaces';
 const initialWidgetState: VvcWidgetState = {
     chat: false,
     error: false,
@@ -60,10 +60,12 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { loading: false });
         case 'FULLSCREEN':
             return Object.assign({}, state, { fullScreen: payload });
+        case 'SHOW_DATA_COLLECTION':
+            return Object.assign({}, state, { dataCollectionPanel: payload });
         default: return state;
     }
 };
-export const messages = (messageArray: Array<any> = [], {type, payload}) => {
+export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) => {
     switch (type) {
         case 'UPDATE_MESSAGE':
             const newArray = [];

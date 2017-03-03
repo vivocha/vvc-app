@@ -557,7 +557,13 @@ export class VvcContactService {
     showDataCollection(dataId) {
         switch (dataId) {
             case 'user':
-                this.dispatch({ type: 'NEW_MESSAGE', payload: dc2.dataCollection});
+                this.dispatch({ type: 'NEW_MESSAGE', payload: {
+                    dataCollection: dc2.dataCollection,
+                    type: 'incoming-request',
+                    id: new Date().getTime(),
+                    state: 'open',
+                    text: 'The agent has sent you a form to compile'
+                }});
                 break;
             default: break;
         }

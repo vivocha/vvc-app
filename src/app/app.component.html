@@ -21,8 +21,18 @@
              style="width: 370px; background-color: yellowgreen"
              [type]="type"></vvc-queue>
 
+  <div id="data-collection"
+  *ngIf="widgetState?.dataCollectionPanel"
+  class="flex flex-none flex-column"
+  style="width: 370px; background-color: teal">
+    {{ selectedDataCollection | json }}
+    <p>
+      <button (click)="hideDataCollectionPanel()"></button>
+    </p>
+  </div>
+
   <div id="vvc-widget-wrap"
-       *ngIf="!widgetState?.loading"
+       *ngIf="!widgetState?.loading && !widgetState?.dataCollectionPanel"
        class="flex flex-none flex-column"
        style="width: 370px; background-color: yellowgreen">
 
@@ -62,9 +72,16 @@
         <div *ngSwitchCase="'incoming-request'">
           Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
           <p>{{m.text}}</p>
-          <p *ngIf="m.state === 'open'">
-            <button (click)="acceptIncomingRequest()">Accept</button> - <button (click)="denyIncomingRequest()">Deny</button>
-          </p>
+          <div *ngIf="m.state === 'open'">
+
+            <div *ngIf="!m.dataCollection">
+              <button (click)="acceptIncomingRequest()">Accept</button> - <button (click)="denyIncomingRequest()">Deny</button>
+            </div>
+
+            <div *ngIf="m.dataCollection">
+              <button (click)="compileDataCollection(m.dataCollection)">Compile Data Collection</button>
+            </div>
+          </div>
         </div>
 
         <div *ngSwitchCase="'chat'">

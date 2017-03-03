@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
-import {VvcWidgetState, AppState, VvcOffer} from './core/core.interfaces';
+import {VvcWidgetState, AppState, VvcOffer, DataCollection} from './core/core.interfaces';
 import {DomSanitizer} from '@angular/platform-browser';
 
 
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   private lang: string;
   private type = 'chat';
   private uploadFile;
+  private selectedDataCollection: DataCollection;
   private widgetState: VvcWidgetState;
   private messages: Array<any>;
   constructor(private wref: WindowRef,
@@ -54,6 +55,11 @@ export class AppComponent implements OnInit {
       setTimeout( () => this.checkForVivocha(), 500);
     }
   }
+  compileDataCollection(dc: DataCollection) {
+    console.log('DC', dc);
+    this.selectedDataCollection = dc;
+    this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: true });
+  }
   createContact() {
     const initialOffer = this.getInitialOffer();
     this.cserv.createContact({ serv_id: this.servId, type: 'chat', nick: 'Marcolino', initial_offer: initialOffer});
@@ -70,6 +76,9 @@ export class AppComponent implements OnInit {
   }
   hangup() {
     this.cserv.hangup();
+  }
+  hideDataCollectionPanel() {
+    this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
   }
   onUploading(evt) {
     if (evt.srcElement.files[0]) {

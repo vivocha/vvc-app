@@ -10,6 +10,20 @@ export interface VvcOffer {
     Screen?: VvcMediaOfferDetails;
     Sharing?: VvcMediaOfferDetails;
 }
+export interface VvcMessage {
+    dataCollection?: DataCollection;
+    from_id?: string;
+    from_nick?: string;
+    id?: number;
+    isAgent?: boolean;
+    media?: string;
+    meta?: Object;
+    oPos?: number;
+    state?: string;
+    text?: string;
+    type?: string;
+    url?: string;
+}
 export interface VvcMediaOfferDetails {
     tx: VvcTxRxTypes;
     rx: VvcTxRxTypes;
