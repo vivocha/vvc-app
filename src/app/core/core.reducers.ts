@@ -69,7 +69,7 @@ export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) 
     switch (type) {
         case 'UPDATE_MESSAGE':
             const newArray = [];
-            const iMessages = messageArray.filter( m => m.type === 'incoming-request' && m.state !== 'closed');
+            const iMessages = messageArray.filter( m => m.id === payload.id);
             iMessages[0].state = payload.state;
             messageArray.forEach( (m, i) => {
                 if (i === iMessages[0].oPos) {
@@ -84,7 +84,7 @@ export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) 
             const incomingMessages = messageArray.filter( m => m.type === 'incoming-request' && m.state !== 'closed');
             let chatMessages = [];
             if (incomingMessages.length > 0) {
-                chatMessages = messageArray.filter( m => m.id !== incomingMessages[0].id).concat(incomingMessages);
+                chatMessages = messageArray.filter(m => m.state !== 'open').concat(incomingMessages);
             } else {
                 chatMessages = messageArray;
             }
