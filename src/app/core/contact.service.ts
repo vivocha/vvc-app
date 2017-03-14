@@ -403,9 +403,11 @@ export class VvcContactService {
         this.contact.on('iswriting', (from_id, from_nick, agent) => {
             if (agent) {
                 clearTimeout(this.isWritingTimer);
+                this.dispatch({type: 'AGENT_IS_WRITING', payload: true });
                 this.dispatch({type: 'ADD_TEXT', payload: { type: 'AGENT-WRITING' }});
                 this.isWritingTimer = setTimeout( () => {
                     this.dispatch({type: 'REM_TEXT', payload: { type: 'AGENT-WRITING' }});
+                    this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
                 }, this.isWritingTimeout);
             }
         });
@@ -434,6 +436,7 @@ export class VvcContactService {
         });
         this.contact.on('text', (text, from_id, from_nick, agent ) => {
             // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
+            this.dispatch({type: 'REDUCE_TOPBAR'});
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
         });
         this.contact.on('transferred', (transferred_to) => {

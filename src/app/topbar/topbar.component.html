@@ -1,0 +1,26 @@
+<div class="clearfix" style="width:100%">
+  <div class="row">
+    <div class="col col-4 pl2 pt2">
+      <i style="color: white" class="vvc-phone fs4"></i>
+      <i style="color: white" class="ml1 vvc-video fs4"></i>
+    </div>
+    <div class="col col-4 center avatar-box" >
+      <img class='agent-img circle' [src]="getAvatar()"></div>
+    <div class="col col-4 right-align pr2 pt2">
+      <i style="color: white" class="mr1 vvc-minimize fs4"></i>
+      <i style="color: white" class="vvc-close fs4"></i>
+    </div>
+  </div>
+  <div class="row welcome-msg">
+    <div class="col col-12 center fs4 fw1" style="color: white;">
+      <span class="italic">Welcome<br>you are talking with</span><br>
+      <span class="fw3">{{ getAgentName() }}</span>
+    </div>
+  </div>
+  <div class="row info-msg">
+    <div class="col col-12 center fs1 fw1" style="color: white;">
+      <span *ngIf="!state.isAgentWriting" class="fw1">{{ getAgentName() }}</span>
+      <span *ngIf="state.isAgentWriting" class="fw1 italic"><i class="vvc-chat"></i> {{ getAgentName() }} is writing...</span>
+    </div>
+  </div>
+</div>

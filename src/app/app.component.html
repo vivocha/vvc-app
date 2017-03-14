@@ -17,7 +17,7 @@
 
   <vvc-queue id="vvc-queue"
              *ngIf="widgetState?.loading"
-             class="flex flex-none flex-column"
+             class="flex flex-none flex-column full primary-bg"
              [type]="type"></vvc-queue>
 
   <div id="data-collection"
@@ -35,11 +35,10 @@
        class="flex flex-none flex-column"
        style="width: 370px; background-color: yellowgreen">
 
-    <div id="vvc-top-bar"
-         class="flex flex-none"
-         style="height: 80px; background-color: greenyellow">
-      top bar
-    </div>
+    <vvc-topbar id="vvc-top-bar"
+                class="flex flex-none"
+                [ngClass]="{'expanded':widgetState?.topBarExpanded}"
+                [state]="widgetState"></vvc-topbar>
 
     <div id="vvc-video-wrap"
          class="flex flex-none"
@@ -67,6 +66,9 @@
     <div id="vvc-messages"
          class="flex flex-auto flex-column"
          style="background-color: lavender; overflow-y: scroll">
+
+      <vvc-messages [messages]="messages"></vvc-messages>
+      <!--
       <div *ngFor="let m of messages" [ngSwitch]="m.type">
         <div *ngSwitchCase="'incoming-request'">
           Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
@@ -97,6 +99,7 @@
           </div>
         </div>
       </div>
+      -->
     </div>
 
     <div id="vvc-chat-area"

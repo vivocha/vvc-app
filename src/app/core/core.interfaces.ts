@@ -1,3 +1,4 @@
+import {VvcAgent} from '../../../oldcli/src/app/oldstuff/core/core.interfaces';
 export type VvcTxRxTypes = 'required' | 'optional' | 'off';
 export interface VvcMediaOffer {
     diff: Object;
@@ -31,6 +32,7 @@ export interface VvcMediaOfferDetails {
     engine?: string;
 }
 export interface VvcWidgetState {
+    agent?: VvcAgent;
     changeMediaState?: boolean;
     chat: boolean;
     dataCollectionPanel?: boolean;
@@ -38,11 +40,13 @@ export interface VvcWidgetState {
     fullScreen: boolean;
     incomingRequest?: boolean;
     incomingOffer?: VvcOffer;
+    isAgentWriting?: boolean;
     lastError: string;
     loading: boolean;
     mobile: boolean;
     mute: boolean;
     sharing: boolean;
+    topBarExpanded: boolean;
     voice: boolean;
     voice_rx?: string;
     voice_tx?: string;

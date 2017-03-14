@@ -8,6 +8,7 @@ const initialWidgetState: VvcWidgetState = {
     mute: false,
     mobile: false,
     sharing: false,
+    topBarExpanded: true,
     video: false,
     voice: false
 };
@@ -55,13 +56,17 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, newState);
         case 'JOINED':
             if (payload) {
-                console.log(payload);
+                return Object.assign({}, state, { agent: payload, loading: false });
             }
             return Object.assign({}, state, { loading: false });
         case 'FULLSCREEN':
             return Object.assign({}, state, { fullScreen: payload });
+        case 'REDUCE_TOPBAR':
+            return Object.assign({}, state, { topBarExpanded: false });
         case 'SHOW_DATA_COLLECTION':
             return Object.assign({}, state, { dataCollectionPanel: payload });
+        case 'AGENT_IS_WRITING':
+            return Object.assign({}, state, { isAgentWriting: payload });
         default: return state;
     }
 };

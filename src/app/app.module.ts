@@ -6,7 +6,9 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-trans
 
 import {CoreModule} from './core/core.module';
 import {QueueModule} from './queue/queue.module';
+import {MessagesModule} from './messages/messages.module';
 import { AppComponent } from './app.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -15,7 +17,8 @@ export function createTranslateLoader(http: Http) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ export function createTranslateLoader(http: Http) {
     FormsModule,
     HttpModule,
     CoreModule,
-    QueueModule
+    QueueModule,
+    MessagesModule
   ],
   providers: [
 
