@@ -1,6 +1,6 @@
 <div id="vvc-container"
      class="flex"
-     style="background-color: pink; position: absolute; top:0; bottom:0; left:0; right: 0">
+     style="position: absolute; top:0; bottom:0; left:0; right: 0">
 
   <div id="vvc-full-enabled"
        *ngIf="widgetState?.fullScreen"
@@ -33,7 +33,7 @@
   <div id="vvc-widget-wrap"
        *ngIf="!widgetState?.loading && !widgetState?.dataCollectionPanel"
        class="flex flex-none flex-column"
-       style="width: 370px; background-color: yellowgreen">
+       style="width: 370px;">
 
     <vvc-topbar id="vvc-top-bar"
                 class="flex flex-none"
@@ -64,8 +64,8 @@
     </div>
 
     <div id="vvc-messages"
-         class="flex flex-auto flex-column"
-         style="background-color: lavender; overflow-y: scroll">
+         class="flex flex-auto flex-column p1"
+         style="overflow-y: scroll">
 
       <vvc-messages [messages]="messages"></vvc-messages>
       <!--
