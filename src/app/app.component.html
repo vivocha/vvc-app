@@ -40,6 +40,14 @@
                 [ngClass]="{'expanded':widgetState?.topBarExpanded}"
                 [state]="widgetState"></vvc-topbar>
 
+    <vvc-media id="vvc-media-tools"
+               class="flex flex-none"
+               *ngIf="widgetState?.voice"
+               [state]="widgetState"
+               (hangup)="hangup()"
+               (addvideo)="addLocalVideo()"
+               (remvideo)="removeLocalVideo()"></vvc-media>
+  <!--
     <div id="vvc-video-wrap"
          class="flex flex-none"
          *ngIf="widgetState?.fullScreen === false && widgetState?.video"
@@ -62,12 +70,14 @@
       <button>mute</button>
       <button (click)="hangup()">hangup</button>
     </div>
-
+-->
     <div id="vvc-messages"
          class="flex flex-auto flex-column p1"
          style="overflow-y: scroll">
 
-      <vvc-messages [messages]="messages"></vvc-messages>
+      <vvc-messages [messages]="messages"
+      (acceptOffer)="acceptIncomingRequest()"
+      (rejectOffer)="denyIncomingRequest()"></vvc-messages>
       <!--
       <div *ngFor="let m of messages" [ngSwitch]="m.type">
         <div *ngSwitchCase="'incoming-request'">

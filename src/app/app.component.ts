@@ -3,7 +3,7 @@ import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
 import {VvcWidgetState, AppState, VvcOffer, DataCollection} from './core/core.interfaces';
-import {DomSanitizer} from '@angular/platform-browser';
+
 
 
 @Component({
@@ -23,8 +23,7 @@ export class AppComponent implements OnInit {
   private messages: Array<any>;
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
-              private store: Store<AppState>,
-              private sanitizer: DomSanitizer) {
+              private store: Store<AppState>) {
     this.window = wref.nativeWindow;
     this.checkForVivocha();
 
@@ -119,7 +118,5 @@ export class AppComponent implements OnInit {
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});
     this.window.parent.postMessage('vvc-fullscreen-off', '*');
   }
-  trustedSrc(url) {
-    return this.sanitizer.bypassSecurityTrustUrl(url);
-  }
+
 }

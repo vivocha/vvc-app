@@ -1,4 +1,5 @@
 <div *ngFor="let m of messages" [ngSwitch]="m.type">
+  <!--
   <div *ngSwitchCase="'incoming-request'">
     Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
     <p>{{m.text}}</p>
@@ -13,6 +14,7 @@
       </div>
     </div>
   </div>
+  -->
   <div *ngSwitchCase="'dc'">
     <div *ngIf="!m.inline">
       Compila la data collection <button>compila</button>
@@ -28,7 +30,10 @@
   </div>
 -->
   <vvc-chat-message *ngSwitchCase="'chat'" [message]="m"></vvc-chat-message>
-
+  <vvc-incoming-message *ngSwitchCase="'incoming-request'"
+                        [message]="m"
+                        (rejectOffer)="rejectOffer.emit()"
+                        (acceptOffer)="acceptOffer.emit()"></vvc-incoming-message>
 
 </div>
 

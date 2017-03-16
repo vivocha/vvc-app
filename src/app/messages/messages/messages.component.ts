@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-messages',
@@ -9,6 +9,8 @@ import {Component, OnInit, Input, ChangeDetectionStrategy} from '@angular/core';
 export class MessagesComponent implements OnInit {
 
   @Input() messages;
+  @Output() rejectOffer = new EventEmitter();
+  @Output() acceptOffer = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

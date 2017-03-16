@@ -9,6 +9,7 @@ import {QueueModule} from './queue/queue.module';
 import {MessagesModule} from './messages/messages.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import {MediaModule} from './media/media.module';
 
 
 export function createTranslateLoader(http: Http) {
@@ -31,7 +32,8 @@ export function createTranslateLoader(http: Http) {
     HttpModule,
     CoreModule,
     QueueModule,
-    MessagesModule
+    MessagesModule,
+    MediaModule
   ],
   providers: [
 

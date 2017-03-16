@@ -1,0 +1,37 @@
+<div class="clearfix vvc-media-wrap pt1"
+     [ngClass]="{'video': state?.video, 'voice': !state?.video}">
+  <div class="vvc-video-wrap p1"
+       *ngIf="state?.fullScreen === false && state?.video">
+
+    <video class="big-video"
+           *ngIf="state?.video_rx"
+           [src]="trustedSrc(state.video_rx.url)"></video>
+
+    <video class="small-video"
+           *ngIf="state?.video_tx"
+           [src]="trustedSrc(state.video_tx.url)"></video>
+
+  </div>
+
+  <div class="vvc-tools-outer">
+    <div class="vvc-tools-wrap">
+      <button class="right hangup fs1 fw1"
+              (click)="hangup.emit()"><i class="vvc-hangup"></i> hangup</button>
+
+      <button class="left fs1 fw1 voice-only"><i class="vvc-mute"></i> mute</button>
+      <p class="voice-only call-timer center fs4 fw1">00:03:28</p>
+
+      <div class="tool-list pl1">
+        <span *ngIf="state?.video_tx"
+              (click)="remvideo.emit()"
+              class="fs1 fw1 px1"><i class="vvc-videooff"></i> video off</span>
+        <span *ngIf="!state?.video_tx"
+              (click)="addvideo.emit()"
+              class="fs1 fw1 px1"><i class="vvc-video"></i> video on</span>
+
+        <span class="fs1 fw1 px2 middle"><i class="vvc-expand"></i> expand</span>
+        <span class="fs1 fw1 px1"><i class="vvc-mute"></i> mute</span>
+      </div>
+    </div>
+  </div>
+</div>
