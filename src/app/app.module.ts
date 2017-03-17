@@ -6,10 +6,12 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-trans
 
 import {CoreModule} from './core/core.module';
 import {QueueModule} from './queue/queue.module';
-import {MessagesModule} from './messages/messages.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
-import {MediaModule} from './media/media.module';
+import {ChatMessageComponent} from './chat-message/chat-message.component';
+import {IncomingMessageComponent} from './incoming-message/incoming-message.component';
+import { VideoWrapperComponent } from './video-wrapper/video-wrapper.component';
+import { MediaToolsComponent } from './media-tools/media-tools.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -19,7 +21,11 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    TopbarComponent
+    TopbarComponent,
+    ChatMessageComponent,
+    IncomingMessageComponent,
+    VideoWrapperComponent,
+    MediaToolsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +37,7 @@ export function createTranslateLoader(http: Http) {
     FormsModule,
     HttpModule,
     CoreModule,
-    QueueModule,
-    MessagesModule,
-    MediaModule
+    QueueModule
   ],
   providers: [
 

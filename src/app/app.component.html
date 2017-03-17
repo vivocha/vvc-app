@@ -4,14 +4,18 @@
 
   <div id="vvc-full-enabled"
        *ngIf="widgetState?.fullScreen"
-       class="flex flex-auto flex-column"
-       style="background-color: yellow;">
-    <button (click)="setNormalScreen()">minimize</button>
-    <div *ngIf="widgetState?.video_rx">
-      <video [src]="trustedSrc(widgetState.video_rx.url)"></video>
-    </div>
-    <div *ngIf="widgetState?.video_tx">
-      <video style="border: 1px solid red" [src]="trustedSrc(widgetState.video_tx.url)"></video>
+       class="vvc-media-wrap flex flex-auto flex-column">
+
+    <div class="clearfix vvc-media-wrap pt1 video fullscreen-wrap">
+      <div class="fullscreen">
+        <div vvc-video-wrapper [state]="widgetState"></div>
+        <div vvc-media-tools [state]="widgetState"
+                         (hangup)="hangup()"
+                         (addvideo)="addLocalVideo()"
+                         (remvideo)="removeLocalVideo()"
+                         (maximize)="setFullScreen()"
+                         (minimize)="setNormalScreen()"></div>
+      </div>
     </div>
   </div>
 
@@ -40,44 +44,36 @@
                 [ngClass]="{'expanded':widgetState?.topBarExpanded}"
                 [state]="widgetState"></vvc-topbar>
 
-    <vvc-media id="vvc-media-tools"
-               class="flex flex-none"
-               *ngIf="widgetState?.voice"
-               [state]="widgetState"
-               (hangup)="hangup()"
-               (addvideo)="addLocalVideo()"
-               (remvideo)="removeLocalVideo()"></vvc-media>
-  <!--
-    <div id="vvc-video-wrap"
+    <div id="vvc-media-tools"
          class="flex flex-none"
-         *ngIf="widgetState?.fullScreen === false && widgetState?.video"
-         style="height: 280px; background-color: darkslategray">
-      <div *ngIf="widgetState?.video_rx">
-        <video style="height: 100px" [src]="trustedSrc(widgetState.video_rx.url)"></video>
-      </div>
-      <div *ngIf="widgetState?.video_tx">
-        <video style="height: 80px; border: 1px solid red" [src]="trustedSrc(widgetState.video_tx.url)"></video>
+         *ngIf="widgetState?.voice">
+      <div class="clearfix vvc-media-wrap"
+           [ngClass]="{'video': widgetState?.video, 'voice': !widgetState?.video}">
+
+        <div vvc-video-wrapper [state]="widgetState"
+                           *ngIf="widgetState?.fullScreen === false && widgetState?.video"></div>
+
+        <div vvc-media-tools [state]="widgetState"
+                         *ngIf="widgetState?.fullScreen === false"
+                         (hangup)="hangup()"
+                         (addvideo)="addLocalVideo()"
+                         (remvideo)="removeLocalVideo()"
+                         (maximize)="setFullScreen()"></div>
+
       </div>
     </div>
 
-    <div id="vvc-media-tools"
-         *ngIf="widgetState?.voice"
-         class="flex flex-none"
-         style="height: 80px; background-color: darkgoldenrod">
-      <button (click)="setFullScreen()">maximize</button>
-      <button *ngIf="widgetState?.video_tx" (click)="removeLocalVideo()">remove video</button>
-      <button *ngIf="!widgetState?.video_tx" (click)="addLocalVideo()">add video</button>
-      <button>mute</button>
-      <button (click)="hangup()">hangup</button>
-    </div>
--->
     <div id="vvc-messages"
          class="flex flex-auto flex-column p1"
          style="overflow-y: scroll">
+      <div *ngFor="let m of messages" [ngSwitch]="m.type">
+        <vvc-chat-message *ngSwitchCase="'chat'" [message]="m"></vvc-chat-message>
+        <vvc-incoming-message *ngSwitchCase="'incoming-request'"
+                              [message]="m"
+                              (rejectOffer)="denyIncomingRequest()"
+                              (acceptOffer)="acceptIncomingRequest()"></vvc-incoming-message>
+      </div>
 
-      <vvc-messages [messages]="messages"
-      (acceptOffer)="acceptIncomingRequest()"
-      (rejectOffer)="denyIncomingRequest()"></vvc-messages>
       <!--
       <div *ngFor="let m of messages" [ngSwitch]="m.type">
         <div *ngSwitchCase="'incoming-request'">
