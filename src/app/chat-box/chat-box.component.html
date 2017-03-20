@@ -1,0 +1,76 @@
+<div class="chat-box clearfix">
+
+  <div class="chat-tools-panels"
+        *ngIf="uploadPanel || emojiPanel"
+       [ngClass]="{'upload-selected':uploadPanel, 'emoji-selected':emojiPanel}">
+    <div class="emoji-panel panel">
+      emoji here
+    </div>
+    <div class="upload-panel panel">
+      <div class="table">
+        <div class="table-cell">
+          <i class="vvc-pic file-ph-pic fw1"></i>
+        </div>
+        <div class="table-cell align-middle">
+          <input type="text" class="file-descr fs1 fw1 border-box" value="" placeholder="Your message here">
+        </div>
+      </div>
+      <div class="table">
+        <div class="table-cell file-info">
+          <div class="file-name-info fs1 fw1">
+            <i class="vvc-remove remove"
+               *ngIf="uploadFile"
+               (click)="removeUpload()"></i> <span class="filename">&nbsp; {{uploadFile?.name}}</span>
+          </div>
+        </div>
+        <div class="table-cell upload-btn-wrap">
+          <label for="theFile" class="btn-primary fs2 fw1">Browse</label>
+        </div>
+      </div>
+      <div class="inner-panel center fs5 file-size-msg">
+        File Max Size - 10Mb
+      </div>
+      <div class="inner-panel center submit-wrap">
+        <button [disabled]="!uploadFile" class="btn-primary fs2 fw1"><i class="vvc-check"></i> Send</button>
+      </div>
+      <form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
+        <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
+      </form>
+    </div>
+  </div>
+
+  <textarea #chatInput
+            class="fs1 fw1"
+            placeholder="type here..."
+            (keyup.enter)="sendMessage(chatInput);"></textarea>
+
+  <div class="chat-tools right">
+    <div class="tool"
+         [ngClass]="{'selected':emojiPanel}"
+         (click)="toggleEmojiTool()">
+      <i class="vvc-smile fs4"></i>
+    </div>
+    <div class="tool"
+         [ngClass]="{'selected':uploadPanel}"
+         (click)="toggleUploadTool()">
+      <i class="vvc-clipboard fs4"></i>
+    </div>
+  </div>
+
+
+  <!--
+  <button (click)="sendChatMessage(chatBox.value)">send</button>
+          <hr>
+          upload form
+          <div class="uploader" *ngIf="uploadFile">
+            <div class="uploadedFile">
+              <span class="uploadName">{{uploadFile.name}}</span> <i (click)="removeUpload()" style="position: relative; top: 2px" class="right fa fa-trash-o">remove</i>
+            </div>
+          </div>
+          <form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
+            <textarea #fileBox placeholder="type file description here..."></textarea>
+            <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
+            <button [disabled]="!uploadFile?.name" (click)="sendAttachment(fileBox.value)">send</button>
+          </form>
+          -->
+</div>

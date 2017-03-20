@@ -12,6 +12,7 @@ import {ChatMessageComponent} from './chat-message/chat-message.component';
 import {IncomingMessageComponent} from './incoming-message/incoming-message.component';
 import { VideoWrapperComponent } from './video-wrapper/video-wrapper.component';
 import { MediaToolsComponent } from './media-tools/media-tools.component';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -25,7 +26,8 @@ export function createTranslateLoader(http: Http) {
     ChatMessageComponent,
     IncomingMessageComponent,
     VideoWrapperComponent,
-    MediaToolsComponent
+    MediaToolsComponent,
+    ChatBoxComponent
   ],
   imports: [
     BrowserModule,
