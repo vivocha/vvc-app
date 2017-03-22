@@ -42,7 +42,8 @@
     <vvc-topbar id="vvc-top-bar"
                 class="flex flex-none"
                 [ngClass]="{'expanded':widgetState?.topBarExpanded}"
-                [state]="widgetState"></vvc-topbar>
+                [state]="widgetState"
+                (close)="showCloseModal()"></vvc-topbar>
 
     <div id="vvc-media-tools"
          class="flex flex-none"
@@ -65,7 +66,7 @@
 
     <div id="vvc-messages"
          class="flex flex-auto flex-column p1"
-         style="overflow-y: scroll">
+         style="overflow-y: scroll" angular2-auto-scroll>
       <div *ngFor="let m of messages" [ngSwitch]="m.type">
         <vvc-chat-message *ngSwitchCase="'chat'" [message]="m"></vvc-chat-message>
         <vvc-incoming-message *ngSwitchCase="'incoming-request'"
@@ -108,33 +109,16 @@
       -->
     </div>
 
-    <!--
-    <div id="vvc-chat-area"
-         class="flex flex-none"
-         style="height: 120px;background-color: lightcoral">
-      <div *ngIf="widgetState?.chat">
-        <textarea #chatBox placeholder="type here..."></textarea>
-        <button (click)="sendChatMessage(chatBox.value)">send</button>
-
-        <hr>
-        upload form
-        <div class="uploader" *ngIf="uploadFile">
-          <div class="uploadedFile">
-            <span class="uploadName">{{uploadFile.name}}</span> <i (click)="removeUpload()" style="position: relative; top: 2px" class="right fa fa-trash-o">remove</i>
-          </div>
-        </div>
-        <form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
-          <textarea #fileBox placeholder="type file description here..."></textarea>
-          <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
-          <button [disabled]="!uploadFile?.name" (click)="sendAttachment(fileBox.value)">send</button>
-        </form>
-      </div>
-    </div>
-    -->
-
     <vvc-chat-box id="vvc-chat-area"
-                  class="flex flex-none px1"></vvc-chat-box>
+                  class="flex flex-none px1"
+                  (upload)="sendAttachment($event)"
+                  (message)="sendChatMessage($event)"></vvc-chat-box>
 
+    <vvc-close-modal id="vvc-close-modal"
+                     class="flex items-center"
+                     *ngIf="closeModal"
+                     (close)="closeContact()"
+                     (cancel)="dismissCloseModal()"></vvc-close-modal>
 
   </div>
 </div>

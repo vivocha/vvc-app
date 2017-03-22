@@ -1,48 +1,28 @@
 <div class="chat-box clearfix">
 
+  <div class="click-catch"
+       *ngIf="uploadPanel || emojiPanel"
+       (click)="closeAllPanels()"
+       style="position:fixed;top:0;right:0;bottom:0;left:0;background-color: transparent"></div>
+
+
   <div class="chat-tools-panels"
         *ngIf="uploadPanel || emojiPanel"
        [ngClass]="{'upload-selected':uploadPanel, 'emoji-selected':emojiPanel}">
     <div class="emoji-panel panel">
-      emoji here
+      <vvc-emoji-selector (emoji)="emoji.emit($event);chatInput.value=chatInput.value + $event +' '"></vvc-emoji-selector>
     </div>
     <div class="upload-panel panel">
-      <div class="table">
-        <div class="table-cell">
-          <i class="vvc-pic file-ph-pic fw1"></i>
-        </div>
-        <div class="table-cell align-middle">
-          <input type="text" class="file-descr fs1 fw1 border-box" value="" placeholder="Your message here">
-        </div>
-      </div>
-      <div class="table">
-        <div class="table-cell file-info">
-          <div class="file-name-info fs1 fw1">
-            <i class="vvc-remove remove"
-               *ngIf="uploadFile"
-               (click)="removeUpload()"></i> <span class="filename">&nbsp; {{uploadFile?.name}}</span>
-          </div>
-        </div>
-        <div class="table-cell upload-btn-wrap">
-          <label for="theFile" class="btn-primary fs2 fw1">Browse</label>
-        </div>
-      </div>
-      <div class="inner-panel center fs5 file-size-msg">
-        File Max Size - 10Mb
-      </div>
-      <div class="inner-panel center submit-wrap">
-        <button [disabled]="!uploadFile" class="btn-primary fs2 fw1"><i class="vvc-check"></i> Send</button>
-      </div>
-      <form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
-        <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
-      </form>
+      <vvc-file-uploader (upload)="upload.emit($event);toggleUploadTool();"></vvc-file-uploader>
     </div>
   </div>
 
   <textarea #chatInput
             class="fs1 fw1"
             placeholder="type here..."
-            (keyup.enter)="sendMessage(chatInput);"></textarea>
+            (keyup.enter)="sendMessage(chatInput);"
+            (keyup)="calcRows(chatInput)"
+            [rows]="textAreaRows"></textarea>
 
   <div class="chat-tools right">
     <div class="tool"

@@ -176,6 +176,14 @@ export class VvcContactService {
             }
         }
     }
+    clearIsWriting() {
+        clearTimeout(this.isWritingTimer);
+        this.dispatch({type: 'REM_IS_WRITING'});
+        this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
+    }
+    closeContact() {
+        this.contact.leave();
+    }
     createContact(conf) {
         this.dispatch({type: 'INITIAL_OFFER', payload: conf.initial_offer});
         this.vivocha.getContact(conf).then( contact => {
@@ -387,7 +395,7 @@ export class VvcContactService {
                 }
             });*/
             this.dispatch({type: 'NEW_MESSAGE', payload: {
-                text: meta.text,
+                text: meta.desc || meta.originalName,
                 type: 'chat',
                 isAgent: isAgent,
                 meta: meta,
@@ -402,13 +410,7 @@ export class VvcContactService {
         });
         this.contact.on('iswriting', (from_id, from_nick, agent) => {
             if (agent) {
-                clearTimeout(this.isWritingTimer);
-                this.dispatch({type: 'AGENT_IS_WRITING', payload: true });
-                this.dispatch({type: 'ADD_TEXT', payload: { type: 'AGENT-WRITING' }});
-                this.isWritingTimer = setTimeout( () => {
-                    this.dispatch({type: 'REM_TEXT', payload: { type: 'AGENT-WRITING' }});
-                    this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
-                }, this.isWritingTimeout);
+                this.setIsWriting();
             }
         });
         this.contact.on('joined', (c) => {
@@ -438,6 +440,7 @@ export class VvcContactService {
             // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
             this.dispatch({type: 'REDUCE_TOPBAR'});
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
+            this.clearIsWriting();
         });
         this.contact.on('transferred', (transferred_to) => {
             this.dispatch({type: 'ADD_TEXT', payload: {
@@ -538,14 +541,17 @@ export class VvcContactService {
     sendAttachment(msg) {
         const ref = new Date().getTime();
         this.contact.attach(msg.file, msg.text).then( () => {
-            this.dispatch({ type: 'REM_BY_REF', payload: ref });
+            this.dispatch({type: 'REM_MESSAGE', payload: {id: ref}});
         }, () => {
-            this.dispatch({ type: 'REM_BY_REF', payload: ref });
+            this.dispatch({type: 'REM_MESSAGE', payload: {id: ref}});
+            /*
             this.dispatch({ type: 'ADD_TEXT', payload: {
                 text: 'CHAT.FILE_TRANSFER_FAILED',
                 type: 'AGENT-INFO'
             } });
+            */
         });
+        /*
         this.dispatch({
             type: 'ADD_TEXT', payload: {
                 text: 'CHAT.FILE_TRANSFER',
@@ -553,9 +559,21 @@ export class VvcContactService {
                 ref: ref
             }
         });
+        */
+        this.dispatch({type: 'NEW_MESSAGE', payload: {id: ref, text: 'msg-uploading', state: 'uploading', type: 'chat', isAgent: false}});
     }
     sendText(text: string) {
         this.contact.sendText(text);
+    }
+    setIsWriting() {
+        clearTimeout(this.isWritingTimer);
+        this.dispatch({type: 'AGENT_IS_WRITING', payload: true });
+        this.dispatch({type: 'NEW_MESSAGE', payload: { type: 'chat', state: 'iswriting', isAgent: true}})
+        this.isWritingTimer = setTimeout( () => {
+            //this.dispatch({type: 'REM_TEXT', payload: { type: 'AGENT-WRITING' }});
+            this.dispatch({type: 'REM_IS_WRITING'});
+            this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
+        }, this.isWritingTimeout);
     }
     showDataCollection(dataId) {
         switch (dataId) {

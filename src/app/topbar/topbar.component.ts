@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
 import {VvcWidgetState} from '../core/core.interfaces';
 
 @Component({
@@ -10,6 +10,7 @@ import {VvcWidgetState} from '../core/core.interfaces';
 export class TopbarComponent implements OnInit {
 
   @Input() state: VvcWidgetState;
+  @Output() close = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

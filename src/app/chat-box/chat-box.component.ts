@@ -9,34 +9,44 @@ export class ChatBoxComponent implements OnInit {
 
   emojiPanel = false;
   uploadPanel = false;
+  textAreaRows = 1;
 
-  uploadFile: File;
-
-  @Output() action = new EventEmitter();
+  @Output() message = new EventEmitter();
+  @Output() upload = new EventEmitter();
+  @Output() emoji = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-  onUploading(evt) {
-    if (evt.srcElement.files[0]) {
-      this.uploadFile = evt.srcElement.files[0];
-    }
-  }
-  removeUpload() {
-    this.uploadFile = undefined;
+  closeAllPanels() {
+    this.emojiPanel = false;
+    this.uploadPanel = false;
   }
   sendMessage(textArea: HTMLTextAreaElement) {
     textArea.value = textArea.value.replace(/\n$/, '');
-    if (textArea.value === '' && this.uploadFile === undefined) return;
-    this.action.emit({ text: textArea.value, file: this.uploadFile });
-    textArea.value = '';
-    this.uploadFile = undefined;
+    if (textArea.value !== '') {
+      this.message.emit(textArea.value);
+      textArea.value = '';
+      this.textAreaRows = 1;
+    }
   }
   toggleEmojiTool() {
     return this.emojiPanel = !this.emojiPanel;
   }
   toggleUploadTool() {
     return this.uploadPanel = !this.uploadPanel;
+  }
+  calcRows(chatInput) {
+    const h = chatInput.scrollHeight;
+    if (h < 35) {
+      this.textAreaRows = 1;
+    }
+    if (h > 47) {
+      this.textAreaRows = 2;
+    }
+    if (h > 69) {
+      this.textAreaRows = 3;
+    }
   }
 
 }

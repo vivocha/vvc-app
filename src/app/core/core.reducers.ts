@@ -86,6 +86,7 @@ export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) 
             });
             return newArray;
         case 'NEW_MESSAGE':
+            const isWritingMessages = messageArray.filter( m => m.state === 'iswriting');
             const incomingMessages = messageArray.filter( m => m.type === 'incoming-request' && m.state !== 'closed');
             let chatMessages = [];
             if (incomingMessages.length > 0) {
@@ -96,7 +97,13 @@ export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) 
             if (payload.type === 'incoming-request') {
                 payload.oPos = chatMessages.length;
             }
-            return chatMessages.concat(payload);
+            return chatMessages
+                        .filter (m => m.state !== 'iswriting')
+                        .concat(payload, isWritingMessages);
+        case 'REM_MESSAGE':
+            return messageArray.filter( m => m.id !== payload.id);
+        case 'REM_IS_WRITING':
+            return messageArray.filter( m => m.state !== 'iswriting');
         default: return messageArray;
     }
 };

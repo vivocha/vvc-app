@@ -17,7 +17,9 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang: string;
   private type = 'chat';
-  private uploadFile;
+
+  private closeModal = false;
+
   private selectedDataCollection: DataCollection;
   private widgetState: VvcWidgetState;
   private messages: Array<any>;
@@ -54,6 +56,9 @@ export class AppComponent implements OnInit {
       setTimeout( () => this.checkForVivocha(), 500);
     }
   }
+  closeContact() {
+    this.cserv.closeContact();
+  }
   compileDataCollection(dc: DataCollection) {
     console.log('DC', dc);
     this.selectedDataCollection = dc;
@@ -65,6 +70,9 @@ export class AppComponent implements OnInit {
   }
   denyIncomingRequest() {
     this.cserv.denyOffer();
+  }
+  dismissCloseModal() {
+    this.closeModal = false;
   }
   getInitialOffer(): VvcOffer {
     switch (this.type) {
@@ -79,11 +87,6 @@ export class AppComponent implements OnInit {
   hideDataCollectionPanel() {
     this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
   }
-  onUploading(evt) {
-    if (evt.srcElement.files[0]) {
-      this.uploadFile = evt.srcElement.files[0];
-    }
-  }
   parseIframeUrl() {
     const hash = this.window.location.hash;
     if (hash.indexOf(';') !== -1) {
@@ -97,12 +100,10 @@ export class AppComponent implements OnInit {
   removeLocalVideo() {
     this.cserv.removeLocalVideo();
   }
-  removeUpload() {
-    this.uploadFile = undefined;
-  }
-  sendAttachment(descr) {
-    if (this.uploadFile) {
-      this.cserv.sendAttachment({ file: this.uploadFile, text: descr});
+  sendAttachment(evt) {
+    console.log('sending attachment', evt.text, evt.file);
+    if (evt.file) {
+      this.cserv.sendAttachment({ file: evt.file, text: evt.text});
     }
   }
   sendChatMessage(text) {
@@ -117,6 +118,9 @@ export class AppComponent implements OnInit {
   setNormalScreen() {
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});
     this.window.parent.postMessage('vvc-fullscreen-off', '*');
+  }
+  showCloseModal() {
+    this.closeModal = true;
   }
 
 }

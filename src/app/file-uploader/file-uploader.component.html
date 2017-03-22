@@ -1,0 +1,31 @@
+<div class="table">
+  <div class="table-cell">
+    <i class="vvc-pic file-ph-pic fw1"></i>
+  </div>
+  <div class="table-cell align-middle">
+    <input #fileDescr type="text" class="file-descr fs1 fw1 border-box" value="" placeholder="Your message here">
+  </div>
+</div>
+<div class="table">
+  <div class="table-cell file-info">
+    <div class="file-name-info fs1 fw1">
+      <i class="vvc-remove remove"
+         *ngIf="uploadFile"
+         (click)="removeUpload()"></i> <span class="filename">&nbsp; {{uploadFile?.name || 'select a file to upload'}}</span>
+    </div>
+  </div>
+  <div class="table-cell upload-btn-wrap">
+    <label for="theFile" class="btn-primary fs2 fw1">Browse</label>
+  </div>
+</div>
+<div class="inner-panel center fs5 file-size-msg">
+  File Max Size - 10Mb
+</div>
+<div class="inner-panel center submit-wrap">
+  <button [disabled]="!uploadFile"
+          (click)="doUpload(fileDescr)"
+          class="btn-primary fs2 fw1"><i class="vvc-check"></i> Send</button>
+</div>
+<form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
+  <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
+</form>

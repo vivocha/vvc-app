@@ -1,8 +1,22 @@
-<div class="clearfix pt1" [ngClass]="{ 'customer-msg' : !message.isAgent, 'agent-msg': message.isAgent }">
-  <div *ngIf="!message.isAgent" class="col col-1 center">&nbsp;<i style="position:relative;top:30%" class="vvc-not-send"></i></div>
+<div class="clearfix pt1"
+     [@ease]="state"
+     [ngClass]="{ 'customer-msg' : !message.isAgent, 'agent-msg': message.isAgent, 'uploading': message.state === 'uploading' }">
+  <div *ngIf="!message.isAgent" class="col col-1 center">&nbsp;
+    <i style="position:relative;top:30%" class="vvc-not-send"></i>
+  </div>
   <div class="col col-11">
-    <span class="msg-content p1 radius fw1 fs1"
-          [ngClass]="{ 'right' : !message.isAgent, 'left': message.isAgent }">{{message.text}}</span>
+
+    <span *ngIf="message?.state !== 'iswriting'" class="msg-content p1 radius fw1 fs1"
+          [ngClass]="{ 'right' : !message.isAgent, 'left': message.isAgent }">
+      <img *ngIf="message.url" [src]="message.url">
+      <i *ngIf="message.state === 'uploading'" style="display:inline-block" class="spin vvc-refresh"></i> {{message.text}}
+    </span>
+
+    <span *ngIf="message.state === 'iswriting'" class="msg-content p1 radius fw1 fs1 left">
+      <span class="bubble bubble-one"></span>
+      <span class="bubble bubble-two"></span>
+      <span class="bubble bubble-three"></span>
+    </span>
   </div>
   <div *ngIf="message.isAgent" class="col col-1">&nbsp;</div>
 </div>
