@@ -194,6 +194,13 @@ export class VvcContactService {
     }
     denyOffer() {
         this.mediaCallback('error', {});
+        this.dispatch({
+            type: 'REM_MESSAGE',
+            payload: {
+                id: this.incomingId
+
+            }
+        });
     }
     /*
     diffOffer(currentOffer, incomingOffer, flat?) {
@@ -253,43 +260,58 @@ export class VvcContactService {
                           newMedia['Voice']['data']['rx_stream']);
         if (!this.widgetState.voice && hasVoice && !hasVideo) {
             console.log('dispatch voice connection');
+            this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId }});
             this.dispatch({
-                type: 'UPDATE_MESSAGE',
+                type: 'NEW_MESSAGE',
                 payload: {
-                    id: this.incomingId,
+                    id: new Date().getTime(),
+                    type: 'incoming-request',
+                    media: 'VOICE',
                     state: 'closed',
-                    text: 'connected'
+                    text: 'MESSAGES.VOICE_STARTED'
                 }
             });
         }
         if (!this.widgetState.video && !this.widgetState.voice && hasVideo) {
             console.log('dispatch video connection');
+            this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId }});
             this.dispatch({
-                type: 'UPDATE_MESSAGE',
+                type: 'NEW_MESSAGE',
                 payload: {
-                    id: this.incomingId,
-                    media: 'video',
+                    id: new Date().getTime(),
+                    type: 'incoming-request',
+                    media: 'VIDEO',
                     state: 'closed',
-                    text: 'connected'
+                    text: 'MESSAGES.VIDEO_STARTED'
                 }
             });
             console.log('dispatch video connection 2');
         }
-        if (this.widgetState.voice && !hasVoice) {
+        if (this.widgetState.voice && !hasVoice && !this.widgetState.video) {
             console.log('dispatch voice disconnection');
             this.dispatch({
                 type: 'NEW_MESSAGE',
                 payload: {
                     id: new Date().getTime(),
-                    media: 'voice',
+                    media: 'VOICE',
                     state: 'closed',
                     type: 'incoming-request',
-                    text: 'disconnected'
+                    text: 'MESSAGES.VOICE_ENDED'
                 }
             });
         }
         if (this.widgetState.video && !hasVideo) {
             console.log('dispatch video disconnection');
+            this.dispatch({
+                type: 'NEW_MESSAGE',
+                payload: {
+                    id: new Date().getTime(),
+                    media: 'VIDEO',
+                    state: 'closed',
+                    type: 'incoming-request',
+                    text: 'MESSAGES.VIDEO_ENDED'
+                }
+            });
         }
     }
     downgrade(media) {
@@ -365,10 +387,10 @@ export class VvcContactService {
             }
         }
         if (resp.offer['Voice']) {
-            resp.media = 'voice';
+            resp.media = 'VOICE';
         }
         if (resp.offer['Video']) {
-            resp.media = 'video';
+            resp.media = 'VIDEO';
         }
         return resp;
     }
@@ -381,19 +403,6 @@ export class VvcContactService {
         });
         this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
             const attachment = {url, meta, fromId, fromNick, isAgent};
-            /*
-            this.dispatch({
-                type: 'ADD_TEXT',
-                payload: {
-                    text: meta.desc,
-                    agent: isAgent ? Object.assign({}, this.agentInfo) : {},
-                    type: isAgent ? 'AGENT-ATTACHMENT' : 'CUSTOMER-ATTACHMENT',
-                    meta: meta,
-                    url: (meta.originalUrl) ? meta.originalUrl : url,
-                    from_nick: fromNick,
-                    from_id: fromId
-                }
-            });*/
             this.dispatch({type: 'NEW_MESSAGE', payload: {
                 text: meta.desc || meta.originalName,
                 type: 'chat',
@@ -522,8 +531,8 @@ export class VvcContactService {
                     id: this.incomingId,
                     media: confirmation.media,
                     state: 'open',
-                    text: 'media-requesting',
-                    type: 'incoming-request'
+                    type: 'incoming-request',
+                    text: 'MESSAGES.' + confirmation.media + '_REQUEST'
                 }
             });
         } else {
@@ -551,16 +560,7 @@ export class VvcContactService {
             } });
             */
         });
-        /*
-        this.dispatch({
-            type: 'ADD_TEXT', payload: {
-                text: 'CHAT.FILE_TRANSFER',
-                type: 'AGENT-INFO',
-                ref: ref
-            }
-        });
-        */
-        this.dispatch({type: 'NEW_MESSAGE', payload: {id: ref, text: 'msg-uploading', state: 'uploading', type: 'chat', isAgent: false}});
+        this.dispatch({type: 'NEW_MESSAGE', payload: {id: ref, state: 'uploading', type: 'chat', isAgent: false}});
     }
     sendText(text: string) {
         this.contact.sendText(text);

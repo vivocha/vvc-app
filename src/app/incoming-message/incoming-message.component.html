@@ -17,29 +17,36 @@
 <div class="incoming-msg open clearfix mt1" *ngIf="message.state==='open'">
   <div class="inc-msg-header bg-colored">
     <div class="inc-type">
-      <i *ngIf="message.media === 'voice'" class="inc-type-icon vvc-phone"></i>
-      <i *ngIf="message.media === 'video'" class="inc-type-icon vvc-video"></i>
+      <i *ngIf="message.media === 'VOICE'" class="inc-type-icon vvc-phone"></i>
+      <i *ngIf="message.media === 'VIDEO'" class="inc-type-icon vvc-video"></i>
     </div>
     <div class="center italic fs3 fw1">
-      {{message.media}} call request
+      {{ message.text | translate }}
     </div>
   </div>
   <div class="inc-msg-content center p2">
-    <button class="mr1 btn-cancel fs1 fw1" (click)="rejectOffer.emit()"><i class="vvc-close"></i> Decline</button>
-    <button class="btn-primary fs1 fw1" *ngIf="message.media === 'video'"><i class="vvc-phone"></i> Voice only</button>
-    <button class="ml1 btn-primary fs1 fw1" (click)="acceptOffer.emit()"><i class="vvc-check"></i> Accept</button>
+    <button class="mr1 btn-cancel fs1 fw1" (click)="rejectOffer.emit()">
+      <i class="vvc-close"></i> {{ 'MESSAGES.DECLINE' | translate }}
+    </button>
+    <button class="btn-primary fs1 fw1" *ngIf="message.media === 'VIDEO'">
+      <i class="vvc-phone"></i> {{ 'MESSAGES.VOICE_ONLY' | translate }}
+    </button>
+    <button class="ml1 btn-primary fs1 fw1" (click)="acceptOffer.emit()">
+      <i class="vvc-check"></i> {{ 'MESSAGES.ACCEPT' | translate }}
+    </button>
   </div>
 </div>
 <div class="incoming-msg clearfix mt1 bg-colored"
      [ngClass]="{'loading': message.state === 'loading', 'closed': message.state === 'closed'}"
      *ngIf="message.state!=='open'" >
   <div class="inc-type">
-    <i *ngIf="message.media === 'voice'" class="inc-type-icon vvc-phone"></i>
-    <i *ngIf="message.media === 'video'" class="inc-type-icon vvc-video"></i>
+    <i *ngIf="message.media === 'VOICE'" class="inc-type-icon vvc-phone"></i>
+    <i *ngIf="message.media === 'VIDEO'" class="inc-type-icon vvc-video"></i>
   </div>
   <div class="loading-wrapper" *ngIf="message.state === 'loading'">
     <div class="loader"></div>
   </div>
-  <div class="msg-content center fs2 fw1 italic" *ngIf="message.state === 'closed'">
-    {{message.text}}</div>
+  <div class="msg-content center fs2 fw1 italic" *ngIf="message.state === 'closed'" title="{{message.text}}">
+    {{ message.text | translate }}
+  </div>
 </div>

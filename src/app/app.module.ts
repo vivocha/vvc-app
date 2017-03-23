@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HttpModule, Http} from '@angular/http';
-import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {CoreModule} from './core/core.module';
-import {QueueModule} from './queue/queue.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import {ChatMessageComponent} from './chat-message/chat-message.component';
@@ -17,15 +17,17 @@ import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { EmojiSelectorComponent } from './emoji-selector/emoji-selector.component';
 import {Angular2AutoScroll} from './autoscroll.directive';
 import { CloseModalComponent } from './close-modal/close-modal.component';
+import {QueueComponent} from './queue/queue.component';
 
 
 export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, '/WidgetTranslations/xl8', '.json');
+  return new TranslateHttpLoader(http, '/WidgetTranslations/xl8/', '.json');
 }
 
 @NgModule({
   declarations: [
     AppComponent,
+    QueueComponent,
     TopbarComponent,
     ChatMessageComponent,
     IncomingMessageComponent,
@@ -40,14 +42,15 @@ export function createTranslateLoader(http: Http) {
   imports: [
     BrowserModule,
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
     }),
     FormsModule,
     HttpModule,
-    CoreModule,
-    QueueModule
+    CoreModule
   ],
   providers: [
 

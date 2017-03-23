@@ -3,6 +3,8 @@ import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
 import {VvcWidgetState, AppState, VvcOffer, DataCollection} from './core/core.interfaces';
+import {TranslateService} from '@ngx-translate/core';
+
 
 
 
@@ -15,7 +17,7 @@ export class AppComponent implements OnInit {
 
   private window;
   private servId: string;
-  private lang: string;
+  private lang = 'en';
   private type = 'chat';
 
   private closeModal = false;
@@ -25,7 +27,8 @@ export class AppComponent implements OnInit {
   private messages: Array<any>;
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
-              private store: Store<AppState>) {
+              private store: Store<AppState>,
+              private translate: TranslateService) {
     this.window = wref.nativeWindow;
     this.checkForVivocha();
 
@@ -95,6 +98,9 @@ export class AppComponent implements OnInit {
       this.lang = hashParts[1].split('=')[1];
       this.type = hashParts[2].split('=')[1];
       console.log('type', this.type);
+      this.translate.getTranslation( this.lang );
+      this.translate.setDefaultLang('en');
+      this.translate.use(this.lang);
     }
   }
   removeLocalVideo() {

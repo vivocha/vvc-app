@@ -13,14 +13,14 @@
   </div>
   <div class="row welcome-msg">
     <div class="col col-12 center fs4 fw1" style="color: white;">
-      <span class="italic">Welcome<br>you are talking with</span><br>
+      <span class="italic" [innerHTML]="'TOPBAR.WELCOME' | translate"></span><br>
       <span class="fw3">{{ getAgentName() }}</span>
     </div>
   </div>
   <div class="row info-msg">
     <div class="col col-12 center fs1 fw1" style="color: white;">
       <span *ngIf="!state.isAgentWriting" class="fw1">{{ getAgentName() }}</span>
-      <span *ngIf="state.isAgentWriting" class="fw1 italic"><i class="vvc-chat"></i> {{ getAgentName() }} is writing...</span>
+      <span *ngIf="state.isAgentWriting" class="fw1 italic"><i class="vvc-chat"></i> <span>{{ 'TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span></span>
     </div>
   </div>
 </div>

@@ -2,11 +2,11 @@
   <div class="incoming-msg open clearfix mt1">
     <div class="inc-msg-header bg-colored">
       <div class="inc-type"><i class="inc-type-icon vvc-sign-out"></i></div>
-      <div class="center italic fs3 fw1">Do you really want to quit?</div>
+      <div class="center italic fs3 fw1">{{ 'CLOSEMODAL.CLOSE_MESSAGE' | translate }}</div>
     </div>
     <div class="inc-msg-content center p2">
-      <button (click)="cancel.emit()" class="mr1 btn-cancel fs1 fw1">No</button>
-      <button (click)="close.emit()" class="ml1 btn-primary fs1 fw1">Yes</button>
+      <button (click)="cancel.emit()" class="mr1 btn-cancel fs1 fw1">{{ 'CLOSEMODAL.NO' | translate }}</button>
+      <button (click)="close.emit()" class="ml1 btn-primary fs1 fw1">{{ 'CLOSEMODAL.YES' | translate }}</button>
     </div>
   </div>
 </div>

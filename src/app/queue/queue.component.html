@@ -7,8 +7,8 @@
       <div class="col col-4 right-align pr2 pt2"><i style="color: white" class="vvc-close fs4"></i></div>
     </div>
     <div class="row">
-      <div class="col col-12 center pt3 fs4 fw1" style="color: white;">
-        Welcome<br>to Vivocha’s customer service
+      <div class="col col-12 center pt3 fs4 fw1" style="color: white;" [innerHTML]="'QUEUE.WELCOME' | translate">
+
       </div>
     </div>
   </div>
@@ -28,9 +28,8 @@
 
 <div class="flex flex-none bottom-box">
   <div class="clearfix card" style="width: 100%;">
-    <div class="border-box center p2 fs3">
-      Just a moment,<br>
-      we are connecting you with the first available agent.
+    <div class="border-box center p2 fs3" [innerHTML]="'QUEUE.INFO' | translate">
+
     </div>
   </div>
 </div>

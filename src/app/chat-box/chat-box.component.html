@@ -19,7 +19,7 @@
 
   <textarea #chatInput
             class="fs1 fw1"
-            placeholder="type here..."
+            placeholder="{{ 'CHAT.TEXTAREA_PLACEHOLDER' | translate }}"
             (keyup.enter)="sendMessage(chatInput);"
             (keyup)="calcRows(chatInput)"
             [rows]="textAreaRows"></textarea>
@@ -37,20 +37,4 @@
     </div>
   </div>
 
-
-  <!--
-  <button (click)="sendChatMessage(chatBox.value)">send</button>
-          <hr>
-          upload form
-          <div class="uploader" *ngIf="uploadFile">
-            <div class="uploadedFile">
-              <span class="uploadName">{{uploadFile.name}}</span> <i (click)="removeUpload()" style="position: relative; top: 2px" class="right fa fa-trash-o">remove</i>
-            </div>
-          </div>
-          <form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
-            <textarea #fileBox placeholder="type file description here..."></textarea>
-            <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
-            <button [disabled]="!uploadFile?.name" (click)="sendAttachment(fileBox.value)">send</button>
-          </form>
-          -->
 </div>

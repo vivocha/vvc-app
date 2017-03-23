@@ -1,25 +1,25 @@
 <div class="vvc-tools-outer">
   <div class="vvc-tools-wrap">
     <button class="right hangup fs1 fw1"
-            (click)="hangup.emit()"><i class="vvc-hangup"></i> hangup</button>
+            (click)="hangup.emit()"><i class="vvc-hangup"></i> {{ 'MEDIATOOLS.HANGUP' | translate }}</button>
 
-    <button class="left fs1 fw1 voice-only"><i class="vvc-mute"></i> mute</button>
-    <p class="voice-only call-timer center fs4 fw1">00:03:28</p>
+    <button class="left fs1 fw1 voice-only"><i class="vvc-mute"></i> {{ 'MEDIATOOLS.MUTE' | translate }}</button>
+    <p class="voice-only call-timer center fs4 fw1">{{callTime}}</p>
 
     <div class="tool-list pl1">
         <span *ngIf="state?.video_tx"
               (click)="remvideo.emit()"
-              class="fs1 fw1 px1"><i class="vvc-videooff"></i> video off</span>
+              class="fs1 fw1 px1"><i class="vvc-videooff"></i> {{ 'MEDIATOOLS.VIDEO_OFF' | translate }}</span>
       <span *ngIf="!state?.video_tx"
             (click)="addvideo.emit()"
-            class="fs1 fw1 px1"><i class="vvc-video"></i> video on</span>
+            class="fs1 fw1 px1"><i class="vvc-video"></i> {{ 'MEDIATOOLS.VIDEO_ON' | translate }}</span>
 
       <span *ngIf="!state?.fullScreen"
-            (click)="maximize.emit()" class="fs1 fw1 px2 middle"><i class="vvc-expand"></i> expand</span>
+            (click)="maximize.emit()" class="fs1 fw1 px2 middle"><i class="vvc-expand"></i> {{ 'MEDIATOOLS.EXPAND' | translate }}</span>
       <span *ngIf="state?.fullScreen"
-            (click)="minimize.emit()" class="fs1 fw1 px2 middle"><i class="vvc-minimize"></i> minimize</span>
+            (click)="minimize.emit()" class="fs1 fw1 px2 middle"><i class="vvc-minimize"></i> {{ 'MEDIATOOLS.MINIMIZE' | translate }}</span>
 
-      <span class="fs1 fw1 px1"><i class="vvc-mute"></i> mute</span>
+      <span class="fs1 fw1 px1"><i class="vvc-mute"></i> {{ 'MEDIATOOLS.MUTE' | translate }}</span>
     </div>
   </div>
 </div>
