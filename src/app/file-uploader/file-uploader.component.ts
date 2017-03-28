@@ -2,8 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-file-uploader',
-  templateUrl: './file-uploader.component.html',
-  styleUrls: ['./file-uploader.component.scss']
+  templateUrl: './file-uploader.component.html'
 })
 export class FileUploaderComponent implements OnInit {
   uploadFile: File;

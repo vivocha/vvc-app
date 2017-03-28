@@ -2,8 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-chat-box',
-  templateUrl: './chat-box.component.html',
-  styleUrls: ['./chat-box.component.scss']
+  templateUrl: './chat-box.component.html'
 })
 export class ChatBoxComponent implements OnInit {
 
@@ -31,20 +30,23 @@ export class ChatBoxComponent implements OnInit {
     }
   }
   toggleEmojiTool() {
+    this.uploadPanel = false;
     return this.emojiPanel = !this.emojiPanel;
   }
   toggleUploadTool() {
+    this.emojiPanel = false;
     return this.uploadPanel = !this.uploadPanel;
   }
   calcRows(chatInput) {
+    /** TODO: find a better solution **/
     const h = chatInput.scrollHeight;
-    if (h < 35) {
+    if (h < 18) {
       this.textAreaRows = 1;
     }
-    if (h > 47) {
+    if (h > 37) {
       this.textAreaRows = 2;
     }
-    if (h > 69) {
+    if (h > 57) {
       this.textAreaRows = 3;
     }
   }

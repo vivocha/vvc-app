@@ -2,8 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-incoming-message',
-  templateUrl: './incoming-message.component.html',
-  styleUrls: ['./incoming-message.component.scss']
+  templateUrl: './incoming-message.component.html'
 })
 export class IncomingMessageComponent implements OnInit {
 

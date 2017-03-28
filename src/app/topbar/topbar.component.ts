@@ -4,7 +4,6 @@ import {VvcWidgetState} from '../core/core.interfaces';
 @Component({
   selector: 'vvc-topbar',
   templateUrl: './topbar.component.html',
-  styleUrls: ['./topbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopbarComponent implements OnInit {

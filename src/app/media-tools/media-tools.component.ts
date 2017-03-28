@@ -19,7 +19,6 @@ export class MediaToolsComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
-    console.log('media tool init');
     let localTime = 0;
     this.callInterval = setInterval(() => {
       localTime++;
@@ -29,7 +28,6 @@ export class MediaToolsComponent implements OnInit, OnDestroy {
     }, 1000);
   }
   ngOnDestroy() {
-    console.log('destroying media tools, should stop the timer');
     clearInterval(this.callInterval);
   }
 

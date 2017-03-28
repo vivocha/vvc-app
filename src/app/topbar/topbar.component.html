@@ -1,26 +1,25 @@
-<div class="clearfix" style="width:100%">
-  <div class="row">
-    <div class="col col-4 pl2 pt2">
-      <i style="color: white" class="vvc-phone fs4"></i>
-      <i style="color: white" class="ml1 vvc-video fs4"></i>
-    </div>
-    <div class="col col-4 center avatar-box" >
-      <img class='agent-img circle' [src]="getAvatar()"></div>
-    <div class="col col-4 right-align pr2 pt2">
-      <i style="color: white" class="mr1 vvc-minimize fs4"></i>
-      <i (click)="close.emit()" style="color: white" class="vvc-close fs4"></i>
-    </div>
+<div class="top-row">
+  <div class="media-tools">
+    <i class="vvc-phone"></i>
+    <i class="vvc-video"></i>
   </div>
-  <div class="row welcome-msg">
-    <div class="col col-12 center fs4 fw1" style="color: white;">
-      <span class="italic" [innerHTML]="'TOPBAR.WELCOME' | translate"></span><br>
-      <span class="fw3">{{ getAgentName() }}</span>
-    </div>
+  <div class="avatar-place">
+    <img class='agent-img' [src]="getAvatar()">
   </div>
-  <div class="row info-msg">
-    <div class="col col-12 center fs1 fw1" style="color: white;">
-      <span *ngIf="!state.isAgentWriting" class="fw1">{{ getAgentName() }}</span>
-      <span *ngIf="state.isAgentWriting" class="fw1 italic"><i class="vvc-chat"></i> <span>{{ 'TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span></span>
-    </div>
+  <div class="secondary-tools">
+    <i class="vvc-minimize"></i>
+    <i class="vvc-close" (click)="close.emit()"></i>
   </div>
+</div>
+
+<div class="welcome-msg">
+  <div class="msg-content">
+    <span class="msg" [innerHTML]="'TOPBAR.WELCOME' | translate">Welcome<br>you are talking with</span><br>
+    <span class="agent-name">{{ getAgentName() }}</span>
+  </div>
+</div>
+
+<div class="info-msg">
+  <span class="agent-name" *ngIf="!state.isAgentWriting">{{ getAgentName() }}</span>
+  <span class="msg" *ngIf="state.isAgentWriting"><i class="vvc-chat"></i> {{ 'TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span>
 </div>

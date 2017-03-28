@@ -3,7 +3,6 @@ import {Component, OnInit, Input, trigger, state, style, transition, animate} fr
 @Component({
   selector: 'vvc-chat-message',
   templateUrl: './chat-message.component.html',
-  styleUrls: ['./chat-message.component.scss'],
   animations: [
     trigger('ease', [
       state('inactive', style({

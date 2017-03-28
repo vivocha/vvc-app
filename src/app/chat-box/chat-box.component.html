@@ -1,13 +1,11 @@
-<div class="chat-box clearfix">
+<div class="chat-box">
 
   <div class="click-catch"
        *ngIf="uploadPanel || emojiPanel"
-       (click)="closeAllPanels()"
-       style="position:fixed;top:0;right:0;bottom:0;left:0;background-color: transparent"></div>
-
+       (click)="closeAllPanels()"></div>
 
   <div class="chat-tools-panels"
-        *ngIf="uploadPanel || emojiPanel"
+       *ngIf="uploadPanel || emojiPanel"
        [ngClass]="{'upload-selected':uploadPanel, 'emoji-selected':emojiPanel}">
     <div class="emoji-panel panel">
       <vvc-emoji-selector (emoji)="emoji.emit($event);chatInput.value=chatInput.value + $event +' '"></vvc-emoji-selector>
@@ -18,22 +16,21 @@
   </div>
 
   <textarea #chatInput
-            class="fs1 fw1"
             placeholder="{{ 'CHAT.TEXTAREA_PLACEHOLDER' | translate }}"
             (keyup.enter)="sendMessage(chatInput);"
             (keyup)="calcRows(chatInput)"
             [rows]="textAreaRows"></textarea>
 
-  <div class="chat-tools right">
+  <div class="chat-tools">
     <div class="tool"
          [ngClass]="{'selected':emojiPanel}"
          (click)="toggleEmojiTool()">
-      <i class="vvc-smile fs4"></i>
+      <i class="vvc-smile"></i>
     </div>
     <div class="tool"
          [ngClass]="{'selected':uploadPanel}"
          (click)="toggleUploadTool()">
-      <i class="vvc-clipboard fs4"></i>
+      <i class="vvc-clipboard"></i>
     </div>
   </div>
 

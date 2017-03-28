@@ -1,27 +1,39 @@
-<div class="clearfix pt1"
-     [@ease]="state"
-     [ngClass]="{ 'customer-msg' : !message.isAgent, 'agent-msg': message.isAgent, 'uploading': message.state === 'uploading' }">
-  <div *ngIf="!message.isAgent" class="col col-1 center">&nbsp;
-    <i style="position:relative;top:30%" class="vvc-not-send"></i>
-  </div>
-  <div class="col col-11">
+<div *ngIf="message.isAgent" class="agent-msg">
+  <span class="msg-content" *ngIf="message.state === 'iswriting'">
+    <span class="bubble bubble-one"></span>
+    <span class="bubble bubble-two"></span>
+    <span class="bubble bubble-three"></span>
+  </span>
 
-    <span *ngIf="message?.state !== 'iswriting'" class="msg-content p1 radius fw1 fs1"
-          [ngClass]="{ 'right' : !message.isAgent, 'left': message.isAgent }">
-      <img *ngIf="message.url" [src]="message.url">
+  <span class="msg-content" *ngIf="message.url">
+    <span class="the-image"><img [src]="message.url"></span>
+    <span class="download">Dowload <i class="vvc-download"></i></span>
+    <span class="the-message">The really long descriprion goes here and maybe is very long</span>
+  </span>
 
-      <span *ngIf="message.state === 'uploading'">
-        <i *ngIf="message.state === 'uploading'" style="display:inline-block" class="spin vvc-refresh"></i> {{ 'MESSAGES.FILE_SENDING' | translate }}
-      </span>
+  <span class="msg-content" *ngIf="message.state !== 'iswriting' && !message.url">
+    {{message.text}}
+  </span>
 
-      <span *ngIf="message.state !== 'uploading'">{{message.text}}</span>
+</div>
+
+<div *ngIf="!message.isAgent" class="customer-msg">
+
+  <span class="msg-content" *ngIf="message.url">
+    <span class="the-image"><img [src]="message.url"></span>
+    <span class="download">Dowload <i class="vvc-download"></i></span>
+    <span class="the-message">The really long descriprion goes here and maybe is very long</span>
+  </span>
+
+  <span *ngIf="message.state === 'uploading'">
+    <span class="msg-content">
+      {{ 'MESSAGES.FILE_SENDING' | translate }}
     </span>
+    <span class="file-uploading spin"><i class="vvc-refresh spin"></i></span>
+  </span>
 
-    <span *ngIf="message.state === 'iswriting'" class="msg-content p1 radius fw1 fs1 left">
-      <span class="bubble bubble-one"></span>
-      <span class="bubble bubble-two"></span>
-      <span class="bubble bubble-three"></span>
-    </span>
-  </div>
-  <div *ngIf="message.isAgent" class="col col-1">&nbsp;</div>
+
+  <span class="msg-content" *ngIf="message.state !== 'uploading' && !message.url">
+    {{message.text}}
+  </span>
 </div>

@@ -1,0 +1,124 @@
+<div id="vvc-container"
+     class="flex"
+     style="position: absolute; top:0; bottom:0; left:0; right: 0">
+
+  <div id="vvc-full-enabled"
+       *ngIf="widgetState?.fullScreen"
+       class="vvc-media-wrap flex flex-auto flex-column">
+
+    <div class="clearfix vvc-media-wrap pt1 video fullscreen-wrap">
+      <div class="fullscreen">
+        <div vvc-video-wrapper [state]="widgetState"></div>
+        <div vvc-media-tools [state]="widgetState"
+                         (hangup)="hangup()"
+                         (addvideo)="addLocalVideo()"
+                         (remvideo)="removeLocalVideo()"
+                         (maximize)="setFullScreen()"
+                         (minimize)="setNormalScreen()"></div>
+      </div>
+    </div>
+  </div>
+
+  <vvc-queue id="vvc-queue"
+             *ngIf="widgetState?.loading"
+             class="flex flex-none flex-column full primary-bg"
+             [type]="type"></vvc-queue>
+
+  <div id="data-collection"
+  *ngIf="widgetState?.dataCollectionPanel"
+  class="flex flex-none flex-column"
+  style="width: 370px; background-color: teal">
+    {{ selectedDataCollection | json }}
+    <p>
+      <button (click)="hideDataCollectionPanel()"></button>
+    </p>
+  </div>
+
+  <div id="vvc-widget-wrap"
+       *ngIf="!widgetState?.loading && !widgetState?.dataCollectionPanel"
+       class="flex flex-none flex-column"
+       style="width: 370px;">
+
+    <vvc-topbar id="vvc-top-bar"
+                class="flex flex-none"
+                [ngClass]="{'expanded':widgetState?.topBarExpanded}"
+                [state]="widgetState"
+                (close)="showCloseModal()"></vvc-topbar>
+
+    <div id="vvc-media-tools"
+         class="flex flex-none"
+         *ngIf="widgetState?.voice">
+      <div class="clearfix vvc-media-wrap"
+           [ngClass]="{'video': widgetState?.video, 'voice': !widgetState?.video}">
+
+        <div vvc-video-wrapper [state]="widgetState"
+                           *ngIf="widgetState?.fullScreen === false && widgetState?.video"></div>
+
+        <div vvc-media-tools [state]="widgetState"
+                         *ngIf="widgetState?.fullScreen === false"
+                         (hangup)="hangup()"
+                         (addvideo)="addLocalVideo()"
+                         (remvideo)="removeLocalVideo()"
+                         (maximize)="setFullScreen()"></div>
+
+      </div>
+    </div>
+
+    <div id="vvc-messages"
+         class="flex flex-auto flex-column p1"
+         style="overflow-y: scroll" angular2-auto-scroll>
+      <div *ngFor="let m of messages" [ngSwitch]="m.type">
+        <vvc-chat-message *ngSwitchCase="'chat'" [message]="m"></vvc-chat-message>
+        <vvc-incoming-message *ngSwitchCase="'incoming-request'"
+                              [message]="m"
+                              (rejectOffer)="denyIncomingRequest()"
+                              (acceptOffer)="acceptIncomingRequest()"></vvc-incoming-message>
+      </div>
+
+      <!--
+      <div *ngFor="let m of messages" [ngSwitch]="m.type">
+        <div *ngSwitchCase="'incoming-request'">
+          Incoming Request ({{m.media}} - {{m.oPos}} - {{m.state}})
+          <p>{{m.text}}</p>
+          <div *ngIf="m.state === 'open'">
+
+            <div *ngIf="!m.dataCollection">
+              <button (click)="acceptIncomingRequest()">Accept</button> - <button (click)="denyIncomingRequest()">Deny</button>
+            </div>
+
+            <div *ngIf="m.dataCollection">
+              <button (click)="compileDataCollection(m.dataCollection)">Compile Data Collection</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'chat'">
+          {{m.text}}
+          <p *ngIf="m.meta">
+            {{m.meta | json}}
+            <img *ngIf="m.meta.originalUrl" [src]="m.meta.originalUrl">
+          </p>
+        </div>
+
+        <div *ngSwitchCase="'dc'">
+          <div *ngIf="!m.inline">
+            Compila la data collection <button>compila</button>
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+
+    <vvc-chat-box id="vvc-chat-area"
+                  class="flex flex-none px1"
+                  (upload)="sendAttachment($event)"
+                  (message)="sendChatMessage($event)"></vvc-chat-box>
+
+    <vvc-close-modal id="vvc-close-modal"
+                     class="flex items-center"
+                     *ngIf="closeModal"
+                     (close)="closeContact()"
+                     (cancel)="dismissCloseModal()"></vvc-close-modal>
+
+  </div>
+</div>
