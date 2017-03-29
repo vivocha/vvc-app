@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VideoWrapperComponent } from './video-wrapper.component';
+import { FullscreenComponent } from './fullscreen.component';
 
-describe('VideoWrapperComponent', () => {
-  let component: VideoWrapperComponent;
-  let fixture: ComponentFixture<VideoWrapperComponent>;
+describe('FullscreenComponent', () => {
+  let component: FullscreenComponent;
+  let fixture: ComponentFixture<FullscreenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoWrapperComponent ]
+      declarations: [ FullscreenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VideoWrapperComponent);
+    fixture = TestBed.createComponent(FullscreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

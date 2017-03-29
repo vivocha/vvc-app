@@ -1,4 +1,4 @@
-<div *ngIf="message.isAgent" class="agent-msg">
+<div *ngIf="message.isAgent" class="agent-msg" [@ease]="state">
   <span class="msg-content" *ngIf="message.state === 'iswriting'">
     <span class="bubble bubble-one"></span>
     <span class="bubble bubble-two"></span>
@@ -8,7 +8,7 @@
   <span class="msg-content" *ngIf="message.url">
     <span class="the-image"><img [src]="message.url"></span>
     <span class="download">Dowload <i class="vvc-download"></i></span>
-    <span class="the-message">The really long descriprion goes here and maybe is very long</span>
+    <span class="the-message">{{message.text}}</span>
   </span>
 
   <span class="msg-content" *ngIf="message.state !== 'iswriting' && !message.url">
@@ -17,12 +17,12 @@
 
 </div>
 
-<div *ngIf="!message.isAgent" class="customer-msg">
+<div *ngIf="!message.isAgent" class="customer-msg" [@ease]="state">
 
   <span class="msg-content" *ngIf="message.url">
     <span class="the-image"><img [src]="message.url"></span>
     <span class="download">Dowload <i class="vvc-download"></i></span>
-    <span class="the-message">The really long descriprion goes here and maybe is very long</span>
+    <span class="the-message">{{message.text}}</span>
   </span>
 
   <span *ngIf="message.state === 'uploading'">

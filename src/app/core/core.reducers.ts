@@ -1,11 +1,13 @@
 import {VvcWidgetState, VvcMessage} from './core.interfaces';
 const initialWidgetState: VvcWidgetState = {
     chat: false,
+    chatVisibility: true,
     error: false,
     fullScreen: false,
     lastError: '',
     loading: true,
     mute: false,
+    mute_in_progress: false,
     mobile: false,
     sharing: false,
     topBarExpanded: true,
@@ -61,6 +63,12 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { loading: false });
         case 'FULLSCREEN':
             return Object.assign({}, state, { fullScreen: payload });
+        case 'MUTE':
+            return Object.assign({}, state, { mute: payload});
+        case 'MUTE_IN_PROGRESS':
+            return Object.assign({}, state, { mute_in_progress: payload});
+        case 'CHATVISIBILITY':
+            return Object.assign({}, state, { chatVisibility: payload });
         case 'REDUCE_TOPBAR':
             return Object.assign({}, state, { topBarExpanded: false });
         case 'SHOW_DATA_COLLECTION':

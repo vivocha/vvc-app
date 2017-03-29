@@ -1,34 +1,45 @@
-import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angular/core';
+import {
+  Component, OnInit, Input, Output, EventEmitter, OnDestroy, ChangeDetectionStrategy,
+   ViewChild
+} from '@angular/core';
 import {VvcWidgetState} from '../core/core.interfaces';
+import {DomSanitizer} from '@angular/platform-browser';
+
 
 @Component({
-  selector: '[vvc-media-tools]',
+  selector: 'vvc-media-tools',
   templateUrl: './media-tools.component.html',
-  styleUrls: ['./media-tools.component.scss']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MediaToolsComponent implements OnInit, OnDestroy {
 
+  @ViewChild('theTimer') theTimer;
   @Input() state: VvcWidgetState;
   @Output() hangup = new EventEmitter();
   @Output() addvideo = new EventEmitter();
   @Output() remvideo = new EventEmitter();
   @Output() maximize = new EventEmitter();
-  @Output() minimize = new EventEmitter();
+  @Output() mute = new EventEmitter();
   callInterval;
-  callTime = '00:00:00';
-  constructor() { }
+
+
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     let localTime = 0;
-    this.callInterval = setInterval(() => {
-      localTime++;
-      const date = new Date(null);
-      date.setSeconds(localTime);
-      this.callTime = date.toISOString().substr(11, 8);
-    }, 1000);
+    if (!this.state.video) {
+      this.callInterval = setInterval(() => {
+        localTime++;
+        const date = new Date(null);
+        date.setSeconds(localTime);
+        this.theTimer.nativeElement.innerHTML = date.toISOString().substr(11, 8);
+      }, 1000);
+    }
   }
   ngOnDestroy() {
     clearInterval(this.callInterval);
   }
-
+  trustedSrc(url) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
 }

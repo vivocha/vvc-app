@@ -14,7 +14,6 @@ export class FileUploaderComponent implements OnInit {
   }
   doUpload(inputFileDescr) {
     if (this.uploadFile) {
-      console.log('emitting upload from uploader');
       this.upload.emit({ text: inputFileDescr.value, file: this.uploadFile });
       inputFileDescr.value = '';
       this.uploadFile = undefined;
@@ -25,8 +24,9 @@ export class FileUploaderComponent implements OnInit {
       this.uploadFile = evt.srcElement.files[0];
     }
   }
-  removeUpload() {
+  removeUpload(theForm) {
     this.uploadFile = undefined;
+    theForm.reset();
   }
 
 }

@@ -1,8 +1,10 @@
-import {Component, OnInit, Input, trigger, state, style, transition, animate} from '@angular/core';
+import {
+  Component, OnInit, Input, trigger, state, style, transition, animate
+} from '@angular/core';
 
 @Component({
   selector: 'vvc-chat-message',
-  templateUrl: './chat-message.component.html',
+  templateUrl: './chat-message.component.html'
   animations: [
     trigger('ease', [
       state('inactive', style({
@@ -13,15 +15,14 @@ import {Component, OnInit, Input, trigger, state, style, transition, animate} fr
       })),
       transition('inactive => active', animate('100ms ease-in'))
     ])
-  ]
-})
+  ]})
 export class ChatMessageComponent implements OnInit {
   private state = 'inactive';
   @Input() message;
   constructor() { }
 
   ngOnInit() {
-    if (this.message.isAgent && this.message.state != 'iswriting') {
+    if (this.message.isAgent && this.message.state !== 'iswriting') {
       const notif = new Audio();
       notif.src = 'assets/beep.mp3';
       notif.load();

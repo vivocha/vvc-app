@@ -5,7 +5,7 @@
   <div class="file-containter">
     <i class="vvc-remove"
        *ngIf="uploadFile"
-       (click)="removeUpload()"></i> <div class="file-name">{{uploadFile?.name || ('TOOLS.UPLOADER.SELECT_PLACEHOLDER' | translate)}}</div>
+       (click)="removeUpload(formUploader)"></i> <div class="file-name">{{uploadFile?.name || ('TOOLS.UPLOADER.SELECT_PLACEHOLDER' | translate)}}</div>
   </div>
   <label for="theFile" class="btn-primary">{{ 'TOOLS.UPLOADER.BROWSE' | translate }}</label>
 </div>
@@ -17,40 +17,6 @@
     <i class="vvc-check"></i> {{'TOOLS.UPLOADER.SEND' | translate }}
   </button>
 </div>
-<form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
+<form id="formUploader" #formUploader enctype="multipart/form-data" onsubmit="return false;">
   <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
 </form>
-
-<!--
-<div class="table">
-  <div class="table-cell">
-    <i class="vvc-pic file-ph-pic fw1"></i>
-  </div>
-  <div class="table-cell align-middle">
-    <input #fileDescr type="text" class="file-descr fs1 fw1 border-box" value="" placeholder="{{ 'TOOLS.UPLOADER.FILE_DESCRIPTION' | translate }}">
-  </div>
-</div>
-<div class="table">
-  <div class="table-cell file-info">
-    <div class="file-name-info fs1 fw1">
-      <i class="vvc-remove remove"
-         *ngIf="uploadFile"
-         (click)="removeUpload()"></i> <span class="filename">&nbsp; {{uploadFile?.name || ('TOOLS.UPLOADER.SELECT_PLACEHOLDER' | translate)}}</span>
-    </div>
-  </div>
-  <div class="table-cell upload-btn-wrap">
-    <label for="theFile" class="btn-primary fs2 fw1">{{ 'TOOLS.UPLOADER.BROWSE' | translate }}</label>
-  </div>
-</div>
-<div class="inner-panel center fs5 file-size-msg">
-  {{ 'TOOLS.UPLOADER.MAX_FILESIZE' | translate }}
-</div>
-<div class="inner-panel center submit-wrap">
-  <button [disabled]="!uploadFile"
-          (click)="doUpload(fileDescr)"
-          class="btn-primary fs2 fw1"><i class="vvc-check"></i> {{'TOOLS.UPLOADER.SEND' | translate }}</button>
-</div>
-<form id="formUploader" enctype="multipart/form-data" onsubmit="return false;">
-  <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
-</form>
--->

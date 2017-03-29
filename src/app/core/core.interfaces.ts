@@ -35,6 +35,7 @@ export interface VvcWidgetState {
     agent?: VvcAgent;
     changeMediaState?: boolean;
     chat: boolean;
+    chatVisibility: boolean;
     dataCollectionPanel?: boolean;
     error: boolean;
     fullScreen: boolean;
@@ -45,6 +46,7 @@ export interface VvcWidgetState {
     loading: boolean;
     mobile: boolean;
     mute: boolean;
+    mute_in_progress: boolean;
     sharing: boolean;
     topBarExpanded: boolean;
     voice: boolean;

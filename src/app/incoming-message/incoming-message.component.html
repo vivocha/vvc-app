@@ -12,7 +12,9 @@
       <button class="btn-normal" (click)="rejectOffer.emit()">
         <i class="vvc-close"></i> {{ 'MESSAGES.DECLINE' | translate }}
       </button>
-      <button class="btn-primary" *ngIf="message.media === 'VIDEO'">
+      <button class="btn-primary"
+              *ngIf="message.media === 'VIDEO'"
+              (click)="acceptOffer.emit('voice-only')">
         <i class="vvc-phone"></i> {{ 'MESSAGES.VOICE_ONLY' | translate }}
       </button>
       <button class="btn-primary" (click)="acceptOffer.emit()">

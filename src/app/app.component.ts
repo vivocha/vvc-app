@@ -39,8 +39,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.bindStores();
   }
-  acceptIncomingRequest() {
-    this.cserv.acceptOffer();
+  acceptIncomingRequest(evt) {
+    this.cserv.acceptOffer(evt);
   }
   addLocalVideo() {
     this.cserv.addLocalVideo();
@@ -117,9 +117,15 @@ export class AppComponent implements OnInit {
       this.cserv.sendText(text);
     }
   }
+  setChatVisibility(visibility: boolean){
+    this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
+  }
   setFullScreen() {
     this.store.dispatch({ type: 'FULLSCREEN', payload: true});
     this.window.parent.postMessage('vvc-fullscreen-on', '*');
+  }
+  setMute(mute: boolean) {
+    this.cserv.muteAudio(mute);
   }
   setNormalScreen() {
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});

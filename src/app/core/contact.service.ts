@@ -89,8 +89,12 @@ export class VvcContactService {
            this.widgetState = <VvcWidgetState> state.widgetState;
        });
     }
-    acceptOffer() {
+    acceptOffer(opts) {
         const diffOffer = this.incomingOffer;
+        if (opts === 'voice-only' && diffOffer.Video) {
+            diffOffer.Video.rx = 'off';
+            diffOffer.Video.tx = 'off';
+        }
         this.mergeOffer(diffOffer);
         this.dispatch({
             type: 'UPDATE_MESSAGE',
@@ -469,12 +473,15 @@ export class VvcContactService {
         });
     }
     muteAudio(muted) {
+        this.dispatch({ type: 'MUTE_IN_PROGRESS', payload: true });
         this.contact.getMediaEngine('WebRTC').then( engine => {
             if (muted) {
                 engine.muteLocalAudio();
             } else {
                 engine.unmuteLocalAudio();
             }
+            this.dispatch({ type: 'MUTE_IN_PROGRESS', payload: false });
+            this.dispatch({ type: 'MUTE', payload: muted });
         });
     }
     onAgentJoin(join) {

@@ -1,4 +1,14 @@
-<div id="vvc-container">
+<div id="vvc-container" [ngClass]="{'fullsize':widgetState.fullScreen, 'nochat':!widgetState.chatVisibility && widgetState.fullScreen}">
+
+  <vvc-fullscreen id="vvc-full-enabled"
+                  *ngIf="widgetState?.fullScreen"
+                  [state]="widgetState"
+                  (hangup)="setNormalScreen();hangup()"
+                  (addvideo)="addLocalVideo()"
+                  (remvideo)="removeLocalVideo()"
+                  (minimize)="setNormalScreen()"
+                  (showchat)="setChatVisibility($event)"
+                  (mute)="setMute($event)"></vvc-fullscreen>
 
   <vvc-queue id="vvc-queue"
              *ngIf="widgetState?.loading"
@@ -12,13 +22,22 @@
                 [state]="widgetState"
                 (close)="showCloseModal()"></vvc-topbar>
 
+    <vvc-media-tools id="vvc-media-tools"
+                     *ngIf="widgetState?.voice && !widgetState.fullScreen"
+                     [state]="widgetState"
+                     (hangup)="hangup()"
+                     (addvideo)="addLocalVideo()"
+                     (remvideo)="removeLocalVideo()"
+                     (maximize)="setFullScreen()"
+                     (mute)="setMute($event)"></vvc-media-tools>
+
     <div id="vvc-messages" angular2-auto-scroll>
       <div *ngFor="let m of messages" [ngSwitch]="m.type">
         <vvc-chat-message *ngSwitchCase="'chat'" [message]="m"></vvc-chat-message>
         <vvc-incoming-message *ngSwitchCase="'incoming-request'"
                               [message]="m"
                               (rejectOffer)="denyIncomingRequest()"
-                              (acceptOffer)="acceptIncomingRequest()"></vvc-incoming-message>
+                              (acceptOffer)="acceptIncomingRequest($event)"></vvc-incoming-message>
       </div>
     </div>
 
