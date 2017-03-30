@@ -1,10 +1,11 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {VvcWidgetState} from '../core/core.interfaces';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'vvc-fullscreen',
-  templateUrl: './fullscreen.component.html'
+  templateUrl: './fullscreen.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FullscreenComponent implements OnInit {
   @Input() state: VvcWidgetState;

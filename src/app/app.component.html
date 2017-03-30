@@ -33,7 +33,9 @@
 
     <div id="vvc-messages" angular2-auto-scroll>
       <div *ngFor="let m of messages" [ngSwitch]="m.type">
-        <vvc-chat-message *ngSwitchCase="'chat'" [message]="m"></vvc-chat-message>
+        <vvc-chat-message *ngSwitchCase="'chat'"
+                          [message]="m"
+                          (download)="download($event)"></vvc-chat-message>
         <vvc-incoming-message *ngSwitchCase="'incoming-request'"
                               [message]="m"
                               (rejectOffer)="denyIncomingRequest()"
@@ -44,6 +46,11 @@
     <vvc-chat-box id="vvc-chat-area"
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
+
+    <vvc-close-modal id="vvc-close-modal"
+                     *ngIf="closeModal"
+                     (close)="closeContact()"
+                     (cancel)="dismissCloseModal()"></vvc-close-modal>
 
   </div>
 

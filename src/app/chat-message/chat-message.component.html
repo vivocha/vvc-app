@@ -6,9 +6,11 @@
   </span>
 
   <span class="msg-content" *ngIf="message.url">
-    <span class="the-image"><img [src]="message.url"></span>
-    <span class="download">Dowload <i class="vvc-download"></i></span>
-    <span class="the-message">{{message.text}}</span>
+    <span class="the-image" *ngIf="isImage()"><img [src]="message.url"></span>
+    <span class="file-type" *ngIf="!isImage()"><i class="vvc-doc"></i></span>
+    <span class="the-file" *ngIf="!isImage()">{{message.text}}</span>
+    <span class="download" (click)="download.emit(message.url)">{{ 'MESSAGES.DOWNLOAD' | translate }}  <i class="vvc-download"></i></span>
+    <span class="the-message" *ngIf="isImage()">{{message.text}}</span>
   </span>
 
   <span class="msg-content" *ngIf="message.state !== 'iswriting' && !message.url">
@@ -20,9 +22,11 @@
 <div *ngIf="!message.isAgent" class="customer-msg" [@ease]="state">
 
   <span class="msg-content" *ngIf="message.url">
-    <span class="the-image"><img [src]="message.url"></span>
-    <span class="download">Dowload <i class="vvc-download"></i></span>
-    <span class="the-message">{{message.text}}</span>
+    <span class="the-image" *ngIf="isImage()"><img [src]="message.url"></span>
+    <span class="file-type" *ngIf="!isImage()"><i class="vvc-doc"></i></span>
+    <span class="the-file" *ngIf="!isImage()">{{message.text}}</span>
+    <span class="download" (click)="download.emit(message.url)">{{ 'MESSAGES.DOWNLOAD' | translate }}  <i class="vvc-download"></i></span>
+    <span class="the-message" *ngIf="isImage()">{{message.text}}</span>
   </span>
 
   <span *ngIf="message.state === 'uploading'">

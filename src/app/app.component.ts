@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
 import {VvcWidgetState, AppState, VvcOffer, DataCollection} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
+import {MediaToolsComponent} from './media-tools/media-tools.component';
 
 
 
@@ -21,6 +22,10 @@ export class AppComponent implements OnInit {
   private type = 'chat';
 
   private closeModal = false;
+
+  @ViewChild(MediaToolsComponent) mediaTools;
+  callTimerInterval;
+  callTimer = 0;
 
   private selectedDataCollection: DataCollection;
   private widgetState: VvcWidgetState;
@@ -40,6 +45,7 @@ export class AppComponent implements OnInit {
     this.bindStores();
   }
   acceptIncomingRequest(evt) {
+    this.startTimer();
     this.cserv.acceptOffer(evt);
   }
   addLocalVideo() {
@@ -77,6 +83,9 @@ export class AppComponent implements OnInit {
   dismissCloseModal() {
     this.closeModal = false;
   }
+  download(url) {
+    this.window.open(url, '_blank');
+  }
   getInitialOffer(): VvcOffer {
     switch (this.type) {
       case 'voice': return { Voice: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'}};
@@ -85,6 +94,7 @@ export class AppComponent implements OnInit {
     }
   }
   hangup() {
+    this.stopTimer();
     this.cserv.hangup();
   }
   hideDataCollectionPanel() {
@@ -101,6 +111,7 @@ export class AppComponent implements OnInit {
       this.translate.getTranslation( this.lang );
       this.translate.setDefaultLang('en');
       this.translate.use(this.lang);
+      this.createContact();
     }
   }
   removeLocalVideo() {
@@ -133,6 +144,19 @@ export class AppComponent implements OnInit {
   }
   showCloseModal() {
     this.closeModal = true;
+  }
+  startTimer() {
+    this.stopTimer();
+    this.callTimerInterval = setInterval( () => {
+      this.callTimer++;
+      if (this.mediaTools) {
+        this.mediaTools.setTime(this.callTimer);
+      }
+    }, 1000);
+  }
+  stopTimer() {
+    clearInterval(this.callTimerInterval);
+    this.callTimer = 0;
   }
 
 }

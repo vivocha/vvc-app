@@ -157,25 +157,23 @@ export class VvcContactService {
     }
     checkForTranscript() {
         const transcript = this.contact.contact.transcript;
+        if (transcript && transcript.length > 0) this.dispatch({type: 'REDUCE_TOPBAR'});
         for (const m in transcript) {
             const msg = transcript[m];
             switch (msg.type) {
                 case 'text':
-                    this.dispatch({type: 'ADD_TEXT', payload: {text: msg.body, type: 'CHAT_TEXT', isAgent: msg.agent }});
+                    this.dispatch({type: 'NEW_MESSAGE', payload: {text: msg.body, type: 'chat', isAgent: msg.agent}});
                     break;
                 case 'attachment':
-                    this.dispatch({
-                        type: 'ADD_TEXT',
-                        payload: {
-                            text: msg.meta.desc,
-                            agent: msg.agent ? Object.assign({}, this.agentInfo) : {},
-                            type: msg.agent ? 'AGENT-ATTACHMENT' : 'CUSTOMER-ATTACHMENT',
-                            meta: msg.meta,
-                            url: msg.url,
-                            from_nick: msg.from_nick,
-                            from_id: msg.from_id
-                        }
-                    });
+                    this.dispatch({type: 'NEW_MESSAGE', payload: {
+                        text: msg.meta.desc || msg.meta.originalName,
+                        type: 'chat',
+                        isAgent: msg.agent,
+                        meta: msg.meta,
+                        url: (msg.meta.originalUrl) ? msg.meta.originalUrl : msg.url,
+                        from_nick: msg.from_nick,
+                        from_id: msg.from_id
+                    }});
                     break;
             }
         }
@@ -437,7 +435,6 @@ export class VvcContactService {
             // console.log('localcapabilities', arguments);
         });
         this.contact.on('localtext', (text) => {
-            // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: false}});
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: false}});
         });
         this.contact.on('mediachange', (media, changed) => {
@@ -485,42 +482,19 @@ export class VvcContactService {
         });
     }
     onAgentJoin(join) {
-
         this.contact.getMedia().then( (media) => {
             const agent = { user: join.user, nick: join.nick, avatar: join.avatar}
             this.agentInfo = agent;
             this.dispatch({ type: 'JOINED', payload: agent });
             this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
-
-            /*
-            this.dispatch({ type: 'WIDGET_STATUS', payload: { state: 'READY' }});
-            this.dispatch({ type: 'ADD_AGENT', payload: agent});
-            this.dispatch({ type: 'ADD_TEXT', payload: {
-                text: 'CHAT.WELCOME',
-                type: 'AGENT-INFO', agent: Object.assign({}, this.agentInfo)
-            }});
-            */
         });
-        /*
-        const agent = { user: join.user, nick: join.nick, avatar: join.avatar}
-        this.agentInfo = agent;
-        this.dispatch({ type: 'JOINED', payload: agent });
-        */
-
     }
     onLocalJoin(join) {
-        if (join.reason && join.reason == 'resume') {
+        if (join.reason && join.reason === 'resume') {
             this.contact.getMedia().then((media) => {
+                const agent = this.contact.contact.agentInfo;
+                this.dispatch({ type: 'JOINED', payload: agent });
                 this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
-                this.dispatch({ type: 'WIDGET_STATUS', payload: {state: 'READY'}});
-                this.agentInfo = this.contact.contact.agentInfo;
-                this.dispatch({type: 'ADD_AGENT', payload: this.agentInfo});
-                this.dispatch({
-                    type: 'ADD_TEXT', payload: {
-                        text: 'CHAT.WELCOME',
-                        type: 'AGENT-INFO', agent: Object.assign({}, this.agentInfo)
-                    }
-                });
                 this.checkForTranscript();
             });
         }

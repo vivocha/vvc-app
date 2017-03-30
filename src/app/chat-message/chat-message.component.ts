@@ -1,10 +1,10 @@
 import {
-  Component, OnInit, Input, trigger, state, style, transition, animate
+  Component, OnInit, Input, trigger, state, style, transition, animate, EventEmitter, Output
 } from '@angular/core';
 
 @Component({
   selector: 'vvc-chat-message',
-  templateUrl: './chat-message.component.html'
+  templateUrl: './chat-message.component.html',
   animations: [
     trigger('ease', [
       state('inactive', style({
@@ -17,8 +17,9 @@ import {
     ])
   ]})
 export class ChatMessageComponent implements OnInit {
-  private state = 'inactive';
+  state = 'inactive';
   @Input() message;
+  @Output() download = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -32,5 +33,7 @@ export class ChatMessageComponent implements OnInit {
       this.state = 'active';
     }, 100);
   }
-
+  isImage() {
+    return (((this.message.meta && this.message.meta.mimetype) || '').toLowerCase().split('/') || [])[0] === 'image';
+  }
 }
