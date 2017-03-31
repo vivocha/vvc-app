@@ -11,15 +11,14 @@ import {MediaToolsComponent} from './media-tools/media-tools.component';
 
 @Component({
   selector: 'vvc-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
 
   private window;
   private servId: string;
   private lang = 'en';
-  private type = 'chat';
+  public type = 'chat';
 
   private closeModal = false;
 
@@ -28,8 +27,8 @@ export class AppComponent implements OnInit {
   callTimer = 0;
 
   private selectedDataCollection: DataCollection;
-  private widgetState: VvcWidgetState;
-  private messages: Array<any>;
+  public widgetState: VvcWidgetState;
+  public messages: Array<any>;
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
               private store: Store<AppState>,
@@ -77,8 +76,8 @@ export class AppComponent implements OnInit {
     const initialOffer = this.getInitialOffer();
     this.cserv.createContact({ serv_id: this.servId, type: 'chat', nick: 'Marcolino', initial_offer: initialOffer});
   }
-  denyIncomingRequest() {
-    this.cserv.denyOffer();
+  denyIncomingRequest(media) {
+    this.cserv.denyOffer(media);
   }
   dismissCloseModal() {
     this.closeModal = false;
@@ -128,7 +127,7 @@ export class AppComponent implements OnInit {
       this.cserv.sendText(text);
     }
   }
-  setChatVisibility(visibility: boolean){
+  setChatVisibility(visibility: boolean) {
     this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
   }
   setFullScreen() {

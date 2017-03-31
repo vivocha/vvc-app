@@ -38,7 +38,7 @@
                           (download)="download($event)"></vvc-chat-message>
         <vvc-incoming-message *ngSwitchCase="'incoming-request'"
                               [message]="m"
-                              (rejectOffer)="denyIncomingRequest()"
+                              (rejectOffer)="denyIncomingRequest($event)"
                               (acceptOffer)="acceptIncomingRequest($event)"></vvc-incoming-message>
       </div>
     </div>
