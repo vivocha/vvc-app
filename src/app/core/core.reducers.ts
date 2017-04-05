@@ -14,14 +14,30 @@ const initialWidgetState: VvcWidgetState = {
     video: false,
     voice: false
 };
+const extractInitialOpts = (opts) => {
+    const newOpts: {
+        canAddVideo: boolean,
+        canAddVoice: boolean,
+        hasSurvey: boolean,
+        surveyId: string,
+        askForTranscript: boolean
+    } = {
+        canAddVideo: (opts.media && opts.media.Video && opts.media.Video === 'visitor'),
+        canAddVoice: (opts.media && opts.media.Voice && opts.media.Voice === 'visitor'),
+        hasSurvey: !!(opts.survey),
+        surveyId: (opts.survey && opts.survey.dataToCollect),
+        askForTranscript: (opts.survey && opts.survey.sendTranscript === 'ask')
+    };
+    return newOpts;
+}
 const extractStateFromMedia = (payload) => {
-  const newState: { chat?: boolean, voice?: boolean, video?: boolean, video_rx?: boolean, video_tx?: boolean, sharing?: boolean} = {
+  const newState: { chat?: boolean, voice?: boolean, video?: boolean, video_rx?: boolean, video_tx?: boolean, sharing?: boolean } = {
       chat: false,
       voice: false,
       video: false,
       video_rx: undefined,
       video_tx: undefined,
-      sharing: false
+      sharing: false,
   };
   if (payload.Chat && payload.Chat['tx'] && payload.Chat['rx']) {
     newState.chat = true;
@@ -46,15 +62,20 @@ const extractStateFromMedia = (payload) => {
         newState.video = true;
     }
   }
-  console.log('EXTRACTSTATE', JSON.stringify(newState));
   return newState;
 };
 export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, payload}) => {
     switch (type) {
         case 'INITIAL_OFFER':
+            const initialState = extractStateFromMedia(payload.offer);
+            const initialOpts = extractInitialOpts(payload.opts);
+            return Object.assign({}, state, initialState, initialOpts);
+        case 'REMOTE_CAPS':
+            return Object.assign({}, state, { remoteCaps: payload });
+        case 'LOCAL_CAPS':
+            return Object.assign({}, state, { localCaps: payload });
         case 'MEDIA_CHANGE':
             const newState = extractStateFromMedia(payload);
-            console.log('MEDIACHANGE-DISPATCHED', newState, payload);
             return Object.assign({}, state, newState);
         case 'JOINED':
             if (payload) {

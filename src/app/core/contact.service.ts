@@ -195,8 +195,14 @@ export class VvcContactService {
         this.contact.leave();
     }
     createContact(conf) {
-        this.dispatch({type: 'INITIAL_OFFER', payload: conf.initial_offer});
-        this.vivocha.getContact(conf).then( contact => {
+        this.dispatch({type: 'INITIAL_OFFER', payload: { offer: conf.initial_offer, opts: conf.opts }});
+        this.vivocha.getContact(conf.initial_offer).then( contact => {
+            contact.getLocalCapabilities().then( caps => {
+                this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+            });
+            contact.getRemoteCapabilities().then( caps => {
+                this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+            });
             this.contact = contact;
             this.mapContact();
         });
@@ -271,16 +277,12 @@ export class VvcContactService {
         });
     }
     dispatchConnectionMessages(newMedia) {
-        const hasVideo = !!(newMedia['Video'] &&
-                          newMedia['Video']['data'] &&
-                          (newMedia['Video']['data']['tx_stream'] || newMedia['Video']['data']['rx_stream']));
         const hasVoice = !!(newMedia['Voice'] &&
                           newMedia['Voice']['data'] &&
                           newMedia['Voice']['data']['tx_stream'] &&
                           newMedia['Voice']['data']['rx_stream']);
 
-
-        if (!this.widgetState.voice && hasVoice){
+        if (!this.widgetState.voice && hasVoice) {
             this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId }});
             this.dispatch({
                 type: 'NEW_MESSAGE',
@@ -307,67 +309,6 @@ export class VvcContactService {
                 }
             });
         }
-        /*
-        if (!this.widgetState.voice && hasVoice && !hasVideo) {
-            console.log('dispatch voice connection');
-            this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId }});
-            this.dispatch({
-                type: 'NEW_MESSAGE',
-                payload: {
-                    id: new Date().getTime(),
-                    type: 'incoming-request',
-                    media: 'VOICE',
-                    state: 'closed',
-                    extraClass: 'accepted',
-                    text: 'MESSAGES.VOICE_STARTED'
-                }
-            });
-        }
-        if (this.widgetState.voice && !hasVoice && !hasVideo) {
-            console.log('dispatch voice disconnection');
-            this.dispatch({
-                type: 'NEW_MESSAGE',
-                payload: {
-                    id: new Date().getTime(),
-                    media: 'VOICE',
-                    state: 'closed',
-                    extraClass: 'accepted',
-                    type: 'incoming-request',
-                    text: 'MESSAGES.VOICE_ENDED'
-                }
-            });
-        }
-        if (!this.widgetState.video && hasVideo && !hasVoice) {
-            console.log('dispatch video connection');
-            this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId }});
-            this.dispatch({
-                type: 'NEW_MESSAGE',
-                payload: {
-                    id: new Date().getTime(),
-                    type: 'incoming-request',
-                    media: 'VIDEO',
-                    state: 'closed',
-                    extraClass: 'accepted',
-                    text: 'MESSAGES.VIDEO_STARTED'
-                }
-            });
-        }
-        if (this.widgetState.video && !hasVideo && !hasVoice) {
-            console.log('è stato rimosso il video');
-            console.log('dispatch voice disconnection');
-            this.dispatch({
-                type: 'NEW_MESSAGE',
-                payload: {
-                    id: new Date().getTime(),
-                    media: 'VOICE',
-                    state: 'closed',
-                    extraClass: 'accepted',
-                    type: 'incoming-request',
-                    text: 'MESSAGES.VOICE_ENDED'
-                }
-            });
-        }
-       */
     }
     downgrade(media) {
         if (media === 'VOICE') {
@@ -470,7 +411,7 @@ export class VvcContactService {
 
         });
         this.contact.on('capabilities', function(){
-            // console.log('remote capabilities', arguments);
+            console.log('remote capabilities', arguments);
         });
         this.contact.on('iswriting', (from_id, from_nick, agent) => {
             if (agent) {
@@ -485,18 +426,16 @@ export class VvcContactService {
             }
         });
         this.contact.on('localcapabilities', function(){
-            // console.log('localcapabilities', arguments);
+            console.log('localcapabilities', arguments);
         });
         this.contact.on('localtext', (text) => {
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: false}});
         });
         this.contact.on('mediachange', (media, changed) => {
-            console.log('MEDIACHANGE', media);
             this.dispatchConnectionMessages(media);
             this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
         });
         this.contact.on('mediaoffer', (offer, cb) => {
-            console.log('OFFER', offer);
             this.onMediaOffer(offer, cb);
         });
         this.contact.on('text', (text, from_id, from_nick, agent ) => {
@@ -518,7 +457,6 @@ export class VvcContactService {
             diffOffer[m].rx = (diffOffer[m].rx !== 'off');
             diffOffer[m].tx = (diffOffer[m].tx !== 'off');
         }
-        console.log('merging this', diffOffer);
         this.contact.mergeMedia(diffOffer).then(mergedMedia => {
             this.mediaCallback(undefined, mergedMedia);
         });

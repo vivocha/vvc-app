@@ -33,12 +33,16 @@ export interface VvcMediaOfferDetails {
 }
 export interface VvcWidgetState {
     agent?: VvcAgent;
+    askForTranscript?: boolean;
+    canAddVideo?: boolean;
+    canAddVoice?: boolean;
     changeMediaState?: boolean;
     chat: boolean;
     chatVisibility: boolean;
     dataCollectionPanel?: boolean;
     error: boolean;
     fullScreen: boolean;
+    hasSurvey?: boolean;
     incomingRequest?: boolean;
     incomingOffer?: VvcOffer;
     isAgentWriting?: boolean;
@@ -48,6 +52,7 @@ export interface VvcWidgetState {
     mute: boolean;
     mute_in_progress: boolean;
     sharing: boolean;
+    surveyId?: string;
     topBarExpanded: boolean;
     voice: boolean;
     voice_rx?: string;

@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MediaToolsComponent) mediaTools;
   callTimerInterval;
   callTimer = 0;
+  wasFullScreen = false;
 
   private selectedDataCollection: DataCollection;
   public widgetState: VvcWidgetState;
@@ -54,6 +55,10 @@ export class AppComponent implements OnInit {
     this.store.subscribe( state => {
       this.widgetState = <VvcWidgetState> state.widgetState;
       this.messages = state.messages;
+      if (this.wasFullScreen && this.widgetState.video === false) {
+        this.setNormalScreen();
+      }
+      console.log(this.widgetState);
     });
   }
   checkForVivocha() {
@@ -74,7 +79,22 @@ export class AppComponent implements OnInit {
   }
   createContact() {
     const initialOffer = this.getInitialOffer();
-    this.cserv.createContact({ serv_id: this.servId, type: 'chat', nick: 'Marcolino', initial_offer: initialOffer});
+    this.cserv.createContact({
+      serv_id: this.servId,
+      type: 'chat',
+      nick: 'Marcolino',
+      initial_offer: initialOffer,
+      opts: { // campaign /service options
+        media: {
+          Video : 'visitor',
+          Voice : 'visitor'
+        },
+        survey: {
+          dataToCollect: 'schema#id',
+          sendTranscript: 'ask'
+        }
+      }
+    });
   }
   denyIncomingRequest(media) {
     this.cserv.denyOffer(media);
@@ -131,6 +151,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
   }
   setFullScreen() {
+    this.wasFullScreen = true;
     this.store.dispatch({ type: 'FULLSCREEN', payload: true});
     this.window.parent.postMessage('vvc-fullscreen-on', '*');
   }
@@ -138,6 +159,7 @@ export class AppComponent implements OnInit {
     this.cserv.muteAudio(mute);
   }
   setNormalScreen() {
+    this.wasFullScreen = false;
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});
     this.window.parent.postMessage('vvc-fullscreen-off', '*');
   }
