@@ -196,7 +196,8 @@ export class VvcContactService {
     }
     createContact(conf) {
         this.dispatch({type: 'INITIAL_OFFER', payload: { offer: conf.initial_offer, opts: conf.opts }});
-        this.vivocha.getContact(conf.initial_offer).then( contact => {
+
+        this.vivocha.getContact(conf).then( contact => {
             contact.getLocalCapabilities().then( caps => {
                 this.dispatch({type: 'LOCAL_CAPS', payload: caps });
             });
@@ -410,8 +411,8 @@ export class VvcContactService {
             }});
 
         });
-        this.contact.on('capabilities', function(){
-            console.log('remote capabilities', arguments);
+        this.contact.on('capabilities', caps => {
+            this.dispatch({type: 'REMOTE_CAPS', payload: caps });
         });
         this.contact.on('iswriting', (from_id, from_nick, agent) => {
             if (agent) {
@@ -425,8 +426,8 @@ export class VvcContactService {
                 this.onLocalJoin(c);
             }
         });
-        this.contact.on('localcapabilities', function(){
-            console.log('localcapabilities', arguments);
+        this.contact.on('localcapabilities', caps => {
+            this.dispatch({type: 'LOCAL_CAPS', payload: caps });
         });
         this.contact.on('localtext', (text) => {
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: false}});

@@ -1,7 +1,7 @@
 <div class="top-row">
   <div class="media-tools">
-    <i class="vvc-phone"></i>
-    <i class="vvc-video"></i>
+    <i class="vvc-phone" *ngIf="canStartMediaRequest('voice')"></i>
+    <i class="vvc-video" *ngIf="canStartMediaRequest('video')"></i>
   </div>
   <div class="avatar-place">
     <img class='agent-img' [src]="getAvatar()">

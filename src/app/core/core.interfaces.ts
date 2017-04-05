@@ -48,9 +48,11 @@ export interface VvcWidgetState {
     isAgentWriting?: boolean;
     lastError: string;
     loading: boolean;
+    localCaps: any;
     mobile: boolean;
     mute: boolean;
     mute_in_progress: boolean;
+    remoteCaps: any;
     sharing: boolean;
     surveyId?: string;
     topBarExpanded: boolean;

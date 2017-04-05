@@ -14,6 +14,21 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit() {
   }
+  canStartMediaRequest(media) {
+      switch (media) {
+          case 'voice':
+              return !this.state.voice &&
+                     this.state.canAddVoice &&
+                     this.state.remoteCaps &&
+                     this.state.remoteCaps.MediaAvailability &&
+                     this.state.remoteCaps.MediaAvailability.Voice === false;
+          case 'video':
+              return this.state.canAddVideo &&
+                     this.state.remoteCaps &&
+                     this.state.remoteCaps.MediaAvailability &&
+                     this.state.remoteCaps.MediaAvailability.Video === false;
+      }
+  }
   getAgentName() {
     return (this.state.agent && this.state.agent.nick) ? this.state.agent.nick : 'nonick';
   }
