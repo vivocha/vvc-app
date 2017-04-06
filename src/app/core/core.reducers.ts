@@ -2,10 +2,12 @@ import {VvcWidgetState, VvcMessage} from './core.interfaces';
 const initialWidgetState: VvcWidgetState = {
     chat: false,
     chatVisibility: true,
+    closed: false,
     error: false,
     fullScreen: false,
     lastError: '',
     loading: true,
+    mediaOffering: false,
     mute: false,
     mute_in_progress: false,
     mobile: false,
@@ -77,6 +79,8 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
         case 'MEDIA_CHANGE':
             const newState = extractStateFromMedia(payload);
             return Object.assign({}, state, newState);
+        case 'MEDIA_OFFERING':
+            return Object.assign({}, state, { mediaOffering: payload });
         case 'JOINED':
             if (payload) {
                 return Object.assign({}, state, { agent: payload, loading: false });
@@ -96,6 +100,8 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { dataCollectionPanel: payload });
         case 'AGENT_IS_WRITING':
             return Object.assign({}, state, { isAgentWriting: payload });
+        case 'CLOSE_CONTACT':
+            return Object.assign({}, state, { closed: payload });
         default: return state;
     }
 };

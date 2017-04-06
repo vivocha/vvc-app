@@ -118,9 +118,25 @@ export class VvcContactService {
             this.contact.offerMedia(mediaOffer);
         });
     }
-    askForUpgrade(media) {
-        this.store.dispatch({ type: 'WIDGET_STATUS', payload: {state: 'OREQUEST'} });
-        this.contact.getMediaOffer().then(offer => {
+    askForUpgrade(media, startedWith) {
+        this.callStartedWith = startedWith;
+        this.dispatch({
+            type: 'MEDIA_OFFERING',
+            payload: true
+        });
+        if (media === startedWith) {
+            this.incomingId = new Date().getTime();
+            this.dispatch({
+                type: 'NEW_MESSAGE',
+                payload: {
+                    id: this.incomingId,
+                    media: this.callStartedWith,
+                    state: 'loading',
+                    type: 'incoming-request'
+                }
+            });
+        }
+        return this.contact.getMediaOffer().then(offer => {
             if (media === 'VIDEO') {
                 offer.Video = {
                     tx: 'required',
@@ -137,27 +153,26 @@ export class VvcContactService {
                     engine: 'WebRTC'
                 };
             }
-            this.contact.offerMedia(offer).then(() => {
-                this.store.dispatch({ type: 'WIDGET_STATUS', payload: {state: 'READY'} });
-                this.dispatch({ type: 'ADD_TEXT', payload: {
-                    text: 'CHAT.MEDIA_ACCEPTED',
-                    type: 'AGENT-INFO',
-                    isEmph: true
-                }});
+            return this.contact.offerMedia(offer).then(() => {
+                this.dispatch({ type: 'MEDIA_OFFERING', payload: false });
             }, (err) => {
                 let reason = 'REJECTED';
                 if (err === 'bad_state') {
                     reason = 'FAILED';
                 }
-                this.dispatch({ type: 'WIDGET_STATUS', payload: { state: 'OREQUEST', error: reason }});
-                this.dispatch({ type: 'ADD_TEXT', payload: {
-                    text: 'SMARTBAR.MEDIA_' + reason,
-                    type: 'AGENT-INFO',
-                    isError: true
-                }});
-                setTimeout( () => {
-                    this.dispatch({ type: 'WIDGET_STATUS', payload: { state: 'READY' }});
-                }, this.statusMessageUpdate);
+                this.dispatch({ type: 'MEDIA_OFFERING', payload: false });
+                this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId } });
+                this.dispatch({
+                    type: 'NEW_MESSAGE',
+                    payload: {
+                        id: new Date().getTime(),
+                        type: 'incoming-request',
+                        media: this.callStartedWith,
+                        state: 'closed',
+                        extraClass: 'rejected',
+                        text: 'MESSAGES.REMOTE_' + this.callStartedWith + '_' + reason
+                    }
+                });
             });
         });
     }
@@ -426,6 +441,11 @@ export class VvcContactService {
                 this.onLocalJoin(c);
             }
         });
+        this.contact.on('left', obj => {
+            if (obj.channels && (obj.channels.user != undefined) && obj.channels.user == 0) {
+                this.sendCloseMessage();
+            }
+        })
         this.contact.on('localcapabilities', caps => {
             this.dispatch({type: 'LOCAL_CAPS', payload: caps });
         });
@@ -446,8 +466,18 @@ export class VvcContactService {
             this.clearIsWriting();
         });
         this.contact.on('transferred', (transferred_to) => {
-            this.dispatch({type: 'ADD_TEXT', payload: {
-                text: 'CHAT.TRANSFER', type: 'AGENT-INFO'}});
+            console.log('Transferred', transferred_to);
+            this.dispatch({
+                type: 'NEW_MESSAGE',
+                payload: {
+                    id: new Date().getTime(),
+                    type: 'incoming-request',
+                    media: 'TRANSFER',
+                    state: 'closed',
+                    extraClass: 'rejected',
+                    text: 'MESSAGES.TRANSFERRED'
+                }
+            });
         });
     }
     mergeOffer (diffOffer) {
@@ -535,6 +565,23 @@ export class VvcContactService {
             */
         });
         this.dispatch({type: 'NEW_MESSAGE', payload: {id: ref, state: 'uploading', type: 'chat', isAgent: false}});
+    }
+    sendCloseMessage() {
+        this.dispatch({
+            type: 'NEW_MESSAGE',
+            payload: {
+                id: new Date().getTime(),
+                type: 'incoming-request',
+                media: 'AGENTCLOSE',
+                state: 'closed',
+                extraClass: 'rejected',
+                text: 'MESSAGES.REMOTE_CLOSE'
+            }
+        });
+        this.dispatch({
+            type: 'CLOSE_CONTACT',
+            payload: true
+        });
     }
     sendText(text: string) {
         this.contact.sendText(text);

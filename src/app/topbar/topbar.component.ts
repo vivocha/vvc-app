@@ -10,23 +10,38 @@ export class TopbarComponent implements OnInit {
 
   @Input() state: VvcWidgetState;
   @Output() close = new EventEmitter();
+  @Output() upgrade = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
+  askForUpgrade(media) {
+      if (!this.state[media] && !this.state.mediaOffering) {
+          this.upgrade.emit(media.toUpperCase());
+      }
+  }
   canStartMediaRequest(media) {
       switch (media) {
           case 'voice':
-              return !this.state.voice &&
-                     this.state.canAddVoice &&
+              return this.state.canAddVoice &&
+                     this.state.localCaps &&
+                     this.state.localCaps.WebRTC &&
+                     this.state.localCaps.WebRTC.AudioCapture &&
                      this.state.remoteCaps &&
+                     this.state.remoteCaps.WebRTC &&
+                     this.state.remoteCaps.WebRTC.AudioCapture &&
                      this.state.remoteCaps.MediaAvailability &&
-                     this.state.remoteCaps.MediaAvailability.Voice === false;
+                     this.state.remoteCaps.MediaAvailability.Voice;
           case 'video':
               return this.state.canAddVideo &&
+                     this.state.localCaps &&
+                     this.state.localCaps.WebRTC &&
+                     this.state.localCaps.WebRTC.VideoCapture &&
                      this.state.remoteCaps &&
+                     this.state.remoteCaps.WebRTC &&
+                     this.state.remoteCaps.WebRTC.VideoCapture &&
                      this.state.remoteCaps.MediaAvailability &&
-                     this.state.remoteCaps.MediaAvailability.Video === false;
+                     this.state.remoteCaps.MediaAvailability.Video;
       }
   }
   getAgentName() {

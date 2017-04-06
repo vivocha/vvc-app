@@ -40,6 +40,8 @@
      <div class="inc-type">
        <i *ngIf="message.media === 'VOICE'" class="vvc-phone"></i>
        <i *ngIf="message.media === 'VIDEO'" class="vvc-video"></i>
+       <i *ngIf="message.media === 'AGENTCLOSE'" class="vvc-sign-out"></i>
+       <i *ngIf="message.media === 'TRANSFER'" class="vvc-headphones"></i>
      </div>
      <div class="inc-header">{{ message.text | translate }}</div>
    </div>

@@ -39,6 +39,7 @@ export interface VvcWidgetState {
     changeMediaState?: boolean;
     chat: boolean;
     chatVisibility: boolean;
+    closed: boolean;
     dataCollectionPanel?: boolean;
     error: boolean;
     fullScreen: boolean;
@@ -48,11 +49,12 @@ export interface VvcWidgetState {
     isAgentWriting?: boolean;
     lastError: string;
     loading: boolean;
-    localCaps: any;
+    localCaps?: any;
+    mediaOffering: boolean;
     mobile: boolean;
     mute: boolean;
     mute_in_progress: boolean;
-    remoteCaps: any;
+    remoteCaps?: any;
     sharing: boolean;
     surveyId?: string;
     topBarExpanded: boolean;

@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
       if (this.wasFullScreen && this.widgetState.video === false) {
         this.setNormalScreen();
       }
-      console.log(this.widgetState);
+      // console.log(this.widgetState);
     });
   }
   checkForVivocha() {
@@ -71,6 +71,7 @@ export class AppComponent implements OnInit {
   }
   closeContact() {
     this.cserv.closeContact();
+    this.window.parent.postMessage('vvc-close-iframe', '*');
   }
   compileDataCollection(dc: DataCollection) {
     console.log('DC', dc);
@@ -163,8 +164,12 @@ export class AppComponent implements OnInit {
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});
     this.window.parent.postMessage('vvc-fullscreen-off', '*');
   }
-  showCloseModal() {
-    this.closeModal = true;
+  showCloseModal(isContactClosed) {
+    if (isContactClosed) {
+      this.window.parent.postMessage('vvc-close-iframe', '*');
+    } else {
+      this.closeModal = true;
+    }
   }
   startTimer() {
     this.stopTimer();
@@ -179,5 +184,10 @@ export class AppComponent implements OnInit {
     clearInterval(this.callTimerInterval);
     this.callTimer = 0;
   }
-
+  upgradeMedia(media: string) {
+    const startedWith = (this.widgetState.voice) ? 'voice' : media;
+    this.cserv.askForUpgrade(media, startedWith.toUpperCase()).then( () => {
+      this.startTimer();
+    });
+  }
 }

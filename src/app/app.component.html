@@ -20,7 +20,8 @@
     <vvc-topbar id="vvc-top-bar"
                 [ngClass]="{'expanded':widgetState?.topBarExpanded}"
                 [state]="widgetState"
-                (close)="showCloseModal()"></vvc-topbar>
+                (close)="showCloseModal($event)"
+                (upgrade)="upgradeMedia($event)"></vvc-topbar>
 
     <vvc-media-tools id="vvc-media-tools"
                      *ngIf="widgetState?.voice && !widgetState.fullScreen"
@@ -43,13 +44,13 @@
       </div>
     </div>
 
-    <vvc-chat-box id="vvc-chat-area"
+    <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState.closed"
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
 
     <vvc-close-modal id="vvc-close-modal"
                      *ngIf="closeModal"
-                     (close)="closeContact()"
+                     (close)="closeContact($event)"
                      (cancel)="dismissCloseModal()"></vvc-close-modal>
 
   </div>

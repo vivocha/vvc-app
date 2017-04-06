@@ -1,14 +1,23 @@
 <div class="top-row">
   <div class="media-tools">
-    <i class="vvc-phone" *ngIf="canStartMediaRequest('voice')"></i>
-    <i class="vvc-video" *ngIf="canStartMediaRequest('video')"></i>
+    <div *ngIf="!this.state.closed">
+      <i class="vvc-phone"
+         [ngClass]="{'disabled': this.state.voice || this.state.mediaOffering }"
+         *ngIf="canStartMediaRequest('voice')"
+         (click)="askForUpgrade('voice')"></i>
+
+      <i class="vvc-video"
+         [ngClass]="{'disabled': this.state.video || this.state.mediaOffering }"
+         *ngIf="canStartMediaRequest('video')"
+         (click)="askForUpgrade('video')"></i>
+    </div>
   </div>
   <div class="avatar-place">
     <img class='agent-img' [src]="getAvatar()">
   </div>
   <div class="secondary-tools">
-    <i class="vvc-minimize"></i>
-    <i class="vvc-close" (click)="close.emit()"></i>
+    <i class="vvc-minimize" *ngIf="!this.state.closed"></i>
+    <i class="vvc-close" (click)="close.emit(this.state.closed)"></i>
   </div>
 </div>
 
