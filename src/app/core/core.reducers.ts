@@ -1,8 +1,9 @@
-import {VvcWidgetState, VvcMessage} from './core.interfaces';
+import {VvcWidgetState, VvcMessage, VvcDataCollection} from './core.interfaces';
 const initialWidgetState: VvcWidgetState = {
     chat: false,
     chatVisibility: true,
     closed: false,
+    dataCollections: {},
     error: false,
     fullScreen: false,
     lastError: '',
@@ -98,6 +99,14 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { topBarExpanded: false });
         case 'SHOW_DATA_COLLECTION':
             return Object.assign({}, state, { dataCollectionPanel: payload });
+        case 'SHOW_SURVEY':
+            const dataCollections = {}
+            dataCollections[payload.id] = payload;
+            return Object.assign({}, state, {
+                showSurvey: true,
+                surveyId: payload.id,
+                dataCollections: Object.assign({}, state.dataCollections, dataCollections)
+            });
         case 'AGENT_IS_WRITING':
             return Object.assign({}, state, { isAgentWriting: payload });
         case 'CLOSE_CONTACT':
@@ -142,3 +151,4 @@ export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) 
         default: return messageArray;
     }
 };
+

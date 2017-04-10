@@ -18,6 +18,7 @@ import {Angular2AutoScroll} from './autoscroll.directive';
 import { CloseModalComponent } from './close-modal/close-modal.component';
 import {QueueComponent} from './queue/queue.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
+import { SurveyComponent } from './survey/survey.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -37,7 +38,8 @@ export function createTranslateLoader(http: Http) {
     EmojiSelectorComponent,
     Angular2AutoScroll,
     CloseModalComponent,
-    FullscreenComponent
+    FullscreenComponent,
+    SurveyComponent
   ],
   imports: [
     BrowserModule,

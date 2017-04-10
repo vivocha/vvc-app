@@ -1,5 +1,17 @@
-import {VvcAgent} from '../../../oldcli/src/app/oldstuff/core/core.interfaces';
 export type VvcTxRxTypes = 'required' | 'optional' | 'off';
+export interface VvcAvatarImage {
+    size?: string;
+    file: string;
+}
+export interface VvcAgentAvatar {
+    base_url: string;
+    images: Array<VvcAvatarImage>;
+}
+export interface VvcAgent {
+    user: string;
+    nick: string;
+    avatar?: VvcAgentAvatar;
+}
 export interface VvcMediaOffer {
     diff: Object;
     offer: VvcOffer;
@@ -12,7 +24,7 @@ export interface VvcOffer {
     Sharing?: VvcMediaOfferDetails;
 }
 export interface VvcMessage {
-    dataCollection?: DataCollection;
+    // dataCollection?: DataCollection;
     from_id?: string;
     from_nick?: string;
     id?: number;
@@ -41,6 +53,7 @@ export interface VvcWidgetState {
     chatVisibility: boolean;
     closed: boolean;
     dataCollectionPanel?: boolean;
+    dataCollections: VvcDataCollection;
     error: boolean;
     fullScreen: boolean;
     hasSurvey?: boolean;
@@ -55,7 +68,9 @@ export interface VvcWidgetState {
     mute: boolean;
     mute_in_progress: boolean;
     remoteCaps?: any;
+    selectedDataCollectionId?: string;
     sharing: boolean;
+    showSurvey?: boolean;
     surveyId?: string;
     topBarExpanded: boolean;
     voice: boolean;
@@ -68,9 +83,18 @@ export interface VvcWidgetState {
 export interface AppState {
     widgetState: VvcWidgetState;
     messages: Array<any>;
+    vvcDataCollection: VvcDataCollection;
 }
 
 // DATA COLLECTIONS
+export interface DataCollection {
+    status: string;
+    type: string;
+}
+export interface VvcDataCollection {
+    [id: string]: DataCollection;
+}
+/*
 export type DcObjectType = 'text' | 'checkbox' | 'date' | 'email' | 'link' | 'phone' | 'nickname' | 'survey' | 'privacy';
 export type DcStates = 'hidden' | 'visible';
 export interface DataCollectionState {
@@ -113,3 +137,4 @@ export interface DcOptValue {
     text: string;
     color?: string;
 }
+*/

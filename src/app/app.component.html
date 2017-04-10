@@ -53,6 +53,10 @@
                      (close)="closeContact($event)"
                      (cancel)="dismissCloseModal()"></vvc-close-modal>
 
+    <vvc-survey id="vvc-survey"
+                *ngIf="widgetState.showSurvey"
+                [dataCollection]="widgetState.dataCollections[widgetState.surveyId]"></vvc-survey>
+
   </div>
 
 </div>

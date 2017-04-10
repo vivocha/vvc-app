@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
-import {VvcWidgetState, AppState, VvcOffer, DataCollection} from './core/core.interfaces';
+import {VvcWidgetState, AppState, VvcOffer, DataCollection, VvcDataCollection} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
 import {MediaToolsComponent} from './media-tools/media-tools.component';
 
@@ -27,9 +27,9 @@ export class AppComponent implements OnInit {
   callTimer = 0;
   wasFullScreen = false;
 
-  private selectedDataCollection: DataCollection;
   public widgetState: VvcWidgetState;
   public messages: Array<any>;
+
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
               private store: Store<AppState>,
@@ -74,9 +74,11 @@ export class AppComponent implements OnInit {
     this.window.parent.postMessage('vvc-close-iframe', '*');
   }
   compileDataCollection(dc: DataCollection) {
+    /*
     console.log('DC', dc);
     this.selectedDataCollection = dc;
     this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: true });
+    */
   }
   createContact() {
     const initialOffer = this.getInitialOffer();
@@ -166,7 +168,11 @@ export class AppComponent implements OnInit {
   }
   showCloseModal(isContactClosed) {
     if (isContactClosed) {
-      this.window.parent.postMessage('vvc-close-iframe', '*');
+      if (this.widgetState.hasSurvey) {
+        this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
+      } else {
+        this.window.parent.postMessage('vvc-close-iframe', '*');
+      }
     } else {
       this.closeModal = true;
     }

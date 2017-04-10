@@ -1,7 +1,8 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppState, VvcWidgetState, VvcOffer, DataCollectionState} from './core.interfaces';
-
+import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
+import {VvcDataCollectionService} from './dc.service';
+/*
 const dc2: DataCollectionState = {
     state: 'visible',
     dataCollection: {
@@ -67,7 +68,7 @@ const dc2: DataCollectionState = {
         ]
     }
 };
-
+*/
 @Injectable()
 export class VvcContactService {
 
@@ -85,7 +86,8 @@ export class VvcContactService {
 
 
     constructor( private store: Store<AppState>,
-                 private zone: NgZone) {
+                 private zone: NgZone,
+                 private dcserv: VvcDataCollectionService) {
        store.subscribe( state => {
            this.widgetState = <VvcWidgetState> state.widgetState;
        });
@@ -600,7 +602,7 @@ export class VvcContactService {
         switch (dataId) {
             case 'user':
                 this.dispatch({ type: 'NEW_MESSAGE', payload: {
-                    dataCollection: dc2.dataCollection,
+                    // dataCollection: dc2.dataCollection,
                     type: 'incoming-request',
                     id: new Date().getTime(),
                     state: 'open',
@@ -609,6 +611,14 @@ export class VvcContactService {
                 break;
             default: break;
         }
+    }
+    showSurvey(surveyId, askForTranscript) {
+        console.log("should show the survey");
+        this.dcserv.loadDataCollection(surveyId, askForTranscript).then( (dc) => {
+            console.log("should dispatch survey", dc);
+            this.dispatch({ type: 'SHOW_SURVEY', payload: dc});
+        });
+
     }
     upgradeMedia(upgradeState) {
         this.contact.mergeMedia(this.getUpgradeState(upgradeState)).then( (mergedMedia) => {
