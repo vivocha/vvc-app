@@ -19,6 +19,7 @@ import { CloseModalComponent } from './close-modal/close-modal.component';
 import {QueueComponent} from './queue/queue.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
 import { SurveyComponent } from './survey/survey.component';
+import { InitialDataComponent } from './initial-data/initial-data.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -39,7 +40,8 @@ export function createTranslateLoader(http: Http) {
     Angular2AutoScroll,
     CloseModalComponent,
     FullscreenComponent,
-    SurveyComponent
+    SurveyComponent,
+    InitialDataComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 export type VvcTxRxTypes = 'required' | 'optional' | 'off';
+export type WidgetState = 'initializing' | 'waiting_data' | 'queue' | 'ready';
 export interface VvcAvatarImage {
     size?: string;
     file: string;
@@ -56,12 +57,14 @@ export interface VvcWidgetState {
     dataCollections: VvcDataCollection;
     error: boolean;
     fullScreen: boolean;
+    hasDataCollection?: boolean;
     hasSurvey?: boolean;
     incomingRequest?: boolean;
     incomingOffer?: VvcOffer;
+    initialDataFilled?: boolean;
     isAgentWriting?: boolean;
     lastError: string;
-    loading: boolean;
+    state: WidgetState;
     localCaps?: any;
     mediaOffering: boolean;
     mobile: boolean;

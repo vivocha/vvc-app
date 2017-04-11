@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   public type = 'chat';
 
   private closeModal = false;
+  private initialConf;
 
   @ViewChild(MediaToolsComponent) mediaTools;
   callTimerInterval;
@@ -44,6 +45,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.bindStores();
   }
+  abandon() {
+    this.window.parent.postMessage('vvc-close-iframe', '*');
+  }
   acceptIncomingRequest(evt) {
     this.startTimer();
     this.cserv.acceptOffer(evt);
@@ -58,7 +62,7 @@ export class AppComponent implements OnInit {
       if (this.wasFullScreen && this.widgetState.video === false) {
         this.setNormalScreen();
       }
-      // console.log(this.widgetState);
+      console.log('STATE',this.widgetState.state);
     });
   }
   checkForVivocha() {
@@ -73,6 +77,9 @@ export class AppComponent implements OnInit {
     this.cserv.closeContact();
     this.window.parent.postMessage('vvc-close-iframe', '*');
   }
+  closeOnSurvey() {
+    this.window.parent.postMessage('vvc-close-iframe', '*');
+  }
   compileDataCollection(dc: DataCollection) {
     /*
     console.log('DC', dc);
@@ -81,6 +88,8 @@ export class AppComponent implements OnInit {
     */
   }
   createContact() {
+    this.cserv.createContact(this.initialConf);
+    /*
     const initialOffer = this.getInitialOffer();
     this.cserv.createContact({
       serv_id: this.servId,
@@ -93,11 +102,15 @@ export class AppComponent implements OnInit {
           Voice : 'visitor'
         },
         survey: {
-          dataToCollect: 'schema#id',
+          dataToCollect: 'schema#survey-id',
           sendTranscript: 'ask'
+        },
+        dataCollection: {
+          dataToCollect: 'schema#data-id'
         }
       }
     });
+    */
   }
   denyIncomingRequest(media) {
     this.cserv.denyOffer(media);
@@ -122,6 +135,35 @@ export class AppComponent implements OnInit {
   hideDataCollectionPanel() {
     this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
   }
+  loadCampaignSettings() {
+    const initialOffer = this.getInitialOffer();
+    this.initialConf = {
+      serv_id: this.servId,
+      type: 'chat',
+      nick: 'Marcolino',
+      initial_offer: initialOffer,
+      opts: { // campaign /service options
+        media: {
+          Video : 'visitor',
+          Voice : 'visitor'
+        },
+        survey: {
+          dataToCollect: 'schema#survey-id',
+          sendTranscript: 'ask'
+        },
+        dataCollection: {
+          dataToCollect: 'schema#data-id'
+        }
+      }
+    };
+    if (this.initialConf.opts.dataCollection) {
+      console.log('should collect data collection');
+      this.cserv.collectInitialData(this.initialConf);
+    } else {
+      console.log('creating the contact');
+      this.cserv.createContact(this.initialConf);
+    }
+  }
   parseIframeUrl() {
     const hash = this.window.location.hash;
     if (hash.indexOf(';') !== -1) {
@@ -133,7 +175,8 @@ export class AppComponent implements OnInit {
       this.translate.getTranslation( this.lang );
       this.translate.setDefaultLang('en');
       this.translate.use(this.lang);
-      this.createContact();
+      //this.createContact();
+      this.loadCampaignSettings();
     }
   }
   removeLocalVideo() {
@@ -189,6 +232,9 @@ export class AppComponent implements OnInit {
   stopTimer() {
     clearInterval(this.callTimerInterval);
     this.callTimer = 0;
+  }
+  submitInitialData() {
+    this.cserv.sendData(this.initialConf);
   }
   upgradeMedia(media: string) {
     const startedWith = (this.widgetState.voice) ? 'voice' : media;

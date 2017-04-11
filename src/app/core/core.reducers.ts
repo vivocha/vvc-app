@@ -7,7 +7,7 @@ const initialWidgetState: VvcWidgetState = {
     error: false,
     fullScreen: false,
     lastError: '',
-    loading: true,
+    state: 'initializing',
     mediaOffering: false,
     mute: false,
     mute_in_progress: false,
@@ -34,7 +34,7 @@ const extractInitialOpts = (opts) => {
     return newOpts;
 }
 const extractStateFromMedia = (payload) => {
-  const newState: { chat?: boolean, voice?: boolean, video?: boolean, video_rx?: boolean, video_tx?: boolean, sharing?: boolean } = {
+  const newState: { state?: string; chat?: boolean, voice?: boolean, video?: boolean, video_rx?: boolean, video_tx?: boolean, sharing?: boolean } = {
       chat: false,
       voice: false,
       video: false,
@@ -68,10 +68,24 @@ const extractStateFromMedia = (payload) => {
   return newState;
 };
 export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, payload}) => {
+    console.log('------' + type + '------');
     switch (type) {
+        case 'INITIAL_DATA':
+            const dcList = {};
+            dcList[payload.id] = payload;
+            return Object.assign({}, state, {
+                state: 'waiting_data',
+                initialDataFilled: false,
+                hasDataCollection: true,
+                selectedDataCollectionId: payload.id,
+                dataCollections: Object.assign({}, state.dataCollections, dcList)
+            });
+        case 'INITIAL_DATA_SENT':
+            return Object.assign({}, state, { state: 'queue', initialDataFilled: true });
         case 'INITIAL_OFFER':
             const initialState = extractStateFromMedia(payload.offer);
             const initialOpts = extractInitialOpts(payload.opts);
+            initialState.state = 'queue';
             return Object.assign({}, state, initialState, initialOpts);
         case 'REMOTE_CAPS':
             return Object.assign({}, state, { remoteCaps: payload });
@@ -84,9 +98,9 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { mediaOffering: payload });
         case 'JOINED':
             if (payload) {
-                return Object.assign({}, state, { agent: payload, loading: false });
+                return Object.assign({}, state, { agent: payload, state: 'ready' });
             }
-            return Object.assign({}, state, { loading: false });
+            return Object.assign({}, state, { state: 'ready' });
         case 'FULLSCREEN':
             return Object.assign({}, state, { fullScreen: payload });
         case 'MUTE':

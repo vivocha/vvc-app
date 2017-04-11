@@ -10,12 +10,18 @@
                   (showchat)="setChatVisibility($event)"
                   (mute)="setMute($event)"></vvc-fullscreen>
 
+  <vvc-initial-data id="vvc-initial-data"
+                    *ngIf="widgetState?.state === 'waiting_data'"
+                    [dataCollection]="widgetState.dataCollections[widgetState.selectedDataCollectionId]"
+                    (datasubmit)="submitInitialData()"
+                    (abandon)="abandon()"></vvc-initial-data>
+
   <vvc-queue id="vvc-queue"
-             *ngIf="widgetState?.loading"
+             *ngIf="widgetState?.state === 'queue'"
              [type]="type"></vvc-queue>
 
   <div id="vvc-widget-wrap"
-       *ngIf="!widgetState?.loading && !widgetState?.dataCollectionPanel">
+       *ngIf="widgetState?.state === 'ready'">
 
     <vvc-topbar id="vvc-top-bar"
                 [ngClass]="{'expanded':widgetState?.topBarExpanded}"
@@ -55,7 +61,8 @@
 
     <vvc-survey id="vvc-survey"
                 *ngIf="widgetState.showSurvey"
-                [dataCollection]="widgetState.dataCollections[widgetState.surveyId]"></vvc-survey>
+                [dataCollection]="widgetState.dataCollections[widgetState.surveyId]"
+                (close)="closeOnSurvey()"></vvc-survey>
 
   </div>
 

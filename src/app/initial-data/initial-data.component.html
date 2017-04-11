@@ -4,21 +4,22 @@
     <div>
       <img class="acct-img" src="assets/acct-img.png">
     </div>
-    <div (click)="close.emit()">
+    <div (click)="abandon.emit()">
       <i class="vvc-close"></i>
     </div>
   </div>
   <div class="top-box-row2">
-    <div [innerHTML]="'SURVEY.WELCOME' | translate"></div>
+    <div [innerHTML]="'INITIAL_DATA.WELCOME' | translate"></div>
   </div>
 </div>
-<div class="survey-box">
+<div class="data-box">
   <div class="card vvc-form">
     <div class="card-inner">
-      ready to fill the survey
+      ready to fill the data collection
       <div>
         {{ dataCollection | json }}
       </div>
+      <button class="btn-primary" (click)="datasubmit.emit()">Send Data Collection</button>
     </div>
   </div>
 </div>

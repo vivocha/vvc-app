@@ -10,7 +10,13 @@ export class VvcDataCollectionService {
 
     }
 
-    loadDataCollection(dcId, askForTranscript) {
+    loadDataCollection(dcId) {
+        const dc = {
+            id: dcId
+        };
+        return Observable.of(dc).delay(1000).toPromise();
+    }
+    loadSurvey(dcId, askForTranscript) {
         const dc = {
             id: dcId,
             type: 'block',

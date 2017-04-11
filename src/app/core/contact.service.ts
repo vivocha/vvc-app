@@ -211,10 +211,16 @@ export class VvcContactService {
     closeContact() {
         this.contact.leave();
     }
+    collectInitialData(conf) {
+        this.dcserv.loadDataCollection(conf.opts.dataCollection.dataToCollect).then( dc => {
+            this.dispatch({type: 'INITIAL_DATA', payload: dc });
+        });
+    }
     createContact(conf) {
         this.dispatch({type: 'INITIAL_OFFER', payload: { offer: conf.initial_offer, opts: conf.opts }});
 
         this.vivocha.getContact(conf).then( contact => {
+            console.log('contact created, looking for the caps');
             contact.getLocalCapabilities().then( caps => {
                 this.dispatch({type: 'LOCAL_CAPS', payload: caps });
             });
@@ -223,6 +229,8 @@ export class VvcContactService {
             });
             this.contact = contact;
             this.mapContact();
+        }, (err) => {
+            console.log('Failed to create contact', err);
         });
 
     }
@@ -585,6 +593,13 @@ export class VvcContactService {
             payload: true
         });
     }
+    sendData(initialConf) {
+        setTimeout( () => {
+            console.log('sending data');
+            this.dispatch({ type: 'INITIAL_DATA_SENT' });
+            this.createContact(initialConf);
+        }, 1000);
+    }
     sendText(text: string) {
         this.contact.sendText(text);
     }
@@ -613,9 +628,7 @@ export class VvcContactService {
         }
     }
     showSurvey(surveyId, askForTranscript) {
-        console.log("should show the survey");
-        this.dcserv.loadDataCollection(surveyId, askForTranscript).then( (dc) => {
-            console.log("should dispatch survey", dc);
+        this.dcserv.loadSurvey(surveyId, askForTranscript).then( (dc) => {
             this.dispatch({ type: 'SHOW_SURVEY', payload: dc});
         });
 
