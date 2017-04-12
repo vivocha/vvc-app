@@ -15,10 +15,7 @@
 <div class="survey-box">
   <div class="card vvc-form">
     <div class="card-inner">
-      ready to fill the survey
-      <div>
-        {{ dataCollection | json }}
-      </div>
+      <vvc-form [dc]="dataCollection"></vvc-form>
     </div>
   </div>
 </div>

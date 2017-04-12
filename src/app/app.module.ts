@@ -20,6 +20,8 @@ import {QueueComponent} from './queue/queue.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
 import { SurveyComponent } from './survey/survey.component';
 import { InitialDataComponent } from './initial-data/initial-data.component';
+import { IncDcComponent } from './inc-dc/inc-dc.component';
+import { FormComponent } from './form/form.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -41,7 +43,9 @@ export function createTranslateLoader(http: Http) {
     CloseModalComponent,
     FullscreenComponent,
     SurveyComponent,
-    InitialDataComponent
+    InitialDataComponent,
+    IncDcComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

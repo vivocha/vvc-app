@@ -39,20 +39,31 @@
                      (mute)="setMute($event)"></vvc-media-tools>
 
     <div id="vvc-messages" angular2-auto-scroll>
-      <div *ngFor="let m of messages" [ngSwitch]="m.type">
-        <vvc-chat-message *ngSwitchCase="'chat'"
+      <div *ngFor="let m of messages">
+        <vvc-chat-message *ngIf="m.type === 'chat'"
                           [message]="m"
                           (download)="download($event)"></vvc-chat-message>
-        <vvc-incoming-message *ngSwitchCase="'incoming-request'"
+        <vvc-incoming-message *ngIf="m.type === 'incoming-request' && m.media != 'DC'"
                               [message]="m"
                               (rejectOffer)="denyIncomingRequest($event)"
                               (acceptOffer)="acceptIncomingRequest($event)"></vvc-incoming-message>
+        <vvc-inc-dc *ngIf="m.type === 'incoming-request' && m.media === 'DC'"
+                    [message]="m"
+                    (show)="showDataCollection($event)"></vvc-inc-dc>
       </div>
     </div>
 
     <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState.closed"
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
+
+    <div id="vvc-dc-viewer" *ngIf="selectedDataCollectionId">
+      {{ widgetState.dataCollections[selectedDataCollectionId] | json }}
+
+
+      <button (click)="selectedDataCollectionId = undefined">Close</button>
+    </div>
+
 
     <vvc-close-modal id="vvc-close-modal"
                      *ngIf="closeModal"

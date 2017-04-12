@@ -15,11 +15,34 @@
 <div class="data-box">
   <div class="card vvc-form">
     <div class="card-inner">
-      ready to fill the data collection
-      <div>
-        {{ dataCollection | json }}
+      <vvc-form [dc]="dataCollection"
+                (submit)="datasubmit.emit()"></vvc-form>
+
+      <!--
+      <div class="vvc-title">
+        Anagrafica Utente
       </div>
-      <button class="btn-primary" (click)="datasubmit.emit()">Send Data Collection</button>
+
+      <div class="vvc-input">
+        <label>Nome<span class="required"> *</span></label>
+        <input type="text" placeholder="il tuo nome">
+        <p></p>
+      </div>
+
+      <div class="vvc-input">
+        <label>Cognome<span class="required"> *</span></label>
+        <input type="text" placeholder="il tuo cognome">
+        <p></p>
+      </div>
+
+      <div class="vvc-input">
+        <label>Email</label>
+        <input type="email" placeholder="la tua email">
+        <p></p>
+      </div>
+
+      <button class="btn-primary" (click)="datasubmit.emit()">Invia</button>
+      -->
     </div>
   </div>
 </div>

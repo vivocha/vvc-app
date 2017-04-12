@@ -80,6 +80,12 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
                 selectedDataCollectionId: payload.id,
                 dataCollections: Object.assign({}, state.dataCollections, dcList)
             });
+        case 'ADD_DATA_COLLECTION':
+            const newDc = {};
+            newDc[payload.id] = payload;
+            return Object.assign({}, state, {
+                dataCollections: Object.assign({}, state.dataCollections, newDc)
+            });
         case 'INITIAL_DATA_SENT':
             return Object.assign({}, state, { state: 'queue', initialDataFilled: true });
         case 'INITIAL_OFFER':

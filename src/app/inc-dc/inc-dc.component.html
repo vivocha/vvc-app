@@ -1,0 +1,30 @@
+<div class="incoming-msg">
+  <div class="dc">
+    <div class="inc-msg-header">
+      <div class="inc-type"><i class="vvc-doc"></i></div>
+      <div class="inc-header">Information request</div>
+    </div>
+
+    <div class="inc-msg-content" *ngIf="message.dataCollection.mode === 'block'">
+      The agent invited you to compile:<br>
+      <span class="dc-name">{{ message.dataCollection.name | translate }}</span>
+    </div>
+
+    <div class="inc-msg-content" *ngIf="message.dataCollection.mode === 'inline'">
+
+      This form should compile inline
+
+    </div>
+
+    <div class="inc-msg-content">
+      {{ message | json }}
+    </div>
+
+    <div class="inc-msg-content">
+      <button class="btn-primary" (click)="show.emit(message.dataCollection.id)">
+        <i class="vvc-pencil"></i> Compile
+      </button>
+    </div>
+
+  </div>
+</div>

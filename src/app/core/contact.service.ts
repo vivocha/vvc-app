@@ -367,6 +367,21 @@ export class VvcContactService {
         }
         return mediaObject;
     }
+    fetchDataCollection(id) {
+        this.dcserv.loadDataCollection(id).then( dc => {
+            this.dispatch({ type: 'ADD_DATA_COLLECTION', payload: dc });
+            this.dispatch({
+                type: 'NEW_MESSAGE',
+                payload: {
+                    id: new Date().getTime(),
+                    type: 'incoming-request',
+                    media: 'DC',
+                    state: 'open',
+                    dataCollection: dc
+                }
+            });
+        });
+    }
     hangup() {
         this.contact.getMediaOffer().then(mediaOffer => {
             if (mediaOffer['Voice']) {
@@ -420,7 +435,8 @@ export class VvcContactService {
         console.log('mapping stuff on the contact');
         this.contact.on('action', (action_code, args) => {
             if (action_code === 'DataCollection') {
-                this.showDataCollection(args[0].id);
+                // this.showDataCollection(args[0].id);
+                this.fetchDataCollection(args[0].id);
             }
         });
         this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
@@ -476,7 +492,6 @@ export class VvcContactService {
             this.clearIsWriting();
         });
         this.contact.on('transferred', (transferred_to) => {
-            console.log('Transferred', transferred_to);
             this.dispatch({
                 type: 'NEW_MESSAGE',
                 payload: {
@@ -613,6 +628,7 @@ export class VvcContactService {
             this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
         }, this.isWritingTimeout);
     }
+    /*
     showDataCollection(dataId) {
         switch (dataId) {
             case 'user':
@@ -627,6 +643,7 @@ export class VvcContactService {
             default: break;
         }
     }
+    */
     showSurvey(surveyId, askForTranscript) {
         this.dcserv.loadSurvey(surveyId, askForTranscript).then( (dc) => {
             this.dispatch({ type: 'SHOW_SURVEY', payload: dc});

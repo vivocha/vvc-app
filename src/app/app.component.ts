@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang = 'en';
   public type = 'chat';
+  public selectedDataCollectionId;
 
   private closeModal = false;
   private initialConf;
@@ -219,6 +220,10 @@ export class AppComponent implements OnInit {
     } else {
       this.closeModal = true;
     }
+  }
+  showDataCollection(dcId) {
+    console.log(dcId, this.widgetState.dataCollections);
+    this.selectedDataCollectionId = dcId;
   }
   startTimer() {
     this.stopTimer();
