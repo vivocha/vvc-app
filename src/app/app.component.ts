@@ -76,7 +76,12 @@ export class AppComponent implements OnInit {
   }
   closeContact() {
     this.cserv.closeContact();
-    this.window.parent.postMessage('vvc-close-iframe', '*');
+    // this.window.parent.postMessage('vvc-close-iframe', '*');
+    if (this.widgetState.hasSurvey) {
+      this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
+    } else {
+      this.window.parent.postMessage('vvc-close-iframe', '*');
+    }
   }
   closeOnSurvey() {
     this.window.parent.postMessage('vvc-close-iframe', '*');
@@ -151,10 +156,11 @@ export class AppComponent implements OnInit {
         survey: {
           dataToCollect: 'schema#survey-id',
           sendTranscript: 'ask'
-        },
+        }
+        /*,
         dataCollection: {
           dataToCollect: 'schema#data-id'
-        }
+        }*/
       }
     };
     if (this.initialConf.opts.dataCollection) {
@@ -176,7 +182,7 @@ export class AppComponent implements OnInit {
       this.translate.getTranslation( this.lang );
       this.translate.setDefaultLang('en');
       this.translate.use(this.lang);
-      //this.createContact();
+      // this.createContact();
       this.loadCampaignSettings();
     }
   }

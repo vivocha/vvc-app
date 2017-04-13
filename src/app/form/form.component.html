@@ -1,5 +1,9 @@
 <div class="vvc-form">
-  {{ form.invalid }}
+
+  <div class="form-title" *ngIf="dc.dataTitle">{{ dc.dataTitle | translate }}</div>
+  <div class="form-descr" *ngIf="dc.dataDescr">{{ dc.dataDescr | translate }}</div>
+  <div class="form-required-legend" *ngIf="hasRequired">{{ 'DC.REQUIRED_LEGEND' | translate }}</div>
+
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div *ngFor="let elem of dc.data">
 
@@ -11,22 +15,21 @@
                [formControlName]="elem.id"
                placeholder="{{ elem.placeholder | translate }}">
         <p *ngIf="form.get(elem.id).touched">
-          <span *ngIf="form.get(elem.id).hasError('required')">campo obbligatorio</span>
+          <span *ngIf="form.get(elem.id).hasError('required')">{{ 'DC.REQUIRED_ERR' | translate }}</span>
+          <span *ngIf="form.get(elem.id).hasError('email')">{{ 'DC.EMAIL_ERR' | translate }}</span>
         </p>
       </div>
 
-      <!--
-      <div class="" *ngIf="elem.type === 'rating-bar'">
+      <div *ngIf="elem.type === 'rating-bar'">
         <div>{{ elem.name | translate }}</div>
         <div class="vvc-bar-rating">
-          <input type="radio" id="star5" name="{{elem.id}}" value="5" /><label for="star5" title="Rocks!"> 5 stars</label>
-          <input type="radio" id="star4" name="{{elem.id}}" value="4" /><label for="star4" title="Pretty good"> 4 stars</label>
-          <input type="radio" id="star3" name="{{elem.id}}" value="3" /><label for="star3" title="Meh"> 3 stars</label>
-          <input type="radio" id="star2" name="{{elem.id}}" value="2" /><label for="star2" title="Kinda bad"> 2 stars</label>
-          <input type="radio" id="star1" name="{{elem.id}}" value="1" /><label for="star1" title="Sucks big time"> 1 star</label>
+          <input type="radio" id="star5" [formControlName]="elem.id" value="5" /><label for="star5"></label>
+          <input type="radio" id="star4" [formControlName]="elem.id" value="4" /><label for="star4"></label>
+          <input type="radio" id="star3" [formControlName]="elem.id" value="3" /><label for="star3"></label>
+          <input type="radio" id="star2" [formControlName]="elem.id" value="2" /><label for="star2"></label>
+          <input type="radio" id="star1" [formControlName]="elem.id" value="1" /><label for="star1"></label>
         </div>
       </div>
-      -->
 
     </div>
     <div>
