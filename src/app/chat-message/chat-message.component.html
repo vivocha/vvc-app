@@ -1,4 +1,4 @@
-<div *ngIf="message.isAgent" class="agent-msg" [@ease]="state">
+<div *ngIf="message.isAgent" class="agent-msg" >
   <span class="msg-content" *ngIf="message.state === 'iswriting'">
     <span class="bubble bubble-one"></span>
     <span class="bubble bubble-two"></span>
@@ -19,7 +19,7 @@
 
 </div>
 
-<div *ngIf="!message.isAgent" class="customer-msg" [@ease]="state">
+<div *ngIf="!message.isAgent" class="customer-msg">
 
   <span class="msg-content" *ngIf="message.url">
     <span class="the-image" *ngIf="isImage()"><img [src]="message.url"></span>

@@ -6,6 +6,7 @@ import {
   selector: 'vvc-chat-message',
   templateUrl: './chat-message.component.html',
   animations: [
+      /*
     trigger('ease', [
       state('inactive', style({
         transform: 'scale(0)'
@@ -14,7 +15,8 @@ import {
         transform: 'scale(1)'
       })),
       transition('inactive => active', animate('100ms ease-in'))
-    ])
+
+    ])*/
   ]})
 export class ChatMessageComponent implements OnInit {
   state = 'inactive';
