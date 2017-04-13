@@ -1,26 +1,37 @@
 <div class="vvc-form">
-  <div *ngFor="let elem of dc.data">
+  {{ form.invalid }}
+  <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+    <div *ngFor="let elem of dc.data">
 
-    <div class="vvc-input" *ngIf="elem.type === 'text' || elem.type === 'email'">
-      <label>{{ elem.name | translate }}<span *ngIf="elem.required" class="required"> *</span></label>
-      <input type="{{elem.type}}" id="{{elem.id}}" placeholder="{{ elem.placeholder | translate }}">
-      <p></p>
-    </div>
-
-    <div class="" *ngIf="elem.type === 'rating-bar'">
-      <div>{{ elem.name | translate }}</div>
-      <div class="vvc-bar-rating">
-        <input type="radio" id="star5" name="{{elem.id}}" value="5" /><label for="star5" title="Rocks!"> 5 stars</label>
-        <input type="radio" id="star4" name="{{elem.id}}" value="4" /><label for="star4" title="Pretty good"> 4 stars</label>
-        <input type="radio" id="star3" name="{{elem.id}}" value="3" /><label for="star3" title="Meh"> 3 stars</label>
-        <input type="radio" id="star2" name="{{elem.id}}" value="2" /><label for="star2" title="Kinda bad"> 2 stars</label>
-        <input type="radio" id="star1" name="{{elem.id}}" value="1" /><label for="star1" title="Sucks big time"> 1 star</label>
+      <div class="vvc-input"
+           [ngClass]="{'error' : form.get(elem.id).errors && form.get(elem.id).touched}"
+           *ngIf="elem.type === 'text' || elem.type === 'email'">
+        <label>{{ elem.name | translate }}<span *ngIf="elem.required" class="required"> *</span></label>
+        <input type="{{elem.type}}"
+               [formControlName]="elem.id"
+               placeholder="{{ elem.placeholder | translate }}">
+        <p *ngIf="form.get(elem.id).touched">
+          <span *ngIf="form.get(elem.id).hasError('required')">campo obbligatorio</span>
+        </p>
       </div>
-    </div>
 
-  </div>
-  <div>
-    <button class="btn-primary"
-    (click)="submit.emit()">{{ dc.saveButton | translate }}</button>
-  </div>
+      <!--
+      <div class="" *ngIf="elem.type === 'rating-bar'">
+        <div>{{ elem.name | translate }}</div>
+        <div class="vvc-bar-rating">
+          <input type="radio" id="star5" name="{{elem.id}}" value="5" /><label for="star5" title="Rocks!"> 5 stars</label>
+          <input type="radio" id="star4" name="{{elem.id}}" value="4" /><label for="star4" title="Pretty good"> 4 stars</label>
+          <input type="radio" id="star3" name="{{elem.id}}" value="3" /><label for="star3" title="Meh"> 3 stars</label>
+          <input type="radio" id="star2" name="{{elem.id}}" value="2" /><label for="star2" title="Kinda bad"> 2 stars</label>
+          <input type="radio" id="star1" name="{{elem.id}}" value="1" /><label for="star1" title="Sucks big time"> 1 star</label>
+        </div>
+      </div>
+      -->
+
+    </div>
+    <div>
+      <button class="btn-primary"
+              [disabled]="form.invalid">{{ dc.saveButton | translate }}</button>
+    </div>
+  </form>
 </div>
