@@ -7,10 +7,18 @@ import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 export class IncDcComponent implements OnInit {
 
   @Input() message;
+  @Input() dc;
   @Output() show = new EventEmitter();
+  @Output() submit = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onInlineSubmit(formValue) {
+    this.dc.dataValue = formValue;
+    this.submit.emit({ msg: this.message, dataCollection: this.dc });
   }
 
 }

@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang = 'en';
   public type = 'chat';
-  public selectedDataCollectionId;
+  public selectedDataMessage;
 
   private closeModal = false;
   private initialConf;
@@ -200,6 +200,9 @@ export class AppComponent implements OnInit {
       this.cserv.sendText(text);
     }
   }
+  sendDataCollection(obj) {
+    this.cserv.sendDataCollection(obj);
+  }
   setChatVisibility(visibility: boolean) {
     this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
   }
@@ -227,9 +230,8 @@ export class AppComponent implements OnInit {
       this.closeModal = true;
     }
   }
-  showDataCollection(dcId) {
-    console.log(dcId, this.widgetState.dataCollections);
-    this.selectedDataCollectionId = dcId;
+  showDataCollection(message) {
+    this.selectedDataMessage = message;
   }
   startTimer() {
     this.stopTimer();
@@ -246,6 +248,11 @@ export class AppComponent implements OnInit {
   }
   submitInitialData() {
     this.cserv.sendData(this.initialConf);
+  }
+  syncDataCollection(obj) {
+    const dc = obj.dataCollection;
+    const msg = obj.message;
+    this.cserv.syncDataCollection(dc);
   }
   upgradeMedia(media: string) {
     const startedWith = (this.widgetState.voice) ? 'voice' : media;

@@ -22,6 +22,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { InitialDataComponent } from './initial-data/initial-data.component';
 import { IncDcComponent } from './inc-dc/inc-dc.component';
 import { FormComponent } from './form/form.component';
+import { DcViewerComponent } from './dc-viewer/dc-viewer.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -45,7 +46,8 @@ export function createTranslateLoader(http: Http) {
     SurveyComponent,
     InitialDataComponent,
     IncDcComponent,
-    FormComponent
+    FormComponent,
+    DcViewerComponent
   ],
   imports: [
     BrowserModule,

@@ -49,7 +49,9 @@
                               (acceptOffer)="acceptIncomingRequest($event)"></vvc-incoming-message>
         <vvc-inc-dc *ngIf="m.type === 'incoming-request' && m.media === 'DC'"
                     [message]="m"
-                    (show)="showDataCollection($event)"></vvc-inc-dc>
+                    [dc]="widgetState.dataCollections[m.dataCollectionId]"
+                    (show)="showDataCollection($event)"
+                    (submit)="sendDataCollection($event)"></vvc-inc-dc>
       </div>
     </div>
 
@@ -57,13 +59,12 @@
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
 
-    <div id="vvc-dc-viewer" *ngIf="selectedDataCollectionId">
-      {{ widgetState.dataCollections[selectedDataCollectionId] | json }}
-
-
-      <button (click)="selectedDataCollectionId = undefined">Close</button>
-    </div>
-
+    <vvc-dc-viewer id="vvc-dc-viewer"
+                   *ngIf="selectedDataMessage"
+                   [dc]="widgetState.dataCollections[selectedDataMessage.dataCollectionId]"
+                   [message]="selectedDataMessage"
+                   (submit)="sendDataCollection($event);selectedDataMessage = undefined;"
+                   (close)="syncDataCollection($event);selectedDataMessage = undefined;"></vvc-dc-viewer>
 
     <vvc-close-modal id="vvc-close-modal"
                      *ngIf="closeModal"

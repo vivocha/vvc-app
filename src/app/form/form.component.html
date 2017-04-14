@@ -12,9 +12,13 @@
            *ngIf="elem.type === 'text' || elem.type === 'email'">
         <label>{{ elem.name | translate }}<span *ngIf="elem.required" class="required"> *</span></label>
         <input type="{{elem.type}}"
+               *ngIf="!readMode"
                [formControlName]="elem.id"
                placeholder="{{ elem.placeholder | translate }}">
-        <p *ngIf="form.get(elem.id).touched">
+        <div *ngIf="readMode">
+          {{ dc.dataValue[elem.id] || '-' }}
+        </div>
+        <p *ngIf="form.get(elem.id).touched && !readMode">
           <span *ngIf="form.get(elem.id).hasError('required')">{{ 'DC.REQUIRED_ERR' | translate }}</span>
           <span *ngIf="form.get(elem.id).hasError('email')">{{ 'DC.EMAIL_ERR' | translate }}</span>
         </p>
@@ -32,7 +36,7 @@
       </div>
 
     </div>
-    <div>
+    <div *ngIf="!readMode">
       <button class="btn-primary"
               [disabled]="form.invalid">{{ dc.saveButton | translate }}</button>
     </div>

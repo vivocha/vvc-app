@@ -86,6 +86,12 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, {
                 dataCollections: Object.assign({}, state.dataCollections, newDc)
             });
+        case 'MERGE_DATA_COLLECTION':
+            const dataCollectionWithValue = {};
+            dataCollectionWithValue[payload.id] = payload;
+            return Object.assign({}, state, {
+                dataCollections: Object.assign({}, state.dataCollections, dataCollectionWithValue)
+            });
         case 'INITIAL_DATA_SENT':
             return Object.assign({}, state, { state: 'queue', initialDataFilled: true });
         case 'INITIAL_OFFER':

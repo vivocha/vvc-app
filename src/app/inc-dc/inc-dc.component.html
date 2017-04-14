@@ -5,24 +5,28 @@
       <div class="inc-header">Information request</div>
     </div>
 
-    <div class="inc-msg-content" *ngIf="message.dataCollection.mode === 'block'">
+    <div class="inc-msg-content" *ngIf="dc.mode === 'block'">
       The agent invited you to compile:<br>
-      <span class="dc-name">{{ message.dataCollection.name | translate }}</span>
+      <span class="dc-name">{{ dc.dataTitle | translate }}</span>
     </div>
 
-    <div class="inc-msg-content" *ngIf="message.dataCollection.mode === 'inline'">
-
-      This form should compile inline
-
+    <div class="inc-msg-content form" *ngIf="dc.mode === 'inline'">
+      <vvc-form [dc]="dc"
+                [readMode]="message.state === 'closed'"
+                (submit)="onInlineSubmit($event)"></vvc-form>
     </div>
 
-    <div class="inc-msg-content">
-      {{ message | json }}
-    </div>
-
-    <div class="inc-msg-content">
-      <button class="btn-primary" (click)="show.emit(message.dataCollection.id)">
+    <div class="inc-msg-content" *ngIf="dc.mode === 'block'">
+      <button class="btn-primary"
+              *ngIf="message.state === 'open'"
+              (click)="show.emit(message)">
         <i class="vvc-pencil"></i> Compile
+      </button>
+
+      <button class="btn-primary"
+              *ngIf="message.state === 'closed'"
+              (click)="show.emit(message)">
+              <i class="vvc-check"></i> View
       </button>
     </div>
 

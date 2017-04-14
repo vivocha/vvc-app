@@ -2,73 +2,7 @@ import {Injectable, NgZone} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
 import {VvcDataCollectionService} from './dc.service';
-/*
-const dc2: DataCollectionState = {
-    state: 'visible',
-    dataCollection: {
-        key: 'DC.USER.TITLE',
-        type: 'dc',
-        inline: false,
-        name: 'data_collection',
-        desc: 'Initial Data Collection',
-        data: [
-            {
-                key: 'DC.USER.NICKNAME',
-                controlType: 'vvc-input',
-                name: 'codiceUtente',
-                desc: 'identificativo utente',
-                type: 'nickname',
-                config: {
-                    required: true,
-                    min: 5
-                },
-                visible: true
-            },
-            {
-                key: 'DC.USER.USERID',
-                controlType: 'vvc-input',
-                name: 'polizzaUtente',
-                desc: 'codice polizza utente',
-                type: 'text',
-                config: {
-                    required: true,
-                    min: 3,
-                    max: 3
-                },
-                visible: true
-            },
-            {
-                key: 'DC.USER.USERID',
-                controlType: 'vvc-input',
-                name: 'polizzaUtente2',
-                desc: 'codice polizza utente2',
-                type: 'text',
-                config: {
-                    required: true,
-                    min: 3,
-                    max: 3
-                },
-                visible: true
-            },
-            {
-                key: 'DC.USER.PRIVACY.LABEL',
-                controlType: 'vvc-privacy',
-                name: 'privacy',
-                desc: 'accetta privacy',
-                type: 'privacy',
-                config: {
-                    required: true,
-                },
-                policy: {
-                    key: 'DC.USER.PRIVACY.POLICY',
-                    linkLabel: 'DC.USER.PRIVACY.LINK'
 
-                }
-            }
-        ]
-    }
-};
-*/
 @Injectable()
 export class VvcContactService {
 
@@ -377,7 +311,8 @@ export class VvcContactService {
                     type: 'incoming-request',
                     media: 'DC',
                     state: 'open',
-                    dataCollection: dc
+                    dataCollectionId: dc.id
+                    // dataCollection: dc
                 }
             });
         });
@@ -615,6 +550,22 @@ export class VvcContactService {
             this.createContact(initialConf);
         }, 1000);
     }
+    sendDataCollection(obj) {
+        const dc = obj.dataCollection;
+        const message = obj.msg;
+
+        this.dispatch({
+            type: 'UPDATE_MESSAGE',
+            payload: {
+                id: message.id,
+                state: 'closed'
+            }
+        });
+        this.dispatch({
+            type: 'MERGE_DATA_COLLECTION',
+            payload: dc
+        });
+    }
     sendText(text: string) {
         this.contact.sendText(text);
     }
@@ -628,27 +579,17 @@ export class VvcContactService {
             this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
         }, this.isWritingTimeout);
     }
-    /*
-    showDataCollection(dataId) {
-        switch (dataId) {
-            case 'user':
-                this.dispatch({ type: 'NEW_MESSAGE', payload: {
-                    // dataCollection: dc2.dataCollection,
-                    type: 'incoming-request',
-                    id: new Date().getTime(),
-                    state: 'open',
-                    text: 'The agent has sent you a form to compile'
-                }});
-                break;
-            default: break;
-        }
-    }
-    */
     showSurvey(surveyId, askForTranscript) {
         this.dcserv.loadSurvey(surveyId, askForTranscript).then( (dc) => {
             this.dispatch({ type: 'SHOW_SURVEY', payload: dc});
         });
 
+    }
+    syncDataCollection(dataCollection) {
+        this.dispatch({
+            type: 'MERGE_DATA_COLLECTION',
+            payload: dataCollection
+        });
     }
     upgradeMedia(upgradeState) {
         this.contact.mergeMedia(this.getUpgradeState(upgradeState)).then( (mergedMedia) => {

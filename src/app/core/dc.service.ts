@@ -27,14 +27,21 @@ export class VvcDataCollectionService {
     };
     private blockDataCollection = {
         mode: 'block',
+        saveButton : 'DC.D1.SUBMIT',
+        dataTitle: 'DC.D1.DATA_TITLE',
+        dataDescr: 'DC.D1.DATA_DESCRIPTION',
         data: [
-
+            { id: 'name', name: 'DC.D1.NAME', type: 'text', required: true, placeholder: 'DC.D1.NAME_PH'},
+            { id: 'surname', name: 'DC.D1.SURNAME', type: 'text', required: true, placeholder: 'DC.D1.SURNAME_PH'},
+            { id: 'email', name: 'DC.D1.EMAIL', type: 'email', required: true, placeholder: 'DC.D1.EMAIL_PH'},
         ]
     };
     private inlineDataCollection = {
         mode: 'inline',
+        saveButton : 'DC.D1.SUBMIT',
+        dataTitle: 'DC.D1.DATA_TITLE',
         data: [
-
+            { id: 'name', name: 'DC.D1.NAME', type: 'text', required: true, placeholder: 'DC.D1.NAME_PH'}
         ]
     };
     constructor() {

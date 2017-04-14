@@ -1,0 +1,9 @@
+<span class="back-anchor"
+      (click)="closeViewer()">
+  <i class="vvc-arrow-left"></i>
+</span>
+
+<vvc-form [dc]="dc" #theForm
+          [readMode]="message.state === 'closed'"
+          (submit)="onFormSubmit($event)"></vvc-form>
+

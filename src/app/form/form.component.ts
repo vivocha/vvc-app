@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
   form: FormGroup;
   hasRequired = false;
   @Input() dc;
+  @Input() readMode = false;
   @Output() submit = new EventEmitter();
   constructor(private fb: FormBuilder) { }
 
@@ -26,10 +27,13 @@ export class FormComponent implements OnInit {
       if (el.type === 'email') {
         validators.push(Validators.email);
       }
-      controllers[el.id] = [el.value || '', validators];
+      controllers[el.id] = [(this.dc.dataValue && this.dc.dataValue[el.id]) || el.value || '', validators];
     }
-    console.log(controllers);
     this.form = this.fb.group(controllers);
+  }
+
+  getForm() {
+    return this.form;
   }
 
   onSubmit( event ) {
