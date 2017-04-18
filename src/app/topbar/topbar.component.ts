@@ -10,6 +10,7 @@ export class TopbarComponent implements OnInit {
 
   @Input() state: VvcWidgetState;
   @Output() close = new EventEmitter();
+  @Output() minimize = new EventEmitter();
   @Output() upgrade = new EventEmitter();
   constructor() { }
 

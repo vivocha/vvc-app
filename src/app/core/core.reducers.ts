@@ -9,9 +9,11 @@ const initialWidgetState: VvcWidgetState = {
     lastError: '',
     state: 'initializing',
     mediaOffering: false,
+    minimized: false,
     mute: false,
     mute_in_progress: false,
     mobile: false,
+    not_read: 0,
     sharing: false,
     topBarExpanded: true,
     video: false,
@@ -137,6 +139,11 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { isAgentWriting: payload });
         case 'CLOSE_CONTACT':
             return Object.assign({}, state, { closed: payload });
+        case 'MINIMIZE':
+            return Object.assign({}, state, { minimized: payload, not_read: 0});
+        case 'INCREMENT_NOT_READ':
+            const not_read = state.not_read + 1;
+            return Object.assign({}, state, { not_read: not_read });
         default: return state;
     }
 };

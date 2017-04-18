@@ -67,9 +67,11 @@ export interface VvcWidgetState {
     state: WidgetState;
     localCaps?: any;
     mediaOffering: boolean;
+    minimized: boolean;
     mobile: boolean;
     mute: boolean;
     mute_in_progress: boolean;
+    not_read: number;
     remoteCaps?: any;
     selectedDataCollectionId?: string;
     sharing: boolean;

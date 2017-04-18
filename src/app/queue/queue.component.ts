@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-queue',
@@ -7,6 +7,7 @@ import {Component, OnInit, Input} from '@angular/core';
 export class QueueComponent implements OnInit {
 
   @Input() type = '';
+  @Output() leave = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang = 'en';
   public type = 'chat';
+  private previousMsgLength = 1;
   public selectedDataMessage;
-
   private closeModal = false;
   private initialConf;
 
@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
     };
   }
   ngOnInit() {
+    this.window.parent.postMessage('vvc-maximize-iframe', '*');
     this.bindStores();
   }
   abandon() {
@@ -63,7 +64,7 @@ export class AppComponent implements OnInit {
       if (this.wasFullScreen && this.widgetState.video === false) {
         this.setNormalScreen();
       }
-      console.log('STATE',this.widgetState.state);
+      console.log('STATE', this.widgetState.state, this.widgetState.not_read);
     });
   }
   checkForVivocha() {
@@ -141,6 +142,10 @@ export class AppComponent implements OnInit {
   hideDataCollectionPanel() {
     this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
   }
+  leave() {
+    this.cserv.closeContact();
+    this.window.parent.postMessage('vvc-close-iframe', '*');
+  }
   loadCampaignSettings() {
     const initialOffer = this.getInitialOffer();
     this.initialConf = {
@@ -170,6 +175,11 @@ export class AppComponent implements OnInit {
       console.log('creating the contact');
       this.cserv.createContact(this.initialConf);
     }
+  }
+  minimize(state) {
+    this.store.dispatch({ type: 'MINIMIZE', payload: state });
+    (state) ? this.window.parent.postMessage('vvc-minimize-iframe', '*')
+            : this.window.parent.postMessage('vvc-maximize-iframe', '*');
   }
   parseIframeUrl() {
     const hash = this.window.location.hash;

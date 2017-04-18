@@ -2,11 +2,11 @@
   <div class="dc">
     <div class="inc-msg-header">
       <div class="inc-type"><i class="vvc-doc"></i></div>
-      <div class="inc-header">Information request</div>
+      <div class="inc-header">{{ 'DC.INCOMING_HEAD' | translate }}</div>
     </div>
 
     <div class="inc-msg-content" *ngIf="dc.mode === 'block'">
-      The agent invited you to compile:<br>
+      {{ 'DC.ASK_FOR_COMPILE' | translate }}<br>
       <span class="dc-name">{{ dc.dataTitle | translate }}</span>
     </div>
 
@@ -20,13 +20,13 @@
       <button class="btn-primary"
               *ngIf="message.state === 'open'"
               (click)="show.emit(message)">
-        <i class="vvc-pencil"></i> Compile
+        <i class="vvc-pencil"></i> {{ 'DC.COMPILE' | translate }}
       </button>
 
       <button class="btn-primary"
               *ngIf="message.state === 'closed'"
               (click)="show.emit(message)">
-              <i class="vvc-check"></i> View
+              <i class="vvc-check"></i> {{ 'DC.VIEW' | translate }}
       </button>
     </div>
 

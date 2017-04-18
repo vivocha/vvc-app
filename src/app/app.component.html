@@ -1,4 +1,6 @@
-<div id="vvc-container" [ngClass]="{'fullsize':widgetState.fullScreen, 'nochat':!widgetState.chatVisibility && widgetState.fullScreen}">
+<div id="vvc-container"
+     *ngIf="!widgetState.minimized"
+     [ngClass]="{'fullsize':widgetState.fullScreen, 'nochat':!widgetState.chatVisibility && widgetState.fullScreen}">
 
   <vvc-fullscreen id="vvc-full-enabled"
                   *ngIf="widgetState?.fullScreen"
@@ -18,7 +20,8 @@
 
   <vvc-queue id="vvc-queue"
              *ngIf="widgetState?.state === 'queue'"
-             [type]="type"></vvc-queue>
+             [type]="type"
+             (leave)="leave()"></vvc-queue>
 
   <div id="vvc-widget-wrap"
        *ngIf="widgetState?.state === 'ready'">
@@ -27,6 +30,7 @@
                 [ngClass]="{'expanded':widgetState?.topBarExpanded}"
                 [state]="widgetState"
                 (close)="showCloseModal($event)"
+                (minimize)="minimize(true)"
                 (upgrade)="upgradeMedia($event)"></vvc-topbar>
 
     <vvc-media-tools id="vvc-media-tools"
@@ -79,3 +83,8 @@
   </div>
 
 </div>
+
+<vvc-minimized id="vvc-minimized"
+               *ngIf="widgetState.minimized"
+               [state]="widgetState"
+               (click)="minimize(false)"></vvc-minimized>

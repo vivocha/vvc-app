@@ -23,6 +23,7 @@ import { InitialDataComponent } from './initial-data/initial-data.component';
 import { IncDcComponent } from './inc-dc/inc-dc.component';
 import { FormComponent } from './form/form.component';
 import { DcViewerComponent } from './dc-viewer/dc-viewer.component';
+import { MinimizedComponent } from './minimized/minimized.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -47,7 +48,8 @@ export function createTranslateLoader(http: Http) {
     InitialDataComponent,
     IncDcComponent,
     FormComponent,
-    DcViewerComponent
+    DcViewerComponent,
+    MinimizedComponent
   ],
   imports: [
     BrowserModule,

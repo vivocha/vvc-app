@@ -16,7 +16,7 @@
     <img class='agent-img' [src]="getAvatar()">
   </div>
   <div class="secondary-tools">
-    <i class="vvc-minimize" *ngIf="!this.state.closed"></i>
+    <i class="vvc-minimize" *ngIf="!this.state.closed" (click)="minimize.emit()"></i>
     <i class="vvc-close" (click)="close.emit(this.state.closed)"></i>
   </div>
 </div>

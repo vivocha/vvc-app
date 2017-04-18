@@ -424,6 +424,10 @@ export class VvcContactService {
             // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
             this.dispatch({type: 'REDUCE_TOPBAR'});
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
+            if (this.widgetState.minimized) {
+                this.dispatch({type: 'INCREMENT_NOT_READ'});
+            }
+            this.playAudioNotification();
             this.clearIsWriting();
         });
         this.contact.on('transferred', (transferred_to) => {
@@ -502,6 +506,12 @@ export class VvcContactService {
         } else {
             this.mergeOffer(offer);
         }
+    }
+    playAudioNotification() {
+        const notif = new Audio();
+        notif.src = 'assets/beep.mp3';
+        notif.load();
+        notif.play();
     }
     removeLocalVideo() {
         this.contact.getMediaOffer().then(mediaOffer => {

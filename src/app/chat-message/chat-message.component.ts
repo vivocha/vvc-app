@@ -25,12 +25,14 @@ export class ChatMessageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    /*
     if (this.message.isAgent && this.message.state !== 'iswriting') {
       const notif = new Audio();
       notif.src = 'assets/beep.mp3';
       notif.load();
       notif.play();
     }
+    */
     setTimeout( () => {
       this.state = 'active';
     }, 100);
