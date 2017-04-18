@@ -46,6 +46,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.window.parent.postMessage('vvc-maximize-iframe', '*');
     this.bindStores();
+    this.cserv.voiceStart.subscribe( () => {
+      this.startTimer();
+    });
   }
   abandon() {
     this.window.parent.postMessage('vvc-close-iframe', '*');
@@ -64,7 +67,6 @@ export class AppComponent implements OnInit {
       if (this.wasFullScreen && this.widgetState.video === false) {
         this.setNormalScreen();
       }
-      console.log('STATE', this.widgetState.state, this.widgetState.not_read);
     });
   }
   checkForVivocha() {
@@ -96,28 +98,6 @@ export class AppComponent implements OnInit {
   }
   createContact() {
     this.cserv.createContact(this.initialConf);
-    /*
-    const initialOffer = this.getInitialOffer();
-    this.cserv.createContact({
-      serv_id: this.servId,
-      type: 'chat',
-      nick: 'Marcolino',
-      initial_offer: initialOffer,
-      opts: { // campaign /service options
-        media: {
-          Video : 'visitor',
-          Voice : 'visitor'
-        },
-        survey: {
-          dataToCollect: 'schema#survey-id',
-          sendTranscript: 'ask'
-        },
-        dataCollection: {
-          dataToCollect: 'schema#data-id'
-        }
-      }
-    });
-    */
   }
   denyIncomingRequest(media) {
     this.cserv.denyOffer(media);
@@ -130,8 +110,15 @@ export class AppComponent implements OnInit {
   }
   getInitialOffer(): VvcOffer {
     switch (this.type) {
-      case 'voice': return { Voice: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'}};
-      case 'video': return { Video: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'}};
+      case 'voice': return {
+        Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
+        Sharing: { rx: 'required', tx: 'required'}
+      };
+      case 'video': return {
+        Video: { rx: 'required', tx: 'required', engine: 'WebRTC'},
+        Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
+        Sharing: { rx: 'required', tx: 'required'}
+      };
       default: return { Chat: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'} };
     }
   }
@@ -150,7 +137,7 @@ export class AppComponent implements OnInit {
     const initialOffer = this.getInitialOffer();
     this.initialConf = {
       serv_id: this.servId,
-      type: 'chat',
+      type: this.type,
       nick: 'Marcolino',
       initial_offer: initialOffer,
       opts: { // campaign /service options

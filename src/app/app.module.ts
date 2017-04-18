@@ -24,6 +24,7 @@ import { IncDcComponent } from './inc-dc/inc-dc.component';
 import { FormComponent } from './form/form.component';
 import { DcViewerComponent } from './dc-viewer/dc-viewer.component';
 import { MinimizedComponent } from './minimized/minimized.component';
+import { NoChatComponent } from './no-chat/no-chat.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -49,7 +50,8 @@ export function createTranslateLoader(http: Http) {
     IncDcComponent,
     FormComponent,
     DcViewerComponent,
-    MinimizedComponent
+    MinimizedComponent,
+    NoChatComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-inner">
+    <div class="avatar-place">
+      <img class='acct-img' src="assets/acct-img.png" style="border: 1px solid #c5c5c5; border-radius: 50%;width:60px;height:60px;">
+    </div>
+
+    <div *ngIf="!state.closed">
+      <div class="main-msg" [innerHTML]="'NOCHAT.MAIN_MSG' | translate"></div>
+      <div class="sub-msg"  [innerHTML]="'NOCHAT.SUB_MSG' | translate"></div>
+    </div>
+
+    <div *ngIf="state.closed">
+      Il contatto è terminato<br>Grazie per averci contattato.
+    </div>
+
+
+  </div>
+</div>

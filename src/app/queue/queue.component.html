@@ -18,7 +18,9 @@
   <div id="middle-box">
     <div>
       <div class="media-type">
-        <i class="vvc-chat"></i>
+        <i *ngIf="type === 'chat'" class="vvc-chat"></i>
+        <i *ngIf="type === 'voice'" class="vvc-phone"></i>
+        <i *ngIf="type === 'video'" class="vvc-video"></i>
       </div>
       <div class="loading-wrapper">
         <div class="loader"></div>

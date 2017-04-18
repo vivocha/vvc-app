@@ -71,6 +71,9 @@ const extractStateFromMedia = (payload) => {
 };
 export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, payload}) => {
     console.log('------' + type + '------');
+    if (type === 'MEDIA_CHANGE') {
+        console.log(JSON.stringify(payload));
+    }
     switch (type) {
         case 'INITIAL_DATA':
             const dcList = {};

@@ -1,4 +1,4 @@
-import {Injectable, NgZone} from '@angular/core';
+import {EventEmitter, Injectable, NgZone} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
 import {VvcDataCollectionService} from './dc.service';
@@ -16,6 +16,7 @@ export class VvcContactService {
     incomingOffer: VvcOffer;
     incomingId;
     callStartedWith;
+    voiceStart = new EventEmitter();
     private widgetState: VvcWidgetState;
 
 
@@ -151,6 +152,7 @@ export class VvcContactService {
         });
     }
     createContact(conf) {
+        this.callStartedWith = conf.type.toUpperCase();
         this.dispatch({type: 'INITIAL_OFFER', payload: { offer: conf.initial_offer, opts: conf.opts }});
 
         this.vivocha.getContact(conf).then( contact => {
@@ -163,6 +165,9 @@ export class VvcContactService {
             });
             this.contact = contact;
             this.mapContact();
+            if (conf.type !== 'chat') {
+                this.voiceStart.emit();
+            }
         }, (err) => {
             console.log('Failed to create contact', err);
         });
@@ -418,6 +423,7 @@ export class VvcContactService {
             this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
         });
         this.contact.on('mediaoffer', (offer, cb) => {
+            console.log('-- MEDIAOFFER --');
             this.onMediaOffer(offer, cb);
         });
         this.contact.on('text', (text, from_id, from_nick, agent ) => {

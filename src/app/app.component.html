@@ -24,10 +24,11 @@
              (leave)="leave()"></vvc-queue>
 
   <div id="vvc-widget-wrap"
+       [ngClass]="{'no-chat': !widgetState.chat}"
        *ngIf="widgetState?.state === 'ready'">
 
     <vvc-topbar id="vvc-top-bar"
-                [ngClass]="{'expanded':widgetState?.topBarExpanded}"
+                [ngClass]="{'expanded': (widgetState?.topBarExpanded && !widgetState?.video)}"
                 [state]="widgetState"
                 (close)="showCloseModal($event)"
                 (minimize)="minimize(true)"
@@ -42,7 +43,13 @@
                      (maximize)="setFullScreen()"
                      (mute)="setMute($event)"></vvc-media-tools>
 
-    <div id="vvc-messages" angular2-auto-scroll>
+    <vvc-no-chat id="vvc-no-chat"
+                 *ngIf="!widgetState.chat"
+                 [state]="widgetState"></vvc-no-chat>
+    
+    <div id="vvc-messages"
+         *ngIf="widgetState.chat"
+         angular2-auto-scroll>
       <div *ngFor="let m of messages">
         <vvc-chat-message *ngIf="m.type === 'chat'"
                           [message]="m"
@@ -59,7 +66,7 @@
       </div>
     </div>
 
-    <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState.closed"
+    <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState.closed && widgetState.chat"
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
 
