@@ -2,8 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-close-modal',
-  templateUrl: './close-modal.component.html',
-  styleUrls: ['./close-modal.component.scss']
+  templateUrl: './close-modal.component.html'
 })
 export class CloseModalComponent implements OnInit {
 

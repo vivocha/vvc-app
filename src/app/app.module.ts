@@ -28,7 +28,7 @@ import { NoChatComponent } from './no-chat/no-chat.component';
 
 
 export function createTranslateLoader(http: Http) {
-  return new TranslateHttpLoader(http, '/WidgetTranslations/xl8/', '.json');
+  return new TranslateHttpLoader(http, '/assets/xl8/', '.json');
 }
 
 @NgModule({

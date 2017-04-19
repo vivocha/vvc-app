@@ -34,9 +34,18 @@ const extractInitialOpts = (opts) => {
         askForTranscript: (opts.survey && opts.survey.sendTranscript === 'ask')
     };
     return newOpts;
-}
+};
 const extractStateFromMedia = (payload) => {
-  const newState: { state?: string; chat?: boolean, voice?: boolean, video?: boolean, video_rx?: boolean, video_tx?: boolean, sharing?: boolean } = {
+  const newState: {
+      state?: string;
+      chat?: boolean,
+      had_chat?: boolean,
+      voice?: boolean,
+      video?: boolean,
+      video_rx?: boolean,
+      video_tx?: boolean,
+      sharing?: boolean
+  } = {
       chat: false,
       voice: false,
       video: false,
@@ -46,6 +55,7 @@ const extractStateFromMedia = (payload) => {
   };
   if (payload.Chat && payload.Chat['tx'] && payload.Chat['rx']) {
     newState.chat = true;
+    newState.had_chat = true;
   }
   if (payload.Sharing && payload.Sharing['tx'] && payload.Sharing['rx']) {
     newState.sharing = true;
@@ -131,7 +141,7 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
         case 'SHOW_DATA_COLLECTION':
             return Object.assign({}, state, { dataCollectionPanel: payload });
         case 'SHOW_SURVEY':
-            const dataCollections = {}
+            const dataCollections = {};
             dataCollections[payload.id] = payload;
             return Object.assign({}, state, {
                 showSurvey: true,

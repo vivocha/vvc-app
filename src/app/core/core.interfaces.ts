@@ -57,6 +57,7 @@ export interface VvcWidgetState {
     dataCollections: VvcDataCollection;
     error: boolean;
     fullScreen: boolean;
+    had_chat?: boolean;
     hasDataCollection?: boolean;
     hasSurvey?: boolean;
     incomingRequest?: boolean;

@@ -1,0 +1,105 @@
+{
+  "INITIAL_DATA" : {
+    "WELCOME" : "Benvenuto<br>nel customer service di Vivocha"
+  },
+  "QUEUE": {
+    "WELCOME" : "Benvenuto<br>nel customer service di Vivocha",
+    "INFO" : "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile."
+  },
+  "NOCHAT":{
+    "MAIN_MSG" : "Benvenuto<br>nel customer service di Vivocha",
+    "SUB_MSG" : "Our agents are online every working day from 9 AM to 6 PM",
+    "END_MSG" : "Il contatto è terminato<br>Grazie per averci contattato."
+  },
+  "TOPBAR":{
+    "WELCOME" : "Benvenuto<br>stai parlando con",
+    "ISWRITING" : "{{agent}} sta scrivendo..."
+  },
+  "MEDIATOOLS":{
+    "MUTE" : "muto",
+    "UNMUTE": "muto",
+    "HANGUP" : "chiudi",
+    "VIDEO_ON" : "video on",
+    "VIDEO_OFF" : "video off",
+    "EXPAND" : "espandi",
+    "MINIMIZE" : "minimizza",
+    "CHAT_HIDE": "chiudi",
+    "CHAT_SHOW": "mostra"
+  },
+  "MESSAGES":{
+    "REMOTE_CLOSE": "L'operatore ha chiuso il contatto",
+    "REMOTE_VOICE_REJECTED": "Chiamata rifiutata",
+    "REMOTE_VOICE_FAILED": "Errore di connessione",
+    "REMOTE_VIDEO_REJECTED": "Videochiamata rifiutata",
+    "REMOTE_VIDEO_FAILED": "Errore di connessione",
+    "FILE_SENDING" : "invio file in corso...",
+    "VOICE_REQUEST" : "Richiesta di chiamata",
+    "VOICE_STARTED" : "inizio chiamata voce",
+    "VOICE_ENDED" : "fine chiamata voce",
+    "VOICE_REJECTED" : "hai rifiutato la chiamata",
+    "VIDEO_REQUEST" : "Richiesta di videochiamata",
+    "VIDEO_STARTED" : "inizio videochiamata",
+    "VIDEO_ENDED" : "fine videochiamata",
+    "VIDEO_REJECTED" : "hai rifiutato la videochiamata",
+    "FORM_REQUEST" :  "Richiesta di Informazioni",
+    "FORM_PENDING" : "Compilazione modulo in corso",
+    "FORM_SUBMIT_ERROR" : "Errore inviando il modulo",
+    "FORM_SUBMIT_SUCCESS" : "Modulo inviato correttamente",
+    "DECLINE" : "Rifiuta",
+    "VOICE_ONLY" : "Solo voce",
+    "ACCEPT" : "Accetta",
+    "RETRY" : "Riprova",
+    "CONTINUE" : "Continua",
+    "COMPILE" : "Compila",
+    "VIEW" : "Vedi",
+    "SEND" : "Invia",
+    "DOWNLOAD": "Scarica",
+    "TRANSFERRED": "Sei stato trasferito a un altro operatore"
+  },
+  "TOOLS":{
+    "UPLOADER":{
+      "FILE_DESCRIPTION" : "Descrizione file",
+      "SELECT_PLACEHOLDER" : "seleziona il file da caricare",
+      "BROWSE" : "Sfoglia",
+      "MAX_FILESIZE" : "Dimensione massima - 10Mb",
+      "SEND" : "Invia"
+    }
+  },
+  "CHAT":{
+    "TEXTAREA_PLACEHOLDER" : "Scrivi qui..."
+  },
+  "CLOSEMODAL":{
+    "CLOSE_MESSAGE" : "Vuoi interrompere il contatto?",
+    "YES" : "Si",
+    "NO" : "No"
+  },
+  "SURVEY":{
+    "WELCOME" : "Aiutaci<br>a migliorare il servizio",
+    "TITLE": "Valuta la tua esperienza",
+    "SUBMIT": "Invia Valutazione",
+    "RATING": "Quanto sei soddisfatto dell'assistenza ricevuta?",
+    "EMAIL" : "Email",
+    "EMAIL_PH" : "email per l'invio della trascrizione",
+    "FEEDBACK" : "La tua valutazione è stata inviata.<br>Grazie!"
+  },
+  "DC": {
+    "COMPILE": "Compila",
+    "VIEW": "Visualizza",
+    "INCOMING_HEAD": "Richiesta di Informazioni",
+    "ASK_FOR_COMPILE" : "L'operatore ha richiesto la compilazione del modulo",
+    "REQUIRED_LEGEND" : "* campi obbligatori",
+    "EMAIL_ERR" : "email non valida",
+    "REQUIRED_ERR" : "campo obblogatorio",
+    "D1" :{
+      "DATA_TITLE" : "Informazioni Preliminari",
+      "DATA_DESCRIPTION" : "Completa il form di informazioni, subito dopo verrai messo in contatto con un nostro operatore",
+      "SUBMIT" : "invia",
+      "NAME" : "Nome",
+      "NAME_PH" : "il tuo nome",
+      "SURNAME" : "Cognome",
+      "SURNAME_PH" : "il tuo cognome",
+      "EMAIL" : "Email",
+      "EMAIL_PH" : "la tua email"
+    }
+  }
+}

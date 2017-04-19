@@ -11,7 +11,6 @@ export class VvcContactService {
     contact;
     isWritingTimer;
     isWritingTimeout = 30000;
-    statusMessageUpdate = 3000;
     mediaCallback;
     incomingOffer: VvcOffer;
     incomingId;
@@ -275,30 +274,6 @@ export class VvcContactService {
             });
         }
     }
-    downgrade(media) {
-        if (media === 'VOICE') {
-            this.contact.getMediaOffer().then(mediaOffer => {
-                if (mediaOffer['Voice']) {
-                    mediaOffer['Voice'].tx = 'off';
-                    mediaOffer['Voice'].rx = 'off';
-                }
-                if (mediaOffer['Video']) {
-                    mediaOffer['Video'].tx = 'off';
-                    mediaOffer['Video'].rx = 'off';
-                }
-                this.contact.offerMedia(mediaOffer);
-            });
-        }
-        if (media === 'VIDEO') {
-            this.contact.getMediaOffer().then(mediaOffer => {
-                if (mediaOffer['Video']) {
-                    mediaOffer['Video'].tx = 'off';
-                    mediaOffer['Video'].rx = 'off';
-                }
-                this.contact.offerMedia(mediaOffer);
-            });
-        }
-    }
     getUpgradeState(mediaObject) {
         for (const m in mediaObject) {
             mediaObject[m].rx = (mediaObject[m].rx !== 'off');
@@ -342,8 +317,6 @@ export class VvcContactService {
         const resp = { askForConfirmation : false, offer: {}, media: '' };
         for (const i in offer) {
             switch (i) {
-                case 'Chat':
-                case 'Sharing':
                 case 'Voice':
                     if (!this.widgetState[i.toLowerCase()]
                         && offer[i]['tx'] !== 'off'
@@ -408,10 +381,11 @@ export class VvcContactService {
             }
         });
         this.contact.on('left', obj => {
-            if (obj.channels && (obj.channels.user != undefined) && obj.channels.user == 0) {
+            console.log('LEFT', obj);
+            if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
                 this.sendCloseMessage();
             }
-        })
+        });
         this.contact.on('localcapabilities', caps => {
             this.dispatch({type: 'LOCAL_CAPS', payload: caps });
         });
@@ -423,11 +397,9 @@ export class VvcContactService {
             this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
         });
         this.contact.on('mediaoffer', (offer, cb) => {
-            console.log('-- MEDIAOFFER --');
             this.onMediaOffer(offer, cb);
         });
         this.contact.on('text', (text, from_id, from_nick, agent ) => {
-            // this.dispatch({type: 'ADD_TEXT', payload: {text: text, type: 'CHAT_TEXT', isAgent: agent}});
             this.dispatch({type: 'REDUCE_TOPBAR'});
             this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
             if (this.widgetState.minimized) {
@@ -588,9 +560,8 @@ export class VvcContactService {
     setIsWriting() {
         clearTimeout(this.isWritingTimer);
         this.dispatch({type: 'AGENT_IS_WRITING', payload: true });
-        this.dispatch({type: 'NEW_MESSAGE', payload: { type: 'chat', state: 'iswriting', isAgent: true}})
+        this.dispatch({type: 'NEW_MESSAGE', payload: { type: 'chat', state: 'iswriting', isAgent: true}});
         this.isWritingTimer = setTimeout( () => {
-            //this.dispatch({type: 'REM_TEXT', payload: { type: 'AGENT-WRITING' }});
             this.dispatch({type: 'REM_IS_WRITING'});
             this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
         }, this.isWritingTimeout);

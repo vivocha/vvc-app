@@ -2,12 +2,9 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
-import {VvcWidgetState, AppState, VvcOffer, DataCollection, VvcDataCollection} from './core/core.interfaces';
+import {VvcWidgetState, AppState, VvcOffer} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
 import {MediaToolsComponent} from './media-tools/media-tools.component';
-
-
-
 
 @Component({
   selector: 'vvc-root',
@@ -19,7 +16,6 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang = 'en';
   public type = 'chat';
-  private previousMsgLength = 1;
   public selectedDataMessage;
   private closeModal = false;
   private initialConf;
@@ -38,10 +34,6 @@ export class AppComponent implements OnInit {
               private translate: TranslateService) {
     this.window = wref.nativeWindow;
     this.checkForVivocha();
-
-    this.window.start = (withError: boolean) => {
-      this.createContact();
-    };
   }
   ngOnInit() {
     this.window.parent.postMessage('vvc-maximize-iframe', '*');
@@ -88,16 +80,6 @@ export class AppComponent implements OnInit {
   }
   closeOnSurvey() {
     this.window.parent.postMessage('vvc-close-iframe', '*');
-  }
-  compileDataCollection(dc: DataCollection) {
-    /*
-    console.log('DC', dc);
-    this.selectedDataCollection = dc;
-    this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: true });
-    */
-  }
-  createContact() {
-    this.cserv.createContact(this.initialConf);
   }
   denyIncomingRequest(media) {
     this.cserv.denyOffer(media);
@@ -149,10 +131,10 @@ export class AppComponent implements OnInit {
           dataToCollect: 'schema#survey-id',
           sendTranscript: 'ask'
         }
-        /*,
+        ,
         dataCollection: {
           dataToCollect: 'schema#data-id'
-        }*/
+        }
       }
     };
     if (this.initialConf.opts.dataCollection) {
@@ -175,11 +157,9 @@ export class AppComponent implements OnInit {
       this.servId = hashParts[0];
       this.lang = hashParts[1].split('=')[1];
       this.type = hashParts[2].split('=')[1];
-      console.log('type', this.type);
       this.translate.getTranslation( this.lang );
       this.translate.setDefaultLang('en');
       this.translate.use(this.lang);
-      // this.createContact();
       this.loadCampaignSettings();
     }
   }
@@ -248,7 +228,6 @@ export class AppComponent implements OnInit {
   }
   syncDataCollection(obj) {
     const dc = obj.dataCollection;
-    const msg = obj.message;
     this.cserv.syncDataCollection(dc);
   }
   upgradeMedia(media: string) {
