@@ -25,13 +25,15 @@ const extractInitialOpts = (opts) => {
         canAddVoice: boolean,
         hasSurvey: boolean,
         surveyId: string,
-        askForTranscript: boolean
+        askForTranscript: boolean,
+        mobile: boolean
     } = {
         canAddVideo: (opts.media && opts.media.Video && opts.media.Video === 'visitor'),
         canAddVoice: (opts.media && opts.media.Voice && opts.media.Voice === 'visitor'),
         hasSurvey: !!(opts.survey),
         surveyId: (opts.survey && opts.survey.dataToCollect),
-        askForTranscript: (opts.survey && opts.survey.sendTranscript === 'ask')
+        askForTranscript: (opts.survey && opts.survey.sendTranscript === 'ask'),
+        mobile: !!(opts.mobile)
     };
     return newOpts;
 };
@@ -44,7 +46,8 @@ const extractStateFromMedia = (payload) => {
       video?: boolean,
       video_rx?: boolean,
       video_tx?: boolean,
-      sharing?: boolean
+      sharing?: boolean,
+      fullScreen?: boolean
   } = {
       chat: false,
       voice: false,
@@ -113,6 +116,11 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             const initialState = extractStateFromMedia(payload.offer);
             const initialOpts = extractInitialOpts(payload.opts);
             initialState.state = 'queue';
+            if (initialState.video && state.mobile) {
+                initialState.fullScreen = true;
+            } else if (!initialState.video) {
+                initialState.fullScreen = false;
+            }
             return Object.assign({}, state, initialState, initialOpts);
         case 'REMOTE_CAPS':
             return Object.assign({}, state, { remoteCaps: payload });
@@ -120,6 +128,11 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { localCaps: payload });
         case 'MEDIA_CHANGE':
             const newState = extractStateFromMedia(payload);
+            if (newState.video && state.mobile) {
+                newState.fullScreen = true;
+            } else if (!newState.video) {
+                newState.fullScreen = false;
+            }
             return Object.assign({}, state, newState);
         case 'MEDIA_OFFERING':
             return Object.assign({}, state, { mediaOffering: payload });

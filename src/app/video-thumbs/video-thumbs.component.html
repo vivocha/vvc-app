@@ -1,0 +1,10 @@
+<div class="video-container" (click)="maximize.emit()">
+  <video class="remote-video"
+         *ngIf="state?.video_rx"
+         [src]="trustedSrc(state.video_rx.url)"></video>
+
+  <video class="local-video"
+         muted
+         *ngIf="!state?.video_rx && state?.video_tx"
+         [src]="trustedSrc(state.video_tx.url)"></video>
+</div>

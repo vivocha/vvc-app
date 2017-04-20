@@ -1,6 +1,6 @@
 <div id="vvc-container"
      *ngIf="!widgetState.minimized"
-     [ngClass]="{'fullsize':widgetState.fullScreen, 'nochat':!widgetState.chatVisibility && widgetState.fullScreen}">
+     [ngClass]="{'mobile':widgetState.mobile,'fullsize':widgetState?.fullScreen, 'nochat':!widgetState.chatVisibility && widgetState.fullScreen}">
 
   <vvc-fullscreen id="vvc-full-enabled"
                   *ngIf="widgetState?.fullScreen"
@@ -89,6 +89,10 @@
 
   </div>
 
+  <vvc-video-thumbs id="vvc-video-thumbs"
+                    *ngIf="widgetState.mobile && widgetState.video && !widgetState.fullScreen"
+                    [state]="widgetState"
+                    (maximize)="setFullScreen()"></vvc-video-thumbs>
 </div>
 
 <vvc-minimized id="vvc-minimized"

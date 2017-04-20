@@ -14,7 +14,7 @@
 
 
   <div class="vvc-tools-wrap">
-    <div class="vvc-inner-tools video-tools">
+    <div class="vvc-inner-tools video-tools" *ngIf="!state.mobile">
 
       <button class="first-btn"
               *ngIf="state?.video_tx"

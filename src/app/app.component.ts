@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang = 'en';
   public type = 'chat';
+  public isMobile = false;
   public selectedDataMessage;
   private closeModal = false;
   private initialConf;
@@ -137,6 +138,7 @@ export class AppComponent implements OnInit {
         }
       }
     };
+    this.initialConf.opts.mobile = this.isMobile;
     if (this.initialConf.opts.dataCollection) {
       console.log('should collect data collection');
       this.cserv.collectInitialData(this.initialConf);
@@ -157,6 +159,10 @@ export class AppComponent implements OnInit {
       this.servId = hashParts[0];
       this.lang = hashParts[1].split('=')[1];
       this.type = hashParts[2].split('=')[1];
+      if (hashParts[3]) {
+        this.isMobile = hashParts[3].split('=')[1];
+      }
+      console.log('is mobile', this.isMobile);
       this.translate.getTranslation( this.lang );
       this.translate.setDefaultLang('en');
       this.translate.use(this.lang);

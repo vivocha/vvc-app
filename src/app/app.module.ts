@@ -25,6 +25,7 @@ import { FormComponent } from './form/form.component';
 import { DcViewerComponent } from './dc-viewer/dc-viewer.component';
 import { MinimizedComponent } from './minimized/minimized.component';
 import { NoChatComponent } from './no-chat/no-chat.component';
+import { VideoThumbsComponent } from './video-thumbs/video-thumbs.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: Http) {
     FormComponent,
     DcViewerComponent,
     MinimizedComponent,
-    NoChatComponent
+    NoChatComponent,
+    VideoThumbsComponent
   ],
   imports: [
     BrowserModule,
