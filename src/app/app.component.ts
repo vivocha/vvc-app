@@ -132,10 +132,10 @@ export class AppComponent implements OnInit {
           dataToCollect: 'schema#survey-id',
           sendTranscript: 'ask'
         }
-        ,
+        /*,
         dataCollection: {
           dataToCollect: 'schema#data-id'
-        }
+        }*/
       }
     };
     this.initialConf.opts.mobile = this.isMobile;

@@ -90,6 +90,7 @@
   </div>
 
   <vvc-video-thumbs id="vvc-video-thumbs"
+                    vvcDraggable
                     *ngIf="widgetState.mobile && widgetState.video && !widgetState.fullScreen"
                     [state]="widgetState"
                     (maximize)="setFullScreen()"></vvc-video-thumbs>
