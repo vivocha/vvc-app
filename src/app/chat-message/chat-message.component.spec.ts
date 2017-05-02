@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatMessageComponent } from './chat-message.component';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('ChatMessageComponent', () => {
   let component: ChatMessageComponent;
@@ -8,7 +9,7 @@ describe('ChatMessageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatMessageComponent ]
+      declarations: [ ChatMessageComponent, MockTranslate ]
     })
     .compileComponents();
   }));
@@ -16,6 +17,7 @@ describe('ChatMessageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ChatMessageComponent);
     component = fixture.componentInstance;
+    component.message = { isAgent : true }
     fixture.detectChanges();
   });
 

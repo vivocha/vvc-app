@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FullscreenComponent } from './fullscreen.component';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
+import {VvcWidgetState} from '../core/core.interfaces';
 
 describe('FullscreenComponent', () => {
   let component: FullscreenComponent;
@@ -8,7 +10,7 @@ describe('FullscreenComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FullscreenComponent ]
+      declarations: [ FullscreenComponent, MockTranslate ]
     })
     .compileComponents();
   }));
@@ -16,6 +18,20 @@ describe('FullscreenComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FullscreenComponent);
     component = fixture.componentInstance;
+    component.state = {
+      chat: true,
+      chatVisibility: true,
+      closed: false,
+      fullScreen: false,
+      state: 'ready',
+      sharing: false,
+      minimized: false,
+      mobile: false,
+      topBarExpanded: false,
+      voice: false,
+      video: false,
+      mute: false
+    };
     fixture.detectChanges();
   });
 

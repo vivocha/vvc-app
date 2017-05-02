@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NoChatComponent } from './no-chat.component';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('NoChatComponent', () => {
   let component: NoChatComponent;
@@ -8,7 +9,7 @@ describe('NoChatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoChatComponent ]
+      declarations: [ NoChatComponent, MockTranslate ]
     })
     .compileComponents();
   }));
@@ -16,6 +17,7 @@ describe('NoChatComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NoChatComponent);
     component = fixture.componentInstance;
+    component.state = { closed: false };
     fixture.detectChanges();
   });
 

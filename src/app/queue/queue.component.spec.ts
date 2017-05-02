@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { QueueComponent } from './queue.component';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('QueueComponent', () => {
   let component: QueueComponent;
@@ -11,7 +12,7 @@ describe('QueueComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QueueComponent ]
+      declarations: [ QueueComponent, MockTranslate ]
     })
     .compileComponents();
   }));

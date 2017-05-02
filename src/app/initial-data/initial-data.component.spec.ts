@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InitialDataComponent } from './initial-data.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('InitialDataComponent', () => {
   let component: InitialDataComponent;
@@ -8,7 +10,8 @@ describe('InitialDataComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InitialDataComponent ]
+      declarations: [ InitialDataComponent, MockTranslate ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

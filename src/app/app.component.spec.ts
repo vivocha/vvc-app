@@ -1,32 +1,63 @@
-import { TestBed, async } from '@angular/core/testing';
+import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import {DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
+import {WindowRef} from './core/window.service';
+import {VvcContactService} from './core/contact.service';
+import {VvcDataCollectionService} from './core/dc.service';
+import {Store} from '@ngrx/store';
+import {CoreModule} from './core/core.module';
+import {TranslateModule} from '@ngx-translate/core';
+import {VvcWidgetState} from './core/core.interfaces';
+import {By} from '@angular/platform-browser';
 
 describe('AppComponent', () => {
+
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let de: DebugElement;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      imports: [
+        CoreModule,
+        TranslateModule.forRoot()],
+      declarations: [ AppComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    de = fixture.debugElement;
+    fixture.detectChanges();
+  });
+
+  it('should create the app', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
+  });
 
-  it(`should have as title 'vvc works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('vvc works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should show the minimized component if minimize is set', () => {
+    const state: VvcWidgetState = {
+      chat: true,
+      chatVisibility: true,
+      closed: false,
+      fullScreen: false,
+      state: 'ready',
+      sharing: false,
+      minimized: true,
+      mobile: false,
+      topBarExpanded: false,
+      voice: false,
+      video: false
+    };
+    component.widgetState = state;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('vvc works!');
-  }));
+    const minimizedComponent = de.query(By.css('#vvc-minimized'));
+    expect(minimizedComponent).toBeTruthy();
+  });
+
+
 });

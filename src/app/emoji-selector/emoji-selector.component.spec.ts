@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import { EmojiSelectorComponent } from './emoji-selector.component';
 
@@ -22,4 +22,13 @@ describe('EmojiSelectorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit an event when addEmoji is called', fakeAsync(() => {
+    let emitted = false;
+    component.emoji.subscribe( () => emitted = true);
+    component.addEmoji('any');
+    tick(2000);
+    fixture.detectChanges();
+    expect(emitted).toBeTruthy();
+  }));
 });

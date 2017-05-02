@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CloseModalComponent } from './close-modal.component';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('CloseModalComponent', () => {
   let component: CloseModalComponent;
@@ -8,7 +9,7 @@ describe('CloseModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CloseModalComponent ]
+      declarations: [ CloseModalComponent, MockTranslate ]
     })
     .compileComponents();
   }));

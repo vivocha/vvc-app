@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatBoxComponent } from './chat-box.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('ChatBoxComponent', () => {
   let component: ChatBoxComponent;
@@ -8,7 +10,8 @@ describe('ChatBoxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatBoxComponent ]
+      declarations: [ ChatBoxComponent, MockTranslate ],
+      schemas:      [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

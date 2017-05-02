@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileUploaderComponent } from './file-uploader.component';
+import {MockTranslate} from '../_mocks/translate-mock.pipe';
 
 describe('FileUploaderComponent', () => {
   let component: FileUploaderComponent;
@@ -8,7 +9,7 @@ describe('FileUploaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FileUploaderComponent ]
+      declarations: [ FileUploaderComponent, MockTranslate ]
     })
     .compileComponents();
   }));
