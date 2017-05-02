@@ -1,6 +1,6 @@
 <div id="vvc-container"
-     *ngIf="!widgetState.minimized"
-     [ngClass]="{'mobile':widgetState.mobile,'fullsize':widgetState?.fullScreen, 'nochat':!widgetState.chatVisibility && widgetState.fullScreen}">
+     *ngIf="!widgetState?.minimized"
+     [ngClass]="{'mobile':widgetState?.mobile,'fullsize':widgetState?.fullScreen, 'nochat':!widgetState?.chatVisibility && widgetState?.fullScreen}">
 
   <vvc-fullscreen id="vvc-full-enabled"
                   *ngIf="widgetState?.fullScreen"
@@ -14,7 +14,7 @@
 
   <vvc-initial-data id="vvc-initial-data"
                     *ngIf="widgetState?.state === 'waiting_data'"
-                    [dataCollection]="widgetState.dataCollections[widgetState.selectedDataCollectionId]"
+                    [dataCollection]="widgetState?.dataCollections[widgetState.selectedDataCollectionId]"
                     (datasubmit)="submitInitialData()"
                     (abandon)="abandon()"></vvc-initial-data>
 
@@ -24,7 +24,7 @@
              (leave)="leave()"></vvc-queue>
 
   <div id="vvc-widget-wrap"
-       [ngClass]="{'no-chat': !widgetState.chat && !widgetState.had_chat}"
+       [ngClass]="{'no-chat': !widgetState?.chat && !widgetState?.had_chat}"
        *ngIf="widgetState?.state === 'ready'">
 
     <vvc-topbar id="vvc-top-bar"
@@ -35,7 +35,7 @@
                 (upgrade)="upgradeMedia($event)"></vvc-topbar>
 
     <vvc-media-tools id="vvc-media-tools"
-                     *ngIf="widgetState?.voice && !widgetState.fullScreen"
+                     *ngIf="widgetState?.voice && !widgetState?.fullScreen"
                      [state]="widgetState"
                      (hangup)="hangup()"
                      (addvideo)="addLocalVideo()"
@@ -44,11 +44,11 @@
                      (mute)="setMute($event)"></vvc-media-tools>
 
     <vvc-no-chat id="vvc-no-chat"
-                 *ngIf="!widgetState.chat && !widgetState.had_chat"
+                 *ngIf="!widgetState?.chat && !widgetState?.had_chat"
                  [state]="widgetState"></vvc-no-chat>
 
     <div id="vvc-messages"
-         *ngIf="widgetState.chat || widgetState.had_chat"
+         *ngIf="widgetState?.chat || widgetState?.had_chat"
          angular2-auto-scroll>
       <div *ngFor="let m of messages">
         <vvc-chat-message *ngIf="m.type === 'chat'"
@@ -60,19 +60,19 @@
                               (acceptOffer)="acceptIncomingRequest($event)"></vvc-incoming-message>
         <vvc-inc-dc *ngIf="m.type === 'incoming-request' && m.media === 'DC'"
                     [message]="m"
-                    [dc]="widgetState.dataCollections[m.dataCollectionId]"
+                    [dc]="widgetState?.dataCollections[m.dataCollectionId]"
                     (show)="showDataCollection($event)"
                     (submit)="sendDataCollection($event)"></vvc-inc-dc>
       </div>
     </div>
 
-    <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState.closed && widgetState.chat"
+    <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState?.closed && widgetState?.chat"
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
 
     <vvc-dc-viewer id="vvc-dc-viewer"
                    *ngIf="selectedDataMessage"
-                   [dc]="widgetState.dataCollections[selectedDataMessage.dataCollectionId]"
+                   [dc]="widgetState?.dataCollections[selectedDataMessage.dataCollectionId]"
                    [message]="selectedDataMessage"
                    (submit)="sendDataCollection($event);selectedDataMessage = undefined;"
                    (close)="syncDataCollection($event);selectedDataMessage = undefined;"></vvc-dc-viewer>
@@ -83,20 +83,21 @@
                      (cancel)="dismissCloseModal()"></vvc-close-modal>
 
     <vvc-survey id="vvc-survey"
-                *ngIf="widgetState.showSurvey"
-                [dataCollection]="widgetState.dataCollections[widgetState.surveyId]"
+                *ngIf="widgetState?.showSurvey"
+                [dataCollection]="widgetState?.dataCollections[widgetState.surveyId]"
                 (close)="closeOnSurvey()"></vvc-survey>
 
   </div>
 
   <vvc-video-thumbs id="vvc-video-thumbs"
                     vvcDraggable
-                    *ngIf="widgetState.mobile && widgetState.video && !widgetState.fullScreen"
+                    *ngIf="widgetState?.mobile && widgetState?.video && !widgetState?.fullScreen"
                     [state]="widgetState"
                     (maximize)="setFullScreen()"></vvc-video-thumbs>
 </div>
 
 <vvc-minimized id="vvc-minimized"
-               *ngIf="widgetState.minimized"
+               *ngIf="widgetState?.minimized"
                [state]="widgetState"
                (click)="minimize(false)"></vvc-minimized>
+

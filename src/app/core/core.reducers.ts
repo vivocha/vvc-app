@@ -19,7 +19,7 @@ const initialWidgetState: VvcWidgetState = {
     video: false,
     voice: false
 };
-const extractInitialOpts = (opts) => {
+function extractInitialOpts(opts) {
     const newOpts: {
         canAddVideo: boolean,
         canAddVoice: boolean,
@@ -37,7 +37,7 @@ const extractInitialOpts = (opts) => {
     };
     return newOpts;
 };
-const extractStateFromMedia = (payload) => {
+function extractStateFromMedia(payload) {
   const newState: {
       state?: string;
       chat?: boolean,
@@ -82,7 +82,7 @@ const extractStateFromMedia = (payload) => {
   }
   return newState;
 };
-export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, payload}) => {
+export function widgetState(state: VvcWidgetState  = initialWidgetState, {type, payload}) {
     console.log('------' + type + '------');
     if (type === 'MEDIA_CHANGE') {
         console.log(JSON.stringify(payload));
@@ -173,7 +173,7 @@ export const widgetState = (state: VvcWidgetState  = initialWidgetState, {type, 
         default: return state;
     }
 };
-export const messages = (messageArray: Array<VvcMessage> = [], {type, payload}) => {
+export function messages(messageArray: Array<VvcMessage> = [], {type, payload}) {
     switch (type) {
         case 'UPDATE_MESSAGE':
             const newArray = [];

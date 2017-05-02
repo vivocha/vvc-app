@@ -16,7 +16,10 @@ export class AppComponent implements OnInit {
   private servId: string;
   private lang = 'en';
   public type = 'chat';
-  public isMobile = false;
+  public isMobile = 'false';
+  public world: string;
+  public acct: string;
+
   public selectedDataMessage;
   private closeModal = false;
   private initialConf;
@@ -33,8 +36,11 @@ export class AppComponent implements OnInit {
               private cserv: VvcContactService,
               private store: Store<AppState>,
               private translate: TranslateService) {
+
     this.window = wref.nativeWindow;
+    this.appendVivochaScript();
     this.checkForVivocha();
+
   }
   ngOnInit() {
     this.window.parent.postMessage('vvc-maximize-iframe', '*');
@@ -53,8 +59,15 @@ export class AppComponent implements OnInit {
   addLocalVideo() {
     this.cserv.addLocalVideo();
   }
+  appendVivochaScript() {
+    this.parseIframeUrl();
+    const vvcScript = this.window.document.createElement('script');
+    vvcScript.src = 'https://' + this.world + '.vivocha.com/a/' + this.acct + '/js/vivocha_widget.js';
+    this.window.document.getElementsByTagName('head')[0].appendChild(vvcScript);
+  }
   bindStores() {
     this.store.subscribe( state => {
+      console.log('STORE', state);
       this.widgetState = <VvcWidgetState> state.widgetState;
       this.messages = state.messages;
       if (this.wasFullScreen && this.widgetState.video === false) {
@@ -65,7 +78,8 @@ export class AppComponent implements OnInit {
   checkForVivocha() {
     if (this.window['vivocha'] && this.window['vivocha'].getContact) {
       this.cserv.init(this.window['vivocha']);
-      this.parseIframeUrl();
+      //this.parseIframeUrl();
+      this.loadCampaignSettings();
     } else {
       setTimeout( () => this.checkForVivocha(), 500);
     }
@@ -138,7 +152,7 @@ export class AppComponent implements OnInit {
         }*/
       }
     };
-    this.initialConf.opts.mobile = this.isMobile;
+    this.initialConf.opts.mobile = (this.isMobile === 'true');
     if (this.initialConf.opts.dataCollection) {
       console.log('should collect data collection');
       this.cserv.collectInitialData(this.initialConf);
@@ -154,19 +168,28 @@ export class AppComponent implements OnInit {
   }
   parseIframeUrl() {
     const hash = this.window.location.hash;
+    console.log('iframe hash', hash);
     if (hash.indexOf(';') !== -1) {
       const hashParts = this.window.location.hash.substr(2).split(';');
       this.servId = hashParts[0];
       this.lang = hashParts[1].split('=')[1];
       this.type = hashParts[2].split('=')[1];
-      if (hashParts[3]) {
-        this.isMobile = hashParts[3].split('=')[1];
-      }
-      console.log('is mobile', this.isMobile);
+      this.isMobile = hashParts[3].split('=')[1];
+      this.acct = hashParts[4].split('=')[1];
+      this.world = hashParts[5].split('=')[1];
+
+      console.log('iframe params', {
+        servId: this.servId,
+        acct: this.acct,
+        world: this.world,
+        lang: this.lang,
+        isMobile: this.isMobile
+      });
+
       this.translate.getTranslation( this.lang );
       this.translate.setDefaultLang('en');
       this.translate.use(this.lang);
-      this.loadCampaignSettings();
+      // this.loadCampaignSettings();
     }
   }
   removeLocalVideo() {

@@ -23,9 +23,9 @@ export class MediaToolsComponent {
   constructor(private sanitizer: DomSanitizer) { }
 
   setTime(time) {
-    const date = new Date(null);
+    const date = new Date(Date.UTC(1970, 8, 1, 0, 0, time));
     date.setSeconds(time);
-    this.theTimer.nativeElement.innerHTML = date.toISOString().substr(11, 8);
+    this.theTimer.nativeElement.innerHTML = date.toUTCString().substr(17, 8);
   }
   trustedSrc(url) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
