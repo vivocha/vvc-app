@@ -59,5 +59,25 @@ describe('AppComponent', () => {
     expect(minimizedComponent).toBeTruthy();
   });
 
+  it('should show the fullscreen component if fullScreen is set', () => {
+    const state: VvcWidgetState = {
+      chat: true,
+      chatVisibility: true,
+      closed: false,
+      fullScreen: true,
+      state: 'ready',
+      sharing: false,
+      minimized: true,
+      mobile: false,
+      topBarExpanded: false,
+      voice: true,
+      video: true
+    };
+    component.widgetState = state;
+    fixture.detectChanges();
+    const minimizedComponent = de.query(By.css('#vvc-minimized'));
+    expect(minimizedComponent).toBeTruthy();
+  });
+
 
 });

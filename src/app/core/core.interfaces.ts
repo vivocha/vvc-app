@@ -80,11 +80,11 @@ export interface VvcWidgetState {
     surveyId?: string;
     topBarExpanded: boolean;
     voice: boolean;
-    voice_rx?: string;
-    voice_tx?: string;
+    voice_rx?: any;
+    voice_tx?: any;
     video: boolean;
-    video_rx?: string;
-    video_tx?: string;
+    video_rx?: any;
+    video_tx?: any;
 }
 export interface AppState {
     widgetState: VvcWidgetState;

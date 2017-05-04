@@ -13,11 +13,11 @@ describe('VideoThumbsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ VideoThumbsComponent ]
     })
-        .overrideComponent(VideoThumbsComponent, {
-          set: {
-            changeDetection: ChangeDetectionStrategy.Default
-          }
-        })
+    .overrideComponent(VideoThumbsComponent, {
+      set: {
+        changeDetection: ChangeDetectionStrategy.Default
+      }
+    })
     .compileComponents();
   }));
 

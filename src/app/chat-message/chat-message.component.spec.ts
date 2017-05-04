@@ -17,11 +17,19 @@ describe('ChatMessageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ChatMessageComponent);
     component = fixture.componentInstance;
-    component.message = { isAgent : true }
+    component.message = { isAgent : true };
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should check if the message contains an image', () => {
+    component.message.meta = {
+      mimetype: 'IMAGE/PNG'
+    };
+    fixture.detectChanges();
+    expect(component.isImage()).toBeTruthy();
   });
 });

@@ -16,7 +16,7 @@ export class VvcContactService {
     incomingId;
     callStartedWith;
     voiceStart = new EventEmitter();
-    private widgetState: VvcWidgetState;
+    widgetState: VvcWidgetState;
 
 
     constructor( private store: Store<AppState>,
@@ -193,48 +193,6 @@ export class VvcContactService {
             }
         });
     }
-    /*
-    diffOffer(currentOffer, incomingOffer, flat?) {
-        let hasAdded = false;
-        let hasChanged = false;
-        let hasRemoved = false;
-
-        let diff = { added: {}, changed: {}, removed: {} };
-        let flatDiff = { added: [], changed: [], removed: [] };
-        for (let m in incomingOffer){
-            if (currentOffer[m]){
-                let changed = false;
-                if (currentOffer[m].rx !== incomingOffer[m].rx) changed = true;
-                if (currentOffer[m].tx !== incomingOffer[m].tx) changed = true;
-                if (currentOffer[m].engine !== incomingOffer[m].engine) changed = true;
-                if (currentOffer[m].via !== incomingOffer[m].via) changed = true;
-                if (changed){
-                    hasChanged = true;
-                    diff.changed[m] = incomingOffer[m];
-                    flatDiff.changed.push(m);
-                }
-            }
-            else {
-                if(incomingOffer[m].rx !== "off") {
-                    hasAdded = true;
-                    diff.added[m] = incomingOffer[m];
-                    flatDiff.added.push(m);
-                }
-            }
-        }
-        for (let c in currentOffer){
-            if (!incomingOffer[c]){
-                hasRemoved = true;
-                diff.removed[c] = currentOffer[c];
-                flatDiff.removed.push(c);
-            }
-        }
-        if (!hasAdded) delete diff.added;
-        if (!hasChanged) delete diff.changed;
-        if (!hasRemoved) delete diff.removed;
-        return (flat) ? flatDiff : diff;
-    }
-    */
     dispatch(action) {
         this.zone.run( () => {
             this.store.dispatch(action);
