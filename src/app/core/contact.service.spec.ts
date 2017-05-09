@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store';
 import {CoreModule} from './core.module';
 import {vivocha} from '../_mocks/vivocha-mock';
 
-fdescribe('ContactService', () => {
+describe('ContactService', () => {
 
    let service: VvcContactService;
    let store: Store<AppState>;
@@ -57,34 +57,100 @@ fdescribe('ContactService', () => {
       service.sendText('ciao');
       tick(1000);
    }
-   function createIncomingRequest(media){
-      
+   function getIncomingRequest(media) {
+      let r;
+      if (media === 'voice') {
+         r = {
+            Chat: { rx: 'required', tx: 'required' },
+            Sharing: { rx: 'required', tx: 'required' },
+            Voice: { rx: 'required', tx: 'required'}
+         };
+      }
+      if (media === 'video') {
+         r = {
+            Chat: { rx: 'required', tx: 'required' },
+            Sharing: { rx: 'required', tx: 'required' },
+            Voice: { rx: 'required', tx: 'required'},
+            Video: { rx: 'required', tx: 'required'}
+         };
+      }
+      return r;
    }
    it('should create a simple chat with agent close', fakeAsync(() => {
       let msgNumber = 0;
       store.subscribe( state => msgNumber = state.messages.length);
       simpleChat();
-      // TODO simulate a left
-
+      service.contact.emit('left', [{channels: { user: 0 }}]);
+      tick(1000);
+      expect(service.widgetState.closed).toBeTruthy();
       expect(service.contact).toBeTruthy();
       expect(service.widgetState.agent.nick).toEqual(mockAgent.nick);
-      expect(msgNumber).toEqual(2);
+      expect(msgNumber).toEqual(3);
    }));
 
    it('should create a simple chat with a resume and client close', fakeAsync(() => {
-      // simple chat
-      // resume
-      // close
+      simpleChat();
+      const leave = spyOn(service.contact, 'leave');
+      service.contact.emit('joined', [{ reason: 'resume' }]);
+      service.closeContact();
+      tick(1000);
+      expect(leave).toHaveBeenCalled();
+
    }));
 
    it('should create a simple chat with voice incoming request', fakeAsync(() => {
-      // accept voice
-      // mute / unmute
-      // hangup
+      simpleChat();
+      const r = getIncomingRequest('voice');
+      service.contact.emit('mediaoffer', [r, (mediaOffer) => {
+
+      }]);
+      service.acceptOffer({});
+      service.contact.emit('mediachange', [{
+         Chat: { rx: true, tx: true},
+         Sharing: { rx: true, tx: true},
+         Voice: { rx: true, tx: true, data: {
+            tx_stream: { url: 'txstreamurl'},
+            rx_stream: { url: 'rxstreamurl'},
+         }}
+      }]);
+      tick(1000);
+      expect(service.widgetState.voice).toBeTruthy();
+      service.muteAudio(true);
+      tick(1000);
+      expect(service.widgetState.mute).toBeTruthy();
+      service.muteAudio(false);
+      tick(1000);
+      expect(service.widgetState.mute).toBeFalsy();
+      service.hangup();
+      service.contact.emit('mediachange', [{
+         Chat: { rx: true, tx: true},
+         Sharing: { rx: true, tx: true},
+         Voice: { rx: false, tx: false }
+      }]);
+      tick(1000);
+      expect(service.widgetState.voice).toBeFalsy();
+
    }));
 
    it('should create a simple chat with video close', fakeAsync(() => {
-      // accept video
+      simpleChat();
+      const r = getIncomingRequest('video');
+      service.contact.emit('mediaoffer', [r, (mediaOffer) => {}]);
+      service.acceptOffer({});
+      service.contact.emit('mediachange', [{
+         Chat: { rx: true, tx: true},
+         Sharing: { rx: true, tx: true},
+         Voice: { rx: true, tx: true, data: {
+            tx_stream: { url: 'txstreamurl'},
+            rx_stream: { url: 'rxstreamurl'},
+         }},
+         Video: { rx: true, tx: true, data: {
+            tx_stream: { url: 'txstreamurl'},
+            rx_stream: { url: 'rxstreamurl'},
+         }}
+      }]);
+      tick(1000);
+      expect(service.widgetState.video).toBeTruthy();
       // add/remove video
       // minimize/maximize
    }));
