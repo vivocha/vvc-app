@@ -116,7 +116,6 @@ var AppComponent = (function () {
         var _this = this;
         if (this.window['vivocha'] && this.window['vivocha'].getContact) {
             this.cserv.init(this.window['vivocha']);
-            //this.parseIframeUrl();
             this.loadCampaignSettings();
         }
         else {
@@ -175,7 +174,7 @@ var AppComponent = (function () {
         this.initialConf = {
             serv_id: this.servId,
             type: this.type,
-            nick: 'Marcolino',
+            nick: 'Customer',
             initial_offer: initialOffer,
             opts: {
                 media: {
@@ -185,11 +184,10 @@ var AppComponent = (function () {
                 survey: {
                     dataToCollect: 'schema#survey-id',
                     sendTranscript: 'ask'
-                }
-                /*,
+                },
                 dataCollection: {
-                  dataToCollect: 'schema#data-id'
-                }*/
+                    dataToCollect: 'schema#data-id'
+                }
             }
         };
         this.initialConf.opts.mobile = (this.isMobile === 'true');
@@ -396,7 +394,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 function createTranslateLoader(http) {
-    return new __WEBPACK_IMPORTED_MODULE_5__ngx_translate_http_loader__["a" /* TranslateHttpLoader */](http, 'https://tevez.vivocha.com/s/widget-xl8/xl8/', '.json');
+    return new __WEBPACK_IMPORTED_MODULE_5__ngx_translate_http_loader__["a" /* TranslateHttpLoader */](http, '/s/widget-xl8/xl8/', '.json');
 }
 var AppModule = (function () {
     function AppModule() {
@@ -2116,7 +2114,7 @@ module.exports = "<div class=\"top-box\">\n  <div class=\"top-box-row1\">\n    <
 /***/ 212:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"top-row\">\n  <div class=\"media-tools\">\n    <div *ngIf=\"!this.state.closed\">\n      <i class=\"vvc-phone\"\n         [ngClass]=\"{'disabled': this.state.voice || this.state.mediaOffering }\"\n         *ngIf=\"canStartMediaRequest('voice')\"\n         (click)=\"askForUpgrade('voice')\"></i>\n\n      <i class=\"vvc-video\"\n         [ngClass]=\"{'disabled': this.state.video || this.state.mediaOffering }\"\n         *ngIf=\"canStartMediaRequest('video')\"\n         (click)=\"askForUpgrade('video')\"></i>\n    </div>\n  </div>\n  <div class=\"avatar-place\">\n    <img class='agent-img' [src]=\"getAvatar()\">\n  </div>\n  <div class=\"secondary-tools\">\n    <i class=\"vvc-minimize\" *ngIf=\"!this.state.closed\" (click)=\"minimize.emit()\"></i>\n    <i class=\"vvc-close\" (click)=\"close.emit(this.state.closed)\"></i>\n  </div>\n</div>\n\n<div class=\"welcome-msg\">\n  <div class=\"msg-content\">\n    <span class=\"msg\" [innerHTML]=\"'TOPBAR.WELCOME' | translate\">Welcome<br>you are talking with</span><br>\n    <span class=\"agent-name\">{{ getAgentName() }}</span>\n  </div>\n</div>\n\n<div class=\"info-msg\">\n  <span class=\"agent-name\" *ngIf=\"!state.isAgentWriting\">{{ getAgentName() }}</span>\n  <span class=\"msg\" *ngIf=\"state.isAgentWriting\"><i class=\"vvc-chat\"></i> {{ 'TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span>\n</div>\n"
+module.exports = "<div class=\"top-row\">\n  <div class=\"media-tools\">\n    <div *ngIf=\"!state.closed\">\n      <i class=\"vvc-phone\"\n         [ngClass]=\"{'disabled': state.voice || state.mediaOffering }\"\n         *ngIf=\"canStartMediaRequest('voice')\"\n         (click)=\"askForUpgrade('voice')\"></i>\n\n      <i class=\"vvc-video\"\n         [ngClass]=\"{'disabled': state.video || state.mediaOffering }\"\n         *ngIf=\"canStartMediaRequest('video')\"\n         (click)=\"askForUpgrade('video')\"></i>\n    </div>\n  </div>\n  <div class=\"avatar-place\">\n    <img class='agent-img' [src]=\"getAvatar()\">\n  </div>\n  <div class=\"secondary-tools\">\n    <i class=\"vvc-minimize\" *ngIf=\"!state.closed\" (click)=\"minimize.emit()\"></i>\n    <i class=\"vvc-close\" (click)=\"close.emit(state.closed)\"></i>\n  </div>\n</div>\n\n<div class=\"welcome-msg\">\n  <div class=\"msg-content\">\n    <span class=\"msg\" [innerHTML]=\"'TOPBAR.WELCOME' | translate\">Welcome<br>you are talking with</span><br>\n    <span class=\"agent-name\">{{ getAgentName() }}</span>\n  </div>\n</div>\n\n<div class=\"info-msg\">\n  <span class=\"agent-name\" *ngIf=\"!state.isAgentWriting\">{{ getAgentName() }}</span>\n  <span class=\"msg\" *ngIf=\"state.isAgentWriting\"><i class=\"vvc-chat\"></i> {{ 'TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span>\n</div>\n"
 
 /***/ }),
 
@@ -2335,48 +2333,6 @@ var VvcContactService = (function () {
             }
         });
     };
-    /*
-    diffOffer(currentOffer, incomingOffer, flat?) {
-        let hasAdded = false;
-        let hasChanged = false;
-        let hasRemoved = false;
-
-        let diff = { added: {}, changed: {}, removed: {} };
-        let flatDiff = { added: [], changed: [], removed: [] };
-        for (let m in incomingOffer){
-            if (currentOffer[m]){
-                let changed = false;
-                if (currentOffer[m].rx !== incomingOffer[m].rx) changed = true;
-                if (currentOffer[m].tx !== incomingOffer[m].tx) changed = true;
-                if (currentOffer[m].engine !== incomingOffer[m].engine) changed = true;
-                if (currentOffer[m].via !== incomingOffer[m].via) changed = true;
-                if (changed){
-                    hasChanged = true;
-                    diff.changed[m] = incomingOffer[m];
-                    flatDiff.changed.push(m);
-                }
-            }
-            else {
-                if(incomingOffer[m].rx !== "off") {
-                    hasAdded = true;
-                    diff.added[m] = incomingOffer[m];
-                    flatDiff.added.push(m);
-                }
-            }
-        }
-        for (let c in currentOffer){
-            if (!incomingOffer[c]){
-                hasRemoved = true;
-                diff.removed[c] = currentOffer[c];
-                flatDiff.removed.push(c);
-            }
-        }
-        if (!hasAdded) delete diff.added;
-        if (!hasChanged) delete diff.changed;
-        if (!hasRemoved) delete diff.removed;
-        return (flat) ? flatDiff : diff;
-    }
-    */
     VvcContactService.prototype.dispatch = function (action) {
         var _this = this;
         this.zone.run(function () {

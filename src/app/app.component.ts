@@ -78,7 +78,6 @@ export class AppComponent implements OnInit {
   checkForVivocha() {
     if (this.window['vivocha'] && this.window['vivocha'].getContact) {
       this.cserv.init(this.window['vivocha']);
-      //this.parseIframeUrl();
       this.loadCampaignSettings();
     } else {
       setTimeout( () => this.checkForVivocha(), 500);
@@ -135,7 +134,7 @@ export class AppComponent implements OnInit {
     this.initialConf = {
       serv_id: this.servId,
       type: this.type,
-      nick: 'Marcolino',
+      nick: 'Customer',
       initial_offer: initialOffer,
       opts: { // campaign /service options
         media: {
@@ -146,10 +145,10 @@ export class AppComponent implements OnInit {
           dataToCollect: 'schema#survey-id',
           sendTranscript: 'ask'
         }
-        /*,
+       ,
         dataCollection: {
           dataToCollect: 'schema#data-id'
-        }*/
+        }
       }
     };
     this.initialConf.opts.mobile = (this.isMobile === 'true');

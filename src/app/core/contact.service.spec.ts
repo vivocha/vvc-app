@@ -13,7 +13,7 @@ describe('ContactService', () => {
    const chatInitialConf = {
       serv_id: 'SERVID',
       type: 'chat',
-      nick: 'Marcolino',
+      nick: 'Customer',
       initial_offer: {
          Chat: { rx: 'required', tx: 'required' },
          Sharing: { rx: 'required', tx: 'required' }
