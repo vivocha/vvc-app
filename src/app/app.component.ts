@@ -6,6 +6,8 @@ import {VvcWidgetState, AppState, VvcOffer} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
 import {MediaToolsComponent} from './media-tools/media-tools.component';
 
+declare var vivocha: any;
+
 @Component({
   selector: 'vvc-root',
   templateUrl: './app.component.html'
@@ -32,6 +34,8 @@ export class AppComponent implements OnInit {
   public widgetState: VvcWidgetState;
   public messages: Array<any>;
 
+  vivocha: any;
+
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
               private store: Store<AppState>,
@@ -43,14 +47,14 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.window.parent.postMessage('vvc-maximize-iframe', '*');
+    //this.vivocha.maximize();
     this.bindStores();
     this.cserv.voiceStart.subscribe( () => {
       this.startTimer();
     });
   }
   abandon() {
-    this.window.parent.postMessage('vvc-close-iframe', '*');
+    vivocha.close();
   }
   acceptIncomingRequest(evt) {
     this.startTimer();
@@ -62,7 +66,7 @@ export class AppComponent implements OnInit {
   appendVivochaScript() {
     this.parseIframeUrl();
     const vvcScript = this.window.document.createElement('script');
-    vvcScript.src = 'https://' + this.world + '.vivocha.com/a/' + this.acct + '/js/vivocha_widget.js';
+    vvcScript.src = `https://${this.world}.vivocha.com/a/${this.acct}/js/vivocha_interaction.js`;
     this.window.document.getElementsByTagName('head')[0].appendChild(vvcScript);
   }
   bindStores() {
@@ -76,24 +80,26 @@ export class AppComponent implements OnInit {
     });
   }
   checkForVivocha() {
-    if (this.window['vivocha'] && this.window['vivocha'].getContact) {
-      this.cserv.init(this.window['vivocha']);
-      this.loadCampaignSettings();
+    if (this.window['vivocha'] && this.window['vivocha'].ready) {
+      this.window.vivocha.ready().then(() => {
+        this.vivocha = this.window['vivocha'];
+        this.cserv.init(this.window['vivocha']);
+        this.loadCampaignSettings();
+      });
     } else {
       setTimeout( () => this.checkForVivocha(), 500);
     }
   }
   closeContact() {
     this.cserv.closeContact();
-    // this.window.parent.postMessage('vvc-close-iframe', '*');
     if (this.widgetState.hasSurvey) {
       this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
     } else {
-      this.window.parent.postMessage('vvc-close-iframe', '*');
+      this.vivocha.close();
     }
   }
   closeOnSurvey() {
-    this.window.parent.postMessage('vvc-close-iframe', '*');
+    this.vivocha.close();
   }
   denyIncomingRequest(media) {
     this.cserv.denyOffer(media);
@@ -127,7 +133,7 @@ export class AppComponent implements OnInit {
   }
   leave() {
     this.cserv.closeContact();
-    this.window.parent.postMessage('vvc-close-iframe', '*');
+    this.vivocha.close();
   }
   loadCampaignSettings() {
     const initialOffer = this.getInitialOffer();
@@ -162,8 +168,8 @@ export class AppComponent implements OnInit {
   }
   minimize(state) {
     this.store.dispatch({ type: 'MINIMIZE', payload: state });
-    (state) ? this.window.parent.postMessage('vvc-minimize-iframe', '*')
-            : this.window.parent.postMessage('vvc-maximize-iframe', '*');
+    (state) ? this.vivocha.minimize()
+            : this.vivocha.maximize();
   }
   parseIframeUrl() {
     const hash = this.window.location.hash;
@@ -214,7 +220,7 @@ export class AppComponent implements OnInit {
   setFullScreen() {
     this.wasFullScreen = true;
     this.store.dispatch({ type: 'FULLSCREEN', payload: true});
-    this.window.parent.postMessage('vvc-fullscreen-on', '*');
+    this.vivocha.setFullScreen();
   }
   setMute(mute: boolean) {
     this.cserv.muteAudio(mute);
@@ -222,14 +228,14 @@ export class AppComponent implements OnInit {
   setNormalScreen() {
     this.wasFullScreen = false;
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});
-    this.window.parent.postMessage('vvc-fullscreen-off', '*');
+    this.vivocha.setNormalScreen();
   }
   showCloseModal(isContactClosed) {
     if (isContactClosed) {
       if (this.widgetState.hasSurvey) {
         this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
       } else {
-        this.window.parent.postMessage('vvc-close-iframe', '*');
+        this.vivocha.close();
       }
     } else {
       this.closeModal = true;

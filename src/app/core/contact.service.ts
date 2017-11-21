@@ -143,14 +143,17 @@ export class VvcContactService {
         this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
     }
     closeContact() {
+      this.vivocha.bus.request('page', 'close');
         this.contact.leave();
     }
     collectInitialData(conf) {
+      this.vivocha.bus.request('page', 'data_collection');
         this.dcserv.loadDataCollection(conf.opts.dataCollection.dataToCollect).then( dc => {
             this.dispatch({type: 'INITIAL_DATA', payload: dc });
         });
     }
     createContact(conf) {
+      this.vivocha.bus.request('page', 'contact');
         this.callStartedWith = conf.type.toUpperCase();
         this.dispatch({type: 'INITIAL_OFFER', payload: { offer: conf.initial_offer, opts: conf.opts }});
 
@@ -169,6 +172,7 @@ export class VvcContactService {
             }
         }, (err) => {
             console.log('Failed to create contact', err);
+            this.vivocha.failed();
         });
 
     }
