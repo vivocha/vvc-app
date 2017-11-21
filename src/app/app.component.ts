@@ -47,14 +47,14 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    //this.vivocha.maximize();
+    // this.vivocha.maximize();
     this.bindStores();
     this.cserv.voiceStart.subscribe( () => {
       this.startTimer();
     });
   }
   abandon() {
-    vivocha.close();
+    this.vivocha.close();
   }
   acceptIncomingRequest(evt) {
     this.startTimer();
@@ -147,6 +147,7 @@ export class AppComponent implements OnInit {
           Video : 'visitor',
           Voice : 'visitor'
         },
+        /*
         survey: {
           dataToCollect: 'schema#survey-id',
           sendTranscript: 'ask'
@@ -155,6 +156,7 @@ export class AppComponent implements OnInit {
         dataCollection: {
           dataToCollect: 'schema#data-id'
         }
+        */
       }
     };
     this.initialConf.opts.mobile = (this.isMobile === 'true');
@@ -235,7 +237,7 @@ export class AppComponent implements OnInit {
       if (this.widgetState.hasSurvey) {
         this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
       } else {
-        this.vivocha.close();
+        //this.vivocha.close();
       }
     } else {
       this.closeModal = true;
