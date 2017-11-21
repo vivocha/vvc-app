@@ -1,0 +1,151 @@
+@import "variables";
+@import "iframe-container";
+@import "iframe-inner-container";
+@import "keyframes";
+@import "mixins";
+@import "forms";
+@import "buttons";
+@import "queue";
+@import "initialdata";
+@import "survey";
+@import "topbar";
+@import "media";
+@import "messages";
+@import "chatbox";
+@import "minimized.scss";
+
+html,
+body,
+textarea,
+input,
+button{
+  font-size:$baseFontSize;
+  font-family: $fontFamily;
+}
+#vvc-container{
+  display: flex;
+  position: absolute;
+  top: 0; right: 0; bottom:0; left:0;
+
+  &.fullsize{
+    #vvc-widget-wrap{
+      border-radius: 0;
+      height: 100%;
+    }
+    &.nochat{
+      #vvc-widget-wrap{
+        display: none;
+      }
+    }
+  }
+
+}
+#vvc-full-enabled{
+  background-color: $lightColor;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0; /* 1 */
+  min-height: 0; /* 1 */
+  flex-direction: column;
+  position: relative;
+  .big-video{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+
+  }
+  .small-video{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 10%
+  }
+  .chat-toggle{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $lightColor;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 6px;
+    background-color: $primaryColor;
+    border-radius: 10px 0 0 10px;
+    i { font-size: 1.25rem }
+    .chat-label{
+      font-size: 0.875rem;
+      font-weight: 300;
+    }
+  }
+  .vvc-tools {
+    position: absolute;
+    bottom: 50px;
+    left: 0; right: 0;
+    .vvc-tools-wrap {
+      margin: 0 auto;
+      @include vvcMediaToolbar('fullsize');
+    }
+  }
+}
+/*
+#vvc-widget-wrap{
+  //@include boxShadow(0,0,10px,0.5);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  //width: 370px;
+  //height: 600px;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  //position: relative;
+  background-color: $lightColor;
+}
+*/
+
+#vvc-close-modal{
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  flex-direction: column;
+
+  .modal-content{
+    width: 100%;
+    align-items: center;
+    flex: 1 1 auto;
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+
+    .inner-content{
+      width:100%;
+    }
+    .incoming-msg{
+      padding: 15px;
+      @include vvcIncomingMessage();
+    }
+
+  }
+}
+#vvc-dc-viewer{
+  position: absolute;
+  top: 80px;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color: $lightColor;
+  overflow-y: scroll;
+
+  .back-anchor{
+    position: absolute;
+    color: $primaryColor;
+    margin-top: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

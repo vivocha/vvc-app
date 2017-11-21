@@ -1,0 +1,426 @@
+/**
+ Create a background made by two colors
+ */
+@mixin bgWithLight($color1,$height,$color2){
+  background: $color2;
+  background: -webkit-linear-gradient(top,$color1,$color1 $height, $color2 $height, $color2);
+}
+/**
+  Box Shadow with blur and alpha
+ */
+@mixin boxShadow($top, $left, $blur,$alpha){
+  box-shadow: 0 0 $blur rgba(0,0,0,$alpha);
+}
+/**
+  Buttons
+ */
+@mixin vvcButton($color){
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  padding: 12px 15px;
+  background: $color;
+  box-shadow: inset 0 -3px 0 darken($color, 5%);
+  color: $lightColor;
+  border-radius: $button-radius;
+  font-size: 0.875rem;
+  font-weight: 300;
+  &:hover{
+    background: lighten($color, 15%);
+    box-shadow: inset 0 -3px 0 $color;
+  }
+  &:active{
+    background: darken($color, 15%);
+    box-shadow: inset 0 4px 0 $color;
+  }
+  &:disabled{
+    opacity: 0.5;
+  }
+}
+/**
+  Full screen layer
+ */
+@mixin vvcLayer(){
+  position:absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/**
+  Set content display table and clears
+ */
+@mixin vvcClearFix(){
+  &:before,
+  &:after {
+    content: " ";
+    display: table
+  }
+  &:after { clear: both }
+}
+/**
+  Helpers for 12 cols layout;
+ */
+@mixin vvcCol($col){
+  float: left;
+  box-sizing: border-box;
+  width: ($col/12 * 100%);
+}
+/**
+  Account Avatar Style
+ */
+@mixin vvcAccountImg($type: 'big', $borderColor: lighten($darkColor,30%)){
+  @if ($type == 'big'){
+    width: 63px;
+    height: 63px;
+  }
+  @if ($type == 'small'){
+    width: 40px;
+    height: 40px;
+  }
+
+  border: 2px solid $borderColor;
+  //background-color: $lightColor;
+  border-radius: 50%;
+}
+/**
+  Account Top Card
+ */
+@mixin vvcAccountTopCard(){
+
+  .top-box-row1{
+    @include vvcClearFix();
+    & > div{
+      @include vvcCol(4);
+      padding-top: 16px;
+      font-size: 1rem;
+    }
+    & > div:nth-child(2){
+      text-align: center;
+      img.acct-img{
+        @include vvcAccountImg();
+      }
+    }
+    & > div:nth-child(3){
+      padding: 16px 16px;
+      text-align: right;
+      font-size: 1.25rem;
+      color: $lightColor;
+      cursor: pointer;
+    }
+  }
+  .top-box-row2{
+    @include vvcClearFix();
+    & > div{
+      @include vvcCol(12);
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: $lightColor;
+      padding-top: 32px;
+    }
+  }
+}
+/**
+  Media Info used in Queue
+ */
+@mixin vvcMediaBullet(){
+  @include bgWithLight($primaryColor,50%,darken($primaryColor,5%));
+  @include boxShadow(2px,0,4px,0.25);
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  color: $lightColor;
+  font-size: 35px;
+  i {
+    position: relative;
+    top: 20px;
+  }
+}
+/**
+ Queue progress bar
+ */
+@mixin vvcQueueLoader(){
+  @include bgWithLight($primaryColor,50%,darken($primaryColor,5%));
+  @include boxShadow(2px,0,4px,0.25);
+  border-radius: 100px;
+  position: relative;
+  height: 40px;
+  margin: 20px 15px;
+
+  .loader{
+    border-radius: 100px;
+    background-color: $lightColor;
+    position: absolute;
+    width: 96%;
+    height: 26px;
+    margin: 7px 15px;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05);
+
+    &:after{
+      border-radius: 100px;
+      content: '';
+      position: absolute;
+      background-color: $primaryColor;
+      left: 2px;
+      top: 2px;
+      bottom: 2px;
+      right: 30%;
+      animation-name: slide;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+  }
+}
+/**
+  Info Card in Queue
+ */
+@mixin vvcQueueCard($arrow: 'top-arrow'){
+  display: flex;
+  position: relative;
+  @include vvcClearFix();
+  border-radius: 10px;
+  margin: 15px;
+  background-color: $lightColor;
+  color: $darkColor;
+
+  @if ($arrow == 'no-chat') {
+    background-color: transparent;
+  }
+
+  @if ($arrow == 'top-arrow') {
+    &:before {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-color: $lightColor transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      border-width: 0 20px 40px 20px;
+      left: 50%;
+      margin-left: -20px;
+      top: -25px;
+    }
+  }
+}
+/**
+ Media Toolbar
+ */
+@mixin vvcMediaToolbar($type: 'normal'){
+  width: 370px;
+
+  @if ($type == 'normal') {
+    @include bgWithLight($primaryColor, 50%, $lightColor);
+  }
+  @if ($type == 'no-chat') {
+    @include bgWithLight($primaryColor, 50%, lighten($primaryColor, 15%));
+  }
+
+  .vvc-inner-tools {
+    height: 47px;
+    background-color: $primaryColor;
+    margin-top: 9px;
+    border: 1px solid lighten($primaryColor, 15%);
+    border-radius: 50px;
+    box-shadow: inset 0 -4px 0 darken($primaryColor, 5%);
+
+    button {
+      border: 0;
+      width: 92px;
+      font-size: 14px;
+      font-weight: 300;
+      margin: 0;
+      height: 47px;
+      cursor: pointer;
+      outline: none;
+      background: $primaryColor;
+      box-shadow: inset 0 -3px 0 darken($primaryColor, 5%);
+      color: $lightColor;
+      float: left;
+    }
+    button.hangup {
+      border-radius: 50px;
+      background-color: $lightColor;
+      color: darken($primaryColor, 15%);
+    }
+    button.first-btn {
+      border-radius: 50px 0 0 50px;
+    }
+    button.first-btn.audio {
+      border-radius: 50px;
+    }
+    button:disabled {
+      opacity: 0.5;
+    }
+    button:hover {
+      background-color: lighten($primaryColor, 30%);
+      box-shadow: inset 0 -3px 0 $primaryColor;
+    }
+    button.hangup:hover {
+      background: $lightColor;
+      box-shadow: inset 0 -3px 0 $warningColor;
+      color: $warningColor;
+    }
+    button:active {
+      background-color: darken($primaryColor, 15%);
+      box-shadow: inset 0 -3px 0 $primaryColor;
+    }
+    button.hangup:active {
+      background: $lightColor;
+      box-shadow: inset 0 3px 0 $warningColor;
+      color: $warningColor;
+    }
+
+    .the-timer {
+      display: inline-block;
+      text-align: center;
+      color: $lightColor;
+      font-size: 1.25rem;
+      font-weight: 300;
+      width: 184px;
+      float: left;
+      padding-top: 10px;
+    }
+  }
+}
+/**
+ Incoming Message
+ */
+@mixin vvcIncomingMessage(){
+  padding-top: 10px;
+  .inc-type {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    i {
+      font-size: 1rem;
+      position: relative;
+      top: 10px;
+    }
+  }
+  .inc-msg-header{
+    padding: 14px 10px;
+    font-weight: 300;
+    text-align: center;
+    .inc-header{
+      display: inline-block;
+      font-size: 0.875rem;
+      font-style: italic;
+      max-width: 70%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 4px;
+    }
+  }
+  .open,
+  .dc{
+    position:relative;
+    border-radius: 10px;
+    border: 1px solid $primaryColor;
+    .inc-msg-header{
+      border-radius: 10px 10px 0 0;
+      @include bgWithLight(darken($primaryColor,5%),50%,$primaryColor);
+      color: $lightColor;
+
+      .inc-type{
+        display: inline-block;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        border: 1px outset #75abe9;
+
+      }
+    }
+    .inc-msg-content{
+      background: $lightColor;
+      border-radius: 0 0 10px 10px;
+      padding: 10px;
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-align: center;
+
+      &.form{
+        text-align: left;
+      }
+
+      .dc-name{
+        font-weight: 700;
+      }
+    }
+  }
+  .loading{
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    @include bgWithLight(darken($primaryColor,5%),50%,$primaryColor);
+    .inc-type{
+      @include boxShadow(2px,0,4px,0.25);
+      i {
+        font-size: 1rem;
+        position: relative;
+        top: 8px;
+        left: 12px;
+        color: $lightColor;
+      }
+    }
+    .loading-wrapper{
+      position: relative;
+      margin: -20px 13px;
+      border-radius: 100px;
+    }
+    .loader{
+      width: 85%;
+
+      height: 26px;
+      background-color: white;
+      margin: -13px 47px;
+      position: absolute;
+      border-radius: 100px;
+      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .05);
+      &:after{
+        border-radius: 100px;
+        content: '';
+        position: absolute;
+        background-color: $primaryColor;
+        left: 2px;
+        top: 2px;
+        bottom: 2px;
+        right: 30%;
+        animation-name: slide2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+      }
+    }
+
+  }
+  .closed{
+    position:relative;
+    border-radius: 100px;
+    .inc-msg-header{
+      padding: 9px;
+    }
+    .inc-type{
+      display: inline-block;
+      position: absolute;
+      top: 1px;
+      left: 0;
+      @include boxShadow(2px,0,4px,0.25);
+    }
+    &.accepted{
+      @include bgWithLight(darken($primaryColor,5%),50%,$primaryColor);
+      color: $lightColor;
+    }
+    &.rejected{
+      @include bgWithLight(lighten($darkColor,50%),50%,lighten($darkColor,45%));
+      border: 1px solid lighten($darkColor,45%);
+      color: $darkColor;
+    }
+  }
+}

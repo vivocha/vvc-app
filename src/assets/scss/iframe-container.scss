@@ -1,0 +1,14 @@
+.vvc-iframe-container {
+  border: 0;
+  &.vvc-desktop{
+    box-shadow: 0 0 10px #262626;
+    border-radius: 10px 10px 0 0;
+  }
+  &.vvc-mobile {
+
+  }
+  &.vvc-minimized {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

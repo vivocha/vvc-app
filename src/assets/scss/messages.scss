@@ -1,0 +1,133 @@
+#vvc-messages{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 0 8px 8px 8px;
+  overflow-y: scroll;
+
+  .agent-msg{
+
+    padding-top: 10px;
+
+    .msg-content{
+      background-color: lighten($darkColor, 45%);
+      color: $darkColor;
+      font-size: 0.875rem;
+      font-weight: 300;
+      padding: 10px;
+      border-radius: 10px;
+      float: left;
+      max-width: 80%;
+
+      img{
+        max-width: 100%;
+      }
+
+      .the-image{ display: block; }
+      .download{ text-decoration: underline; display: block; white-space: nowrap; cursor: pointer }
+      .the-message{ display: block; padding-top: 4px;}
+    }
+
+    .bubble {
+      display: block;
+      width: 10px;
+      height: 10px;
+      float: left;
+      margin-right: 6px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background-color: #c5c5c5;
+      opacity: 0;
+      -moz-transform-origin: center center 50%;
+      -ms-transform-origin: center center 50%;
+      -webkit-transform-origin: center center 50%;
+      transform-origin: center center 50%;
+      -moz-animation-name: pulse;
+      -webkit-animation-name: pulse;
+      animation-name: pulse;
+      -moz-animation-duration: 1.2s;
+      -webkit-animation-duration: 1.2s;
+      animation-duration: 1.2s;
+      -moz-animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+    .bubble:nth-child(2) {
+      width: 14px;
+      height: 14px;
+      margin-top: 0;
+      -moz-animation-delay: 0.12s;
+      -webkit-animation-delay: 0.12s;
+      animation-delay: 0.12s;
+    }
+    .bubble:nth-child(3) {
+      -moz-animation-delay: 0.24s;
+      -webkit-animation-delay: 0.24s;
+      animation-delay: 0.24s;
+    }
+
+  }
+
+  .customer-msg{
+
+    padding-top: 10px;
+
+    .file-uploading{
+      float: right;
+      padding: 8px;
+      color: $primaryColor;
+    }
+
+    .spin {
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    }
+
+    .msg-content{
+      background-color: $primaryColor;
+      color: $lightColor;
+      font-size: 0.875rem;
+      font-weight: 300;
+      padding: 10px;
+      border-radius: 10px;
+      float: right;
+      max-width: 80%;
+
+      img{
+        max-width: 100%;
+      }
+
+      .the-image{ display: block; }
+      .download{ text-decoration: underline; display: block; white-space: nowrap; cursor: pointer }
+      .the-message{ display: block; padding-top: 4px;}
+
+    }
+
+    .error-info{
+      display:none;
+    }
+
+    &.error{
+      .msg-content {
+        opacity: 0.5;
+      }
+      .error-info{
+        display: block;
+        padding: 10px;
+        color: $warningColor;
+        float:right;
+      }
+    }
+
+  }
+
+  .incoming-msg{
+    @include vvcIncomingMessage();
+  }
+
+}

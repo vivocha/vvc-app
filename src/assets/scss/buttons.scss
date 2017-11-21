@@ -1,0 +1,9 @@
+.btn-primary{
+  @include vvcButton($primaryColor);
+}
+.btn-normal{
+  @include vvcButton($darkColor);
+}
+.btn-warning{
+  @include vvcButton($warningColor);
+}

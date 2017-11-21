@@ -1,0 +1,77 @@
+* { padding: 0; margin: 0 }
+#vvc-container {
+
+  #vvc-widget-wrap{
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    background-color: $lightColor;
+  }
+
+  &.fullsize {
+
+  }
+
+  &.nochat {
+
+  }
+
+  &.mobile {
+
+    .chat-toggle{
+      display: none;
+    }
+
+    #vvc-widget-wrap{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 0;
+
+      #vvc-media-tools .vvc-tools-wrap,
+      #vvc-media-tools .vvc-media-wrap{
+        width: 100%;
+      }
+      #vvc-media-tools .vvc-tools-wrap .vvc-inner-tools button{ width: 32% }
+      #vvc-media-tools .vvc-tools-wrap .vvc-inner-tools .the-timer{ width: 36% }
+
+      #vvc-messages{
+        & > div:first-child {
+          margin-top: 100%;
+        }
+      }
+
+      #vvc-chat-area .chat-box textarea{
+        width: 85%;
+      }
+      #vvc-chat-area .chat-box .chat-tools-panels .upload-panel .upload-descr input{
+        width: 88%;
+      }
+      #vvc-chat-area .chat-box .chat-tools-panels .upload-panel .file-containter{
+        width: 84%;
+      }
+
+    }
+
+    .vvc-media-wrap.video{
+      display: none;
+    }
+  }
+
+  &.mobile.fullsize{
+    #vvc-widget-wrap{
+     display:none;
+    }
+  }
+
+
+
+
+}
+#vvc-minimized {
+
+}

@@ -1,0 +1,16 @@
+@keyframes slide {
+  0% {
+    right: 270px;
+    left: 2px; }
+  5% {
+    left: 2px; }
+  50% {
+    right: 2px;
+    left: 270px; }
+  55% {
+    right: 2px; }
+  100% {
+    right: 270px;
+    left: 2px; } }
+
+/*# sourceMappingURL=keyframes.css.map */

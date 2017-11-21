@@ -1,0 +1,87 @@
+#vvc-queue{
+  @include bgWithLight(darken($primaryColor,5%),52px,$primaryColor);
+  @include vvcLayer();
+
+  display: flex;
+  flex-direction: column;
+
+  #top-box{
+    #top-box-row1{
+      @include vvcClearFix();
+      & > div{
+        @include vvcCol(4);
+        padding-top: 16px;
+        font-size: 1rem;
+      }
+      & > div:nth-child(2){
+        text-align: center;
+        img.acct-img{
+          @include vvcAccountImg();
+        }
+      }
+      & > div:nth-child(3){
+        padding: 16px 16px;
+        text-align: right;
+        font-size: 1.25rem;
+        color: $lightColor;
+        cursor: pointer;
+      }
+    }
+    #top-box-row2{
+      @include vvcClearFix();
+      & > div{
+        @include vvcCol(12);
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: $lightColor;
+        padding-top: 22px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  #middle-box{
+    padding-top: 40px;
+    padding-bottom: 8px;
+
+    & > div{
+      @include vvcClearFix();
+      .media-type{
+        @include vvcMediaBullet();
+      }
+      .loading-wrapper{
+        @include vvcQueueLoader();
+      }
+    }
+  }
+
+  #bottom-box {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    .card {
+      @include vvcQueueCard('top-arrow');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      .card-inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-y: scroll;
+        text-align: center;
+        /*
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-y: scroll;
+        */
+      }
+    }
+  }
+}

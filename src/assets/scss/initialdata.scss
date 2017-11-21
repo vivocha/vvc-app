@@ -1,0 +1,32 @@
+#vvc-initial-data {
+  @include bgWithLight(darken($primaryColor, 5%), 52px, $primaryColor);
+  @include vvcLayer();
+
+  display: flex;
+  flex-direction: column;
+  .top-box {
+    height: 190px;
+
+    @include vvcAccountTopCard();
+  }
+  .data-box {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    .card {
+      @include vvcQueueCard('no-arrow');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      .card-inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-y: scroll;
+      }
+
+    }
+  }
+}

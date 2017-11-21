@@ -1,0 +1,105 @@
+{
+  "INITIAL_DATA" : {
+    "WELCOME" : "Welcome<br>to Vivocha’s customer service"
+  },
+  "QUEUE" : {
+    "WELCOME" : "Welcome<br>to Vivocha’s customer service",
+    "INFO" : "Just a moment,<br>we are connecting you with the first available agent."
+  },
+  "NOCHAT":{
+    "MAIN_MSG" : "Welcome to<br>Vivocha Customercare",
+    "SUB_MSG" : "Our agents are online every working day from 9 AM to 6 PM",
+    "END_MSG" : "The contact has ended<br>Thanks."
+  },
+  "TOPBAR":{
+    "WELCOME" : "Welcome<br>you are talking with",
+    "ISWRITING" : "{{agent}} is writing..."
+  },
+  "MEDIATOOLS":{
+    "MUTE" : "mute",
+    "UNMUTE": "unmute",
+    "HANGUP" : "hangup",
+    "VIDEO_ON" : "video on",
+    "VIDEO_OFF" : "video off",
+    "EXPAND" : "expand",
+    "MINIMIZE" : "minimize",
+    "CHAT_HIDE": "hide",
+    "CHAT_SHOW": "show"
+  },
+  "MESSAGES":{
+    "REMOTE_CLOSE": "The agent left the contact",
+    "REMOTE_VOICE_REJECTED": "Call rejected by the agent",
+    "REMOTE_VOICE_FAILED": "Call connection error",
+    "REMOTE_VIDEO_REJECTED": "Video rejected by the agent",
+    "REMOTE_VIDEO_FAILED": "Video connection error",
+    "FILE_SENDING" : "file uploading...",
+    "VOICE_REQUEST" : "Voice call request",
+    "VOICE_STARTED" : "The voice call is started",
+    "VOICE_ENDED" : "The voice call is ended",
+    "VOICE_REJECTED" : "call rejected",
+    "VIDEO_REQUEST" : "Video call request",
+    "VIDEO_STARTED" : "The video call is started",
+    "VIDEO_ENDED" : "The video call is ended",
+    "VIDEO_REJECTED" : "Video call rejected",
+    "FORM_REQUEST" :  "Information request",
+    "FORM_PENDING" : "The form filling is pending",
+    "FORM_SUBMIT_ERROR" : "Error sending the form",
+    "FORM_SUBMIT_SUCCESS" : "Form sent successfully",
+    "DECLINE" : "Decline",
+    "VOICE_ONLY" : "Only voice",
+    "ACCEPT" : "Accept",
+    "RETRY" : "Retry",
+    "CONTINUE" : "Continue",
+    "COMPILE" : "Compile",
+    "VIEW" : "View",
+    "SEND" : "Send",
+    "DOWNLOAD": "Download",
+    "TRANSFERRED": "You have been transferred to another agent"
+  },
+  "TOOLS":{
+    "UPLOADER":{
+      "FILE_DESCRIPTION" : "Write your message here",
+      "SELECT_PLACEHOLDER" : "Select a file to upload",
+      "BROWSE" : "Browse",
+      "MAX_FILESIZE" : "File Max Size - 10Mb",
+      "SEND" : "Send"
+    }
+  },
+  "CHAT":{
+    "TEXTAREA_PLACEHOLDER" : "Type here..."
+  },
+  "CLOSEMODAL":{
+    "CLOSE_MESSAGE" : "Do you really want to quit?",
+    "YES" : "Yes",
+    "NO" : "No"
+  },
+  "SURVEY":{
+    "WELCOME" : "Help us<br>to improve our service",
+    "TITLE": "Rate your experience",
+    "SUBMIT": "Send",
+    "RATING": "Please rate your experience with our customer care",
+    "EMAIL" : "Email",
+    "EMAIL_PH" : "receive a copy of the chat to your email",
+    "FEEDBACK" : "Your rating have been send.<br>Thank you!"
+  },
+  "DC": {
+    "COMPILE": "Fill",
+    "VIEW": "Show",
+    "INCOMING_HEAD": "Information Request",
+    "ASK_FOR_COMPILE" : "The agent is asking to you to fill the from",
+    "REQUIRED_LEGEND" : "* required fiels",
+    "EMAIL_ERR" : "invalid email",
+    "REQUIRED_ERR" : "this field is required",
+    "D1" :{
+      "DATA_TITLE" : "User Information",
+      "DATA_DESCRIPTION" : "Please fill the information form below",
+      "SUBMIT" : "send",
+      "NAME" : "Name",
+      "NAME_PH" : "your name",
+      "SURNAME" : "Surname",
+      "SURNAME_PH" : "your surname",
+      "EMAIL" : "Email",
+      "EMAIL_PH" : "your email"
+    }
+  }
+}
