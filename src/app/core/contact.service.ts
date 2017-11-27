@@ -3,6 +3,9 @@ import {Store} from '@ngrx/store';
 import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
 import {VvcDataCollectionService} from './dc.service';
 
+import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/contact';
+import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+
 @Injectable()
 export class VvcContactService {
 
@@ -143,21 +146,56 @@ export class VvcContactService {
     this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
   }
   closeContact() {
-    this.vivocha.bus.request('page', 'close');
+    // this.vivocha.bus.request('page', 'close');
     this.contact.leave();
   }
-  collectInitialData(conf) {
-    this.vivocha.bus.request('page', 'data_collection');
-    this.dcserv.loadDataCollection(conf.opts.dataCollection.dataToCollect).then( dc => {
-      this.vivocha.bus.request('page', 'data_collection', dc);
+  collectInitialData(dataCollections) {
+    return this.dcserv.loadDataCollection(dataCollections).then( dc => {
       this.dispatch({type: 'INITIAL_DATA', payload: dc });
+      return dc;
     });
   }
-  createContact(conf) {
-    this.vivocha.bus.request('page', 'contact');
-    this.callStartedWith = conf.type.toUpperCase();
-    this.dispatch({type: 'INITIAL_OFFER', payload: { offer: conf.initial_offer, opts: conf.opts }});
-
+  createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
+    this.callStartedWith = context.requestedMedia.toUpperCase();
+    this.dispatch({type: 'INITIAL_OFFER', payload: {
+      offer: conf.initialOffer,
+      opts: { // campaign /service options
+        media: {
+          Video : 'visitor',
+          Voice : 'visitor'
+        },
+        /*
+        survey: {
+          dataToCollect: 'schema#survey-id',
+          sendTranscript: 'ask'
+        }
+       ,
+        dataCollection: {
+          dataToCollect: 'schema#data-id'
+        }
+        */
+      }
+    }});
+    this.vivocha.createContact(conf).then((contact) => {
+      console.log('contact created, looking for the caps', contact);
+      contact.getLocalCapabilities().then( caps => {
+        this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+      });
+      contact.getRemoteCapabilities().then( caps => {
+        this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+      });
+      this.contact = contact;
+      this.mapContact();
+      /*
+      if (conf.type !== 'chat') {
+        this.voiceStart.emit();
+      }
+      */
+    }, (err) => {
+      console.log('Failed to create contact', err);
+      // TODO this.vivocha.bus.request('page', 'failed');
+    });
+/*
     this.vivocha.getContact(conf).then( contact => {
       console.log('contact created, looking for the caps', contact);
       this.vivocha.bus.request('page', 'contact', contact);
@@ -176,7 +214,7 @@ export class VvcContactService {
       console.log('Failed to create contact', err);
       this.vivocha.bus.request('page', 'failed');
     });
-
+*/
   }
   denyOffer(media) {
     this.mediaCallback('error', {});
@@ -338,6 +376,8 @@ export class VvcContactService {
       }
     });
     this.contact.on('joined', (c) => {
+      console.info('onjoined!!!', c)
+
       if (c.user) {
         this.onAgentJoin(c);
       } else {
@@ -414,7 +454,7 @@ export class VvcContactService {
     this.contact.getMedia().then( (media) => {
       const agent = { user: join.user, nick: join.nick, avatar: join.avatar};
       this.agentInfo = agent;
-      this.vivocha.bus.request('page', 'answer', agent);
+      // this.vivocha.bus.request('page', 'answer', agent);
       this.dispatch({ type: 'JOINED', payload: agent });
       this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
     });
@@ -497,11 +537,14 @@ export class VvcContactService {
     });
   }
   sendData(initialConf) {
+    // TODO
+    /*
     setTimeout( () => {
       console.log('sending data');
       this.dispatch({ type: 'INITIAL_DATA_SENT' });
       this.createContact(initialConf);
     }, 1000);
+    */
   }
   sendDataCollection(obj) {
     const dc = obj.dataCollection;

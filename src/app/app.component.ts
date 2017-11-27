@@ -2,29 +2,36 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
-import {VvcWidgetState, AppState, VvcOffer} from './core/core.interfaces';
+import {VvcWidgetState, AppState} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
 import {MediaToolsComponent} from './media-tools/media-tools.component';
 
-declare var vivocha: any;
+import { BasicContactCreationOptions, ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/global-entities/dist/contact';
+import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
+
+declare var vivocha: VivochaVisitorInteraction;
 
 @Component({
   selector: 'vvc-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-
   private window;
-  private servId: string;
-  private lang = 'en';
-  public type = 'chat';
-  public isMobile = 'false';
+  private busId: string;
   public world: string;
   public acct: string;
 
+  public page: InteractionManager;
+  public context: InteractionContext;
+  public contactOptions: BasicContactCreationOptions;
+
+  private servId: string; // TODO remove
+  public type = 'chat';
+  public isMobile = 'false';
+
   public selectedDataMessage;
   private closeModal = false;
-  private initialConf;
 
   @ViewChild(MediaToolsComponent) mediaTools;
   callTimerInterval;
@@ -81,10 +88,18 @@ export class AppComponent implements OnInit {
   }
   checkForVivocha() {
     if (this.window['vivocha'] && this.window['vivocha'].ready) {
-      this.window.vivocha.ready().then(() => {
+      this.window.vivocha.ready(this.busId).then(() => {
+        console.log('vivocha.ready');
         this.vivocha = this.window['vivocha'];
-        this.cserv.init(this.window['vivocha']);
-        this.loadCampaignSettings();
+        this.page = this.vivocha.bus.services[`page-${this.busId}`];
+        this.page.getContext().then((context: InteractionContext) => {
+          console.log('vivocha.ready context');
+          this.cserv.init(this.vivocha);
+          this.loadCampaignSettings(context);
+          this.translate.getTranslation(context.language);
+          this.translate.setDefaultLang('en');
+          this.translate.use(context.language);
+        })
       });
     } else {
       setTimeout( () => this.checkForVivocha(), 500);
@@ -110,8 +125,8 @@ export class AppComponent implements OnInit {
   download(url) {
     this.window.open(url, '_blank');
   }
-  getInitialOffer(): VvcOffer {
-    switch (this.type) {
+  getInitialOffer(type: string): ContactMediaOffer {
+    switch (type) {
       case 'voice': return {
         Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
         Sharing: { rx: 'required', tx: 'required'}
@@ -135,38 +150,44 @@ export class AppComponent implements OnInit {
     this.cserv.closeContact();
     this.vivocha.close();
   }
-  loadCampaignSettings() {
-    const initialOffer = this.getInitialOffer();
-    this.initialConf = {
-      serv_id: this.servId,
-      type: this.type,
-      nick: 'Customer',
-      initial_offer: initialOffer,
-      opts: { // campaign /service options
-        media: {
-          Video : 'visitor',
-          Voice : 'visitor'
-        },
-        /*
-        survey: {
-          dataToCollect: 'schema#survey-id',
-          sendTranscript: 'ask'
-        }
-       ,
-        dataCollection: {
-          dataToCollect: 'schema#data-id'
-        }
-        */
-      }
+  loadCampaignSettings(context: InteractionContext) {
+    this.contactOptions = {
+      campaignId: context.campaign.id,
+      version: context.campaign.version,
+      channelId: 'web',
+      entryPointId: context.entryPointId,
+      engagementId: context.engagementId,
+      initialOffer: this.getInitialOffer(context.requestedMedia),
+      lang: context.language,
+      vvcu: context.page.vvcu,
+      vvct: context.page.vvct,
+      first_uri: context.page.first_uri,
+      first_title: context.page.first_title
     };
-    this.initialConf.opts.mobile = (this.isMobile === 'true');
-    if (this.initialConf.opts.dataCollection) {
-      console.log('should collect data collection');
-      this.cserv.collectInitialData(this.initialConf);
-    } else {
-      console.log('creating the contact');
-      this.cserv.createContact(this.initialConf);
-    }
+
+    // TODO add the following properties:
+    //data?: ContactDataCollection;
+    //nick?: string;
+    //recall?: ContactRecallSettings;
+    //debug?: boolean;
+
+    Promise.resolve(true).then(() => {
+      if (context.dataCollections) {
+        console.log('should collect data collection', context.dataCollections);
+        return this.cserv.collectInitialData(context.dataCollections).then(dataCollection => {
+          this.contactOptions.data = dataCollection;
+          // TODO check for nickname;
+        });
+      }
+    }).then(() => {
+      console.log('checking for pre-routing rules');
+      this.page.contactCreation(this.contactOptions, (opts: ClientContactCreationOptions) => {
+        console.log('pre-routing callback', opts);
+        // TODO merge opts
+        console.log('creating contact', this.contactOptions);
+        this.cserv.createContact(this.contactOptions, context);
+      });
+    });
   }
   minimize(state) {
     this.store.dispatch({ type: 'MINIMIZE', payload: state });
@@ -175,28 +196,11 @@ export class AppComponent implements OnInit {
   }
   parseIframeUrl() {
     const hash = this.window.location.hash;
-    console.log('iframe hash', hash);
     if (hash.indexOf(';') !== -1) {
       const hashParts = this.window.location.hash.substr(2).split(';');
-      this.servId = hashParts[0];
-      this.lang = hashParts[1].split('=')[1];
-      this.type = hashParts[2].split('=')[1];
-      this.isMobile = hashParts[3].split('=')[1];
-      this.acct = hashParts[4].split('=')[1];
-      this.world = hashParts[5].split('=')[1];
-
-      console.log('iframe params', {
-        servId: this.servId,
-        acct: this.acct,
-        world: this.world,
-        lang: this.lang,
-        isMobile: this.isMobile
-      });
-
-      this.translate.getTranslation( this.lang );
-      this.translate.setDefaultLang('en');
-      this.translate.use(this.lang);
-      // this.loadCampaignSettings();
+      this.busId = hashParts[0];
+      this.acct = hashParts[1];
+      this.world = hashParts[2];
     }
   }
   removeLocalVideo() {
@@ -260,7 +264,8 @@ export class AppComponent implements OnInit {
     this.callTimer = 0;
   }
   submitInitialData() {
-    this.cserv.sendData(this.initialConf);
+    // TODO check
+    // this.cserv.sendData(this.initialConf);
   }
   syncDataCollection(obj) {
     const dc = obj.dataCollection;
