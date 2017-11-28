@@ -8,7 +8,6 @@ import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-
 
 @Injectable()
 export class VvcContactService {
-
   vivocha;
   agentInfo;
   contact;
@@ -20,7 +19,6 @@ export class VvcContactService {
   callStartedWith;
   voiceStart = new EventEmitter();
   widgetState: VvcWidgetState;
-
 
   constructor( private store: Store<AppState>,
                private zone: NgZone,
@@ -146,7 +144,7 @@ export class VvcContactService {
     this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
   }
   closeContact() {
-    // this.vivocha.bus.request('page', 'close');
+    this.vivocha.pageRequest('interactionClosed');
     this.contact.leave();
   }
   collectInitialData(dataCollections) {
@@ -159,24 +157,10 @@ export class VvcContactService {
     this.callStartedWith = context.requestedMedia.toUpperCase();
     this.dispatch({type: 'INITIAL_OFFER', payload: {
       offer: conf.initialOffer,
-      opts: { // campaign /service options
-        media: {
-          Video : 'visitor',
-          Voice : 'visitor'
-        },
-        /*
-        survey: {
-          dataToCollect: 'schema#survey-id',
-          sendTranscript: 'ask'
-        }
-       ,
-        dataCollection: {
-          dataToCollect: 'schema#data-id'
-        }
-        */
-      }
+      context: context
     }});
     this.vivocha.createContact(conf).then((contact) => {
+      this.vivocha.pageRequest('interactionCreated', contact);
       console.log('contact created, looking for the caps', contact);
       contact.getLocalCapabilities().then( caps => {
         this.dispatch({type: 'LOCAL_CAPS', payload: caps });
@@ -186,35 +170,13 @@ export class VvcContactService {
       });
       this.contact = contact;
       this.mapContact();
-      /*
-      if (conf.type !== 'chat') {
-        this.voiceStart.emit();
-      }
-      */
-    }, (err) => {
-      console.log('Failed to create contact', err);
-      // TODO this.vivocha.bus.request('page', 'failed');
-    });
-/*
-    this.vivocha.getContact(conf).then( contact => {
-      console.log('contact created, looking for the caps', contact);
-      this.vivocha.bus.request('page', 'contact', contact);
-      contact.getLocalCapabilities().then( caps => {
-        this.dispatch({type: 'LOCAL_CAPS', payload: caps });
-      });
-      contact.getRemoteCapabilities().then( caps => {
-        this.dispatch({type: 'REMOTE_CAPS', payload: caps });
-      });
-      this.contact = contact;
-      this.mapContact();
-      if (conf.type !== 'chat') {
+      if (context.requestedMedia !== 'chat') {
         this.voiceStart.emit();
       }
     }, (err) => {
       console.log('Failed to create contact', err);
-      this.vivocha.bus.request('page', 'failed');
+      this.vivocha.pageRequest('interactionFailed', err);
     });
-*/
   }
   denyOffer(media) {
     this.mediaCallback('error', {});
@@ -454,7 +416,7 @@ export class VvcContactService {
     this.contact.getMedia().then( (media) => {
       const agent = { user: join.user, nick: join.nick, avatar: join.avatar};
       this.agentInfo = agent;
-      // this.vivocha.bus.request('page', 'answer', agent);
+      this.vivocha.pageRequest('interactionAnswered', agent);
       this.dispatch({ type: 'JOINED', payload: agent });
       this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
     });

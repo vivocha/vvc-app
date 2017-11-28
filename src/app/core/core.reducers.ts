@@ -1,4 +1,10 @@
 import {VvcWidgetState, VvcMessage, VvcDataCollection} from './core.interfaces';
+
+import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
+import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+
+declare var vivocha: VivochaVisitorInteraction;
+
 const initialWidgetState: VvcWidgetState = {
     chat: false,
     chatVisibility: true,
@@ -19,7 +25,7 @@ const initialWidgetState: VvcWidgetState = {
     video: false,
     voice: false
 };
-function extractInitialOpts(opts) {
+function extractInitialOpts(opts: InteractionContext) {
     const newOpts: {
         canAddVideo: boolean,
         canAddVoice: boolean,
@@ -33,7 +39,7 @@ function extractInitialOpts(opts) {
         hasSurvey: !!(opts.survey),
         surveyId: (opts.survey && opts.survey.dataToCollect),
         askForTranscript: (opts.survey && opts.survey.sendTranscript === 'ask'),
-        mobile: !!(opts.mobile)
+        mobile: vivocha.isMobile()
     };
     return newOpts;
 };
@@ -114,7 +120,7 @@ export function widgetState(state: VvcWidgetState  = initialWidgetState, {type, 
             return Object.assign({}, state, { state: 'queue', initialDataFilled: true });
         case 'INITIAL_OFFER':
             const initialState = extractStateFromMedia(payload.offer);
-            const initialOpts = extractInitialOpts(payload.opts);
+            const initialOpts = extractInitialOpts(payload.context);
             initialState.state = 'queue';
             if (initialState.video && state.mobile) {
                 initialState.fullScreen = true;

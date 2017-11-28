@@ -91,11 +91,10 @@ export class AppComponent implements OnInit {
       this.window.vivocha.ready(this.busId).then(() => {
         console.log('vivocha.ready');
         this.vivocha = this.window['vivocha'];
-        this.page = this.vivocha.bus.services[`page-${this.busId}`];
-        this.page.getContext().then((context: InteractionContext) => {
+        this.vivocha.pageRequest('getContext').then((context: InteractionContext) => {
           console.log('vivocha.ready context');
           this.cserv.init(this.vivocha);
-          this.loadCampaignSettings(context);
+          this.createContactCreationOptions(context);
           this.translate.getTranslation(context.language);
           this.translate.setDefaultLang('en');
           this.translate.use(context.language);
@@ -150,7 +149,7 @@ export class AppComponent implements OnInit {
     this.cserv.closeContact();
     this.vivocha.close();
   }
-  loadCampaignSettings(context: InteractionContext) {
+  createContactCreationOptions(context: InteractionContext) {
     this.contactOptions = {
       campaignId: context.campaign.id,
       version: context.campaign.version,
@@ -181,7 +180,7 @@ export class AppComponent implements OnInit {
       }
     }).then(() => {
       console.log('checking for pre-routing rules');
-      this.page.contactCreation(this.contactOptions, (opts: ClientContactCreationOptions) => {
+      this.vivocha.pageRequest('interactionCreation', this.contactOptions, (opts: ClientContactCreationOptions) => {
         console.log('pre-routing callback', opts);
         // TODO merge opts
         console.log('creating contact', this.contactOptions);
