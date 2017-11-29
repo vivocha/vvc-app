@@ -41,6 +41,10 @@ export class AppComponent implements OnInit {
   public widgetState: VvcWidgetState;
   public messages: Array<any>;
 
+  waitingInititalDataCollections: {
+    [id: string]: (...args) => void;
+  } = {};
+
   vivocha: any;
 
   constructor(private wref: WindowRef,
@@ -177,13 +181,53 @@ export class AppComponent implements OnInit {
     //recall?: ContactRecallSettings;
     //debug?: boolean;
 
+    context.dataCollections.push({
+      "id": "mydatacollection2",
+      "labelId": "DC.mydatacollection_title",
+      "fields": [
+        {
+          "type": "string",
+          "id": "Cognome",
+          "labelId": "",
+          "format": "lastname",
+          "placeholderId": "DC.insert your lastname here"
+        },
+        {
+          "type": "string",
+          "id": "Email",
+          "labelId": "",
+          "format": "email"
+        }
+      ]
+    });
+
     Promise.resolve(true).then(() => {
-      if (context.dataCollections) {
-        console.log('should collect data collection', context.dataCollections);
-        return this.cserv.collectInitialData(context.dataCollections).then(dataCollection => {
-          this.contactOptions.data = dataCollection;
-          // TODO check for nickname;
-        });
+      if (context.dataCollections && context.dataCollections.length > 0) {
+        console.log('found', context.dataCollections.length, 'data collection objects', JSON.stringify(context.dataCollections));
+        const showDataCollection = (dataCollection): Promise<any> => {
+          console.log(JSON.stringify(dataCollection, null, 2));
+          this.store.dispatch({
+            type: 'INITIAL_DATA',
+            payload: dataCollection
+          });
+          return (new Promise((resolve, reject) => {
+            this.waitingInititalDataCollections[dataCollection.id] =(data) => {
+              // TODO collect and save data;
+              resolve(data);
+            };
+          }));
+        };
+        const next = (i: number = 0): Promise<any> => {
+          if (context.dataCollections[i]) {
+            console.log('collecting data collection', i, context.dataCollections[i].id);
+            return showDataCollection(context.dataCollections[i]).then((data) => {
+              return next(++i);
+            });
+          } else {
+            return Promise.resolve(true);
+          }
+        }
+        return next();
       }
     }).then(() => {
       console.log('checking for pre-routing rules');
@@ -269,9 +313,8 @@ export class AppComponent implements OnInit {
     clearInterval(this.callTimerInterval);
     this.callTimer = 0;
   }
-  submitInitialData() {
-    // TODO check
-    // this.cserv.sendData(this.initialConf);
+  submitInitialData(id, dataCollection) {
+    this.waitingInititalDataCollections[id].call(this, dataCollection);
   }
   syncDataCollection(obj) {
     const dc = obj.dataCollection;

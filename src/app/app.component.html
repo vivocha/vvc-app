@@ -15,7 +15,7 @@
   <vvc-initial-data id="vvc-initial-data"
                     *ngIf="widgetState?.state === 'waiting_data'"
                     [dataCollection]="widgetState?.dataCollections[widgetState.selectedDataCollectionId]"
-                    (datasubmit)="submitInitialData()"
+                    (datasubmit)="submitInitialData(widgetState.selectedDataCollectionId, $event)"
                     (abandon)="abandon()"></vvc-initial-data>
 
   <vvc-queue id="vvc-queue"
