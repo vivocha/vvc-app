@@ -13,6 +13,7 @@ export class VvcContactService {
   contact;
   isWritingTimer;
   isWritingTimeout = 30000;
+  agentRequestCallback;
   mediaCallback;
   incomingOffer: VvcOffer;
   incomingId;
@@ -44,6 +45,26 @@ export class VvcContactService {
       payload: {
         id: this.incomingId,
         state: 'loading'
+      }
+    });
+  }
+  acceptRequest(res, msg) {
+    this.agentRequestCallback(null, res);
+    this.dispatch({
+      type: 'REM_MESSAGE',
+      payload: {
+        id: this.incomingId
+
+      }
+    });
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: msg.media,
+        state: 'closed',
+        text: msg.text + '_ACCEPTED'
       }
     });
   }
@@ -199,6 +220,27 @@ export class VvcContactService {
       }
     });
   }
+  denyRequest(res, msg) {
+    this.agentRequestCallback(null, res);
+    this.dispatch({
+      type: 'REM_MESSAGE',
+      payload: {
+        id: this.incomingId
+
+      }
+    });
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: msg.media,
+        state: 'closed',
+        extraClass: 'rejected',
+        text: msg.text + '_REJECTED'
+      }
+    });
+  }
   dispatch(action) {
     this.zone.run( () => {
       this.store.dispatch(action);
@@ -316,6 +358,9 @@ export class VvcContactService {
         this.fetchDataCollection(args[0].id);
       }
     });
+    this.contact.on('agentrequest', (message, cb) => {
+      this.onAgentRequest(message, cb);
+    });
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       const attachment = {url, meta, fromId, fromNick, isAgent};
       this.dispatch({type: 'NEW_MESSAGE', payload: {
@@ -421,6 +466,22 @@ export class VvcContactService {
       this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
     });
   }
+  onAgentRequest(message, cb) {
+    this.agentRequestCallback = cb;
+    this.incomingId = new Date().getTime();
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: this.incomingId,
+        state: 'open',
+        media: 'REQUEST_' + message,
+        accept: true,
+        decline: false,
+        type: 'incoming-request',
+        text: 'MESSAGES.REQUEST_' + message
+      }
+    });
+  }
   onLocalJoin(join) {
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
@@ -432,7 +493,6 @@ export class VvcContactService {
     }
   }
   onMediaOffer(offer, cb) {
-
     this.mediaCallback = cb;
     const confirmation = this.isIncomingRequest(offer);
     if (confirmation.askForConfirmation) {
@@ -443,8 +503,11 @@ export class VvcContactService {
         payload: {
           id: this.incomingId,
           media: confirmation.media,
+          accept: 'video-full',
+          conditional: 'voice-only',
+          decline: confirmation.media,
           state: 'open',
-          type: 'incoming-request',
+          type: 'incoming-offer',
           text: 'MESSAGES.' + confirmation.media + '_REQUEST'
         }
       });

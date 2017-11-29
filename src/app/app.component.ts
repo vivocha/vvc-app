@@ -63,9 +63,12 @@ export class AppComponent implements OnInit {
   abandon() {
     this.vivocha.close();
   }
-  acceptIncomingRequest(evt) {
-    this.startTimer();
-    this.cserv.acceptOffer(evt);
+  acceptIncomingRequest(evt, msg) {
+    if (msg.type === 'incoming-request') {
+      this.cserv.acceptRequest(evt, msg);
+    } else {
+      this.cserv.acceptOffer(evt);
+    }
   }
   addLocalVideo() {
     this.cserv.addLocalVideo();
@@ -115,8 +118,12 @@ export class AppComponent implements OnInit {
   closeOnSurvey() {
     this.vivocha.close();
   }
-  denyIncomingRequest(media) {
-    this.cserv.denyOffer(media);
+  denyIncomingRequest(evt, msg) {
+    if (msg.type === 'incoming-request') {
+      this.cserv.denyRequest(evt, msg);
+    } else {
+      this.cserv.denyOffer(evt);
+    }
   }
   dismissCloseModal() {
     this.closeModal = false;
