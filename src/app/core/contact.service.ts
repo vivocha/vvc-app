@@ -168,12 +168,6 @@ export class VvcContactService {
     this.vivocha.pageRequest('interactionClosed');
     this.contact.leave();
   }
-  collectInitialData(dataCollections) {
-    return this.dcserv.loadDataCollection(dataCollections).then( dc => {
-      this.dispatch({type: 'INITIAL_DATA', payload: dc });
-      return dc;
-    });
-  }
   createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
     this.callStartedWith = context.requestedMedia.toUpperCase();
     this.dispatch({type: 'INITIAL_OFFER', payload: {
@@ -560,16 +554,6 @@ export class VvcContactService {
       type: 'CLOSE_CONTACT',
       payload: true
     });
-  }
-  sendData(initialConf) {
-    // TODO
-    /*
-    setTimeout( () => {
-      console.log('sending data');
-      this.dispatch({ type: 'INITIAL_DATA_SENT' });
-      this.createContact(initialConf);
-    }, 1000);
-    */
   }
   sendDataCollection(obj) {
     const dc = obj.dataCollection;
