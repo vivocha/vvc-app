@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
@@ -6,6 +6,7 @@ import {VvcWidgetState, AppState} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
 import {MediaToolsComponent} from './media-tools/media-tools.component';
 
+import { objectToDataCollection } from '@vivocha/global-entities/dist/wrappers/data_collection';
 import { BasicContactCreationOptions, ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/global-entities/dist/contact';
 import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
@@ -50,6 +51,7 @@ export class AppComponent implements OnInit {
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
               private store: Store<AppState>,
+              private zone: NgZone,
               private translate: TranslateService) {
 
     this.window = wref.nativeWindow;
@@ -122,6 +124,74 @@ export class AppComponent implements OnInit {
   closeOnSurvey() {
     this.vivocha.close();
   }
+  createContactCreationOptions(context: InteractionContext) {
+    this.contactOptions = {
+      campaignId: context.campaign.id,
+      version: context.campaign.version,
+      channelId: 'web',
+      entryPointId: context.entryPointId,
+      engagementId: context.engagementId,
+      initialOffer: this.getInitialOffer(context.requestedMedia),
+      lang: context.language,
+      vvcu: context.page.vvcu,
+      vvct: context.page.vvct,
+      first_uri: context.page.first_uri,
+      first_title: context.page.first_title
+    };
+
+    Promise.resolve(true).then(() => {
+      if (context.dataCollections && context.dataCollections.length > 0) {
+        console.log('found', context.dataCollections.length, 'data collection objects', JSON.stringify(context.dataCollections));
+        this.contactOptions.data = [];
+        const showDataCollection = (dataCollection): Promise<boolean> => {
+          //console.log(JSON.stringify(dataCollection, null, 2));
+          this.zone.run( () => {
+            this.store.dispatch({
+              type: 'INITIAL_DATA',
+              payload: dataCollection
+            });
+          });
+          return (new Promise((resolve, reject) => {
+            this.waitingInititalDataCollections[dataCollection.id] =(data) => {
+              for (let i = 0; i < dataCollection.fields.length; i++) {
+                if (dataCollection.fields[i].format === 'nickname' && data[dataCollection.fields[i].id]) {
+                  this.contactOptions.nick = data[dataCollection.fields[i].id];
+                  break;
+                }
+              }
+              this.contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection));
+              resolve(true);
+            };
+          }));
+        };
+        const next = (i: number = 0): Promise<boolean> => {
+          if (context.dataCollections[i]) {
+            console.log('collecting data collection', i, context.dataCollections[i].id);
+            return showDataCollection(context.dataCollections[i]).then((data) => {
+              return next(++i);
+            });
+          } else {
+            return Promise.resolve(true);
+          }
+        }
+        return next();
+      }
+    }).then(() => {
+      console.log('checking for pre-routing rules');
+      this.vivocha.pageRequest('interactionCreation', this.contactOptions, (opts: ClientContactCreationOptions) => {
+        console.log('pre-routing callback', opts);
+        // TODO merge opts
+        if (!this.contactOptions.nick) {
+          // TODO get default visitor nickname this.contactOptions.nick
+        }
+        // TODO add the following properties to this.contactOptions (recall debug)
+        // recall?: ContactRecallSettings;
+        // debug?: boolean;
+        console.log('creating contact', this.contactOptions);
+        this.cserv.createContact(this.contactOptions, context);
+      });
+    });
+  }
   denyIncomingRequest(evt, msg) {
     if (msg.type === 'incoming-request') {
       this.cserv.denyRequest(evt, msg);
@@ -159,85 +229,6 @@ export class AppComponent implements OnInit {
   leave() {
     this.cserv.closeContact();
     this.vivocha.close();
-  }
-  createContactCreationOptions(context: InteractionContext) {
-    this.contactOptions = {
-      campaignId: context.campaign.id,
-      version: context.campaign.version,
-      channelId: 'web',
-      entryPointId: context.entryPointId,
-      engagementId: context.engagementId,
-      initialOffer: this.getInitialOffer(context.requestedMedia),
-      lang: context.language,
-      vvcu: context.page.vvcu,
-      vvct: context.page.vvct,
-      first_uri: context.page.first_uri,
-      first_title: context.page.first_title
-    };
-
-    // TODO add the following properties:
-    //data?: ContactDataCollection;
-    //nick?: string;
-    //recall?: ContactRecallSettings;
-    //debug?: boolean;
-
-    context.dataCollections.push({
-      "id": "mydatacollection2",
-      "labelId": "DC.mydatacollection_title",
-      "fields": [
-        {
-          "type": "string",
-          "id": "Cognome",
-          "labelId": "",
-          "format": "lastname",
-          "placeholderId": "DC.insert your lastname here"
-        },
-        {
-          "type": "string",
-          "id": "Email",
-          "labelId": "",
-          "format": "email"
-        }
-      ]
-    });
-
-    Promise.resolve(true).then(() => {
-      if (context.dataCollections && context.dataCollections.length > 0) {
-        console.log('found', context.dataCollections.length, 'data collection objects', JSON.stringify(context.dataCollections));
-        const showDataCollection = (dataCollection): Promise<any> => {
-          console.log(JSON.stringify(dataCollection, null, 2));
-          this.store.dispatch({
-            type: 'INITIAL_DATA',
-            payload: dataCollection
-          });
-          return (new Promise((resolve, reject) => {
-            this.waitingInititalDataCollections[dataCollection.id] =(data) => {
-              // TODO collect and save data;
-              resolve(data);
-            };
-          }));
-        };
-        const next = (i: number = 0): Promise<any> => {
-          if (context.dataCollections[i]) {
-            console.log('collecting data collection', i, context.dataCollections[i].id);
-            return showDataCollection(context.dataCollections[i]).then((data) => {
-              return next(++i);
-            });
-          } else {
-            return Promise.resolve(true);
-          }
-        }
-        return next();
-      }
-    }).then(() => {
-      console.log('checking for pre-routing rules');
-      this.vivocha.pageRequest('interactionCreation', this.contactOptions, (opts: ClientContactCreationOptions) => {
-        console.log('pre-routing callback', opts);
-        // TODO merge opts
-        console.log('creating contact', this.contactOptions);
-        this.cserv.createContact(this.contactOptions, context);
-      });
-    });
   }
   minimize(state) {
     this.store.dispatch({ type: 'MINIMIZE', payload: state });
