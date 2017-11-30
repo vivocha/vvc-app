@@ -1,6 +1,6 @@
 
 <div class="vvc-form">
-  <div class="form-title" *ngIf="dc.dataTitle">{{ dc.labelId | translate }}</div>
+  <div class="form-title" *ngIf="dc.labelId">{{ dc.labelId | translate }}</div>
   <!-- div class="form-descr" *ngIf="dc.dataDescr">{{ dc.descId | translate }}</div -->
   <!-- div class="form-required-legend" *ngIf="hasRequired">{{ 'DC.REQUIRED_LEGEND' | translate }}</div -->
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
