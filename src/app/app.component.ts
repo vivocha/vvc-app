@@ -145,12 +145,6 @@ export class AppComponent implements OnInit {
         this.contactOptions.data = [];
         const showDataCollection = (dataCollection): Promise<boolean> => {
           //console.log(JSON.stringify(dataCollection, null, 2));
-          this.zone.run( () => {
-            this.store.dispatch({
-              type: 'INITIAL_DATA',
-              payload: dataCollection
-            });
-          });
           return (new Promise((resolve, reject) => {
             this.waitingInititalDataCollections[dataCollection.id] =(data) => {
               for (let i = 0; i < dataCollection.fields.length; i++) {
@@ -162,6 +156,12 @@ export class AppComponent implements OnInit {
               this.contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection));
               resolve(true);
             };
+            this.zone.run( () => {
+              this.store.dispatch({
+                type: 'INITIAL_DATA',
+                payload: dataCollection
+              });
+            });
           }));
         };
         const next = (i: number = 0): Promise<boolean> => {
