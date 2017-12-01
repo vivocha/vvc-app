@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
-import { DataCollectionField } from '@vivocha/global-entities/dist/data_collection';
+import { DataCollection, DataCollectionField } from '@vivocha/global-entities/dist/data_collection';
 
 @Component({
   selector: 'vvc-form',
@@ -21,39 +21,49 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     const controllers = {};
+    let visibleElements = false;
     for (const idx in this.dc.fields) {
-      const el = this.dc.fields[idx];
+      const elem = this.dc.fields[idx];
       const validators = [];
 
-      el.value = el.defaultConstant;
+      elem.value = elem.defaultConstant;
+      if ((['visitor','both'].indexOf(elem.hidden) === -1 && (!elem.defaultConstant || (elem.defaultConstant && elem.editIfDefault)))) {
+        elem.showElement = true;
+        visibleElements = true;
+      }
+
       // validators.push(el.value || '');
-      if (el.required) {
+      if (elem.required) {
         validators.push(Validators.required);
         this.hasRequired = true;
       }
-      if (el.minLength) {
-        if (el.type === 'string') {
-          validators.push(Validators.minLength(el.minLength));
-        } else if (el.type === 'number') {
-          validators.push(Validators.min(el.minLength));
+      if (elem.minLength) {
+        if (elem.type === 'string') {
+          validators.push(Validators.minLength(elem.minLength));
+        } else if (elem.type === 'number') {
+          validators.push(Validators.min(elem.minLength));
         }
       }
-      if (el.maxLength) {
-        if (el.type === 'string') {
-          validators.push(Validators.maxLength(el.maxLength));
-        } else if (el.type === 'number') {
-          validators.push(Validators.max(el.maxLength));
+      if (elem.maxLength) {
+        if (elem.type === 'string') {
+          validators.push(Validators.maxLength(elem.maxLength));
+        } else if (elem.type === 'number') {
+          validators.push(Validators.max(elem.maxLength));
         }
       }
-      if (el.validation) {
-        validators.push(Validators.pattern(el.validation));
+      if (elem.validation) {
+        validators.push(Validators.pattern(elem.validation));
       }
-      if (el.format === 'email') {
+      if (elem.format === 'email') {
         validators.push(Validators.email);
       }
-      controllers[el.id] = [(this.dc.dataValue && this.dc.dataValue[el.id]) || el.value || '', validators];
+      controllers[elem.id] = [(this.dc.dataValue && this.dc.dataValue[elem.id]) || elem.value || '', validators];
     }
     this.form = this.fb.group(controllers);
+
+    if (!visibleElements) {
+      this.onSubmit(new Event('submit'));
+    }
   }
 
   getForm() {

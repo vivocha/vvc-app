@@ -6,7 +6,7 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div *ngFor="let elem of dc.fields">
       <div class="vvc-input"
-           *ngIf="(['visitor','both'].indexOf(elem.hidden) === -1 && (!elem.defaultConstant || (elem.defaultConstant && elem.editIfDefault)))"
+           *ngIf="elem.showElement"
            [ngClass]="{'error' : form.get(elem.id).errors && form.get(elem.id).touched}">
         <label>{{ (elem.labelId | translate) || elem.id }}<span *ngIf="elem.required" class="required"> *</span></label>
 
