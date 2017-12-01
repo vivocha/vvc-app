@@ -25,9 +25,10 @@ export class FormComponent implements OnInit {
     for (const idx in this.dc.fields) {
       const elem = this.dc.fields[idx];
       const validators = [];
+      const hasDefault = typeof elem.defaultConstant !== 'undefined';
 
       elem.value = elem.defaultConstant;
-      if ((['visitor','both'].indexOf(elem.hidden) === -1 && (!elem.defaultConstant || (elem.defaultConstant && elem.editIfDefault)))) {
+      if ((['visitor','both'].indexOf(elem.hidden) === -1 && (!hasDefault || (hasDefault && elem.editIfDefault)))) {
         elem.showElement = true;
         visibleElements = true;
       }
