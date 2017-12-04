@@ -4,7 +4,8 @@ import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
 import {VvcDataCollectionService} from './dc.service';
 
 import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/contact';
-import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 
 @Injectable()
 export class VvcContactService {
@@ -190,7 +191,7 @@ export class VvcContactService {
       }
     }, (err) => {
       console.log('Failed to create contact', err);
-      this.vivocha.pageRequest('interactionFailed', err);
+      this.vivocha.pageRequest('interactionFailed', err.message);
     });
   }
   denyOffer(media) {
@@ -521,6 +522,26 @@ export class VvcContactService {
         mediaOffer['Video'].tx = 'off';
       }
       this.contact.offerMedia(mediaOffer);
+    });
+  }
+  resumeContact(context: InteractionContext) {
+    this.callStartedWith = context.requestedMedia.toUpperCase();
+    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+      this.vivocha.resumeContact(contactData).then((contact) => {
+        this.vivocha.pageRequest('interactionCreated', contact);
+        console.log('contact created, looking for the caps', contact);
+        contact.getLocalCapabilities().then( caps => {
+          this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+        });
+        contact.getRemoteCapabilities().then( caps => {
+          this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+        });
+        this.contact = contact;
+        this.mapContact();
+      }, (err) => {
+        console.log('Failed to resume contact', err);
+        this.vivocha.pageRequest('interactionFailed', err.message);
+      });
     });
   }
   sendAttachment(msg) {

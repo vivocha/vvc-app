@@ -8,7 +8,8 @@ import {MediaToolsComponent} from './media-tools/media-tools.component';
 
 import { objectToDataCollection } from '@vivocha/global-entities/dist/wrappers/data_collection';
 import { BasicContactCreationOptions, ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/global-entities/dist/contact';
-import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
 
 declare var vivocha: VivochaVisitorInteraction;
@@ -100,17 +101,21 @@ export class AppComponent implements OnInit {
       this.window.vivocha.ready(this.busId).then(() => {
         console.log('vivocha.ready');
         this.vivocha = this.window['vivocha'];
-        this.vivocha.pageRequest('getContext').then((context: InteractionContext) => {
+        this.vivocha.pageRequest('getContext').then((context: any) => {
           console.log('vivocha.ready context');
           this.cserv.init(this.vivocha);
-          this.createContactCreationOptions(context);
           this.translate.getTranslation(context.language);
           this.translate.setDefaultLang('en');
           this.translate.use(context.language);
+          if (context.persistenceId) {
+            this.resumeContactCreationOptions(context);
+          } else {
+            this.createContactCreationOptions(context);
+          }
         })
       });
     } else {
-      setTimeout( () => this.checkForVivocha(), 500);
+      setTimeout( () => this.checkForVivocha(), 200);
     }
   }
   closeContact() {
@@ -246,6 +251,9 @@ export class AppComponent implements OnInit {
   }
   removeLocalVideo() {
     this.cserv.removeLocalVideo();
+  }
+  resumeContactCreationOptions(context: InteractionContext) {
+    this.cserv.resumeContact(context);
   }
   sendAttachment(evt) {
     console.log('sending attachment', evt.text, evt.file);
