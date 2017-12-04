@@ -1,0 +1,28 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Minimal Empty Widget",
+        "state": "new"
+      },
+      "it": {
+        "value": "Widget vuoto da utilizzare come base per la creazione di altri widget",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Blank Widget",
+        "state": "new"
+      },
+      "it": {
+        "value": "Blank Widget",
+        "state": "new"
+      }
+    }
+  }
+]

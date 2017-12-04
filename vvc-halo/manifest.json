@@ -1,0 +1,20 @@
+{
+  "id": "vvc-halo",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "primaryColor",
+      "nameId": "VARIABLES.PRIMARY",
+      "placeholderId": "SETTINGS.PRIMARY_PH",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    },
+    {
+      "id": "haloImg",
+      "nameId": "VARIABLES.HALO_IMG",
+      "defaultValue": "/assets/logo.png",
+      "type": "file"
+    }
+  ]
+}

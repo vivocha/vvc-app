@@ -1,0 +1,36 @@
+{
+  "id": "vvc-sidetab",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "primaryColor",
+      "nameId": "VARIABLES.PRIMARY",
+      "placeholderId": "SETTINGS.PRIMARY_PH",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    },
+    {
+      "id": "verticalOffset",
+      "nameId": "VARIABLES.VERTICAL",
+      "required": true,
+      "defaultValue": "center",
+      "options": [
+        "top",
+        "center",
+        "bottom"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "horizontalOffset",
+      "nameId": "VARIABLES.HORIZONTAL",
+      "defaultValue": "right",
+      "options": [
+        "right",
+        "left"
+      ],
+      "type": "enum"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Vivocha Engage Button",
+        "state": "new"
+      },
+      "it": {
+        "value": "Bottone di ingaggio Vivocha",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Button",
+        "state": "new"
+      },
+      "it": {
+        "value": "Bottone",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.BUTTON_TEXT",
+    "values": {
+      "en": {
+        "value": "Chat with us",
+        "state": "new"
+      },
+      "it": {
+        "value": "Entra in chat",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.BUTTON_BG",
+    "values": {
+      "en": {
+        "value": "Button color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del bottone",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "acct_id": "marchitos",
+    "id": "VARIABLES.BUTTON_BG_PH",
+    "values": {
+      "en": {
+        "value": "Insert a color for the button background",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore di sfondo del bottone",
+        "state": "new"
+      }
+    }
+  }
+]

@@ -1,0 +1,243 @@
+/** FONTS **/
+@import url('https://d3btqb6knwd3a4.cloudfront.net/lib/font-google/css/open-sans.css');
+/** ICONS **/
+@import url('./assets/vivicon/style.css');
+/** COLORS **/
+$lightBackground: #F2F2F2;
+$lightBackgroundBorder: #CECECE;
+$darkBackground: #4D4D4D;
+$darkBackgroundBorder: #D8D8D8;
+
+@mixin popup($theme: 'light', $primaryColor: 'red', $artBoardUrl: '', $useCompanyLogo: true, $companyLogoUrl: '') {
+
+  .vvc-popup-inner {
+    z-index: 2147483647;
+    font-family: "Open Sans";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .vvc-company-logo {
+      display: none;
+    }
+    @if ($useCompanyLogo == true and $companyLogoUrl != '') {
+      .vvc-company-logo {
+        display: block;
+        background-image: url($companyLogoUrl);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 50px 50px;
+      }
+    }
+    @if ($theme == 'light') {
+      background-color: rgba(0, 0, 0, 0.5);
+      .vvc-popup-container {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        background-color: $lightBackground;
+        .vvc-company-logo {
+          border: 1px solid $lightBackgroundBorder;
+        }
+        .vvc-popup-title, .vvc-popup-message2 {
+          color: hsla(0, 0%, 0%, 0.74);
+        }
+        .vvc-popup-message, .vvc-popup-media-label, .vvc-popup-close {
+          color: hsla(0, 0%, 0%, 0.54);
+        }
+        .vvc-popup-media-rounded i {
+          color: $lightBackground;
+        }
+      }
+    }
+    @if ($theme == 'dark') {
+      background-color: rgba(256, 256, 256, 0.8);
+      .vvc-popup-container {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+        background-color: $darkBackground;
+        .vvc-company-logo {
+          border: 1px solid $darkBackgroundBorder;
+        }
+        .vvc-popup-title, .vvc-popup-message2 {
+          color: hsla(360, 100%, 100%, 1);
+        }
+        .vvc-popup-message, .vvc-popup-media-label, .vvc-popup-close {
+          color: hsla(360, 100%, 100%, 0.74);
+        }
+        .vvc-popup-media-rounded i {
+          color: $lightBackground;
+        }
+      }
+    }
+
+    .vvc-popup-container {
+      // MOBILE FIRST, SMALLEST VERSION
+      position: relative;
+      border-radius: 8px;
+      width: 256px;
+      height: 282px;
+
+      .vvc-artboard {
+        width: 256px;
+        height: 256px;
+        display: none;
+        @if ($artBoardUrl != '') {
+          background-image: url($artBoardUrl);
+          background-repeat: no-repeat;
+          background-position: 0 0;
+        }
+      }
+
+      .vvc-popup-close {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+
+      .vvc-popup-content {
+        position: relative;
+        .vvc-company-logo {
+          position: absolute;
+          top: -28px;
+          left: 50%;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-left: -25px;
+        }
+
+        .vvc-popup-title {
+          padding: 26px 0 10px 0;
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        .vvc-divider {
+          content: '';
+          border: 1px solid $primaryColor;
+          margin: 14px 10px;
+          position: relative;
+          &:before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            background-color: $primaryColor;
+            border-radius: 50%;
+            top: -4px;
+            left: 50%;
+            margin-left: -4px;
+          }
+        }
+        .vvc-popup-message {
+          text-align: center;
+          font-size: 16px;
+          font-weight: 300;
+        }
+        .vvc-popup-message2 {
+          padding: 17px 10px 15px 10px;
+          text-align: center;
+          font-size: 12px;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+        .vvc-popup-media {
+          text-align: center;
+          .vvc-popup-media-item {
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+            .vvc-popup-media-rounded {
+              margin: 0 auto;
+              background-color: $primaryColor;
+
+              width: 38px;
+              height: 38px;
+              border-radius: 50%;
+              i {
+                position: relative;
+                top: 10px;
+              }
+            }
+            .vvc-popup-media-label {
+              padding-top: 5px;
+              font-size: 10px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-height: 560px) {
+    .vvc-popup-inner {
+      .vvc-popup-container {
+        // MEDIUM MOBILE, VERTICAL LAYOUT
+        height: 512px;
+
+        .vvc-artboard {
+          border-radius: 8px 8px 0 0;
+          display: block
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 560px) {
+    .vvc-popup-inner {
+      .vvc-popup-container {
+        // BIG SCREEN, HORIZONTAL LAYOUT
+        width: 512px;
+        height: 256px;
+
+        .vvc-popup-content {
+          width: 256px;
+          float: right;
+
+          .vvc-company-logo {
+            position: relative;
+            top: 5px;
+          }
+
+          .vvc-popup-title {
+            padding: 8px 0 0 0;
+            @if ($companyLogoUrl == '' or $useCompanyLogo == false){
+              padding: 40px 0 0 0;
+            }
+          }
+          .vvc-popup-message2 {
+            display: none;
+          }
+          .vvc-popup-media {
+            padding-top: 15px;
+          }
+
+        }
+
+        .vvc-artboard {
+          display: inline-block;
+          border-radius: 8px 0 0 8px
+        }
+      }
+    }
+  }
+
+}
+
+.vvc-popup {
+  @keyframes reveal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  animation-name: reveal;
+  animation-duration: .5s;
+
+  @include popup($theme, $primaryColor, $artBoardUrl, $useCompanyLogo, $companyLogoUrl);
+}

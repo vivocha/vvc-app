@@ -1,0 +1,279 @@
+/** FONTS **/
+@import url('https://d3btqb6knwd3a4.cloudfront.net/lib/font-google/css/open-sans.css');
+/** ICONS **/
+@import "./assets/vivicon/style.css";
+$boxColor: #F2F2F2;
+
+@mixin mediaBox() {
+  .vvc-media {
+    text-align: center;
+
+    .vvc-media-item {
+      cursor: pointer;
+      margin: 0 8px;
+      display: inline-block;
+      .vvc-media-rounded {
+        margin: 0 auto;
+        background-color: $primaryColor;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        i {
+          color: white;
+          position: relative;
+          top: 10px;
+        }
+      }
+      .vvc-media-label {
+        padding-top: 5px;
+        font-size: 10px;
+        font-weight: bold;
+        color: hsla(0, 0%, 0%, 0.54);
+      }
+    }
+  }
+}
+@mixin boxPosition($position: 'base') {
+  @if ($position == 'base') {
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  @if ($position == 'left') {
+    left: 0;right: auto;
+  }
+  @if ($position == 'right') {
+    right: 0;left: auto;
+  }
+  @if ($position == 'top') {
+    top: 0;
+    bottom: auto;
+  }
+  @if ($position == 'center') {
+    top: 50%;
+    margin-top: -185px;
+    bottom: auto;
+  }
+  @if ($position == 'bottom') {
+    top: auto;
+    bottom: 0;
+  }
+}
+@mixin baseStyle() {
+  z-index: 2147483647;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px #262626;
+  position: fixed;
+  font-family: "Open Sans";
+  &.vvc-container {
+    height: 173px;
+    @include boxPosition('base');
+    @include mediaBox();
+    .vvc-label {
+      cursor: pointer;
+      background-color: $primaryColor;
+      color: white;
+      height: 60px;
+      font-size:30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 8px;
+      box-sizing: border-box;
+      .vvc-headphones {
+        display: inline-block;
+      }
+    }
+    .vvc-content{
+      background-color: $boxColor;
+      box-sizing: border-box;
+      padding-bottom: 10px;
+      .vvc-content-message {
+        color: hsla(0, 0%, 0%, 0.54);
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+@mixin baseAnimation($animation) {
+  animation: $animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+@mixin smallDevAnimation(){
+  @keyframes reveal {
+    from {bottom: -230px;}
+    to {bottom: -113px;}
+  }
+  @keyframes open {
+    from { bottom: -113px }
+    to { bottom: 0 }
+  }
+  @keyframes close {
+    from { bottom: 0;}
+    to { bottom: -113px}
+  }
+  @keyframes iconRotate {
+    from { transform: rotate(0deg)}
+    to { transform: rotate(360deg)}
+  }
+  @keyframes iconRotateBack {
+    from { transform: rotate(360deg)}
+    to { transform: rotate(0deg)}
+  }
+  &.vvc-label-revealed{
+    bottom: -113px;
+    @include baseAnimation(reveal);
+  }
+  &.vvc-sidebar-opened{
+    bottom: 0;
+    @include baseAnimation(open);
+    .vvc-headphones {
+      @include baseAnimation(iconRotate);
+    }
+  }
+  &.vvc-sidebar-closed{
+    @include baseAnimation(close);
+    .vvc-headphones {
+      @include baseAnimation(iconRotateBack);
+    }
+  }
+}
+@mixin bigDevAnimation($offset: 'left') {
+  @if ($offset == 'left') {
+    @keyframes reveal {
+      from {left: -230px;}
+      to {left: -170px;}
+    }
+    @keyframes open {
+      from { left: -170px }
+      to { left: 0 }
+    }
+    @keyframes close {
+      from { left: 0;}
+      to { left: -170px}
+    }
+    @keyframes iconRotate {
+      from { transform: rotate(-90deg)}
+      to { transform: rotate(90deg)}
+    }
+    @keyframes iconRotateBack {
+      from { transform: rotate(90deg)}
+      to { transform: rotate(0deg)}
+    }
+    &.vvc-label-revealed{
+      left: -170px;
+      @include baseAnimation(reveal);
+    }
+    &.vvc-sidebar-opened{
+      left: 0;
+      @include baseAnimation(open);
+      .vvc-headphones {
+        transform: rotate(90deg);
+        @include baseAnimation(iconRotate);
+      }
+    }
+    &.vvc-sidebar-closed{
+      @include baseAnimation(close);
+      .vvc-headphones {
+        transform: rotate(0);
+        @include baseAnimation(iconRotateBack);
+      }
+    }
+
+  }
+  @if ($offset == 'right') {
+    @keyframes reveal {
+      from {right: -230px;}
+      to {right: -170px;}
+    }
+    @keyframes open {
+      from { right: -170px }
+      to { right: 0 }
+    }
+    @keyframes close {
+      from { right: 0;}
+      to { right: -170px}
+    }
+    @keyframes iconRotate {
+      from { transform: rotate(-90deg)}
+      to { transform: rotate(90deg)}
+    }
+    @keyframes iconRotateBack {
+      from { transform: rotate(90deg)}
+      to { transform: rotate(0deg)}
+    }
+    &.vvc-label-revealed{
+      right: -170px;
+      @include baseAnimation(reveal);
+    }
+    &.vvc-sidebar-opened{
+      right: 0;
+      @include baseAnimation(open);
+      .vvc-headphones {
+        transform: rotate(90deg);
+        @include baseAnimation(iconRotate);
+      }
+    }
+    &.vvc-sidebar-closed{
+      @include baseAnimation(close);
+      .vvc-headphones {
+        transform: rotate(0);
+        @include baseAnimation(iconRotateBack);
+      }
+    }
+  }
+}
+@mixin addBoxRotation($offset: 'left') {
+  border-radius: 10px 10px 0 0;
+  .vvc-content {
+    height: 220px;
+    .vvc-inner-content{
+      height: 170px;
+      .vvc-content-message {
+        padding: 15px 0;
+      }
+    }
+  }
+  @if ($offset == 'left') {
+    transform: rotate(90deg);
+    .vvc-label {
+      border-radius: 0 0 10px 10px;
+      transform: rotate(-180deg);
+    }
+    .vvc-inner-content {
+      transform: rotate(-90deg);
+    }
+  }
+  @if ($offset == 'right') {
+    transform: rotate(-90deg);
+    .vvc-label {
+      border-radius: 10px 10px 0 0;
+    }
+    .vvc-inner-content {
+      transform: rotate(90deg);
+    }
+  }
+}
+@mixin sidetab() {
+  @include baseStyle();
+  @include smallDevAnimation();
+  @media screen and (min-width: 385px) {
+    &.vvc-container {
+      width: 176px;
+      height: 280px;
+      @include boxPosition($horizontalOffset);
+      @include boxPosition($verticalOffset);
+      @include addBoxRotation($horizontalOffset);
+      @include bigDevAnimation($horizontalOffset);
+    }
+  }
+}
+
+.vvc-sidetab {
+  @include sidetab();
+}

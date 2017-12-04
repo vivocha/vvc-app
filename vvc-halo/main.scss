@@ -1,0 +1,126 @@
+/** FONTS **/
+@import url('https://d3btqb6knwd3a4.cloudfront.net/lib/font-google/css/open-sans.css');
+/** ICONS **/
+@import "./assets/vivicon/style.css";
+/** COLORS **/
+$lightBackground: #F2F2F2;
+
+.vvc-halo {
+  font-family: "Open Sans";
+  z-index: 2147483647;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  &.vvc-container{
+    .vvc-media-content {
+      display: none;
+      opacity: 0;
+      overflow: hidden;
+      border-radius: 30px 0 0 30px;
+      position: relative;
+      margin-right: -30px;
+      height: 60px;
+      padding-left: 15px;
+      padding-right: 30px;
+      box-sizing: border-box;
+      background-color: $lightBackground;
+      border: 1px solid white;
+      box-shadow: 0 0 8px #262626;
+      vertical-align: top;
+      .vvc-message {
+        color: hsla(0, 0%, 0%, 0.74);
+        font-size: 10px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 4px 0;
+      }
+      .vvc-media {
+        text-align: center;
+
+        .vvc-media-item {
+          cursor: pointer;
+          margin: 0 8px;
+          display: inline-block;
+          .vvc-media-rounded {
+            margin: 0 auto;
+            background-color: $primaryColor;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            i {
+              color: white;
+              position: relative;
+              top: 6px;
+            }
+          }
+        }
+      }
+    }
+    .vvc-halo-avatar {
+      cursor: pointer;
+      box-sizing: border-box;
+      vertical-align: middle;
+      border: 1px solid #D8D8D8;
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      background-image: url($haloImg);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 60px 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #262626;
+      animation: reveal;
+      animation-duration: 0.4s;
+      animation-delay: 2s;
+    }
+  }
+
+  @keyframes reveal {
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
+  }
+  @keyframes flipIn {
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
+  }
+  @keyframes flipOut {
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
+  }
+  @keyframes opened {
+    from { display: none; opacity: 0}
+    to { display: inline-block;  opacity: 1}
+  }
+  @keyframes closed {
+    from { display: inline-block; opacity: 1 }
+    to { display: none; opacity: 0 }
+  }
+
+  &.vvc-halo-opened {
+    .vvc-media-content {
+      display: inline-block;
+      opacity: 1;
+      animation: opened;
+      animation-duration: 0.5s;
+    }
+  }
+  &.vvc-halo-closed {
+    .vvc-media-content {
+      display: none;
+      opacity: 0;
+      animation: closed;
+      animation-duration: 0.5s;
+    }
+    .vvc-halo-avatar {
+      transform: rotateY(0);
+      animation: flipOut;
+      animation-duration: 0.4s;
+    }
+  }
+
+}

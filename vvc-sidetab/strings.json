@@ -1,0 +1,132 @@
+[
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Vivocha Sidetab",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vivocha Sidetab",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Engage the visitor by showing a side multimedia label",
+        "state": "new"
+      },
+      "it": {
+        "value": "Etichetta laterale a scomparsa con scelta del media per l'ingaggio",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.PRIMARY",
+    "values": {
+      "en": {
+        "value": "Primary color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore primario",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.VERTICAL",
+    "values": {
+      "en": {
+        "value": "Vertical Position",
+        "state": "new"
+      },
+      "it": {
+        "value": "Posizionamento Verticale",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.HORIZONTAL",
+    "values": {
+      "en": {
+        "value": "Horizontal Position",
+        "state": "new"
+      },
+      "it": {
+        "value": "Posizionamento Orizzontale",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.NEED_HELP",
+    "values": {
+      "en": {
+        "value": "Help?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Aiuto?",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.HOW_CAN_HELP",
+    "values": {
+      "en": {
+        "value": "How can we help you?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Come preferisci contattarci?",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CHAT",
+    "values": {
+      "en": {
+        "value": "CHAT",
+        "state": "new"
+      },
+      "it": {
+        "value": "CHAT",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.VOICE",
+    "values": {
+      "en": {
+        "value": "VOICE",
+        "state": "new"
+      },
+      "it": {
+        "value": "VOCE",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.VIDEO",
+    "values": {
+      "en": {
+        "value": "VIDEO",
+        "state": "new"
+      },
+      "it": {
+        "value": "VIDEO",
+        "state": "new"
+      }
+    }
+  }
+]

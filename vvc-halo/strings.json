@@ -1,0 +1,67 @@
+[
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Vivocha Halo",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vivocha Halo",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Engage the visitor by showing an avatar image in the bottom right corner of the screen",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ingaggio tramite un avatar posizionato nell'angolo in basso a destra dello schermo",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.PRIMARY",
+    "values": {
+      "en": {
+        "value": "Primary color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore primario",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.HALO_IMG",
+    "values": {
+      "en": {
+        "value": "Halo Avatar Image",
+        "state": "new"
+      },
+      "it": {
+        "value": "Immagine Avatar",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.HOW_CAN_HELP",
+    "values": {
+      "en": {
+        "value": "How can we help you?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Come preferisci contattarci?",
+        "state": "new"
+      }
+    }
+  }
+]

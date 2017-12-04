@@ -1,0 +1,23 @@
+$buttonBgColor: #e74c3c;
+.vvc-button {
+  button{
+    border: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: $buttonBgColor;
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 0 0 darken($buttonBgColor, 20%);
+
+    &:hover{
+      background-color: darken($buttonBgColor, 20%);
+
+    }
+    &:active{
+      padding-top: 9px;
+      padding-bottom: 7px;
+      background-color: lighten($buttonBgColor, 0%);
+    }
+  }
+
+}
