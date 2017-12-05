@@ -166,7 +166,6 @@ export class VvcContactService {
     this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
   }
   closeContact() {
-    this.vivocha.pageRequest('interactionClosed');
     this.contact.leave();
   }
   createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
