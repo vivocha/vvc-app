@@ -65,10 +65,10 @@
     },
     {
       "path": "main.scss",
-      "hash": "e8e95ea7e60d679075375529497ea6e3e358df0d4813de7eec771d863eceb73c",
+      "hash": "6da17e46a8d2f054287c0cef5a22e36503b731b4a347da2ebb7cd8b585724195",
       "id": "_/widgets/vvc-popup/main.scss",
-      "size": 6004,
-      "type": "text/x-scss"
+      "type": "text/x-scss",
+      "size": 6004
     },
     {
       "path": "thumbnail.png",

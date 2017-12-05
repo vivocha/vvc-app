@@ -29,64 +29,64 @@
       "path": "main.html",
       "hash": "b6dd6b1bb8058e905adc7cab802e5845fc5aa11a92ed1916cfe25a10d8ef4cb1",
       "id": "_/widgets/vvc-halo/main.html",
-      "type": "text/html",
-      "size": 1188
+      "size": 1188,
+      "type": "text/html"
     },
     {
       "path": "main.scss",
-      "hash": "f9090ace114f2e68b43a43778254681e6b6adefa0264d966cdfe9f5584452e1c",
+      "hash": "eebee95d92d521e10db411b13f13aced6c895b2dc9125dda67bdfdffc8253594",
       "id": "_/widgets/vvc-halo/main.scss",
       "type": "text/x-scss",
-      "size": 2948
+      "size": 2953
     },
     {
       "path": "thumbnail.png",
       "hash": "2714e2c00565cd6470f255a876f0334fec6255cfa78bbe719e0b0922259b8e5e",
       "id": "_/widgets/vvc-halo/thumbnail.png",
-      "type": "image/png",
-      "size": 2146
+      "size": 2146,
+      "type": "image/png"
     },
     {
       "path": "assets/logo.png",
       "hash": "65c50ff89fbf4bbe2c692b55096bf96e9684b5dfcea3564675421af5d962eafb",
       "id": "_/widgets/vvc-halo/assets/logo.png",
-      "type": "image/png",
-      "size": 13725
+      "size": 13725,
+      "type": "image/png"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.eot",
       "hash": "fb77f49309bae0a600b1f12cc4e05d426c30f22257164b39f99bc3729fa1a730",
       "id": "_/widgets/vvc-halo/assets/vivicon/fonts/vvc-widget-ico.eot",
-      "type": "application/vnd.ms-fontobject",
-      "size": 7644
+      "size": 7644,
+      "type": "application/vnd.ms-fontobject"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.svg",
       "hash": "753018d410fef41a4c714973c424cb37365af5d85351cc886a831114a40f7d86",
       "id": "_/widgets/vvc-halo/assets/vivicon/fonts/vvc-widget-ico.svg",
-      "type": "image/svg+xml",
-      "size": 25387
+      "size": 25387,
+      "type": "image/svg+xml"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.ttf",
       "hash": "840ccbb546b228ce092ef18427099ef053f1acab3fa5f5202bf123e3aafcbff2",
       "id": "_/widgets/vvc-halo/assets/vivicon/fonts/vvc-widget-ico.ttf",
-      "type": "application/x-font-ttf",
-      "size": 7452
+      "size": 7452,
+      "type": "application/x-font-ttf"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.woff",
       "hash": "0f6280ab22e4cd4c39f37f5777a87501615f3fa70217f75434a534c7b1c82861",
       "id": "_/widgets/vvc-halo/assets/vivicon/fonts/vvc-widget-ico.woff",
-      "type": "application/font-woff",
-      "size": 7528
+      "size": 7528,
+      "type": "application/font-woff"
     },
     {
       "path": "assets/vivicon/style.css",
       "hash": "e35e31e631519347281cf8318abe3fc5a5f3a6251bd706ffa28734b27bd61ab4",
       "id": "_/widgets/vvc-halo/assets/vivicon/style.css",
-      "type": "text/css",
-      "size": 2262
+      "size": 2262,
+      "type": "text/css"
     }
   ],
   "htmlId": "_/widgets/vvc-halo/main.html",
