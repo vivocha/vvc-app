@@ -1,12 +1,71 @@
+
 <div class="vvc-form">
-
-  <div class="form-title" *ngIf="dc.dataTitle">{{ dc.dataTitle | translate }}</div>
-  <div class="form-descr" *ngIf="dc.dataDescr">{{ dc.dataDescr | translate }}</div>
-  <div class="form-required-legend" *ngIf="hasRequired">{{ 'DC.REQUIRED_LEGEND' | translate }}</div>
-
+  <div class="form-title" *ngIf="dc.labelId">{{ dc.labelId | translate }}</div>
+  <!-- div class="form-descr" *ngIf="dc.dataDescr">{{ dc.descId | translate }}</div -->
+  <!-- div class="form-required-legend" *ngIf="hasRequired">{{ 'DC.REQUIRED_LEGEND' | translate }}</div -->
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
-    <div *ngFor="let elem of dc.data">
+    <div *ngFor="let elem of dc.fields">
+      <div class="vvc-input"
+           *ngIf="elem.showElement"
+           [ngClass]="{'error' : form.get(elem.id).errors && form.get(elem.id).touched}">
+        <label>{{ (elem.labelId | translate) || elem.id }}<span *ngIf="elem.required" class="required"> *</span></label>
 
+        <!-- text -->
+        <input *ngIf="!readMode && getInputElement(elem) === 'input'"
+               [formControlName]="elem.id"
+               type="{{ getInputType(elem) }}"
+               placeholder="{{ elem.placeholderId | translate }}" />
+
+        <!-- textarea -->
+        <textarea *ngIf="!readMode && getInputElement(elem) === 'textarea'"
+                  [formControlName]="elem.id"
+                  placeholder="{{ elem.placeholderId | translate }}"></textarea>
+
+        <!-- dropdown -->
+        <select *ngIf="!readMode && getInputElement(elem) === 'select'"
+                [formControlName]="elem.id">
+          <option *ngFor="let key of optionsKeys(elem.options)" [value]="key">{{elem.options[key] | translate}}</option>
+        </select>
+
+        <!-- checkbox -->
+        <input *ngIf="!readMode && getInputElement(elem) === 'checkbox'"
+               [formControlName]="elem.id"
+               type="checkbox" />
+
+        <!-- radio -->
+        <div *ngIf="!readMode && getInputElement(elem) === 'radio'">
+          <div *ngFor="let key of optionsKeys(elem.options)">
+            <input [formControlName]="elem.id"
+                   [value]="key"
+                   [id]="key"
+                   type="radio" />
+            <label [for]="key">{{ elem.options[key] | translate }}</label>
+          </div>
+        </div>
+
+        <!-- rating -->
+        <div *ngIf="!readMode && getInputElement(elem) === 'rating'">
+          <div>{{ elem.name | translate }}</div>
+          <div class="vvc-bar-rating">
+            <input type="radio" id="star5" [formControlName]="elem.id" value="5" /><label for="star5"></label>
+            <input type="radio" id="star4" [formControlName]="elem.id" value="4" /><label for="star4"></label>
+            <input type="radio" id="star3" [formControlName]="elem.id" value="3" /><label for="star3"></label>
+            <input type="radio" id="star2" [formControlName]="elem.id" value="2" /><label for="star2"></label>
+            <input type="radio" id="star1" [formControlName]="elem.id" value="1" /><label for="star1"></label>
+          </div>
+        </div>
+
+        <div *ngIf="readMode">
+          {{ dc.dataValue[elem.id] || '-' }}
+        </div>
+
+        <p *ngIf="form.get(elem.id).touched && !readMode">
+          <span *ngIf="form.get(elem.id).hasError('required')">{{ 'DC.REQUIRED_ERR' | translate }}</span>
+          <span *ngIf="form.get(elem.id).hasError('email')">{{ 'DC.EMAIL_ERR' | translate }}</span>
+        </p>
+      </div>
+
+      <!-- old stuff
       <div class="vvc-input"
            [ngClass]="{'error' : form.get(elem.id).errors && form.get(elem.id).touched}"
            *ngIf="elem.type === 'text' || elem.type === 'email'">
@@ -34,7 +93,7 @@
           <input type="radio" id="star1" [formControlName]="elem.id" value="1" /><label for="star1"></label>
         </div>
       </div>
-
+      -->
     </div>
     <div *ngIf="!readMode">
       <button class="btn-primary"

@@ -1,7 +1,8 @@
 import {VvcWidgetState, VvcMessage, VvcDataCollection} from './core.interfaces';
 
 import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
-import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
+import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 
 declare var vivocha: VivochaVisitorInteraction;
 

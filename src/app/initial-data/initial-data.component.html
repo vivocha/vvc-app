@@ -16,7 +16,7 @@
   <div class="card vvc-form">
     <div class="card-inner">
       <vvc-form [dc]="dataCollection"
-                (submit)="datasubmit.emit()"></vvc-form>
+                (submit)="datasubmit.emit($event)"></vvc-form>
 
       <!--
       <div class="vvc-title">

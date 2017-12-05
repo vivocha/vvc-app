@@ -4,7 +4,8 @@ import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
 import {VvcDataCollectionService} from './dc.service';
 
 import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/contact';
-import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 
 @Injectable()
 export class VvcContactService {
@@ -13,6 +14,7 @@ export class VvcContactService {
   contact;
   isWritingTimer;
   isWritingTimeout = 30000;
+  agentRequestCallback;
   mediaCallback;
   incomingOffer: VvcOffer;
   incomingId;
@@ -44,6 +46,26 @@ export class VvcContactService {
       payload: {
         id: this.incomingId,
         state: 'loading'
+      }
+    });
+  }
+  acceptRequest(res, msg) {
+    this.agentRequestCallback(null, res);
+    this.dispatch({
+      type: 'REM_MESSAGE',
+      payload: {
+        id: this.incomingId
+
+      }
+    });
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: msg.media,
+        state: 'closed',
+        text: msg.text + '_ACCEPTED'
       }
     });
   }
@@ -147,12 +169,6 @@ export class VvcContactService {
     this.vivocha.pageRequest('interactionClosed');
     this.contact.leave();
   }
-  collectInitialData(dataCollections) {
-    return this.dcserv.loadDataCollection(dataCollections).then( dc => {
-      this.dispatch({type: 'INITIAL_DATA', payload: dc });
-      return dc;
-    });
-  }
   createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
     this.callStartedWith = context.requestedMedia.toUpperCase();
     this.dispatch({type: 'INITIAL_OFFER', payload: {
@@ -175,7 +191,7 @@ export class VvcContactService {
       }
     }, (err) => {
       console.log('Failed to create contact', err);
-      this.vivocha.pageRequest('interactionFailed', err);
+      this.vivocha.pageRequest('interactionFailed', err.message);
     });
   }
   denyOffer(media) {
@@ -196,6 +212,27 @@ export class VvcContactService {
         state: 'closed',
         extraClass: 'rejected',
         text: 'MESSAGES.' + media + '_REJECTED'
+      }
+    });
+  }
+  denyRequest(res, msg) {
+    this.agentRequestCallback(null, res);
+    this.dispatch({
+      type: 'REM_MESSAGE',
+      payload: {
+        id: this.incomingId
+
+      }
+    });
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: msg.media,
+        state: 'closed',
+        extraClass: 'rejected',
+        text: msg.text + '_REJECTED'
       }
     });
   }
@@ -316,6 +353,9 @@ export class VvcContactService {
         this.fetchDataCollection(args[0].id);
       }
     });
+    this.contact.on('agentrequest', (message, cb) => {
+      this.onAgentRequest(message, cb);
+    });
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       const attachment = {url, meta, fromId, fromNick, isAgent};
       this.dispatch({type: 'NEW_MESSAGE', payload: {
@@ -421,6 +461,22 @@ export class VvcContactService {
       this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
     });
   }
+  onAgentRequest(message, cb) {
+    this.agentRequestCallback = cb;
+    this.incomingId = new Date().getTime();
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: this.incomingId,
+        state: 'open',
+        media: 'REQUEST_' + message,
+        accept: true,
+        decline: false,
+        type: 'incoming-request',
+        text: 'MESSAGES.REQUEST_' + message
+      }
+    });
+  }
   onLocalJoin(join) {
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
@@ -432,7 +488,6 @@ export class VvcContactService {
     }
   }
   onMediaOffer(offer, cb) {
-
     this.mediaCallback = cb;
     const confirmation = this.isIncomingRequest(offer);
     if (confirmation.askForConfirmation) {
@@ -443,8 +498,11 @@ export class VvcContactService {
         payload: {
           id: this.incomingId,
           media: confirmation.media,
+          accept: 'video-full',
+          conditional: 'voice-only',
+          decline: confirmation.media,
           state: 'open',
-          type: 'incoming-request',
+          type: 'incoming-offer',
           text: 'MESSAGES.' + confirmation.media + '_REQUEST'
         }
       });
@@ -464,6 +522,26 @@ export class VvcContactService {
         mediaOffer['Video'].tx = 'off';
       }
       this.contact.offerMedia(mediaOffer);
+    });
+  }
+  resumeContact(context: InteractionContext) {
+    this.callStartedWith = context.requestedMedia.toUpperCase();
+    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+      this.vivocha.resumeContact(contactData).then((contact) => {
+        this.vivocha.pageRequest('interactionCreated', contact);
+        console.log('contact created, looking for the caps', contact);
+        contact.getLocalCapabilities().then( caps => {
+          this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+        });
+        contact.getRemoteCapabilities().then( caps => {
+          this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+        });
+        this.contact = contact;
+        this.mapContact();
+      }, (err) => {
+        console.log('Failed to resume contact', err);
+        this.vivocha.pageRequest('interactionFailed', err.message);
+      });
     });
   }
   sendAttachment(msg) {
@@ -497,16 +575,6 @@ export class VvcContactService {
       type: 'CLOSE_CONTACT',
       payload: true
     });
-  }
-  sendData(initialConf) {
-    // TODO
-    /*
-    setTimeout( () => {
-      console.log('sending data');
-      this.dispatch({ type: 'INITIAL_DATA_SENT' });
-      this.createContact(initialConf);
-    }, 1000);
-    */
   }
   sendDataCollection(obj) {
     const dc = obj.dataCollection;

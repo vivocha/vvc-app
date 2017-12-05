@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction",
-  "version": "5.9.6",
+  "version": "5.9.14",
   "description": "Vivocha Interaction Application",
   "scripts": {
     "clean": "[ ! -d ./dist ] || rm -rf dist/*",
@@ -9,7 +9,8 @@
     "build": "ng build --delete-output-path=false",
     "precommit": "npm run build",
     "_precommit": "npm run build && npm run cover && npm run check-coverage",
-    "build:prod": "ng build --prod",
+    "build:prod": "ng build",
+    "_build:prod": "ng build --prod",
     "version": "jsonref -f ./package.json /version",
     "build:all": "npm run clean:all && npm install && npm run build:prod",
     "build:watch": "ng build --delete-output-path=false --watch",
@@ -62,9 +63,9 @@
     "@angular/cli": "1.5.3",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.8.2",
-    "@types/node": "~8.0.53",
-    "@vivocha/client-visitor-core": "^5.9.15",
-    "@vivocha/global-entities": "^5.9.45",
+    "@types/node": "~8.0.54",
+    "@vivocha/client-visitor-core": "^5.9.29",
+    "@vivocha/global-entities": "^5.9.61",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
@@ -78,6 +79,6 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.6.1"
+    "typescript": "~2.6.2"
   }
 }

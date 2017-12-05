@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
 import {WindowRef} from './core/window.service';
 import {VvcContactService} from './core/contact.service';
 import {Store} from '@ngrx/store';
@@ -6,8 +6,10 @@ import {VvcWidgetState, AppState} from './core/core.interfaces';
 import {TranslateService} from '@ngx-translate/core';
 import {MediaToolsComponent} from './media-tools/media-tools.component';
 
+import { objectToDataCollection } from '@vivocha/global-entities/dist/wrappers/data_collection';
 import { BasicContactCreationOptions, ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/global-entities/dist/contact';
-import { InteractionManager, InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
+import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
 
 declare var vivocha: VivochaVisitorInteraction;
@@ -41,11 +43,16 @@ export class AppComponent implements OnInit {
   public widgetState: VvcWidgetState;
   public messages: Array<any>;
 
+  waitingInititalDataCollections: {
+    [id: string]: (...args) => void;
+  } = {};
+
   vivocha: any;
 
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
               private store: Store<AppState>,
+              private zone: NgZone,
               private translate: TranslateService) {
 
     this.window = wref.nativeWindow;
@@ -63,9 +70,12 @@ export class AppComponent implements OnInit {
   abandon() {
     this.vivocha.close();
   }
-  acceptIncomingRequest(evt) {
-    this.startTimer();
-    this.cserv.acceptOffer(evt);
+  acceptIncomingRequest(evt, msg) {
+    if (msg.type === 'incoming-request') {
+      this.cserv.acceptRequest(evt, msg);
+    } else {
+      this.cserv.acceptOffer(evt);
+    }
   }
   addLocalVideo() {
     this.cserv.addLocalVideo();
@@ -91,17 +101,21 @@ export class AppComponent implements OnInit {
       this.window.vivocha.ready(this.busId).then(() => {
         console.log('vivocha.ready');
         this.vivocha = this.window['vivocha'];
-        this.vivocha.pageRequest('getContext').then((context: InteractionContext) => {
+        this.vivocha.pageRequest('getContext').then((context: any) => {
           console.log('vivocha.ready context');
           this.cserv.init(this.vivocha);
-          this.createContactCreationOptions(context);
           this.translate.getTranslation(context.language);
           this.translate.setDefaultLang('en');
           this.translate.use(context.language);
+          if (context.persistenceId) {
+            this.resumeContactCreationOptions(context);
+          } else {
+            this.createContactCreationOptions(context);
+          }
         })
       });
     } else {
-      setTimeout( () => this.checkForVivocha(), 500);
+      setTimeout( () => this.checkForVivocha(), 200);
     }
   }
   closeContact() {
@@ -115,8 +129,80 @@ export class AppComponent implements OnInit {
   closeOnSurvey() {
     this.vivocha.close();
   }
-  denyIncomingRequest(media) {
-    this.cserv.denyOffer(media);
+  createContactCreationOptions(context: InteractionContext) {
+    this.contactOptions = {
+      campaignId: context.campaign.id,
+      version: context.campaign.version,
+      channelId: 'web',
+      entryPointId: context.entryPointId,
+      engagementId: context.engagementId,
+      initialOffer: this.getInitialOffer(context.requestedMedia),
+      lang: context.language,
+      vvcu: context.page.vvcu,
+      vvct: context.page.vvct,
+      first_uri: context.page.first_uri,
+      first_title: context.page.first_title
+    };
+
+    Promise.resolve(true).then(() => {
+      if (context.dataCollections && context.dataCollections.length > 0) {
+        console.log('found', context.dataCollections.length, 'data collection objects', JSON.stringify(context.dataCollections));
+        this.contactOptions.data = [];
+        const showDataCollection = (dataCollection): Promise<boolean> => {
+          //console.log(JSON.stringify(dataCollection, null, 2));
+          return (new Promise((resolve, reject) => {
+            this.waitingInititalDataCollections[dataCollection.id] =(data) => {
+              for (let i = 0; i < dataCollection.fields.length; i++) {
+                if (dataCollection.fields[i].format === 'nickname' && data[dataCollection.fields[i].id]) {
+                  this.contactOptions.nick = data[dataCollection.fields[i].id];
+                  break;
+                }
+              }
+              this.contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection));
+              resolve(true);
+            };
+            this.zone.run( () => {
+              this.store.dispatch({
+                type: 'INITIAL_DATA',
+                payload: dataCollection
+              });
+            });
+          }));
+        };
+        const next = (i: number = 0): Promise<boolean> => {
+          if (context.dataCollections[i]) {
+            console.log('collecting data collection', i, context.dataCollections[i].id);
+            return showDataCollection(context.dataCollections[i]).then((data) => {
+              return next(++i);
+            });
+          } else {
+            return Promise.resolve(true);
+          }
+        }
+        return next();
+      }
+    }).then(() => {
+      console.log('checking for pre-routing rules');
+      this.vivocha.pageRequest('interactionCreation', this.contactOptions, (opts: ClientContactCreationOptions) => {
+        console.log('pre-routing callback', opts);
+        // TODO merge opts
+        if (!this.contactOptions.nick) {
+          // TODO get default visitor nickname this.contactOptions.nick
+        }
+        // TODO add the following properties to this.contactOptions (recall debug)
+        // recall?: ContactRecallSettings;
+        // debug?: boolean;
+        console.log('creating contact', this.contactOptions);
+        this.cserv.createContact(this.contactOptions, context);
+      });
+    });
+  }
+  denyIncomingRequest(evt, msg) {
+    if (msg.type === 'incoming-request') {
+      this.cserv.denyRequest(evt, msg);
+    } else {
+      this.cserv.denyOffer(evt);
+    }
   }
   dismissCloseModal() {
     this.closeModal = false;
@@ -149,45 +235,6 @@ export class AppComponent implements OnInit {
     this.cserv.closeContact();
     this.vivocha.close();
   }
-  createContactCreationOptions(context: InteractionContext) {
-    this.contactOptions = {
-      campaignId: context.campaign.id,
-      version: context.campaign.version,
-      channelId: 'web',
-      entryPointId: context.entryPointId,
-      engagementId: context.engagementId,
-      initialOffer: this.getInitialOffer(context.requestedMedia),
-      lang: context.language,
-      vvcu: context.page.vvcu,
-      vvct: context.page.vvct,
-      first_uri: context.page.first_uri,
-      first_title: context.page.first_title
-    };
-
-    // TODO add the following properties:
-    //data?: ContactDataCollection;
-    //nick?: string;
-    //recall?: ContactRecallSettings;
-    //debug?: boolean;
-
-    Promise.resolve(true).then(() => {
-      if (context.dataCollections) {
-        console.log('should collect data collection', context.dataCollections);
-        return this.cserv.collectInitialData(context.dataCollections).then(dataCollection => {
-          this.contactOptions.data = dataCollection;
-          // TODO check for nickname;
-        });
-      }
-    }).then(() => {
-      console.log('checking for pre-routing rules');
-      this.vivocha.pageRequest('interactionCreation', this.contactOptions, (opts: ClientContactCreationOptions) => {
-        console.log('pre-routing callback', opts);
-        // TODO merge opts
-        console.log('creating contact', this.contactOptions);
-        this.cserv.createContact(this.contactOptions, context);
-      });
-    });
-  }
   minimize(state) {
     this.store.dispatch({ type: 'MINIMIZE', payload: state });
     (state) ? this.vivocha.minimize()
@@ -204,6 +251,9 @@ export class AppComponent implements OnInit {
   }
   removeLocalVideo() {
     this.cserv.removeLocalVideo();
+  }
+  resumeContactCreationOptions(context: InteractionContext) {
+    this.cserv.resumeContact(context);
   }
   sendAttachment(evt) {
     console.log('sending attachment', evt.text, evt.file);
@@ -262,9 +312,8 @@ export class AppComponent implements OnInit {
     clearInterval(this.callTimerInterval);
     this.callTimer = 0;
   }
-  submitInitialData() {
-    // TODO check
-    // this.cserv.sendData(this.initialConf);
+  submitInitialData(id, dataCollection) {
+    this.waitingInititalDataCollections[id].call(this, dataCollection);
   }
   syncDataCollection(obj) {
     const dc = obj.dataCollection;

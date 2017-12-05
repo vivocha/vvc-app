@@ -15,7 +15,7 @@
   <vvc-initial-data id="vvc-initial-data"
                     *ngIf="widgetState?.state === 'waiting_data'"
                     [dataCollection]="widgetState?.dataCollections[widgetState.selectedDataCollectionId]"
-                    (datasubmit)="submitInitialData()"
+                    (datasubmit)="submitInitialData(widgetState.selectedDataCollectionId, $event)"
                     (abandon)="abandon()"></vvc-initial-data>
 
   <vvc-queue id="vvc-queue"
@@ -54,10 +54,10 @@
         <vvc-chat-message *ngIf="m.type === 'chat'"
                           [message]="m"
                           (download)="download($event)"></vvc-chat-message>
-        <vvc-incoming-message *ngIf="m.type === 'incoming-request' && m.media != 'DC'"
+        <vvc-incoming-message *ngIf="(m.type === 'incoming-request' || m.type === 'incoming-offer') && m.media != 'DC'"
                               [message]="m"
-                              (rejectOffer)="denyIncomingRequest($event)"
-                              (acceptOffer)="acceptIncomingRequest($event)"></vvc-incoming-message>
+                              (rejectOffer)="denyIncomingRequest($event, m)"
+                              (acceptOffer)="acceptIncomingRequest($event, m)"></vvc-incoming-message>
         <vvc-inc-dc *ngIf="m.type === 'incoming-request' && m.media === 'DC'"
                     [message]="m"
                     [dc]="widgetState?.dataCollections[m.dataCollectionId]"

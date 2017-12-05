@@ -5,19 +5,20 @@
       <div class="inc-type">
         <i *ngIf="message.media === 'VOICE'" class="vvc-phone"></i>
         <i *ngIf="message.media === 'VIDEO'" class="vvc-video"></i>
+        <i *ngIf="message.media === 'REQUEST'" class="vvc-request"></i>
       </div>
       <div class="inc-header">{{ message.text | translate }}</div>
     </div>
     <div class="inc-msg-content">
-      <button class="btn-normal" (click)="rejectOffer.emit(message.media)">
+      <button class="btn-normal" (click)="rejectOffer.emit(message.decline, message)">
         <i class="vvc-close"></i> {{ 'MESSAGES.DECLINE' | translate }}
       </button>
       <button class="btn-primary"
               *ngIf="message.media === 'VIDEO'"
-              (click)="acceptOffer.emit('voice-only')">
+              (click)="acceptOffer.emit(message.conditional, message)">
         <i class="vvc-phone"></i> {{ 'MESSAGES.VOICE_ONLY' | translate }}
       </button>
-      <button class="btn-primary" (click)="acceptOffer.emit('video-full')">
+      <button class="btn-primary" (click)="acceptOffer.emit(message.accept, message)">
         <i class="vvc-check"></i> {{ 'MESSAGES.ACCEPT' | translate }}
       </button>
     </div>
