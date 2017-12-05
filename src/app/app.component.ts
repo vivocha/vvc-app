@@ -28,12 +28,12 @@ export class AppComponent implements OnInit {
   public context: InteractionContext;
   public contactOptions: BasicContactCreationOptions;
 
-  private servId: string; // TODO remove
   public type = 'chat';
   public isMobile = 'false';
 
   public selectedDataMessage;
   private closeModal = false;
+  private closeToDestroy = false;
 
   @ViewChild(MediaToolsComponent) mediaTools;
   callTimerInterval;
@@ -61,14 +61,14 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    // this.vivocha.maximize();
     this.bindStores();
     this.cserv.voiceStart.subscribe( () => {
       this.startTimer();
     });
   }
   abandon() {
-    this.vivocha.close();
+    // TODO show message
+    this.closeInteraction();
   }
   acceptIncomingRequest(evt, msg) {
     if (msg.type === 'incoming-request') {
@@ -123,11 +123,22 @@ export class AppComponent implements OnInit {
     if (this.widgetState.hasSurvey) {
       this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
     } else {
-      this.vivocha.close();
+      // TODO hide modal if present
+      // TODO show message
+    }
+    this.closeInteraction();
+  }
+  closeInteraction() {
+    if (!this.closeToDestroy) {
+      this.vivocha.pageRequest('interactionClosed', 'close');
+      this.closeToDestroy = true;
+    } else {
+      this.vivocha.pageRequest('interactionClosed', 'destroy');
     }
   }
   closeOnSurvey() {
-    this.vivocha.close();
+    // TODO show message
+    this.closeInteraction();
   }
   createContactCreationOptions(context: InteractionContext) {
     this.contactOptions = {
@@ -233,7 +244,8 @@ export class AppComponent implements OnInit {
   }
   leave() {
     this.cserv.closeContact();
-    this.vivocha.close();
+    // TODO show message
+    this.closeInteraction();
   }
   minimize(state) {
     this.store.dispatch({ type: 'MINIMIZE', payload: state });
@@ -287,11 +299,7 @@ export class AppComponent implements OnInit {
   }
   showCloseModal(isContactClosed) {
     if (isContactClosed) {
-      if (this.widgetState.hasSurvey) {
-        this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
-      } else {
-        //this.vivocha.close();
-      }
+      this.closeContact();
     } else {
       this.closeModal = true;
     }

@@ -166,7 +166,6 @@ export class VvcContactService {
     this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
   }
   closeContact() {
-    this.vivocha.pageRequest('interactionClosed');
     this.contact.leave();
   }
   createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
@@ -378,8 +377,6 @@ export class VvcContactService {
       }
     });
     this.contact.on('joined', (c) => {
-      console.info('onjoined!!!', c)
-
       if (c.user) {
         this.onAgentJoin(c);
       } else {
@@ -454,7 +451,7 @@ export class VvcContactService {
   }
   onAgentJoin(join) {
     this.contact.getMedia().then( (media) => {
-      const agent = { user: join.user, nick: join.nick, avatar: join.avatar};
+      const agent = { id: join.user, nick: join.nick, avatar: join.avatar};
       this.agentInfo = agent;
       this.vivocha.pageRequest('interactionAnswered', agent);
       this.dispatch({ type: 'JOINED', payload: agent });
