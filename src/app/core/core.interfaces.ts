@@ -9,7 +9,7 @@ export interface VvcAgentAvatar {
     images: Array<VvcAvatarImage>;
 }
 export interface VvcAgent {
-    user: string;
+    id: string;
     nick: string;
     avatar?: VvcAgentAvatar;
 }
