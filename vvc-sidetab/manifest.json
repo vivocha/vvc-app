@@ -32,5 +32,78 @@
       ],
       "type": "enum"
     }
-  ]
+  ],
+  "stringIds": [
+    "NAME",
+    "DESCRIPTION",
+    "VARIABLES.PRIMARY",
+    "VARIABLES.VERTICAL",
+    "VARIABLES.HORIZONTAL",
+    "STRINGS.NEED_HELP",
+    "STRINGS.HOW_CAN_HELP",
+    "STRINGS.CHAT",
+    "STRINGS.VOICE",
+    "STRINGS.VIDEO"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "b0d57d11010f24f3cbbb745efee3c0fbd04129f46e2027af3299f4f348711452",
+      "id": "_/widgets/vvc-sidetab/main.html",
+      "type": "text/html",
+      "size": 1559
+    },
+    {
+      "path": "main.scss",
+      "hash": "4dc8889a626c332d2395d6d963b10f822db28a6cfa859e737308bb09f1d3ca14",
+      "id": "_/widgets/vvc-sidetab/main.scss",
+      "type": "text/x-scss",
+      "size": 6121
+    },
+    {
+      "path": "thumbnail.png",
+      "hash": "20383aa608510f3792d179fcba569ecba1896def666da300b7f6d5c81d4117aa",
+      "id": "_/widgets/vvc-sidetab/thumbnail.png",
+      "type": "image/png",
+      "size": 2084
+    },
+    {
+      "path": "assets/vivicon/fonts/vvc-widget-ico.eot",
+      "hash": "fb77f49309bae0a600b1f12cc4e05d426c30f22257164b39f99bc3729fa1a730",
+      "id": "_/widgets/vvc-sidetab/assets/vivicon/fonts/vvc-widget-ico.eot",
+      "type": "application/vnd.ms-fontobject",
+      "size": 7644
+    },
+    {
+      "path": "assets/vivicon/fonts/vvc-widget-ico.svg",
+      "hash": "753018d410fef41a4c714973c424cb37365af5d85351cc886a831114a40f7d86",
+      "id": "_/widgets/vvc-sidetab/assets/vivicon/fonts/vvc-widget-ico.svg",
+      "type": "image/svg+xml",
+      "size": 25387
+    },
+    {
+      "path": "assets/vivicon/fonts/vvc-widget-ico.ttf",
+      "hash": "840ccbb546b228ce092ef18427099ef053f1acab3fa5f5202bf123e3aafcbff2",
+      "id": "_/widgets/vvc-sidetab/assets/vivicon/fonts/vvc-widget-ico.ttf",
+      "type": "application/x-font-ttf",
+      "size": 7452
+    },
+    {
+      "path": "assets/vivicon/fonts/vvc-widget-ico.woff",
+      "hash": "0f6280ab22e4cd4c39f37f5777a87501615f3fa70217f75434a534c7b1c82861",
+      "id": "_/widgets/vvc-sidetab/assets/vivicon/fonts/vvc-widget-ico.woff",
+      "type": "application/font-woff",
+      "size": 7528
+    },
+    {
+      "path": "assets/vivicon/style.css",
+      "hash": "e35e31e631519347281cf8318abe3fc5a5f3a6251bd706ffa28734b27bd61ab4",
+      "id": "_/widgets/vvc-sidetab/assets/vivicon/style.css",
+      "type": "text/css",
+      "size": 2262
+    }
+  ],
+  "htmlId": "_/widgets/vvc-sidetab/main.html",
+  "scssId": "_/widgets/vvc-sidetab/main.scss",
+  "thumbnailId": "_/widgets/vvc-sidetab/thumbnail.png"
 }

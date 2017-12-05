@@ -10,5 +10,30 @@
       "defaultValue": "#F47929",
       "type": "color"
     }
-  ]
+  ],
+  "stringIds": [
+    "DESCRIPTION",
+    "NAME",
+    "STRINGS.BUTTON_TEXT",
+    "VARIABLES.BUTTON_BG",
+    "VARIABLES.BUTTON_BG_PH"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "02cfc8b7c447c7d6a7a2b83f087b361b4b61e47c7575e77a2a8d182dd947fcfc",
+      "id": "_/widgets/vvc-button/main.html",
+      "type": "text/html",
+      "size": 139
+    },
+    {
+      "path": "main.scss",
+      "hash": "186a6388e25ded8a5add15081465800fde12d7b07a922b2615098848c6a942aa",
+      "id": "_/widgets/vvc-button/main.scss",
+      "type": "text/x-scss",
+      "size": 443
+    }
+  ],
+  "htmlId": "_/widgets/vvc-button/main.html",
+  "scssId": "_/widgets/vvc-button/main.scss"
 }
