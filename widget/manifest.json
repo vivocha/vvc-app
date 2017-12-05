@@ -156,642 +156,334 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "8e5d832d82625d77e4fd48eb1f8c5a0e22e6671822023d695c6db5a42fad34e9",
-      "id": "0xfede/widgets/vvc-app/main.html",
-      "size": 795,
-      "type": "text/html"
+      "hash": "56720a38a06f48e2c306b7544786244058f39bba46b933ece7008c155ff9c4b7",
+      "id": "_/widgets/vvc-app/main.html",
+      "type": "text/html",
+      "size": 732
     },
     {
       "path": "main.scss",
-      "hash": "5c75c6aded1e2e8dbffd921e704aa1b6ddbd4695ff6db2e06d260f2772985f89",
-      "id": "0xfede/widgets/vvc-app/main.scss",
-      "size": 2569,
-      "type": "text/x-scss"
+      "hash": "b6e85ad34dc7a248f3ce795298823af9c7037907a233b68d845c6b36f7cd9b21",
+      "id": "_/widgets/vvc-app/main.scss",
+      "type": "text/x-scss",
+      "size": 41
     },
     {
       "path": "assets/assets/acct-img.png",
       "hash": "457b5a634ec9bfe5a491c8520f119213b3602acc5fe26d0ad1dfd9ed30c13bc4",
-      "id": "0xfede/widgets/vvc-app/assets/assets/acct-img.png",
-      "size": 1658,
-      "type": "image/png"
+      "id": "_/widgets/vvc-app/assets/assets/acct-img.png",
+      "type": "image/png",
+      "size": 1658
     },
     {
       "path": "assets/assets/animate.css",
       "hash": "80aa5497ff31b2c001474d9432f0853c11d200a67ea4f9852ab2f7ee2fedd9c2",
-      "id": "0xfede/widgets/vvc-app/assets/assets/animate.css",
-      "size": 23848,
-      "type": "text/css"
+      "id": "_/widgets/vvc-app/assets/assets/animate.css",
+      "type": "text/css",
+      "size": 23848
     },
     {
       "path": "assets/assets/beep.mp3",
       "hash": "618839bcb54283989bcf2d80553f94d41cad171036eec9c650ce6069e4a7b195",
-      "id": "0xfede/widgets/vvc-app/assets/assets/beep.mp3",
-      "size": 3866,
-      "type": "audio/mpeg"
-    },
-    {
-      "path": "assets/assets/scss/buttons.css",
-      "hash": "0c5e7fcf0ab19658aa5f30367e0662b56e76dc3ada6b178a19ba4456fef7c029",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/buttons.css",
-      "size": 6146,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/buttons.css.map",
-      "hash": "1f14c5d50bc8a9e47f885f7e6e25edbd46ded7df7c999e523c38b9e0bb6d2581",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/buttons.css.map",
-      "size": 83,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/beep.mp3",
+      "type": "audio/mpeg",
+      "size": 3866
     },
     {
       "path": "assets/assets/scss/buttons.scss",
       "hash": "ecfa7139b287b8c10af5ffd77afcb89f9ee5942a5e46e89140d140720d5e7457",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/buttons.scss",
-      "size": 154,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/chatbox.css",
-      "hash": "60a89983cf470a4244310524953966f603f30a25a090f5d5fe67be0499496351",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/chatbox.css",
-      "size": 42,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/chatbox.css.map",
-      "hash": "38c518ae4d1799b3b30ae7f3ebef0873b606c4936c7446d906dbd63dd0840790",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/chatbox.css.map",
-      "size": 83,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/buttons.scss",
+      "type": "text/x-scss",
+      "size": 154
     },
     {
       "path": "assets/assets/scss/chatbox.scss",
       "hash": "5be5224721b5834eb7be1a8be1f4cf31072f8f3285dc67433a19e2b650cf2bb3",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/chatbox.scss",
-      "size": 3603,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/engage-popup.css",
-      "hash": "a91f52434987fb3dad35bf42904279032624ab613fce81a5529c6f875fe1ac9f",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/engage-popup.css",
-      "size": 108814,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/engage-popup.css.map",
-      "hash": "816274fcae181ccf5bd00297fd7d8f9f9a03cad41db2ac0302c625d29704ca83",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/engage-popup.css.map",
-      "size": 2235,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/chatbox.scss",
+      "type": "text/x-scss",
+      "size": 3603
     },
     {
       "path": "assets/assets/scss/engage-popup.scss",
       "hash": "004fc89db90085e1ba860e7194e2dc7a36fbe7131e4491e2cfd17fa3a75ca325",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/engage-popup.scss",
-      "size": 108011,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/engage.css",
-      "hash": "f4c296fb7c98f47294477d182859b0a67f0c9c3debd24a51aa37a18957cf9ad8",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/engage.css",
-      "size": 452,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/engage.css.map",
-      "hash": "4f44327a317a6f004500ab1bb6b3e80920508c69ce55f85701e8853a3c51ed1d",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/engage.css.map",
-      "size": 328,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/engage-popup.scss",
+      "type": "text/x-scss",
+      "size": 108011
     },
     {
       "path": "assets/assets/scss/engage.scss",
       "hash": "c7a34b700fd76dffc1a799c56e1781135c814676c5b7d8122b1120d0d8e1fb0f",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/engage.scss",
-      "size": 48,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/forms.css",
-      "hash": "fdd7ad594b49fb5b1c00827a5de74bb1da6be30ea76e093db3ff544311f46512",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/forms.css",
-      "size": 40,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/forms.css.map",
-      "hash": "ef287c166c213c037ac3749a5b4aa8f556babc8e554c688ffe55247e532c9b26",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/forms.css.map",
-      "size": 81,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/engage.scss",
+      "type": "text/x-scss",
+      "size": 48
     },
     {
       "path": "assets/assets/scss/forms.scss",
       "hash": "bd80c9bdeaa570da8891fd54405d2ade63e5bd8ce8170dd4defc104fc75a11d7",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/forms.scss",
-      "size": 3004,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/iframe-container.css",
-      "hash": "425cdcc89dbfd2253774d2ed7eb8de76b47ebd6858806b13702ab6ad49e9165d",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/iframe-container.css",
-      "size": 283,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/iframe-container.css.map",
-      "hash": "83b8ed550d8bf521b4352ce5b26f92a2b414af2ddb0f6cb04152a18dcc1e4852",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/iframe-container.css.map",
-      "size": 255,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/forms.scss",
+      "type": "text/x-scss",
+      "size": 3004
     },
     {
       "path": "assets/assets/scss/iframe-container.scss",
       "hash": "39f6c384faecb30a9295891223c679845ee6bc29cbee9efbd46139291e759e8c",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/iframe-container.scss",
-      "size": 217,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/iframe-inner-container.css",
-      "hash": "935b48f323c0a33f5d60a22f669d1d5c3ee3ca6f83e2d51b04710608b9407423",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/iframe-inner-container.css",
-      "size": 57,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/iframe-inner-container.css.map",
-      "hash": "4687a2132184fc7a8723e15ed17630ab6d3d8156d73ab5a7fa86d97fb13d2a9a",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/iframe-inner-container.css.map",
-      "size": 98,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/iframe-container.scss",
+      "type": "text/x-scss",
+      "size": 217
     },
     {
       "path": "assets/assets/scss/iframe-inner-container.scss",
       "hash": "b9e9dcfd709da8ccba23eb559d04221f9b244868ec2303a7e92a3e0849a73776",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/iframe-inner-container.scss",
-      "size": 1304,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/initialdata.css",
-      "hash": "bc7f5d5cc78fbb00e40b7ff46add34ce6a350b87e64d534bc20bd1bef7435ca9",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/initialdata.css",
-      "size": 46,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/initialdata.css.map",
-      "hash": "2fd7968f8453ecde14c5870b2c1af3097a9c44fd2976fed1ecc0cec4cef5f805",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/initialdata.css.map",
-      "size": 87,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/iframe-inner-container.scss",
+      "type": "text/x-scss",
+      "size": 1304
     },
     {
       "path": "assets/assets/scss/initialdata.scss",
       "hash": "3fece4cef3d994fb1cf321f55e207f2876851169e8ee4a5a0c3613c5d350d74f",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/initialdata.scss",
-      "size": 625,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/keyframes.css",
-      "hash": "7912e5f3e4244ca576aceefed24dfa4a47e6bdd5843350d97c5644a8330f6a8f",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/keyframes.css",
-      "size": 243,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/keyframes.css.map",
-      "hash": "7c7ffc5bdc29ee1b6f16811606c01b00c7a11d7c3812f7efd5cfbed1be92a899",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/keyframes.css.map",
-      "size": 323,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/initialdata.scss",
+      "type": "text/x-scss",
+      "size": 625
     },
     {
       "path": "assets/assets/scss/keyframes.scss",
       "hash": "09329f44e0beca8a67c30d8ca133b929535e58c4b0c3936034fdf8494af793d3",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/keyframes.scss",
-      "size": 1657,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/media.css",
-      "hash": "c5fabd7c0d629b31f87f53a56856d755a5378998a9b93e02e2708a5883eb0962",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/media.css",
-      "size": 40,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/media.css.map",
-      "hash": "554963c076c72921d8b90b58cbaa447df5b76c3bb024c0ea2a12a8292f54778b",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/media.css.map",
-      "size": 81,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/keyframes.scss",
+      "type": "text/x-scss",
+      "size": 1657
     },
     {
       "path": "assets/assets/scss/media.scss",
       "hash": "86431dc22027bae236fe4f99f458ccbd0e13eb582d15d005964435d90ca636aa",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/media.scss",
-      "size": 2089,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/messages.css",
-      "hash": "2987785511b56e302782c0c2a7a2ff0c770688e427daf34792dabf68260752cb",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/messages.css",
-      "size": 43,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/messages.css.map",
-      "hash": "e24a2b8f464319594f06c3fd4709e335cf7dd4255e548cc31c760cfaff523fda",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/messages.css.map",
-      "size": 84,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/media.scss",
+      "type": "text/x-scss",
+      "size": 2089
     },
     {
       "path": "assets/assets/scss/messages.scss",
       "hash": "cf4fdbbebc875fde4b14bfc40963b17e6780b4dab3776db024338e33b7e05cdf",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/messages.scss",
-      "size": 2881,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/minimized.css",
-      "hash": "87503257b58478797bf502ef8b67f062ef4b14893efe026d7dbdb3bfbb9cd939",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/minimized.css",
-      "size": 44,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/minimized.css.map",
-      "hash": "1a9e63c3d68773824135521b8a53686aa61cde083180f153c03887bf4389a9e8",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/minimized.css.map",
-      "size": 85,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/messages.scss",
+      "type": "text/x-scss",
+      "size": 2881
     },
     {
       "path": "assets/assets/scss/minimized.scss",
       "hash": "05b67acf2d9bc697c3bbbd9f2b4c26516f2d879827e8bdfb5a26da9c6893bb88",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/minimized.scss",
-      "size": 373,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/mixins.css",
-      "hash": "3dba9f7823aaf048ded2f1bf431e0809e67088535b7059310a0a1911d6061a91",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/mixins.css",
-      "size": 41,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/mixins.css.map",
-      "hash": "a1ac6f5806a3a829c704e02f56f7daaffc07e54c204d7294ebf95d3f7fce4004",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/mixins.css.map",
-      "size": 82,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/minimized.scss",
+      "type": "text/x-scss",
+      "size": 373
     },
     {
       "path": "assets/assets/scss/mixins.scss",
       "hash": "63139e9c391ec6a490613bdf70926a119296ca87997c8870386222cac6d3e906",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/mixins.scss",
-      "size": 8868,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/palette_old.css",
-      "hash": "8439e88d04e8158195c7b7b5b64d0e9ba4d3a4d26c49191708c52ac7540cb0f2",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/palette_old.css",
-      "size": 6506,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/palette_old.css.map",
-      "hash": "402e97e6cc8e12ab455fd4f22afdf2698ed88c233ee3003cb22996a8974f289a",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/palette_old.css.map",
-      "size": 4506,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/mixins.scss",
+      "type": "text/x-scss",
+      "size": 8868
     },
     {
       "path": "assets/assets/scss/palette_old.scss",
       "hash": "4ded798ab8664c196cb024e070b6a3fe2c32996e1757019d7b48e7bb24f04939",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/palette_old.scss",
-      "size": 1215,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/popup-variables.css",
-      "hash": "25a40e7848983fdef8384018d754bd016bff5d18de1963d318aa393c245e6c6d",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/popup-variables.css",
-      "size": 50,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/popup-variables.css.map",
-      "hash": "730501d49c273aff0aea44292a31c59a5ef2f61a3d700d12dae883600e9ef991",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/popup-variables.css.map",
-      "size": 91,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/palette_old.scss",
+      "type": "text/x-scss",
+      "size": 1215
     },
     {
       "path": "assets/assets/scss/popup-variables.scss",
       "hash": "fca89fb392df26c5713f4e86d604a1169fe3220f962c49f7067dc085d90861c3",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/popup-variables.scss",
-      "size": 90,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/queue.css",
-      "hash": "e6d60ee92e05db709fe2bda4ab9d9d1ea38d69c472d5df6fc96013d983f54a0a",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/queue.css",
-      "size": 6222,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/queue.css.map",
-      "hash": "85b163b5d3e521c96c900e7a4331878a7bc4cb5b065ccc663f1314b6c4923efd",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/queue.css.map",
-      "size": 81,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/popup-variables.scss",
+      "type": "text/x-scss",
+      "size": 90
     },
     {
       "path": "assets/assets/scss/queue.scss",
       "hash": "cc0138964e0bd24791db812d2f88130013ecaf723745b5f6aab16a969815fcd6",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/queue.scss",
-      "size": 1781,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/survey.css",
-      "hash": "ed2a0092fec37dc8b88faf2c651136c4cd98b3eba26ecf15a5b0530336457ff7",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/survey.css",
-      "size": 41,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/survey.css.map",
-      "hash": "9bf05e1b3b1693a0c3acf56750f794390402f372e0b8f712cde588d9e91963a8",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/survey.css.map",
-      "size": 82,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/queue.scss",
+      "type": "text/x-scss",
+      "size": 1781
     },
     {
       "path": "assets/assets/scss/survey.scss",
       "hash": "860bbccf3d51d95190a94b7088b4dc6851c811b56b3b3d9cb98ec420f9134593",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/survey.scss",
-      "size": 750,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/theme.css",
-      "hash": "f858789d9ad6593ddb1ff7e92a2db3fb8c6b47d8d2f324e61f9e56c5ef0e4f9c",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/theme.css",
-      "size": 49760,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/theme.css.map",
-      "hash": "62014dd96a787b990c39dd7fb72fcffb0e1792d05ec0efa45064ccf692c85032",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/theme.css.map",
-      "size": 28549,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/survey.scss",
+      "type": "text/x-scss",
+      "size": 750
     },
     {
       "path": "assets/assets/scss/theme.scss",
       "hash": "5c75c6aded1e2e8dbffd921e704aa1b6ddbd4695ff6db2e06d260f2772985f89",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/theme.scss",
-      "size": 2569,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/topbar.css",
-      "hash": "799c75321df11a8192e82e630fc5d420744fdab23e71bf178258982146c42b21",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/topbar.css",
-      "size": 6324,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/topbar.css.map",
-      "hash": "10c836c38b3c036b328296586b7628a54fb4037a2730c75c5ffff181e776e879",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/topbar.css.map",
-      "size": 155,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/theme.scss",
+      "type": "text/x-scss",
+      "size": 2569
     },
     {
       "path": "assets/assets/scss/topbar.scss",
       "hash": "feb83ccf266d1f6907b23881247b768c1959bb634f80093f8ec6278148da6c1d",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/topbar.scss",
-      "size": 1742,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/assets/scss/variables.css",
-      "hash": "d83bb95e93b697fbef5e8a1be3536563d30101433ac6c5802a791314dd02f7c0",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/variables.css",
-      "size": 212,
-      "type": "text/css"
-    },
-    {
-      "path": "assets/assets/scss/variables.css.map",
-      "hash": "ab311db8817d20b0cbf6e7c6711cae0cc76f8af9c34a160cd84318382e12ea15",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/variables.css.map",
-      "size": 155,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/scss/topbar.scss",
+      "type": "text/x-scss",
+      "size": 1742
     },
     {
       "path": "assets/assets/scss/variables.scss",
-      "hash": "26102566bf5fa69e6817a9becf748ec0fb0b81408efde951c8159ab753e72207",
-      "id": "0xfede/widgets/vvc-app/assets/assets/scss/variables.scss",
-      "size": 390,
-      "type": "text/x-scss"
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "id": "_/widgets/vvc-app/assets/assets/scss/variables.scss",
+      "type": "text/x-scss",
+      "size": 0
     },
     {
       "path": "assets/assets/vivicon/Read Me.txt",
       "hash": "ef408de5a2bcfc444553ce81ad1da8a31c0c41f95dde8377ae71edf7c86c2900",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/Read Me.txt",
-      "size": 748,
-      "type": "text/plain"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/Read Me.txt",
+      "type": "text/plain",
+      "size": 748
     },
     {
       "path": "assets/assets/vivicon/demo-files/demo.css",
       "hash": "9e66886ce305efe4a3c6e1fc0ab810d7235534fe6b3947a8c06a8bd38c91541b",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/demo-files/demo.css",
-      "size": 1996,
-      "type": "text/css"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/demo-files/demo.css",
+      "type": "text/css",
+      "size": 1996
     },
     {
       "path": "assets/assets/vivicon/demo-files/demo.js",
       "hash": "0be96f5313e7a51e9bc30b7587ee149b54c7cb36a1959842875ed7454677b367",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/demo-files/demo.js",
-      "size": 996,
-      "type": "application/javascript"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/demo-files/demo.js",
+      "type": "application/javascript",
+      "size": 996
     },
     {
       "path": "assets/assets/vivicon/demo.html",
       "hash": "5c807c2c270bedb007b59e8fdca8984a75ff1916e3c31b6020982ed4c58f09ac",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/demo.html",
-      "size": 26931,
-      "type": "text/html"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/demo.html",
+      "type": "text/html",
+      "size": 26931
     },
     {
       "path": "assets/assets/vivicon/fonts/vvc-widget-ico.eot",
       "hash": "fb77f49309bae0a600b1f12cc4e05d426c30f22257164b39f99bc3729fa1a730",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.eot",
-      "size": 7644,
-      "type": "application/vnd.ms-fontobject"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.eot",
+      "type": "application/vnd.ms-fontobject",
+      "size": 7644
     },
     {
       "path": "assets/assets/vivicon/fonts/vvc-widget-ico.svg",
       "hash": "753018d410fef41a4c714973c424cb37365af5d85351cc886a831114a40f7d86",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.svg",
-      "size": 25387,
-      "type": "image/svg+xml"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.svg",
+      "type": "image/svg+xml",
+      "size": 25387
     },
     {
       "path": "assets/assets/vivicon/fonts/vvc-widget-ico.ttf",
       "hash": "840ccbb546b228ce092ef18427099ef053f1acab3fa5f5202bf123e3aafcbff2",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.ttf",
-      "size": 7452,
-      "type": "application/x-font-ttf"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.ttf",
+      "type": "application/x-font-ttf",
+      "size": 7452
     },
     {
       "path": "assets/assets/vivicon/fonts/vvc-widget-ico.woff",
       "hash": "0f6280ab22e4cd4c39f37f5777a87501615f3fa70217f75434a534c7b1c82861",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.woff",
-      "size": 7528,
-      "type": "application/font-woff"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/fonts/vvc-widget-ico.woff",
+      "type": "application/font-woff",
+      "size": 7528
     },
     {
       "path": "assets/assets/vivicon/ie7/ie7.css",
       "hash": "4e6c894a8f1fd5d65baff1b23ec5fb91d07a314d7a73193e423609139f9ab3d3",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/ie7/ie7.css",
-      "size": 3366,
-      "type": "text/css"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/ie7/ie7.css",
+      "type": "text/css",
+      "size": 3366
     },
     {
       "path": "assets/assets/vivicon/ie7/ie7.js",
       "hash": "53dcaf90ff397b3f2d6013017732e483f09eef25d6bed802b75f7a5dab99e07f",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/ie7/ie7.js",
-      "size": 1709,
-      "type": "application/javascript"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/ie7/ie7.js",
+      "type": "application/javascript",
+      "size": 1709
     },
     {
       "path": "assets/assets/vivicon/selection.json",
       "hash": "8a9037d5cf2e39f85059a8fcc5c918d9b92751898416d776f1cffa918f1b8646",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/selection.json",
-      "size": 40779,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/selection.json",
+      "type": "application/json",
+      "size": 40779
     },
     {
       "path": "assets/assets/vivicon/style.css",
       "hash": "e35e31e631519347281cf8318abe3fc5a5f3a6251bd706ffa28734b27bd61ab4",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/style.css",
-      "size": 2262,
-      "type": "text/css"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/style.css",
+      "type": "text/css",
+      "size": 2262
     },
     {
       "path": "assets/assets/vivicon/style.scss",
       "hash": "7691d37ab1febd5c79c8d80135a88d8c1158113f1b2bdbdb44adad485172df69",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/style.scss",
-      "size": 2907,
-      "type": "text/x-scss"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/style.scss",
+      "type": "text/x-scss",
+      "size": 2907
     },
     {
       "path": "assets/assets/vivicon/variables.scss",
       "hash": "5c46723376b385f3b28dfdafac535ade1ddc5ad5fc7319f41262ba16b05f56ca",
-      "id": "0xfede/widgets/vvc-app/assets/assets/vivicon/variables.scss",
-      "size": 787,
-      "type": "text/x-scss"
+      "id": "_/widgets/vvc-app/assets/assets/vivicon/variables.scss",
+      "type": "text/x-scss",
+      "size": 787
     },
     {
       "path": "assets/assets/xl8/en.json",
       "hash": "6a090f336f4a0687735607b60a3ab99013f1141b5ef6638bc8bd0b3fca2ef91b",
-      "id": "0xfede/widgets/vvc-app/assets/assets/xl8/en.json",
-      "size": 3421,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/xl8/en.json",
+      "type": "application/json",
+      "size": 3421
     },
     {
       "path": "assets/assets/xl8/it.json",
       "hash": "a64da4cf16812bdb46c5dc5aed909019189aadf6c6bcd74dedecc91542fc3d8f",
-      "id": "0xfede/widgets/vvc-app/assets/assets/xl8/it.json",
-      "size": 3628,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/assets/xl8/it.json",
+      "type": "application/json",
+      "size": 3628
+    },
+    {
+      "path": "assets/favicon.ico",
+      "hash": "b9ccbb7100e13ae95ac18a3a9ed00857f321b63b498f1fb7abab506fc1c40e99",
+      "id": "_/widgets/vvc-app/assets/favicon.ico",
+      "type": "image/x-icon",
+      "size": 5430
     },
     {
       "path": "assets/inline.bundle.js",
       "hash": "1f0631ac2462fcc8f4d9d81ee4f30c3970395e42a431e469ede3b65f574874f9",
-      "id": "0xfede/widgets/vvc-app/assets/inline.bundle.js",
-      "size": 5830,
-      "type": "application/javascript"
-    },
-    {
-      "path": "assets/inline.bundle.js.map",
-      "hash": "c826c2fb59886cfe3fbfb93f96818ebb293af181f2edbd95b713e086ea8f4568",
-      "id": "0xfede/widgets/vvc-app/assets/inline.bundle.js.map",
-      "size": 5911,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/inline.bundle.js",
+      "type": "application/javascript",
+      "size": 5830
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "60d177f9092b4964ad3f883ca2de75a080896d01dd270c1972a6533000d5729b",
-      "id": "0xfede/widgets/vvc-app/assets/main.bundle.js",
-      "size": 166840,
-      "type": "application/javascript"
-    },
-    {
-      "path": "assets/main.bundle.js.map",
-      "hash": "3a068f60639aeccf7a6204a116687ece877c25e428fd6de6b3385abfc3a3df8a",
-      "id": "0xfede/widgets/vvc-app/assets/main.bundle.js.map",
-      "size": 171790,
-      "type": "application/json"
+      "hash": "f47ee2d5759003587b7ee8eea4a0f6ec21077f39a06a934aeb8561508dd5d2a4",
+      "id": "_/widgets/vvc-app/assets/main.bundle.js",
+      "type": "application/javascript",
+      "size": 178453
     },
     {
       "path": "assets/polyfills.bundle.js",
       "hash": "54e9fb25983759944db95494fb28c702054ff7bd0766c2b489ae2217ff04fc5a",
-      "id": "0xfede/widgets/vvc-app/assets/polyfills.bundle.js",
-      "size": 216658,
-      "type": "application/javascript"
-    },
-    {
-      "path": "assets/polyfills.bundle.js.map",
-      "hash": "96f171712d1ed29aa9b141b8111a009baf71e8c8799817915f32c912f0f9b804",
-      "id": "0xfede/widgets/vvc-app/assets/polyfills.bundle.js.map",
-      "size": 263462,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/polyfills.bundle.js",
+      "type": "application/javascript",
+      "size": 216658
     },
     {
       "path": "assets/styles.bundle.js",
       "hash": "87b203be46431c61a099951b04b68d4d3def7a25e7faa4c06444c02c98e28fa3",
-      "id": "0xfede/widgets/vvc-app/assets/styles.bundle.js",
-      "size": 11647,
-      "type": "application/javascript"
-    },
-    {
-      "path": "assets/styles.bundle.js.map",
-      "hash": "503c783b75a735317227ff220d38c66f0162ebceb8e62fd8c0b30b3bace7f027",
-      "id": "0xfede/widgets/vvc-app/assets/styles.bundle.js.map",
-      "size": 15703,
-      "type": "application/json"
+      "id": "_/widgets/vvc-app/assets/styles.bundle.js",
+      "type": "application/javascript",
+      "size": 11647
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "b4b5d6a6d8ff4749af573e128ff5eb100f708ce8125c9e3e49871e0a93a6f120",
-      "id": "0xfede/widgets/vvc-app/assets/vendor.bundle.js",
-      "size": 2487154,
-      "type": "application/javascript"
-    },
-    {
-      "path": "assets/vendor.bundle.js.map",
-      "hash": "600cab3c75e4c2a92beffec5a1fc0e66d951c62b8a1d324cb9ddce144a9e504e",
-      "id": "0xfede/widgets/vvc-app/assets/vendor.bundle.js.map",
-      "size": 3001116,
-      "type": "application/json"
+      "hash": "edfcfed7e77df10a166a80d7394783478ab243ad7b3ba62a7b35c2e79f030b1c",
+      "id": "_/widgets/vvc-app/assets/vendor.bundle.js",
+      "type": "application/javascript",
+      "size": 2492259
     }
   ],
-  "htmlId": "0xfede/widgets/vvc-app/main.html",
-  "scssId": "0xfede/widgets/vvc-app/main.scss"
+  "htmlId": "_/widgets/vvc-app/main.html",
+  "scssId": "_/widgets/vvc-app/main.scss"
 }
