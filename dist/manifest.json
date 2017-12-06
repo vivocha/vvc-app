@@ -160,8 +160,8 @@
       "path": "main.html",
       "hash": "1b2399d2c36eccae127600c15b882b70c872586b9bb919ef396766d1a2fd25ec",
       "id": "_/widgets/vvc-app/main.html",
-      "type": "text/html",
-      "size": 694
+      "size": 694,
+      "type": "text/html"
     },
     {
       "path": "main.scss",
@@ -193,37 +193,37 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "dbcade64271ab4e77ac54f1f7aeb78935a73d385c7c7d87f1a16b0480206b2fc",
+      "hash": "6187e90a51fd5b6fd3463376eb050fbb4326f816d314fb0e74e690c8d83fa905",
       "id": "_/widgets/vvc-app/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "1d82b0d6f58a8c2516ec04998d9af6525f049bd4fc4f018a6bac12f5424a9a76",
+      "hash": "e12647045dd1979f5a1515fb9d46d3d3268e75475ab5fd92316cbe21ca6a8745",
       "id": "_/widgets/vvc-app/assets/main.bundle.js",
-      "size": 160420,
+      "size": 178710,
       "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "e33ca701d0fa9ab834513e8542783f732ed29374af9bc8f7b771ecb0d79f4abd",
+      "hash": "3566e3fe08b40cabbba02356f58416d84c339b8a60a03a9fd0bb31af60e1437b",
       "id": "_/widgets/vvc-app/assets/main.bundle.js.map",
-      "size": 189848,
+      "size": 189178,
       "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
-      "hash": "6d87355003859beab6f5606c00165990f86bc2b8a88297f865a9b3b66b86c065",
+      "hash": "54e9fb25983759944db95494fb28c702054ff7bd0766c2b489ae2217ff04fc5a",
       "id": "_/widgets/vvc-app/assets/polyfills.bundle.js",
-      "size": 215930,
+      "size": 216658,
       "type": "application/javascript"
     },
     {
       "path": "assets/polyfills.bundle.js.map",
-      "hash": "876f351b097d71ecc64c6de95305f3327cfc65f4d5089db602c1a933d1e67b3d",
+      "hash": "a54bb5714c4a373f1a23eb6e27f0d0bdf8bf13efbcd4b1f695d8c0163f26beb8",
       "id": "_/widgets/vvc-app/assets/polyfills.bundle.js.map",
-      "size": 263677,
+      "size": 263668,
       "type": "application/json"
     },
     {
@@ -410,16 +410,16 @@
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "ba9a475aba3262a60fc126d2b4b0520c26eb50283f501e0189829f2ee04cf39a",
+      "hash": "bb13c1e7d1fde6e1087552cb683fb8493c3f6fe6cf22eeb9d35b37357b75aa49",
       "id": "_/widgets/vvc-app/assets/vendor.bundle.js",
-      "size": 2516385,
+      "size": 2482609,
       "type": "application/javascript"
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "ee8920774d2af52dfaa824186737ecfaca34e5d2467745ae9de1da8212306e1c",
+      "hash": "ab9a69e69dc0e5090ad35321a38c61e974fb924d17f35af4e632e45b8fc20e7d",
       "id": "_/widgets/vvc-app/assets/vendor.bundle.js.map",
-      "size": 3007728,
+      "size": 2994407,
       "type": "application/json"
     }
   ]
