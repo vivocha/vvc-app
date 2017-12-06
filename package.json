@@ -3,7 +3,7 @@
   "version": "5.9.17",
   "description": "Vivocha Interaction Application",
   "scripts": {
-    "clean": "[ ! -d ./dist ] || rm -rf dist/*",
+    "clean": "[ ! -d ./dist/assets ] || rm -rf dist/assets/*",
     "clean:all": "npm run clean && rm -rf node_modules",
     "prebuild": "npm run clean",
     "build": "ng build --delete-output-path=false",
