@@ -82,7 +82,7 @@ describe('TopbarComponent', () => {
   it('should set the default agent avatar if avatar is not set', () => {
     delete comp.state.agent.avatar;
     fixture.detectChanges();
-    const baseImgAvatar = 'assets/acct-img.png';
+    const baseImgAvatar = 'assets/static/acct-img.png';
     const imgAvatar = de.query(By.css('img')).nativeElement;
     expect(imgAvatar.src).toContain(baseImgAvatar);
   });

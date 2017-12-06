@@ -3,14 +3,10 @@
 $fontFamily: 'Open Sans',sans-serif;
 $baseFontSize: 16px;
 
-/** ICONS **/
-@import url("../vivicon/style.css");
-
 /** OPTS **/
 $button-radius: 30px;
 $mycolor: indigo;
 
-@import "variables";
 @import "iframe-container";
 @import "iframe-inner-container";
 @import "keyframes";

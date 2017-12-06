@@ -1,1 +1,0 @@
-../../dist/inline.bundle.js

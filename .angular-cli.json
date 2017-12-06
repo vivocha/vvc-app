@@ -8,7 +8,8 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
+        "scss",
+        "static",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -18,9 +19,7 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "vvc",
-      "styles": [
-        "styles.scss"
-      ],
+      "styles": [],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -49,9 +48,5 @@
     "karma": {
       "config": "./karma.conf.js"
     }
-  },
-  "defaults": {
-    "styleExt": "scss",
-    "component": {}
   }
 }

@@ -14,6 +14,8 @@
     "version": "jsonref -f ./package.json /version",
     "build:all": "npm run clean:all && npm install && npm run build:prod",
     "build:watch": "ng build --delete-output-path=false --watch",
+    "push": "npm run build:all && vvc widget push",
+    "push:global": "npm run build:all && vvc widget push -g",
     "ng": "ng",
     "test": "ng test",
     "test:coverage": "ng test --code-coverage",

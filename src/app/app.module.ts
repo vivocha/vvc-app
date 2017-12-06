@@ -30,8 +30,8 @@ import { DraggableDirective } from './draggable.directive';
 
 
 export function createTranslateLoader(http: Http) {
-  //return new TranslateHttpLoader(http, '/s/widget-xl8/xl8/', '.json');
-  return new TranslateHttpLoader(http, './assets/xl8/', '.json');
+  const url = location.origin + location.pathname.replace(/\/([\w]{2}|[\w-]{5})\/main\.html/, '/');
+  return new TranslateHttpLoader(http, url, '/strings.json');
 }
 
 @NgModule({

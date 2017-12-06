@@ -509,7 +509,7 @@ export class VvcContactService {
   }
   playAudioNotification() {
     const notif = new Audio();
-    notif.src = 'assets/beep.mp3';
+    notif.src = 'assets/static/beep.mp3';
     notif.load();
     notif.play();
   }

@@ -18,6 +18,6 @@ export class MinimizedComponent implements OnInit {
     this.state.agent.avatar.images[0] &&
     this.state.agent.avatar.images[0].file &&
     this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
-        : 'assets/acct-img.png';
+        : 'assets/static/acct-img.png';
   }
 }
