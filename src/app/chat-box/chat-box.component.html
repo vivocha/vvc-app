@@ -16,7 +16,7 @@
   </div>
 
   <textarea #chatInput
-            placeholder="{{ 'CHAT.TEXTAREA_PLACEHOLDER' | translate }}"
+            placeholder="{{ 'STRINGS.CHAT.TEXTAREA_PLACEHOLDER' | translate }}"
             (keyup.enter)="sendMessage(chatInput);"
             (keyup)="calcRows(chatInput)"
             [rows]="textAreaRows"></textarea>

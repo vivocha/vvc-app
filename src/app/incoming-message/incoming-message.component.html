@@ -11,15 +11,15 @@
     </div>
     <div class="inc-msg-content">
       <button class="btn-normal" (click)="rejectOffer.emit(message.decline, message)">
-        <i class="vvc-close"></i> {{ 'MESSAGES.DECLINE' | translate }}
+        <i class="vvc-close"></i> {{ 'STRINGS.MESSAGES.DECLINE' | translate }}
       </button>
       <button class="btn-primary"
               *ngIf="message.media === 'VIDEO'"
               (click)="acceptOffer.emit(message.conditional, message)">
-        <i class="vvc-phone"></i> {{ 'MESSAGES.VOICE_ONLY' | translate }}
+        <i class="vvc-phone"></i> {{ 'STRINGS.MESSAGES.VOICE_ONLY' | translate }}
       </button>
       <button class="btn-primary" (click)="acceptOffer.emit(message.accept, message)">
-        <i class="vvc-check"></i> {{ 'MESSAGES.ACCEPT' | translate }}
+        <i class="vvc-check"></i> {{ 'STRINGS.MESSAGES.ACCEPT' | translate }}
       </button>
     </div>
   </div>

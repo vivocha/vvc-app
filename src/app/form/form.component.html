@@ -2,7 +2,7 @@
 <div class="vvc-form">
   <div class="form-title" *ngIf="dc.labelId">{{ dc.labelId | translate }}</div>
   <!-- div class="form-descr" *ngIf="dc.dataDescr">{{ dc.descId | translate }}</div -->
-  <!-- div class="form-required-legend" *ngIf="hasRequired">{{ 'DC.REQUIRED_LEGEND' | translate }}</div -->
+  <!-- div class="form-required-legend" *ngIf="hasRequired">{{ 'STRINGS.DC.REQUIRED_LEGEND' | translate }}</div -->
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div *ngFor="let elem of dc.fields">
       <div class="vvc-input"
@@ -60,8 +60,8 @@
         </div>
 
         <p *ngIf="form.get(elem.id).touched && !readMode">
-          <span *ngIf="form.get(elem.id).hasError('required')">{{ 'DC.REQUIRED_ERR' | translate }}</span>
-          <span *ngIf="form.get(elem.id).hasError('email')">{{ 'DC.EMAIL_ERR' | translate }}</span>
+          <span *ngIf="form.get(elem.id).hasError('required')">{{ 'STRINGS.DC.REQUIRED_ERR' | translate }}</span>
+          <span *ngIf="form.get(elem.id).hasError('email')">{{ 'STRINGS.DC.EMAIL_ERR' | translate }}</span>
         </p>
       </div>
 
@@ -78,8 +78,8 @@
           {{ dc.dataValue[elem.id] || '-' }}
         </div>
         <p *ngIf="form.get(elem.id).touched && !readMode">
-          <span *ngIf="form.get(elem.id).hasError('required')">{{ 'DC.REQUIRED_ERR' | translate }}</span>
-          <span *ngIf="form.get(elem.id).hasError('email')">{{ 'DC.EMAIL_ERR' | translate }}</span>
+          <span *ngIf="form.get(elem.id).hasError('required')">{{ 'STRINGS.DC.REQUIRED_ERR' | translate }}</span>
+          <span *ngIf="form.get(elem.id).hasError('email')">{{ 'STRINGS.DC.EMAIL_ERR' | translate }}</span>
         </p>
       </div>
 
