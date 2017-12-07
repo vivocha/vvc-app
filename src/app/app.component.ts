@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
               private translate: TranslateService) {
 
     this.window = wref.nativeWindow;
-    this.appendVivochaScript();
+    this.parseIframeUrl();
     this.checkForVivocha();
 
   }
@@ -79,12 +79,6 @@ export class AppComponent implements OnInit {
   }
   addLocalVideo() {
     this.cserv.addLocalVideo();
-  }
-  appendVivochaScript() {
-    this.parseIframeUrl();
-    const vvcScript = this.window.document.createElement('script');
-    vvcScript.src = `https://${this.world}.vivocha.com/a/${this.acct}/js/vivocha_interaction.js`;
-    this.window.document.getElementsByTagName('head')[0].appendChild(vvcScript);
   }
   bindStores() {
     this.store.subscribe( state => {

@@ -7,6 +7,32 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link href="__BASE_URL__/main.css" rel="stylesheet">
+  <script type="text/javascript">
+    (function() {
+      var busId, acct, world;
+      try {
+        if (location.hash.indexOf(';') !== -1) {
+          var hashParts = location.hash.substr(2).split(';');
+          busId = hashParts[1];
+          acct = hashParts[1];
+          world = hashParts[2];
+        }
+        if (busId && acct && world) {
+          var url = "https://"+world+".vivocha.com/a/"+acct+"/js/vivocha_interaction.js";
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.charset = 'utf-8';
+          script.async = true;
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        } else {
+          throw new Error('cannot find vivocha configuration ' + busId + '-' + acct + '-' + world);
+        }
+      } catch(e) {
+        console.error(e);
+      }
+    }());
+  </script>
 </head>
 <body>
   <vvc-root></vvc-root>
