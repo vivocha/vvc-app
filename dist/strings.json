@@ -37,7 +37,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.CHAT.TEXTAREA_PLACEHOLDER"
+    "id": "CHAT.TEXTAREA_PLACEHOLDER"
   },
   {
     "values": {
@@ -51,7 +51,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.CLOSEMODAL.CLOSE_MESSAGE"
+    "id": "CLOSEMODAL.CLOSE_MESSAGE"
   },
   {
     "values": {
@@ -65,7 +65,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.CLOSEMODAL.NO"
+    "id": "CLOSEMODAL.NO"
   },
   {
     "values": {
@@ -79,7 +79,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.CLOSEMODAL.YES"
+    "id": "CLOSEMODAL.YES"
   },
   {
     "values": {
@@ -93,7 +93,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.ASK_FOR_COMPILE"
+    "id": "DC.ASK_FOR_COMPILE"
   },
   {
     "values": {
@@ -107,7 +107,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.COMPILE"
+    "id": "DC.COMPILE"
   },
   {
     "values": {
@@ -121,7 +121,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.DATA_DESCRIPTION"
+    "id": "DC.D1.DATA_DESCRIPTION"
   },
   {
     "values": {
@@ -135,7 +135,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.DATA_TITLE"
+    "id": "DC.D1.DATA_TITLE"
   },
   {
     "values": {
@@ -149,7 +149,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.EMAIL"
+    "id": "DC.D1.EMAIL"
   },
   {
     "values": {
@@ -163,7 +163,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.EMAIL_PH"
+    "id": "DC.D1.EMAIL_PH"
   },
   {
     "values": {
@@ -177,7 +177,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.NAME"
+    "id": "DC.D1.NAME"
   },
   {
     "values": {
@@ -191,7 +191,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.NAME_PH"
+    "id": "DC.D1.NAME_PH"
   },
   {
     "values": {
@@ -205,7 +205,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.SUBMIT"
+    "id": "DC.D1.SUBMIT"
   },
   {
     "values": {
@@ -219,7 +219,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.SURNAME"
+    "id": "DC.D1.SURNAME"
   },
   {
     "values": {
@@ -233,7 +233,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.D1.SURNAME_PH"
+    "id": "DC.D1.SURNAME_PH"
   },
   {
     "values": {
@@ -247,7 +247,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.EMAIL_ERR"
+    "id": "DC.EMAIL_ERR"
   },
   {
     "values": {
@@ -261,7 +261,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.INCOMING_HEAD"
+    "id": "DC.INCOMING_HEAD"
   },
   {
     "values": {
@@ -275,7 +275,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.REQUIRED_ERR"
+    "id": "DC.REQUIRED_ERR"
   },
   {
     "values": {
@@ -289,7 +289,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.REQUIRED_LEGEND"
+    "id": "DC.REQUIRED_LEGEND"
   },
   {
     "values": {
@@ -303,7 +303,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.DC.VIEW"
+    "id": "DC.VIEW"
   },
   {
     "values": {
@@ -317,7 +317,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.INITIAL_DATA.WELCOME"
+    "id": "INITIAL_DATA.WELCOME"
   },
   {
     "values": {
@@ -331,7 +331,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.CHAT_HIDE"
+    "id": "MEDIATOOLS.CHAT_HIDE"
   },
   {
     "values": {
@@ -345,7 +345,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.CHAT_SHOW"
+    "id": "MEDIATOOLS.CHAT_SHOW"
   },
   {
     "values": {
@@ -359,7 +359,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.EXPAND"
+    "id": "MEDIATOOLS.EXPAND"
   },
   {
     "values": {
@@ -373,7 +373,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.HANGUP"
+    "id": "MEDIATOOLS.HANGUP"
   },
   {
     "values": {
@@ -387,7 +387,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.MINIMIZE"
+    "id": "MEDIATOOLS.MINIMIZE"
   },
   {
     "values": {
@@ -401,7 +401,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.MUTE"
+    "id": "MEDIATOOLS.MUTE"
   },
   {
     "values": {
@@ -415,7 +415,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.UNMUTE"
+    "id": "MEDIATOOLS.UNMUTE"
   },
   {
     "values": {
@@ -429,7 +429,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.VIDEO_OFF"
+    "id": "MEDIATOOLS.VIDEO_OFF"
   },
   {
     "values": {
@@ -443,7 +443,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MEDIATOOLS.VIDEO_ON"
+    "id": "MEDIATOOLS.VIDEO_ON"
   },
   {
     "values": {
@@ -457,7 +457,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.ACCEPT"
+    "id": "MESSAGES.ACCEPT"
   },
   {
     "values": {
@@ -471,7 +471,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.COMPILE"
+    "id": "MESSAGES.COMPILE"
   },
   {
     "values": {
@@ -485,7 +485,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.CONTINUE"
+    "id": "MESSAGES.CONTINUE"
   },
   {
     "values": {
@@ -499,7 +499,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.DECLINE"
+    "id": "MESSAGES.DECLINE"
   },
   {
     "values": {
@@ -513,7 +513,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.DOWNLOAD"
+    "id": "MESSAGES.DOWNLOAD"
   },
   {
     "values": {
@@ -527,7 +527,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.FILE_SENDING"
+    "id": "MESSAGES.FILE_SENDING"
   },
   {
     "values": {
@@ -541,7 +541,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.FORM_PENDING"
+    "id": "MESSAGES.FORM_PENDING"
   },
   {
     "values": {
@@ -555,7 +555,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.FORM_REQUEST"
+    "id": "MESSAGES.FORM_REQUEST"
   },
   {
     "values": {
@@ -569,7 +569,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.FORM_SUBMIT_ERROR"
+    "id": "MESSAGES.FORM_SUBMIT_ERROR"
   },
   {
     "values": {
@@ -583,7 +583,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.FORM_SUBMIT_SUCCESS"
+    "id": "MESSAGES.FORM_SUBMIT_SUCCESS"
   },
   {
     "values": {
@@ -597,7 +597,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.REMOTE_CLOSE"
+    "id": "MESSAGES.REMOTE_CLOSE"
   },
   {
     "values": {
@@ -611,7 +611,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.REMOTE_VIDEO_FAILED"
+    "id": "MESSAGES.REMOTE_VIDEO_FAILED"
   },
   {
     "values": {
@@ -625,7 +625,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.REMOTE_VIDEO_REJECTED"
+    "id": "MESSAGES.REMOTE_VIDEO_REJECTED"
   },
   {
     "values": {
@@ -639,7 +639,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.REMOTE_VOICE_FAILED"
+    "id": "MESSAGES.REMOTE_VOICE_FAILED"
   },
   {
     "values": {
@@ -653,7 +653,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.REMOTE_VOICE_REJECTED"
+    "id": "MESSAGES.REMOTE_VOICE_REJECTED"
   },
   {
     "values": {
@@ -667,7 +667,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.RETRY"
+    "id": "MESSAGES.RETRY"
   },
   {
     "values": {
@@ -681,7 +681,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.SEND"
+    "id": "MESSAGES.SEND"
   },
   {
     "values": {
@@ -695,7 +695,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.TRANSFERRED"
+    "id": "MESSAGES.TRANSFERRED"
   },
   {
     "values": {
@@ -709,7 +709,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VIDEO_ENDED"
+    "id": "MESSAGES.VIDEO_ENDED"
   },
   {
     "values": {
@@ -723,7 +723,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VIDEO_REJECTED"
+    "id": "MESSAGES.VIDEO_REJECTED"
   },
   {
     "values": {
@@ -737,7 +737,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VIDEO_REQUEST"
+    "id": "MESSAGES.VIDEO_REQUEST"
   },
   {
     "values": {
@@ -751,7 +751,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VIDEO_STARTED"
+    "id": "MESSAGES.VIDEO_STARTED"
   },
   {
     "values": {
@@ -765,7 +765,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VIEW"
+    "id": "MESSAGES.VIEW"
   },
   {
     "values": {
@@ -779,7 +779,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VOICE_ENDED"
+    "id": "MESSAGES.VOICE_ENDED"
   },
   {
     "values": {
@@ -793,7 +793,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VOICE_ONLY"
+    "id": "MESSAGES.VOICE_ONLY"
   },
   {
     "values": {
@@ -807,7 +807,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VOICE_REJECTED"
+    "id": "MESSAGES.VOICE_REJECTED"
   },
   {
     "values": {
@@ -821,7 +821,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VOICE_REQUEST"
+    "id": "MESSAGES.VOICE_REQUEST"
   },
   {
     "values": {
@@ -835,7 +835,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.MESSAGES.VOICE_STARTED"
+    "id": "MESSAGES.VOICE_STARTED"
   },
   {
     "values": {
@@ -849,7 +849,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.NOCHAT.END_MSG"
+    "id": "NOCHAT.END_MSG"
   },
   {
     "values": {
@@ -863,7 +863,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.NOCHAT.MAIN_MSG"
+    "id": "NOCHAT.MAIN_MSG"
   },
   {
     "values": {
@@ -877,7 +877,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.NOCHAT.SUB_MSG"
+    "id": "NOCHAT.SUB_MSG"
   },
   {
     "values": {
@@ -891,7 +891,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.QUEUE.INFO"
+    "id": "QUEUE.INFO"
   },
   {
     "values": {
@@ -905,7 +905,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.QUEUE.WELCOME"
+    "id": "QUEUE.WELCOME"
   },
   {
     "values": {
@@ -919,7 +919,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.EMAIL"
+    "id": "SURVEY.EMAIL"
   },
   {
     "values": {
@@ -933,7 +933,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.EMAIL_PH"
+    "id": "SURVEY.EMAIL_PH"
   },
   {
     "values": {
@@ -947,7 +947,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.FEEDBACK"
+    "id": "SURVEY.FEEDBACK"
   },
   {
     "values": {
@@ -961,7 +961,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.RATING"
+    "id": "SURVEY.RATING"
   },
   {
     "values": {
@@ -975,7 +975,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.SUBMIT"
+    "id": "SURVEY.SUBMIT"
   },
   {
     "values": {
@@ -989,7 +989,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.TITLE"
+    "id": "SURVEY.TITLE"
   },
   {
     "values": {
@@ -1003,7 +1003,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.SURVEY.WELCOME"
+    "id": "SURVEY.WELCOME"
   },
   {
     "values": {
@@ -1017,7 +1017,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOOLS.UPLOADER.BROWSE"
+    "id": "TOOLS.UPLOADER.BROWSE"
   },
   {
     "values": {
@@ -1031,7 +1031,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOOLS.UPLOADER.FILE_DESCRIPTION"
+    "id": "TOOLS.UPLOADER.FILE_DESCRIPTION"
   },
   {
     "values": {
@@ -1045,7 +1045,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOOLS.UPLOADER.MAX_FILESIZE"
+    "id": "TOOLS.UPLOADER.MAX_FILESIZE"
   },
   {
     "values": {
@@ -1059,7 +1059,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOOLS.UPLOADER.SELECT_PLACEHOLDER"
+    "id": "TOOLS.UPLOADER.SELECT_PLACEHOLDER"
   },
   {
     "values": {
@@ -1073,7 +1073,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOOLS.UPLOADER.SEND"
+    "id": "TOOLS.UPLOADER.SEND"
   },
   {
     "values": {
@@ -1087,7 +1087,7 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOPBAR.ISWRITING"
+    "id": "TOPBAR.ISWRITING"
   },
   {
     "values": {
@@ -1101,6 +1101,2386 @@
       }
     },
     "description": "",
-    "id": "WEB_INT.vvc-app.TOPBAR.WELCOME"
+    "id": "TOPBAR.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Application Logo",
+        "state": "new"
+      },
+      "it": {
+        "value": "Logo Applicazione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.COMPANY_LOGO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Theme",
+        "state": "new"
+      },
+      "it": {
+        "value": "Tema",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.THEME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Allow the user to send file to the agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di inviare un file all'operatore.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ALLOW_FILE_TRANSFER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Allow the visitor to display emoji panel.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ALLOW_EMOJI"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Primary color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Primary color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.PRIMARY_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color of the application",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato come colore principale dell'applicazione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.PRIMARY_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Warning color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Warning color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.WARNING_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Color used for critical messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato per mostrare messaggi critici",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.WARNING_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Success color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Success color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SUCCESS_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Color used for successful messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore utilizzato per sottolineare le operazioni andate a buon fine",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SUCCESS_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Dark color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dark color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.DARK_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color for texts",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato come colore principale per i testi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.DARK_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Light color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Light color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.LIGHT_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color for backgrounds",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato come colore principale per i background",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.LIGHT_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Modal closure",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiusura Modal",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CLOSEMODAL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Initial Data",
+        "state": "new"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.INITIAL_DATA"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Media Tools",
+        "state": "new"
+      },
+      "it": {
+        "value": "Strumenti multimediali",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MEDIATOOLS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MESSAGES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "No chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.NOCHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Queue",
+        "state": "new"
+      },
+      "it": {
+        "value": "Coda",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.QUEUE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey",
+        "state": "new"
+      },
+      "it": {
+        "value": "Questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.SURVEY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Tools",
+        "state": "new"
+      },
+      "it": {
+        "value": "Strumenti",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TOOLS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Topbar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Topbar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TOPBAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Placeholder of chat textarea",
+        "state": "new"
+      },
+      "it": {
+        "value": "Placeholder del box di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CHAT.TEXTAREA_PLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat closure message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di chiusura chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CLOSEMODAL.CLOSE_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Cancel text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo \"annulla\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CLOSEMODAL.NO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Confirm text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo \"conferma\" ",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CLOSEMODAL.YES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di benvenuto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.INITIAL_DATA.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hide chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone chiusura chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.CHAT_HIDE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone mostra chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.CHAT_SHOW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Expand chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone espandi chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.EXPAND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hangup text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone chiudi chiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.HANGUP"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Minimize chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone minimizza chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.MINIMIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Mute text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone abilita muto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.MUTE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Unmute text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone disabilita muto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.UNMUTE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video off text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone spegni video",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.VIDEO_OFF"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video on text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone abilita video",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.VIDEO_ON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Accept message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Accetta",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.ACCEPT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Compile message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Compila",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.COMPILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Continue message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Continua",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.CONTINUE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Decline message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Rifiuta",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.DECLINE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Download message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Scarica",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.DOWNLOAD"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "File uploading message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio durante invio file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FILE_SENDING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Form filling message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio durante compilazione modulo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_PENDING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Information request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio richiesta di informazioni",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_REQUEST"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Error message for form sending",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per modulo inviato correttamente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_SUBMIT_SUCCESS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Success message for form sending",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per errore invio modulo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_SUBMIT_ERROR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent left message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per contatto chiuso da operatore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video connection error message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per videochiamata fallita",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VIDEO_FAILED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video rejected by the agent message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per videochiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VIDEO_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call connection error message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per errore di connessione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VOICE_FAILED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call rejected by the agent message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per chiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VOICE_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Retry message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"riprova\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.RETRY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"invia\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.SEND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Contact transferred message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per contatto trasferito",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.TRANSFERRED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call terminated message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per fine videochiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_ENDED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call rejected message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per videochiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per richiesta di videochiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_REQUEST"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The video call is started message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per inizio videochiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_STARTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "View message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"vedi\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIEW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice call terminated message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per fine chiamata voce",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_ENDED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Only voice message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"solo voce\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_ONLY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call rejected message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per chiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice call request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per richiesta di chiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_REQUEST"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The voice call is started message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per inizio chiamata voce",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_STARTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Contact terminated message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per contatto terminato",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.NOCHAT.END_MSG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio di benvenuto principale",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.NOCHAT.MAIN_MSG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Secondary message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio di benvenuto secondario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.NOCHAT.SUB_MSG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Queue message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo del messaggio mostrato all'utente in coda",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.QUEUE.INFO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio di benvenuto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.QUEUE.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Email text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo email",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.EMAIL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Email placeholder text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo placeholder email",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.EMAIL_PH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Feedback request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo richiesta feedback",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.FEEDBACK"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "rating request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo richiesta rating",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.RATING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Submit button text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone invio modulo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.SUBMIT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey title text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo titolo questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.TITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio benvenuto del questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Browse button text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone \"sfoglia\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.BROWSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "File description text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Etichetta \"Descrizione file\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.FILE_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Max filesize label",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo \"dimensione massima\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.MAX_FILESIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "File select placeholder",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo selezione file da caricare",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.SELECT_PLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send button text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone \"invia\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.SEND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent is writing text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo di avviso quando l'agente sta scrivendo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOPBAR.ISWRITING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di benvenuto in chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOPBAR.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Application Logo",
+        "state": "new"
+      },
+      "it": {
+        "value": "Logo Applicazione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.COMPANY_LOGO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Theme",
+        "state": "new"
+      },
+      "it": {
+        "value": "Tema",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.THEME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Allow the user to send file to the agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di inviare un file all'operatore.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ALLOW_FILE_TRANSFER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Allow the visitor to display emoji panel.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ALLOW_EMOJI"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Primary color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Primary color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.PRIMARY_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color of the application",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato come colore principale dell'applicazione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.PRIMARY_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Warning color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Warning color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.WARNING_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Color used for critical messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato per mostrare messaggi critici",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.WARNING_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Success color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Success color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SUCCESS_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Color used for successful messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore utilizzato per sottolineare le operazioni andate a buon fine",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SUCCESS_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Dark color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dark color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.DARK_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color for texts",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato come colore principale per i testi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.DARK_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Light color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Light color",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.LIGHT_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color for backgrounds",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore usato come colore principale per i background",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.LIGHT_COLOR_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Modal closure",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiusura Modal",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CLOSEMODAL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Initial Data",
+        "state": "new"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.INITIAL_DATA"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Media Tools",
+        "state": "new"
+      },
+      "it": {
+        "value": "Strumenti multimediali",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MEDIATOOLS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MESSAGES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "No chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.NOCHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Queue",
+        "state": "new"
+      },
+      "it": {
+        "value": "Coda",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.QUEUE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey",
+        "state": "new"
+      },
+      "it": {
+        "value": "Questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.SURVEY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Tools",
+        "state": "new"
+      },
+      "it": {
+        "value": "Strumenti",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TOOLS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Topbar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Topbar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TOPBAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Placeholder of chat textarea",
+        "state": "new"
+      },
+      "it": {
+        "value": "Placeholder del box di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CHAT.TEXTAREA_PLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat closure message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di chiusura chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CLOSEMODAL.CLOSE_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Cancel text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo \"annulla\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CLOSEMODAL.NO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Confirm text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo \"conferma\" ",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.CLOSEMODAL.YES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di benvenuto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.INITIAL_DATA.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hide chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone chiusura chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.CHAT_HIDE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone mostra chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.CHAT_SHOW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Expand chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone espandi chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.EXPAND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hangup text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone chiudi chiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.HANGUP"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Minimize chat text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone minimizza chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.MINIMIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Mute text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone abilita muto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.MUTE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Unmute text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone disabilita muto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.UNMUTE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video off text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone spegni video",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.VIDEO_OFF"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video on text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone abilita video",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MEDIATOOLS.VIDEO_ON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Accept message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Accetta",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.ACCEPT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Compile message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Compila",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.COMPILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Continue message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Continua",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.CONTINUE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Decline message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Rifiuta",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.DECLINE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Download message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio Scarica",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.DOWNLOAD"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "File uploading message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio durante invio file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FILE_SENDING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Form filling message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio durante compilazione modulo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_PENDING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Information request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio richiesta di informazioni",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_REQUEST"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Error message for form sending",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per modulo inviato correttamente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_SUBMIT_SUCCESS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Success message for form sending",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per errore invio modulo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.FORM_SUBMIT_ERROR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent left message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per contatto chiuso da operatore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video connection error message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per videochiamata fallita",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VIDEO_FAILED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video rejected by the agent message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per videochiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VIDEO_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call connection error message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per errore di connessione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VOICE_FAILED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call rejected by the agent message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per chiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.REMOTE_VOICE_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Retry message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"riprova\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.RETRY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"invia\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.SEND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Contact transferred message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per contatto trasferito",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.TRANSFERRED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call terminated message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per fine videochiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_ENDED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call rejected message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per videochiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per richiesta di videochiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_REQUEST"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The video call is started message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per inizio videochiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIDEO_STARTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "View message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"vedi\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VIEW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice call terminated message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per fine chiamata voce",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_ENDED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Only voice message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per \"solo voce\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_ONLY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call rejected message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per chiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice call request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per richiesta di chiamata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_REQUEST"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The voice call is started message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per inizio chiamata voce",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.MESSAGES.VOICE_STARTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Contact terminated message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio per contatto terminato",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.NOCHAT.END_MSG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio di benvenuto principale",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.NOCHAT.MAIN_MSG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Secondary message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio di benvenuto secondario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.NOCHAT.SUB_MSG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Queue message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo del messaggio mostrato all'utente in coda",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.QUEUE.INFO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio di benvenuto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.QUEUE.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Email text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo email",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.EMAIL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Email placeholder text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo placeholder email",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.EMAIL_PH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Feedback request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo richiesta feedback",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.FEEDBACK"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "rating request message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo richiesta rating",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.RATING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Submit button text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone invio modulo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.SUBMIT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey title text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo titolo questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.TITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo messaggio benvenuto del questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SURVEY.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Browse button text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone \"sfoglia\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.BROWSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "File description text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Etichetta \"Descrizione file\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.FILE_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Max filesize label",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo \"dimensione massima\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.MAX_FILESIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "File select placeholder",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo selezione file da caricare",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.SELECT_PLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send button text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo bottone \"invia\"",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOOLS.UPLOADER.SEND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent is writing text",
+        "state": "new"
+      },
+      "it": {
+        "value": "Testo di avviso quando l'agente sta scrivendo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOPBAR.ISWRITING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di benvenuto in chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TOPBAR.WELCOME"
   }
 ]
