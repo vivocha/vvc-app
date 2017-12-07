@@ -75,83 +75,83 @@
   "stringIds": [
     "DESCRIPTION",
     "NAME",
-    "CHAT.TEXTAREA_PLACEHOLDER",
-    "CLOSEMODAL.CLOSE_MESSAGE",
-    "CLOSEMODAL.NO",
-    "CLOSEMODAL.YES",
-    "DC.ASK_FOR_COMPILE",
-    "DC.COMPILE",
-    "DC.D1.DATA_DESCRIPTION",
-    "DC.D1.DATA_TITLE",
-    "DC.D1.EMAIL",
-    "DC.D1.EMAIL_PH",
-    "DC.D1.NAME",
-    "DC.D1.NAME_PH",
-    "DC.D1.SUBMIT",
-    "DC.D1.SURNAME",
-    "DC.D1.SURNAME_PH",
-    "DC.EMAIL_ERR",
-    "DC.INCOMING_HEAD",
-    "DC.REQUIRED_ERR",
-    "DC.REQUIRED_LEGEND",
-    "DC.VIEW",
-    "INITIAL_DATA.WELCOME",
-    "MEDIATOOLS.CHAT_HIDE",
-    "MEDIATOOLS.CHAT_SHOW",
-    "MEDIATOOLS.EXPAND",
-    "MEDIATOOLS.HANGUP",
-    "MEDIATOOLS.MINIMIZE",
-    "MEDIATOOLS.MUTE",
-    "MEDIATOOLS.UNMUTE",
-    "MEDIATOOLS.VIDEO_OFF",
-    "MEDIATOOLS.VIDEO_ON",
-    "MESSAGES.ACCEPT",
-    "MESSAGES.COMPILE",
-    "MESSAGES.CONTINUE",
-    "MESSAGES.DECLINE",
-    "MESSAGES.DOWNLOAD",
-    "MESSAGES.FILE_SENDING",
-    "MESSAGES.FORM_PENDING",
-    "MESSAGES.FORM_REQUEST",
-    "MESSAGES.FORM_SUBMIT_ERROR",
-    "MESSAGES.FORM_SUBMIT_SUCCESS",
-    "MESSAGES.REMOTE_CLOSE",
-    "MESSAGES.REMOTE_VIDEO_FAILED",
-    "MESSAGES.REMOTE_VIDEO_REJECTED",
-    "MESSAGES.REMOTE_VOICE_FAILED",
-    "MESSAGES.REMOTE_VOICE_REJECTED",
-    "MESSAGES.RETRY",
-    "MESSAGES.SEND",
-    "MESSAGES.TRANSFERRED",
-    "MESSAGES.VIDEO_ENDED",
-    "MESSAGES.VIDEO_REJECTED",
-    "MESSAGES.VIDEO_REQUEST",
-    "MESSAGES.VIDEO_STARTED",
-    "MESSAGES.VIEW",
-    "MESSAGES.VOICE_ENDED",
-    "MESSAGES.VOICE_ONLY",
-    "MESSAGES.VOICE_REJECTED",
-    "MESSAGES.VOICE_REQUEST",
-    "MESSAGES.VOICE_STARTED",
-    "NOCHAT.END_MSG",
-    "NOCHAT.MAIN_MSG",
-    "NOCHAT.SUB_MSG",
-    "QUEUE.INFO",
-    "QUEUE.WELCOME",
-    "SURVEY.EMAIL",
-    "SURVEY.EMAIL_PH",
-    "SURVEY.FEEDBACK",
-    "SURVEY.RATING",
-    "SURVEY.SUBMIT",
-    "SURVEY.TITLE",
-    "SURVEY.WELCOME",
-    "TOOLS.UPLOADER.BROWSE",
-    "TOOLS.UPLOADER.FILE_DESCRIPTION",
-    "TOOLS.UPLOADER.MAX_FILESIZE",
-    "TOOLS.UPLOADER.SELECT_PLACEHOLDER",
-    "TOOLS.UPLOADER.SEND",
-    "TOPBAR.ISWRITING",
-    "TOPBAR.WELCOME",
+    "STRINGS.CHAT.TEXTAREA_PLACEHOLDER",
+    "STRINGS.CLOSEMODAL.CLOSE_MESSAGE",
+    "STRINGS.CLOSEMODAL.NO",
+    "STRINGS.CLOSEMODAL.YES",
+    "STRINGS.DC.ASK_FOR_COMPILE",
+    "STRINGS.DC.COMPILE",
+    "STRINGS.DC.D1.DATA_DESCRIPTION",
+    "STRINGS.DC.D1.DATA_TITLE",
+    "STRINGS.DC.D1.EMAIL",
+    "STRINGS.DC.D1.EMAIL_PH",
+    "STRINGS.DC.D1.NAME",
+    "STRINGS.DC.D1.NAME_PH",
+    "STRINGS.DC.D1.SUBMIT",
+    "STRINGS.DC.D1.SURNAME",
+    "STRINGS.DC.D1.SURNAME_PH",
+    "STRINGS.DC.EMAIL_ERR",
+    "STRINGS.DC.INCOMING_HEAD",
+    "STRINGS.DC.REQUIRED_ERR",
+    "STRINGS.DC.REQUIRED_LEGEND",
+    "STRINGS.DC.VIEW",
+    "STRINGS.INITIAL_DATA.WELCOME",
+    "STRINGS.MEDIATOOLS.CHAT_HIDE",
+    "STRINGS.MEDIATOOLS.CHAT_SHOW",
+    "STRINGS.MEDIATOOLS.EXPAND",
+    "STRINGS.MEDIATOOLS.HANGUP",
+    "STRINGS.MEDIATOOLS.MINIMIZE",
+    "STRINGS.MEDIATOOLS.MUTE",
+    "STRINGS.MEDIATOOLS.UNMUTE",
+    "STRINGS.MEDIATOOLS.VIDEO_OFF",
+    "STRINGS.MEDIATOOLS.VIDEO_ON",
+    "STRINGS.MESSAGES.ACCEPT",
+    "STRINGS.MESSAGES.COMPILE",
+    "STRINGS.MESSAGES.CONTINUE",
+    "STRINGS.MESSAGES.DECLINE",
+    "STRINGS.MESSAGES.DOWNLOAD",
+    "STRINGS.MESSAGES.FILE_SENDING",
+    "STRINGS.MESSAGES.FORM_PENDING",
+    "STRINGS.MESSAGES.FORM_REQUEST",
+    "STRINGS.MESSAGES.FORM_SUBMIT_ERROR",
+    "STRINGS.MESSAGES.FORM_SUBMIT_SUCCESS",
+    "STRINGS.MESSAGES.REMOTE_CLOSE",
+    "STRINGS.MESSAGES.REMOTE_VIDEO_FAILED",
+    "STRINGS.MESSAGES.REMOTE_VIDEO_REJECTED",
+    "STRINGS.MESSAGES.REMOTE_VOICE_FAILED",
+    "STRINGS.MESSAGES.REMOTE_VOICE_REJECTED",
+    "STRINGS.MESSAGES.RETRY",
+    "STRINGS.MESSAGES.SEND",
+    "STRINGS.MESSAGES.TRANSFERRED",
+    "STRINGS.MESSAGES.VIDEO_ENDED",
+    "STRINGS.MESSAGES.VIDEO_REJECTED",
+    "STRINGS.MESSAGES.VIDEO_REQUEST",
+    "STRINGS.MESSAGES.VIDEO_STARTED",
+    "STRINGS.MESSAGES.VIEW",
+    "STRINGS.MESSAGES.VOICE_ENDED",
+    "STRINGS.MESSAGES.VOICE_ONLY",
+    "STRINGS.MESSAGES.VOICE_REJECTED",
+    "STRINGS.MESSAGES.VOICE_REQUEST",
+    "STRINGS.MESSAGES.VOICE_STARTED",
+    "STRINGS.NOCHAT.END_MSG",
+    "STRINGS.NOCHAT.MAIN_MSG",
+    "STRINGS.NOCHAT.SUB_MSG",
+    "STRINGS.QUEUE.INFO",
+    "STRINGS.QUEUE.WELCOME",
+    "STRINGS.SURVEY.EMAIL",
+    "STRINGS.SURVEY.EMAIL_PH",
+    "STRINGS.SURVEY.FEEDBACK",
+    "STRINGS.SURVEY.RATING",
+    "STRINGS.SURVEY.SUBMIT",
+    "STRINGS.SURVEY.TITLE",
+    "STRINGS.SURVEY.WELCOME",
+    "STRINGS.TOOLS.UPLOADER.BROWSE",
+    "STRINGS.TOOLS.UPLOADER.FILE_DESCRIPTION",
+    "STRINGS.TOOLS.UPLOADER.MAX_FILESIZE",
+    "STRINGS.TOOLS.UPLOADER.SELECT_PLACEHOLDER",
+    "STRINGS.TOOLS.UPLOADER.SEND",
+    "STRINGS.TOPBAR.ISWRITING",
+    "STRINGS.TOPBAR.WELCOME",
     "VARIABLES.COMPANY_LOGO",
     "VARIABLES.THEME",
     "VARIABLES.ALLOW_FILE_TRANSFER",
@@ -243,288 +243,288 @@
       "path": "main.html",
       "hash": "1b2399d2c36eccae127600c15b882b70c872586b9bb919ef396766d1a2fd25ec",
       "id": "_/widgets/vvc-app/main.html",
-      "type": "text/html",
-      "size": 694
+      "size": 694,
+      "type": "text/html"
     },
     {
       "path": "main.scss",
       "hash": "ea04a99aa40ee390ac32c3c291d412a55229b58eee0e60b2d33ab9f55ab45cdd",
       "id": "_/widgets/vvc-app/main.scss",
-      "type": "text/x-scss",
-      "size": 68
+      "size": 68,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/acct-img.png",
       "hash": "457b5a634ec9bfe5a491c8520f119213b3602acc5fe26d0ad1dfd9ed30c13bc4",
       "id": "_/widgets/vvc-app/assets/acct-img.png",
-      "type": "image/png",
-      "size": 1658
+      "size": 1658,
+      "type": "image/png"
     },
     {
       "path": "assets/animate.css",
       "hash": "80aa5497ff31b2c001474d9432f0853c11d200a67ea4f9852ab2f7ee2fedd9c2",
       "id": "_/widgets/vvc-app/assets/animate.css",
-      "type": "text/css",
-      "size": 23848
+      "size": 23848,
+      "type": "text/css"
     },
     {
       "path": "assets/beep.mp3",
       "hash": "618839bcb54283989bcf2d80553f94d41cad171036eec9c650ce6069e4a7b195",
       "id": "_/widgets/vvc-app/assets/beep.mp3",
-      "type": "audio/mpeg",
-      "size": 3866
+      "size": 3866,
+      "type": "audio/mpeg"
     },
     {
       "path": "assets/scss/buttons.scss",
       "hash": "ecfa7139b287b8c10af5ffd77afcb89f9ee5942a5e46e89140d140720d5e7457",
       "id": "_/widgets/vvc-app/assets/scss/buttons.scss",
-      "type": "text/x-scss",
-      "size": 154
+      "size": 154,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/chatbox.scss",
       "hash": "5be5224721b5834eb7be1a8be1f4cf31072f8f3285dc67433a19e2b650cf2bb3",
       "id": "_/widgets/vvc-app/assets/scss/chatbox.scss",
-      "type": "text/x-scss",
-      "size": 3603
+      "size": 3603,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/engage-popup.scss",
       "hash": "004fc89db90085e1ba860e7194e2dc7a36fbe7131e4491e2cfd17fa3a75ca325",
       "id": "_/widgets/vvc-app/assets/scss/engage-popup.scss",
-      "type": "text/x-scss",
-      "size": 108011
+      "size": 108011,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/engage.scss",
       "hash": "c7a34b700fd76dffc1a799c56e1781135c814676c5b7d8122b1120d0d8e1fb0f",
       "id": "_/widgets/vvc-app/assets/scss/engage.scss",
-      "type": "text/x-scss",
-      "size": 48
+      "size": 48,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/forms.scss",
       "hash": "bd80c9bdeaa570da8891fd54405d2ade63e5bd8ce8170dd4defc104fc75a11d7",
       "id": "_/widgets/vvc-app/assets/scss/forms.scss",
-      "type": "text/x-scss",
-      "size": 3004
+      "size": 3004,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/iframe-container.scss",
       "hash": "39f6c384faecb30a9295891223c679845ee6bc29cbee9efbd46139291e759e8c",
       "id": "_/widgets/vvc-app/assets/scss/iframe-container.scss",
-      "type": "text/x-scss",
-      "size": 217
+      "size": 217,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/iframe-inner-container.scss",
       "hash": "b9e9dcfd709da8ccba23eb559d04221f9b244868ec2303a7e92a3e0849a73776",
       "id": "_/widgets/vvc-app/assets/scss/iframe-inner-container.scss",
-      "type": "text/x-scss",
-      "size": 1304
+      "size": 1304,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/initialdata.scss",
       "hash": "3fece4cef3d994fb1cf321f55e207f2876851169e8ee4a5a0c3613c5d350d74f",
       "id": "_/widgets/vvc-app/assets/scss/initialdata.scss",
-      "type": "text/x-scss",
-      "size": 625
+      "size": 625,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/keyframes.scss",
       "hash": "09329f44e0beca8a67c30d8ca133b929535e58c4b0c3936034fdf8494af793d3",
       "id": "_/widgets/vvc-app/assets/scss/keyframes.scss",
-      "type": "text/x-scss",
-      "size": 1657
+      "size": 1657,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/media.scss",
       "hash": "86431dc22027bae236fe4f99f458ccbd0e13eb582d15d005964435d90ca636aa",
       "id": "_/widgets/vvc-app/assets/scss/media.scss",
-      "type": "text/x-scss",
-      "size": 2089
+      "size": 2089,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/messages.scss",
       "hash": "cf4fdbbebc875fde4b14bfc40963b17e6780b4dab3776db024338e33b7e05cdf",
       "id": "_/widgets/vvc-app/assets/scss/messages.scss",
-      "type": "text/x-scss",
-      "size": 2881
+      "size": 2881,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/minimized.scss",
       "hash": "05b67acf2d9bc697c3bbbd9f2b4c26516f2d879827e8bdfb5a26da9c6893bb88",
       "id": "_/widgets/vvc-app/assets/scss/minimized.scss",
-      "type": "text/x-scss",
-      "size": 373
+      "size": 373,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/mixins.scss",
       "hash": "63139e9c391ec6a490613bdf70926a119296ca87997c8870386222cac6d3e906",
       "id": "_/widgets/vvc-app/assets/scss/mixins.scss",
-      "type": "text/x-scss",
-      "size": 8868
+      "size": 8868,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/palette_old.scss",
       "hash": "4ded798ab8664c196cb024e070b6a3fe2c32996e1757019d7b48e7bb24f04939",
       "id": "_/widgets/vvc-app/assets/scss/palette_old.scss",
-      "type": "text/x-scss",
-      "size": 1215
+      "size": 1215,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/popup-variables.scss",
       "hash": "fca89fb392df26c5713f4e86d604a1169fe3220f962c49f7067dc085d90861c3",
       "id": "_/widgets/vvc-app/assets/scss/popup-variables.scss",
-      "type": "text/x-scss",
-      "size": 90
+      "size": 90,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/queue.scss",
       "hash": "cc0138964e0bd24791db812d2f88130013ecaf723745b5f6aab16a969815fcd6",
       "id": "_/widgets/vvc-app/assets/scss/queue.scss",
-      "type": "text/x-scss",
-      "size": 1781
+      "size": 1781,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/survey.scss",
       "hash": "860bbccf3d51d95190a94b7088b4dc6851c811b56b3b3d9cb98ec420f9134593",
       "id": "_/widgets/vvc-app/assets/scss/survey.scss",
-      "type": "text/x-scss",
-      "size": 750
+      "size": 750,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/theme.scss",
       "hash": "5c75c6aded1e2e8dbffd921e704aa1b6ddbd4695ff6db2e06d260f2772985f89",
       "id": "_/widgets/vvc-app/assets/scss/theme.scss",
-      "type": "text/x-scss",
-      "size": 2569
+      "size": 2569,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/topbar.scss",
       "hash": "feb83ccf266d1f6907b23881247b768c1959bb634f80093f8ec6278148da6c1d",
       "id": "_/widgets/vvc-app/assets/scss/topbar.scss",
-      "type": "text/x-scss",
-      "size": 1742
+      "size": 1742,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/variables.scss",
       "hash": "26102566bf5fa69e6817a9becf748ec0fb0b81408efde951c8159ab753e72207",
       "id": "_/widgets/vvc-app/assets/scss/variables.scss",
-      "type": "text/x-scss",
-      "size": 390
+      "size": 390,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/vivicon/Read Me.txt",
       "hash": "ef408de5a2bcfc444553ce81ad1da8a31c0c41f95dde8377ae71edf7c86c2900",
       "id": "_/widgets/vvc-app/assets/vivicon/Read Me.txt",
-      "type": "text/plain",
-      "size": 748
+      "size": 748,
+      "type": "text/plain"
     },
     {
       "path": "assets/vivicon/demo-files/demo.css",
       "hash": "9e66886ce305efe4a3c6e1fc0ab810d7235534fe6b3947a8c06a8bd38c91541b",
       "id": "_/widgets/vvc-app/assets/vivicon/demo-files/demo.css",
-      "type": "text/css",
-      "size": 1996
+      "size": 1996,
+      "type": "text/css"
     },
     {
       "path": "assets/vivicon/demo-files/demo.js",
       "hash": "0be96f5313e7a51e9bc30b7587ee149b54c7cb36a1959842875ed7454677b367",
       "id": "_/widgets/vvc-app/assets/vivicon/demo-files/demo.js",
-      "type": "application/javascript",
-      "size": 996
+      "size": 996,
+      "type": "application/javascript"
     },
     {
       "path": "assets/vivicon/demo.html",
       "hash": "5c807c2c270bedb007b59e8fdca8984a75ff1916e3c31b6020982ed4c58f09ac",
       "id": "_/widgets/vvc-app/assets/vivicon/demo.html",
-      "type": "text/html",
-      "size": 26931
+      "size": 26931,
+      "type": "text/html"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.eot",
       "hash": "fb77f49309bae0a600b1f12cc4e05d426c30f22257164b39f99bc3729fa1a730",
       "id": "_/widgets/vvc-app/assets/vivicon/fonts/vvc-widget-ico.eot",
-      "type": "application/vnd.ms-fontobject",
-      "size": 7644
+      "size": 7644,
+      "type": "application/vnd.ms-fontobject"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.svg",
       "hash": "753018d410fef41a4c714973c424cb37365af5d85351cc886a831114a40f7d86",
       "id": "_/widgets/vvc-app/assets/vivicon/fonts/vvc-widget-ico.svg",
-      "type": "image/svg+xml",
-      "size": 25387
+      "size": 25387,
+      "type": "image/svg+xml"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.ttf",
       "hash": "840ccbb546b228ce092ef18427099ef053f1acab3fa5f5202bf123e3aafcbff2",
       "id": "_/widgets/vvc-app/assets/vivicon/fonts/vvc-widget-ico.ttf",
-      "type": "application/x-font-ttf",
-      "size": 7452
+      "size": 7452,
+      "type": "application/x-font-ttf"
     },
     {
       "path": "assets/vivicon/fonts/vvc-widget-ico.woff",
       "hash": "0f6280ab22e4cd4c39f37f5777a87501615f3fa70217f75434a534c7b1c82861",
       "id": "_/widgets/vvc-app/assets/vivicon/fonts/vvc-widget-ico.woff",
-      "type": "application/font-woff",
-      "size": 7528
+      "size": 7528,
+      "type": "application/font-woff"
     },
     {
       "path": "assets/vivicon/ie7/ie7.css",
       "hash": "4e6c894a8f1fd5d65baff1b23ec5fb91d07a314d7a73193e423609139f9ab3d3",
       "id": "_/widgets/vvc-app/assets/vivicon/ie7/ie7.css",
-      "type": "text/css",
-      "size": 3366
+      "size": 3366,
+      "type": "text/css"
     },
     {
       "path": "assets/vivicon/ie7/ie7.js",
       "hash": "53dcaf90ff397b3f2d6013017732e483f09eef25d6bed802b75f7a5dab99e07f",
       "id": "_/widgets/vvc-app/assets/vivicon/ie7/ie7.js",
-      "type": "application/javascript",
-      "size": 1709
+      "size": 1709,
+      "type": "application/javascript"
     },
     {
       "path": "assets/vivicon/selection.json",
       "hash": "8a9037d5cf2e39f85059a8fcc5c918d9b92751898416d776f1cffa918f1b8646",
       "id": "_/widgets/vvc-app/assets/vivicon/selection.json",
-      "type": "application/json",
-      "size": 40779
+      "size": 40779,
+      "type": "application/json"
     },
     {
       "path": "assets/vivicon/style.css",
       "hash": "e35e31e631519347281cf8318abe3fc5a5f3a6251bd706ffa28734b27bd61ab4",
       "id": "_/widgets/vvc-app/assets/vivicon/style.css",
-      "type": "text/css",
-      "size": 2262
+      "size": 2262,
+      "type": "text/css"
     },
     {
       "path": "assets/vivicon/style.scss",
       "hash": "7691d37ab1febd5c79c8d80135a88d8c1158113f1b2bdbdb44adad485172df69",
       "id": "_/widgets/vvc-app/assets/vivicon/style.scss",
-      "type": "text/x-scss",
-      "size": 2907
+      "size": 2907,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/vivicon/variables.scss",
       "hash": "5c46723376b385f3b28dfdafac535ade1ddc5ad5fc7319f41262ba16b05f56ca",
       "id": "_/widgets/vvc-app/assets/vivicon/variables.scss",
-      "type": "text/x-scss",
-      "size": 787
+      "size": 787,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/xl8/en.json",
       "hash": "6a090f336f4a0687735607b60a3ab99013f1141b5ef6638bc8bd0b3fca2ef91b",
       "id": "_/widgets/vvc-app/assets/xl8/en.json",
-      "type": "application/json",
-      "size": 3421
+      "size": 3421,
+      "type": "application/json"
     },
     {
       "path": "assets/xl8/it.json",
       "hash": "a64da4cf16812bdb46c5dc5aed909019189aadf6c6bcd74dedecc91542fc3d8f",
       "id": "_/widgets/vvc-app/assets/xl8/it.json",
-      "type": "application/json",
-      "size": 3628
+      "size": 3628,
+      "type": "application/json"
     }
   ],
   "htmlId": "_/widgets/vvc-app/main.html",
