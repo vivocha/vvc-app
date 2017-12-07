@@ -37,7 +37,7 @@
       }
     },
     "description": "",
-    "id": "CHAT.TEXTAREA_PLACEHOLDER"
+    "id": "STRINGS.CHAT.TEXTAREA_PLACEHOLDER"
   },
   {
     "values": {
@@ -51,7 +51,7 @@
       }
     },
     "description": "",
-    "id": "CLOSEMODAL.CLOSE_MESSAGE"
+    "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE"
   },
   {
     "values": {
@@ -65,7 +65,7 @@
       }
     },
     "description": "",
-    "id": "CLOSEMODAL.NO"
+    "id": "STRINGS.CLOSEMODAL.NO"
   },
   {
     "values": {
@@ -79,7 +79,7 @@
       }
     },
     "description": "",
-    "id": "CLOSEMODAL.YES"
+    "id": "STRINGS.CLOSEMODAL.YES"
   },
   {
     "values": {
@@ -93,7 +93,7 @@
       }
     },
     "description": "",
-    "id": "DC.ASK_FOR_COMPILE"
+    "id": "STRINGS.DC.ASK_FOR_COMPILE"
   },
   {
     "values": {
@@ -107,7 +107,7 @@
       }
     },
     "description": "",
-    "id": "DC.COMPILE"
+    "id": "STRINGS.DC.COMPILE"
   },
   {
     "values": {
@@ -121,7 +121,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.DATA_DESCRIPTION"
+    "id": "STRINGS.DC.D1.DATA_DESCRIPTION"
   },
   {
     "values": {
@@ -135,7 +135,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.DATA_TITLE"
+    "id": "STRINGS.DC.D1.DATA_TITLE"
   },
   {
     "values": {
@@ -149,7 +149,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.EMAIL"
+    "id": "STRINGS.DC.D1.EMAIL"
   },
   {
     "values": {
@@ -163,7 +163,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.EMAIL_PH"
+    "id": "STRINGS.DC.D1.EMAIL_PH"
   },
   {
     "values": {
@@ -177,7 +177,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.NAME"
+    "id": "STRINGS.DC.D1.NAME"
   },
   {
     "values": {
@@ -191,7 +191,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.NAME_PH"
+    "id": "STRINGS.DC.D1.NAME_PH"
   },
   {
     "values": {
@@ -205,7 +205,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.SUBMIT"
+    "id": "STRINGS.DC.D1.SUBMIT"
   },
   {
     "values": {
@@ -219,7 +219,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.SURNAME"
+    "id": "STRINGS.DC.D1.SURNAME"
   },
   {
     "values": {
@@ -233,7 +233,7 @@
       }
     },
     "description": "",
-    "id": "DC.D1.SURNAME_PH"
+    "id": "STRINGS.DC.D1.SURNAME_PH"
   },
   {
     "values": {
@@ -247,7 +247,7 @@
       }
     },
     "description": "",
-    "id": "DC.EMAIL_ERR"
+    "id": "STRINGS.DC.EMAIL_ERR"
   },
   {
     "values": {
@@ -261,7 +261,7 @@
       }
     },
     "description": "",
-    "id": "DC.INCOMING_HEAD"
+    "id": "STRINGS.DC.INCOMING_HEAD"
   },
   {
     "values": {
@@ -275,7 +275,7 @@
       }
     },
     "description": "",
-    "id": "DC.REQUIRED_ERR"
+    "id": "STRINGS.DC.REQUIRED_ERR"
   },
   {
     "values": {
@@ -289,7 +289,7 @@
       }
     },
     "description": "",
-    "id": "DC.REQUIRED_LEGEND"
+    "id": "STRINGS.DC.REQUIRED_LEGEND"
   },
   {
     "values": {
@@ -303,7 +303,7 @@
       }
     },
     "description": "",
-    "id": "DC.VIEW"
+    "id": "STRINGS.DC.VIEW"
   },
   {
     "values": {
@@ -317,7 +317,7 @@
       }
     },
     "description": "",
-    "id": "INITIAL_DATA.WELCOME"
+    "id": "STRINGS.INITIAL_DATA.WELCOME"
   },
   {
     "values": {
@@ -331,7 +331,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.CHAT_HIDE"
+    "id": "STRINGS.MEDIATOOLS.CHAT_HIDE"
   },
   {
     "values": {
@@ -345,7 +345,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.CHAT_SHOW"
+    "id": "STRINGS.MEDIATOOLS.CHAT_SHOW"
   },
   {
     "values": {
@@ -359,7 +359,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.EXPAND"
+    "id": "STRINGS.MEDIATOOLS.EXPAND"
   },
   {
     "values": {
@@ -373,7 +373,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.HANGUP"
+    "id": "STRINGS.MEDIATOOLS.HANGUP"
   },
   {
     "values": {
@@ -387,7 +387,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.MINIMIZE"
+    "id": "STRINGS.MEDIATOOLS.MINIMIZE"
   },
   {
     "values": {
@@ -401,7 +401,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.MUTE"
+    "id": "STRINGS.MEDIATOOLS.MUTE"
   },
   {
     "values": {
@@ -415,7 +415,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.UNMUTE"
+    "id": "STRINGS.MEDIATOOLS.UNMUTE"
   },
   {
     "values": {
@@ -429,7 +429,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.VIDEO_OFF"
+    "id": "STRINGS.MEDIATOOLS.VIDEO_OFF"
   },
   {
     "values": {
@@ -443,7 +443,7 @@
       }
     },
     "description": "",
-    "id": "MEDIATOOLS.VIDEO_ON"
+    "id": "STRINGS.MEDIATOOLS.VIDEO_ON"
   },
   {
     "values": {
@@ -457,7 +457,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.ACCEPT"
+    "id": "STRINGS.MESSAGES.ACCEPT"
   },
   {
     "values": {
@@ -471,7 +471,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.COMPILE"
+    "id": "STRINGS.MESSAGES.COMPILE"
   },
   {
     "values": {
@@ -485,7 +485,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.CONTINUE"
+    "id": "STRINGS.MESSAGES.CONTINUE"
   },
   {
     "values": {
@@ -499,7 +499,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.DECLINE"
+    "id": "STRINGS.MESSAGES.DECLINE"
   },
   {
     "values": {
@@ -513,7 +513,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.DOWNLOAD"
+    "id": "STRINGS.MESSAGES.DOWNLOAD"
   },
   {
     "values": {
@@ -527,7 +527,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.FILE_SENDING"
+    "id": "STRINGS.MESSAGES.FILE_SENDING"
   },
   {
     "values": {
@@ -541,7 +541,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.FORM_PENDING"
+    "id": "STRINGS.MESSAGES.FORM_PENDING"
   },
   {
     "values": {
@@ -555,7 +555,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.FORM_REQUEST"
+    "id": "STRINGS.MESSAGES.FORM_REQUEST"
   },
   {
     "values": {
@@ -569,7 +569,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.FORM_SUBMIT_ERROR"
+    "id": "STRINGS.MESSAGES.FORM_SUBMIT_ERROR"
   },
   {
     "values": {
@@ -583,7 +583,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.FORM_SUBMIT_SUCCESS"
+    "id": "STRINGS.MESSAGES.FORM_SUBMIT_SUCCESS"
   },
   {
     "values": {
@@ -597,7 +597,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.REMOTE_CLOSE"
+    "id": "STRINGS.MESSAGES.REMOTE_CLOSE"
   },
   {
     "values": {
@@ -611,7 +611,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.REMOTE_VIDEO_FAILED"
+    "id": "STRINGS.MESSAGES.REMOTE_VIDEO_FAILED"
   },
   {
     "values": {
@@ -625,7 +625,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.REMOTE_VIDEO_REJECTED"
+    "id": "STRINGS.MESSAGES.REMOTE_VIDEO_REJECTED"
   },
   {
     "values": {
@@ -639,7 +639,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.REMOTE_VOICE_FAILED"
+    "id": "STRINGS.MESSAGES.REMOTE_VOICE_FAILED"
   },
   {
     "values": {
@@ -653,7 +653,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.REMOTE_VOICE_REJECTED"
+    "id": "STRINGS.MESSAGES.REMOTE_VOICE_REJECTED"
   },
   {
     "values": {
@@ -667,7 +667,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.RETRY"
+    "id": "STRINGS.MESSAGES.RETRY"
   },
   {
     "values": {
@@ -681,7 +681,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.SEND"
+    "id": "STRINGS.MESSAGES.SEND"
   },
   {
     "values": {
@@ -695,7 +695,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.TRANSFERRED"
+    "id": "STRINGS.MESSAGES.TRANSFERRED"
   },
   {
     "values": {
@@ -709,7 +709,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VIDEO_ENDED"
+    "id": "STRINGS.MESSAGES.VIDEO_ENDED"
   },
   {
     "values": {
@@ -723,7 +723,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VIDEO_REJECTED"
+    "id": "STRINGS.MESSAGES.VIDEO_REJECTED"
   },
   {
     "values": {
@@ -737,7 +737,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VIDEO_REQUEST"
+    "id": "STRINGS.MESSAGES.VIDEO_REQUEST"
   },
   {
     "values": {
@@ -751,7 +751,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VIDEO_STARTED"
+    "id": "STRINGS.MESSAGES.VIDEO_STARTED"
   },
   {
     "values": {
@@ -765,7 +765,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VIEW"
+    "id": "STRINGS.MESSAGES.VIEW"
   },
   {
     "values": {
@@ -779,7 +779,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VOICE_ENDED"
+    "id": "STRINGS.MESSAGES.VOICE_ENDED"
   },
   {
     "values": {
@@ -793,7 +793,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VOICE_ONLY"
+    "id": "STRINGS.MESSAGES.VOICE_ONLY"
   },
   {
     "values": {
@@ -807,7 +807,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VOICE_REJECTED"
+    "id": "STRINGS.MESSAGES.VOICE_REJECTED"
   },
   {
     "values": {
@@ -821,7 +821,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VOICE_REQUEST"
+    "id": "STRINGS.MESSAGES.VOICE_REQUEST"
   },
   {
     "values": {
@@ -835,7 +835,7 @@
       }
     },
     "description": "",
-    "id": "MESSAGES.VOICE_STARTED"
+    "id": "STRINGS.MESSAGES.VOICE_STARTED"
   },
   {
     "values": {
@@ -849,7 +849,7 @@
       }
     },
     "description": "",
-    "id": "NOCHAT.END_MSG"
+    "id": "STRINGS.NOCHAT.END_MSG"
   },
   {
     "values": {
@@ -863,7 +863,7 @@
       }
     },
     "description": "",
-    "id": "NOCHAT.MAIN_MSG"
+    "id": "STRINGS.NOCHAT.MAIN_MSG"
   },
   {
     "values": {
@@ -877,7 +877,7 @@
       }
     },
     "description": "",
-    "id": "NOCHAT.SUB_MSG"
+    "id": "STRINGS.NOCHAT.SUB_MSG"
   },
   {
     "values": {
@@ -891,7 +891,7 @@
       }
     },
     "description": "",
-    "id": "QUEUE.INFO"
+    "id": "STRINGS.QUEUE.INFO"
   },
   {
     "values": {
@@ -905,7 +905,7 @@
       }
     },
     "description": "",
-    "id": "QUEUE.WELCOME"
+    "id": "STRINGS.QUEUE.WELCOME"
   },
   {
     "values": {
@@ -919,7 +919,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.EMAIL"
+    "id": "STRINGS.SURVEY.EMAIL"
   },
   {
     "values": {
@@ -933,7 +933,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.EMAIL_PH"
+    "id": "STRINGS.SURVEY.EMAIL_PH"
   },
   {
     "values": {
@@ -947,7 +947,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.FEEDBACK"
+    "id": "STRINGS.SURVEY.FEEDBACK"
   },
   {
     "values": {
@@ -961,7 +961,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.RATING"
+    "id": "STRINGS.SURVEY.RATING"
   },
   {
     "values": {
@@ -975,7 +975,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.SUBMIT"
+    "id": "STRINGS.SURVEY.SUBMIT"
   },
   {
     "values": {
@@ -989,7 +989,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.TITLE"
+    "id": "STRINGS.SURVEY.TITLE"
   },
   {
     "values": {
@@ -1003,7 +1003,7 @@
       }
     },
     "description": "",
-    "id": "SURVEY.WELCOME"
+    "id": "STRINGS.SURVEY.WELCOME"
   },
   {
     "values": {
@@ -1017,7 +1017,7 @@
       }
     },
     "description": "",
-    "id": "TOOLS.UPLOADER.BROWSE"
+    "id": "STRINGS.TOOLS.UPLOADER.BROWSE"
   },
   {
     "values": {
@@ -1031,7 +1031,7 @@
       }
     },
     "description": "",
-    "id": "TOOLS.UPLOADER.FILE_DESCRIPTION"
+    "id": "STRINGS.TOOLS.UPLOADER.FILE_DESCRIPTION"
   },
   {
     "values": {
@@ -1045,7 +1045,7 @@
       }
     },
     "description": "",
-    "id": "TOOLS.UPLOADER.MAX_FILESIZE"
+    "id": "STRINGS.TOOLS.UPLOADER.MAX_FILESIZE"
   },
   {
     "values": {
@@ -1059,7 +1059,7 @@
       }
     },
     "description": "",
-    "id": "TOOLS.UPLOADER.SELECT_PLACEHOLDER"
+    "id": "STRINGS.TOOLS.UPLOADER.SELECT_PLACEHOLDER"
   },
   {
     "values": {
@@ -1073,7 +1073,7 @@
       }
     },
     "description": "",
-    "id": "TOOLS.UPLOADER.SEND"
+    "id": "STRINGS.TOOLS.UPLOADER.SEND"
   },
   {
     "values": {
@@ -1087,7 +1087,7 @@
       }
     },
     "description": "",
-    "id": "TOPBAR.ISWRITING"
+    "id": "STRINGS.TOPBAR.ISWRITING"
   },
   {
     "values": {
@@ -1101,7 +1101,7 @@
       }
     },
     "description": "",
-    "id": "TOPBAR.WELCOME"
+    "id": "STRINGS.TOPBAR.WELCOME"
   },
   {
     "values": {
