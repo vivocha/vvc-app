@@ -5,13 +5,14 @@ import {VvcDataCollectionService} from './dc.service';
 
 import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/contact';
 import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
-import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
+import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
+import { VivochaVisitorContact } from '@vivocha/client-visitor-core/dist/contact.d';
 
 @Injectable()
 export class VvcContactService {
   vivocha;
   agentInfo;
-  contact;
+  contact: VivochaVisitorContact;
   isWritingTimer;
   isWritingTimeout = 30000;
   agentRequestCallback;
@@ -74,7 +75,7 @@ export class VvcContactService {
       if (mediaOffer['Video']) {
         mediaOffer['Video'].tx = 'required';
       }
-      this.contact.offerMedia(mediaOffer);
+      return this.contact.offerMedia(mediaOffer);
     });
   }
   askForUpgrade(media, startedWith) {
