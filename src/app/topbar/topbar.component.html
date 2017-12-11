@@ -30,5 +30,5 @@
 
 <div class="info-msg">
   <span class="agent-name" *ngIf="!state.isAgentWriting">{{ getAgentName() }}</span>
-  <span class="msg" *ngIf="state.isAgentWriting"><i class="vvc-chat"></i> {{ 'TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span>
+  <span class="msg" *ngIf="state.isAgentWriting"><i class="vvc-chat"></i> {{ 'STRINGS.TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span>
 </div>

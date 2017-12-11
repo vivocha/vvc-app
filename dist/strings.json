@@ -546,6 +546,90 @@
   {
     "values": {
       "en": {
+        "value": "Would you like to start a form sharing session?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vuoi accettare la richiesta di condivisione moduli?",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Form sharing session accepted",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sessione di condivisione moduli accettata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_ACCEPTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Form sharing session rejected",
+        "state": "new"
+      },
+      "it": {
+        "value": "Hai rifiutato la sessione di condivisione moduli",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Would you like to start a co-browsing session?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vuoi accettare la richiesta di navigazione assistita?",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Co-browsing session accepted",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sessione di navigazione assistita accettata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Co-browsing session rejected",
+        "state": "new"
+      },
+      "it": {
+        "value": "Hai rifiutato la sessione di navigazione assistita",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Retry",
         "state": "new"
       },

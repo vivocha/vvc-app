@@ -472,7 +472,7 @@ export class VvcContactService {
         accept: true,
         decline: false,
         type: 'incoming-request',
-        text: 'STRINGS.MESSAGES.REQUEST_' + message
+        text: 'STRINGS.MESSAGES.' + message.toUpperCase()
       }
     });
   }
