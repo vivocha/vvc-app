@@ -1,8 +1,10 @@
 <video class="big-video"
+       autoplay
        *ngIf="state?.video_rx"
        [src]="trustedSrc(state.video_rx.url)"></video>
 
 <video class="small-video"
+       autoplay
        muted
        *ngIf="state?.video_tx"
        [src]="trustedSrc(state.video_tx.url)"></video>
