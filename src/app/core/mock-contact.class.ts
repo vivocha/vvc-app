@@ -1,5 +1,5 @@
 export class MockContact {
-
+    ready = Promise.resolve(this);
     callbacks = {};
     contact = { transcript: [] };
     failOnAttach = false;

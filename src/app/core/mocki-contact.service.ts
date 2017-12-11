@@ -15,7 +15,7 @@ export class VvcMockContactService extends VvcContactService {
         console.log('creating contact from mock service');
         this.dispatch({type: 'INITIAL_OFFER', payload: conf.initial_offer});
         setTimeout( () => {
-            this.contact = new MockContact(conf);
+            this.contact = new MockContact(conf) as any;
             this.mapContact();
 
             this.contact.emit('joined', [mockAgent]);
