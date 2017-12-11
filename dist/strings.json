@@ -140,6 +140,20 @@
   {
     "values": {
       "en": {
+        "value": "Next",
+        "state": "new"
+      },
+      "it": {
+        "value": "Avanti",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.NEXT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
         "value": "this field is required",
         "state": "new"
       },

@@ -129,7 +129,7 @@ export class VvcContactService {
             media: this.callStartedWith,
             state: 'closed',
             extraClass: 'rejected',
-            text: 'MESSAGES.REMOTE_' + this.callStartedWith + '_' + reason
+            text: 'STRINGS.MESSAGES.REMOTE_' + this.callStartedWith + '_' + reason
           }
         });
       });
@@ -210,7 +210,7 @@ export class VvcContactService {
         media: media,
         state: 'closed',
         extraClass: 'rejected',
-        text: 'MESSAGES.' + media + '_REJECTED'
+        text: 'STRINGS.MESSAGES.' + media + '_REJECTED'
       }
     });
   }
@@ -256,7 +256,7 @@ export class VvcContactService {
           media: this.callStartedWith,
           state: 'closed',
           extraClass: 'accepted',
-          text: 'MESSAGES.' + this.callStartedWith + '_STARTED'
+          text: 'STRINGS.MESSAGES.' + this.callStartedWith + '_STARTED'
         }
       });
     }
@@ -269,7 +269,7 @@ export class VvcContactService {
           media: this.callStartedWith,
           state: 'closed',
           extraClass: 'accepted',
-          text: 'MESSAGES.' + this.callStartedWith + '_ENDED'
+          text: 'STRINGS.MESSAGES.' + this.callStartedWith + '_ENDED'
         }
       });
     }
@@ -420,7 +420,7 @@ export class VvcContactService {
           media: 'TRANSFER',
           state: 'closed',
           extraClass: 'rejected',
-          text: 'MESSAGES.TRANSFERRED'
+          text: 'STRINGS.MESSAGES.TRANSFERRED'
         }
       });
     });
@@ -470,7 +470,7 @@ export class VvcContactService {
         accept: true,
         decline: false,
         type: 'incoming-request',
-        text: 'MESSAGES.REQUEST_' + message
+        text: 'STRINGS.MESSAGES.REQUEST_' + message
       }
     });
   }
@@ -500,7 +500,7 @@ export class VvcContactService {
           decline: confirmation.media,
           state: 'open',
           type: 'incoming-offer',
-          text: 'MESSAGES.' + confirmation.media + '_REQUEST'
+          text: 'STRINGS.MESSAGES.' + confirmation.media + '_REQUEST'
         }
       });
     } else {
@@ -565,7 +565,7 @@ export class VvcContactService {
         media: 'AGENTCLOSE',
         state: 'closed',
         extraClass: 'rejected',
-        text: 'MESSAGES.REMOTE_CLOSE'
+        text: 'STRINGS.MESSAGES.REMOTE_CLOSE'
       }
     });
     this.dispatch({

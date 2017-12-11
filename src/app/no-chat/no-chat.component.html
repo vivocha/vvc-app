@@ -5,11 +5,11 @@
     </div>
 
     <div *ngIf="!state.closed">
-      <div class="main-msg" [innerHTML]="'NOCHAT.MAIN_MSG' | translate"></div>
-      <div class="sub-msg"  [innerHTML]="'NOCHAT.SUB_MSG' | translate"></div>
+      <div class="main-msg" [innerHTML]="'STRINGS.NOCHAT.MAIN_MSG' | translate"></div>
+      <div class="sub-msg"  [innerHTML]="'STRINGS.NOCHAT.SUB_MSG' | translate"></div>
     </div>
 
-    <div *ngIf="state.closed" [innerHTML]="'NOCHAT.END_MSG' | translate"></div>
+    <div *ngIf="state.closed" [innerHTML]="'STRINGS.NOCHAT.END_MSG' | translate"></div>
 
 
   </div>
