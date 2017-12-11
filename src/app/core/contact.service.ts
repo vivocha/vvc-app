@@ -166,7 +166,9 @@ export class VvcContactService {
     this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
   }
   closeContact() {
-    this.contact.leave();
+    if (this.contact) {
+      this.contact.leave();
+    }
   }
   createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
     this.callStartedWith = context.requestedMedia.toUpperCase();
