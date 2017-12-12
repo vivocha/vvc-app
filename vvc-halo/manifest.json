@@ -13,7 +13,7 @@
     {
       "id": "haloImg",
       "nameId": "VARIABLES.HALO_IMG",
-      "defaultValue": "/assets/logo.png",
+      "defaultValue": "./assets/logo.png",
       "type": "file"
     }
   ],
@@ -27,17 +27,17 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "b6dd6b1bb8058e905adc7cab802e5845fc5aa11a92ed1916cfe25a10d8ef4cb1",
+      "hash": "fafbb98fd6c30cfa4a2e2d2ac871b8b4b09616f4a0e005314a9c4b6453ce93f6",
       "id": "_/widgets/vvc-halo/main.html",
-      "size": 1188,
+      "size": 1195,
       "type": "text/html"
     },
     {
       "path": "main.scss",
       "hash": "eebee95d92d521e10db411b13f13aced6c895b2dc9125dda67bdfdffc8253594",
       "id": "_/widgets/vvc-halo/main.scss",
-      "type": "text/x-scss",
-      "size": 2953
+      "size": 2953,
+      "type": "text/x-scss"
     },
     {
       "path": "thumbnail.png",
