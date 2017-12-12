@@ -158,7 +158,7 @@
         "state": "new"
       },
       "it": {
-        "value": "campo obblogatorio",
+        "value": "campo obbligatorio",
         "state": "new"
       }
     },
@@ -168,7 +168,7 @@
   {
     "values": {
       "en": {
-        "value": "* required fiels",
+        "value": "* required fields",
         "state": "new"
       },
       "it": {

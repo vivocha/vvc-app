@@ -290,8 +290,8 @@
       "path": "assets/main.bundle.js.map",
       "hash": "823b58cef2a52d102c8b47dc1f4333ebb0805c139e172407c96c2818d58e1991",
       "id": "_/widgets/vvc-app/assets/main.bundle.js.map",
-      "type": "application/json",
-      "size": 187270
+      "size": 187270,
+      "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
