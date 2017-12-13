@@ -85,7 +85,8 @@
     <vvc-survey id="vvc-survey"
                 *ngIf="widgetState?.showSurvey"
                 [dataCollection]="widgetState?.dataCollections[widgetState.surveyId]"
-                (close)="closeOnSurvey()"></vvc-survey>
+                (datasubmit)="closeOnSurvey($event)"
+                (close)="closeInteraction()"></vvc-survey>
 
   </div>
 

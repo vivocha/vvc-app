@@ -46,7 +46,7 @@
           <div>{{ elem.name | translate }}</div>
           <div class="vvc-bar-rating" [ngClass]="'vvc-bar-rating-'+elem.style">
             <ng-container *ngFor="let i of elem.ratings">
-              <input type="radio" id="{{elem.id}}{{i}}" [formControlName]="elem.id" [value]="i" /><label for="{{elem.id}}{{i}}"></label>
+              <input type="radio" id="{{elem.id}}{{i}}" [formControlName]="elem.id" [value]="i.toString()" /><label for="{{elem.id}}{{i}}"></label>
             </ng-container>
           </div>
         </div>

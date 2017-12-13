@@ -7,15 +7,12 @@ import {DataCollection} from '../core/core.interfaces';
 })
 export class SurveyComponent implements OnInit {
 
-  public sent = false;
   @Input() dataCollection: DataCollection;
+  @Output() datasubmit = new EventEmitter();
   @Output() close = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
-  }
-  sendSurvey(formValue) {
-    this.sent = true;
   }
 
 }

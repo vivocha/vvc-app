@@ -115,7 +115,12 @@ export class AppComponent implements OnInit {
   closeContact() {
     this.cserv.closeContact();
     if (this.widgetState.hasSurvey) {
-      this.cserv.showSurvey(this.widgetState.surveyId, this.widgetState.askForTranscript);
+      this.zone.run( () => {
+        this.store.dispatch({
+          type: 'SHOW_SURVEY',
+          payload: this.context.survey
+        });
+      });
     } else {
       // TODO hide modal if present
       // TODO show message
@@ -130,11 +135,15 @@ export class AppComponent implements OnInit {
       this.vivocha.pageRequest('interactionClosed', 'destroy');
     }
   }
-  closeOnSurvey() {
-    // TODO show message
-    this.closeInteraction();
+  closeOnSurvey(data) {
+    const survey = objectToDataCollection(data, this.context.survey.id, this.context.survey);
+    this.cserv.contact.storeSurvey(survey, (err, res) => {
+      // TODO show message
+      this.closeInteraction();
+    });
   }
   createContactCreationOptions(context: InteractionContext) {
+    this.context = context;
     this.contactOptions = {
       campaignId: context.campaign.id,
       version: context.campaign.version,

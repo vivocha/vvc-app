@@ -30,8 +30,10 @@ import { DraggableDirective } from './draggable.directive';
 
 
 export function createTranslateLoader(http: HttpClient) {
-  const url = location.origin + location.pathname.replace(/\/([\w]{2}|[\w-]{5})\/main\.html/, '/');
-  return new TranslateHttpLoader(http, url, '/strings.json');
+  const reg = /(\/a\/\w+\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
+  const res = location.pathname.match(reg);
+  const url = location.origin + res[1];
+  return new TranslateHttpLoader(http, url, res[2] + '/strings.json');
 }
 
 @NgModule({

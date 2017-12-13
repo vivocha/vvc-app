@@ -17,7 +17,7 @@
 
     <div class="card-inner" *ngIf="!sent">
       <vvc-form [dc]="dataCollection"
-                (submit)="sendSurvey($event)"></vvc-form>
+                (submit)="datasubmit.emit($event)"></vvc-form>
     </div>
 
     <div class="card-inner" *ngIf="sent">
