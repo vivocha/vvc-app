@@ -1,11 +1,9 @@
-import {EventEmitter, Injectable, NgZone} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {AppState, VvcWidgetState, VvcOffer} from './core.interfaces';
-import {VvcDataCollectionService} from './dc.service';
+import { EventEmitter, Injectable, NgZone } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState, VvcWidgetState, VvcOffer } from './core.interfaces';
 
 import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/contact';
 import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
-import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 import { VivochaVisitorContact } from '@vivocha/client-visitor-core/dist/contact.d';
 
 @Injectable()
@@ -23,9 +21,7 @@ export class VvcContactService {
   voiceStart = new EventEmitter();
   widgetState: VvcWidgetState;
 
-  constructor( private store: Store<AppState>,
-               private zone: NgZone,
-               private dcserv: VvcDataCollectionService) {
+  constructor(private store: Store<AppState>, private zone: NgZone) {
     store.subscribe( state => {
       this.widgetState = <VvcWidgetState> state.widgetState;
     });
@@ -284,20 +280,17 @@ export class VvcContactService {
     }
     return mediaObject;
   }
-  fetchDataCollection(id) {
-    this.dcserv.loadDataCollection(id).then( dc => {
-      this.dispatch({ type: 'ADD_DATA_COLLECTION', payload: dc });
-      this.dispatch({
-        type: 'NEW_MESSAGE',
-        payload: {
-          id: new Date().getTime(),
-          type: 'incoming-request',
-          media: 'DC',
-          state: 'open',
-          dataCollectionId: dc.id
-          // dataCollection: dc
-        }
-      });
+  fetchDataCollection(dc) {
+    this.dispatch({ type: 'ADD_DATA_COLLECTION', payload: dc });
+    this.dispatch({
+      type: 'NEW_MESSAGE',
+      payload: {
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: 'DC',
+        state: 'open',
+        dataCollection: dc
+      }
     });
   }
   hangup() {
@@ -349,11 +342,8 @@ export class VvcContactService {
   }
   mapContact() {
     console.log('mapping stuff on the contact');
-    this.contact.on('action', (action_code, args) => {
-      if (action_code === 'DataCollection') {
-        // this.showDataCollection(args[0].id);
-        this.fetchDataCollection(args[0].id);
-      }
+    this.contact.on('DataCollection', (dataCollection, cb) => {
+      this.fetchDataCollection(dataCollection);
     });
     this.contact.on('agentrequest', (message, cb) => {
       this.onAgentRequest(message, cb);
@@ -603,12 +593,6 @@ export class VvcContactService {
       this.dispatch({type: 'REM_IS_WRITING'});
       this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
     }, this.isWritingTimeout);
-  }
-  showSurvey(surveyId, askForTranscript) {
-    this.dcserv.loadSurvey(surveyId, askForTranscript).then( (dc) => {
-      this.dispatch({ type: 'SHOW_SURVEY', payload: dc});
-    });
-
   }
   syncDataCollection(dataCollection) {
     this.dispatch({

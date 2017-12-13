@@ -1,15 +1,11 @@
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import {DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
-import {WindowRef} from './core/window.service';
-import {VvcContactService} from './core/contact.service';
-import {VvcDataCollectionService} from './core/dc.service';
-import {Store} from '@ngrx/store';
-import {CoreModule} from './core/core.module';
-import {TranslateModule} from '@ngx-translate/core';
-import {VvcWidgetState} from './core/core.interfaces';
-import {By} from '@angular/platform-browser';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CoreModule } from './core/core.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { VvcWidgetState } from './core/core.interfaces';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
 

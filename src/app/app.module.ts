@@ -1,22 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule, Http} from '@angular/http';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import {CoreModule} from './core/core.module';
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
-import {ChatMessageComponent} from './chat-message/chat-message.component';
-import {IncomingMessageComponent} from './incoming-message/incoming-message.component';
+import { ChatMessageComponent } from './chat-message/chat-message.component';
+import { IncomingMessageComponent } from './incoming-message/incoming-message.component';
 import { MediaToolsComponent } from './media-tools/media-tools.component';
 import { ChatBoxComponent } from './chat-box/chat-box.component';
 import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { EmojiSelectorComponent } from './emoji-selector/emoji-selector.component';
-import {Angular2AutoScroll} from './autoscroll.directive';
+import { Angular2AutoScroll } from './autoscroll.directive';
 import { CloseModalComponent } from './close-modal/close-modal.component';
-import {QueueComponent} from './queue/queue.component';
+import { QueueComponent } from './queue/queue.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
 import { SurveyComponent } from './survey/survey.component';
 import { InitialDataComponent } from './initial-data/initial-data.component';
@@ -29,7 +29,7 @@ import { VideoThumbsComponent } from './video-thumbs/video-thumbs.component';
 import { DraggableDirective } from './draggable.directive';
 
 
-export function createTranslateLoader(http: Http) {
+export function createTranslateLoader(http: HttpClient) {
   const url = location.origin + location.pathname.replace(/\/([\w]{2}|[\w-]{5})\/main\.html/, '/');
   return new TranslateHttpLoader(http, url, '/strings.json');
 }
@@ -65,11 +65,11 @@ export function createTranslateLoader(http: Http) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [Http]
+        deps: [HttpClient]
       }
     }),
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     CoreModule
   ],
   providers: [

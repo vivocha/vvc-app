@@ -4,31 +4,26 @@ import {WindowRef} from './window.service';
 import {VvcContactService} from './contact.service';
 import {ActionReducer, combineReducers, StoreModule} from '@ngrx/store';
 import {widgetState, messages} from './core.reducers';
-import {VvcDataCollectionService} from './dc.service';
 import {VvcWidgetState} from './core.interfaces';
-
 
 const reducers = {widgetState, messages};
 
-const productionReducer: ActionReducer<VvcWidgetState> = combineReducers(reducers);
+const productionReducer: ActionReducer<{widgetState: VvcWidgetState, messages: any[]}> = combineReducers(reducers);
 
 export function reducer(state: any, action: any) {
-
-    return productionReducer(state, action);
-
+  return productionReducer(state, action);
 }
 
 @NgModule({
   imports: [
     CommonModule,
     // StoreModule.provideStore({widgetState, messages})
-    StoreModule.provideStore(reducer)
+    StoreModule.forRoot(reducers, {})
   ],
   declarations: [],
   providers: [
     WindowRef,
-    { provide: VvcContactService, useClass: VvcContactService },
-    { provide: VvcDataCollectionService, useClass: VvcDataCollectionService}
+    { provide: VvcContactService, useClass: VvcContactService }
   ]
 })
 export class CoreModule { }
