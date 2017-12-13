@@ -58,6 +58,13 @@ export class FormComponent implements OnInit {
       if (elem.format === 'email') {
         validators.push(Validators.email);
       }
+      if (elem.format === 'rating') {
+        elem.ratings = [];
+        for (let i = elem.max || 1; i >= (elem.min || 1); i--) {
+          elem.ratings.push(i);
+        }
+      }
+
       controllers[elem.id] = [(this.dc.dataValue && this.dc.dataValue[elem.id]) || elem.value || '', validators];
     }
     this.form = this.fb.group(controllers);
