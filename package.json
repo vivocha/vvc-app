@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction",
-  "version": "5.9.23",
+  "version": "5.9.24",
   "description": "Vivocha Interaction Application",
   "scripts": {
     "clean": "[ ! -d ./dist/assets ] || rm -rf dist/assets/*",
