@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
   }
   abandon() {
     // TODO show message
+    this.vivocha.pageRequest('interactionClosed', 'close'); this.closeToDestroy = true; // TODO remove once the message is placed
     this.closeInteraction();
   }
   acceptIncomingRequest(evt, msg) {
@@ -124,6 +125,7 @@ export class AppComponent implements OnInit {
     } else {
       // TODO hide modal if present
       // TODO show message
+      this.vivocha.pageRequest('interactionClosed', 'close'); this.closeToDestroy = true; // TODO remove once the message is placed
     }
     this.closeInteraction();
   }
@@ -248,6 +250,7 @@ export class AppComponent implements OnInit {
   leave() {
     this.cserv.closeContact();
     // TODO show message
+    this.vivocha.pageRequest('interactionClosed', 'close'); this.closeToDestroy = true; // TODO remove once the message is placed
     this.closeInteraction();
   }
   minimize(state) {
