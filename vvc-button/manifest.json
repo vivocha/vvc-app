@@ -14,7 +14,7 @@
       "id": "selector",
       "nameId": "VARIABLES.SELECTOR",
       "required": true,
-      "defaultValue": "#vvcPlaceholder",
+      "defaultValue": "#vvc-placeholder",
       "type": "string"
     }
   ],
@@ -30,17 +30,25 @@
       "path": "main.html",
       "hash": "02cfc8b7c447c7d6a7a2b83f087b361b4b61e47c7575e77a2a8d182dd947fcfc",
       "id": "_/widgets/vvc-button/main.html",
-      "type": "text/html",
-      "size": 139
+      "size": 139,
+      "type": "text/html"
     },
     {
       "path": "main.scss",
       "hash": "186a6388e25ded8a5add15081465800fde12d7b07a922b2615098848c6a942aa",
       "id": "_/widgets/vvc-button/main.scss",
-      "type": "text/x-scss",
-      "size": 443
+      "size": 443,
+      "type": "text/x-scss"
+    },
+    {
+      "path": "thumbnail.png",
+      "hash": "69aa65534956948d2099135693e359483523290831151be9f91ef5a2fbef8723",
+      "id": "_/widgets/vvc-button/thumbnail.png",
+      "type": "image/png",
+      "size": 2868
     }
   ],
   "htmlId": "_/widgets/vvc-button/main.html",
-  "scssId": "_/widgets/vvc-button/main.scss"
+  "scssId": "_/widgets/vvc-button/main.scss",
+  "thumbnailId": "_/widgets/vvc-button/thumbnail.png"
 }
