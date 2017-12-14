@@ -1087,7 +1087,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.COMPANY_LOGO"
+    "id": "META.VARIABLES.COMPANY_LOGO"
   },
   {
     "values": {
@@ -1101,7 +1101,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.THEME"
+    "id": "META.VARIABLES.THEME"
   },
   {
     "values": {
@@ -1115,7 +1115,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.ALLOW_FILE_TRANSFER"
+    "id": "META.VARIABLES.ALLOW_FILE_TRANSFER"
   },
   {
     "values": {
@@ -1129,7 +1129,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.ALLOW_EMOJI"
+    "id": "META.VARIABLES.ALLOW_EMOJI"
   },
   {
     "values": {
@@ -1143,7 +1143,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.PRIMARY_COLOR"
+    "id": "META.VARIABLES.PRIMARY_COLOR"
   },
   {
     "values": {
@@ -1157,7 +1157,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.PRIMARY_COLOR_DESCRIPTION"
+    "id": "META.VARIABLES.PRIMARY_COLOR_DESCRIPTION"
   },
   {
     "values": {
@@ -1171,7 +1171,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.WARNING_COLOR"
+    "id": "META.VARIABLES.WARNING_COLOR"
   },
   {
     "values": {
@@ -1185,7 +1185,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.WARNING_COLOR_DESCRIPTION"
+    "id": "META.VARIABLES.WARNING_COLOR_DESCRIPTION"
   },
   {
     "values": {
@@ -1199,7 +1199,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.SUCCESS_COLOR"
+    "id": "META.VARIABLES.SUCCESS_COLOR"
   },
   {
     "values": {
@@ -1213,7 +1213,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.SUCCESS_COLOR_DESCRIPTION"
+    "id": "META.VARIABLES.SUCCESS_COLOR_DESCRIPTION"
   },
   {
     "values": {
@@ -1227,7 +1227,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.DARK_COLOR"
+    "id": "META.VARIABLES.DARK_COLOR"
   },
   {
     "values": {
@@ -1241,7 +1241,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.DARK_COLOR_DESCRIPTION"
+    "id": "META.VARIABLES.DARK_COLOR_DESCRIPTION"
   },
   {
     "values": {
@@ -1255,7 +1255,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.LIGHT_COLOR"
+    "id": "META.VARIABLES.LIGHT_COLOR"
   },
   {
     "values": {
@@ -1269,7 +1269,7 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.LIGHT_COLOR_DESCRIPTION"
+    "id": "META.VARIABLES.LIGHT_COLOR_DESCRIPTION"
   },
   {
     "values": {
