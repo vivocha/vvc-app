@@ -28,17 +28,17 @@
     },
     {
       "path": "main.scss",
-      "hash": "186a6388e25ded8a5add15081465800fde12d7b07a922b2615098848c6a942aa",
+      "hash": "f17ab00a7ae0efe1d76241f2609730f569234f391bfc7223dcbd742c2c28f6a3",
       "id": "_/widgets/vvc-button/main.scss",
-      "size": 443,
+      "size": 418,
       "type": "text/x-scss"
     },
     {
       "path": "thumbnail.png",
       "hash": "69aa65534956948d2099135693e359483523290831151be9f91ef5a2fbef8723",
       "id": "_/widgets/vvc-button/thumbnail.png",
-      "type": "image/png",
-      "size": 2868
+      "size": 2868,
+      "type": "image/png"
     }
   ],
   "htmlId": "_/widgets/vvc-button/main.html",
