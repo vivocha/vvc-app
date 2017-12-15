@@ -1,0 +1,64 @@
+{
+  "id": "vvc-image",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "buttonBgImage",
+      "nameId": "VARIABLES.IMAGE_URL",
+      "defaultValue": "./assets/engage.png",
+      "type": "file"
+    },
+    {
+      "id": "buttonBgColor",
+      "nameId": "VARIABLES.IMAGE_BG",
+      "placeholderId": "VARIABLES.IMAGE_BG_PH",
+      "required": true,
+      "defaultValue": "#ffffff",
+      "type": "color"
+    }
+  ],
+  "stringIds": [
+    "DESCRIPTION",
+    "NAME",
+    "VARIABLES.IMAGE_BG",
+    "VARIABLES.IMAGE_BG_PH",
+    "VARIABLES.IMAGE_URL",
+    "VARIABLES.IMAGE_WIDTH",
+    "VARIABLES.IMAGE_WIDTH_PH",
+    "VARIABLES.IMAGE_HEIGHT",
+    "VARIABLES.IMAGE_HEIGHT_PH"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "bc3d80c6e90d0a6b7f54619e654c65be75ee1c2ce73d214f583e948f3d796d6f",
+      "id": "_/widgets/vvc-image/main.html",
+      "size": 58,
+      "type": "text/html"
+    },
+    {
+      "path": "main.scss",
+      "hash": "b44ae00f63c8f3d7407baf105aec904863a87e78f18f012aea8e6a19043ce509",
+      "id": "_/widgets/vvc-image/main.scss",
+      "size": 448,
+      "type": "text/x-scss"
+    },
+    {
+      "path": "thumbnail.png",
+      "hash": "c848635ff04fd37450a57eecbb3e13797fbd7b95f2f60af6489cd2d4cfbef56b",
+      "id": "_/widgets/vvc-image/thumbnail.png",
+      "size": 1013,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/engage.png",
+      "hash": "66f241ff4645a91177f22bd5c6b8064653f4f0a1c299d664d1486665a4805c4f",
+      "id": "_/widgets/vvc-image/assets/engage.png",
+      "size": 13875,
+      "type": "image/png"
+    }
+  ],
+  "htmlId": "_/widgets/vvc-image/main.html",
+  "scssId": "_/widgets/vvc-image/main.scss",
+  "thumbnailId": "_/widgets/vvc-image/thumbnail.png"
+}

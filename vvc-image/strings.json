@@ -1,0 +1,119 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Vivocha Engage Image",
+        "state": "new"
+      },
+      "it": {
+        "value": "Immagine di ingaggio Vivocha",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Image",
+        "state": "new"
+      },
+      "it": {
+        "value": "Immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_BG",
+    "values": {
+      "en": {
+        "value": "Image background color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore di sfondo dell'immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_BG_PH",
+    "values": {
+      "en": {
+        "value": "Insert a background color for the image background",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserire un colore di background per l'immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_URL",
+    "values": {
+      "en": {
+        "value": "Image",
+        "state": "new"
+      },
+      "it": {
+        "value": "Immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_WIDTH",
+    "values": {
+      "en": {
+        "value": "Image width",
+        "state": "new"
+      },
+      "it": {
+        "value": "Larghezza immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_WIDTH_PH",
+    "values": {
+      "en": {
+        "value": "Insert the image width",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserire la larghezza dell'immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_HEIGHT",
+    "values": {
+      "en": {
+        "value": "Image height",
+        "state": "new"
+      },
+      "it": {
+        "value": "Altezza immagine",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_HEIGHT_PH",
+    "values": {
+      "en": {
+        "value": "Insert the image height",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserire l'altezza dell'immagine",
+        "state": "new"
+      }
+    }
+  }
+]
