@@ -9,13 +9,6 @@
       "required": true,
       "defaultValue": "#F47929",
       "type": "color"
-    },
-    {
-      "id": "selector",
-      "nameId": "VARIABLES.SELECTOR",
-      "required": true,
-      "defaultValue": "#vvc-placeholder",
-      "type": "string"
     }
   ],
   "stringIds": [
