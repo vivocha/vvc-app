@@ -517,6 +517,10 @@ export class VvcContactService {
   resumeContact(context: InteractionContext) {
     this.callStartedWith = context.requestedMedia.toUpperCase();
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+      this.dispatch({type: 'INITIAL_OFFER', payload: {
+        offer: contactData.initial_offer,
+        context: context
+      }});
       this.vivocha.resumeContact(contactData).then((contact) => {
         this.vivocha.pageRequest('interactionCreated', contact);
         console.log('contact created, looking for the caps', contact);
