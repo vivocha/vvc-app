@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'vvc-chat-box',
@@ -10,6 +10,7 @@ export class ChatBoxComponent implements OnInit {
   uploadPanel = false;
   textAreaRows = 1;
 
+  @Input() variables;
   @Output() message = new EventEmitter();
   @Output() upload = new EventEmitter();
   @Output() emoji = new EventEmitter();

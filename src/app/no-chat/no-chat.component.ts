@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class NoChatComponent implements OnInit {
 
   @Input() state;
+  @Input() variables;
   constructor() { }
 
   ngOnInit() {

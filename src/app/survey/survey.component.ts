@@ -9,6 +9,7 @@ export class SurveyComponent implements OnInit {
   sent: boolean;
 
   @Input() dataCollection: DataCollection;
+  @Input() variables;
   @Output() datasubmit = new EventEmitter();
   @Output() close = new EventEmitter();
   constructor() { }

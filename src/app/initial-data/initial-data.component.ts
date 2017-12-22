@@ -8,6 +8,7 @@ import {DataCollection} from '../core/core.interfaces';
 export class InitialDataComponent implements OnInit {
 
   @Input() dataCollection: DataCollection;
+  @Input() variables;
   @Output() datasubmit = new EventEmitter();
   @Output() abandon = new EventEmitter();
   constructor() { }

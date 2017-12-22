@@ -9,6 +9,7 @@ import {VvcWidgetState} from '../core/core.interfaces';
 export class TopbarComponent implements OnInit {
 
   @Input() state: VvcWidgetState;
+  @Input() variables;
   @Output() close = new EventEmitter();
   @Output() minimize = new EventEmitter();
   @Output() upgrade = new EventEmitter();
@@ -55,6 +56,6 @@ export class TopbarComponent implements OnInit {
             this.state.agent.avatar.images[0] &&
             this.state.agent.avatar.images[0].file &&
             this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
-                : 'assets/static/acct-img.png';
+                : this.variables.companyLogoUrl;
   }
 }

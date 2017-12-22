@@ -22,12 +22,14 @@
             [rows]="textAreaRows"></textarea>
 
   <div class="chat-tools">
-    <div class="tool"
+    <div *ngIf="variables.emojiPanel"
+         class="tool"
          [ngClass]="{'selected':emojiPanel}"
          (click)="toggleEmojiTool()">
       <i class="vvc-smile"></i>
     </div>
-    <div class="tool"
+    <div *ngIf="variables.fileTransfer"
+         class="tool"
          [ngClass]="{'selected':uploadPanel}"
          (click)="toggleUploadTool()">
       <i class="vvc-clipboard"></i>

@@ -7,6 +7,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 export class QueueComponent implements OnInit {
 
   @Input() type = '';
+  @Input() variables;
   @Output() leave = new EventEmitter();
   constructor() { }
 

@@ -15,12 +15,14 @@
   <vvc-initial-data id="vvc-initial-data"
                     *ngIf="widgetState?.state === 'waiting_data'"
                     [dataCollection]="widgetState?.dataCollections[widgetState.selectedDataCollectionId]"
+                    [variables]="context.campaign.channels.web.interaction.variables"
                     (datasubmit)="submitInitialData(widgetState.selectedDataCollectionId, $event)"
                     (abandon)="abandon()"></vvc-initial-data>
 
   <vvc-queue id="vvc-queue"
              *ngIf="widgetState?.state === 'queue'"
              [type]="type"
+             [variables]="context.campaign.channels.web.interaction.variables"
              (leave)="leave()"></vvc-queue>
 
   <div id="vvc-widget-wrap"
@@ -29,6 +31,7 @@
 
     <vvc-topbar id="vvc-top-bar"
                 [ngClass]="{'expanded': (widgetState?.topBarExpanded && !widgetState?.video)}"
+                [variables]="context.campaign.channels.web.interaction.variables"
                 [state]="widgetState"
                 (close)="showCloseModal($event)"
                 (minimize)="minimize(true)"
@@ -67,6 +70,7 @@
     </div>
 
     <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState?.closed && widgetState?.chat"
+                  [variables]="context.campaign.channels.web.interaction.variables"
                   (upload)="sendAttachment($event)"
                   (message)="sendChatMessage($event)"></vvc-chat-box>
 
@@ -100,5 +104,6 @@
 <vvc-minimized id="vvc-minimized"
                *ngIf="widgetState?.minimized"
                [state]="widgetState"
+               [variables]="context.campaign.channels.web.interaction.variables"
                (click)="minimize(false)"></vvc-minimized>
 

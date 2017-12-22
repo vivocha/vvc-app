@@ -7,6 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MinimizedComponent implements OnInit {
 
   @Input() state;
+  @Input() variables;
+
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +20,6 @@ export class MinimizedComponent implements OnInit {
     this.state.agent.avatar.images[0] &&
     this.state.agent.avatar.images[0].file &&
     this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
-        : 'assets/static/acct-img.png';
+        : this.variables.companyLogoUrl || 'assets/static/acct-img.png';
   }
 }
