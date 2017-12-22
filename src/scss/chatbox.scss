@@ -23,7 +23,7 @@
       resize: none;
       outline: none;
       color: $darkColor;
-      width: 274px;
+      width: calc(100% - 50px);
     }
 
     .chat-tools-panels{
