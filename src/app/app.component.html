@@ -46,9 +46,11 @@
                      (maximize)="setFullScreen()"
                      (mute)="setMute($event)"></vvc-media-tools>
 
+    <!--
     <vvc-no-chat id="vvc-no-chat"
                  *ngIf="!widgetState?.chat && !widgetState?.had_chat"
                  [state]="widgetState"></vvc-no-chat>
+    -->
 
     <div id="vvc-messages"
          *ngIf="widgetState?.chat || widgetState?.had_chat"
