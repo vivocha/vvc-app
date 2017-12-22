@@ -30,6 +30,40 @@ button{
   font-size:$baseFontSize;
   font-family: $fontFamily;
 }
+
+.resize {
+  position: fixed;
+  &.hide {
+    display: none;
+  }
+  &.ew-resize {
+    cursor: ew-resize;
+  }
+  &.ns-resize {
+    cursor: ns-resize;
+  }
+  &#n-resize, &#s-resize {
+    width: 100%;
+    height: 4px;
+  }
+  &#w-resize, &#e-resize {
+    width: 4px;
+    height: 100%;
+  }
+  &#n-resize {
+    top: 0;
+  }
+  &#w-resize {
+    left: 0;
+  }
+  &#e-resize {
+    right: 0;
+  }
+  &#s-resize {
+    bottom: 0;
+  }
+}
+
 #vvc-container{
   display: flex;
   position: fixed;

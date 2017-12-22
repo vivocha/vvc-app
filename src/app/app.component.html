@@ -1,3 +1,5 @@
+<div id="n-resize" class="resize" [ngClass]="{ 'ns-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
+<div id="w-resize" class="resize" [ngClass]="{ 'ew-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
 <div id="vvc-container"
      *ngIf="!widgetState?.minimized"
      [ngClass]="{shadow: (widgetState && !widgetState?.mobile && !widgetState?.fullScreen), 'mobile':widgetState?.mobile, 'fullsize':widgetState?.fullScreen, 'nochat':!widgetState?.chatVisibility && widgetState?.fullScreen}">
@@ -102,6 +104,8 @@
                     [state]="widgetState"
                     (maximize)="setFullScreen()"></vvc-video-thumbs>
 </div>
+<div id="e-resize" class="resize" [ngClass]="{ 'ew-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
+<div id="s-resize" class="resize" [ngClass]="{ 'ns-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
 
 <vvc-minimized id="vvc-minimized"
                *ngIf="widgetState?.minimized"

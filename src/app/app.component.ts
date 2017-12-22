@@ -1,16 +1,21 @@
-import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
-import {WindowRef} from './core/window.service';
-import {VvcContactService} from './core/contact.service';
-import {Store} from '@ngrx/store';
-import {VvcWidgetState, AppState} from './core/core.interfaces';
-import {TranslateService} from '@ngx-translate/core';
-import {MediaToolsComponent} from './media-tools/media-tools.component';
+import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/takeUntil';
 
 import { objectToDataCollection } from '@vivocha/global-entities/dist/wrappers/data_collection';
 import { BasicContactCreationOptions, ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/global-entities/dist/contact';
 import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
+
+import { WindowRef } from './core/window.service';
+import { VvcContactService } from './core/contact.service';
+import { VvcWidgetState, AppState } from './core/core.interfaces';
+import { MediaToolsComponent } from './media-tools/media-tools.component';
 
 declare var vivocha: VivochaVisitorInteraction;
 
@@ -58,10 +63,15 @@ export class AppComponent implements OnInit {
     this.window = wref.nativeWindow;
     this.parseIframeUrl();
     this.checkForVivocha();
-
   }
   ngOnInit() {
     this.bindStores();
+
+    this.resizeWindow('top');
+    this.resizeWindow('left');
+    this.resizeWindow('bottom');
+    this.resizeWindow('right');
+
     this.cserv.voiceStart.subscribe( () => {
       this.startTimer();
     });
@@ -289,6 +299,72 @@ export class AppComponent implements OnInit {
   }
   removeLocalVideo() {
     this.cserv.removeLocalVideo();
+  }
+  resizeWindow(mode: string) {
+    let node: HTMLElement;
+    switch (mode) {
+      case 'top':
+        node = document.getElementById('n-resize');
+        break;
+      case 'left':
+        node = document.getElementById('w-resize');
+        break;
+      case 'right':
+        node = document.getElementById('e-resize');
+        break;
+      case 'bottom':
+        node = document.getElementById('s-resize');
+        break;
+    }
+    const mouseDown$ = Observable.fromEvent(node, 'mousedown');
+    const mouseMove$ = Observable.fromEvent(document, 'mousemove');
+    const mouseUp$ = Observable.fromEvent(document, 'mouseup');
+
+    mouseDown$
+      .switchMap(() => mouseMove$)
+      .takeUntil(mouseUp$)
+      .subscribe(evt => {
+        if (!this.widgetState.minimized && this.context.campaign.channels.web.interaction.variables.canBeResized) { // is not minimized && can be resized
+          switch (mode) {
+            case 'top':
+              this.vivocha.resize({
+                width: 0,
+                height: -evt['movementY']
+              });
+              this.vivocha.move({
+                top: evt['movementY'],
+                left: 0
+              });
+              break;
+            case 'left':
+              this.vivocha.resize({
+                width: -evt['movementX'],
+                height: 0
+              });
+              this.vivocha.move({
+                top: 0,
+                left: evt['movementX']
+              });
+              break;
+            case 'right':
+              this.vivocha.resize({
+                width: evt['movementX'],
+                height: 0
+              });
+              break;
+            case 'bottom':
+              this.vivocha.resize({
+                width: 0,
+                height: evt['movementY']
+              });
+              break;
+          }
+        } else {
+          // do nothing;
+        }
+      }, err => { }, () => {
+        this.resizeWindow(mode);
+      });
   }
   resumeContactCreationOptions(context: InteractionContext) {
     this.cserv.resumeContact(context);
