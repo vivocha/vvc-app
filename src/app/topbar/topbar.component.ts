@@ -1,5 +1,12 @@
-import {Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/takeUntil';
+
 import {VvcWidgetState} from '../core/core.interfaces';
+
+declare var vivocha: any;
 
 @Component({
   selector: 'vvc-topbar',
@@ -16,6 +23,7 @@ export class TopbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.dragWindow();
   }
   askForUpgrade(media) {
       if (!this.state[media] && !this.state.mediaOffering) {
@@ -57,5 +65,28 @@ export class TopbarComponent implements OnInit {
             this.state.agent.avatar.images[0].file &&
             this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
                 : this.variables.companyLogoUrl;
+  }
+
+  dragWindow() {
+    let node: Element = document.querySelector('.top-row');
+    const mouseDown$ = Observable.fromEvent(node, 'mousedown');
+    const mouseMove$ = Observable.fromEvent(document, 'mousemove');
+    const mouseUp$ = Observable.fromEvent(document, 'mouseup');
+
+    mouseDown$
+      .switchMap(() => mouseMove$)
+      .takeUntil(mouseUp$)
+      .subscribe(evt => {
+        if (this.variables.canBeDragged) { // can be dragged
+          vivocha.pageRequest('move', {
+            top: evt['movementY'],
+            left: evt['movementX']
+          });
+        } else {
+          // do nothing;
+        }
+      }, err => { }, () => {
+        this.dragWindow();
+      });
   }
 }
