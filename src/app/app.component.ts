@@ -96,6 +96,7 @@ export class AppComponent implements OnInit {
       this.window.vivocha.ready(this.busId).then(() => {
         console.log('vivocha.ready');
         this.vivocha = this.window['vivocha'];
+        this.isMobile = this.vivocha.isMobile();
         this.vivocha.pageRequest('getContext').then((context: any) => {
           console.log('vivocha.ready context');
           this.context = context;
@@ -263,8 +264,19 @@ export class AppComponent implements OnInit {
   }
   minimize(state) {
     this.store.dispatch({ type: 'MINIMIZE', payload: state });
-    (state) ? this.vivocha.minimize()
-            : this.vivocha.maximize();
+    if (state) {
+      this.vivocha.minimize(
+        {
+          bottom: "10px",
+          right: "10px"
+        },
+        {
+          width: '70px',
+          height: '70px'
+        })
+    } else {
+      this.vivocha.maximize();
+    }
   }
   parseIframeUrl() {
     const hash = this.window.location.hash;
