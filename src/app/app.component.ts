@@ -189,6 +189,7 @@ export class AppComponent implements OnInit {
                 type: 'INITIAL_DATA',
                 payload: dataCollection
               });
+              this.translate.reloadLang(context.language);
             });
           }));
         };
