@@ -98,6 +98,14 @@ export class AppComponent implements OnInit {
         this.vivocha = this.window['vivocha'];
         this.vivocha.pageRequest('getContext').then((context: any) => {
           console.log('vivocha.ready context');
+          this.context = context;
+          // check companyLogoUrl
+          if (this.context.campaign.channels.web.interaction.variables.companyLogoUrl) {
+            this.context.campaign.channels.web.interaction.variables.companyLogoUrl = '../../../' + this.context.campaign.channels.web.interaction.variables.companyLogoUrl;
+          } else {
+            this.context.campaign.channels.web.interaction.variables.companyLogoUrl = 'assets/static/acct-img.png';
+          }
+
           this.cserv.init(this.vivocha);
           this.translate.getTranslation(context.language);
           this.translate.setDefaultLang('en');
@@ -145,7 +153,6 @@ export class AppComponent implements OnInit {
     });
   }
   createContactCreationOptions(context: InteractionContext) {
-    this.context = context;
     this.contactOptions = {
       campaignId: context.campaign.id,
       version: context.campaign.version,
@@ -167,7 +174,7 @@ export class AppComponent implements OnInit {
         const showDataCollection = (dataCollection): Promise<boolean> => {
           //console.log(JSON.stringify(dataCollection, null, 2));
           return (new Promise((resolve, reject) => {
-            this.waitingInititalDataCollections[dataCollection.id] =(data) => {
+            this.waitingInititalDataCollections[dataCollection.id] = (data) => {
               for (let i = 0; i < dataCollection.fields.length; i++) {
                 if (dataCollection.fields[i].format === 'nickname' && data[dataCollection.fields[i].id]) {
                   this.contactOptions.nick = data[dataCollection.fields[i].id];
