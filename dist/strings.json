@@ -1092,20 +1092,6 @@
   {
     "values": {
       "en": {
-        "value": "Theme",
-        "state": "new"
-      },
-      "it": {
-        "value": "Tema",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.THEME"
-  },
-  {
-    "values": {
-      "en": {
         "value": "Allow the user to send file to the agent",
         "state": "new"
       },
@@ -1120,6 +1106,20 @@
   {
     "values": {
       "en": {
+        "value": "Allow the visitor to drag the application.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di spostare l'applicazione.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.ALLOW_DRAG"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Allow the visitor to display emoji panel.",
         "state": "new"
       },
@@ -1130,6 +1130,48 @@
     },
     "description": "",
     "id": "META.VARIABLES.ALLOW_EMOJI"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Allow the visitor to resize the application.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di ridimensionare l'applicazione.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.ALLOW_RESIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Initial width of the application (desktop version).",
+        "state": "new"
+      },
+      "it": {
+        "value": "Larghezza iniziale dell'applicazione (versione desktop).",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.INITIAL_WIDTH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Initial height of the application (desktop version).",
+        "state": "new"
+      },
+      "it": {
+        "value": "Altezza iniziale dell'applicazione (versione desktop).",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.INITIAL_HEIGHT"
   },
   {
     "values": {
