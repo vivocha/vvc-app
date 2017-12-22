@@ -62,14 +62,28 @@
       "type": "boolean"
     },
     {
-      "id": "appTheme",
-      "nameId": "VARIABLES.THEME",
-      "defaultValue": "light",
-      "options": [
-        "light",
-        "dark"
-      ],
-      "type": "enum"
+      "id": "canBeDragged",
+      "nameId": "VARIABLES.ALLOW_DRAG",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "canBeResized",
+      "nameId": "VARIABLES.ALLOW_RESIZE",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "initialWidth",
+      "nameId": "VARIABLES.INITIAL_WIDTH",
+      "defaultValue": "370",
+      "type": "string"
+    },
+    {
+      "id": "initialHeight",
+      "nameId": "VARIABLES.INITIAL_HEIGHT",
+      "defaultValue": "600",
+      "type": "string"
     }
   ],
   "stringIds": [
@@ -151,9 +165,12 @@
     "STRINGS.TOPBAR.ISWRITING",
     "STRINGS.TOPBAR.WELCOME",
     "META.VARIABLES.COMPANY_LOGO",
-    "META.VARIABLES.THEME",
     "META.VARIABLES.ALLOW_FILE_TRANSFER",
+    "META.VARIABLES.ALLOW_DRAG",
     "META.VARIABLES.ALLOW_EMOJI",
+    "META.VARIABLES.ALLOW_RESIZE",
+    "META.VARIABLES.INITIAL_WIDTH",
+    "META.VARIABLES.INITIAL_HEIGHT",
     "META.VARIABLES.PRIMARY_COLOR",
     "META.VARIABLES.PRIMARY_COLOR_DESCRIPTION",
     "META.VARIABLES.WARNING_COLOR",
@@ -274,24 +291,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "5ae86ce73cbf83e79b84d7463e239238beb71247ec54c1698d587bdcd64921a6",
+      "hash": "9684144b58620f5ec88ff8980bd9b0548cf1829e373f808739fadc65a35f3e68",
       "id": "_/widgets/vvc-app/assets/inline.bundle.js.map",
-      "size": 5911,
-      "type": "application/json"
+      "type": "application/json",
+      "size": 5911
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "4346e959fab8b68d909d52ec26087617cbe72df008b60e49e848222606781e56",
+      "hash": "955c7d26aefbda841ebce245af0de4cb99b4e30a712c074345abcde9cbb172ed",
       "id": "_/widgets/vvc-app/assets/main.bundle.js",
-      "size": 164227,
-      "type": "application/javascript"
+      "type": "application/javascript",
+      "size": 173686
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "ccc9e4dff1cba9376acb124ee9a239991d3d2dc6e32254e98f46f1cef7a243dc",
+      "hash": "9a68090124a1c106af158fa8c5f002ada043089b4497f18dbe5653ff5145640d",
       "id": "_/widgets/vvc-app/assets/main.bundle.js.map",
-      "size": 177384,
-      "type": "application/json"
+      "type": "application/json",
+      "size": 187962
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -316,9 +333,9 @@
     },
     {
       "path": "assets/scss/chatbox.scss",
-      "hash": "5be5224721b5834eb7be1a8be1f4cf31072f8f3285dc67433a19e2b650cf2bb3",
+      "hash": "315fcf5dd692f5927aa53b9dfd3beaede3463d8249b52e838d1b86e4dbaedb0f",
       "id": "_/widgets/vvc-app/assets/scss/chatbox.scss",
-      "size": 3603,
+      "size": 3616,
       "type": "text/x-scss"
     },
     {
@@ -351,9 +368,9 @@
     },
     {
       "path": "assets/scss/iframe-inner-container.scss",
-      "hash": "25c9733c1df9dc32ec0b3344f8d294baed9e02a25f381fe65a307e359050bca8",
+      "hash": "5766f56d6ce1784ac2274e673d45aad942212dbb2fa7df7b9fc119086485ed33",
       "id": "_/widgets/vvc-app/assets/scss/iframe-inner-container.scss",
-      "size": 1307,
+      "size": 1346,
       "type": "text/x-scss"
     },
     {
@@ -379,16 +396,16 @@
     },
     {
       "path": "assets/scss/messages.scss",
-      "hash": "cf4fdbbebc875fde4b14bfc40963b17e6780b4dab3776db024338e33b7e05cdf",
+      "hash": "78ebbbb279c4d42836fb65ddba779ff0666fbc540dc74b5d19fde96ed7dd2e05",
       "id": "_/widgets/vvc-app/assets/scss/messages.scss",
-      "size": 2881,
+      "size": 2940,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/minimized.scss",
-      "hash": "05b67acf2d9bc697c3bbbd9f2b4c26516f2d879827e8bdfb5a26da9c6893bb88",
+      "hash": "5ba418bfed2fb9b2f47567d3967404ba98b42372bfc5380c5af7becd40a4e27d",
       "id": "_/widgets/vvc-app/assets/scss/minimized.scss",
-      "size": 373,
+      "size": 399,
       "type": "text/x-scss"
     },
     {
@@ -428,9 +445,9 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "22180adfdf074a26eb226fc6972334049a0fa9ad48ffea6dad7fb48c7af01db4",
+      "hash": "fe1e396cd530cb037b4eaff3e45a1efd343909437b04f44df860dee584ededd6",
       "id": "_/widgets/vvc-app/assets/scss/theme.scss",
-      "size": 2879,
+      "size": 3357,
       "type": "text/x-scss"
     },
     {
@@ -491,17 +508,17 @@
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "5dcf6f7f172fe36a08fc75241a8438803617d7a50a3a63b343d296efc3c2729f",
+      "hash": "8ebe462f71052eaa1cbad503abd062d411fd522d4dfba107b5f7d873fc3c2958",
       "id": "_/widgets/vvc-app/assets/vendor.bundle.js",
-      "size": 3033354,
-      "type": "application/javascript"
+      "type": "application/javascript",
+      "size": 3058690
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "c2b59971b855dddd7dde0b7027ad7925151dd0c602f615c284339d55285748d1",
+      "hash": "7b5441df101f5dd7a0974fe42b4de97ce40f7c03d21c5e5f5c5b80321b755965",
       "id": "_/widgets/vvc-app/assets/vendor.bundle.js.map",
-      "size": 3721446,
-      "type": "application/json"
+      "type": "application/json",
+      "size": 3749529
     }
   ],
   "htmlId": "_/widgets/vvc-app/main.html",
