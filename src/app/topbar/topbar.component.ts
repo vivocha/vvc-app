@@ -23,6 +23,9 @@ export class TopbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+  ngAfterViewInit() {
     this.dragWindow();
   }
   askForUpgrade(media) {
@@ -85,8 +88,8 @@ export class TopbarComponent implements OnInit {
         } else {
           // do nothing;
         }
-      }, err => { }, () => {
-        this.dragWindow();
+      }, err => {}, () => {
+        //this.dragWindow();
       });
   }
 }
