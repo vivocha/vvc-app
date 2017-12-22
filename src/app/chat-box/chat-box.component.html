@@ -8,7 +8,7 @@
        *ngIf="uploadPanel || emojiPanel"
        [ngClass]="{'upload-selected':uploadPanel, 'emoji-selected':emojiPanel}">
     <div class="emoji-panel panel">
-      <vvc-emoji-selector (emoji)="emoji.emit($event);chatInput.value=chatInput.value + $event +' '"></vvc-emoji-selector>
+      <vvc-emoji-selector (emoji)="emoji.emit($event);insertEmoji(chatInput, $event)"></vvc-emoji-selector>
     </div>
     <div class="upload-panel panel">
       <vvc-file-uploader (upload)="upload.emit($event);toggleUploadTool();"></vvc-file-uploader>
