@@ -108,8 +108,12 @@ export class AppComponent implements OnInit {
         this.vivocha = this.window['vivocha'];
         this.isMobile = this.vivocha.isMobile();
         this.vivocha.pageRequest('getContext').then((context: any) => {
-          console.log('vivocha.ready context');
+          console.log('vivocha.ready context', context);
           this.context = context;
+
+          if(!this.context.campaign.channels.web.interaction.variables) {
+            this.context.campaign.channels.web.interaction.variables = {};
+          }
           // check companyLogoUrl
           if (this.context.campaign.channels.web.interaction.variables.companyLogoUrl) {
             this.context.campaign.channels.web.interaction.variables.companyLogoUrl = '../../../' + this.context.campaign.channels.web.interaction.variables.companyLogoUrl;
