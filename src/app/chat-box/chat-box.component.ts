@@ -56,5 +56,6 @@ export class ChatBoxComponent implements OnInit {
     const firstHalf = chatInput.value.substring(0, chatInput.selectionStart);
     const lastHalf = chatInput.value.substring(chatInput.selectionEnd);
     chatInput.value = firstHalf + (firstHalf ? ' ' : '') + insertEmoji + '  ' + lastHalf;
+    chatInput.focus();
   }
 }
