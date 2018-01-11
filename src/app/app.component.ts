@@ -66,12 +66,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     this.bindStores();
-
-    this.resizeWindow('top');
-    this.resizeWindow('left');
-    this.resizeWindow('bottom');
-    this.resizeWindow('right');
-
+    this.initResizeListeners();
     this.cserv.voiceStart.subscribe( () => {
       this.startTimer();
     });
@@ -270,6 +265,10 @@ export class AppComponent implements OnInit {
   hideDataCollectionPanel() {
     this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
   }
+  initResizeListeners() {
+    const supportedModes = ['top', 'left', 'bottom', 'right', 'top-right', 'top-left', 'bottom-right', 'bottom-left'];
+    supportedModes.forEach(m => this.resizeWindow(m));
+  }
   leave() {
     this.cserv.closeContact();
     // TODO show message
@@ -319,6 +318,18 @@ export class AppComponent implements OnInit {
       case 'bottom':
         node = document.getElementById('s-resize');
         break;
+      case 'top-right':
+        node = document.getElementById('nw-resize');
+        break;
+      case 'top-left':
+        node = document.getElementById('ne-resize');
+        break;
+      case 'bottom-right':
+        node = document.getElementById('sw-resize');
+        break;
+      case 'bottom-left':
+        node = document.getElementById('se-resize');
+        break;
     }
     const mouseDown$ = Observable.fromEvent(node, 'mousedown');
     const mouseMove$ = Observable.fromEvent(document, 'mousemove');
@@ -360,6 +371,46 @@ export class AppComponent implements OnInit {
               this.vivocha.resize({
                 width: 0,
                 height: evt['movementY']
+              });
+              break;
+
+            case 'top-right':
+              this.vivocha.resize({
+                width: evt['movementX'],
+                height: -evt['movementY']
+              });
+              this.vivocha.move({
+                top: evt['movementY'],
+                left: 0
+              });
+              break;
+
+            case 'top-left':
+              this.vivocha.resize({
+                width: -evt['movementX'],
+                height: -evt['movementY']
+              });
+              this.vivocha.move({
+                top: evt['movementY'],
+                left: evt['movementX']
+              });
+              break;
+
+            case 'bottom-right':
+              this.vivocha.resize({
+                width: evt['movementX'],
+                height: evt['movementY']
+              });
+              break;
+
+            case 'bottom-left':
+              this.vivocha.resize({
+                width: -evt['movementX'],
+                height: evt['movementY']
+              });
+              this.vivocha.move({
+                top: 0,
+                left: evt['movementX']
               });
               break;
           }
