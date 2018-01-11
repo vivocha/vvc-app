@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/switchMap';
@@ -13,7 +13,7 @@ declare var vivocha: any;
   templateUrl: './topbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TopbarComponent implements OnInit {
+export class TopbarComponent {
 
   @Input() state: VvcWidgetState;
   @Input() variables;
@@ -22,12 +22,6 @@ export class TopbarComponent implements OnInit {
   @Output() upgrade = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
-
-  }
-  ngAfterViewInit() {
-    this.dragWindow();
-  }
   askForUpgrade(media) {
       if (!this.state[media] && !this.state.mediaOffering) {
           this.upgrade.emit(media.toUpperCase());
@@ -57,27 +51,10 @@ export class TopbarComponent implements OnInit {
                      this.state.remoteCaps.MediaAvailability.Video;
       }
   }
-  getAgentName() {
-    return (this.state.agent && this.state.agent.nick) ? this.state.agent.nick : 'nonick';
-  }
-  getAvatar() {
-    return (this.state.agent &&
-            this.state.agent.avatar &&
-            this.state.agent.avatar.images &&
-            this.state.agent.avatar.images[0] &&
-            this.state.agent.avatar.images[0].file &&
-            this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
-                : this.variables.companyLogoUrl;
-  }
-
-  dragWindow() {
-    let node: Element = document.querySelector('.top-row');
-    const mouseDown$ = Observable.fromEvent(node, 'mousedown');
+  drag($event) {
     const mouseMove$ = Observable.fromEvent(document, 'mousemove');
     const mouseUp$ = Observable.fromEvent(document, 'mouseup');
-
-    mouseDown$
-      .switchMap(() => mouseMove$)
+    mouseMove$
       .takeUntil(mouseUp$)
       .subscribe(evt => {
         if (this.variables.canBeDragged) { // can be dragged
@@ -91,5 +68,17 @@ export class TopbarComponent implements OnInit {
       }, err => {}, () => {
         //this.dragWindow();
       });
+  }
+  getAgentName() {
+    return (this.state.agent && this.state.agent.nick) ? this.state.agent.nick : 'nonick';
+  }
+  getAvatar() {
+    return (this.state.agent &&
+            this.state.agent.avatar &&
+            this.state.agent.avatar.images &&
+            this.state.agent.avatar.images[0] &&
+            this.state.agent.avatar.images[0].file &&
+            this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
+                : this.variables.companyLogoUrl;
   }
 }

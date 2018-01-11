@@ -1,4 +1,4 @@
-<div class="top-row">
+<div class="top-row" (mousedown)="drag($event)">
   <div class="media-tools">
     <div *ngIf="!state.closed">
       <i class="vvc-phone"
