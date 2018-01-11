@@ -389,6 +389,9 @@ export class AppComponent implements OnInit {
   }
   setChatVisibility(visibility: boolean) {
     this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
+    if(visibility) {
+      this.store.dispatch({ type: 'RESET_NOT_READ' });
+    }
   }
   setFullScreen() {
     this.wasFullScreen = true;

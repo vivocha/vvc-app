@@ -398,7 +398,7 @@ export class VvcContactService {
     this.contact.on('text', (text, from_id, from_nick, agent ) => {
       this.dispatch({type: 'REDUCE_TOPBAR'});
       this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
-      if (this.widgetState && this.widgetState.minimized) {
+      if (this.widgetState && (this.widgetState.minimized || !this.widgetState.chatVisibility)) {
         this.dispatch({type: 'INCREMENT_NOT_READ'});
       }
       this.playAudioNotification();

@@ -46,6 +46,11 @@
   </div>
 </div>
 <div class="chat-toggle" (click)="chatToggle()">
+  <div class="chat-unread-counter" *ngIf="state.not_read && state.not_read > 0">
+    <span [ngClass]="{ 'big': state.not_read > 99 }">
+      {{ state.not_read > 99 ? '+99' : state.not_read }}
+    </span>
+  </div>
   <i class="vvc-chat"></i>
   <div class="chat-label" *ngIf="!chatVisible">{{ 'STRINGS.MEDIATOOLS.CHAT_SHOW' | translate }}</div>
   <div class="chat-label" *ngIf="chatVisible">{{ 'STRINGS.MEDIATOOLS.CHAT_HIDE' | translate }}</div>

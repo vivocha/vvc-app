@@ -177,6 +177,8 @@ export function widgetState(state: VvcWidgetState  = initialWidgetState, {type, 
         case 'INCREMENT_NOT_READ':
             const not_read = state.not_read + 1;
             return Object.assign({}, state, { not_read: not_read });
+        case 'RESET_NOT_READ':
+          return Object.assign({}, state, { not_read: 0 });
         default: return state;
     }
 };
