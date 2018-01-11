@@ -5,7 +5,16 @@
 
 <div id="vvc-container"
      *ngIf="!widgetState?.minimized"
-     [ngClass]="{shadow: (widgetState && !widgetState?.mobile && !widgetState?.fullScreen), 'mobile':widgetState?.mobile, 'fullsize':widgetState?.fullScreen, 'nochat':!widgetState?.chatVisibility && widgetState?.fullScreen}">
+     [ngClass]="{
+       'shadow':    (widgetState && !widgetState?.mobile && !widgetState?.fullScreen),
+       'mobile':    widgetState?.mobile,
+       'fullsize':  widgetState?.fullScreen,
+       'nochat':    !widgetState?.chatVisibility && widgetState?.fullScreen
+     }">
+
+  <div id="init-indicator" *ngIf="widgetState?.state === 'initializing'">
+    <div class="init-loader">&nbsp;</div>
+  </div>
 
   <vvc-fullscreen id="vvc-full-enabled"
                   *ngIf="widgetState?.fullScreen"
