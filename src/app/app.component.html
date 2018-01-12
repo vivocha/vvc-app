@@ -44,6 +44,7 @@
        *ngIf="widgetState?.state === 'ready'">
 
     <vvc-topbar id="vvc-top-bar"
+                *ngIf="!widgetState?.showSurvey"
                 [ngClass]="{'expanded': (widgetState?.topBarExpanded && !widgetState?.video)}"
                 [variables]="context.campaign.channels.web.interaction.variables"
                 [state]="widgetState"
@@ -104,6 +105,7 @@
 
     <vvc-survey id="vvc-survey"
                 *ngIf="widgetState?.showSurvey"
+                [variables]="context.campaign.channels.web.interaction.variables"
                 [dataCollection]="widgetState?.dataCollections[widgetState.surveyId]"
                 (datasubmit)="closeOnSurvey($event)"
                 (close)="closeInteraction()"></vvc-survey>
