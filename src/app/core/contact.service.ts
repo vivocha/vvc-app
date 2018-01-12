@@ -569,6 +569,7 @@ export class VvcContactService {
       type: 'CLOSE_CONTACT',
       payload: true
     });
+    this.dispatch({ type: 'REM_IS_WRITING' });
   }
   sendDataCollection(obj) {
     const dc = obj.dataCollection;
