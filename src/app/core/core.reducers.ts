@@ -171,7 +171,7 @@ export function widgetState(state: VvcWidgetState  = initialWidgetState, {type, 
         case 'AGENT_IS_WRITING':
             return Object.assign({}, state, { isAgentWriting: payload });
         case 'CLOSE_CONTACT':
-            return Object.assign({}, state, { closed: payload });
+            return Object.assign({}, state, { closed: payload, isAgentWriting: false });
         case 'MINIMIZE':
             return Object.assign({}, state, { minimized: payload, not_read: 0});
         case 'INCREMENT_NOT_READ':
