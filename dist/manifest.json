@@ -305,24 +305,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "c7be9cc7a431eb85e51c1baa3c138b6418cd84833a78219c3c23c7406bc203c9",
+      "hash": "96d19bb8aa4b30764b443b555e21545261e3cb139463f9735202e42acaea505b",
       "id": "_/widgets/vvc-app/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "0f7363f42eeeaa6f4484a8bf3ae067627da44003a8087b5bfae0b2dc165291cb",
+      "hash": "a84b6755c722aa767c59ca54bf2036957d673b1e23267e6f80de36a29e5e144a",
       "id": "_/widgets/vvc-app/assets/main.bundle.js",
-      "type": "application/javascript",
-      "size": 160442
+      "size": 160669,
+      "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "317ed9a89221d3e60e511a4399f02ffc89a669708bfe1497c338e7e945f14af3",
+      "hash": "d451111187969ceca6ae4bee239790d76c613fc29d8b43515e4c31978dbaa1c8",
       "id": "_/widgets/vvc-app/assets/main.bundle.js.map",
-      "type": "application/json",
-      "size": 194789
+      "size": 195107,
+      "type": "application/json"
     },
     {
       "path": "assets/main.c31a5c6705cef9531692.bundle.js",
@@ -368,24 +368,24 @@
     },
     {
       "path": "assets/scss/fonts.scss",
-      "hash": "bf7d4bc8e10b553cf250435bfbec8a8b4c8973fbd0721c3a575c8e2422cc69c8",
+      "hash": "256ac5ac83d6873c3b6b6efdcb38b5c3a74e24224a189bdea3e1c8093bb0077d",
       "id": "_/widgets/vvc-app/assets/scss/fonts.scss",
-      "size": 2857,
+      "size": 3096,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/fonts_variables.scss",
-      "hash": "a3dd7b086dd81d75b5282594d882ae20da3746014c50064ca6ba46eb4efd6976",
+      "hash": "96763400bcc5dcdf772bc61a06c0e9aab64ab90a7d43b7ec23269ab9c0de8382",
       "id": "_/widgets/vvc-app/assets/scss/fonts_variables.scss",
-      "size": 801,
+      "size": 891,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/forms.scss",
-      "hash": "55a40333703258738842d1be37eba4199426ce0d4a99b42ff5dcd0da7ba123ef",
+      "hash": "030ac9653eae684d753bd4e0e843ef2021211624070839f56ba02e6b6c77de5c",
       "id": "_/widgets/vvc-app/assets/scss/forms.scss",
-      "size": 3005,
-      "type": "text/x-scss"
+      "type": "text/x-scss",
+      "size": 6496
     },
     {
       "path": "assets/scss/iframe-container.scss",
@@ -508,30 +508,30 @@
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.eot",
-      "hash": "fb77f49309bae0a600b1f12cc4e05d426c30f22257164b39f99bc3729fa1a730",
+      "hash": "c23e731518bc8cd4c6aca9ec1703acc70d382ca8d386ca71241b309a94de9c81",
       "id": "_/widgets/vvc-app/assets/static/fonts/vvc-widget-ico.eot",
-      "size": 7644,
+      "size": 9160,
       "type": "application/vnd.ms-fontobject"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.svg",
-      "hash": "753018d410fef41a4c714973c424cb37365af5d85351cc886a831114a40f7d86",
+      "hash": "e243366ea7752b6fd6d8a30c53109e88f71ed1f705bbc6b469e638531cbf95c5",
       "id": "_/widgets/vvc-app/assets/static/fonts/vvc-widget-ico.svg",
-      "size": 25387,
+      "size": 28393,
       "type": "image/svg+xml"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.ttf",
-      "hash": "840ccbb546b228ce092ef18427099ef053f1acab3fa5f5202bf123e3aafcbff2",
+      "hash": "48fa110a210da02b2ab74d8120853d01d4ad82494aaf043d56ab5cefdc23f42d",
       "id": "_/widgets/vvc-app/assets/static/fonts/vvc-widget-ico.ttf",
-      "size": 7452,
+      "size": 8968,
       "type": "application/x-font-ttf"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.woff",
-      "hash": "0f6280ab22e4cd4c39f37f5777a87501615f3fa70217f75434a534c7b1c82861",
+      "hash": "b965d1ab20403e358938c65dd1d988b27950f1026ed365cc5d3a302f45e3ac5d",
       "id": "_/widgets/vvc-app/assets/static/fonts/vvc-widget-ico.woff",
-      "size": 7528,
+      "size": 9044,
       "type": "application/font-woff"
     },
     {

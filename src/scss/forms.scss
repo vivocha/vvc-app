@@ -4,6 +4,7 @@
     margin: 0 auto;
     width: 208px;
     height: 40px;
+
     label {
       float: right;
       position: relative;
@@ -14,13 +15,29 @@
         padding-right: 2px;
       }
       &:before {
-        content: '\e91c';
         font-family: 'vvc-widget-ico';
         font-size: 35px;
         color: lighten($darkColor, 15%);
         line-height: 1;
       }
     }
+
+    &.vvc-bar-rating-stars {
+      label:before {
+        content: $vvc-star;
+      }
+    }
+    &.vvc-bar-rating-hearts {
+      label:before {
+        content: $vvc-heart;
+      }
+    }
+    &.vvc-bar-rating-smilies {
+      label:before {
+        content: $vvc-smile-o;
+      }
+    }
+
     input {
       display: none;
     }

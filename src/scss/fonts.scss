@@ -196,4 +196,23 @@ i {
     content: $vvc-video-off;
   }
 }
-
+.vvc-heart {
+  &:before {
+    content: $vvc-heart;
+  }
+}
+.vvc-heart-o {
+  &:before {
+    content: $vvc-heart-o;
+  }
+}
+.vvc-smile-o {
+  &:before {
+    content: $vvc-smile-o;
+  }
+}
+.vvc-frown-o {
+  &:before {
+    content: $vvc-frown-o;
+  }
+}
