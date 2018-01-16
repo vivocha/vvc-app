@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, NgZone, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
@@ -16,6 +16,7 @@ import { WindowRef } from './core/window.service';
 import { VvcContactService } from './core/contact.service';
 import { VvcWidgetState, AppState } from './core/core.interfaces';
 import { MediaToolsComponent } from './media-tools/media-tools.component';
+import { Angular2AutoScroll } from 'app/autoscroll.directive';
 
 declare var vivocha: VivochaVisitorInteraction;
 
@@ -53,6 +54,8 @@ export class AppComponent implements OnInit {
   } = {};
 
   vivocha: any;
+
+  @ViewChild(Angular2AutoScroll) autoScroll;
 
   constructor(private wref: WindowRef,
               private cserv: VvcContactService,
@@ -456,6 +459,11 @@ export class AppComponent implements OnInit {
     this.wasFullScreen = false;
     this.store.dispatch({ type: 'FULLSCREEN', payload: false});
     this.vivocha.setNormalScreen();
+    if(this.autoScroll) {
+      setTimeout(() => this.autoScroll.forceScrollDown(), 50);
+    } else {
+      console.warn('Missing reference to autoScroll, cannot scroll down the message list');
+    }
   }
   showCloseModal(isContactClosed) {
     if (isContactClosed) {

@@ -305,24 +305,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "96d19bb8aa4b30764b443b555e21545261e3cb139463f9735202e42acaea505b",
+      "hash": "b2baba42b6bca417bb518e1c5f49680fc31384b5f768c9a5f74b4c9e992fa92c",
       "id": "_/widgets/vvc-app/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "a84b6755c722aa767c59ca54bf2036957d673b1e23267e6f80de36a29e5e144a",
+      "hash": "2d517cccded5be97576650662b00f52459cbd83ac2472cb71afb198e41b75dcf",
       "id": "_/widgets/vvc-app/assets/main.bundle.js",
-      "size": 160669,
-      "type": "application/javascript"
+      "type": "application/javascript",
+      "size": 161479
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "d451111187969ceca6ae4bee239790d76c613fc29d8b43515e4c31978dbaa1c8",
+      "hash": "b02978e321a614944781ad6435cfaeedf79c1fb1bf13122e96c04440002f49db",
       "id": "_/widgets/vvc-app/assets/main.bundle.js.map",
-      "size": 195107,
-      "type": "application/json"
+      "type": "application/json",
+      "size": 195930
     },
     {
       "path": "assets/main.c31a5c6705cef9531692.bundle.js",
@@ -384,8 +384,8 @@
       "path": "assets/scss/forms.scss",
       "hash": "030ac9653eae684d753bd4e0e843ef2021211624070839f56ba02e6b6c77de5c",
       "id": "_/widgets/vvc-app/assets/scss/forms.scss",
-      "type": "text/x-scss",
-      "size": 6496
+      "size": 6496,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/iframe-container.scss",
