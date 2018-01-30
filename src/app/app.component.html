@@ -83,6 +83,12 @@
                     [dc]="widgetState?.dataCollections[m.dataCollectionId]"
                     (show)="showDataCollection($event)"
                     (submit)="sendDataCollection($event)"></vvc-inc-dc>
+        <vvc-template-message *ngIf="m.type === 'template'"
+                              [message]="m"
+                              (action)="processAction($event)"></vvc-template-message>
+        <vvc-quick-message *ngIf="m.type === 'quick-replies'"
+                           [message]="m"
+                           (action)="processAction($event)"></vvc-quick-message>
       </div>
     </div>
 

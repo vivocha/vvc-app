@@ -1,0 +1,8 @@
+<div class="qr-container">
+  <div class="qr-message">{{ message.body }}</div>
+  <div class="qr-buttons">
+    <div class="qr-button-container" *ngFor="let btn of message.quick_replies">
+      <button class="btn-primary" (click)="btnClicked(btn)">{{ btn.title }}</button>
+    </div>
+  </div>
+</div>

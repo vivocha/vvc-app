@@ -342,6 +342,48 @@ export class VvcContactService {
   }
   mapContact() {
     console.log('mapping stuff on the contact');
+    //MARCO - ADD TEMPORARY ON ACTION TO RECEIVE NEW MEDIA MESSAGES
+    this.contact.on('action', (action_code, args) => {
+      if (action_code === 'quick') {
+        console.log('quick message arrived');
+        const quick = {
+          code: 'message',
+          type: 'text',
+          body: 'Pick a size',
+          quick_replies: [
+            { content_type: 'text', title: 'Small', payload: 'SMALL', image_url: '' },
+            { content_type: 'text', title: 'Medium', payload: 'MEDIUM', image_url: '' },
+            { content_type: 'text', title: 'Large', payload: 'LARGE', image_url: '' }
+          ]
+        };
+        quick.type = 'quick-replies';
+        this.dispatch({type: 'NEW_MESSAGE', payload: quick });
+      }
+      if (action_code === 'template'){
+        console.log('template message arrived');
+        const template = {
+          type: 'template',
+          template: 'generic',
+          elements: [
+            {
+              title: "Titolo",
+              subtitle: "Sottotitolo",
+              image_url: "https://image.freepik.com/free-vector/web-development-and-graphic-design-banners_23-2147526170.jpg",
+              default_action: {
+                type: "web_url",
+                url: "https://image.freepik.com"
+              },
+              buttons: [
+                { type: "web_url", title: "Visualizza Dettaglio", url: "https://image.freepik.com/free-vector/" },
+                { type: "postback", title: "Transfer Chat", payload: { agentId: 'Pippo', whatever: 'whatever' }}
+              ]
+            }
+          ]
+        }
+        this.dispatch({type: 'NEW_MESSAGE', payload: template });
+
+      }
+    });
     this.contact.on('DataCollection', (dataCollection, cb) => {
       this.fetchDataCollection(dataCollection);
     });
@@ -586,6 +628,9 @@ export class VvcContactService {
       type: 'MERGE_DATA_COLLECTION',
       payload: dc
     });
+  }
+  sendPostBack(payload: any){
+    console.log('dispatching from contact service', payload);
   }
   sendText(text: string) {
     this.contact.sendText(text);
