@@ -383,6 +383,7 @@ export class VvcContactService {
         this.dispatch({type: 'NEW_MESSAGE', payload: template });
 
       }
+      this.clearIsWriting();
     });
     this.contact.on('DataCollection', (dataCollection, cb) => {
       this.fetchDataCollection(dataCollection);
