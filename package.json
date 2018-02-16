@@ -47,6 +47,7 @@
     "LICENSE"
   ],
   "dependencies": {
+    "@angular-devkit/core": "^0.2.0",
     "@angular/common": "^5.1.2",
     "@angular/compiler": "^5.1.2",
     "@angular/core": "^5.1.2",
