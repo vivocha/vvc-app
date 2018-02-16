@@ -269,13 +269,6 @@
       "type": "text/x-scss"
     },
     {
-      "path": "assets/3rdpartylicenses.txt",
-      "hash": "bc6614bc0e07b5a6caed820fed1773323a9d40c8aefdda87618f62a687103a4c",
-      "id": "_/widgets/vvc-app/assets/3rdpartylicenses.txt",
-      "size": 3370,
-      "type": "text/plain"
-    },
-    {
       "path": "assets/favicon.ico",
       "hash": "c08a9ad39ddfc98d90bea424b11ad355e5bcc74443b472598b7189fac7cc37fb",
       "id": "_/widgets/vvc-app/assets/favicon.ico",
@@ -290,13 +283,6 @@
       "type": "text/html"
     },
     {
-      "path": "assets/inline.6c521f6d697135d3f973.bundle.js",
-      "hash": "3ec841d7360ea216c52ed0a7bd03c92c9b35d3762a37613d3bb833a465a9298d",
-      "id": "_/widgets/vvc-app/assets/inline.6c521f6d697135d3f973.bundle.js",
-      "size": 1420,
-      "type": "application/javascript"
-    },
-    {
       "path": "assets/inline.bundle.js",
       "hash": "1f0631ac2462fcc8f4d9d81ee4f30c3970395e42a431e469ede3b65f574874f9",
       "id": "_/widgets/vvc-app/assets/inline.bundle.js",
@@ -305,51 +291,37 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "b2baba42b6bca417bb518e1c5f49680fc31384b5f768c9a5f74b4c9e992fa92c",
+      "hash": "8555c28b023ddb9c8db2f858a433ca59c015005c44255cb16699aef5ce2fddf3",
       "id": "_/widgets/vvc-app/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "2d517cccded5be97576650662b00f52459cbd83ac2472cb71afb198e41b75dcf",
+      "hash": "bd3ddfff54f4812824016d51d82547a9767a81cf1b37da51242710cb217cb504",
       "id": "_/widgets/vvc-app/assets/main.bundle.js",
       "type": "application/javascript",
-      "size": 161479
+      "size": 161709
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "b02978e321a614944781ad6435cfaeedf79c1fb1bf13122e96c04440002f49db",
+      "hash": "bd2d27d59a0083028697d264c6809b5e5f1372034030053e4c28312bac3e32eb",
       "id": "_/widgets/vvc-app/assets/main.bundle.js.map",
       "type": "application/json",
-      "size": 195930
-    },
-    {
-      "path": "assets/main.c31a5c6705cef9531692.bundle.js",
-      "hash": "bb31cbe9a96a40c4d334b37d53febe43651085fbae42972f73f20095acfcb502",
-      "id": "_/widgets/vvc-app/assets/main.c31a5c6705cef9531692.bundle.js",
-      "size": 428229,
-      "type": "application/javascript"
-    },
-    {
-      "path": "assets/polyfills.52e6fac2fd2bbcd857dd.bundle.js",
-      "hash": "29ac6bdcd5ad0d01d7548c14229f64404de9d6b590fa3379061d918a4a677330",
-      "id": "_/widgets/vvc-app/assets/polyfills.52e6fac2fd2bbcd857dd.bundle.js",
-      "size": 65910,
-      "type": "application/javascript"
+      "size": 195280
     },
     {
       "path": "assets/polyfills.bundle.js",
-      "hash": "0b7d45eb643a21ab69b849278df8ede916e14b1b0f1f2199b5d3d2ee74b2e47e",
+      "hash": "b75da535817f7173ce1bd3556f69ae6852571c1b92d8563a3ac53e4738002925",
       "id": "_/widgets/vvc-app/assets/polyfills.bundle.js",
-      "size": 219137,
+      "size": 217556,
       "type": "application/javascript"
     },
     {
       "path": "assets/polyfills.bundle.js.map",
-      "hash": "740ee888726cd766d0fc27b94c4bd14640cb321ae56b6175a87edcae3eff8c9a",
+      "hash": "756d0232fd808222884c69a250cc48105421a1eef76c12cfc76b06d5fb489886",
       "id": "_/widgets/vvc-app/assets/polyfills.bundle.js.map",
-      "size": 269700,
+      "size": 265256,
       "type": "application/json"
     },
     {
@@ -536,16 +508,16 @@
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "033a33b61d5dc5e8089b72a1140021b0e0aa75127a42872bb1bfd014650abe6a",
+      "hash": "6eda9fe956c8c9535e21e16122ff23b77fe786353c5bec95d3b441f0d96dd79a",
       "id": "_/widgets/vvc-app/assets/vendor.bundle.js",
-      "size": 3091420,
+      "size": 3194203,
       "type": "application/javascript"
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "130f6e66a02586a23f7cccf8bb764b61f7152e7f5906d27b392a14eeec8e94df",
+      "hash": "88fc4efc3693b9233a91557d5e9d1cbebe3df78f4bf15406c0143e59f9c0380c",
       "id": "_/widgets/vvc-app/assets/vendor.bundle.js.map",
-      "size": 3754434,
+      "size": 3877840,
       "type": "application/json"
     }
   ],
