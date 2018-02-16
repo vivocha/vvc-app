@@ -50,6 +50,8 @@ function extractStateFromMedia(payload) {
       chat?: boolean,
       had_chat?: boolean,
       voice?: boolean,
+      voice_rx?: boolean,
+      voice_tx?: boolean,
       video?: boolean,
       video_rx?: boolean,
       video_tx?: boolean,
@@ -74,6 +76,7 @@ function extractStateFromMedia(payload) {
       if (payload.Voice['data']
       && payload.Voice['data']['tx_stream']
       && payload.Voice['data']['rx_stream']) {
+          newState.voice_rx = payload.Voice['data']['rx_stream'];
           newState.voice = true;
       }
   }
@@ -87,6 +90,9 @@ function extractStateFromMedia(payload) {
         newState.video = true;
     }
   }
+
+  console.log('------NEWSTATE------', newState);
+
   return newState;
 };
 export function widgetState(state: VvcWidgetState  = initialWidgetState, {type, payload}) {
