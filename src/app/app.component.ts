@@ -84,6 +84,7 @@ export class AppComponent implements OnInit {
       this.cserv.acceptRequest(evt, msg);
     } else {
       this.cserv.acceptOffer(evt);
+      this.startTimer();
     }
   }
   addLocalVideo() {

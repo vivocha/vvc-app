@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction",
-  "version": "5.9.29",
+  "version": "5.9.31",
   "description": "Vivocha Interaction Application",
   "scripts": {
     "clean": "[ ! -d ./dist/assets ] || rm -rf dist/assets/*",
@@ -47,6 +47,7 @@
     "LICENSE"
   ],
   "dependencies": {
+    "@angular-devkit/core": "^0.2.0",
     "@angular/common": "^5.1.2",
     "@angular/compiler": "^5.1.2",
     "@angular/core": "^5.1.2",

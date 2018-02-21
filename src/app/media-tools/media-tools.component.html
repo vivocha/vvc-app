@@ -70,7 +70,8 @@
       <button class="hangup" (click)="hangup.emit()">
         <i class="vvc-hangup"></i> {{ 'STRINGS.MEDIATOOLS.HANGUP' | translate }}
       </button>
-      <audio *ngIf="state.voice && state.voice_rx && !state.video_rx"
+      <audio autoplay
+             *ngIf="state.voice && state.voice_rx && !state.video_rx"
              [src]="trustedSrc(state.voice_rx.url)"></audio>
     </div>
   </div>

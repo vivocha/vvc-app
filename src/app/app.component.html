@@ -91,7 +91,6 @@
                            (action)="processAction($event)"></vvc-quick-message>
       </div>
     </div>
-
     <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState?.closed && widgetState?.chat"
                   [variables]="context.campaign.channels.web.interaction.variables"
                   (upload)="sendAttachment($event)"
