@@ -291,24 +291,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "220f2e16ce6e0309f9e946cb2db7b1492a933785c9720732df16c3b937a2a362",
+      "hash": "db886483b564146a1d1d171428630e1cd62d65aa6b6e0bf364fd090b5223c806",
       "id": "marchitos/widgets/vvc-optimized-app/assets/inline.bundle.js.map",
-      "type": "application/json",
-      "size": 5911
+      "size": 5911,
+      "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "f8c82bcf52530188a590fcdab8bc4be94736a1d7589b630741e13fceda026542",
+      "hash": "efec75c72fcd74043e3d4b9ce786312bb706b2235db9940251a1290be3889464",
       "id": "marchitos/widgets/vvc-optimized-app/assets/main.bundle.js",
-      "type": "application/javascript",
-      "size": 203336
+      "size": 230391,
+      "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "70fe20a472e1d4c4f343bf6bd410c92e8b729665cc1d95e1bad34e5bb4bc512d",
+      "hash": "b21a206279578bd32d3425509ad7422a1bb7ef79c027bfd634444d72982a4d0e",
       "id": "marchitos/widgets/vvc-optimized-app/assets/main.bundle.js.map",
-      "type": "application/json",
-      "size": 225628
+      "size": 264681,
+      "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -515,16 +515,16 @@
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "033a33b61d5dc5e8089b72a1140021b0e0aa75127a42872bb1bfd014650abe6a",
+      "hash": "cb4ff5beb1790dc11fd19de069f73f77b98eaafaf41303e1a8a7c785cd4e8f45",
       "id": "marchitos/widgets/vvc-optimized-app/assets/vendor.bundle.js",
-      "size": 3091420,
+      "size": 3149270,
       "type": "application/javascript"
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "851edc342de947434b6660c6c1d2b8b00a867c22074e977f5f3145ddd4c8c308",
+      "hash": "9aa7406c06d23edfd3c5aec7a8cd2642ab8e72f3edb37e98d47ea49ecc8848e2",
       "id": "marchitos/widgets/vvc-optimized-app/assets/vendor.bundle.js.map",
-      "size": 3752300,
+      "size": 3815189,
       "type": "application/json"
     }
   ],

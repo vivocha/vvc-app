@@ -14,10 +14,11 @@ import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/int
 
 import { WindowRef } from './interaction-core/window.service';
 import { VvcContactService } from './interaction-core/contact.service';
-import { VvcWidgetState, AppState } from './interaction-core/core.interfaces';
 import { Angular2AutoScroll } from './interaction-layout/layout-directives/autoscroll.directive';
 import { MediaToolsComponent } from './interaction-layout/media-tools/media-tools/media-tools.component';
-
+import {VvcInteractionService} from './interaction-core/interaction.service';
+import {WidgetState} from './interaction-core/store/models.interface';
+import * as fromStore from './interaction-core/store';
 declare var vivocha: VivochaVisitorInteraction;
 
 @Component({
@@ -46,7 +47,7 @@ export class AppComponent implements OnInit {
   callTimer = 0;
   wasFullScreen = false;
 
-  public widgetState: VvcWidgetState;
+  public widgetState: WidgetState;
   public messages: Array<any>;
 
   waitingInitialDataCollections: {
@@ -57,9 +58,10 @@ export class AppComponent implements OnInit {
 
   @ViewChild(Angular2AutoScroll) autoScroll;
 
-  constructor(private wref: WindowRef,
+  constructor(private is: VvcInteractionService,
+              private wref: WindowRef,
               private cserv: VvcContactService,
-              private store: Store<AppState>,
+              private store: Store<fromStore.AppState>,
               private zone: NgZone,
               private translate: TranslateService) {
 
@@ -68,6 +70,7 @@ export class AppComponent implements OnInit {
     this.checkForVivocha();
   }
   ngOnInit() {
+    this.is.init();
     this.bindStores();
     this.initResizeListeners();
     this.cserv.voiceStart.subscribe( () => {
@@ -93,8 +96,8 @@ export class AppComponent implements OnInit {
   bindStores() {
     this.store.subscribe( state => {
       console.log('STORE', state);
-      this.widgetState = <VvcWidgetState> state.widgetState;
-      this.messages = state.messages;
+      this.widgetState = <WidgetState> state.widgetState;
+      this.messages = state.messages.messages;
       if (this.wasFullScreen && this.widgetState.video === false) {
         this.setNormalScreen();
       }
@@ -139,10 +142,13 @@ export class AppComponent implements OnInit {
     this.cserv.closeContact();
     if (this.widgetState.hasSurvey) {
       this.zone.run( () => {
+        /*
         this.store.dispatch({
           type: 'SHOW_SURVEY',
           payload: this.context.survey
         });
+        */
+        this.store.dispatch(new fromStore.ShowSurvey(this.context.survey));
       });
     } else {
       // TODO hide modal if present
@@ -199,10 +205,13 @@ export class AppComponent implements OnInit {
               resolve(true);
             };
             this.zone.run( () => {
+              /*
               this.store.dispatch({
                 type: 'INITIAL_DATA',
                 payload: dataCollection
               });
+              */
+              this.store.dispatch(new fromStore.InitialData(dataCollection));
               this.translate.reloadLang(context.language);
             });
           }));
@@ -267,7 +276,8 @@ export class AppComponent implements OnInit {
     this.cserv.hangup();
   }
   hideDataCollectionPanel() {
-    this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
+    //this.store.dispatch({ type: 'SHOW_DATA_COLLECTION', payload: false });
+    this.store.dispatch(new fromStore.ShowDataCollection(false));
   }
   initResizeListeners() {
     const supportedModes = ['top', 'left', 'bottom', 'right', 'top-right', 'top-left', 'bottom-right', 'bottom-left'];
@@ -280,7 +290,8 @@ export class AppComponent implements OnInit {
     this.closeInteraction();
   }
   minimize(state) {
-    this.store.dispatch({ type: 'MINIMIZE', payload: state });
+    //this.store.dispatch({ type: 'MINIMIZE', payload: state });
+    this.store.dispatch(new fromStore.Minimize(state));
     if (state) {
       this.vivocha.minimize(
         {
@@ -446,14 +457,17 @@ export class AppComponent implements OnInit {
     this.cserv.sendDataCollection(obj);
   }
   setChatVisibility(visibility: boolean) {
-    this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
+    //this.store.dispatch({ type: 'CHATVISIBILITY', payload: visibility});
+    this.store.dispatch(new fromStore.ChatVisibility(visibility));
     if(visibility) {
-      this.store.dispatch({ type: 'RESET_NOT_READ' });
+      //this.store.dispatch({ type: 'RESET_NOT_READ' });
+      this.store.dispatch(new fromStore.ResetNotRead());
     }
   }
   setFullScreen() {
     this.wasFullScreen = true;
-    this.store.dispatch({ type: 'FULLSCREEN', payload: true});
+    //this.store.dispatch({ type: 'FULLSCREEN', payload: true});
+    this.store.dispatch(new fromStore.Fullscreen(true));
     this.vivocha.setFullScreen();
   }
   setMute(mute: boolean) {
@@ -461,7 +475,8 @@ export class AppComponent implements OnInit {
   }
   setNormalScreen() {
     this.wasFullScreen = false;
-    this.store.dispatch({ type: 'FULLSCREEN', payload: false});
+    //this.store.dispatch({ type: 'FULLSCREEN', payload: false});
+    this.store.dispatch(new fromStore.Fullscreen(false));
     this.vivocha.setNormalScreen();
     if(this.autoScroll) {
       setTimeout(() => this.autoScroll.forceScrollDown(), 50);

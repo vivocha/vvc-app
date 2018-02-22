@@ -1,10 +1,12 @@
 import { EventEmitter, Injectable, NgZone } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState, VvcWidgetState, VvcOffer } from './core.interfaces';
 
 import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/contact';
 import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { VivochaVisitorContact } from '@vivocha/client-visitor-core/dist/contact.d';
+import { VvcOffer, WidgetState } from './store/models.interface';
+
+import * as fromStore from './store';
 
 @Injectable()
 export class VvcContactService {
@@ -19,11 +21,11 @@ export class VvcContactService {
   incomingId;
   callStartedWith;
   voiceStart = new EventEmitter();
-  widgetState: VvcWidgetState;
+  widgetState: WidgetState;
 
-  constructor(private store: Store<AppState>, private zone: NgZone) {
+  constructor(private store: Store<fromStore.AppState>, private zone: NgZone) {
     store.subscribe( state => {
-      this.widgetState = <VvcWidgetState> state.widgetState;
+      this.widgetState = <WidgetState> state.widgetState;
     });
   }
   acceptOffer(opts) {
@@ -38,33 +40,21 @@ export class VvcContactService {
       this.callStartedWith = 'VIDEO';
     }
     this.mergeOffer(diffOffer);
-    this.dispatch({
-      type: 'UPDATE_MESSAGE',
-      payload: {
-        id: this.incomingId,
-        state: 'loading'
-      }
-    });
+    this.dispatch(new fromStore.UpdateMessage({
+      id: this.incomingId,
+      state: 'loading'
+    }))
   }
   acceptRequest(res, msg) {
     this.agentRequestCallback(null, res);
-    this.dispatch({
-      type: 'REM_MESSAGE',
-      payload: {
-        id: this.incomingId
-
-      }
-    });
-    this.dispatch({
-      type: 'NEW_MESSAGE',
-      payload: {
-        id: new Date().getTime(),
-        type: 'incoming-request',
-        media: msg.media,
-        state: 'closed',
-        text: msg.text + '_ACCEPTED'
-      }
-    });
+    this.dispatch(new fromStore.RemoveMessage({ id: this.incomingId }));
+    this.dispatch(new fromStore.NewMessage({
+      id: new Date().getTime(),
+      type: 'incoming-request',
+      media: msg.media,
+      state: 'closed',
+      text: msg.text + '_ACCEPTED'
+    }))
   }
   addLocalVideo() {
     this.contact.getMediaOffer().then(mediaOffer => {
@@ -76,21 +66,15 @@ export class VvcContactService {
   }
   askForUpgrade(media, startedWith) {
     this.callStartedWith = startedWith;
-    this.dispatch({
-      type: 'MEDIA_OFFERING',
-      payload: true
-    });
+    this.dispatch(new fromStore.MediaOffering(true));
     if (media === startedWith) {
       this.incomingId = new Date().getTime();
-      this.dispatch({
-        type: 'NEW_MESSAGE',
-        payload: {
-          id: this.incomingId,
-          media: this.callStartedWith,
-          state: 'loading',
-          type: 'incoming-request'
-        }
-      });
+      this.dispatch(new fromStore.NewMessage({
+        id: this.incomingId,
+        media: this.callStartedWith,
+        state: 'loading',
+        type: 'incoming-request'
+      }))
     }
     return this.contact.getMediaOffer().then(offer => {
       if (media === 'VIDEO') {
@@ -110,41 +94,38 @@ export class VvcContactService {
         };
       }
       return this.contact.offerMedia(offer).then(() => {
-        this.dispatch({ type: 'MEDIA_OFFERING', payload: false });
+        this.dispatch(new fromStore.MediaOffering(false));
       }, (err) => {
         let reason = 'REJECTED';
         if (err === 'bad_state') {
           reason = 'FAILED';
         }
-        this.dispatch({ type: 'MEDIA_OFFERING', payload: false });
-        this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId } });
-        this.dispatch({
-          type: 'NEW_MESSAGE',
-          payload: {
-            id: new Date().getTime(),
-            type: 'incoming-request',
-            media: this.callStartedWith,
-            state: 'closed',
-            extraClass: 'rejected',
-            text: 'STRINGS.MESSAGES.REMOTE_' + this.callStartedWith + '_' + reason
-          }
-        });
+        this.dispatch(new fromStore.MediaOffering(false));
+        this.dispatch(new fromStore.RemoveMessage({ id: this.incomingId }));
+        this.dispatch(new fromStore.NewMessage({
+          id: new Date().getTime(),
+          type: 'incoming-request',
+          media: this.callStartedWith,
+          state: 'closed',
+          extraClass: 'rejected',
+          text: 'STRINGS.MESSAGES.REMOTE_' + this.callStartedWith + '_' + reason
+        }))
       });
     });
   }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
     if (transcript && transcript.length > 0) {
-      this.dispatch({type: 'REDUCE_TOPBAR'});
+      this.dispatch(new fromStore.ReduceTopbar());
     }
     for (const m in transcript) {
       const msg = transcript[m];
       switch (msg.type) {
         case 'text':
-          this.dispatch({type: 'NEW_MESSAGE', payload: {text: msg.body, type: 'chat', isAgent: msg.agent}});
+          this.dispatch(new fromStore.NewMessage({text: msg.body, type: 'chat', isAgent: msg.agent}));
           break;
         case 'attachment':
-          this.dispatch({type: 'NEW_MESSAGE', payload: {
+          this.dispatch(new fromStore.NewMessage({
             text: msg.meta.desc || msg.meta.originalName,
             type: 'chat',
             isAgent: msg.agent,
@@ -152,15 +133,15 @@ export class VvcContactService {
             url: (msg.meta.originalUrl) ? msg.meta.originalUrl : msg.url,
             from_nick: msg.from_nick,
             from_id: msg.from_id
-          }});
+          }));
           break;
       }
     }
   }
   clearIsWriting() {
     clearTimeout(this.isWritingTimer);
-    this.dispatch({type: 'REM_IS_WRITING'});
-    this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
+    this.dispatch(new fromStore.RemoveIsWriting());
+    this.dispatch(new fromStore.AgentIsWriting(false));
   }
   closeContact() {
     if (this.contact) {
@@ -169,18 +150,15 @@ export class VvcContactService {
   }
   createContact(conf: ClientContactCreationOptions, context: InteractionContext) {
     this.callStartedWith = context.requestedMedia.toUpperCase();
-    this.dispatch({type: 'INITIAL_OFFER', payload: {
-      offer: conf.initialOffer,
-      context: context
-    }});
+    this.dispatch(new fromStore.InitialOffer({ offer: conf.initialOffer, context: context}));
     this.vivocha.createContact(conf).then((contact) => {
       this.vivocha.pageRequest('interactionCreated', contact);
       console.log('contact created, looking for the caps', contact);
       contact.getLocalCapabilities().then( caps => {
-        this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+        this.dispatch(new fromStore.LocalCaps(caps));
       });
       contact.getRemoteCapabilities().then( caps => {
-        this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+        this.dispatch(new fromStore.RemoteCaps(caps));
       });
       this.contact = contact;
       this.mapContact();
@@ -194,45 +172,27 @@ export class VvcContactService {
   }
   denyOffer(media) {
     this.mediaCallback('error', {});
-    this.dispatch({
-      type: 'REM_MESSAGE',
-      payload: {
-        id: this.incomingId
-
-      }
-    });
-    this.dispatch({
-      type: 'NEW_MESSAGE',
-      payload: {
-        id: new Date().getTime(),
-        type: 'incoming-request',
-        media: media,
-        state: 'closed',
-        extraClass: 'rejected',
-        text: 'STRINGS.MESSAGES.' + media + '_REJECTED'
-      }
-    });
+    this.dispatch(new fromStore.RemoveMessage({ id: this.incomingId }));
+    this.dispatch(new fromStore.NewMessage({
+      id: new Date().getTime(),
+      type: 'incoming-request',
+      media: media,
+      state: 'closed',
+      extraClass: 'rejected',
+      text: 'STRINGS.MESSAGES.' + media + '_REJECTED'
+    }))
   }
   denyRequest(res, msg) {
     this.agentRequestCallback(null, res);
-    this.dispatch({
-      type: 'REM_MESSAGE',
-      payload: {
-        id: this.incomingId
-
-      }
-    });
-    this.dispatch({
-      type: 'NEW_MESSAGE',
-      payload: {
-        id: new Date().getTime(),
-        type: 'incoming-request',
-        media: msg.media,
-        state: 'closed',
-        extraClass: 'rejected',
-        text: msg.text + '_REJECTED'
-      }
-    });
+    this.dispatch(new fromStore.RemoveMessage({ id: this.incomingId }));
+    this.dispatch(new fromStore.NewMessage({
+      id: new Date().getTime(),
+      type: 'incoming-request',
+      media: msg.media,
+      state: 'closed',
+      extraClass: 'rejected',
+      text: msg.text + '_REJECTED'
+    }))
   }
   dispatch(action) {
     this.zone.run( () => {
@@ -246,31 +206,25 @@ export class VvcContactService {
       newMedia['Voice']['data']['rx_stream']);
 
     if (!this.widgetState.voice && hasVoice) {
-      this.dispatch({ type: 'REM_MESSAGE', payload: { id: this.incomingId }});
-      this.dispatch({
-        type: 'NEW_MESSAGE',
-        payload: {
-          id: new Date().getTime(),
-          type: 'incoming-request',
-          media: this.callStartedWith,
-          state: 'closed',
-          extraClass: 'accepted',
-          text: 'STRINGS.MESSAGES.' + this.callStartedWith + '_STARTED'
-        }
-      });
+      this.dispatch(new fromStore.RemoveMessage({ id: this.incomingId }));
+      this.dispatch(new fromStore.NewMessage({
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: this.callStartedWith,
+        state: 'closed',
+        extraClass: 'accepted',
+        text: 'STRINGS.MESSAGES.' + this.callStartedWith + '_STARTED'
+      }));
     }
     if (this.widgetState.voice && !hasVoice) {
-      this.dispatch({
-        type: 'NEW_MESSAGE',
-        payload: {
-          id: new Date().getTime(),
-          type: 'incoming-request',
-          media: this.callStartedWith,
-          state: 'closed',
-          extraClass: 'accepted',
-          text: 'STRINGS.MESSAGES.' + this.callStartedWith + '_ENDED'
-        }
-      });
+      this.dispatch(new fromStore.NewMessage({
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: this.callStartedWith,
+        state: 'closed',
+        extraClass: 'accepted',
+        text: 'STRINGS.MESSAGES.' + this.callStartedWith + '_ENDED'
+      }))
     }
   }
   getUpgradeState(mediaObject) {
@@ -281,17 +235,14 @@ export class VvcContactService {
     return mediaObject;
   }
   fetchDataCollection(dc) {
-    this.dispatch({ type: 'ADD_DATA_COLLECTION', payload: dc });
-    this.dispatch({
-      type: 'NEW_MESSAGE',
-      payload: {
-        id: new Date().getTime(),
-        type: 'incoming-request',
-        media: 'DC',
-        state: 'open',
-        dataCollection: dc
-      }
-    });
+    this.dispatch(new fromStore.AddDataCollection(dc));
+    this.dispatch(new fromStore.NewMessage({
+      id: new Date().getTime(),
+      type: 'incoming-request',
+      media: 'DC',
+      state: 'open',
+      dataCollection: dc
+    }))
   }
   hangup() {
     this.contact.getMediaOffer().then(mediaOffer => {
@@ -345,7 +296,6 @@ export class VvcContactService {
     //MARCO - ADD TEMPORARY ON ACTION TO RECEIVE NEW MEDIA MESSAGES
     this.contact.on('action', (action_code, args) => {
       if (action_code === 'quick') {
-        console.log('quick message arrived');
         const quick = {
           code: 'message',
           type: 'text',
@@ -357,10 +307,9 @@ export class VvcContactService {
           ]
         };
         quick.type = 'quick-replies';
-        this.dispatch({type: 'NEW_MESSAGE', payload: quick });
+        this.dispatch(new fromStore.NewMessage(quick));
       }
       if (action_code === 'template'){
-        console.log('template message arrived');
         const template = {
           type: 'template',
           template: 'generic',
@@ -380,7 +329,7 @@ export class VvcContactService {
             }
           ]
         }
-        this.dispatch({type: 'NEW_MESSAGE', payload: template });
+        this.dispatch(new fromStore.NewMessage(template));
 
       }
       this.clearIsWriting();
@@ -393,7 +342,7 @@ export class VvcContactService {
     });
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       const attachment = {url, meta, fromId, fromNick, isAgent};
-      this.dispatch({type: 'NEW_MESSAGE', payload: {
+      this.dispatch(new fromStore.NewMessage({
         text: meta.desc || meta.originalName,
         type: 'chat',
         isAgent: isAgent,
@@ -401,11 +350,11 @@ export class VvcContactService {
         url: (meta.originalUrl) ? meta.originalUrl : url,
         from_nick: fromNick,
         from_id: fromId
-      }});
+      }))
 
     });
     this.contact.on('capabilities', caps => {
-      this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+      this.dispatch(new fromStore.RemoteCaps(caps));
     });
     this.contact.on('iswriting', (from_id, from_nick, agent) => {
       if (agent) {
@@ -426,39 +375,36 @@ export class VvcContactService {
       }
     });
     this.contact.on('localcapabilities', caps => {
-      this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+      this.dispatch(new fromStore.LocalCaps(caps));
     });
     this.contact.on('localtext', (text) => {
-      this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: false}});
+      this.dispatch(new fromStore.NewMessage({text: text, type: 'chat', isAgent: false}));
     });
     this.contact.on('mediachange', (media, changed) => {
       this.dispatchConnectionMessages(media);
-      this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
+      this.dispatch(new fromStore.MediaChange(media));
     });
     this.contact.on('mediaoffer', (offer, cb) => {
       this.onMediaOffer(offer, cb);
     });
     this.contact.on('text', (text, from_id, from_nick, agent ) => {
-      this.dispatch({type: 'REDUCE_TOPBAR'});
-      this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
+      this.dispatch(new fromStore.ReduceTopbar());
+      this.dispatch(new fromStore.NewMessage({text: text, type: 'chat', isAgent: agent}));
       if (this.widgetState && (this.widgetState.minimized || !this.widgetState.chatVisibility)) {
-        this.dispatch({type: 'INCREMENT_NOT_READ'});
+        this.dispatch(new fromStore.IncrementNotRead());
       }
       this.playAudioNotification();
       this.clearIsWriting();
     });
     this.contact.on('transferred', (transferred_to) => {
-      this.dispatch({
-        type: 'NEW_MESSAGE',
-        payload: {
-          id: new Date().getTime(),
-          type: 'incoming-request',
-          media: 'TRANSFER',
-          state: 'closed',
-          extraClass: 'rejected',
-          text: 'STRINGS.MESSAGES.TRANSFERRED'
-        }
-      });
+      this.dispatch(new fromStore.NewMessage({
+        id: new Date().getTime(),
+        type: 'incoming-request',
+        media: 'TRANSFER',
+        state: 'closed',
+        extraClass: 'rejected',
+        text: 'STRINGS.MESSAGES.TRANSFERRED'
+      }))
     });
   }
   mergeOffer (diffOffer) {
@@ -474,15 +420,15 @@ export class VvcContactService {
     });
   }
   muteAudio(muted) {
-    this.dispatch({ type: 'MUTE_IN_PROGRESS', payload: true });
+    this.dispatch(new fromStore.MuteInProgress(true));
     this.contact.getMediaEngine('WebRTC').then( engine => {
       if (muted) {
         engine.muteLocalAudio();
       } else {
         engine.unmuteLocalAudio();
       }
-      this.dispatch({ type: 'MUTE_IN_PROGRESS', payload: false });
-      this.dispatch({ type: 'MUTE', payload: muted });
+      this.dispatch(new fromStore.MuteInProgress(false));
+      this.dispatch(new fromStore.Mute(muted));
     });
   }
   onAgentJoin(join) {
@@ -490,32 +436,29 @@ export class VvcContactService {
       const agent = { id: join.user, nick: join.nick, avatar: join.avatar};
       this.agentInfo = agent;
       this.vivocha.pageRequest('interactionAnswered', agent);
-      this.dispatch({ type: 'JOINED', payload: agent });
-      this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
+      this.dispatch(new fromStore.Joined(agent));
+      this.dispatch(new fromStore.MediaChange(media));
     });
   }
   onAgentRequest(message, cb) {
     this.agentRequestCallback = cb;
     this.incomingId = new Date().getTime();
-    this.dispatch({
-      type: 'NEW_MESSAGE',
-      payload: {
-        id: this.incomingId,
-        state: 'open',
-        media: 'REQUEST_' + message,
-        accept: true,
-        decline: false,
-        type: 'incoming-request',
-        text: 'STRINGS.MESSAGES.' + message.toUpperCase()
-      }
-    });
+    this.dispatch(new fromStore.NewMessage({
+      id: this.incomingId,
+      state: 'open',
+      media: 'REQUEST_' + message,
+      accept: true,
+      decline: false,
+      type: 'incoming-request',
+      text: 'STRINGS.MESSAGES.' + message.toUpperCase()
+    }))
   }
   onLocalJoin(join) {
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
         const agent = this.contact.contact.agentInfo;
-        this.dispatch({ type: 'JOINED', payload: agent });
-        this.dispatch({ type: 'MEDIA_CHANGE', payload: media });
+        this.dispatch(new fromStore.Joined(agent));
+        this.dispatch(new fromStore.MediaChange(media));
         this.checkForTranscript();
       });
     }
@@ -526,19 +469,16 @@ export class VvcContactService {
     if (confirmation.askForConfirmation) {
       this.incomingId = new Date().getTime();
       this.incomingOffer = confirmation.offer;
-      this.dispatch({
-        type: 'NEW_MESSAGE',
-        payload: {
-          id: this.incomingId,
-          media: confirmation.media,
-          accept: 'video-full',
-          conditional: 'voice-only',
-          decline: confirmation.media,
-          state: 'open',
-          type: 'incoming-offer',
-          text: 'STRINGS.MESSAGES.' + confirmation.media + '_REQUEST'
-        }
-      });
+      this.dispatch(new fromStore.NewMessage({
+        id: this.incomingId,
+        media: confirmation.media,
+        accept: 'video-full',
+        conditional: 'voice-only',
+        decline: confirmation.media,
+        state: 'open',
+        type: 'incoming-offer',
+        text: 'STRINGS.MESSAGES.' + confirmation.media + '_REQUEST'
+      }))
     } else {
       this.mergeOffer(offer);
     }
@@ -560,18 +500,18 @@ export class VvcContactService {
   resumeContact(context: InteractionContext) {
     this.callStartedWith = context.requestedMedia.toUpperCase();
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
-      this.dispatch({type: 'INITIAL_OFFER', payload: {
+      this.dispatch(new fromStore.InitialOffer({
         offer: contactData.initial_offer,
         context: context
-      }});
+      }));
       this.vivocha.resumeContact(contactData).then((contact) => {
         this.vivocha.pageRequest('interactionCreated', contact);
         console.log('contact created, looking for the caps', contact);
         contact.getLocalCapabilities().then( caps => {
-          this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+          this.dispatch(new fromStore.LocalCaps(caps));
         });
         contact.getRemoteCapabilities().then( caps => {
-          this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+          this.dispatch(new fromStore.RemoteCaps(caps));
         });
         this.contact = contact;
         this.mapContact();
@@ -584,51 +524,31 @@ export class VvcContactService {
   sendAttachment(msg) {
     const ref = new Date().getTime();
     this.contact.attach(msg.file, msg.text).then( () => {
-      this.dispatch({type: 'REM_MESSAGE', payload: {id: ref}});
+      this.dispatch(new fromStore.RemoveMessage({id: ref}));
     }, () => {
-      this.dispatch({type: 'REM_MESSAGE', payload: {id: ref}});
-      /*
-      this.dispatch({ type: 'ADD_TEXT', payload: {
-          text: 'CHAT.FILE_TRANSFER_FAILED',
-          type: 'AGENT-INFO'
-      } });
-      */
+      this.dispatch(new fromStore.RemoveMessage({id: ref}));
     });
-    this.dispatch({type: 'NEW_MESSAGE', payload: {id: ref, state: 'uploading', type: 'chat', isAgent: false}});
+    this.dispatch(new fromStore.NewMessage({
+      id: ref, state: 'uploading', type: 'chat', isAgent: false
+    }))
   }
   sendCloseMessage() {
-    this.dispatch({
-      type: 'NEW_MESSAGE',
-      payload: {
-        id: new Date().getTime(),
-        type: 'incoming-request',
-        media: 'AGENTCLOSE',
-        state: 'closed',
-        extraClass: 'rejected',
-        text: 'STRINGS.MESSAGES.REMOTE_CLOSE'
-      }
-    });
-    this.dispatch({
-      type: 'CLOSE_CONTACT',
-      payload: true
-    });
-    this.dispatch({ type: 'REM_IS_WRITING' });
+    this.dispatch(new fromStore.NewMessage({
+      id: new Date().getTime(),
+      type: 'incoming-request',
+      media: 'AGENTCLOSE',
+      state: 'closed',
+      extraClass: 'rejected',
+      text: 'STRINGS.MESSAGES.REMOTE_CLOSE'
+    }));
+    this.dispatch(new fromStore.CloseContact(true));
+    this.dispatch(new fromStore.RemoveIsWriting());
   }
   sendDataCollection(obj) {
     const dc = obj.dataCollection;
     const message = obj.msg;
-
-    this.dispatch({
-      type: 'UPDATE_MESSAGE',
-      payload: {
-        id: message.id,
-        state: 'closed'
-      }
-    });
-    this.dispatch({
-      type: 'MERGE_DATA_COLLECTION',
-      payload: dc
-    });
+    this.dispatch(new fromStore.UpdateMessage({id: message.id, state: 'closed'}));
+    this.dispatch(new fromStore.MergeDataCollection(dc));
   }
   sendPostBack(payload: any){
     console.log('dispatching from contact service', payload);
@@ -638,18 +558,15 @@ export class VvcContactService {
   }
   setIsWriting() {
     clearTimeout(this.isWritingTimer);
-    this.dispatch({type: 'AGENT_IS_WRITING', payload: true });
-    this.dispatch({type: 'NEW_MESSAGE', payload: { type: 'chat', state: 'iswriting', isAgent: true}});
+    this.dispatch(new fromStore.AgentIsWriting(true));
+    this.dispatch(new fromStore.NewMessage({ type: 'chat', state: 'iswriting', isAgent: true}))
     this.isWritingTimer = setTimeout( () => {
-      this.dispatch({type: 'REM_IS_WRITING'});
-      this.dispatch({type: 'AGENT_IS_WRITING', payload: false });
+      this.dispatch(new fromStore.RemoveIsWriting());
+      this.dispatch(new fromStore.AgentIsWriting(false));
     }, this.isWritingTimeout);
   }
   syncDataCollection(dataCollection) {
-    this.dispatch({
-      type: 'MERGE_DATA_COLLECTION',
-      payload: dataCollection
-    });
+    this.dispatch(new fromStore.MergeDataCollection(dataCollection));
   }
   upgradeMedia(upgradeState) {
     this.contact.mergeMedia(this.getUpgradeState(upgradeState)).then( (mergedMedia) => {

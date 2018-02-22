@@ -5,12 +5,19 @@ import { VvcContactService } from './contact.service';
 import { ActionReducer, combineReducers, StoreModule } from '@ngrx/store';
 import { widgetState, messages } from './core.reducers';
 import { VvcWidgetState } from './core.interfaces';
-import { TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { VvcInteractionService } from './interaction.service';
+import { reducers } from './store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../../environments/environment';
 
-const reducers = {widgetState, messages};
-const productionReducer: ActionReducer<{widgetState: VvcWidgetState, messages: any[]}> = combineReducers(reducers);
+
+
+const reducers1 = {widgetState, messages};
+const productionReducer: ActionReducer<{widgetState: VvcWidgetState, messages: any[]}> = combineReducers(reducers1);
+
 
 export function reducer(state: any, action: any) {
   return productionReducer(state, action);
@@ -35,10 +42,12 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [
     WindowRef,
-    { provide: VvcContactService, useClass: VvcContactService }
+    { provide: VvcContactService, useClass: VvcContactService },
+    VvcInteractionService
   ]
 })
 export class InteractionCoreModule { }
