@@ -1,17 +1,21 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {DataCollection} from '../core/core.interfaces';
+
+export interface DataCollection {
+  status: string;
+  type: string;
+}
+
 
 @Component({
-  selector: 'vvc-survey',
-  templateUrl: './survey.component.html'
+  selector: 'vvc-initial-data',
+  templateUrl: './initial-data.component.html'
 })
-export class SurveyComponent implements OnInit {
-  sent: boolean;
+export class InitialDataComponent implements OnInit {
 
   @Input() dataCollection: DataCollection;
   @Input() variables;
   @Output() datasubmit = new EventEmitter();
-  @Output() close = new EventEmitter();
+  @Output() abandon = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

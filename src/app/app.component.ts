@@ -12,11 +12,11 @@ import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { InteractionManager } from '@vivocha/client-visitor-core/dist/page_interaction.d';
 import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/interaction.d';
 
-import { WindowRef } from './core/window.service';
-import { VvcContactService } from './core/contact.service';
-import { VvcWidgetState, AppState } from './core/core.interfaces';
-import { MediaToolsComponent } from './media-tools/media-tools.component';
+import { WindowRef } from './interaction-core/window.service';
+import { VvcContactService } from './interaction-core/contact.service';
+import { VvcWidgetState, AppState } from './interaction-core/core.interfaces';
 import { Angular2AutoScroll } from 'app/autoscroll.directive';
+import { MediaToolsComponent } from './interaction-layout/media-tools/media-tools/media-tools.component';
 
 declare var vivocha: VivochaVisitorInteraction;
 

@@ -2,7 +2,6 @@ import {
   Component, Input, Output, EventEmitter, ChangeDetectionStrategy,
    ViewChild
 } from '@angular/core';
-import {VvcWidgetState} from '../core/core.interfaces';
 import {DomSanitizer} from '@angular/platform-browser';
 
 
@@ -14,7 +13,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class MediaToolsComponent {
 
   @ViewChild('theTimer') theTimer;
-  @Input() state: VvcWidgetState;
+  @Input() state: any; //VvcWidgetState;
   @Output() hangup = new EventEmitter();
   @Output() addvideo = new EventEmitter();
   @Output() remvideo = new EventEmitter();

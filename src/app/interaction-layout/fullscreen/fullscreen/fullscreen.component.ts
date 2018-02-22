@@ -1,5 +1,4 @@
 import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
-import {VvcWidgetState} from '../core/core.interfaces';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -8,7 +7,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FullscreenComponent implements OnInit {
-  @Input() state: VvcWidgetState;
+  @Input() state: any; //VvcWidgetState;
   @Output() hangup = new EventEmitter();
   @Output() addvideo = new EventEmitter();
   @Output() remvideo = new EventEmitter();

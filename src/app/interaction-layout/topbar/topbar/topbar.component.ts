@@ -4,8 +4,6 @@ import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/takeUntil';
 
-import {VvcWidgetState} from '../core/core.interfaces';
-
 declare var vivocha: any;
 
 @Component({
@@ -15,7 +13,7 @@ declare var vivocha: any;
 })
 export class TopbarComponent {
 
-  @Input() state: VvcWidgetState;
+  @Input() state: any; //VvcWidgetState;
   @Input() variables;
   @Output() close = new EventEmitter();
   @Output() minimize = new EventEmitter();
