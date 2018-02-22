@@ -14,6 +14,7 @@ import { QuickMessageModule } from '../interaction-layout/quick-message/quick-me
 import { TemplateMessageModule } from '../interaction-layout/template-message/template-message.module';
 import { TopbarModule } from '../interaction-layout/topbar/topbar.module';
 import { VideoThumbsModule } from '../interaction-layout/video-thumbs/video-thumbs.module';
+import { LayoutDirectivesModule } from '../interaction-layout/layout-directives/layout-directives.module';
 
 const layoutModules = [
   ChatBoxModule,
@@ -29,7 +30,8 @@ const layoutModules = [
   QuickMessageModule,
   TemplateMessageModule,
   TopbarModule,
-  VideoThumbsModule
+  VideoThumbsModule,
+  LayoutDirectivesModule
 ];
 
 @NgModule({

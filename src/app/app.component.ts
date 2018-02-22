@@ -15,7 +15,7 @@ import { VivochaVisitorInteraction } from '@vivocha/client-visitor-core/dist/int
 import { WindowRef } from './interaction-core/window.service';
 import { VvcContactService } from './interaction-core/contact.service';
 import { VvcWidgetState, AppState } from './interaction-core/core.interfaces';
-import { Angular2AutoScroll } from 'app/autoscroll.directive';
+import { Angular2AutoScroll } from './interaction-layout/layout-directives/autoscroll.directive';
 import { MediaToolsComponent } from './interaction-layout/media-tools/media-tools/media-tools.component';
 
 declare var vivocha: VivochaVisitorInteraction;
