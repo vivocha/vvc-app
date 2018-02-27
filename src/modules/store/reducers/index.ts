@@ -1,4 +1,4 @@
-import {ActionReducerMap, createFeatureSelector} from '@ngrx/store';
+import {ActionReducerMap, createFeatureSelector, MemoizedSelector} from '@ngrx/store';
 
 import * as fromContext from './context.reducer';
 import * as fromMessages from './messages.reducer';
@@ -18,6 +18,6 @@ export const reducers: ActionReducerMap<AppState> = {
   widgetState: fromWidget.reducer
 };
 
-export const getContextState = createFeatureSelector<ContextState>('context');
-export const getMessagesState = createFeatureSelector<MessagesState>('messages');
-export const getWidgetState = createFeatureSelector<WidgetState>('widgetState');
+export const getContextState: MemoizedSelector<ContextState, any> = createFeatureSelector<ContextState>('context');
+export const getMessagesState: MemoizedSelector<MessagesState, any> = createFeatureSelector<MessagesState>('messages');
+export const getWidgetState: MemoizedSelector<WidgetState, any> = createFeatureSelector<WidgetState>('widgetState');
