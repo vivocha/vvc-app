@@ -3,13 +3,13 @@
   "version": "5.9.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "__build": "ng build --prod",
+    "clean": "[ ! -d ./dist ] || rm -rf dist/*",
+    "clean:all": "npm run clean && rm -rf node_modules",
+    "prebuild": "npm run clean",
     "build": "ng-packagr -p ng-package.json",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "precommit": "npm run build",
+    "version": "jsonref -f ./package.json /version",
+    "build:all": "npm run clean:all && npm install && npm run build"
   },
   "repository": {
     "type": "git",
