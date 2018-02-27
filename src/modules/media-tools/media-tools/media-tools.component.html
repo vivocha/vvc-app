@@ -1,0 +1,78 @@
+<div class="vvc-media-wrap" [ngClass]="{'video': state?.video, 'voice': !state?.video}">
+
+  <div class="vvc-video-wrap video-tools">
+
+    <video class="big-video"
+           autoplay
+           *ngIf="state?.video_rx"
+           [src]="trustedSrc(state.video_rx.url)"></video>
+
+    <video class="small-video"
+           autoplay
+           muted
+           *ngIf="state?.video_tx"
+           [src]="trustedSrc(state.video_tx.url)"></video>
+  </div>
+
+
+  <div class="vvc-tools-wrap">
+    <div class="vvc-inner-tools video-tools" *ngIf="!state.mobile">
+
+      <button class="first-btn"
+              *ngIf="state?.video_tx"
+              (click)="remvideo.emit()">
+        <i class="vvc-video-off"></i> {{ 'STRINGS.MEDIATOOLS.VIDEO_OFF' | translate }}
+      </button>
+
+      <button class="first-btn"
+              *ngIf="!state?.video_tx"
+              (click)="addvideo.emit()">
+        <i class="vvc-video"></i> {{ 'STRINGS.MEDIATOOLS.VIDEO_ON' | translate }}
+      </button>
+
+      <button *ngIf="!state?.fullScreen"
+              (click)="maximize.emit()">
+        <i class="vvc-expand"></i> {{ 'STRINGS.MEDIATOOLS.EXPAND' | translate }}
+      </button>
+
+      <button *ngIf="!state.mute"
+              [disabled]="state.mute_in_progress"
+              (click)="mute.emit(true)">
+        <i class="vvc-unmute"></i> {{ 'STRINGS.MEDIATOOLS.MUTE' | translate }}
+      </button>
+
+      <button *ngIf="state.mute"
+              [disabled]="state.mute_in_progress"
+              (click)="mute.emit(false)">
+        <i class="vvc-mute"></i> {{ 'STRINGS.MEDIATOOLS.MUTE' | translate }}
+      </button>
+
+      <button class="hangup" (click)="hangup.emit()">
+        <i class="vvc-hangup"></i> {{ 'STRINGS.MEDIATOOLS.HANGUP' | translate }}</button>
+    </div>
+
+    <div class="vvc-inner-tools audio-tools">
+      <button class="first-btn audio"
+              *ngIf="!state.mute"
+              [disabled]="state.mute_in_progress"
+              (click)="mute.emit(true)">
+        <i class="vvc-unmute"></i> {{ 'STRINGS.MEDIATOOLS.MUTE' | translate }}
+      </button>
+      <button class="first-btn audio"
+              *ngIf="state.mute"
+              [disabled]="state.mute_in_progress"
+              (click)="mute.emit(false)">
+        <i class="vvc-mute"></i> {{ 'STRINGS.MEDIATOOLS.UNMUTE' | translate }}
+      </button>
+      <div class="the-timer" #theTimer>
+        00:00:00
+      </div>
+      <button class="hangup" (click)="hangup.emit()">
+        <i class="vvc-hangup"></i> {{ 'STRINGS.MEDIATOOLS.HANGUP' | translate }}
+      </button>
+      <audio autoplay
+             *ngIf="state.voice && state.voice_rx && !state.video_rx"
+             [src]="trustedSrc(state.voice_rx.url)"></audio>
+    </div>
+  </div>
+</div>

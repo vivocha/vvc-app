@@ -1,0 +1,22 @@
+<div class="upload-descr">
+  <i class="vvc-pic"></i> <input #fileDescr type="text" placeholder="{{ 'STRINGS.TOOLS.UPLOADER.FILE_DESCRIPTION' | translate }}" />
+</div>
+<div class="upload-file">
+  <div class="file-containter">
+    <i class="vvc-remove"
+       *ngIf="uploadFile"
+       (click)="removeUpload(formUploader)"></i> <div class="file-name">{{uploadFile?.name || ('STRINGS.TOOLS.UPLOADER.SELECT_PLACEHOLDER' | translate)}}</div>
+  </div>
+  <label for="theFile" class="btn-primary">{{ 'STRINGS.TOOLS.UPLOADER.BROWSE' | translate }}</label>
+</div>
+<div class="file-size">{{ 'STRINGS.TOOLS.UPLOADER.MAX_FILESIZE' | translate }}</div>
+<div class="submit-area">
+  <button class="btn-primary"
+          [disabled]="!uploadFile"
+          (click)="doUpload(fileDescr)">
+    <i class="vvc-check"></i> {{'STRINGS.TOOLS.UPLOADER.SEND' | translate }}
+  </button>
+</div>
+<form id="formUploader" #formUploader enctype="multipart/form-data" onsubmit="return false;">
+  <input type="file" id="theFile" name="theFile" class="inputfile" (change)="onUploading($event)">
+</form>

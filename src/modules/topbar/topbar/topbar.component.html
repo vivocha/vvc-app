@@ -1,0 +1,34 @@
+<div class="top-row" (mousedown)="drag($event)">
+  <div class="media-tools">
+    <div *ngIf="!state.closed">
+      <i class="vvc-phone"
+         [ngClass]="{'disabled': state.voice || state.mediaOffering }"
+         *ngIf="canStartMediaRequest('voice')"
+         (click)="askForUpgrade('voice')"></i>
+
+      <i class="vvc-video"
+         [ngClass]="{'disabled': state.video || state.mediaOffering }"
+         *ngIf="canStartMediaRequest('video')"
+         (click)="askForUpgrade('video')"></i>
+    </div>
+  </div>
+  <div class="avatar-place">
+    <img class='agent-img' [src]="getAvatar()">
+  </div>
+  <div class="secondary-tools">
+    <i class="vvc-minimize" *ngIf="!state.closed" (click)="minimize.emit()"></i>
+    <i class="vvc-close" (click)="close.emit(state.closed)"></i>
+  </div>
+</div>
+
+<div class="welcome-msg">
+  <div class="msg-content">
+    <span class="msg" [innerHTML]="'STRINGS.TOPBAR.WELCOME' | translate">Welcome<br>you are talking with</span><br>
+    <span class="agent-name">{{ getAgentName() }}</span>
+  </div>
+</div>
+
+<div class="info-msg">
+  <span class="agent-name" *ngIf="!state.isAgentWriting">{{ getAgentName() }}</span>
+  <span class="msg" *ngIf="state.isAgentWriting"><i class="vvc-chat"></i> {{ 'STRINGS.TOPBAR.ISWRITING' | translate:{agent: getAgentName()} }}</span>
+</div>

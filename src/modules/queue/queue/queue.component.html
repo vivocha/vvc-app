@@ -1,0 +1,39 @@
+<div id="vvc-queue">
+  <div id="top-box">
+    <div id="top-box-row1">
+      <div>&nbsp;</div>
+      <div>
+        <img class="acct-img" [src]="variables.companyLogoUrl">
+      </div>
+      <div (click)="leave.emit()">
+        <i class="vvc-close"></i>
+      </div>
+    </div>
+    <div id="top-box-row2">
+      <div [innerHTML]="'STRINGS.QUEUE.WELCOME' | translate">
+        Welcome<br>to Vivocha’s customer service
+      </div>
+    </div>
+  </div>
+  <div id="middle-box">
+    <div>
+      <div class="media-type">
+        <i *ngIf="type === 'chat'" class="vvc-chat"></i>
+        <i *ngIf="type === 'voice'" class="vvc-phone"></i>
+        <i *ngIf="type === 'video'" class="vvc-video"></i>
+      </div>
+      <div class="loading-wrapper">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </div>
+  <div id="bottom-box">
+    <div class="card vvc-form">
+      <div class="card-inner">
+        <div>
+          <div [innerHTML]="'STRINGS.QUEUE.INFO' | translate">Just a moment,<br>we are connecting you with the first available agent.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

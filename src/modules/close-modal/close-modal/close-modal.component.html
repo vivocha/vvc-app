@@ -1,0 +1,16 @@
+<div class="modal-content">
+  <div class="inner-content">
+    <div class="incoming-msg">
+      <div class="open">
+        <div class="inc-msg-header">
+          <div class="inc-type"><i class="vvc-sign-out"></i></div>
+          <div class="inc-header">{{ 'STRINGS.CLOSEMODAL.CLOSE_MESSAGE' | translate }}</div>
+        </div>
+        <div class="inc-msg-content">
+          <button (click)="cancel.emit()" class="btn-normal">{{ 'STRINGS.CLOSEMODAL.NO' | translate }}</button>
+          <button (click)="close.emit()" class="btn-primary">{{ 'STRINGS.CLOSEMODAL.YES' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

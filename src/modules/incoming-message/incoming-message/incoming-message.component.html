@@ -1,0 +1,51 @@
+<div class="incoming-msg">
+
+  <div class="open" *ngIf="message.state==='open'">
+    <div class="inc-msg-header">
+      <div class="inc-type">
+        <i *ngIf="message.media === 'VOICE'" class="vvc-phone"></i>
+        <i *ngIf="message.media === 'VIDEO'" class="vvc-video"></i>
+        <i *ngIf="message.media === 'REQUEST'" class="vvc-request"></i>
+      </div>
+      <div class="inc-header">{{ message.text | translate }}</div>
+    </div>
+    <div class="inc-msg-content">
+      <button class="btn-normal" (click)="rejectOffer.emit(message.decline, message)">
+        <i class="vvc-close"></i> {{ 'STRINGS.MESSAGES.DECLINE' | translate }}
+      </button>
+      <button class="btn-primary"
+              *ngIf="message.media === 'VIDEO'"
+              (click)="acceptOffer.emit(message.conditional, message)">
+        <i class="vvc-phone"></i> {{ 'STRINGS.MESSAGES.VOICE_ONLY' | translate }}
+      </button>
+      <button class="btn-primary" (click)="acceptOffer.emit(message.accept, message)">
+        <i class="vvc-check"></i> {{ 'STRINGS.MESSAGES.ACCEPT' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="message.state==='loading'">
+   <div class="inc-type">
+     <i *ngIf="message.media === 'VOICE'" class="vvc-phone"></i>
+     <i *ngIf="message.media === 'VIDEO'" class="vvc-video"></i>
+   </div>
+   <div class="loading-wrapper">
+     <div class="loader"></div>
+   </div>
+  </div>
+
+  <div class="closed"
+       *ngIf="message.state==='closed'"
+       [ngClass]="{'rejected':message.extraClass === 'rejected', 'accepted':message.extraClass === 'accepted'}">
+   <div class="inc-msg-header">
+     <div class="inc-type">
+       <i *ngIf="message.media === 'VOICE'" class="vvc-phone"></i>
+       <i *ngIf="message.media === 'VIDEO'" class="vvc-video"></i>
+       <i *ngIf="message.media === 'AGENTCLOSE'" class="vvc-sign-out"></i>
+       <i *ngIf="message.media === 'TRANSFER'" class="vvc-headphones"></i>
+     </div>
+     <div class="inc-header">{{ message.text | translate }}</div>
+   </div>
+  </div>
+
+</div>

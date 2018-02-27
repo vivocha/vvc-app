@@ -1,0 +1,43 @@
+<div *ngIf="message.isAgent" class="agent-msg" >
+  <span class="msg-content" *ngIf="message.state === 'iswriting'">
+    <span class="bubble bubble-one"></span>
+    <span class="bubble bubble-two"></span>
+    <span class="bubble bubble-three"></span>
+  </span>
+
+  <span class="msg-content" *ngIf="message.url">
+    <span class="the-image" *ngIf="isImage()"><img [src]="message.url"></span>
+    <span class="file-type" *ngIf="!isImage()"><i class="vvc-doc"></i></span>
+    <span class="the-file" *ngIf="!isImage()">{{message.text}}</span>
+    <span class="download" (click)="download.emit(message.url)">{{ 'STRINGS.MESSAGES.DOWNLOAD' | translate }}  <i class="vvc-download"></i></span>
+    <span class="the-message" *ngIf="isImage()">{{message.text}}</span>
+  </span>
+
+  <span class="msg-content" *ngIf="message.state !== 'iswriting' && !message.url">
+    {{message.text}}
+  </span>
+
+</div>
+
+<div *ngIf="!message.isAgent" class="customer-msg">
+
+  <span class="msg-content" *ngIf="message.url">
+    <span class="the-image" *ngIf="isImage()"><img [src]="message.url"></span>
+    <span class="file-type" *ngIf="!isImage()"><i class="vvc-doc"></i></span>
+    <span class="the-file" *ngIf="!isImage()">{{message.text}}</span>
+    <span class="download" (click)="download.emit(message.url)">{{ 'STRINGS.MESSAGES.DOWNLOAD' | translate }}  <i class="vvc-download"></i></span>
+    <span class="the-message" *ngIf="isImage()">{{message.text}}</span>
+  </span>
+
+  <span *ngIf="message.state === 'uploading'">
+    <span class="msg-content">
+      {{ 'STRINGS.MESSAGES.FILE_SENDING' | translate }}
+    </span>
+    <span class="file-uploading spin"><i class="vvc-refresh spin"></i></span>
+  </span>
+
+
+  <span class="msg-content" *ngIf="message.state !== 'uploading' && !message.url">
+    {{message.text}}
+  </span>
+</div>

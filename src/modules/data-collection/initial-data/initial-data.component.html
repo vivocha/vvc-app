@@ -1,0 +1,22 @@
+<div class="top-box">
+  <div class="top-box-row1">
+    <div>&nbsp;</div>
+    <div>
+      <img class="acct-img" [src]="variables.companyLogoUrl">
+    </div>
+    <div (click)="abandon.emit()">
+      <i class="vvc-close"></i>
+    </div>
+  </div>
+  <div class="top-box-row2">
+    <div [innerHTML]="'STRINGS.INITIAL_DATA.WELCOME' | translate"></div>
+  </div>
+</div>
+<div class="data-box">
+  <div class="card vvc-form">
+    <div class="card-inner">
+      <vvc-form [dc]="dataCollection"
+                (submit)="datasubmit.emit($event)"></vvc-form>
+    </div>
+  </div>
+</div>
