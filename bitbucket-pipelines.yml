@@ -1,0 +1,16 @@
+image: node:8
+pipelines:
+  default:
+    - step:
+        script:
+          - npm install
+          - npm run build
+
+  branches:
+    master:
+      - step:
+          script:
+            - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\nregistry=https://registry.npmjs.org\n" >> ~/.npmrc
+            - npm install
+            - npm run build
+            - ([ `npm show @vivocha/${BITBUCKET_REPO_SLUG} version` == `npm run -s version` ] || npm publish)
