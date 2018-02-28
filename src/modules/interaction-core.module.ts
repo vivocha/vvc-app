@@ -46,6 +46,9 @@ export function createTranslateLoader(http: HttpClient) {
     WindowRef,
     { provide: VvcContactService, useClass: VvcContactService },
     VvcInteractionService
+  ],
+  exports: [
+    VvcInteractionService
   ]
 })
 export class InteractionCoreModule { }
