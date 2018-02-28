@@ -18,10 +18,13 @@
   "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
   "homepage": "https://bitbucket.org/vivocha/client-interaction-core#readme",
   "files": [
-    "dist",
+    "dist/**/*.js",
+    "dist/**/*.ts",
+    "dist/**/*.map",
     "README.md",
     "LICENSE"
   ],
+  "peerDependencies": {},
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
