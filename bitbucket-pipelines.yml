@@ -13,4 +13,4 @@ pipelines:
             - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\nregistry=https://registry.npmjs.org\n" >> ~/.npmrc
             - npm install
             - npm run build
-            - ([ `npm show @vivocha/${BITBUCKET_REPO_SLUG} version` == `npm run -s version` ] || npm publish)
+            - ([ `npm show @vivocha/${BITBUCKET_REPO_SLUG} version` == `npm run -s version` ] || npm publish dist)

@@ -17,11 +17,6 @@
   },
   "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
   "homepage": "https://bitbucket.org/vivocha/client-interaction-layout#readme",
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
