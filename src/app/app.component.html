@@ -86,9 +86,10 @@
         <vvc-template-message *ngIf="m.type === 'template'"
                               [message]="m"
                               (action)="processAction($event)"></vvc-template-message>
+
         <vvc-quick-message *ngIf="m.type === 'quick-replies'"
                            [message]="m"
-                           (action)="processAction($event)"></vvc-quick-message>
+                           (action)="processQuickReply($event)"></vvc-quick-message>
       </div>
     </div>
 

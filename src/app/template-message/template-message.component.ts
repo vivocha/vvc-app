@@ -9,6 +9,7 @@ export class TemplateMessageComponent implements OnInit {
 
   @Input() message;
   @Output() action = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {

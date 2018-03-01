@@ -438,14 +438,48 @@ export class VvcContactService {
     this.contact.on('mediaoffer', (offer, cb) => {
       this.onMediaOffer(offer, cb);
     });
+    /*
     this.contact.on('text', (text, from_id, from_nick, agent ) => {
       this.dispatch({type: 'REDUCE_TOPBAR'});
+
       this.dispatch({type: 'NEW_MESSAGE', payload: {text: text, type: 'chat', isAgent: agent}});
       if (this.widgetState && (this.widgetState.minimized || !this.widgetState.chatVisibility)) {
         this.dispatch({type: 'INCREMENT_NOT_READ'});
       }
       this.playAudioNotification();
       this.clearIsWriting();
+    });
+    */
+    this.contact.on('rawmessage', (msg) => {
+      if (msg.type != 'text') return;
+      if (msg.quick_replies){
+        const quick = {
+          code: 'message',
+          type: 'text',
+          body: msg.body,
+          quick_replies: msg.quick_replies
+        };
+        quick.type = 'quick-replies';
+        this.dispatch({type: 'NEW_MESSAGE', payload: quick });
+      }
+      else if (msg.template) {
+        const template = {
+          type: 'template',
+          template: msg.template.type,
+          elements: msg.template.elements
+        }
+        this.dispatch({type: 'NEW_MESSAGE', payload: template });
+      } else {
+
+        this.dispatch({type: 'REDUCE_TOPBAR'});
+
+        this.dispatch({type: 'NEW_MESSAGE', payload: {text: msg.body, type: 'chat', isAgent: msg.agent}});
+        if (this.widgetState && (this.widgetState.minimized || !this.widgetState.chatVisibility)) {
+          this.dispatch({type: 'INCREMENT_NOT_READ'});
+        }
+        this.playAudioNotification();
+        this.clearIsWriting();
+      }
     });
     this.contact.on('transferred', (transferred_to) => {
       this.dispatch({
@@ -630,8 +664,19 @@ export class VvcContactService {
       payload: dc
     });
   }
-  sendPostBack(payload: any){
-    console.log('dispatching from contact service', payload);
+  sendPostBack(msg: any){
+    const vvcPostBack = {
+      code: "message",
+      type: "postback",
+      body: msg.title
+    };
+    if (msg.type === "postback") {
+      console.log('dispatching from contact service', msg, vvcPostBack);
+      this.contact.send(vvcPostBack);
+    }
+    else {
+      console.log('message type differs from postback', msg);
+    }
   }
   sendText(text: string) {
     this.contact.sendText(text);

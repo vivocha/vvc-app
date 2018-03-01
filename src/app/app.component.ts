@@ -306,6 +306,9 @@ export class AppComponent implements OnInit {
   processAction(action: any){
     this.cserv.sendPostBack(action);
   }
+  processQuickReply(action: any){
+    this.cserv.sendText(action.title);
+  }
   removeLocalVideo() {
     this.cserv.removeLocalVideo();
   }
