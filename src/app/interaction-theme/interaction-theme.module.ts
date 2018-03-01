@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { ChatBoxModule } from '../interaction-layout/chat-box/chat-box.module';
 import { ChatMessageModule } from '../interaction-layout/chat-message/chat-message.module';
 import { CloseModalModule } from '../interaction-layout/close-modal/close-modal.module';
@@ -16,6 +17,24 @@ import { TopbarModule } from '../interaction-layout/topbar/topbar.module';
 import { VideoThumbsModule } from '../interaction-layout/video-thumbs/video-thumbs.module';
 import { LayoutDirectivesModule } from '../interaction-layout/layout-directives/layout-directives.module';
 
+/*
+import {
+  ChatBoxModule,
+  ChatMessageModule,
+  CloseModalModule,
+  DataCollectionModule,
+  FullscreenModule,
+  IncomingMessageModule,
+  MediaToolsModule,
+  MinimizedModule,
+  NoChatModule,
+  QueueModule,
+  QuickMessageModule,
+  TemplateMessageModule,
+  TopbarModule,
+  VideoThumbsModule,
+  LayoutDirectivesModule } from '@vivocha/client-interaction-layout';
+  */
 const layoutModules = [
   ChatBoxModule,
   ChatMessageModule,

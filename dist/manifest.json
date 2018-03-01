@@ -1,90 +1,144 @@
 {
-  "id": "vvc-optimized-app",
+  "id": "vvc-optimized-app2",
   "type": "interaction",
   "variables": [
     {
-      "id": "primaryColor",
-      "nameId": "VARIABLES.PRIMARY_COLOR",
-      "descriptionId": "VARIABLES.PRIMARY_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#F47929",
-      "type": "color"
+      "id": "color1",
+      "defaultValue": "#1B3172",
+      "type": "color",
+      "nameId": "VARIABLE.color1",
+      "descriptionId": "VARIABLE.color1_D",
+      "required": true
     },
     {
-      "id": "warningColor",
-      "nameId": "VARIABLES.WARNING_COLOR",
-      "descriptionId": "VARIABLES.WARNING_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#FF1A10",
-      "type": "color"
+      "id": "color2",
+      "defaultValue": "#CED5E2",
+      "type": "color",
+      "nameId": "VARIABLE.color2",
+      "descriptionId": "VARIABLE.color2_D",
+      "required": true
     },
     {
-      "id": "successColor",
-      "nameId": "VARIABLES.SUCCESS_COLOR",
-      "descriptionId": "VARIABLES.SUCCESS_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#6AB913",
-      "type": "color"
+      "id": "color3",
+      "defaultValue": "#FDFDFE",
+      "type": "color",
+      "nameId": "VARIABLE.color3",
+      "descriptionId": "VARIABLE.color3_D",
+      "required": true
     },
     {
-      "id": "darkColor",
-      "nameId": "VARIABLES.DARK_COLOR",
-      "descriptionId": "VARIABLES.DARK_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#787878",
-      "type": "color"
+      "id": "color4",
+      "defaultValue": "#727273",
+      "type": "color",
+      "nameId": "VARIABLE.color4",
+      "descriptionId": "VARIABLE.color4_D",
+      "required": true
     },
     {
-      "id": "lightColor",
-      "nameId": "VARIABLES.LIGHT_COLOR",
-      "descriptionId": "VARIABLES.LIGHT_COLOR_DESCRIPTION",
-      "required": true,
+      "id": "color5",
       "defaultValue": "#FFFFFF",
-      "type": "color"
+      "type": "color",
+      "nameId": "VARIABLE.color5",
+      "descriptionId": "VARIABLE.color5_D",
+      "required": true
     },
     {
-      "id": "companyLogoUrl",
-      "nameId": "VARIABLES.COMPANY_LOGO",
-      "descriptionId": "VARIABLES.COMPANY_LOGO",
-      "defaultValue": "./assets/company.png",
-      "type": "file"
-    },
-    {
-      "id": "fileTransfer",
-      "nameId": "VARIABLES.ALLOW_FILE_TRANSFER",
-      "defaultValue": true,
-      "type": "boolean"
-    },
-    {
-      "id": "emojiPanel",
-      "nameId": "VARIABLES.ALLOW_EMOJI",
-      "defaultValue": true,
-      "type": "boolean"
-    },
-    {
-      "id": "canBeDragged",
-      "nameId": "VARIABLES.ALLOW_DRAG",
+      "id": "appDraggable",
       "defaultValue": false,
-      "type": "boolean"
+      "type": "boolean",
+      "nameId": "VARIABLE.appDraggable",
+      "descriptionId": "VARIABLE.appDraggable_D",
+      "required": true
     },
     {
-      "id": "canBeResized",
-      "nameId": "VARIABLES.ALLOW_RESIZE",
+      "id": "appResizable",
       "defaultValue": false,
-      "type": "boolean"
+      "type": "boolean",
+      "nameId": "VARIABLE.appResizable",
+      "descriptionId": "VARIABLE.appResizable_D",
+      "required": true
     },
     {
-      "id": "initialWidth",
-      "nameId": "VARIABLES.INITIAL_WIDTH",
-      "defaultValue": "370",
-      "type": "string"
+      "id": "appMinimizable",
+      "defaultValue": false,
+      "type": "boolean",
+      "nameId": "VARIABLE.appMinimizable",
+      "descriptionId": "VARIABLE.appMinimizable_D",
+      "required": true
     },
     {
-      "id": "initialHeight",
-      "nameId": "VARIABLES.INITIAL_HEIGHT",
-      "defaultValue": "600",
-      "type": "string"
-    }
+      "id": "appShowFileTransfer",
+      "defaultValue": false,
+      "type": "boolean",
+      "nameId": "VARIABLE.appShowFileTransfer",
+      "descriptionId": "VARIABLE.appShowFileTransfer_D",
+      "required": true
+    },
+    {
+      "id": "appShowEmojiPanel",
+      "defaultValue": false,
+      "type": "boolean",
+      "nameId": "VARIABLE.appShowEmojiPanel",
+      "descriptionId": "VARIABLE.appShowEmojiPanel_D",
+      "required": true
+    },
+    {
+      "id": "displayAgentAvatar",
+      "defaultValue": true,
+      "type": "boolean",
+      "nameId": "VARIABLE.displayAgentAvatar",
+      "descriptionId": "VARIABLE.displayAgentAvatar_D",
+      "required": true
+    },
+    {
+      "id": "displayVisitorAvatar",
+      "defaultValue": false,
+      "type": "boolean",
+      "nameId": "VARIABLE.displayVisitorAvatar",
+      "descriptionId": "VARIABLE.displayVisitorAvatar_D",
+      "required": true
+    },
+    {
+      "id": "displayArrowMessage",
+      "defaultValue": true,
+      "type": "boolean",
+      "nameId": "VARIABLE.displayArrowMessage",
+      "descriptionId": "VARIABLE.displayArrowMessage_D",
+      "required": true
+    },
+    {
+      "id": "displayChatMessageTime",
+      "defaultValue": true,
+      "type": "boolean",
+      "nameId": "VARIABLE.displayChatMessageTime",
+      "descriptionId": "VARIABLE.displayChatMessageTime_D",
+      "required": true
+    },
+    {
+      "id": "displayDeliveryArrows",
+      "defaultValue": true,
+      "type": "boolean",
+      "nameId": "VARIABLE.displayDeliveryArrows",
+      "descriptionId": "VARIABLE.displayDeliveryArrows_D",
+      "required": true
+    },
+    {
+      "id": "mergeConsecutiveMessages",
+      "defaultValue": true,
+      "type": "boolean",
+      "nameId": "VARIABLE.mergeConsecutiveMessages",
+      "descriptionId": "VARIABLE.mergeConsecutiveMessages_D",
+      "required": true
+    },
+    { "id": "appWidth", "defaultValue":"370px", "type": "size", "nameId": "VARIABLE.appWidth", "descriptionId": "VARIABLE.appWidth_D", "required": true },
+    { "id": "appHeight", "defaultValue":"600px", "type": "size", "nameId": "VARIABLE.appHeight", "descriptionId": "VARIABLE.appHeight_D", "required": true },
+    { "id": "appMinimizedWidth", "defaultValue":"80px", "type": "size", "nameId": "VARIABLE.appMinimizedWidth", "descriptionId": "VARIABLE.appMinimizedWidth_D", "required": true },
+    { "id": "appMinimizedHeight", "defaultValue":"80px", "type": "size", "nameId": "VARIABLE.appMinimizedHeight", "descriptionId": "VARIABLE.appMinimizedHeight_D", "required": true },
+    { "id": "appBottomDistance", "defaultValue":"-5px", "type": "size", "nameId": "VARIABLE.appBottomDistance", "descriptionId": "VARIABLE.appBottomDistance_D", "required": true },
+    { "id": "appRightDistance", "defaultValue":"40px", "type": "size", "nameId": "VARIABLE.appRightDistance", "descriptionId": "VARIABLE.appRightDistance_D", "required": true },
+    { "id": "appBorders", "defaultValue":"0", "type": "size", "nameId": "VARIABLE.appBorders", "descriptionId": "VARIABLE.appBorders_D", "required": true },
+    { "id": "appShadows", "defaultValue":"0 0 4px rgba(0,0,0,0.5)", "type": "size", "nameId": "VARIABLE.appShadows", "descriptionId": "VARIABLE.appShadows_D", "required": true },
+    { "id": "appBordersRadius", "defaultValue":"0", "type": "size", "nameId": "VARIABLE.appBordersRadius", "descriptionId": "VARIABLE.appBordersRadius_D", "required": true }
   ],
   "stringIds": [
     "DESCRIPTION",
@@ -256,278 +310,152 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "ce93a5930d874827fdf74b68088a0a6f1ef7e1f651ebb637137084886ced9015",
-      "id": "marchitos/widgets/vvc-optimized-app/main.html",
-      "size": 1619,
+      "hash": "9573b2376f4369193330c9580124b1b217f5c4be5d7d12648b97a053535298d6",
+      "id": "marchitos/widgets/vvc-optimized-app2/main.html",
+      "size": 1620,
       "type": "text/html"
     },
     {
       "path": "main.scss",
-      "hash": "ea04a99aa40ee390ac32c3c291d412a55229b58eee0e60b2d33ab9f55ab45cdd",
-      "id": "marchitos/widgets/vvc-optimized-app/main.scss",
-      "size": 68,
+      "hash": "0b1ac0c0543b9b4835d42de16574565c8112279a853775433e2114ece7ce413b",
+      "id": "marchitos/widgets/vvc-optimized-app2/main.scss",
+      "size": 34,
       "type": "text/x-scss"
     },
     {
       "path": "assets/favicon.ico",
       "hash": "c08a9ad39ddfc98d90bea424b11ad355e5bcc74443b472598b7189fac7cc37fb",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/favicon.ico",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/favicon.ico",
       "size": 2451,
       "type": "image/x-icon"
     },
     {
       "path": "assets/index.html",
       "hash": "61e26eee5f5d241db8d2a026161a96fa16bc3cfb4675d92aa0aaf55788756ad6",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/index.html",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/index.html",
       "size": 725,
       "type": "text/html"
     },
     {
       "path": "assets/inline.bundle.js",
       "hash": "1f0631ac2462fcc8f4d9d81ee4f30c3970395e42a431e469ede3b65f574874f9",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/inline.bundle.js",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js",
       "size": 5830,
       "type": "application/javascript"
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "db886483b564146a1d1d171428630e1cd62d65aa6b6e0bf364fd090b5223c806",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/inline.bundle.js.map",
+      "hash": "5a607d23ef732b2200fa7077b158e7eebbdbde22c4de3b5110d884f168781438",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "efec75c72fcd74043e3d4b9ce786312bb706b2235db9940251a1290be3889464",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/main.bundle.js",
-      "size": 230391,
+      "hash": "f89e3d8702421308e7e6bc97bc5fc4dd235e80caacf761f37eefa5933bdd71c1",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
+      "size": 240393,
       "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "b21a206279578bd32d3425509ad7422a1bb7ef79c027bfd634444d72982a4d0e",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/main.bundle.js.map",
-      "size": 264681,
+      "hash": "a3e53532c134cfa56a73ddbe74c66bb4e8ab3c4b2b42e67b6ccfcb299e993ee5",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
+      "size": 252587,
       "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
       "hash": "0b7d45eb643a21ab69b849278df8ede916e14b1b0f1f2199b5d3d2ee74b2e47e",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/polyfills.bundle.js",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/polyfills.bundle.js",
       "size": 219137,
       "type": "application/javascript"
     },
     {
       "path": "assets/polyfills.bundle.js.map",
       "hash": "b163f3ca6fd1fc7fd87e31df71a7a256ad452ff3d734feda46e4c4a9d184e682",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/polyfills.bundle.js.map",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/polyfills.bundle.js.map",
       "size": 267434,
       "type": "application/json"
     },
     {
-      "path": "assets/scss/buttons.scss",
-      "hash": "ecfa7139b287b8c10af5ffd77afcb89f9ee5942a5e46e89140d140720d5e7457",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/buttons.scss",
-      "size": 154,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/chatbox.scss",
-      "hash": "315fcf5dd692f5927aa53b9dfd3beaede3463d8249b52e838d1b86e4dbaedb0f",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/chatbox.scss",
-      "size": 3616,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/fonts.scss",
-      "hash": "256ac5ac83d6873c3b6b6efdcb38b5c3a74e24224a189bdea3e1c8093bb0077d",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/fonts.scss",
-      "size": 3096,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/fonts_variables.scss",
-      "hash": "96763400bcc5dcdf772bc61a06c0e9aab64ab90a7d43b7ec23269ab9c0de8382",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/fonts_variables.scss",
-      "size": 891,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/forms.scss",
-      "hash": "030ac9653eae684d753bd4e0e843ef2021211624070839f56ba02e6b6c77de5c",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/forms.scss",
-      "size": 6496,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/iframe-container.scss",
-      "hash": "39f6c384faecb30a9295891223c679845ee6bc29cbee9efbd46139291e759e8c",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/iframe-container.scss",
-      "size": 217,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/iframe-inner-container.scss",
-      "hash": "5766f56d6ce1784ac2274e673d45aad942212dbb2fa7df7b9fc119086485ed33",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/iframe-inner-container.scss",
-      "size": 1346,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/initialdata.scss",
-      "hash": "3fece4cef3d994fb1cf321f55e207f2876851169e8ee4a5a0c3613c5d350d74f",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/initialdata.scss",
-      "size": 625,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/keyframes.scss",
-      "hash": "09329f44e0beca8a67c30d8ca133b929535e58c4b0c3936034fdf8494af793d3",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/keyframes.scss",
-      "size": 1657,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/media.scss",
-      "hash": "59c472df34787bc381e2c64ef2d0de202a431496f418db678fda1130db0bc494",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/media.scss",
-      "size": 2124,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/messages.scss",
-      "hash": "78ebbbb279c4d42836fb65ddba779ff0666fbc540dc74b5d19fde96ed7dd2e05",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/messages.scss",
-      "size": 2940,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/minimized.scss",
-      "hash": "5ba418bfed2fb9b2f47567d3967404ba98b42372bfc5380c5af7becd40a4e27d",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/minimized.scss",
-      "size": 399,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/mixins.scss",
-      "hash": "b354ae7af8d009e0411b9c4c3fe5b86cce2f23cec6093c0d642f01943e888d78",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/mixins.scss",
-      "size": 8906,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/multimedia-messages.scss",
-      "hash": "b5cf54e73757c713ab299772ad56440ad138f8797e39c0e918bd8f8379c603ee",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/multimedia-messages.scss",
-      "size": 1052,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/palette_old.scss",
-      "hash": "4ded798ab8664c196cb024e070b6a3fe2c32996e1757019d7b48e7bb24f04939",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/palette_old.scss",
-      "size": 1215,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/popup-variables.scss",
-      "hash": "fca89fb392df26c5713f4e86d604a1169fe3220f962c49f7067dc085d90861c3",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/popup-variables.scss",
-      "size": 90,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/queue.scss",
-      "hash": "cc0138964e0bd24791db812d2f88130013ecaf723745b5f6aab16a969815fcd6",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/queue.scss",
-      "size": 1781,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/survey.scss",
-      "hash": "860bbccf3d51d95190a94b7088b4dc6851c811b56b3b3d9cb98ec420f9134593",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/survey.scss",
-      "size": 750,
+      "path": "assets/scss/preset.scss",
+      "hash": "50563aba0628c662efa76ae7fdd23bd7f8df47bbe577b1178316197a968f7d93",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/preset.scss",
+      "size": 8316,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "36e88aea1c4bd01f8dbdaf4a113383d6c0669281ca1342d6e7fa3ba2cdec94ed",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/theme.scss",
-      "size": 10733,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "assets/scss/topbar.scss",
-      "hash": "b7f1d0d70736a2581085b824e49f17c5b398f16043ff16603bfebafeba228683",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/topbar.scss",
-      "size": 1811,
+      "hash": "7fc5f913325b634600e4e8b69f81f4202f75e4736bb341137a11f51933438551",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
+      "size": 12130,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/variables.scss",
-      "hash": "f2a39091a84939765d04e0760f17f6f9836703d05a385248c76d1d3f58977378",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/scss/variables.scss",
-      "size": 130,
+      "hash": "ee6c891d0c2b43bc7990e16f318f69adb710ab1a88041d90255c4f85e8081c8f",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/variables.scss",
+      "size": 710,
       "type": "text/x-scss"
     },
     {
       "path": "assets/static/acct-img.png",
       "hash": "457b5a634ec9bfe5a491c8520f119213b3602acc5fe26d0ad1dfd9ed30c13bc4",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/static/acct-img.png",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/acct-img.png",
       "size": 1658,
       "type": "image/png"
     },
     {
       "path": "assets/static/beep.mp3",
       "hash": "618839bcb54283989bcf2d80553f94d41cad171036eec9c650ce6069e4a7b195",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/static/beep.mp3",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/beep.mp3",
       "size": 3866,
       "type": "audio/mpeg"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.eot",
       "hash": "c23e731518bc8cd4c6aca9ec1703acc70d382ca8d386ca71241b309a94de9c81",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/static/fonts/vvc-widget-ico.eot",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.eot",
       "size": 9160,
       "type": "application/vnd.ms-fontobject"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.svg",
       "hash": "e243366ea7752b6fd6d8a30c53109e88f71ed1f705bbc6b469e638531cbf95c5",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/static/fonts/vvc-widget-ico.svg",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.svg",
       "size": 28393,
       "type": "image/svg+xml"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.ttf",
       "hash": "48fa110a210da02b2ab74d8120853d01d4ad82494aaf043d56ab5cefdc23f42d",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/static/fonts/vvc-widget-ico.ttf",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.ttf",
       "size": 8968,
       "type": "application/x-font-ttf"
     },
     {
       "path": "assets/static/fonts/vvc-widget-ico.woff",
       "hash": "b965d1ab20403e358938c65dd1d988b27950f1026ed365cc5d3a302f45e3ac5d",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/static/fonts/vvc-widget-ico.woff",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.woff",
       "size": 9044,
       "type": "application/font-woff"
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "cb4ff5beb1790dc11fd19de069f73f77b98eaafaf41303e1a8a7c785cd4e8f45",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/vendor.bundle.js",
-      "size": 3149270,
+      "hash": "3b5dfe02bba5089097532e6720f5fb46290bd89120fa4af572255996a89f61d7",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/vendor.bundle.js",
+      "size": 3143319,
       "type": "application/javascript"
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "9aa7406c06d23edfd3c5aec7a8cd2642ab8e72f3edb37e98d47ea49ecc8848e2",
-      "id": "marchitos/widgets/vvc-optimized-app/assets/vendor.bundle.js.map",
-      "size": 3815189,
+      "hash": "474a9e3b35ac6c225f8e37d2f17b93a301f2a3dfaa14fa60f88294b1a53d4415",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/vendor.bundle.js.map",
+      "size": 3807819,
       "type": "application/json"
     }
   ],
-  "htmlId": "marchitos/widgets/vvc-optimized-app/main.html",
-  "scssId": "marchitos/widgets/vvc-optimized-app/main.scss"
+  "htmlId": "marchitos/widgets/vvc-optimized-app2/main.html",
+  "scssId": "marchitos/widgets/vvc-optimized-app2/main.scss"
 }

@@ -9,6 +9,18 @@ export interface ContextState {
 export interface MessagesState {
   messages: any[]
 }
+export interface UiState {
+  loading: boolean;
+  dataCollections?: any[];
+  selectedDataCollection?: number;
+  filledDataCollections?: any[];
+  localCaps?: any;
+  remoteCaps?: any;
+  mediaChange?: any;
+  mediaOffer?: any;
+  agent?: any;
+
+}
 export interface WidgetState {
   agent?: VvcAgent;
   askForTranscript?: boolean;

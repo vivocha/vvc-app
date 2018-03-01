@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WindowRef } from './window.service';
-import { VvcContactService } from './contact.service';
 import { ActionReducer, combineReducers, StoreModule } from '@ngrx/store';
 import { widgetState, messages } from './core.reducers';
 import { VvcWidgetState } from './core.interfaces';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { VvcInteractionService } from './interaction.service';
 import { reducers } from './store';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {environment} from '../../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment}  from '../../environments/environment';
 
-
+import * as fromServices from './services';
 
 const reducers1 = {widgetState, messages};
 const productionReducer: ActionReducer<{widgetState: VvcWidgetState, messages: any[]}> = combineReducers(reducers1);
@@ -45,9 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [
-    WindowRef,
-    { provide: VvcContactService, useClass: VvcContactService },
-    VvcInteractionService
+    ...fromServices.services
   ]
 })
 export class InteractionCoreModule { }
