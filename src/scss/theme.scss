@@ -13,8 +13,12 @@ body, input, textarea{ font-family: $appFontFamily; }
   LAYOUT
  */
 #vvc-normal-container{
+
   width: $appWidth;
-  height: 100%;
+  height: $appHeight;
+  min-height: $appHeight;
+
+  background: $appChatBackgroundColor;
   display: flex;
   flex-direction: column;
   #vvc-top-bar,

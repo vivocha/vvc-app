@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   private closeModal = false;
   private closeToDestroy = false;
-
+  private pippo = 0;
   callTimerInterval;
   callTimer = 0;
   wasFullScreen = false;
@@ -126,6 +126,7 @@ export class AppComponent implements OnInit {
     // TODO show message
     //this.vivocha.pageRequest('interactionClosed', 'close'); this.closeToDestroy = true; // TODO remove once the message is placed
     this.closeInteraction();
+
   }
   minimize(state) {
     /*

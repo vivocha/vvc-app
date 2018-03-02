@@ -3,143 +3,20 @@
   "type": "interaction",
   "variables": [
     {
-      "id": "color1",
-      "defaultValue": "#1B3172",
-      "type": "color",
-      "nameId": "VARIABLE.color1",
-      "descriptionId": "VARIABLE.color1_D",
-      "required": true
+      "id": "initialWidth",
+      "nameId": "VARIABLES.INITIAL_WIDTH",
+      "defaultValue": "370",
+      "type": "string"
     },
     {
-      "id": "color2",
-      "defaultValue": "#CED5E2",
-      "type": "color",
-      "nameId": "VARIABLE.color2",
-      "descriptionId": "VARIABLE.color2_D",
-      "required": true
-    },
-    {
-      "id": "color3",
-      "defaultValue": "#FDFDFE",
-      "type": "color",
-      "nameId": "VARIABLE.color3",
-      "descriptionId": "VARIABLE.color3_D",
-      "required": true
-    },
-    {
-      "id": "color4",
-      "defaultValue": "#727273",
-      "type": "color",
-      "nameId": "VARIABLE.color4",
-      "descriptionId": "VARIABLE.color4_D",
-      "required": true
-    },
-    {
-      "id": "color5",
-      "defaultValue": "#FFFFFF",
-      "type": "color",
-      "nameId": "VARIABLE.color5",
-      "descriptionId": "VARIABLE.color5_D",
-      "required": true
-    },
-    {
-      "id": "appDraggable",
-      "defaultValue": false,
-      "type": "boolean",
-      "nameId": "VARIABLE.appDraggable",
-      "descriptionId": "VARIABLE.appDraggable_D",
-      "required": true
-    },
-    {
-      "id": "appResizable",
-      "defaultValue": false,
-      "type": "boolean",
-      "nameId": "VARIABLE.appResizable",
-      "descriptionId": "VARIABLE.appResizable_D",
-      "required": true
-    },
-    {
-      "id": "appMinimizable",
-      "defaultValue": false,
-      "type": "boolean",
-      "nameId": "VARIABLE.appMinimizable",
-      "descriptionId": "VARIABLE.appMinimizable_D",
-      "required": true
-    },
-    {
-      "id": "appShowFileTransfer",
-      "defaultValue": false,
-      "type": "boolean",
-      "nameId": "VARIABLE.appShowFileTransfer",
-      "descriptionId": "VARIABLE.appShowFileTransfer_D",
-      "required": true
-    },
-    {
-      "id": "appShowEmojiPanel",
-      "defaultValue": false,
-      "type": "boolean",
-      "nameId": "VARIABLE.appShowEmojiPanel",
-      "descriptionId": "VARIABLE.appShowEmojiPanel_D",
-      "required": true
-    },
-    {
-      "id": "displayAgentAvatar",
-      "defaultValue": true,
-      "type": "boolean",
-      "nameId": "VARIABLE.displayAgentAvatar",
-      "descriptionId": "VARIABLE.displayAgentAvatar_D",
-      "required": true
-    },
-    {
-      "id": "displayVisitorAvatar",
-      "defaultValue": false,
-      "type": "boolean",
-      "nameId": "VARIABLE.displayVisitorAvatar",
-      "descriptionId": "VARIABLE.displayVisitorAvatar_D",
-      "required": true
-    },
-    {
-      "id": "displayArrowMessage",
-      "defaultValue": true,
-      "type": "boolean",
-      "nameId": "VARIABLE.displayArrowMessage",
-      "descriptionId": "VARIABLE.displayArrowMessage_D",
-      "required": true
-    },
-    {
-      "id": "displayChatMessageTime",
-      "defaultValue": true,
-      "type": "boolean",
-      "nameId": "VARIABLE.displayChatMessageTime",
-      "descriptionId": "VARIABLE.displayChatMessageTime_D",
-      "required": true
-    },
-    {
-      "id": "displayDeliveryArrows",
-      "defaultValue": true,
-      "type": "boolean",
-      "nameId": "VARIABLE.displayDeliveryArrows",
-      "descriptionId": "VARIABLE.displayDeliveryArrows_D",
-      "required": true
-    },
-    {
-      "id": "mergeConsecutiveMessages",
-      "defaultValue": true,
-      "type": "boolean",
-      "nameId": "VARIABLE.mergeConsecutiveMessages",
-      "descriptionId": "VARIABLE.mergeConsecutiveMessages_D",
-      "required": true
-    },
-    { "id": "appWidth", "defaultValue":"370px", "type": "size", "nameId": "VARIABLE.appWidth", "descriptionId": "VARIABLE.appWidth_D", "required": true },
-    { "id": "appHeight", "defaultValue":"600px", "type": "size", "nameId": "VARIABLE.appHeight", "descriptionId": "VARIABLE.appHeight_D", "required": true },
-    { "id": "appMinimizedWidth", "defaultValue":"80px", "type": "size", "nameId": "VARIABLE.appMinimizedWidth", "descriptionId": "VARIABLE.appMinimizedWidth_D", "required": true },
-    { "id": "appMinimizedHeight", "defaultValue":"80px", "type": "size", "nameId": "VARIABLE.appMinimizedHeight", "descriptionId": "VARIABLE.appMinimizedHeight_D", "required": true },
-    { "id": "appBottomDistance", "defaultValue":"-5px", "type": "size", "nameId": "VARIABLE.appBottomDistance", "descriptionId": "VARIABLE.appBottomDistance_D", "required": true },
-    { "id": "appRightDistance", "defaultValue":"40px", "type": "size", "nameId": "VARIABLE.appRightDistance", "descriptionId": "VARIABLE.appRightDistance_D", "required": true },
-    { "id": "appBorders", "defaultValue":"0", "type": "size", "nameId": "VARIABLE.appBorders", "descriptionId": "VARIABLE.appBorders_D", "required": true },
-    { "id": "appShadows", "defaultValue":"0 0 4px rgba(0,0,0,0.5)", "type": "size", "nameId": "VARIABLE.appShadows", "descriptionId": "VARIABLE.appShadows_D", "required": true },
-    { "id": "appBordersRadius", "defaultValue":"0", "type": "size", "nameId": "VARIABLE.appBordersRadius", "descriptionId": "VARIABLE.appBordersRadius_D", "required": true }
+      "id": "initialHeight",
+      "nameId": "VARIABLES.INITIAL_HEIGHT",
+      "defaultValue": "600",
+      "type": "string"
+    }
   ],
+  "htmlId": "marchitos/widgets/vvc-optimized-app2/main.html",
+  "scssId": "marchitos/widgets/vvc-optimized-app2/main.scss",
   "stringIds": [
     "DESCRIPTION",
     "NAME",
@@ -345,24 +222,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "5a607d23ef732b2200fa7077b158e7eebbdbde22c4de3b5110d884f168781438",
+      "hash": "dff8f77d26192bdd72315cc87b21f2f370a7b2e13a5769f61a2df24a49ac6dc6",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "f89e3d8702421308e7e6bc97bc5fc4dd235e80caacf761f37eefa5933bdd71c1",
+      "hash": "3d795188030bc28a6ca0b94467a01761e2db9fb683a5288df8acabf1134e38e1",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "size": 240393,
-      "type": "application/javascript"
+      "type": "application/javascript",
+      "size": 240417
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "a3e53532c134cfa56a73ddbe74c66bb4e8ab3c4b2b42e67b6ccfcb299e993ee5",
+      "hash": "6668248e67e75535d2f85308e115cc1ae53a20bccb472b15f890deaf3778c503",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "size": 252587,
-      "type": "application/json"
+      "type": "application/json",
+      "size": 252635
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -380,16 +257,16 @@
     },
     {
       "path": "assets/scss/preset.scss",
-      "hash": "50563aba0628c662efa76ae7fdd23bd7f8df47bbe577b1178316197a968f7d93",
+      "hash": "d08ead54dc2453c5180b75b44441fa92a6bf4b2bc27bd11c5307c364ad40391e",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/preset.scss",
-      "size": 8316,
+      "size": 9048,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "7fc5f913325b634600e4e8b69f81f4202f75e4736bb341137a11f51933438551",
+      "hash": "bd3c014e9cdbcbaba47af667b0ab0fc414ee7153aa9df935d1bb71bbfcbaf4af",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
-      "size": 12130,
+      "size": 12203,
       "type": "text/x-scss"
     },
     {
@@ -414,32 +291,11 @@
       "type": "audio/mpeg"
     },
     {
-      "path": "assets/static/fonts/vvc-widget-ico.eot",
-      "hash": "c23e731518bc8cd4c6aca9ec1703acc70d382ca8d386ca71241b309a94de9c81",
-      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.eot",
-      "size": 9160,
-      "type": "application/vnd.ms-fontobject"
-    },
-    {
-      "path": "assets/static/fonts/vvc-widget-ico.svg",
-      "hash": "e243366ea7752b6fd6d8a30c53109e88f71ed1f705bbc6b469e638531cbf95c5",
-      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.svg",
-      "size": 28393,
-      "type": "image/svg+xml"
-    },
-    {
-      "path": "assets/static/fonts/vvc-widget-ico.ttf",
-      "hash": "48fa110a210da02b2ab74d8120853d01d4ad82494aaf043d56ab5cefdc23f42d",
-      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.ttf",
-      "size": 8968,
-      "type": "application/x-font-ttf"
-    },
-    {
-      "path": "assets/static/fonts/vvc-widget-ico.woff",
-      "hash": "b965d1ab20403e358938c65dd1d988b27950f1026ed365cc5d3a302f45e3ac5d",
-      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/fonts/vvc-widget-ico.woff",
-      "size": 9044,
-      "type": "application/font-woff"
+      "path": "assets/static/bot_avatar.png",
+      "hash": "3f2faa843e17f1a05dd07cfab400ff7dac4eebcdbab2f653149bb89158bac9e8",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/bot_avatar.png",
+      "size": 2631,
+      "type": "image/png"
     },
     {
       "path": "assets/vendor.bundle.js",
@@ -455,7 +311,5 @@
       "size": 3807819,
       "type": "application/json"
     }
-  ],
-  "htmlId": "marchitos/widgets/vvc-optimized-app2/main.html",
-  "scssId": "marchitos/widgets/vvc-optimized-app2/main.scss"
+  ]
 }
