@@ -620,7 +620,7 @@ export class VvcContactService {
     }
     else {
       console.log('message type differs from postback', msg);
-      this.vivocha.pageRequest('interactionEvent', 'web_url', msg);
+      this.vivocha.pageRequest('interactionEvent', msg.type, msg);
     }
   }
   sendText(text: string) {
