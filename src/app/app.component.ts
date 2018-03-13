@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { WidgetState } from './interaction-core/store/models.interface';
 import {VvcInteractionService} from './interaction-core/services';
+
+import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
 
 @Component({
   selector: 'vvc-root',
@@ -9,9 +11,11 @@ import {VvcInteractionService} from './interaction-core/services';
 })
 export class AppComponent implements OnInit {
 
+  @ViewChild(ChatAreaComponent) chat: ChatAreaComponent;
+
+
   private closeModal = false;
   private closeToDestroy = false;
-  private pippo = 0;
   callTimerInterval;
   callTimer = 0;
   wasFullScreen = false;
@@ -19,9 +23,16 @@ export class AppComponent implements OnInit {
   public widgetState: WidgetState;
   public messages: Array<any>;
 
+  public appState: any;
+
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
+    this.interactionService.getState().subscribe( state => {
+      this.appState = state;
+      console.log('STATE', state);
+    });
     this.interactionService.init();
+
     /*
     this.bindStores();
     this.initResizeListeners();
@@ -60,8 +71,9 @@ export class AppComponent implements OnInit {
     });
     */
   }
+  /*
   closeContact() {
-    /*
+
     this.cserv.closeContact();
     if (this.widgetState.hasSurvey) {
       this.zone.run( () => {
@@ -73,8 +85,8 @@ export class AppComponent implements OnInit {
       this.vivocha.pageRequest('interactionClosed', 'close'); this.closeToDestroy = true; // TODO remove once the message is placed
     }
     this.closeInteraction();
-    */
-  }
+
+  }*/
   closeInteraction() {
     if (!this.closeToDestroy) {
       //this.vivocha.pageRequest('interactionClosed', 'close');
@@ -313,13 +325,14 @@ export class AppComponent implements OnInit {
     }
     */
   }
+  /*
   showCloseModal(isContactClosed) {
     if (isContactClosed) {
       this.closeContact();
     } else {
       this.closeModal = true;
     }
-  }
+  }*/
   showDataCollection(message) {
     //this.selectedDataMessage = message;
   }
@@ -352,5 +365,40 @@ export class AppComponent implements OnInit {
       this.startTimer();
     });
     */
+  }
+
+
+
+
+
+
+
+
+  appendText(text){
+    this.chat.appendText(text);
+  }
+  closeContact(){
+    this.showCloseModal(false);
+  }
+  dismissModal(){
+    this.showCloseModal(false);
+  }
+  minimizeWidget(){
+
+  }
+  processQuickReply(qr){
+    this.sendText({ type: 'chat', text: qr.title, isAgent: false });
+  }
+  sendText(value){
+    if (this.appState.chat.showEmojiPanel) this.toggleEmojiPanel();
+    this.appState.messages.push(value);
+  }
+  showCloseModal(val){
+    console.log("showCloseModal");
+    this.appState = Object.assign({}, this.appState, { closePanel: { visible: !!val }});
+  }
+  toggleEmojiPanel() {
+    let chatState = Object.assign({}, this.appState.chat, { showEmojiPanel: !this.appState.chat.showEmojiPanel });
+    this.appState = Object.assign({}, this.appState, { chat: chatState });
   }
 }

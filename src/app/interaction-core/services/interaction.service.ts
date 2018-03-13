@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import * as fromStore from '../store';
-import {ClientContactCreationOptions, ContactMediaOffer} from '@vivocha/global-entities/dist/contact';
 import {VvcContextService} from './context.service';
 import {ContextState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
@@ -72,6 +71,9 @@ export class VvcInteractionService {
         this.contactService.initializeContact(this.vivocha, this.context);
       }
     })
+  }
+  getState(){
+    return this.store.select(fromStore.getWidgetStatus);
   }
 
 }

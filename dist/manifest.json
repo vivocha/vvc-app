@@ -222,24 +222,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "dff8f77d26192bdd72315cc87b21f2f370a7b2e13a5769f61a2df24a49ac6dc6",
+      "hash": "b6659434fde7cf4b2e258a64077f6f638167c446a39b0070a9513b448fa7b21c",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "3d795188030bc28a6ca0b94467a01761e2db9fb683a5288df8acabf1134e38e1",
+      "hash": "e7766c76a4b2b30ed5b9f0de3683ed6489870c40d2e24c724987afdc5c3ecd63",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
       "type": "application/javascript",
-      "size": 240417
+      "size": 147642
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "6668248e67e75535d2f85308e115cc1ae53a20bccb472b15f890deaf3778c503",
+      "hash": "463a78fae58ceb1eb8dc819df7b4161add5bddcf0958e1029a8ec969ac82f64b",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
       "type": "application/json",
-      "size": 252635
+      "size": 167788
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -256,24 +256,17 @@
       "type": "application/json"
     },
     {
-      "path": "assets/scss/preset.scss",
-      "hash": "d08ead54dc2453c5180b75b44441fa92a6bf4b2bc27bd11c5307c364ad40391e",
-      "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/preset.scss",
-      "size": 9048,
-      "type": "text/x-scss"
-    },
-    {
       "path": "assets/scss/theme.scss",
-      "hash": "bd3c014e9cdbcbaba47af667b0ab0fc414ee7153aa9df935d1bb71bbfcbaf4af",
+      "hash": "6901c589255ccc7d21ef9261d9bdcd2a49cdc44d5314debebfbf29faf8425e8b",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
-      "size": 12203,
+      "size": 13468,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/variables.scss",
-      "hash": "ee6c891d0c2b43bc7990e16f318f69adb710ab1a88041d90255c4f85e8081c8f",
+      "hash": "a247de7d976916ea519212d453757a236df6e40ee4262680a5cf4c155c85e9ef",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/variables.scss",
-      "size": 710,
+      "size": 16,
       "type": "text/x-scss"
     },
     {
@@ -298,17 +291,101 @@
       "type": "image/png"
     },
     {
+      "path": "assets/static/icons/vvc-arrow-left.png",
+      "hash": "90ce7b206dcd3ee7dc00cf38e532e351c1c0d1f84c0f12e3505006ef00f9cce2",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-arrow-left.png",
+      "size": 268,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-arrow-right.png",
+      "hash": "c537ed091bd51ebec25919f81d4dfbc387c092eeb1be3d9229862fc175efb7ef",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-arrow-right.png",
+      "size": 248,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-audio.png",
+      "hash": "88e1fd6a8fd46e56b3a0cb4f3c22afcf9c1ed79bc51f2bdacf826791ec1f0418",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-audio.png",
+      "size": 249,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-clip.png",
+      "hash": "710f6b46a5e67eadc45a06a8e78a6041245c8785d711f7917c602c690f060939",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-clip.png",
+      "size": 689,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-close.png",
+      "hash": "5f1b7a89986dbe6730b8a1edc29e71478ccf857623914c9ec78958e5cb7f8d5d",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-close.png",
+      "size": 276,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-emoji.png",
+      "hash": "41b8c683dbccd93ab45057c739cd56d7305fb84688d63fd93dd5c376adb005cd",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-emoji.png",
+      "size": 753,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-maximize.png",
+      "hash": "a3453929a96082f773f17132b4538b6c73edef5a4fa22bbbcadfda88203ffc7f",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-maximize.png",
+      "size": 350,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-menu.png",
+      "hash": "c98969f746022e22e58ec66c9db70c8488e543df9b552b20dbed53f3f86a39d5",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-menu.png",
+      "size": 140,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-reduce.png",
+      "hash": "cfa4d164c41dd32770b3ec89581be74f4acd2ac3be8573d1bf6dd5d47f5dd569",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-reduce.png",
+      "size": 121,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-send.png",
+      "hash": "4b4fb81648d12dd7f550a1c80b9bd8d5799d5d929d86ba4bad1eeb738a64e07c",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-send.png",
+      "size": 351,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-video.png",
+      "hash": "476452fd1ae3ade72eca5888a3d8370d261a6c8e344748644e408d2112f03908",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-video.png",
+      "size": 255,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/visitor_default.png",
+      "hash": "b113afdf4121c211ba7ec2c727051b0c43aedfe7fadbe7f2a4a39b8bd47f8ef5",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/visitor_default.png",
+      "size": 1152,
+      "type": "image/png"
+    },
+    {
       "path": "assets/vendor.bundle.js",
-      "hash": "3b5dfe02bba5089097532e6720f5fb46290bd89120fa4af572255996a89f61d7",
+      "hash": "076714c82cf84de3c1b7637ddf25c0c7e6df20d6a529db81bc881a1048f53ef1",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/vendor.bundle.js",
-      "size": 3143319,
+      "size": 2828463,
       "type": "application/javascript"
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "474a9e3b35ac6c225f8e37d2f17b93a301f2a3dfaa14fa60f88294b1a53d4415",
+      "hash": "3473284c69e69428f4fab66f5867d4feb78b6b6c7e9d784ca985275cbc09ff20",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/vendor.bundle.js.map",
-      "size": 3807819,
+      "size": 3433823,
       "type": "application/json"
     }
   ]

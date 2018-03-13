@@ -25,4 +25,4 @@ export const reducers: ActionReducerMap<AppState> = {
 export const getContextState = createFeatureSelector<ContextState>('context');
 export const getMessagesState = createFeatureSelector<MessagesState>('messages');
 export const getWidgetState = createFeatureSelector<WidgetState>('widgetState');
-export const getUiState = createFeatureSelector<UiState>('uiState');
+export const getUiState = createFeatureSelector<UiState>('ui');

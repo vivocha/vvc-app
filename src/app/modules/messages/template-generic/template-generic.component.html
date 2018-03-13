@@ -1,0 +1,13 @@
+<div class="vvc-template-generic vvc-template" *ngFor="let elem of message.elements">
+  <div class="vvc-template-inner">
+    <div *ngIf="elem.image_url" class="vvc-template-cover" [style.background-image]="'url(' + elem.image_url + ')'"></div>
+    <div class="title">{{ elem.title }}</div>
+    <div class="subtitle">{{ elem.subtitle }}</div>
+    <div class="content">
+      Bilancio di previsione dello Stato per l'anno finanziaro 2018 e bilancio pluriennale per il triennio 2018-2020.
+    </div>
+  </div>
+  <div class="vvc-template-action" *ngFor="let btn of elem.buttons">
+    <button>{{ btn.title }}</button>
+  </div>
+</div>

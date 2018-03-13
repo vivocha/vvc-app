@@ -1,10 +1,11 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import * as fromStore from '../store';
 import {Store} from '@ngrx/store';
 import {ClientContactCreationOptions} from '@vivocha/global-entities/dist/contact';
 import {ContactMediaOffer} from '@vivocha/global-entities/dist';
 import {VvcDataCollectionService} from './data-collection.service';
 import {VvcProtocolService} from './protocol.service';
+import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 
 @Injectable()
 export class VvcContactWrap {
@@ -16,14 +17,15 @@ export class VvcContactWrap {
   constructor(
     private store: Store<fromStore.AppState>,
     private dcService: VvcDataCollectionService,
-    private protocolService: VvcProtocolService
+    private protocolService: VvcProtocolService,
+    private zone: NgZone
   ){}
 
   initializeContact(vivocha, context){
     this.vivocha = vivocha;
     this.context = context;
-
-    if (this.context.persistenceId) this.resumeContact();
+    console.log('INITIALIZING CONTACT', this.context);
+    if (this.context.persistenceId) this.resumeContact(context);
     else {
       if (this.context.dataCollections && this.context.dataCollections.length > 0) {
         this.dcService.fillDataCollections(this.vivocha, this.context.dataCollections);
@@ -55,16 +57,7 @@ export class VvcContactWrap {
   }
   createContact(){
     const conf = this.getContactOptions();
-
     this.vivocha.createContact(conf).then( (contact) => {
-      this.vivocha.pageRequest('interactionCreated', contact);
-      console.log('contact created, looking for the caps', contact);
-      contact.getLocalCapabilities().then( caps => {
-        this.dispatch(new fromStore.WidgetCapabilityLoaded({ type: 'localCaps', caps: caps }));
-      });
-      contact.getRemoteCapabilities().then( caps => {
-        this.dispatch(new fromStore.WidgetCapabilityLoaded({ type: 'remoteCaps', caps: caps }));
-      });
       this.contact = contact;
       this.mapContact();
     }, (err) => {
@@ -73,7 +66,9 @@ export class VvcContactWrap {
     });
   }
   dispatch(action){
-    this.store.dispatch(action);
+    //this.zone.run( () => {
+      this.store.dispatch(action);
+    //});
   }
   getContactOptions():ClientContactCreationOptions {
     return {
@@ -91,6 +86,13 @@ export class VvcContactWrap {
     };
   }
   mapContact(){
+    this.vivocha.pageRequest('interactionCreated', this.contact);
+    this.contact.getLocalCapabilities().then( caps => {
+      this.dispatch(new fromStore.WidgetCapabilityLoaded({ type: 'localCaps', caps: caps }));
+    });
+    this.contact.getRemoteCapabilities().then( caps => {
+      this.dispatch(new fromStore.WidgetCapabilityLoaded({ type: 'remoteCaps', caps: caps }));
+    });
     /*
     this.contact.on('action', (action_code, args) => {
       if (action_code === 'quick') {
@@ -214,6 +216,7 @@ export class VvcContactWrap {
       this.vivocha.pageRequest('interactionAnswered', agent);
       this.dispatch(new fromStore.WidgetJoined(agent));
       this.dispatch(new fromStore.WidgetMediaChange(media));
+      console.log('joined', agent);
     });
   }
   onLocalJoin(join){
@@ -226,7 +229,15 @@ export class VvcContactWrap {
       });
     }
   }
-  resumeContact(){
-
+  resumeContact(context: InteractionContext){
+    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+      this.vivocha.resumeContact(contactData).then((contact) => {
+        this.contact = contact;
+        this.mapContact();
+      }, (err) => {
+        console.log('Failed to resume contact', err);
+        this.vivocha.pageRequest('interactionFailed', err.message);
+      });
+    });
   }
 }

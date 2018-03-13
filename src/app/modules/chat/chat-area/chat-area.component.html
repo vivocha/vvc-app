@@ -1,0 +1,23 @@
+<div id="vvc-box-inner">
+  <div class="text-box">
+    <input [readonly]="context.readony"
+           placeholder="Scrivi il tuo messaggio"
+           type="text"
+           #box
+           (keyup.enter)="sendText(box.value);box.value=''">
+  </div>
+  <div *ngIf="context.showUpload"
+       class="upload-handler">
+    <i class="icon icon-vvc-clip"></i>
+  </div>
+  <div *ngIf="context.showEmoji"
+       (click)="toggleEmojiPanel.emit()"
+       class="emoji-handler">
+    <i class="icon icon-vvc-emoji"></i>
+  </div>
+  <div *ngIf="context.showSendButton" class="send-button" (click)="sendText(box.value);box.value='';box.focus()">
+    <div class="send-icon">
+      <i class="icon icon-vvc-send"></i>
+    </div>
+  </div>
+</div>

@@ -1,124 +1,48 @@
 <div id="vvc-fullscreen-container">
-
+  <div id="vvc-loading-panel" *ngIf="appState.loadingPanel.visible">
+    <vvc-loading-panel></vvc-loading-panel>
+  </div>
+  <div id="vvc-close-panel" *ngIf="appState.closePanel.visible">
+    <vvc-close-panel (cancel)="dismissModal()"
+                     (confirm)="closeContact()"></vvc-close-panel>
+  </div>
   <div id="vvc-fullscreen-media">
 
   </div>
 
   <div id="vvc-normal-container">
+    <vvc-top-bar [context]="appState.topBar"
+                 (onMinimize)="minimizeWidget()"
+                 (onClose)="showCloseModal(true)"></vvc-top-bar>
 
-    <div id="vvc-top-bar">
-      <!--
-      <div id="vvc-top-avatar"><img src="./assets/bot_avatar.png"></div>
-      -->
-      <div id="vvc-top-header">
-        <div id="vvc-top-title">Assistente Personale</div>
-        <div id="vvc-top-subtitle">Chat in corso</div>
-      </div>
-      <div id="vvc-top-controls">
-        <!--
-        <span>
-          <svg viewBox="0 0 512 512" style="width:14px;">
-            <path fill="white" d="M464 352H48c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-32c0-26.5-21.5-48-48-48z"></path>
-          </svg>
-        </span>
-        -->
-        <span>
-            <svg viewBox="0 0 384 512"  style="width:14px;">
-              <path fill="#FDFDFE" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path>
-            </svg>
-          </span>
+    <vvc-chat id="vvc-chat" [context]="appState.chat">
 
+      <div class="vvc-emoji-panel">
+        <vvc-emoji-panel class="vvc-emoji-inner"
+                         (toggleEmojiPanel)="toggleEmojiPanel()"
+                         (addEmoji)="appendText($event)"></vvc-emoji-panel>
       </div>
 
-    </div>
-
-    <div id="vvc-media">
-      <div id="vvc-voice-only"></div>
-      <div id="vvc-video"></div>
-    </div>
-
-    <div id="vvc-chat">
-      <div id="vvc-emoji-panel" style="display: none">
-        <div class="vvc-emoji-inner">
-          <div class="vvc-emoji-container">
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-            <span class="emoji">😀</span>
-          </div>
-          <div class="emoji-close-wrapper">
-            <button class="close">chiudi pannello</button>
-          </div>
+      <div class="vvc-messages">
+        <div *ngFor="let m of appState.messages">
+          <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
+          <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
+          <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-reply'"
+                             (action)="processQuickReply($event)"></vvc-quick-replies>
+          <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"></vvc-template-generic>
         </div>
       </div>
+
+      <div class="vvc-chat-box-area">
+        <vvc-chat-area #chat
+                       [context]="appState.chat"
+                       (onSendText)="sendText($event)"
+                       (toggleEmojiPanel)="toggleEmojiPanel()"></vvc-chat-area>
+      </div>
+
+    </vvc-chat>
+    <!--
+    <div id="vvc-chat">
       <div id="vvc-upload-panel" style="display:none">
         <div class="vvc-upload-inner">
           <div class="vvc-upload-area">
@@ -138,173 +62,10 @@
         </div>
       </div>
       <div id="vvc-messages" style="display: flex">
-        <div class="vvc-template-carousel">
-          <div class="vvc-carousel-inner">
-            <div class="vvc-template-generic vvc-template">
-              <div class="vvc-template-inner">
-                <div class="title">LEGGE NAZIONALE</div>
-                <div class="subtitle"><b>Legge | n.205</b> | 27 dicembre 2017</div>
-                <div class="content">
-                  Bilancio di previsione dello Stato per l'anno finanziaro 2018 e bilancio pluriennale per il triennio 2018-2020.
-                </div>
-              </div>
-              <div class="vvc-template-action">
-                <button>Visualizza il documento</button>
-              </div>
-            </div>
-            <div class="vvc-template-generic vvc-template">
-              <div class="vvc-template-inner">
-                <div class="title">LEGGE2 NAZIONALE</div>
-                <div class="subtitle"><b>Legge | n.205</b> | 27 dicembre 2017</div>
-                <div class="content">
-                  Bilancio di previsione dello Stato per l'anno finanziaro 2018 e bilancio pluriennale per il triennio 2018-2020.
-                </div>
-              </div>
-              <div class="vvc-template-action">
-                <button>Visualizza il documento</button>
-              </div>
-            </div>
-          </div>
+        <div>
+          {{ state | json }}
         </div>
-        <div class="vvc-template-carousel">
-          <div class="vvc-carousel-inner">
-            <div class="vvc-template-list vvc-template">
-              <div class="vvc-template-inner">
-                <div class="template-item"><button>Legge di bilancio</button></div>
-                <div class="template-item"><button>Decreto fiscale</button></div>
-                <div class="template-item"><button>Rottamazione cartelle</button></div>
-                <div class="template-item"><button>Fatture elettroniche</button></div>
-                <div class="template-item"><button>Riforma fiscale</button></div>
-                <div class="template-item"><button>Ravvedimento IMU</button></div>
-              </div>
-              <div class="vvc-template-action">
-                <button>Visualizza il documento</button>
-              </div>
-            </div>
-            <div class="vvc-template-list vvc-template">
-              <div class="vvc-template-inner">
-                <div class="template-item"><button>Legge di bilancio</button></div>
-                <div class="template-item"><button>Decreto fiscale</button></div>
-                <div class="template-item"><button>Rottamazione cartelle</button></div>
-                <div class="template-item"><button>Fatture elettroniche</button></div>
-                <div class="template-item"><button>Riforma fiscale</button></div>
-                <div class="template-item"><button>Ravvedimento IMU</button></div>
-              </div>
-              <div class="vvc-template-action">
-                <button>Visualizza il documento</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="chat-message agent">
-          <div class="message-avatar">
-            <img src="./assets/bot_avatar.png">
-          </div>
-          <div class="message">
-            <div class="bubble arrow">Ciao sono l'assistente di Plusplus24 e sono a tua disposizione. In cosa posso esserti utile?</div>
-            <div class="time">1 febbraio, 14:10</div>
-          </div>
-          <div class="message-spacer"></div>
-        </div>
-        <div class="vvc-quick-replies vertical">
-          <div class="reply"><button>Cosa posso chiederti?</button></div>
-          <div class="reply"><button>Non trovo l'informazione che cerco</button></div>
-          <div class="reply"><button>Come funziona il prodotto?</button></div>
-        </div>
-        <div class="chat-message visitor">
-          <div class="message-spacer"></div>
-          <div class="message">
-            <div class="bubble arrow">Cosa posso chiederti?</div>
-            <div class="time">1 febbraio, 15:10</div>
-          </div>
-          <!--
-          <div class="message-avatar">
-            <img src="./assets/visitor_default.png">
-          </div>
-          -->
-        </div>
-        <div class="chat-message agent">
-          <div class="message-avatar">
-            <img src="./assets/bot_avatar.png">
-          </div>
-          <div class="message">
-            <div class="bubble arrow">Posso aiutarti a cercare documenti, utilizzare il prodotto in tutte le sue funzioni e molto altro. Se non riuscissi a darti la risposta che cerchi, puoi sempre accedere alla chat con la redazione, selezionando il bottone <b>Consulenza</b> che vedi in fondo a questa chat.</div>
-            <div class="time">1 febbraio, 14:10</div>
-          </div>
-          <div class="message-spacer"></div>
-        </div>
-        <div class="vvc-quick-replies vertical">
-          <!--<div class="reply-message">Scegli un opzione:</div>-->
-          <div class="reply"><button>Come funziona la consulenza?</button></div>
-          <div class="reply"><button>Ok, mi è tutto chiaro</button></div>
-        </div>
-        <div class="chat-message visitor">
-          <div class="message-spacer"></div>
-          <div class="message">
-            <div class="bubble arrow">Ok, mi è tutto chiaro</div>
-            <div class="time">1 febbraio, 15:10</div>
-          </div>
-          <!--
-          <div class="message-avatar">
-            <img src="./assets/visitor_default.png">
-          </div>
-          -->
-        </div>
-        <div class="chat-message agent">
-          <div class="message-avatar">
-            <img src="./assets/bot_avatar.png">
-          </div>
-          <div class="message">
-            <div class="bubble arrow">Ottimo! Quando hai bisogno del mio aiuto, puoi raggiungermi al bottone verde accanto alla ricerca.<br><br>Buon proseguimento 😀</div>
-            <div class="time">1 febbraio, 14:10</div>
-          </div>
-          <div class="message-spacer"></div>
-        </div>
-        <div class="vvc-quick-replies vertical">
-          <div class="reply-message">Ciao, stai per ricevere una consulenza, al costo di <b>1 gettone</b>.<br>Hai a disposizione <b>5 gettoni.</b><br><br>Vuoi proseguire?</div>
-          <div class="reply"><button>Prosegui con la consulenza</button></div>
-          <div class="reply"><button>Annulla la richiesta</button></div>
-        </div>
-        <div class="vvc-template-generic vvc-template">
-          <div class="vvc-template-inner">
-            <div class="title">LEGGE NAZIONALE</div>
-            <div class="subtitle"><b>Legge | n.205</b> | 27 dicembre 2017</div>
-            <div class="content">
-              Bilancio di previsione dello Stato per l'anno finanziaro 2018 e bilancio pluriennale per il triennio 2018-2020.
-            </div>
-          </div>
-          <div class="vvc-template-action">
-            <button>Visualizza il documento</button>
-          </div>
-        </div>
-        <div class="vvc-template-list">
-          <div class="vvc-template-inner">
-            <div class="template-item"><button>Legge di bilancio</button></div>
-            <div class="template-item"><button>Decreto fiscale</button></div>
-            <div class="template-item"><button>Rottamazione cartelle</button></div>
-            <div class="template-item"><button>Fatture elettroniche</button></div>
-            <div class="template-item"><button>Riforma fiscale</button></div>
-            <div class="template-item"><button>Ravvedimento IMU</button></div>
-          </div>
-          <div class="vvc-template-action">
-            <button>Visualizza il documento</button>
-          </div>
-        </div>
-        <div class="system-message">
-          Sei in collegamento con<br>Irene Chiappalone
-        </div>
-        <div class="chat-message visitor">
-          <div class="message-spacer"></div>
-          <div class="message">
-            <div class="bubble arrow">Ciao Irene, un mio cliente nel 2017 ha aperto la partita iva aderendo al regime forfettario, rispettando quindi, nell'anno 2016, tutti i requisiti richiesti. Sta così beneficiando in questa annualità della agevolazione della tassazione al 5%. Nel 2017 stesso, o sicuramente nel 2018, oltre al reddito da partita iva, riceverà un reddito da lavoro dipendente superiore a 30.000,00€. Può rimanere nel regime nel regime e mantenere la tassazione al 5%?</div>
-            <div class="time">1 febbraio, 15:10</div>
-          </div>
-          <!--
-          <div class="message-avatar">
-            <img src="./assets/visitor_default.png">
-          </div>
-          -->
-        </div>
+
       </div>
       <div id="vvc-is-writing">
         <div class="iw-avatar"><img src="./assets/bot_avatar.png"></div>
@@ -335,6 +96,7 @@
         </div>
       </div>
     </div>
+    -->
 
     <div id="vvc-minimize-chat"></div>
   </div>
@@ -343,6 +105,7 @@
 <div id="vvc-minimized-layout">
 
 </div>
+
 
 <!--
 <div id="n-resize" class="resize" [ngClass]="{ 'ns-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>

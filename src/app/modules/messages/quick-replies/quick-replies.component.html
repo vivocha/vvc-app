@@ -1,0 +1,8 @@
+<div class="vvc-quick-replies vertical">
+  <div class="reply-message">{{ message.body }} <span *ngIf="hasReplied()"> - <span class="qr-reply">{{ selectedOption.title }}</span></span></div>
+  <div class="qr-buttons" *ngIf="!hasReplied()">
+    <div class="reply" *ngFor="let btn of message.quick_replies">
+      <button (click)="btnClicked(btn)">{{ btn.title }}</button>
+    </div>
+  </div>
+</div>
