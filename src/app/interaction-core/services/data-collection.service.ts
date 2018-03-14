@@ -8,16 +8,30 @@ export class VvcDataCollectionService {
   private vivocha;
 
   constructor(private store: Store<fromStore.AppState>){
+    /*
     this.store.select(fromStore.getPushedDataCollections).subscribe( data => {
       //if (data.filledDataCollections.length === data.availableDcLength) this.sendDataCollections(data.filledDataCollections);
     })
+    */
   }
 
-  fillDataCollections(vivocha, dataCollections){
+  showDc(){
+
+  }
+  showDcWithRecall(){
+
+  }
+  showRecall(){
+
+  }
+  /*
+  showDataCollections(vivocha, dataCollections){
     this.vivocha = vivocha;
+    this.store.dispatch(new WidgetShowDc(dataCollections));
     this.store.dispatch(new fromStore.InitializeDataCollections(dataCollections));
     this.store.dispatch(new fromStore.ShowDataCollection(0));
   }
+
   sendDataCollections(dataCollections: any[], contactOptions){
     const opts = Object.assign(contactOptions);
     dataCollections.forEach( dc => {
@@ -31,7 +45,7 @@ export class VvcDataCollectionService {
     });
   }
   submitDataCollection(dcId: string, dataCollection: any){
-    this.store.dispatch(new fromStore.WidgetDataCollectionFilled({ id: dcId, dc: dataCollection }));
+    //this.store.dispatch(new fromStore.WidgetDataCollectionFilled({ id: dcId, dc: dataCollection }));
   }
-
+  */
 }

@@ -9,6 +9,50 @@ export interface ContextState {
 export interface MessagesState {
   messages: any[]
 }
+export interface WidgetState {
+  dataCollections?: any[];
+  selectedDataCollection?: number;
+  filledDataCollections?: any[];
+  localCaps?: any;
+  remoteCaps?: any;
+  mediaChange?: any;
+  mediaOffer?: any;
+  agent?: any;
+}
+
+export interface LoadingPanelState {
+  visible: boolean;
+}
+export interface ClosePanelState {
+  visible: boolean;
+}
+export interface TopBarState {
+  title?: string;
+  subtitle?: string;
+  avatarSrc?: string;
+  useAvatar?: boolean;
+  canMaximize?: boolean;
+  canMinimize?: boolean;
+  canStartAudio?: boolean;
+  canStartVideo?: boolean;
+}
+export interface ChatState {
+  emojiPanelVisible?: boolean;
+  uploadPanelVisible?: boolean;
+  showEmojiButton?: boolean;
+  showUploadButton?: boolean;
+  showSendButton?: boolean;
+  isChatVisible?: boolean;
+  isSendAreaVisible?: boolean;
+  isSendAreaDisabled?: boolean;
+}
+export interface UiState {
+  loadingPanel: LoadingPanelState;
+  closePanel: ClosePanelState;
+  topBar: TopBarState;
+  chat: ChatState;
+}
+/*
 export interface UiState {
   loading: boolean;
   dataCollections?: any[];
@@ -19,7 +63,6 @@ export interface UiState {
   mediaChange?: any;
   mediaOffer?: any;
   agent?: any;
-
 }
 export interface WidgetState {
   agent?: VvcAgent;
@@ -63,6 +106,7 @@ export interface WidgetState {
   video_rx?: any;
   video_tx?: any;
 }
+*/
 export interface VvcMediaOfferDetails {
   tx: 'required' | 'optional' | 'off';
   rx: 'required' | 'optional' | 'off';

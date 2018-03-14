@@ -15,7 +15,7 @@
                  (onMinimize)="minimizeWidget()"
                  (onClose)="showCloseModal(true)"></vvc-top-bar>
 
-    <vvc-chat id="vvc-chat" [context]="appState.chat">
+    <vvc-chat id="vvc-chat" [context]="appState.chat" *ngIf="appState.chat.visible">
 
       <div class="vvc-emoji-panel">
         <vvc-emoji-panel class="vvc-emoji-inner"

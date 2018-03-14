@@ -52,7 +52,7 @@ export class VvcContextService {
           world: this.world,
           ...context
         }));
-        this.store.dispatch(new fromStore.WidgetLoaded());
+        //this.store.dispatch(new fromStore.WidgetLoaded());
       }
     );
   }

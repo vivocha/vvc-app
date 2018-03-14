@@ -2,7 +2,6 @@ import {Injectable, NgZone} from '@angular/core';
 import * as fromStore from '../store';
 import {Store} from '@ngrx/store';
 import {ClientContactCreationOptions} from '@vivocha/global-entities/dist/contact';
-import {ContactMediaOffer} from '@vivocha/global-entities/dist';
 import {VvcDataCollectionService} from './data-collection.service';
 import {VvcProtocolService} from './protocol.service';
 import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
@@ -21,18 +20,6 @@ export class VvcContactWrap {
     private zone: NgZone
   ){}
 
-  initializeContact(vivocha, context){
-    this.vivocha = vivocha;
-    this.context = context;
-    console.log('INITIALIZING CONTACT', this.context);
-    if (this.context.persistenceId) this.resumeContact(context);
-    else {
-      if (this.context.dataCollections && this.context.dataCollections.length > 0) {
-        this.dcService.fillDataCollections(this.vivocha, this.context.dataCollections);
-      }
-      else this.createContact();
-    }
-  }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
     for (const m in transcript) {
@@ -60,6 +47,7 @@ export class VvcContactWrap {
     this.vivocha.createContact(conf).then( (contact) => {
       this.contact = contact;
       this.mapContact();
+      this.setQueueState()
     }, (err) => {
       console.log('Failed to create contact', err);
       this.vivocha.pageRequest('interactionFailed', err.message);
@@ -85,13 +73,47 @@ export class VvcContactWrap {
       first_title: this.context.page.first_title
     };
   }
+  hasDataCollection() {
+    return (this.context.dataCollections && this.context.dataCollections.length > 0);
+  }
+  hasRecallForNoAgent(){
+    return false;
+  }
+  initializeContact(vivocha, context){
+    this.vivocha = vivocha;
+    this.context = context;
+    if (this.isInPersistence()) this.resumeContact(context);
+    else {
+      if (this.isRecallContact()){
+        this.dcService.showRecall();
+      } else {
+        if (this.isChatEmulationContact()) {
+          if (this.hasDataCollection() && this.hasRecallForNoAgent() && this.noAgents()) {
+            this.dcService.showDcWithRecall();
+          }
+        } else {
+          if (this.hasDataCollection()) this.dcService.showDc();
+          else this.createContact();
+        }
+      }
+    }
+  }
+  isChatEmulationContact(){
+    return false;
+  }
+  isRecallContact(){
+    return false;
+  }
+  isInPersistence(){
+    return !!this.context.persistenceId
+  }
   mapContact(){
     this.vivocha.pageRequest('interactionCreated', this.contact);
     this.contact.getLocalCapabilities().then( caps => {
-      this.dispatch(new fromStore.WidgetCapabilityLoaded({ type: 'localCaps', caps: caps }));
+      this.dispatch(new fromStore.WidgetLocalCaps(caps));
     });
     this.contact.getRemoteCapabilities().then( caps => {
-      this.dispatch(new fromStore.WidgetCapabilityLoaded({ type: 'remoteCaps', caps: caps }));
+      this.dispatch(new fromStore.WidgetRemoteCaps(caps));
     });
     /*
     this.contact.on('action', (action_code, args) => {
@@ -210,12 +232,15 @@ export class VvcContactWrap {
     });
     */
   }
+  noAgents(){
+    return false;
+  }
   onAgentJoin(join){
     this.contact.getMedia().then( (media) => {
       const agent = { id: join.user, nick: join.nick, avatar: join.avatar};
       this.vivocha.pageRequest('interactionAnswered', agent);
       this.dispatch(new fromStore.WidgetJoined(agent));
-      this.dispatch(new fromStore.WidgetMediaChange(media));
+      //this.dispatch(new fromStore.WidgetMediaChange(media));
       console.log('joined', agent);
     });
   }
@@ -239,5 +264,8 @@ export class VvcContactWrap {
         this.vivocha.pageRequest('interactionFailed', err.message);
       });
     });
+  }
+  setQueueState(){
+    this.store.dispatch(new fromStore.WidgetQueue({ topBarTitle: 'Hello'}));
   }
 }

@@ -73,7 +73,7 @@ export class VvcInteractionService {
     })
   }
   getState(){
-    return this.store.select(fromStore.getWidgetStatus);
+    return this.store.select(fromStore.getUiState);
   }
 
 }

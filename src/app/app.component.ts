@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.interactionService.getState().subscribe( state => {
       this.appState = state;
-      console.log('STATE', state);
     });
     this.interactionService.init();
 
@@ -359,7 +358,7 @@ export class AppComponent implements OnInit {
     //this.cserv.syncDataCollection(dc);
   }
   upgradeMedia(media: string) {
-    const startedWith = (this.widgetState.voice) ? 'voice' : media;
+    //const startedWith = (this.widgetState.voice) ? 'voice' : media;
    /*
     this.cserv.askForUpgrade(media, startedWith.toUpperCase()).then( () => {
       this.startTimer();
