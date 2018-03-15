@@ -1,16 +1,16 @@
 <div id="vvc-box-inner">
   <div class="text-box">
-    <input [readonly]="context.readony"
+    <input [readonly]="readonly"
            placeholder="Scrivi il tuo messaggio"
            type="text"
            #box
            (keyup.enter)="sendText(box.value);box.value=''">
   </div>
-  <div *ngIf="context.showUpload"
+  <div *ngIf="context.showUploadButton"
        class="upload-handler">
     <i class="icon icon-vvc-clip"></i>
   </div>
-  <div *ngIf="context.showEmoji"
+  <div *ngIf="context.showEmojiButton"
        (click)="toggleEmojiPanel.emit()"
        class="emoji-handler">
     <i class="icon icon-vvc-emoji"></i>

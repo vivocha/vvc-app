@@ -20,6 +20,8 @@ $icon-vvc-video: './assets/static/icons/vvc-video.png';
 $icon-vvc-emoji: './assets/static/icons/vvc-emoji.png';
 $icon-vvc-clip: './assets/static/icons/vvc-clip.png';
 $icon-vvc-send: './assets/static/icons/vvc-send.png';
+
+@import 'variables';
 /**
   MIXINS
  */
@@ -47,7 +49,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     border: 1px solid #CCCCCC;
   }
 }
-@mixin top-bar($background: #0351A1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showAvatar: false){
+@mixin top-bar($background: #0351A1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showAvatar: $showAvatar){
 
   flex: none;
   background: $background;
@@ -66,6 +68,8 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     img {
       width: 50px;
       height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
     }
   }
   #vvc-top-header {
@@ -200,6 +204,9 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     padding: 10px 4px;
     flex: none;
     display: flex;
+    .bubble{
+      white-space: pre;
+    }
     .message{
       .time{
         font-size: $timeSize;
@@ -214,6 +221,8 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        position: relative;
+        top: -7px;
       }
     }
     .message-spacer{
@@ -221,7 +230,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     }
   }
 }
-@mixin chat-visitor-message($background: #E6E6E6, $color: #333333, $radius: 6px, $borderColor: #E6E6E6, $showAvatar: true, $showArrow: false){
+@mixin chat-visitor-message($background: $visitorBalloonColor, $color: #333333, $radius: 6px, $borderColor: #E6E6E6, $showAvatar: $showVisitorAvatar, $showArrow: $showVisitorBalloonArrow){
   .chat-message{
     &.visitor{
       .message-avatar{
@@ -232,7 +241,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
       .bubble {
         padding: 6px;
         margin-right: 8px;
-        margin-left: 12%;
+        margin-left: 50px;
         border: 1px solid $borderColor;
         background: $background;
         color: $color;
@@ -278,7 +287,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     }
   }
 }
-@mixin chat-agent-message($background: #0351A1, $color: #FFFFFF, $radius: 6px, $borderColor: #0351A1, $showAvatar: false, $showArrow: true){
+@mixin chat-agent-message($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: #0351A1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
 
   .chat-message{
     &.agent{
@@ -290,7 +299,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
       .bubble {
         padding: 6px;
         margin-left: 8px;
-        margin-right: 12%;
+        margin-right: 50px;
         border: 1px solid $borderColor;
         background: $background;
         color: $color;

@@ -1,6 +1,6 @@
 import {
-  ChatState, ClosePanelState, ContextState, LoadingPanelState, TopBarState, UiState,
-  WidgetState
+  ChatState, ClosePanelState, ContextState, EventState, LoadingPanelState, TopBarState, UiState,
+  WidgetState, MessagesState
 } from '../models.interface';
 
 export const getUiLoadingPanelState = (contextState: ContextState):LoadingPanelState => {
@@ -21,9 +21,17 @@ export const getUiTopBarState = (widgetState: WidgetState): TopBarState => {
   }
 };
 
-export const getUiChatState = (widgetState: WidgetState): ChatState => {
+export const getUiChatState = (contextState: ContextState, widgetState: WidgetState, eventState: EventState): ChatState => {
+  const isChatVisible = (contextState.requestedMedia === 'chat');
+  const isSendAreaDisabled = eventState && eventState.name === 'QUEUE';
+  const showEmojiButton = contextState.variables && contextState.variables.showEmojiButton;
+  const showUploadButton = contextState.variables && contextState.variables.showUploadButton;
+
   return {
-    showEmojiButton: true,
+    isChatVisible: isChatVisible,
+    isSendAreaDisabled: isSendAreaDisabled,
+    showEmojiButton: showEmojiButton,
+    showUploadButton: showUploadButton,
     showSendButton: true
   }
 };
@@ -32,12 +40,14 @@ export const getUiState = (
   loadingPanelState: LoadingPanelState,
   closePanelState: ClosePanelState,
   topBarState: TopBarState,
-  chatState: ChatState
+  chatState: ChatState,
+  messagesState: MessagesState
 ): UiState => {
   return {
     loadingPanel: loadingPanelState,
     closePanel: closePanelState,
     topBar: topBarState,
-    chat: chatState
+    chat: chatState,
+    messages: messagesState.list
   }
 };

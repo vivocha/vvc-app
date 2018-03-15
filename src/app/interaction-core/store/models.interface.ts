@@ -6,8 +6,9 @@ export interface ContextState {
   acct?: string;
   [id:string]: any
 }
-export interface MessagesState {
-  messages: any[]
+export interface EventState {
+  name: string;
+  [prop:string]: any;
 }
 export interface WidgetState {
   dataCollections?: any[];
@@ -27,9 +28,6 @@ export interface ClosePanelState {
   visible: boolean;
 }
 export interface TopBarState {
-  title?: string;
-  subtitle?: string;
-  avatarSrc?: string;
   useAvatar?: boolean;
   canMaximize?: boolean;
   canMinimize?: boolean;
@@ -46,11 +44,31 @@ export interface ChatState {
   isSendAreaVisible?: boolean;
   isSendAreaDisabled?: boolean;
 }
+
+export interface SystemMessage {
+  id: string;
+  text: string;
+  type: 'system',
+  context?: any
+}
+export interface ChatMessage {
+  id: string;
+  text: string;
+  type: 'chat';
+  isAgent?: boolean;
+  isBot?: boolean;
+  time?: string;
+  agent?: any;
+}
+export interface MessagesState {
+  list: any[];
+}
 export interface UiState {
   loadingPanel: LoadingPanelState;
   closePanel: ClosePanelState;
   topBar: TopBarState;
   chat: ChatState;
+  messages: any[];
 }
 /*
 export interface UiState {

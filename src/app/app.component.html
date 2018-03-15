@@ -15,7 +15,7 @@
                  (onMinimize)="minimizeWidget()"
                  (onClose)="showCloseModal(true)"></vvc-top-bar>
 
-    <vvc-chat id="vvc-chat" [context]="appState.chat" *ngIf="appState.chat.visible">
+    <vvc-chat id="vvc-chat" [context]="appState.chat" *ngIf="appState.chat.isChatVisible">
 
       <div class="vvc-emoji-panel">
         <vvc-emoji-panel class="vvc-emoji-inner"
@@ -25,8 +25,8 @@
 
       <div class="vvc-messages">
         <div *ngFor="let m of appState.messages">
-          <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
           <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
+          <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
           <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-reply'"
                              (action)="processQuickReply($event)"></vvc-quick-replies>
           <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"></vvc-template-generic>
@@ -35,6 +35,7 @@
 
       <div class="vvc-chat-box-area">
         <vvc-chat-area #chat
+                       [readonly]="appState.chat.isSendAreaDisabled"
                        [context]="appState.chat"
                        (onSendText)="sendText($event)"
                        (toggleEmojiPanel)="toggleEmojiPanel()"></vvc-chat-area>

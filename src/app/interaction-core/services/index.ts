@@ -4,9 +4,11 @@ import {VvcContextService} from './context.service';
 import {VvcContactWrap} from './contact-wrap.service';
 import {VvcDataCollectionService} from './data-collection.service';
 import {VvcProtocolService} from './protocol.service';
+import {VvcMessageService} from './messages.service';
 
 export const services: any[] = [
   VvcInteractionService,
+  VvcMessageService,
   VvcContextService,
   VvcContactWrap,
   VvcProtocolService,
@@ -20,3 +22,4 @@ export * from './contact-wrap.service';
 export * from './protocol.service';
 export * from './data-collection.service';
 export * from './context.service';
+export * from './messages.service';

@@ -1,8 +1,8 @@
 <div id="vvc-top-bar">
-  <div id="vvc-top-avatar" *ngIf="context.avatarSrc"><img [src]="context.avatarSrc"></div>
+  <div id="vvc-top-avatar" *ngIf="avatarSrc"><img [src]="avatarSrc"></div>
   <div id="vvc-top-header">
-    <div id="vvc-top-title">{{ context.title }}</div>
-    <div id="vvc-top-subtitle">{{ context.subtitle }}</div>
+    <div id="vvc-top-title">{{ title | translate }}</div>
+    <div id="vvc-top-subtitle">{{ subtitle | translate }}</div>
   </div>
   <div class="vvc-top-controls" *ngIf="!hasMenu()">
     <span>
@@ -20,19 +20,19 @@
   <div id="vvc-top-bar-menu" *ngIf="isMenuVisible" (click)="closeMenu()">
     <div id="vvc-menu-inner" class="animated" [ngClass]="{ 'fadeIn': isMenuVisible }">
       <div *ngIf="context.canMinimize">
-        <span><i class="icon icon-vvc-reduce"></i> Minimize</span>
+        <span><i class="icon icon-vvc-reduce"></i> {{ 'STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON' | translate }}</span>
       </div>
       <div *ngIf="context.canMaximize">
-        <span><i class="icon icon-vvc-maximize"></i> Maximize</span>
+        <span><i class="icon icon-vvc-maximize"></i> {{ 'STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON' | translate }}</span>
       </div>
       <div *ngIf="context.canStartAudio">
-        <span><i class="icon icon-vvc-audio"></i> Audio</span>
+        <span><i class="icon icon-vvc-audio"></i> {{ 'STRINGS.QUEUE.TOPBAR.VOICE_BUTTON' | translate }}</span>
       </div>
       <div *ngIf="context.canStartVideo">
-        <span><i class="icon icon-vvc-video"></i> Video</span>
+        <span><i class="icon icon-vvc-video"></i> {{ 'STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON' | translate }}</span>
       </div>
       <div (click)="onClose.emit()">
-        <span><i class="icon icon-vvc-close"></i> Close</span>
+        <span><i class="icon icon-vvc-close"></i> {{ 'STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON' | translate }}</span>
       </div>
     </div>
   </div>

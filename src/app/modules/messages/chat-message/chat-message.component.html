@@ -1,11 +1,11 @@
 <div class="chat-message" [ngClass]="{ 'agent': message.isAgent, 'visitor': !message.isAgent }">
   <div class="message-spacer" *ngIf="!message.isAgent"></div>
-  <div class="message-avatar" *ngIf="message.isAgent">
-    <img src="./assets/static/bot_avatar.png">
+  <div class="message-avatar" *ngIf="message.isAgent && message.agent.avatar">
+    <img [src]="message.agent.avatar">
   </div>
   <div class="message">
     <div class="bubble arrow">{{ message.text }}</div>
-    <div class="time">1 febbraio, 14:10</div>
+    <div class="time">{{ message.time }}</div>
   </div>
   <div class="message-avatar" *ngIf="!message.isAgent">
     <img src="./assets/static/visitor_default.png">

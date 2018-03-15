@@ -62,6 +62,9 @@ export class VvcInteractionService {
 
     }
   }
+  getState(){
+    return this.store.select(fromStore.getUiState);
+  }
   init(){
     this.contextService.ready().subscribe( (context:ContextState) => {
       if (context.loaded) {
@@ -72,8 +75,10 @@ export class VvcInteractionService {
       }
     })
   }
-  getState(){
-    return this.store.select(fromStore.getUiState);
+  onEvent(){
+    return this.store.select(fromStore.getLastEvent);
   }
-
+  sendText(text){
+    this.contactService.sendText(text);
+  }
 }

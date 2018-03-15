@@ -4,6 +4,7 @@ import { WidgetState } from './interaction-core/store/models.interface';
 import {VvcInteractionService} from './interaction-core/services';
 
 import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
+import {TopBarComponent} from './modules/top-bar/top-bar/top-bar.component';
 
 @Component({
   selector: 'vvc-root',
@@ -11,6 +12,7 @@ import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
 })
 export class AppComponent implements OnInit {
 
+  @ViewChild(TopBarComponent) topBar: TopBarComponent;
   @ViewChild(ChatAreaComponent) chat: ChatAreaComponent;
 
 
@@ -27,6 +29,9 @@ export class AppComponent implements OnInit {
 
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
+    this.interactionService.onEvent().subscribe( evt => {
+      this.parseEvent(evt);
+    });
     this.interactionService.getState().subscribe( state => {
       this.appState = state;
     });
@@ -385,12 +390,25 @@ export class AppComponent implements OnInit {
   minimizeWidget(){
 
   }
+  parseEvent(evt){
+    console.log('EVT', evt);
+    if (!evt) return;
+    switch(evt.name){
+      case 'QUEUE':
+        this.topBar.setTitle("STRINGS.QUEUE.TOPBAR.TITLE");
+        this.topBar.setSubtitle("STRINGS.QUEUE.TOPBAR.SUBTITLE");
+        break;
+      case 'AGENT_JOIN':
+        this.topBar.setTopBar(evt.agent.nick,'STRINGS.QUEUE.TOPBAR.CONNECTED', evt.agent.avatar);
+        break;
+    }
+  }
   processQuickReply(qr){
     this.sendText({ type: 'chat', text: qr.title, isAgent: false });
   }
   sendText(value){
     if (this.appState.chat.showEmojiPanel) this.toggleEmojiPanel();
-    this.appState.messages.push(value);
+    this.interactionService.sendText(value);
   }
   showCloseModal(val){
     console.log("showCloseModal");

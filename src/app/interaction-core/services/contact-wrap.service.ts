@@ -5,6 +5,8 @@ import {ClientContactCreationOptions} from '@vivocha/global-entities/dist/contac
 import {VvcDataCollectionService} from './data-collection.service';
 import {VvcProtocolService} from './protocol.service';
 import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
+import {VvcEventEmit} from '../store/actions';
+import {VvcMessageService} from './messages.service';
 
 @Injectable()
 export class VvcContactWrap {
@@ -13,10 +15,14 @@ export class VvcContactWrap {
   private contact;
   private context;
 
+  lastSystemMessageId;
+  agent;
+
   constructor(
     private store: Store<fromStore.AppState>,
     private dcService: VvcDataCollectionService,
     private protocolService: VvcProtocolService,
+    private messageService: VvcMessageService,
     private zone: NgZone
   ){}
 
@@ -43,18 +49,20 @@ export class VvcContactWrap {
     }
   }
   createContact(){
+    this.setQueueState();
     const conf = this.getContactOptions();
     this.vivocha.createContact(conf).then( (contact) => {
       this.contact = contact;
       this.mapContact();
-      this.setQueueState()
     }, (err) => {
       console.log('Failed to create contact', err);
       this.vivocha.pageRequest('interactionFailed', err.message);
     });
   }
   dispatch(action){
+    //console.log('emitting outside the zone', action);
     //this.zone.run( () => {
+      //console.log('emitting inside the zone', action);
       this.store.dispatch(action);
     //});
   }
@@ -115,75 +123,6 @@ export class VvcContactWrap {
     this.contact.getRemoteCapabilities().then( caps => {
       this.dispatch(new fromStore.WidgetRemoteCaps(caps));
     });
-    /*
-    this.contact.on('action', (action_code, args) => {
-      if (action_code === 'quick') {
-        const quick = {
-          code: 'message',
-          type: 'text',
-          body: 'Pick a size',
-          quick_replies: [
-            { content_type: 'text', title: 'Small', payload: 'SMALL', image_url: '' },
-            { content_type: 'text', title: 'Medium', payload: 'MEDIUM', image_url: '' },
-            { content_type: 'text', title: 'Large', payload: 'LARGE', image_url: '' }
-          ]
-        };
-        quick.type = 'quick-replies';
-        this.dispatch(new fromStore.NewMessage(quick));
-      }
-      if (action_code === 'template'){
-        const template = {
-          type: 'template',
-          template: 'generic',
-          elements: [
-            {
-              title: "Titolo",
-              subtitle: "Sottotitolo",
-              image_url: "https://image.freepik.com/free-vector/web-development-and-graphic-design-banners_23-2147526170.jpg",
-              default_action: {
-                type: "web_url",
-                url: "https://image.freepik.com"
-              },
-              buttons: [
-                { type: "web_url", title: "Visualizza Dettaglio", url: "https://image.freepik.com/free-vector/" },
-                { type: "postback", title: "Transfer Chat", payload: { agentId: 'Pippo', whatever: 'whatever' }}
-              ]
-            }
-          ]
-        }
-        this.dispatch(new fromStore.NewMessage(template));
-
-      }
-      this.clearIsWriting();
-    });
-    this.contact.on('DataCollection', (dataCollection, cb) => {
-      this.fetchDataCollection(dataCollection);
-    });
-    this.contact.on('agentrequest', (message, cb) => {
-      this.onAgentRequest(message, cb);
-    });
-    this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
-      const attachment = {url, meta, fromId, fromNick, isAgent};
-      this.dispatch(new fromStore.NewMessage({
-        text: meta.desc || meta.originalName,
-        type: 'chat',
-        isAgent: isAgent,
-        meta: meta,
-        url: (meta.originalUrl) ? meta.originalUrl : url,
-        from_nick: fromNick,
-        from_id: fromId
-      }))
-
-    });
-    this.contact.on('capabilities', caps => {
-      this.dispatch(new fromStore.RemoteCaps(caps));
-    });
-    this.contact.on('iswriting', (from_id, from_nick, agent) => {
-      if (agent) {
-        this.setIsWriting();
-      }
-    });
-    */
     this.contact.on('joined', (c) => {
       if (c.user) {
         this.onAgentJoin(c);
@@ -191,6 +130,59 @@ export class VvcContactWrap {
         this.onLocalJoin(c);
       }
     });
+    this.contact.on('rawmessage', (msg) => {
+      if (msg.type != 'text') return;
+      if (msg.quick_replies){
+        this.messageService.addQuickRepliesMessage(msg);
+      }
+      else if (msg.template) {
+        this.messageService.addTemplateMessage(msg);
+      } else {
+        console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
+        this.messageService.addChatMessage(msg, this.agent);
+        /*
+        if (this.widgetState && (this.widgetState.minimized || !this.widgetState.chatVisibility)) {
+          this.dispatch({type: 'INCREMENT_NOT_READ'});
+        }
+        */
+      }
+      //this.playAudioNotification();
+      //this.clearIsWriting();
+    });
+    this.contact.on('localtext', (text) => {
+      this.messageService.addLocalMessage(text);
+    });
+      /*
+
+      this.contact.on('DataCollection', (dataCollection, cb) => {
+        this.fetchDataCollection(dataCollection);
+      });
+      this.contact.on('agentrequest', (message, cb) => {
+        this.onAgentRequest(message, cb);
+      });
+      this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
+        const attachment = {url, meta, fromId, fromNick, isAgent};
+        this.dispatch(new fromStore.NewMessage({
+          text: meta.desc || meta.originalName,
+          type: 'chat',
+          isAgent: isAgent,
+          meta: meta,
+          url: (meta.originalUrl) ? meta.originalUrl : url,
+          from_nick: fromNick,
+          from_id: fromId
+        }))
+
+      });
+      this.contact.on('capabilities', caps => {
+        this.dispatch(new fromStore.RemoteCaps(caps));
+      });
+      this.contact.on('iswriting', (from_id, from_nick, agent) => {
+        if (agent) {
+          this.setIsWriting();
+        }
+      });
+      */
+
     /*
     this.contact.on('left', obj => {
       console.log('LEFT', obj);
@@ -237,11 +229,15 @@ export class VvcContactWrap {
   }
   onAgentJoin(join){
     this.contact.getMedia().then( (media) => {
-      const agent = { id: join.user, nick: join.nick, avatar: join.avatar};
+      const agent = {
+        id: join.user,
+        nick: join.nick,
+        avatar: (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+      };
+      this.agent = agent;
       this.vivocha.pageRequest('interactionAnswered', agent);
-      this.dispatch(new fromStore.WidgetJoined(agent));
       //this.dispatch(new fromStore.WidgetMediaChange(media));
-      console.log('joined', agent);
+      this.setAnsweredState(agent)
     });
   }
   onLocalJoin(join){
@@ -265,7 +261,19 @@ export class VvcContactWrap {
       });
     });
   }
+  sendText(text){
+    this.contact.sendText(text);
+  }
+  setAnsweredState(agent){
+    this.dispatch(new fromStore.WidgetJoined(agent));
+    this.dispatch(new VvcEventEmit({ name: 'AGENT_JOIN', agent: agent }));
+    this.messageService.removeMessage(this.lastSystemMessageId);
+    if (this.context.variables.showWelcomeMessage){
+      this.lastSystemMessageId = this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick });
+    }
+  }
   setQueueState(){
-    this.store.dispatch(new fromStore.WidgetQueue({ topBarTitle: 'Hello'}));
+    this.store.dispatch(new VvcEventEmit({ name: 'QUEUE' }));
+    this.lastSystemMessageId = this.messageService.sendSystemMessage('STRINGS.QUEUE.CONNECTING');
   }
 }

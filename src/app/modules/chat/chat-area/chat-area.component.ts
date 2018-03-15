@@ -9,6 +9,7 @@ export class ChatAreaComponent {
 
   @ViewChild('box') box: ElementRef;
   @Input() context;
+  @Input() readonly;
   @Output() onSendText = new EventEmitter();
   @Output() toggleEmojiPanel = new EventEmitter();
 

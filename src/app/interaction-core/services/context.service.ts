@@ -50,6 +50,7 @@ export class VvcContextService {
           busId: this.busId,
           acct: this.acct,
           world: this.world,
+          variables: context.campaign.channels.web.interaction.variables,
           ...context
         }));
         //this.store.dispatch(new fromStore.WidgetLoaded());

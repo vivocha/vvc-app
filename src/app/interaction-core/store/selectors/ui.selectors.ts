@@ -22,7 +22,9 @@ export const getUiTopBarState = createSelector(
   fromUi.getUiTopBarState
 );
 export const getUiChatState = createSelector(
+  fromFeature.getContextState,
   fromFeature.getWidgetState,
+  fromFeature.getEventState,
   fromUi.getUiChatState
 );
 
@@ -31,5 +33,6 @@ export const getUiState = createSelector(
   getUiClosePanelState,
   getUiTopBarState,
   getUiChatState,
+  fromFeature.getMessagesState,
   fromUi.getUiState
 );
