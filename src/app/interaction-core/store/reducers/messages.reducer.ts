@@ -8,18 +8,15 @@ const initialState: MessagesState = {
 export function reducer(state: MessagesState = initialState, action: fromMessages.MessagesActions){
   switch (action.type){
     case fromMessages.UPDATE_MESSAGE: {
-      const newArray = [];
-      const iMessages = state.list.filter( m => m.id === action.payload.id);
-      iMessages[0].state = action.payload.state;
-      state.list.forEach( (m, i) => {
-        if (i === iMessages[0].oPos) {
-          newArray.push(iMessages[0]);
+      const newMessages = state.list.map( el => {
+        if (el.id === action.payload.id){
+          const o = Object.assign({}, el, action.payload.patch);
+          console.log('UPDATED', o);
+          return Object.assign({}, el, action.payload.patch);
         }
-        if (m.id !== action.payload.id) {
-          newArray.push(m);
-        }
+        return el;
       });
-      return Object.assign({}, state, { list : [...newArray] });
+      return Object.assign({}, state, { list: [...newMessages]});
     }
     case fromMessages.NEW_MESSAGE: {
       return Object.assign({}, state, { list : [...state.list, action.payload] });

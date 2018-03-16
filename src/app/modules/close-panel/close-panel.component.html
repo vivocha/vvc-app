@@ -1,9 +1,9 @@
 <div class="inner-close-panel">
   <div class="close-modal">
-    <div>Vuoi procedere alla chiusura del contatto?</div>
+    <div>{{ 'STRINGS.CLOSEMODAL.CLOSE_MESSAGE' | translate }}</div>
     <div class="buttons-wrapper">
-      <div><button (click)="cancel.emit()">Annulla</button></div>
-      <div><button (click)="confirm.emit()">Chiudi</button></div>
+      <div><button (click)="cancel.emit()">{{ 'STRINGS.CLOSEMODAL.NO' | translate }}</button></div>
+      <div><button (click)="confirm.emit()">{{ 'STRINGS.CLOSEMODAL.YES' | translate }}</button></div>
     </div>
   </div>
 </div>

@@ -117,9 +117,7 @@ export class AppComponent implements OnInit {
     }
     */
   }
-  dismissCloseModal() {
-    this.closeModal = false;
-  }
+
   download(url) {
     //this.window.open(url, '_blank');
   }
@@ -161,9 +159,6 @@ export class AppComponent implements OnInit {
       this.vivocha.maximize();
     }
     */
-  }
-  processAction(action: any){
-    //this.cserv.sendPostBack(action);
   }
   removeLocalVideo() {
     //this.cserv.removeLocalVideo();
@@ -381,11 +376,14 @@ export class AppComponent implements OnInit {
   appendText(text){
     this.chat.appendText(text);
   }
-  closeContact(){
-    this.showCloseModal(false);
+  closeApp(){
+    this.interactionService.closeApp();
   }
-  dismissModal(){
-    this.showCloseModal(false);
+  closeContact(){
+    this.interactionService.closeContact();
+  }
+  dismissCloseModal(){
+    this.interactionService.dismissCloseModal()
   }
   minimizeWidget(){
 
@@ -403,16 +401,18 @@ export class AppComponent implements OnInit {
         break;
     }
   }
-  processQuickReply(qr){
-    this.sendText({ type: 'chat', text: qr.title, isAgent: false });
+  processAction(action){
+    this.interactionService.sendPostBack(action);
+  }
+  processQuickReply(reply){
+    this.interactionService.processQuickReply(reply);
   }
   sendText(value){
     if (this.appState.chat.showEmojiPanel) this.toggleEmojiPanel();
     this.interactionService.sendText(value);
   }
-  showCloseModal(val){
-    console.log("showCloseModal");
-    this.appState = Object.assign({}, this.appState, { closePanel: { visible: !!val }});
+  showCloseModal(){
+    this.interactionService.showCloseModal()
   }
   toggleEmojiPanel() {
     let chatState = Object.assign({}, this.appState.chat, { showEmojiPanel: !this.appState.chat.showEmojiPanel });

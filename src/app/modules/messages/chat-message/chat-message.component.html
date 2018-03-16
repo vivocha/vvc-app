@@ -1,13 +1,13 @@
 <div class="chat-message" [ngClass]="{ 'agent': message.isAgent, 'visitor': !message.isAgent }">
   <div class="message-spacer" *ngIf="!message.isAgent"></div>
-  <div class="message-avatar" *ngIf="message.isAgent && message.agent.avatar">
+  <div class="message-avatar" *ngIf="message.isAgent && message.agent.avatar" [style.visibility]="message.isFirst ? 'visible' : 'hidden'">
     <img [src]="message.agent.avatar">
   </div>
   <div class="message">
-    <div class="bubble arrow">{{ message.text }}</div>
-    <div class="time">{{ message.time }}</div>
+    <div class="bubble" [ngClass]="{ 'arrow' : message.isFirst }">{{ message.text }}</div>
+    <div class="time" *ngIf="message.isLast">{{ message.time }}</div>
   </div>
-  <div class="message-avatar" *ngIf="!message.isAgent">
+  <div class="message-avatar" *ngIf="!message.isAgent" [style.visibility]="message.isFirst ? 'visible' : 'hidden'">
     <img src="./assets/static/visitor_default.png">
   </div>
   <div class="message-spacer" *ngIf="message.isAgent"></div>

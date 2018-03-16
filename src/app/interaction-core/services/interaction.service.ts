@@ -4,6 +4,7 @@ import * as fromStore from '../store';
 import {VvcContextService} from './context.service';
 import {ContextState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
+import {VvcEventEmit} from '../store/actions';
 
 
 @Injectable()
@@ -62,6 +63,15 @@ export class VvcInteractionService {
 
     }
   }
+  closeApp(){
+    this.contextService.closeApp();
+  }
+  closeContact(){
+    this.contactService.closeContact();
+  }
+  dismissCloseModal(){
+    this.store.dispatch(new VvcEventEmit({ name: 'HIDE_CLOSE_MODAL'}))
+  }
   getState(){
     return this.store.select(fromStore.getUiState);
   }
@@ -78,7 +88,16 @@ export class VvcInteractionService {
   onEvent(){
     return this.store.select(fromStore.getLastEvent);
   }
+  processQuickReply(reply){
+    this.contactService.processQuickReply(reply);
+  }
+  sendPostBack(action){
+    this.contactService.sendPostBack(action);
+  }
   sendText(text){
     this.contactService.sendText(text);
+  }
+  showCloseModal(){
+    this.store.dispatch(new VvcEventEmit({ name: 'SHOW_CLOSE_MODAL'}))
   }
 }

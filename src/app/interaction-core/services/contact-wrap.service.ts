@@ -17,6 +17,7 @@ export class VvcContactWrap {
 
   lastSystemMessageId;
   agent;
+  isClosed = false;
 
   constructor(
     private store: Store<fromStore.AppState>,
@@ -46,6 +47,14 @@ export class VvcContactWrap {
           }));
           break;
       }
+    }
+  }
+  closeContact(){
+    if (this.contact) {
+      this.contact.leave();
+      this.store.dispatch(new VvcEventEmit({ name: 'CLOSED_BY_VISITOR'}));
+      this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
+      this.isClosed = true;
     }
   }
   createContact(){
@@ -152,6 +161,14 @@ export class VvcContactWrap {
     this.contact.on('localtext', (text) => {
       this.messageService.addLocalMessage(text);
     });
+    this.contact.on('left', obj => {
+      console.log('LEFT', obj);
+      if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
+        this.store.dispatch(new VvcEventEmit({ name: 'CLOSED_BY_AGENT' }));
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+        this.isClosed = true;
+      }
+    });
       /*
 
       this.contact.on('DataCollection', (dataCollection, cb) => {
@@ -250,6 +267,10 @@ export class VvcContactWrap {
       });
     }
   }
+  processQuickReply(reply){
+    this.messageService.updateQuickReply(reply.msgId);
+    this.contact.sendText(reply.action.title)
+  }
   resumeContact(context: InteractionContext){
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
       this.vivocha.resumeContact(contactData).then((contact) => {
@@ -260,6 +281,21 @@ export class VvcContactWrap {
         this.vivocha.pageRequest('interactionFailed', err.message);
       });
     });
+  }
+  sendPostBack(msg){
+    const vvcPostBack = {
+      code: "message",
+      type: "postback",
+      body: msg.title
+    };
+    if (msg.type === "postback") {
+      console.log('dispatching from contact service', msg, vvcPostBack);
+      this.contact.send(vvcPostBack);
+    }
+    else {
+      console.log('message type differs from postback', msg);
+      this.vivocha.pageRequest('interactionEvent', msg.type, msg);
+    }
   }
   sendText(text){
     this.contact.sendText(text);

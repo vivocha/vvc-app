@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'vvc-template-generic',
@@ -8,5 +8,5 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 export class TemplateGenericComponent {
 
   @Input() message;
-
+  @Output() action = new EventEmitter();
 }

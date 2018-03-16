@@ -33,6 +33,7 @@ export interface TopBarState {
   canMinimize?: boolean;
   canStartAudio?: boolean;
   canStartVideo?: boolean;
+  canRemoveApp?: boolean;
 }
 export interface ChatState {
   emojiPanelVisible?: boolean;
@@ -45,15 +46,19 @@ export interface ChatState {
   isSendAreaDisabled?: boolean;
 }
 
-export interface SystemMessage {
+export interface BaseMessage {
   id: string;
   text: string;
-  type: 'system',
-  context?: any
+  isLast?: string;
+  isFirst?: string;
+  replied?: boolean;
 }
-export interface ChatMessage {
-  id: string;
-  text: string;
+
+export interface SystemMessage extends BaseMessage{
+  type: 'system',
+  context?: any,
+}
+export interface ChatMessage extends BaseMessage{
   type: 'chat';
   isAgent?: boolean;
   isBot?: boolean;

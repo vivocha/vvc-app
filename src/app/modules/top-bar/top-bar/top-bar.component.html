@@ -4,7 +4,12 @@
     <div id="vvc-top-title">{{ title | translate }}</div>
     <div id="vvc-top-subtitle">{{ subtitle | translate }}</div>
   </div>
-  <div class="vvc-top-controls" *ngIf="!hasMenu()">
+  <div class="vvc-top-controls" *ngIf="context.canRemoveApp">
+    <span (click)="onRemove.emit()">
+      <i class="icon icon-vvc-close"></i>
+    </span>
+  </div>
+  <div class="vvc-top-controls" *ngIf="!hasMenu() && !context.canRemoveApp">
     <span>
       <i class="icon icon-vvc-reduce"></i>
     </span>
@@ -12,7 +17,7 @@
       <i class="icon icon-vvc-close"></i>
     </span>
   </div>
-  <div class="vvc-top-controls" *ngIf="hasMenu()">
+  <div class="vvc-top-controls" *ngIf="hasMenu() && !context.canRemoveApp">
     <span (click)="showMenu()">
       <i class="icon icon-vvc-menu"></i>
     </span>

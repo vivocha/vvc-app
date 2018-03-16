@@ -37,6 +37,7 @@ export class VvcMessageService {
     return id;
   }
   addQuickRepliesMessage(message){
+    console.log('QUICK_REPLY', message);
     const id = new Date().getTime().toString();
     const quick = {
       id: id,
@@ -49,6 +50,7 @@ export class VvcMessageService {
     return id;
   }
   addTemplateMessage(message){
+    console.log('TEMPLATE', message);
     const id = new Date().getTime().toString();
     const template = {
       id: id,
@@ -63,7 +65,9 @@ export class VvcMessageService {
     let t;
     if (tsString) t = new Date(tsString);
     else t = new Date();
-    return t.getHours() + ":" + t.getMinutes();
+    const h = (parseInt(t.getHours()) > 9) ? t.getHours() : "0"+t.getHours();
+    const m = (parseInt(t.getMinutes()) > 9) ? t.getMinutes() : "0"+t.getMinutes();
+    return h + ":" + m;
   }
   removeMessage(messageId: string){
     this.store.dispatch(new fromStore.RemoveMessage(messageId));
@@ -80,5 +84,8 @@ export class VvcMessageService {
     }
     this.store.dispatch(new fromStore.NewMessage(message));
     return id;
+  }
+  updateQuickReply(messageId){
+    this.store.dispatch(new fromStore.UpdateMessage({ id: messageId, patch: { replied : true }}))
   }
 }

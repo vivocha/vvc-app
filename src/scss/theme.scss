@@ -201,13 +201,16 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
 }
 @mixin chat-message($fontSize: 16px, $timeSize: 12px, $timeColor: #727273){
   .chat-message{
-    padding: 10px 4px;
+    padding: 1px 4px;
     flex: none;
     display: flex;
     .bubble{
-      white-space: pre;
+      white-space: pre-line;
+      font-size: $fontSize;
+      font-weight: 300;
     }
     .message{
+      max-width: 100%;
       .time{
         font-size: $timeSize;
         font-weight: 300;
@@ -356,43 +359,69 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
       }
       .reply{
         padding: 4px 30px;
-
         button {
           width: 100%;
           @include btn-label();
         }
-
+        &.img{
+          img {
+            width: 25px;
+            height: 25px;
+            float: left;
+          }
+          button{
+            padding: 10px 20px 10px 10px;
+            line-height: 24px;
+          }
+        }
       }
     }
   }
 }
 @mixin template-message(){
 
-  .vvc-template-generic{
-    margin: 10px 15px;
-    .vvc-template-inner{
-      border: 1px solid #E4E4E4;
-      box-shadow: 3px 4px 0 #E6E6E6;
-      padding: 15px 10px;
-      .title{
-        color: #0351A1;
-        font-size: 14px;
-        font-weight: bold;
-      }
-      .subtitle{
-        color: #808080;
-        font-size: 12px;
-      }
-      .content{
-        padding: 8px 0 0 0;
-        font-size: 10px;
-      }
+  .tpl-container{
+    &.carousel{
+      display: flex;
+      overflow-x: scroll;
     }
-    .vvc-template-action{
-      padding-top: 15px;
-      button {
-        width: 100%;
-        @include btn-label();
+    margin: 10px 15px;
+    .tpl-element {
+      &.carousel {
+        flex: none;
+        margin: 20px;
+      }
+      .vvc-template-inner {
+        border: 1px solid #E4E4E4;
+        box-shadow: 3px 4px 0 #E6E6E6;
+        padding: 10px;
+        .cover {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          height: 180px;
+        }
+        .title {
+          padding-top: 5px;
+          color: #0351A1;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .subtitle {
+          color: #808080;
+          font-size: 12px;
+        }
+        .content {
+          padding: 8px 0 0 0;
+          font-size: 10px;
+        }
+      }
+      .vvc-template-action {
+        padding-top: 10px;
+        button {
+          width: 100%;
+          @include btn-label();
+        }
       }
     }
   }
@@ -585,6 +614,7 @@ body, input, textarea{ font-family: $appFontFamily; }
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        padding-bottom: 20px;
         @include system-message();
         @include chat-message();
         @include chat-agent-message();

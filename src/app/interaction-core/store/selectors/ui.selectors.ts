@@ -14,10 +14,12 @@ export const getUiLoadingPanelState = createSelector(
   fromUi.getUiLoadingPanelState
 );
 export const getUiClosePanelState = createSelector(
+  fromFeature.getEventState,
   fromFeature.getWidgetState,
   fromUi.getUiClosePanelState
 );
 export const getUiTopBarState = createSelector(
+  fromFeature.getEventState,
   fromFeature.getWidgetState,
   fromUi.getUiTopBarState
 );

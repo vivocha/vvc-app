@@ -3,7 +3,7 @@
     <vvc-loading-panel></vvc-loading-panel>
   </div>
   <div id="vvc-close-panel" *ngIf="appState.closePanel.visible">
-    <vvc-close-panel (cancel)="dismissModal()"
+    <vvc-close-panel (cancel)="dismissCloseModal()"
                      (confirm)="closeContact()"></vvc-close-panel>
   </div>
   <div id="vvc-fullscreen-media">
@@ -13,7 +13,8 @@
   <div id="vvc-normal-container">
     <vvc-top-bar [context]="appState.topBar"
                  (onMinimize)="minimizeWidget()"
-                 (onClose)="showCloseModal(true)"></vvc-top-bar>
+                 (onClose)="showCloseModal()"
+                 (onRemove)="closeApp()"></vvc-top-bar>
 
     <vvc-chat id="vvc-chat" [context]="appState.chat" *ngIf="appState.chat.isChatVisible">
 
@@ -27,13 +28,14 @@
         <div *ngFor="let m of appState.messages">
           <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
           <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
-          <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-reply'"
+          <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
                              (action)="processQuickReply($event)"></vvc-quick-replies>
-          <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"></vvc-template-generic>
+          <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"
+                                (action)="processAction($event)"></vvc-template-generic>
         </div>
       </div>
 
-      <div class="vvc-chat-box-area">
+      <div class="vvc-chat-box-area" *ngIf="appState.chat.isSendAreaVisible">
         <vvc-chat-area #chat
                        [readonly]="appState.chat.isSendAreaDisabled"
                        [context]="appState.chat"

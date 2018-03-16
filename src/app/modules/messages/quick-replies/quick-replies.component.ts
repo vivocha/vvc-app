@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'vvc-quick-replies',
@@ -9,15 +9,12 @@ export class QuickRepliesComponent {
 
   @Input() message;
   @Output() action = new EventEmitter();
-  selectedOption;
+  hasReplied = false;
 
-  hasReplied(){
-    return !!this.selectedOption;
-  }
+  constructor(private cd: ChangeDetectorRef){}
 
   btnClicked(btn){
-    this.selectedOption = btn;
-    this.action.emit(btn);
+    this.action.emit({ action: btn, msgId: this.message.id });
   }
 
 }

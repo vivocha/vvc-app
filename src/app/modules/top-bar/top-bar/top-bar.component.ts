@@ -10,6 +10,7 @@ export class TopBarComponent{
   @Input() context;
   @Output() onMinimize = new EventEmitter();
   @Output() onClose = new EventEmitter();
+  @Output() onRemove = new EventEmitter();
 
   isMenuVisible = false;
   avatarSrc;

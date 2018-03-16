@@ -40,6 +40,10 @@ export class VvcContextService {
       setTimeout( () => this.checkForVivocha(), 200);
     }
   }
+  closeApp(){
+    this.vivocha.pageRequest('interactionClosed', 'close');
+    this.vivocha.pageRequest('interactionClosed', 'destroy');
+  }
   dispatchContext(context){
     this.ts.getTranslation(context.language).toPromise().then(
       result => {
