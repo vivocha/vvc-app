@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import * as fromStore from '../store';
 import {Store} from '@ngrx/store';
 import {ClientContactCreationOptions} from '@vivocha/global-entities/dist/contact';
+import {VvcContextService} from './context.service';
 
 @Injectable()
 export class VvcDataCollectionService {
@@ -15,8 +16,8 @@ export class VvcDataCollectionService {
     */
   }
 
-  showDc(){
-
+  collectDc(context){
+    console.log('found', context.dataCollections[0]);
   }
   showDcWithRecall(){
 

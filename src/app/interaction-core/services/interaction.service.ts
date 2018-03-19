@@ -4,7 +4,6 @@ import * as fromStore from '../store';
 import {VvcContextService} from './context.service';
 import {ContextState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
-import {VvcEventEmit} from '../store/actions';
 
 
 @Injectable()
@@ -70,7 +69,7 @@ export class VvcInteractionService {
     this.contactService.closeContact();
   }
   dismissCloseModal(){
-    this.store.dispatch(new VvcEventEmit({ name: 'HIDE_CLOSE_MODAL'}))
+    this.store.dispatch(new fromStore.WidgetShowCloseModal(false));
   }
   getState(){
     return this.store.select(fromStore.getUiState);
@@ -85,8 +84,8 @@ export class VvcInteractionService {
       }
     })
   }
-  onEvent(){
-    return this.store.select(fromStore.getLastEvent);
+  minimize(minimize: boolean){
+    this.contactService.minimize(minimize);
   }
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
@@ -98,6 +97,6 @@ export class VvcInteractionService {
     this.contactService.sendText(text);
   }
   showCloseModal(){
-    this.store.dispatch(new VvcEventEmit({ name: 'SHOW_CLOSE_MODAL'}))
+    this.store.dispatch(new fromStore.WidgetShowCloseModal(true))
   }
 }

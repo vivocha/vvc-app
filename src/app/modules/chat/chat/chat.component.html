@@ -4,6 +4,9 @@
 <div id="vvc-messages" [style.display]="_showMessageArea ? 'flex' : 'none'" ngx-auto-scroll lock-y-offset="10">
   <ng-content select="'.vvc-messages'"></ng-content>
 </div>
+<div id="vvc-is-writing">
+  <ng-content select="'.vvc-is-writing'"></ng-content>
+</div>
 <div id="vvc-chat-box-area">
   <ng-content select="'.vvc-chat-box-area'"></ng-content>
 </div>

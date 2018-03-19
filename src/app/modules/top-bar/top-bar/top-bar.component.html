@@ -1,8 +1,8 @@
 <div id="vvc-top-bar">
-  <div id="vvc-top-avatar" *ngIf="avatarSrc"><img [src]="avatarSrc"></div>
+  <div id="vvc-top-avatar" *ngIf="context.avatar"><img [src]="context.avatar"></div>
   <div id="vvc-top-header">
-    <div id="vvc-top-title">{{ title | translate }}</div>
-    <div id="vvc-top-subtitle">{{ subtitle | translate }}</div>
+    <div id="vvc-top-title">{{ context.title | translate }}</div>
+    <div id="vvc-top-subtitle">{{ context.subtitle | translate }}</div>
   </div>
   <div class="vvc-top-controls" *ngIf="context.canRemoveApp">
     <span (click)="onRemove.emit()">
@@ -10,7 +10,7 @@
     </span>
   </div>
   <div class="vvc-top-controls" *ngIf="!hasMenu() && !context.canRemoveApp">
-    <span>
+    <span (click)="onMinimize.emit()">
       <i class="icon icon-vvc-reduce"></i>
     </span>
     <span (click)="onClose.emit()">
@@ -24,7 +24,7 @@
   </div>
   <div id="vvc-top-bar-menu" *ngIf="isMenuVisible" (click)="closeMenu()">
     <div id="vvc-menu-inner" class="animated" [ngClass]="{ 'fadeIn': isMenuVisible }">
-      <div *ngIf="context.canMinimize">
+      <div *ngIf="context.canMinimize" (click)="onMinimize.emit()">
         <span><i class="icon icon-vvc-reduce"></i> {{ 'STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON' | translate }}</span>
       </div>
       <div *ngIf="context.canMaximize">

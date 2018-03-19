@@ -4,8 +4,8 @@ $appFontFamily: 'Roboto', sans-serif;
 $color1: #0351A1;
 $color2: #13AF6C;
 
-$appWidth: 370px;
-$appHeight: 600px;
+$appWidth: 350px;
+$appHeight: 580px;
 $appMinimizedWidth: 80px;
 $appMinimizedHeight: 80px;
 $appBottomDistance: -5px;
@@ -505,6 +505,29 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     }
   }
 }
+@mixin chat-is-writing(){
+  .chat-is-writing-inner {
+    flex: none;
+    display: flex;
+    padding: 0 10px;
+    .iw-avatar {
+      flex: none;
+      padding: 2px;
+      img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+      }
+    }
+    .iw-message {
+      flex: auto;
+      margin: auto 8px;
+      font-size: 10px;
+      font-weight: 300;
+      color: #333333;
+    }
+  }
+}
 @mixin loading-panel($background: #0351A1, $loadingBarColor: #FFFFFF){
   @keyframes loading {
     0% { transform: scaleX(0); }
@@ -574,6 +597,14 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     }
   }
 }
+@mixin top-round(){
+  border-radius: 10px 10px 0 0;
+}
+@mixin border-and-shadow(){
+  overflow: hidden;
+  box-shadow: 0 0 10px #ccc;
+  margin: 10px;
+}
 /**
   LAYOUT
  */
@@ -582,12 +613,17 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
 body, input, textarea{ font-family: $appFontFamily; }
 #vvc-fullscreen-container {
   #vvc-loading-panel{
+    @include top-round();
+    @include border-and-shadow();
     @include loading-panel();
   }
   #vvc-close-panel{
+    @include border-and-shadow();
     @include close-modal();
   }
   #vvc-normal-container {
+    @include top-round();
+    @include border-and-shadow();
 
     width: $appWidth;
     height: $appHeight;
@@ -623,17 +659,7 @@ body, input, textarea{ font-family: $appFontFamily; }
         @include template-message();
       }
       #vvc-is-writing {
-        flex: none;
-        display: flex;
-        padding: 0 10px;
-        .iw-avatar {
-          flex: none;
-        }
-        .iw-message {
-          flex: auto;
-          margin: auto 8px;
-        }
-
+        @include chat-is-writing();
       }
       #vvc-chat-box-area {
         @include chat-box-area();
@@ -670,4 +696,34 @@ body, input, textarea{ font-family: $appFontFamily; }
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }

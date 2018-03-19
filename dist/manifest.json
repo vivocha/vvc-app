@@ -97,6 +97,12 @@
       "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
       "defaultValue": "./assets/static/agent_default.png",
       "type": "file"
+    },
+    {
+      "id": "showAvatarOnIsWriting",
+      "nameId": "META.VARIABLES.CHAT.SHOW_AVATAR_ON_IS_WRITING",
+      "defaultValue": true,
+      "type": "boolean"
     }
   ],
   "htmlId": "marchitos/widgets/vvc-optimized-app2/main.html",
@@ -134,7 +140,8 @@
     "STRINGS.CLOSEMODAL.NO",
     "STRINGS.CLOSEMODAL.YES",
     "STRINGS.MESSAGES.REMOTE_CLOSE",
-    "STRINGS.MESSAGES.LOCAL_CLOSE"
+    "STRINGS.MESSAGES.LOCAL_CLOSE",
+    "STRINGS.CHAT.ISWRITING"
   ],
   "assets": [
     {
@@ -174,24 +181,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "57461d674d80ae0c6a3114756a6d225b931ef45b65e4c7b412722728561c3b28",
+      "hash": "56a463556ab9940c7ad293a8caf83ceded3226132b1c9da3f063f895a5fa8d19",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "9ab28cc451fb1ac5c1d7624197c8f463bd973483a2418c27ab5bbacb5d6a8367",
+      "hash": "6e42a686831d0f413a6251d8f3e19569b9ff424666b5f6567816fb672b4dff4a",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
       "type": "application/javascript",
-      "size": 141242
+      "size": 143720
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "73ece0e1b008c0ac1975d348d6c9df624ce405f703e38e4f7c5bd8f4a357f5e7",
+      "hash": "b6292ec1e776ebcf1ae19cabfe3860edc6d9fddb95d2ddb2d7e4551cf9fb077c",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
       "type": "application/json",
-      "size": 158352
+      "size": 160879
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -209,9 +216,9 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "22c06c63fa731b5274a3ceb401dfbbb1b7b60a2c1d1d238a478e91daf3061afd",
+      "hash": "44e5d89852b6d47f48c683b93decae77431bf55e7edd0b9ceb5730ef79caa1f6",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
-      "size": 14471,
+      "size": 15595,
       "type": "text/x-scss"
     },
     {

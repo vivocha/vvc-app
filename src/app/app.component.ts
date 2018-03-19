@@ -5,6 +5,7 @@ import {VvcInteractionService} from './interaction-core/services';
 
 import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
 import {TopBarComponent} from './modules/top-bar/top-bar/top-bar.component';
+import {ChatIsWritingComponent} from './modules/chat/chat-is-writing/chat-is-writing.component';
 
 @Component({
   selector: 'vvc-root',
@@ -15,7 +16,6 @@ export class AppComponent implements OnInit {
   @ViewChild(TopBarComponent) topBar: TopBarComponent;
   @ViewChild(ChatAreaComponent) chat: ChatAreaComponent;
 
-
   private closeModal = false;
   private closeToDestroy = false;
   callTimerInterval;
@@ -25,16 +25,16 @@ export class AppComponent implements OnInit {
   public widgetState: WidgetState;
   public messages: Array<any>;
 
-  public appState: any;
+  public appState$:any;
 
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
-    this.interactionService.onEvent().subscribe( evt => {
-      this.parseEvent(evt);
-    });
+    /*
     this.interactionService.getState().subscribe( state => {
       this.appState = state;
     });
+    */
+    this.appState$ = this.interactionService.getState();
     this.interactionService.init();
 
     /*
@@ -385,10 +385,11 @@ export class AppComponent implements OnInit {
   dismissCloseModal(){
     this.interactionService.dismissCloseModal()
   }
-  minimizeWidget(){
-
+  minimizeWidget(minimize: boolean){
+    this.interactionService.minimize(minimize);
   }
   parseEvent(evt){
+    /*
     console.log('EVT', evt);
     if (!evt) return;
     switch(evt.name){
@@ -400,6 +401,7 @@ export class AppComponent implements OnInit {
         this.topBar.setTopBar(evt.agent.nick,'STRINGS.QUEUE.TOPBAR.CONNECTED', evt.agent.avatar);
         break;
     }
+    */
   }
   processAction(action){
     this.interactionService.sendPostBack(action);
@@ -408,14 +410,14 @@ export class AppComponent implements OnInit {
     this.interactionService.processQuickReply(reply);
   }
   sendText(value){
-    if (this.appState.chat.showEmojiPanel) this.toggleEmojiPanel();
+    //if (this.appState.chat.showEmojiPanel) this.toggleEmojiPanel();
     this.interactionService.sendText(value);
   }
   showCloseModal(){
     this.interactionService.showCloseModal()
   }
   toggleEmojiPanel() {
-    let chatState = Object.assign({}, this.appState.chat, { showEmojiPanel: !this.appState.chat.showEmojiPanel });
-    this.appState = Object.assign({}, this.appState, { chat: chatState });
+    //let chatState = Object.assign({}, this.appState.chat, { showEmojiPanel: !this.appState.chat.showEmojiPanel });
+    //this.appState = Object.assign({}, this.appState, { chat: chatState });
   }
 }

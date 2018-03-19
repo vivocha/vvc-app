@@ -1,8 +1,9 @@
+<div *ngIf="appState$ | async as appState">
 <div id="vvc-fullscreen-container">
-  <div id="vvc-loading-panel" *ngIf="appState.loadingPanel.visible">
+  <div id="vvc-loading-panel" *ngIf="appState.isLoading">
     <vvc-loading-panel></vvc-loading-panel>
   </div>
-  <div id="vvc-close-panel" *ngIf="appState.closePanel.visible">
+  <div id="vvc-close-panel" *ngIf="appState.showCloseModal">
     <vvc-close-panel (cancel)="dismissCloseModal()"
                      (confirm)="closeContact()"></vvc-close-panel>
   </div>
@@ -12,7 +13,7 @@
 
   <div id="vvc-normal-container">
     <vvc-top-bar [context]="appState.topBar"
-                 (onMinimize)="minimizeWidget()"
+                 (onMinimize)="minimizeWidget(true)"
                  (onClose)="showCloseModal()"
                  (onRemove)="closeApp()"></vvc-top-bar>
 
@@ -42,6 +43,11 @@
                        (onSendText)="sendText($event)"
                        (toggleEmojiPanel)="toggleEmojiPanel()"></vvc-chat-area>
       </div>
+
+      <div class="vvc-is-writing" *ngIf="appState.isWriting">
+        <vvc-chat-is-writing [context]="appState.chat"></vvc-chat-is-writing>
+      </div>
+
 
     </vvc-chat>
     <!--
@@ -108,7 +114,7 @@
 <div id="vvc-minimized-layout">
 
 </div>
-
+</div>
 
 <!--
 <div id="n-resize" class="resize" [ngClass]="{ 'ns-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>

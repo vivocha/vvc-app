@@ -1,0 +1,4 @@
+<div class="chat-is-writing-inner animated" [ngClass]="{'fadeInUp': context.isWriting}">
+  <div class="iw-avatar" *ngIf="context.showAvatarOnIsWriting"><img [src]="context.isWritingAvatar"></div>
+  <div class="iw-message" [innerHtml]="'STRINGS.CHAT.ISWRITING' | translate:{ agent: context.isWritingNick}"></div>
+</div>

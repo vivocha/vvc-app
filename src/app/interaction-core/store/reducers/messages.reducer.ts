@@ -11,7 +11,6 @@ export function reducer(state: MessagesState = initialState, action: fromMessage
       const newMessages = state.list.map( el => {
         if (el.id === action.payload.id){
           const o = Object.assign({}, el, action.payload.patch);
-          console.log('UPDATED', o);
           return Object.assign({}, el, action.payload.patch);
         }
         return el;

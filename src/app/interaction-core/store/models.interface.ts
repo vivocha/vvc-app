@@ -10,23 +10,38 @@ export interface EventState {
   name: string;
   [prop:string]: any;
 }
-export interface WidgetState {
-  dataCollections?: any[];
-  selectedDataCollection?: number;
-  filledDataCollections?: any[];
+export interface ProtocolState {
   localCaps?: any;
   remoteCaps?: any;
   mediaChange?: any;
   mediaOffer?: any;
-  agent?: any;
+}
+export interface AgentState {
+  nick: string;
+  avatar: string;
+}
+export interface WidgetState {
+  agent?: AgentState;
+  chat?: ChatState;
+
+  closedByAgent?: boolean;
+  closedByVisitor?: boolean;
+
+  isLoading?: boolean;
+  isWriting?: boolean;
+  isMaximized?: boolean;
+  isMinimized?: boolean;
+  isInQueue?: boolean;
+
+  protocol? : ProtocolState;
+  showCloseModal?: boolean;
+  topBar?: TopBarState;
 }
 
-export interface LoadingPanelState {
-  visible: boolean;
+export interface UiState extends WidgetState{
+  messages: any[];
 }
-export interface ClosePanelState {
-  visible: boolean;
-}
+
 export interface TopBarState {
   useAvatar?: boolean;
   canMaximize?: boolean;
@@ -34,6 +49,9 @@ export interface TopBarState {
   canStartAudio?: boolean;
   canStartVideo?: boolean;
   canRemoveApp?: boolean;
+  title?: string;
+  subtitle?: string;
+  avatar?: string;
 }
 export interface ChatState {
   emojiPanelVisible?: boolean;
@@ -44,6 +62,7 @@ export interface ChatState {
   isChatVisible?: boolean;
   isSendAreaVisible?: boolean;
   isSendAreaDisabled?: boolean;
+  showAvatarOnIsWriting?: boolean;
 }
 
 export interface BaseMessage {
@@ -68,68 +87,7 @@ export interface ChatMessage extends BaseMessage{
 export interface MessagesState {
   list: any[];
 }
-export interface UiState {
-  loadingPanel: LoadingPanelState;
-  closePanel: ClosePanelState;
-  topBar: TopBarState;
-  chat: ChatState;
-  messages: any[];
-}
-/*
-export interface UiState {
-  loading: boolean;
-  dataCollections?: any[];
-  selectedDataCollection?: number;
-  filledDataCollections?: any[];
-  localCaps?: any;
-  remoteCaps?: any;
-  mediaChange?: any;
-  mediaOffer?: any;
-  agent?: any;
-}
-export interface WidgetState {
-  agent?: VvcAgent;
-  askForTranscript?: boolean;
-  canAddVideo?: boolean;
-  canAddVoice?: boolean;
-  changeMediaState?: boolean;
-  chat: boolean;
-  chatVisibility?: boolean;
-  closed: boolean;
-  dataCollectionPanel?: boolean;
-  dataCollections?: VvcDataCollection;
-  error?: boolean;
-  fullScreen: boolean;
-  had_chat?: boolean;
-  hasDataCollection?: boolean;
-  hasSurvey?: boolean;
-  incomingRequest?: boolean;
-  incomingOffer?: VvcOffer;
-  initialDataFilled?: boolean;
-  isAgentWriting?: boolean;
-  lastError?: string;
-  state: 'initializing' | 'waiting_data' | 'queue' | 'ready';
-  localCaps?: any;
-  mediaOffering?: boolean;
-  minimized: boolean;
-  mobile: boolean;
-  mute?: boolean;
-  mute_in_progress?: boolean;
-  not_read?: number;
-  remoteCaps?: any;
-  selectedDataCollectionId?: string;
-  sharing: boolean;
-  showSurvey?: boolean;
-  surveyId?: string;
-  topBarExpanded: boolean;
-  voice: boolean;
-  voice_rx?: any;
-  voice_tx?: any;
-  video: boolean;
-  video_rx?: any;
-  video_tx?: any;
-}
-*/
+
 export interface VvcMediaOfferDetails {
   tx: 'required' | 'optional' | 'off';
   rx: 'required' | 'optional' | 'off';

@@ -1,0 +1,479 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Default Interaction App",
+        "state": "new"
+      },
+      "it": {
+        "value": "Application di interazione di default",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Default",
+        "state": "new"
+      },
+      "it": {
+        "value": "Default",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "values": {
+      "en": {
+        "value": "App initial width",
+        "state": "new"
+      },
+      "it": {
+        "value": "Larghezza iniziale dell'App",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.APP.INITIAL_WIDTH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "App initial height",
+        "state": "new"
+      },
+      "it": {
+        "value": "Altezza iniziale dell'App",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.APP.INITIAL_HEIGHT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show avatar in the Topbar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar nella Topbar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.TOPBAR.SHOW_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Topbar default avatar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Immagine di default dell'avatar nella Topbar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.TOPBAR.DEFAULT_AGENT_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show agent info in the Topbar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza informazioni agente nella Topbar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Display send emoji button",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza bottone per l'invio di emoji",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Display send uploads button",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza bottone per l'invio di file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Display welcome message when the agent is connected to the chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show visitor avatar in chat message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar del visitatore nel messaggio di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show arrow in the visitor balloon chat message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza freccia tra balloon ed avatar nel messaggio del visitatore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Visitor chat balloon color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del balloon di chat del visitatore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Default visitor avatar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Avatar di default per il visitatore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show agent avatar in chat message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar dell'agente nel messaggio di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show arrow in the agent balloon chat message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza freccia tra balloon ed avatar nel messaggio dell'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent chat balloon color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del balloon di chat dell'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Default agent avatar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Avatar di default per l'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR"
+  },
+
+
+
+  {
+    "values": {
+      "en": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.TITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "connecting...",
+        "state": "new"
+      },
+      "it": {
+        "value": "connessione in corso...",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.SUBTITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Minimize",
+        "state": "new"
+      },
+      "it": {
+        "value": "Minimizze",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Maximize",
+        "state": "new"
+      },
+      "it": {
+        "value": "Espandi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice",
+        "state": "new"
+      },
+      "it": {
+        "value": "Audio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.VOICE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video",
+        "state": "new"
+      },
+      "it": {
+        "value": "Video",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Close",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiudi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Contact established",
+        "state": "new"
+      },
+      "it": {
+        "value": "Contatto in corso",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.CONNECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "We are connecting you with an agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ti stiamo mettendo in contatto con un'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.CONNECTING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hello, <b>{{nickname}}</b> here,<br> how can I help you?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CHAT.WELCOME_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Do you really want to quit?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vuoi interrompere il contatto?",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No",
+        "state": "new"
+      },
+      "it": {
+        "value": "No",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CLOSEMODAL.NO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Yes",
+        "state": "new"
+      },
+      "it": {
+        "value": "Si",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CLOSEMODAL.YES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The agent left the contact",
+        "state": "new"
+      },
+      "it": {
+        "value": "L'operatore ha chiuso il contatto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REMOTE_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The contact has ended<br>Thanks.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.LOCAL_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "{{agent}} is writing...",
+        "state": "new"
+      },
+      "it": {
+        "value": "{{agent}} sta scrivendo...",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CHAT.ISWRITING"
+  }
+]
