@@ -1,0 +1,54 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Vivocha Link Engage",
+        "state": "new"
+      },
+      "it": {
+        "value": "Link di ingaggio Vivocha",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Link",
+        "state": "new"
+      },
+      "it": {
+        "value": "Link",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.LINK_COLOR",
+    "values": {
+      "en": {
+        "value": "text color",
+        "state": "new"
+      },
+      "it": {
+        "value": "colore testo",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.LINK_TEXT",
+    "values": {
+      "en": {
+        "value": "chat with us",
+        "state": "new"
+      },
+      "it": {
+        "value": "entra in chat",
+        "state": "new"
+      }
+    }
+  }
+]

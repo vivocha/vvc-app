@@ -1,0 +1,37 @@
+{
+  "id": "vvc-link",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "linkColor",
+      "nameId": "VARIABLES.LINK_COLOR",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    }
+  ],
+  "stringIds": [
+    "DESCRIPTION",
+    "NAME",
+    "VARIABLES.LINK_COLOR",
+    "STRINGS.LINK_TEXT"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "de073f7bc82cdee031bbb368d99a532051ab7003f4d08bcf374b49806bd92103",
+      "id": "marchitos/widgets/vvc-link/main.html",
+      "size": 127,
+      "type": "text/html"
+    },
+    {
+      "path": "main.scss",
+      "hash": "2b71823c75542dc0a301777a2648cc8353c49f5eb1e8735236bb93837e509b64",
+      "id": "marchitos/widgets/vvc-link/main.scss",
+      "size": 38,
+      "type": "text/x-scss"
+    }
+  ],
+  "htmlId": "marchitos/widgets/vvc-link/main.html",
+  "scssId": "marchitos/widgets/vvc-link/main.scss"
+}
