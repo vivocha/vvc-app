@@ -63,5 +63,57 @@
         "state": "new"
       }
     }
+  },
+  {
+    "values": {
+      "en": {
+        "value": "We contact you",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ti contattiamo",
+        "state": "new"
+      }
+    },
+    "id": "STRINGS.RECALL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video call",
+        "state": "new"
+      },
+      "it": {
+        "value": "Videochiamata",
+        "state": "new"
+      }
+    },
+    "id": "STRINGS.VIDEO_CALL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice call",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata voce",
+        "state": "new"
+      }
+    },
+    "id": "STRINGS.VOICE_CALL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "new"
+      }
+    },
+    "id": "STRINGS.CHAT"
   }
 ]
