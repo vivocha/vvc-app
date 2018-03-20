@@ -167,5 +167,18 @@
         "state": "new"
       }
     }
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Or we'll contact you!",
+        "state": "new"
+      },
+      "it": {
+        "value": "Oppure ti contattiamo noi!",
+        "state": "new"
+      }
+    },
+    "id": "STRINGS.RECALL"
   }
 ]
