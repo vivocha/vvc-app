@@ -8,9 +8,12 @@ export const WIDGET_LOCAL_CAPS = '[Widget] Local Caps';
 export const WIDGET_MEDIA_CHANGE = '[Widget] Media Change';
 export const WIDGET_MEDIA_OFFERING = '[Widget] Media Offering';
 export const WIDGET_MINIMIZE = '[Widget] Minimize';
+export const WIDGET_NEW_MESSAGE = '[Widget] New Message';
 export const WIDGET_QUEUE = '[Widget] Queue';
 export const WIDGET_REMOTE_CAPS = '[Widget] Remote Caps';
+export const WIDGET_RESET_UNREAD = '[Widget] Reset Unread';
 export const WIDGET_SHOW_CLOSE_MODAL = '[Widget] Show Close Modal';
+export const WIDGET_TOGGLE_EMOJI = '[Widget] Toggle Emoji Panel';
 export const WIDGET_TOP_BAR = '[Widget] Top Bar';
 
 
@@ -44,6 +47,9 @@ export class WidgetMinimize implements Action {
   readonly type = WIDGET_MINIMIZE;
   constructor(public payload: boolean){}
 }
+export class WidgetNewMessage implements Action {
+  readonly type = WIDGET_NEW_MESSAGE;
+}
 export class WidgetQueue implements Action {
   readonly type = WIDGET_QUEUE;
 }
@@ -51,9 +57,16 @@ export class WidgetRemoteCaps implements Action {
   readonly type = WIDGET_REMOTE_CAPS;
   constructor(public payload: any){}
 }
+export class WidgetResetUnread implements Action {
+  readonly type = WIDGET_RESET_UNREAD;
+}
 export class WidgetShowCloseModal implements Action {
   readonly type = WIDGET_SHOW_CLOSE_MODAL;
   constructor(public payload: boolean){}
+}
+export class WidgetToggleEmoji implements Action {
+  readonly type = WIDGET_TOGGLE_EMOJI;
+
 }
 export class WidgetTopBar implements Action {
   readonly type = WIDGET_TOP_BAR;
@@ -69,8 +82,11 @@ export type WidgetActions
   | WidgetMediaChange
   | WidgetMediaOffering
   | WidgetMinimize
+  | WidgetNewMessage
   | WidgetQueue
   | WidgetRemoteCaps
+  | WidgetResetUnread
   | WidgetShowCloseModal
+  | WidgetToggleEmoji
   | WidgetTopBar
   ;

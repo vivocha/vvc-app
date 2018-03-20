@@ -385,23 +385,11 @@ export class AppComponent implements OnInit {
   dismissCloseModal(){
     this.interactionService.dismissCloseModal()
   }
-  minimizeWidget(minimize: boolean){
-    this.interactionService.minimize(minimize);
+  minimizeWidget(){
+    this.interactionService.minimize(true);
   }
-  parseEvent(evt){
-    /*
-    console.log('EVT', evt);
-    if (!evt) return;
-    switch(evt.name){
-      case 'QUEUE':
-        this.topBar.setTitle("STRINGS.QUEUE.TOPBAR.TITLE");
-        this.topBar.setSubtitle("STRINGS.QUEUE.TOPBAR.SUBTITLE");
-        break;
-      case 'AGENT_JOIN':
-        this.topBar.setTopBar(evt.agent.nick,'STRINGS.QUEUE.TOPBAR.CONNECTED', evt.agent.avatar);
-        break;
-    }
-    */
+  expandWidget(){
+    this.interactionService.minimize(false);
   }
   processAction(action){
     this.interactionService.sendPostBack(action);
@@ -409,15 +397,14 @@ export class AppComponent implements OnInit {
   processQuickReply(reply){
     this.interactionService.processQuickReply(reply);
   }
-  sendText(value){
-    //if (this.appState.chat.showEmojiPanel) this.toggleEmojiPanel();
+  sendText(value, isEmojiPanelVisible){
+    if (isEmojiPanelVisible) this.toggleEmojiPanel();
     this.interactionService.sendText(value);
   }
   showCloseModal(){
     this.interactionService.showCloseModal()
   }
   toggleEmojiPanel() {
-    //let chatState = Object.assign({}, this.appState.chat, { showEmojiPanel: !this.appState.chat.showEmojiPanel });
-    //this.appState = Object.assign({}, this.appState, { chat: chatState });
+    this.interactionService.toggleEmojiPanel();
   }
 }

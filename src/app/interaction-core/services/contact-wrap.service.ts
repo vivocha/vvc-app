@@ -6,6 +6,7 @@ import {VvcDataCollectionService} from './data-collection.service';
 import {VvcProtocolService} from './protocol.service';
 import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {VvcMessageService} from './messages.service';
+import {objectToDataCollection} from '@vivocha/global-entities/dist/wrappers/data_collection';
 
 @Injectable()
 export class VvcContactWrap {
@@ -28,6 +29,25 @@ export class VvcContactWrap {
     private zone: NgZone
   ){}
 
+  attachDataAndCreateContact(context){
+    const contactOptions: { data: any[], nick?: string} = { data: [] };
+    const dataCollection = context.dataCollections[0];
+    const data = {};
+    for (let i = 0; i < dataCollection.fields.length; i++) {
+      const field = dataCollection.fields[i];
+      if (field.format === 'nickname' && field.id) {
+        contactOptions.nick = data[field.id];
+      }
+      const hasDefault = typeof field.defaultConstant !== 'undefined';
+
+      field.value = hasDefault ? field.defaultConstant.toString() : field.defaultConstant;
+
+      data[field.id] = field.value;
+    }
+    contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection))
+    console.log('PREPARED DATA', data, dataCollection, contactOptions);
+    this.createContact(contactOptions);
+  }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
     for (const m in transcript) {
@@ -58,9 +78,10 @@ export class VvcContactWrap {
       this.isClosed = true;
     }
   }
-  createContact(){
+  createContact(dataToMerge?){
     this.setQueueState();
-    const conf = this.getContactOptions();
+    const conf = this.getContactOptions(dataToMerge);
+    console.log('INITIAL OPTIONS', conf);
     this.vivocha.createContact(conf).then( (contact) => {
       this.contact = contact;
       this.mapContact();
@@ -76,8 +97,8 @@ export class VvcContactWrap {
       this.store.dispatch(action);
     //});
   }
-  getContactOptions():ClientContactCreationOptions {
-    return {
+  getContactOptions(dataToMerge?):ClientContactCreationOptions {
+    const initialOpts =  {
       campaignId: this.context.campaign.id,
       version: this.context.campaign.version,
       channelId: 'web',
@@ -90,6 +111,10 @@ export class VvcContactWrap {
       first_uri: this.context.page.first_uri,
       first_title: this.context.page.first_title
     };
+    if (dataToMerge){
+      return Object.assign({}, initialOpts, dataToMerge);
+    }
+    else return Object.assign({}, initialOpts);
   }
   hasDataCollection() {
     return (this.context.dataCollections && this.context.dataCollections.length > 0);
@@ -110,7 +135,7 @@ export class VvcContactWrap {
             this.dcService.showDcWithRecall();
           }
         } else {
-          if (this.hasDataCollection()) this.dcService.collectDc(this.context);
+          if (this.hasDataCollection()) this.attachDataAndCreateContact(context);
           else this.createContact();
         }
       }
@@ -151,14 +176,9 @@ export class VvcContactWrap {
         console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
         this.messageService.addChatMessage(msg, this.agent);
         if (msg.agent) this.store.dispatch(new fromStore.WidgetIsWriting(false));
-        /*
-        if (this.widgetState && (this.widgetState.minimized || !this.widgetState.chatVisibility)) {
-          this.dispatch({type: 'INCREMENT_NOT_READ'});
-        }
-        */
       }
+      this.store.dispatch(new fromStore.WidgetNewMessage());
       //this.playAudioNotification();
-      //this.clearIsWriting();
     });
     this.contact.on('iswriting', (from_id, from_nick, agent) => {
       if (agent) {
@@ -232,7 +252,11 @@ export class VvcContactWrap {
   minimize(minimize){
     if (minimize) {
       this.vivocha.minimize({ bottom: "10px", right: "10px" }, { width: '70px', height: '70px' });
-      this.store.dispatch(new fromStore.WidgetMinimize(true))
+      this.store.dispatch(new fromStore.WidgetMinimize(true));
+    } else {
+      this.vivocha.maximize();
+      this.store.dispatch(new fromStore.WidgetMinimize(false));
+      this.store.dispatch(new fromStore.WidgetResetUnread());
     }
   }
   noAgents(){
@@ -240,11 +264,22 @@ export class VvcContactWrap {
   }
   onAgentJoin(join){
     this.contact.getMedia().then( (media) => {
-      const agent = {
+      console.log('AGENT JOIN', join);
+      const agent : {
+        id: string,
+        nick: string,
+        is_bot: boolean,
+        is_agent: boolean,
+        avatar?: string
+      } = {
         id: join.user,
         nick: join.nick,
-        avatar: (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+        is_bot: !!join.is_bot,
+        is_agent: !join.is_bot,
       };
+      if (join.avatar){
+        agent.avatar = (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+      }
       this.agent = agent;
       this.vivocha.pageRequest('interactionAnswered', agent);
       //this.dispatch(new fromStore.WidgetMediaChange(media));

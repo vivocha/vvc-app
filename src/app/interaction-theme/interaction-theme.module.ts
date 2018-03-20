@@ -7,6 +7,7 @@ import {ChatPanelsModule} from '../modules/chat-panels/chat-panels.module';
 import {MessagesModule} from '../modules/messages/messages.module';
 import {ClosePanelModule} from '../modules/close-panel/close-panel.module';
 import {LoadingPanelModule} from '../modules/loading-panel/loading-panel.module';
+import {MinimizedModule} from '../modules/minimized/minimized.module';
 
 
 const layoutModules = [
@@ -15,7 +16,8 @@ const layoutModules = [
   ChatPanelsModule,
   MessagesModule,
   ClosePanelModule,
-  LoadingPanelModule
+  LoadingPanelModule,
+  MinimizedModule
 ];
 
 @NgModule({

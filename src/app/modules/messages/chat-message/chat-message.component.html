@@ -1,4 +1,4 @@
-<div class="chat-message" [ngClass]="{ 'agent': message.isAgent, 'visitor': !message.isAgent }">
+<div class="chat-message" [ngClass]="{ 'agent': message.isAgent, 'visitor': !message.isAgent, 'bot': message.isAgent && message.agent.is_bot, 'real_agent': message.isAgent && !message.agent.is_bot }">
   <div class="message-spacer" *ngIf="!message.isAgent"></div>
   <div class="message-avatar" *ngIf="message.isAgent && message.agent.avatar" [style.visibility]="message.isFirst ? 'visible' : 'hidden'">
     <img [src]="message.agent.avatar">

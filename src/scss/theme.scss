@@ -221,11 +221,11 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
       flex: none;
       padding: 0 5px;
       img {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         position: relative;
-        top: -7px;
+        top: -2px;
       }
     }
     .message-spacer{
@@ -290,6 +290,45 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     }
   }
 }
+@mixin chat-agent-bubble($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: #0351A1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
+  padding: 6px;
+  margin-left: 8px;
+  margin-right: 50px;
+  border: 1px solid $borderColor;
+  background: $background;
+  color: $color;
+  border-radius: $radius;
+  position: relative;
+  &.arrow {
+    &:after {
+      @if ($showArrow == false) {
+        display: none;
+      }
+      content: "";
+      position: absolute;
+      width: 0;
+      left:-6px;
+      top: 6px;
+      border-right: 6px solid $borderColor;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+    }
+
+    &:before {
+      @if ($showArrow == false) {
+        display: none;
+      }
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: -8px;
+      width: 0;
+      border-right: 8px solid $background;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+  }
+}
 @mixin chat-agent-message($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: #0351A1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
 
   .chat-message{
@@ -300,43 +339,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
         }
       }
       .bubble {
-        padding: 6px;
-        margin-left: 8px;
-        margin-right: 50px;
-        border: 1px solid $borderColor;
-        background: $background;
-        color: $color;
-        border-radius: $radius;
-        position: relative;
-        &.arrow {
-          &:after {
-            @if ($showArrow == false) {
-              display: none;
-            }
-            content: "";
-            position: absolute;
-            width: 0;
-            left:-6px;
-            top: 6px;
-            border-right: 6px solid $borderColor;
-            border-top: 6px solid transparent;
-            border-bottom: 6px solid transparent;
-          }
-
-          &:before {
-            @if ($showArrow == false) {
-              display: none;
-            }
-            content: "";
-            position: absolute;
-            top: 4px;
-            left: -8px;
-            width: 0;
-            border-right: 8px solid $background;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-          }
-        }
+        @include chat-agent-bubble($background, $color, $radius, $borderColor, $showAvatar, $showArrow);
       }
       .time{
         padding-left: 8px;
@@ -605,6 +608,32 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
   box-shadow: 0 0 10px #ccc;
   margin: 10px;
 }
+@mixin minimized(){
+  display: block;
+  position: relative;
+  cursor: pointer;
+  top: 5px;
+  left: 5px;
+
+  .badge{
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight:bold;
+  }
+
+  img{
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    box-shadow: 0 0 5px #262626;
+  }
+}
 /**
   LAYOUT
  */
@@ -650,6 +679,7 @@ body, input, textarea{ font-family: $appFontFamily; }
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        padding-top: 20px;
         padding-bottom: 20px;
         @include system-message();
         @include chat-message();
@@ -666,6 +696,9 @@ body, input, textarea{ font-family: $appFontFamily; }
       }
     }
   }
+}
+#vvc-minimized-layout {
+  @include minimized();
 }
 /**
   ANIMATION
@@ -726,4 +759,16 @@ body, input, textarea{ font-family: $appFontFamily; }
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+/** CUSTOMIZATION **/
+.connected-with-agent {
+  #vvc-fullscreen-container #vvc-normal-container #vvc-top-bar{
+    @include top-bar($color2);
+  }
+  #vvc-fullscreen-container #vvc-normal-container #vvc-chat #vvc-messages .chat-message.agent.real_agent .bubble {
+    @include chat-agent-bubble($color2,#FFFFFF,6px,$color2);
+  }
+  #vvc-fullscreen-container #vvc-normal-container #vvc-chat #vvc-chat-box-area {
+    @include chat-box-area(#FFFFFF,#CCCCCC, #000000, 12px, $color2);
+  }
 }

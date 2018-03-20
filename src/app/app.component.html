@@ -1,252 +1,60 @@
-<div *ngIf="appState$ | async as appState">
-<div id="vvc-fullscreen-container">
-  <div id="vvc-loading-panel" *ngIf="appState.isLoading">
-    <vvc-loading-panel></vvc-loading-panel>
-  </div>
-  <div id="vvc-close-panel" *ngIf="appState.showCloseModal">
-    <vvc-close-panel (cancel)="dismissCloseModal()"
-                     (confirm)="closeContact()"></vvc-close-panel>
-  </div>
-  <div id="vvc-fullscreen-media">
-
-  </div>
-
-  <div id="vvc-normal-container">
-    <vvc-top-bar [context]="appState.topBar"
-                 (onMinimize)="minimizeWidget(true)"
-                 (onClose)="showCloseModal()"
-                 (onRemove)="closeApp()"></vvc-top-bar>
-
-    <vvc-chat id="vvc-chat" [context]="appState.chat" *ngIf="appState.chat.isChatVisible">
-
-      <div class="vvc-emoji-panel">
-        <vvc-emoji-panel class="vvc-emoji-inner"
-                         (toggleEmojiPanel)="toggleEmojiPanel()"
-                         (addEmoji)="appendText($event)"></vvc-emoji-panel>
-      </div>
-
-      <div class="vvc-messages">
-        <div *ngFor="let m of appState.messages">
-          <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
-          <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
-          <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
-                             (action)="processQuickReply($event)"></vvc-quick-replies>
-          <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"
-                                (action)="processAction($event)"></vvc-template-generic>
-        </div>
-      </div>
-
-      <div class="vvc-chat-box-area" *ngIf="appState.chat.isSendAreaVisible">
-        <vvc-chat-area #chat
-                       [readonly]="appState.chat.isSendAreaDisabled"
-                       [context]="appState.chat"
-                       (onSendText)="sendText($event)"
-                       (toggleEmojiPanel)="toggleEmojiPanel()"></vvc-chat-area>
-      </div>
-
-      <div class="vvc-is-writing" *ngIf="appState.isWriting">
-        <vvc-chat-is-writing [context]="appState.chat"></vvc-chat-is-writing>
-      </div>
-
-
-    </vvc-chat>
-    <!--
-    <div id="vvc-chat">
-      <div id="vvc-upload-panel" style="display:none">
-        <div class="vvc-upload-inner">
-          <div class="vvc-upload-area">
-            <label>
-              <svg viewBox="0 0 512 512">
-                <path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path>
-              </svg>
-            </label>
-          </div>
-          <div class="vvc-upload-description">
-            <textarea placeholder="aggiungi descrizione"></textarea>
-          </div>
-          <div class="vvc-upload-button-wrap">
-            <div><button class="upload">Invia file</button></div>
-            <div><button class="close">chiudi pannello</button></div>
-          </div>
-        </div>
-      </div>
-      <div id="vvc-messages" style="display: flex">
-        <div>
-          {{ state | json }}
-        </div>
-
-      </div>
-      <div id="vvc-is-writing">
-        <div class="iw-avatar"><img src="./assets/bot_avatar.png"></div>
-        <div class="iw-message">Irene sta scrivendo...</div>
-      </div>
-      <div id="vvc-chat-box-area">
-        <div id="vvc-box-inner">
-          <div class="upload-handler">
-            <svg viewBox="0 0 448 512"  style="width:14px;">
-              <path fill="#D8D8D8" d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"></path>
-            </svg>
-          </div>
-          <div class="text-box">
-            <input placeholder="Scrivi il tuo messaggio" type="text">
-          </div>
-          <div class="emoji-handler">
-            <svg viewBox="0 0 512 512"  style="width:18px;">
-              <path fill="#D8D8D8" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zm-122.526 75.34c11.479-17.755-15.349-35.194-26.873-17.374-53.418 82.627-143.71 82.681-197.164 0-11.502-17.79-38.364-.401-26.873 17.374 66.014 102.107 184.795 102.265 250.91 0zM108 192c0 37.497 30.503 68 68 68s68-30.503 68-68-30.503-68-68-68-68 30.503-68 68zm160.5 0c0 37.221 30.279 67.5 67.5 67.5s67.5-30.279 67.5-67.5-30.279-67.5-67.5-67.5-67.5 30.279-67.5 67.5zm67.5-48a47.789 47.789 0 0 0-22.603 5.647h.015c10.916 0 19.765 8.849 19.765 19.765s-8.849 19.765-19.765 19.765-19.765-8.849-19.765-19.765v-.015A47.789 47.789 0 0 0 288 192c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48zm-160 0a47.789 47.789 0 0 0-22.603 5.647h.015c10.916 0 19.765 8.849 19.765 19.765s-8.849 19.765-19.765 19.765-19.765-8.849-19.765-19.765v-.015A47.789 47.789 0 0 0 128 192c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48z"></path>
-            </svg>
-          </div>
-          <div class="send-button">
-            <div class="send-icon">
-              <svg viewBox="0 0 512 512"  style="width:18px;">
-                <path fill="#FDFDFE" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+<div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.agent && appState.agent.is_agent }">
+  <div id="vvc-fullscreen-container" *ngIf="!appState.isMinimized">
+    <div id="vvc-loading-panel" *ngIf="appState.isLoading">
+      <vvc-loading-panel></vvc-loading-panel>
     </div>
-    -->
-
-    <div id="vvc-minimize-chat"></div>
-  </div>
-</div>
-
-<div id="vvc-minimized-layout">
-
-</div>
-</div>
-
-<!--
-<div id="n-resize" class="resize" [ngClass]="{ 'ns-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-<div id="w-resize" class="resize" [ngClass]="{ 'ew-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-<div id="nw-resize" class="resize" [ngClass]="{ 'nesw-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-<div id="ne-resize" class="resize" [ngClass]="{ 'nwse-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-
-<div id="vvc-container"
-     *ngIf="!widgetState?.minimized"
-     [ngClass]="{
-       'shadow':    (widgetState && !widgetState?.mobile && !widgetState?.fullScreen),
-       'mobile':    widgetState?.mobile,
-       'fullsize':  widgetState?.fullScreen,
-       'nochat':    !widgetState?.chatVisibility && widgetState?.fullScreen
-     }">
-
-  <div id="init-indicator" *ngIf="widgetState?.state === 'initializing'">
-    <div class="init-loader">&nbsp;</div>
-  </div>
-
-  <vvc-fullscreen id="vvc-full-enabled"
-                  *ngIf="widgetState?.fullScreen"
-                  [state]="widgetState"
-                  (hangup)="setNormalScreen();hangup()"
-                  (addvideo)="addLocalVideo()"
-                  (remvideo)="removeLocalVideo()"
-                  (minimize)="setNormalScreen()"
-                  (showchat)="setChatVisibility($event)"
-                  (mute)="setMute($event)"></vvc-fullscreen>
-
-  <vvc-initial-data id="vvc-initial-data"
-                    *ngIf="widgetState?.state === 'waiting_data'"
-                    [dataCollection]="widgetState?.dataCollections[widgetState.selectedDataCollectionId]"
-                    [variables]="context.campaign.channels.web.interaction.variables"
-                    (datasubmit)="submitInitialData(widgetState.selectedDataCollectionId, $event)"
-                    (abandon)="abandon()"></vvc-initial-data>
-
-  <vvc-queue id="vvc-queue"
-             *ngIf="widgetState?.state === 'queue'"
-             [type]="type"
-             [variables]="context.campaign.channels.web.interaction.variables"
-             (leave)="leave()"></vvc-queue>
-
-  <div id="vvc-widget-wrap"
-       [ngClass]="{'no-chat': !widgetState?.chat && !widgetState?.had_chat}"
-       *ngIf="widgetState?.state === 'ready'">
-
-    <vvc-topbar id="vvc-top-bar"
-                *ngIf="!widgetState?.showSurvey"
-                [ngClass]="{'expanded': (widgetState?.topBarExpanded && !widgetState?.video)}"
-                [variables]="context.campaign.channels.web.interaction.variables"
-                [state]="widgetState"
-                (close)="showCloseModal($event)"
-                (minimize)="minimize(true)"
-                (upgrade)="upgradeMedia($event)"></vvc-topbar>
-
-    <vvc-media-tools id="vvc-media-tools"
-                     *ngIf="widgetState?.voice && !widgetState?.fullScreen"
-                     [state]="widgetState"
-                     (hangup)="hangup()"
-                     (addvideo)="addLocalVideo()"
-                     (remvideo)="removeLocalVideo()"
-                     (maximize)="setFullScreen()"
-                     (mute)="setMute($event)"></vvc-media-tools>
-
-
-
-    <div id="vvc-messages"
-         *ngIf="widgetState?.chat || widgetState?.had_chat"
-         angular2-auto-scroll>
-      <div *ngFor="let m of messages">
-        <vvc-chat-message *ngIf="m.type === 'chat'"
-                          [message]="m"
-                          (download)="download($event)"></vvc-chat-message>
-        <vvc-incoming-message *ngIf="(m.type === 'incoming-request' || m.type === 'incoming-offer') && m.media != 'DC'"
-                              [message]="m"
-                              (rejectOffer)="denyIncomingRequest($event, m)"
-                              (acceptOffer)="acceptIncomingRequest($event, m)"></vvc-incoming-message>
-        <vvc-inc-dc *ngIf="m.type === 'incoming-request' && m.media === 'DC'"
-                    [message]="m"
-                    [dc]="widgetState?.dataCollections[m.dataCollectionId]"
-                    (show)="showDataCollection($event)"
-                    (submit)="sendDataCollection($event)"></vvc-inc-dc>
-        <vvc-template-message *ngIf="m.type === 'template'"
-                              [message]="m"
-                              (action)="processAction($event)"></vvc-template-message>
-        <vvc-quick-message *ngIf="m.type === 'quick-replies'"
-                           [message]="m"
-                           (action)="processAction($event)"></vvc-quick-message>
-      </div>
+    <div id="vvc-close-panel" *ngIf="appState.showCloseModal">
+      <vvc-close-panel (cancel)="dismissCloseModal()"
+                       (confirm)="closeContact()"></vvc-close-panel>
     </div>
-    <vvc-chat-box id="vvc-chat-area" *ngIf="!widgetState?.closed && widgetState?.chat"
-                  [variables]="context.campaign.channels.web.interaction.variables"
-                  (upload)="sendAttachment($event)"
-                  (message)="sendChatMessage($event)"></vvc-chat-box>
+    <div id="vvc-fullscreen-media">
 
-    <vvc-dc-viewer id="vvc-dc-viewer"
-                   *ngIf="selectedDataMessage"
-                   [dc]="widgetState?.dataCollections[selectedDataMessage.dataCollectionId]"
-                   [message]="selectedDataMessage"
-                   (submit)="sendDataCollection($event);selectedDataMessage = undefined;"
-                   (close)="syncDataCollection($event);selectedDataMessage = undefined;"></vvc-dc-viewer>
+    </div>
 
-    <vvc-close-modal id="vvc-close-modal"
-                     *ngIf="closeModal"
-                     (close)="closeContact($event)"
-                     (cancel)="dismissCloseModal()"></vvc-close-modal>
+    <div id="vvc-normal-container">
+      <vvc-top-bar [context]="appState.topBar"
+                   (onMinimize)="minimizeWidget(true)"
+                   (onClose)="showCloseModal()"
+                   (onRemove)="closeApp()"></vvc-top-bar>
 
-    <vvc-survey id="vvc-survey"
-                *ngIf="widgetState?.showSurvey"
-                [variables]="context.campaign.channels.web.interaction.variables"
-                [dataCollection]="widgetState?.dataCollections[widgetState.surveyId]"
-                (datasubmit)="closeOnSurvey($event)"
-                (close)="closeInteraction()"></vvc-survey>
+      <vvc-chat id="vvc-chat" [context]="appState" *ngIf="appState.chat.isChatVisible">
 
+        <div class="vvc-emoji-panel">
+          <vvc-emoji-panel class="vvc-emoji-inner"
+                           (toggleEmojiPanel)="toggleEmojiPanel()"
+                           (addEmoji)="appendText($event)"></vvc-emoji-panel>
+        </div>
+
+        <div class="vvc-messages">
+          <div *ngFor="let m of appState.messages">
+            <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
+            <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
+            <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
+                               (action)="processQuickReply($event)"></vvc-quick-replies>
+            <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"
+                                  (action)="processAction($event)"></vvc-template-generic>
+          </div>
+        </div>
+
+        <div class="vvc-chat-box-area" *ngIf="appState.chat.isSendAreaVisible">
+          <vvc-chat-area #chat
+                         [readonly]="appState.chat.isSendAreaDisabled"
+                         [context]="appState.chat"
+                         (onSendText)="sendText($event, appState.showEmojiPanel)"
+                         (toggleEmojiPanel)="toggleEmojiPanel()"></vvc-chat-area>
+        </div>
+
+        <div class="vvc-is-writing" *ngIf="appState.isWriting">
+          <vvc-chat-is-writing [context]="appState.chat"></vvc-chat-is-writing>
+        </div>
+
+
+      </vvc-chat>
+    </div>
   </div>
 
-  <vvc-video-thumbs id="vvc-video-thumbs"
-                    vvcDraggable
-                    *ngIf="widgetState?.mobile && widgetState?.video && !widgetState?.fullScreen"
-                    [state]="widgetState"
-                    (maximize)="setFullScreen()"></vvc-video-thumbs>
+  <div id="vvc-minimized-layout" *ngIf="appState.isMinimized">
+    <vvc-minimized [context]="appState"
+                   (expand)="expandWidget()"></vvc-minimized>
+  </div>
 </div>
-
-<div id="e-resize" class="resize" [ngClass]="{ 'ew-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-<div id="s-resize" class="resize" [ngClass]="{ 'ns-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-<div id="se-resize" class="resize" [ngClass]="{ 'nesw-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-<div id="sw-resize" class="resize" [ngClass]="{ 'nwse-resize': context?.campaign.channels.web.interaction.variables.canBeResized, 'hide': (!widgetState || widgetState?.mobile || widgetState?.fullScreen)}"></div>
-
-<vvc-minimized id="vvc-minimized"
-               *ngIf="widgetState?.minimized"
-               [state]="widgetState"
-               [variables]="context.campaign.channels.web.interaction.variables"
-               (click)="minimize(false)"></vvc-minimized>
--->

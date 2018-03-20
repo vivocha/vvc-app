@@ -17,7 +17,12 @@ export class ChatAreaComponent {
     this.box.nativeElement.value += value;
     this.box.nativeElement.focus();
   }
+  toggleEmoji(){
+    if (this.readonly) return;
+    this.toggleEmojiPanel.emit()
+  }
   sendText(value){
+    if (this.readonly) return;
     if (value !== "") {
       this.onSendText.emit(value);
     }

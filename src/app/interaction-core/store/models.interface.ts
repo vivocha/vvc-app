@@ -33,8 +33,11 @@ export interface WidgetState {
   isMinimized?: boolean;
   isInQueue?: boolean;
 
+  not_read: number;
+
   protocol? : ProtocolState;
   showCloseModal?: boolean;
+  showEmojiPanel?: boolean;
   topBar?: TopBarState;
 }
 
@@ -63,6 +66,9 @@ export interface ChatState {
   isSendAreaVisible?: boolean;
   isSendAreaDisabled?: boolean;
   showAvatarOnIsWriting?: boolean;
+  isWriting?: boolean;
+  isWritingAvatar?: string;
+  isWritingNick?: string;
 }
 
 export interface BaseMessage {

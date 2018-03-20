@@ -96,7 +96,13 @@ export class VvcInteractionService {
   sendText(text){
     this.contactService.sendText(text);
   }
+  setTopBar(title,subtitle,avatar){
+    this.store.dispatch(new fromStore.WidgetTopBar({ title: title, subtitle: subtitle, avatar: avatar}));
+  }
   showCloseModal(){
     this.store.dispatch(new fromStore.WidgetShowCloseModal(true))
+  }
+  toggleEmojiPanel(){
+    this.store.dispatch(new fromStore.WidgetToggleEmoji());
   }
 }

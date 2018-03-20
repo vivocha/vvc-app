@@ -5,6 +5,7 @@ import {
 
 const initialState = {
   isLoading: true,
+  not_read: 0,
   protocol: {}
 }
 
@@ -29,6 +30,11 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     case fromWidget.WIDGET_MINIMIZE:{
       return Object.assign({}, state, { isMinimized: action.payload });
     }
+    case fromWidget.WIDGET_NEW_MESSAGE:{
+      let not_read = state.not_read;
+      if (state.isMinimized) not_read++;
+      return Object.assign({}, state, { not_read: not_read });
+    }
     case fromWidget.WIDGET_QUEUE: {
       return Object.assign({}, state, { isInQueue: true, isLoading: false });
     }
@@ -36,8 +42,14 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const protocol = Object.assign({}, state.protocol, { remoteCaps: action.payload } )
       return Object.assign({}, state, { protocol: protocol});
     }
+    case fromWidget.WIDGET_RESET_UNREAD: {
+      return Object.assign({}, state, { not_read: 0 });
+    }
     case fromWidget.WIDGET_SHOW_CLOSE_MODAL:{
       return Object.assign({}, state, { showCloseModal: action.payload });
+    }
+    case fromWidget.WIDGET_TOGGLE_EMOJI: {
+      return Object.assign({}, state, { showEmojiPanel: !state.showEmojiPanel });
     }
     case fromWidget.WIDGET_TOP_BAR: {
       const topBar = Object.assign({}, state.topBar, action.payload);
@@ -74,9 +86,12 @@ export const getUiChatState = (contextState: ContextState, widgetState: WidgetSt
     isSendAreaVisible: isSendAreaVisible,
     isSendAreaDisabled: isSendAreaDisabled,
     showEmojiButton: showEmojiButton,
-    showUploadButton: showUploadButton,
+    showUploadButton: false,
     showSendButton: true,
-    showAvatarOnIsWriting: showAvatarOnIsWriting
+    showAvatarOnIsWriting: showAvatarOnIsWriting,
+    isWriting: widgetState.isWriting,
+    isWritingAvatar: (widgetState.agent) ? widgetState.agent.avatar: '',
+    isWritingNick: (widgetState.agent) ? widgetState.agent.nick: ''
   }
 };
 export const getUiState = (widgetState: WidgetState, topBarState: TopBarState, chatState: ChatState, messagesState: MessagesState): UiState => {
@@ -100,11 +115,15 @@ export const getUiState = (widgetState: WidgetState, topBarState: TopBarState, c
   });
 
   return {
+    agent: widgetState.agent,
+    isWriting: widgetState.isWriting,
     isLoading: widgetState.isLoading,
     showCloseModal: widgetState.showCloseModal,
+    showEmojiPanel: widgetState.showEmojiPanel,
     isMinimized: widgetState.isMinimized,
     topBar: topBarState,
     chat: chatState,
-    messages: [...messages]
+    messages: [...messages],
+    not_read: widgetState.not_read
   }
 };
