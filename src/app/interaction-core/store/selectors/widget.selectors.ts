@@ -12,11 +12,17 @@ export const getUiChatState = createSelector(
   fromFeature.getWidgetState,
   fromWidget.getUiChatState
 );
-
+/*
 export const getUiState = createSelector(
   fromFeature.getWidgetState,
   getUiTopBarState,
   getUiChatState,
+  fromFeature.getMessagesState,
+  fromWidget.getUiState
+);
+*/
+export const getUiState = createSelector(
+  fromFeature.getWidgetState,
   fromFeature.getMessagesState,
   fromWidget.getUiState
 );

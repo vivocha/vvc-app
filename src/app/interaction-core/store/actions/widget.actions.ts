@@ -1,5 +1,8 @@
 import {Action} from '@ngrx/store';
-import {TopBarState} from '../models.interface';
+import {TopBarState, WidgetState} from '../models.interface';
+
+export const WIDGET_NEW_STATE = '[Widget] New State';
+
 export const WIDGET_CLOSED_BY_AGENT = '[Widget] Closed By Agent';
 export const WIDGET_CLOSED_BY_VISITOR = '[Widget] Closed By Visitor';
 export const WIDGET_IS_WRITING = '[Widget] Is Writing';
@@ -16,6 +19,10 @@ export const WIDGET_SHOW_CLOSE_MODAL = '[Widget] Show Close Modal';
 export const WIDGET_TOGGLE_EMOJI = '[Widget] Toggle Emoji Panel';
 export const WIDGET_TOP_BAR = '[Widget] Top Bar';
 
+export class WidgetNewState implements Action {
+  readonly type = WIDGET_NEW_STATE;
+  constructor(public payload: WidgetState){}
+}
 
 export class WidgetClosedByAgent implements Action {
   readonly type = WIDGET_CLOSED_BY_AGENT;
@@ -89,4 +96,5 @@ export type WidgetActions
   | WidgetShowCloseModal
   | WidgetToggleEmoji
   | WidgetTopBar
+  | WidgetNewState
   ;

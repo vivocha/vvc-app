@@ -69,7 +69,7 @@ export class VvcInteractionService {
     this.contactService.closeContact();
   }
   dismissCloseModal(){
-    this.store.dispatch(new fromStore.WidgetShowCloseModal(false));
+    this.contactService.showCloseModal(false);
   }
   getState(){
     return this.store.select(fromStore.getUiState);
@@ -96,13 +96,10 @@ export class VvcInteractionService {
   sendText(text){
     this.contactService.sendText(text);
   }
-  setTopBar(title,subtitle,avatar){
-    this.store.dispatch(new fromStore.WidgetTopBar({ title: title, subtitle: subtitle, avatar: avatar}));
-  }
   showCloseModal(){
-    this.store.dispatch(new fromStore.WidgetShowCloseModal(true))
+    this.contactService.showCloseModal(true);
   }
   toggleEmojiPanel(){
-    this.store.dispatch(new fromStore.WidgetToggleEmoji());
+    this.contactService.toggleEmojiPanel();
   }
 }

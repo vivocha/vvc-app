@@ -6,11 +6,11 @@
            #box
            (keyup.enter)="sendText(box.value);box.value=''">
   </div>
-  <div *ngIf="context.showUploadButton"
+  <div *ngIf="context.var_showUploadButton"
        class="upload-handler">
     <i class="icon icon-vvc-clip"></i>
   </div>
-  <div *ngIf="context.showEmojiButton"
+  <div *ngIf="context.var_showEmojiButton"
        (click)="toggleEmoji()"
        class="emoji-handler">
     <i class="icon icon-vvc-emoji"></i>

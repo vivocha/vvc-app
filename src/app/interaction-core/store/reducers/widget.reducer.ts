@@ -5,12 +5,12 @@ import {
 
 const initialState = {
   isLoading: true,
-  not_read: 0,
-  protocol: {}
+  not_read: 0
 }
 
 export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState{
   switch (action.type){
+    /*
     case fromWidget.WIDGET_CLOSED_BY_AGENT: {
       return Object.assign({}, state, { closedByAgent: true });
     }
@@ -55,6 +55,9 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const topBar = Object.assign({}, state.topBar, action.payload);
       return Object.assign({}, state, { topBar: topBar });
     }
+    */
+    case fromWidget.WIDGET_NEW_STATE:
+      return Object.assign({}, state, action.payload);
     default: return state;
   }
 }
@@ -94,6 +97,7 @@ export const getUiChatState = (contextState: ContextState, widgetState: WidgetSt
     isWritingNick: (widgetState.agent) ? widgetState.agent.nick: ''
   }
 };
+/*
 export const getUiState = (widgetState: WidgetState, topBarState: TopBarState, chatState: ChatState, messagesState: MessagesState): UiState => {
   const messages = messagesState.list.map( (elem, idx) => {
     let isLast = false;
@@ -125,5 +129,31 @@ export const getUiState = (widgetState: WidgetState, topBarState: TopBarState, c
     chat: chatState,
     messages: [...messages],
     not_read: widgetState.not_read
+  }
+};
+*/
+export const getUiState = (widgetState: WidgetState, messagesState: MessagesState): UiState => {
+  const messages = messagesState.list.map( (elem, idx) => {
+    let isLast = false;
+    let isFirst = false;
+    const nextElem = messagesState.list[idx+1];
+    const prevElem = messagesState.list[idx-1];
+    if (prevElem){
+      if (elem.type !== prevElem.type || elem.isAgent != prevElem.isAgent) isFirst = true;
+      else isFirst = false;
+    }
+    else isFirst = true;
+    if (nextElem){
+      if (elem.type !== nextElem.type || elem.isAgent != nextElem.isAgent) isLast = true;
+      else isLast = false;
+    }
+    else isLast = true;
+    let obj = Object.assign({}, elem, { isLast: isLast, isFirst: isFirst });
+    return obj;
+  });
+
+  return {
+    ...widgetState,
+    messages: [...messages]
   }
 };

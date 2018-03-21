@@ -33,12 +33,14 @@ export interface WidgetState {
   isMinimized?: boolean;
   isInQueue?: boolean;
 
-  not_read: number;
+  not_read?: number;
 
   protocol? : ProtocolState;
   showCloseModal?: boolean;
   showEmojiPanel?: boolean;
   topBar?: TopBarState;
+
+  [id:string]: any;
 }
 
 export interface UiState extends WidgetState{

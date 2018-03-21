@@ -1,8 +1,8 @@
 <div id="vvc-top-bar">
-  <div id="vvc-top-avatar" *ngIf="context.avatar"><img [src]="context.avatar"></div>
+  <div id="vvc-top-avatar" *ngIf="context.topbar_avatar"><img [src]="context.topbar_avatar"></div>
   <div id="vvc-top-header">
-    <div id="vvc-top-title">{{ context.title | translate }}</div>
-    <div id="vvc-top-subtitle">{{ context.subtitle | translate }}</div>
+    <div id="vvc-top-title">{{ context.topbar_title | translate }}</div>
+    <div id="vvc-top-subtitle">{{ context.topbar_subtitle | translate }}</div>
   </div>
   <div class="vvc-top-controls" *ngIf="context.canRemoveApp">
     <span (click)="onRemove.emit()">
