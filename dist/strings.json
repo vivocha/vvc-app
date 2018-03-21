@@ -9,6 +9,14 @@
       "it": {
         "value": "Application di interazione di default",
         "state": "new"
+      },
+      "fr": {
+        "value": "Application d’interaction par défaut",
+        "state": ""
+      },
+      "ja": {
+        "value": "デフォルト対話アプリ",
+        "state": ""
       }
     }
   },
@@ -22,6 +30,14 @@
       "it": {
         "value": "Default",
         "state": "new"
+      },
+      "fr": {
+        "value": "Par défaut",
+        "state": ""
+      },
+      "ja": {
+        "value": "デフォルト",
+        "state": ""
       }
     }
   },
@@ -34,6 +50,14 @@
       "it": {
         "value": "Scrivi qui...",
         "state": "new"
+      },
+      "fr": {
+        "value": "Écrire ici...",
+        "state": ""
+      },
+      "ja": {
+        "value": "ここに書き込んでください",
+        "state": ""
       }
     },
     "description": "",
@@ -48,6 +72,14 @@
       "it": {
         "value": "Vuoi interrompere il contatto?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Voulez-vous vraiment quitter l’application  ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "書き込みを中止しますか?",
+        "state": ""
       }
     },
     "description": "",
@@ -62,6 +94,14 @@
       "it": {
         "value": "No",
         "state": "new"
+      },
+      "fr": {
+        "value": "Non",
+        "state": ""
+      },
+      "ja": {
+        "value": "いいえ",
+        "state": ""
       }
     },
     "description": "",
@@ -76,6 +116,14 @@
       "it": {
         "value": "Si",
         "state": "new"
+      },
+      "fr": {
+        "value": "Oui",
+        "state": ""
+      },
+      "ja": {
+        "value": "はい",
+        "state": ""
       }
     },
     "description": "",
@@ -90,6 +138,14 @@
       "it": {
         "value": "L'operatore ha richiesto la compilazione del modulo",
         "state": "new"
+      },
+      "fr": {
+        "value": "L’agent demande la compilation du formulaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "オペレーターは書類の正しい入力を要求しています",
+        "state": ""
       }
     },
     "description": "",
@@ -104,6 +160,14 @@
       "it": {
         "value": "Compila",
         "state": "new"
+      },
+      "fr": {
+        "value": "Compiler",
+        "state": ""
+      },
+      "ja": {
+        "value": "入力する",
+        "state": ""
       }
     },
     "description": "",
@@ -118,6 +182,14 @@
       "it": {
         "value": "email non valida",
         "state": "new"
+      },
+      "fr": {
+        "value": "Email non valide",
+        "state": ""
+      },
+      "ja": {
+        "value": "メールアドレスが正しくありません。",
+        "state": ""
       }
     },
     "description": "",
@@ -132,6 +204,14 @@
       "it": {
         "value": "Richiesta di Informazioni",
         "state": "new"
+      },
+      "fr": {
+        "value": "Demande d’informations",
+        "state": ""
+      },
+      "ja": {
+        "value": "詳しく知る",
+        "state": ""
       }
     },
     "description": "",
@@ -146,6 +226,14 @@
       "it": {
         "value": "Avanti",
         "state": "new"
+      },
+      "fr": {
+        "value": "Suivant",
+        "state": ""
+      },
+      "ja": {
+        "value": "次へ",
+        "state": ""
       }
     },
     "description": "",
@@ -154,12 +242,20 @@
   {
     "values": {
       "en": {
-        "value": "this field is required",
+        "value": "required field",
         "state": "new"
       },
       "it": {
         "value": "campo obbligatorio",
         "state": "new"
+      },
+      "fr": {
+        "value": "Champ obligatoire",
+        "state": ""
+      },
+      "ja": {
+        "value": "必須",
+        "state": ""
       }
     },
     "description": "",
@@ -174,6 +270,14 @@
       "it": {
         "value": "* campi obbligatori",
         "state": "new"
+      },
+      "fr": {
+        "value": "*champs obligatoires",
+        "state": ""
+      },
+      "ja": {
+        "value": "* 必須項目です",
+        "state": ""
       }
     },
     "description": "",
@@ -182,12 +286,20 @@
   {
     "values": {
       "en": {
-        "value": "Show",
+        "value": "View",
         "state": "new"
       },
       "it": {
         "value": "Visualizza",
         "state": "new"
+      },
+      "fr": {
+        "value": "Visualiser",
+        "state": ""
+      },
+      "ja": {
+        "value": "表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -202,6 +314,14 @@
       "it": {
         "value": "Benvenuto<br>nel customer service di Vivocha",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bienvenue<br>au service client de Vivocha",
+        "state": ""
+      },
+      "ja": {
+        "value": "ようこそ<br> Vivocha のカスタマーサービスへ",
+        "state": ""
       }
     },
     "description": "",
@@ -210,12 +330,20 @@
   {
     "values": {
       "en": {
-        "value": "hide",
+        "value": "close",
         "state": "new"
       },
       "it": {
         "value": "chiudi",
         "state": "new"
+      },
+      "fr": {
+        "value": "fermer",
+        "state": ""
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": ""
       }
     },
     "description": "",
@@ -230,6 +358,14 @@
       "it": {
         "value": "mostra",
         "state": "new"
+      },
+      "fr": {
+        "value": "afficher",
+        "state": ""
+      },
+      "ja": {
+        "value": "表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -244,6 +380,14 @@
       "it": {
         "value": "espandi",
         "state": "new"
+      },
+      "fr": {
+        "value": "étendre",
+        "state": ""
+      },
+      "ja": {
+        "value": "広める",
+        "state": ""
       }
     },
     "description": "",
@@ -258,6 +402,14 @@
       "it": {
         "value": "chiudi",
         "state": "new"
+      },
+      "fr": {
+        "value": "fermer",
+        "state": ""
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": ""
       }
     },
     "description": "",
@@ -272,6 +424,14 @@
       "it": {
         "value": "minimizza",
         "state": "new"
+      },
+      "fr": {
+        "value": "réduire",
+        "state": ""
+      },
+      "ja": {
+        "value": "縮小する",
+        "state": ""
       }
     },
     "description": "",
@@ -286,6 +446,14 @@
       "it": {
         "value": "muto",
         "state": "new"
+      },
+      "fr": {
+        "value": "muet",
+        "state": ""
+      },
+      "ja": {
+        "value": "ミュート",
+        "state": ""
       }
     },
     "description": "",
@@ -300,6 +468,14 @@
       "it": {
         "value": "muto",
         "state": "new"
+      },
+      "fr": {
+        "value": "réactiver le son",
+        "state": ""
+      },
+      "ja": {
+        "value": "ミュート",
+        "state": ""
       }
     },
     "description": "",
@@ -314,6 +490,14 @@
       "it": {
         "value": "video off",
         "state": "new"
+      },
+      "fr": {
+        "value": "vidéo off",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ  オフ",
+        "state": ""
       }
     },
     "description": "",
@@ -328,6 +512,14 @@
       "it": {
         "value": "video on",
         "state": "new"
+      },
+      "fr": {
+        "value": "vidéo on",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ オン",
+        "state": ""
       }
     },
     "description": "",
@@ -342,6 +534,14 @@
       "it": {
         "value": "Accetta",
         "state": "new"
+      },
+      "fr": {
+        "value": "Accepter",
+        "state": ""
+      },
+      "ja": {
+        "value": "承諾する",
+        "state": ""
       }
     },
     "description": "",
@@ -350,12 +550,20 @@
   {
     "values": {
       "en": {
-        "value": "Compile",
+        "value": "Fill",
         "state": "new"
       },
       "it": {
         "value": "Compila",
         "state": "new"
+      },
+      "fr": {
+        "value": "Compiler",
+        "state": ""
+      },
+      "ja": {
+        "value": "入力する",
+        "state": ""
       }
     },
     "description": "",
@@ -370,6 +578,14 @@
       "it": {
         "value": "Continua",
         "state": "new"
+      },
+      "fr": {
+        "value": "Continuer",
+        "state": ""
+      },
+      "ja": {
+        "value": "続ける",
+        "state": ""
       }
     },
     "description": "",
@@ -384,6 +600,14 @@
       "it": {
         "value": "Rifiuta",
         "state": "new"
+      },
+      "fr": {
+        "value": "Refuser",
+        "state": ""
+      },
+      "ja": {
+        "value": "放棄する",
+        "state": ""
       }
     },
     "description": "",
@@ -398,6 +622,14 @@
       "it": {
         "value": "Scarica",
         "state": "new"
+      },
+      "fr": {
+        "value": "Télécharger",
+        "state": ""
+      },
+      "ja": {
+        "value": "ダウンロードする",
+        "state": ""
       }
     },
     "description": "",
@@ -412,6 +644,14 @@
       "it": {
         "value": "invio file in corso...",
         "state": "new"
+      },
+      "fr": {
+        "value": "Chargement en cours...",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイル送信中…",
+        "state": ""
       }
     },
     "description": "",
@@ -426,6 +666,14 @@
       "it": {
         "value": "Compilazione modulo in corso",
         "state": "new"
+      },
+      "fr": {
+        "value": "Compilation du formulaire en cours",
+        "state": ""
+      },
+      "ja": {
+        "value": "入力しています",
+        "state": ""
       }
     },
     "description": "",
@@ -440,6 +688,14 @@
       "it": {
         "value": "Richiesta di Informazioni",
         "state": "new"
+      },
+      "fr": {
+        "value": "Demande d’informations",
+        "state": ""
+      },
+      "ja": {
+        "value": "詳しく聞く",
+        "state": ""
       }
     },
     "description": "",
@@ -454,6 +710,14 @@
       "it": {
         "value": "Errore inviando il modulo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Une erreur s’est produite lors de l’envoi du formulaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "書類送信中にエラーがでました",
+        "state": ""
       }
     },
     "description": "",
@@ -468,6 +732,14 @@
       "it": {
         "value": "Modulo inviato correttamente",
         "state": "new"
+      },
+      "fr": {
+        "value": "Formulaire envoyé correctement",
+        "state": ""
+      },
+      "ja": {
+        "value": "正常に送信出来ました",
+        "state": ""
       }
     },
     "description": "",
@@ -482,6 +754,14 @@
       "it": {
         "value": "L'operatore ha chiuso il contatto",
         "state": "new"
+      },
+      "fr": {
+        "value": "L’agent a quitté le contact",
+        "state": ""
+      },
+      "ja": {
+        "value": "オペレーターとの通信が途切れました",
+        "state": ""
       }
     },
     "description": "",
@@ -490,12 +770,20 @@
   {
     "values": {
       "en": {
-        "value": "Video connection error",
+        "value": "Connection error",
         "state": "new"
       },
       "it": {
         "value": "Errore di connessione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Erreur de connexion",
+        "state": ""
+      },
+      "ja": {
+        "value": "接続のエラーが出ました",
+        "state": ""
       }
     },
     "description": "",
@@ -510,6 +798,14 @@
       "it": {
         "value": "Videochiamata rifiutata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Appel vidéo rejeté",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ通話が途切れました",
+        "state": ""
       }
     },
     "description": "",
@@ -518,12 +814,20 @@
   {
     "values": {
       "en": {
-        "value": "Call connection error",
+        "value": "Connection error",
         "state": "new"
       },
       "it": {
         "value": "Errore di connessione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Erreur de connexion",
+        "state": ""
+      },
+      "ja": {
+        "value": "接続のエラーが出ました",
+        "state": ""
       }
     },
     "description": "",
@@ -538,6 +842,14 @@
       "it": {
         "value": "Chiamata rifiutata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Appel rejeté",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話が途切れました",
+        "state": ""
       }
     },
     "description": "",
@@ -552,6 +864,14 @@
       "it": {
         "value": "Vuoi accettare la richiesta di condivisione moduli?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Voulez-vous accepter la demande de partage de formulaire ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルの共有を承諾しますか?",
+        "state": ""
       }
     },
     "description": "",
@@ -566,6 +886,14 @@
       "it": {
         "value": "Sessione di condivisione moduli accettata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Session de partage de formulaire acceptée",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルの共有に成功しました",
+        "state": ""
       }
     },
     "description": "",
@@ -580,6 +908,14 @@
       "it": {
         "value": "Hai rifiutato la sessione di condivisione moduli",
         "state": "new"
+      },
+      "fr": {
+        "value": "Session de partage de formulaire rejetée",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルの共有を拒否しました。",
+        "state": ""
       }
     },
     "description": "",
@@ -594,6 +930,14 @@
       "it": {
         "value": "Vuoi accettare la richiesta di navigazione assistita?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Voulez-vous commencer une session de navigation collaborative ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "アシスト付接続の要求を承諾しますか? ",
+        "state": ""
       }
     },
     "description": "",
@@ -608,6 +952,14 @@
       "it": {
         "value": "Sessione di navigazione assistita accettata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Session de navigation collaborative acceptée",
+        "state": ""
+      },
+      "ja": {
+        "value": "アシスト付接続の要求を承諾しました。",
+        "state": ""
       }
     },
     "description": "",
@@ -622,6 +974,14 @@
       "it": {
         "value": "Hai rifiutato la sessione di navigazione assistita",
         "state": "new"
+      },
+      "fr": {
+        "value": "Session de navigation collaborative rejetée",
+        "state": ""
+      },
+      "ja": {
+        "value": "アシスト付接続を拒否しました",
+        "state": ""
       }
     },
     "description": "",
@@ -636,6 +996,14 @@
       "it": {
         "value": "Riprova",
         "state": "new"
+      },
+      "fr": {
+        "value": "Réessayer",
+        "state": ""
+      },
+      "ja": {
+        "value": "再送信する",
+        "state": ""
       }
     },
     "description": "",
@@ -650,6 +1018,14 @@
       "it": {
         "value": "Invia",
         "state": "new"
+      },
+      "fr": {
+        "value": "Envoyer",
+        "state": ""
+      },
+      "ja": {
+        "value": "送信する",
+        "state": ""
       }
     },
     "description": "",
@@ -664,6 +1040,14 @@
       "it": {
         "value": "Sei stato trasferito a un altro operatore",
         "state": "new"
+      },
+      "fr": {
+        "value": "Vous avez été transféré vers un autre agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "他のオペレーターと繋がりました",
+        "state": ""
       }
     },
     "description": "",
@@ -678,6 +1062,14 @@
       "it": {
         "value": "fine videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Fin de l’appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話 終了",
+        "state": ""
       }
     },
     "description": "",
@@ -692,6 +1084,14 @@
       "it": {
         "value": "hai rifiutato la videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Vous avez rejeté l’appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話を断りました",
+        "state": ""
       }
     },
     "description": "",
@@ -706,6 +1106,14 @@
       "it": {
         "value": "Richiesta di videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Demande d’appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話  着信中",
+        "state": ""
       }
     },
     "description": "",
@@ -720,6 +1128,14 @@
       "it": {
         "value": "inizio videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Début de l’appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話 開始",
+        "state": ""
       }
     },
     "description": "",
@@ -734,6 +1150,14 @@
       "it": {
         "value": "Vedi",
         "state": "new"
+      },
+      "fr": {
+        "value": "Voir",
+        "state": ""
+      },
+      "ja": {
+        "value": "見る",
+        "state": ""
       }
     },
     "description": "",
@@ -748,6 +1172,14 @@
       "it": {
         "value": "fine chiamata voce",
         "state": "new"
+      },
+      "fr": {
+        "value": "Fin de l’appel vocal",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話を切る",
+        "state": ""
       }
     },
     "description": "",
@@ -762,6 +1194,14 @@
       "it": {
         "value": "Solo voce",
         "state": "new"
+      },
+      "fr": {
+        "value": "Appel vocal seulement",
+        "state": ""
+      },
+      "ja": {
+        "value": "音声のみ",
+        "state": ""
       }
     },
     "description": "",
@@ -776,6 +1216,14 @@
       "it": {
         "value": "hai rifiutato la chiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Vous avez rejeté l’appel",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話を切りました",
+        "state": ""
       }
     },
     "description": "",
@@ -790,6 +1238,14 @@
       "it": {
         "value": "Richiesta di chiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Demande d’appel",
+        "state": ""
+      },
+      "ja": {
+        "value": "着信中",
+        "state": ""
       }
     },
     "description": "",
@@ -804,6 +1260,14 @@
       "it": {
         "value": "inizio chiamata voce",
         "state": "new"
+      },
+      "fr": {
+        "value": "Début de l’appel vocal",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話する",
+        "state": ""
       }
     },
     "description": "",
@@ -818,6 +1282,14 @@
       "it": {
         "value": "Il contatto è terminato<br>Grazie per averci contattato.",
         "state": "new"
+      },
+      "fr": {
+        "value": "Le contact est terminé<br>Merci.",
+        "state": ""
+      },
+      "ja": {
+        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
+        "state": ""
       }
     },
     "description": "",
@@ -826,12 +1298,20 @@
   {
     "values": {
       "en": {
-        "value": "Welcome to<br>Vivocha Customercare",
+        "value": "Welcome<br>to Vivocha Customer care",
         "state": "new"
       },
       "it": {
         "value": "Benvenuto<br>nel customer service di Vivocha",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bienvenue<br>au service client de Vivocha",
+        "state": ""
+      },
+      "ja": {
+        "value": "ようこそ<br>Vivocha のカスタマーサービスへ",
+        "state": ""
       }
     },
     "description": "",
@@ -846,6 +1326,14 @@
       "it": {
         "value": "Our agents are online every working day from 9 AM to 6 PM",
         "state": "new"
+      },
+      "fr": {
+        "value": "Nos agents vous accueillent en ligne tous les jours ouvrables de 9 à 18h00.",
+        "state": ""
+      },
+      "ja": {
+        "value": "オペレーターは平日の9時から18時までご利用いただけます",
+        "state": ""
       }
     },
     "description": "",
@@ -860,6 +1348,14 @@
       "it": {
         "value": "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile.",
         "state": "new"
+      },
+      "fr": {
+        "value": "Veuillez patienter,<br>nous vous mettons en relation avec le premier agent disponible.",
+        "state": ""
+      },
+      "ja": {
+        "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
+        "state": ""
       }
     },
     "description": "",
@@ -868,12 +1364,20 @@
   {
     "values": {
       "en": {
-        "value": "Welcome<br>to Vivocha’s customer service",
+        "value": "Welcome<br>to Vivocha Customer care",
         "state": "new"
       },
       "it": {
         "value": "Benvenuto<br>nel customer service di Vivocha",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bienvenue<br>au service client de Vivocha",
+        "state": ""
+      },
+      "ja": {
+        "value": "ようこそ <br> Vivocha のカスタマーサービスへ",
+        "state": ""
       }
     },
     "description": "",
@@ -888,6 +1392,14 @@
       "it": {
         "value": "Email",
         "state": "new"
+      },
+      "fr": {
+        "value": "Email",
+        "state": ""
+      },
+      "ja": {
+        "value": "メールアドレス",
+        "state": ""
       }
     },
     "description": "",
@@ -896,12 +1408,20 @@
   {
     "values": {
       "en": {
-        "value": "receive a copy of the chat to your email",
+        "value": "email to which you want the transcript sent",
         "state": "new"
       },
       "it": {
         "value": "email per l'invio della trascrizione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Recevoir une copie de la conversation à votre adresse e-mail",
+        "state": ""
+      },
+      "ja": {
+        "value": "会話を転写するメールアドレス",
+        "state": ""
       }
     },
     "description": "",
@@ -910,12 +1430,20 @@
   {
     "values": {
       "en": {
-        "value": "Your rating have been send.<br>Thank you!",
+        "value": "Your rating has been sent.<br>Thank you!",
         "state": "new"
       },
       "it": {
         "value": "La tua valutazione è stata inviata.<br>Grazie!",
         "state": "new"
+      },
+      "fr": {
+        "value": "Votre évaluation a bien été envoyée.<br>Merci !",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
+        "state": ""
       }
     },
     "description": "",
@@ -930,6 +1458,14 @@
       "it": {
         "value": "Quanto sei soddisfatto dell'assistenza ricevuta?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Veuillez évaluer notre service clientèle",
+        "state": ""
+      },
+      "ja": {
+        "value": "サービスの満足度はいかがでしたか?",
+        "state": ""
       }
     },
     "description": "",
@@ -938,12 +1474,20 @@
   {
     "values": {
       "en": {
-        "value": "Send",
+        "value": "Send rating",
         "state": "new"
       },
       "it": {
         "value": "Invia Valutazione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Envoyer évaluation",
+        "state": ""
+      },
+      "ja": {
+        "value": "評価を送信する",
+        "state": ""
       }
     },
     "description": "",
@@ -958,6 +1502,14 @@
       "it": {
         "value": "Valuta la tua esperienza",
         "state": "new"
+      },
+      "fr": {
+        "value": "Évaluer votre expérience",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたの受けたサービスの経験を評価する",
+        "state": ""
       }
     },
     "description": "",
@@ -972,6 +1524,14 @@
       "it": {
         "value": "Aiutaci<br>a migliorare il servizio",
         "state": "new"
+      },
+      "fr": {
+        "value": "Aidez-nous<br>à améliorer le service",
+        "state": ""
+      },
+      "ja": {
+        "value": "サービスの向上に<br>ご協力お願いします",
+        "state": ""
       }
     },
     "description": "",
@@ -986,6 +1546,14 @@
       "it": {
         "value": "Sfoglia",
         "state": "new"
+      },
+      "fr": {
+        "value": "Parcourir",
+        "state": ""
+      },
+      "ja": {
+        "value": "添付する",
+        "state": ""
       }
     },
     "description": "",
@@ -1000,6 +1568,14 @@
       "it": {
         "value": "Descrizione file",
         "state": "new"
+      },
+      "fr": {
+        "value": "Description du fichier",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルの詳細",
+        "state": ""
       }
     },
     "description": "",
@@ -1014,6 +1590,14 @@
       "it": {
         "value": "Dimensione massima - 10Mb",
         "state": "new"
+      },
+      "fr": {
+        "value": "Taille maximale - 10 Mb",
+        "state": ""
+      },
+      "ja": {
+        "value": "最大 - 10Mb",
+        "state": ""
       }
     },
     "description": "",
@@ -1028,6 +1612,14 @@
       "it": {
         "value": "seleziona il file da caricare",
         "state": "new"
+      },
+      "fr": {
+        "value": "Sélectionner le fichier à charger",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルを選択する",
+        "state": ""
       }
     },
     "description": "",
@@ -1042,6 +1634,14 @@
       "it": {
         "value": "Invia",
         "state": "new"
+      },
+      "fr": {
+        "value": "Envoyer",
+        "state": ""
+      },
+      "ja": {
+        "value": "送信する",
+        "state": ""
       }
     },
     "description": "",
@@ -1056,6 +1656,14 @@
       "it": {
         "value": "{{agent}} sta scrivendo...",
         "state": "new"
+      },
+      "fr": {
+        "value": "{{agent}} est en train d'écrire...",
+        "state": ""
+      },
+      "ja": {
+        "value": "{{オペレーター}} 書き込み中",
+        "state": ""
       }
     },
     "description": "",
@@ -1070,6 +1678,14 @@
       "it": {
         "value": "Benvenuto<br>stai parlando con",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bienvenue<br>votre interlocuteur est",
+        "state": ""
+      },
+      "ja": {
+        "value": "ようこそ<br>___と話しています",
+        "state": ""
       }
     },
     "description": "",
@@ -1084,6 +1700,14 @@
       "it": {
         "value": "Logo Applicazione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Logo de l’application",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリ ロゴ",
+        "state": ""
       }
     },
     "description": "",
@@ -1098,6 +1722,14 @@
       "it": {
         "value": "Permetti al visitatore di inviare un file all'operatore.",
         "state": "new"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur d’envoyer un fichier à l’agent.",
+        "state": ""
+      },
+      "ja": {
+        "value": "訪問者にオペレーターへのファイルの転送を許可する",
+        "state": ""
       }
     },
     "description": "",
@@ -1112,6 +1744,14 @@
       "it": {
         "value": "Permetti al visitatore di spostare l'applicazione.",
         "state": "new"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur de déplacer l’application.",
+        "state": ""
+      },
+      "ja": {
+        "value": "訪問者にアプリの移動を許可する",
+        "state": ""
       }
     },
     "description": "",
@@ -1126,6 +1766,14 @@
       "it": {
         "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
         "state": "new"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur de visualiser la fenêtre d’envoi des Emoji.",
+        "state": ""
+      },
+      "ja": {
+        "value": "訪問者に絵文字パネルの使用を許可する",
+        "state": ""
       }
     },
     "description": "",
@@ -1140,6 +1788,14 @@
       "it": {
         "value": "Permetti al visitatore di ridimensionare l'applicazione.",
         "state": "new"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur de redimensionner l’application.",
+        "state": ""
+      },
+      "ja": {
+        "value": "訪問者にアプリの縮小を許可する",
+        "state": ""
       }
     },
     "description": "",
@@ -1154,6 +1810,14 @@
       "it": {
         "value": "Larghezza iniziale dell'applicazione (versione desktop).",
         "state": "new"
+      },
+      "fr": {
+        "value": "Largeur initiale de l’application (version bureau).",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
+        "state": ""
       }
     },
     "description": "",
@@ -1168,6 +1832,14 @@
       "it": {
         "value": "Altezza iniziale dell'applicazione (versione desktop).",
         "state": "new"
+      },
+      "fr": {
+        "value": "Hauteur initiale de l’application (version bureau).",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
+        "state": ""
       }
     },
     "description": "",
@@ -1176,12 +1848,20 @@
   {
     "values": {
       "en": {
-        "value": "Primary color",
+        "value": "Primary colour",
         "state": "new"
       },
       "it": {
         "value": "Primary color",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1190,12 +1870,20 @@
   {
     "values": {
       "en": {
-        "value": "Main color of the application",
+        "value": "Main colour of the application",
         "state": "new"
       },
       "it": {
         "value": "Colore usato come colore principale dell'applicazione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur principale de l’application",
+        "state": ""
+      },
+      "ja": {
+        "value": "初期設定で使用される色",
+        "state": ""
       }
     },
     "description": "",
@@ -1204,12 +1892,20 @@
   {
     "values": {
       "en": {
-        "value": "Warning color",
+        "value": "Warning colour",
         "state": "new"
       },
       "it": {
         "value": "Warning color",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur de signalisation d’un danger",
+        "state": ""
+      },
+      "ja": {
+        "value": "警告カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1218,12 +1914,20 @@
   {
     "values": {
       "en": {
-        "value": "Color used for critical messages",
+        "value": "Colour used for critical messages",
         "state": "new"
       },
       "it": {
         "value": "Colore usato per mostrare messaggi critici",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur utilisée pour afficher des messages importants",
+        "state": ""
+      },
+      "ja": {
+        "value": "攻撃的な発言メッセージに使用される色",
+        "state": ""
       }
     },
     "description": "",
@@ -1232,12 +1936,20 @@
   {
     "values": {
       "en": {
-        "value": "Success color",
+        "value": "Success colour",
         "state": "new"
       },
       "it": {
         "value": "Success color",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur associée au succès",
+        "state": ""
+      },
+      "ja": {
+        "value": "成功カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1246,12 +1958,20 @@
   {
     "values": {
       "en": {
-        "value": "Color used for successful messages",
+        "value": "Colour used for successful messages",
         "state": "new"
       },
       "it": {
         "value": "Colore utilizzato per sottolineare le operazioni andate a buon fine",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur utilisée pour passer un message de réussite",
+        "state": ""
+      },
+      "ja": {
+        "value": "作業が成功した際の下線の色",
+        "state": ""
       }
     },
     "description": "",
@@ -1260,12 +1980,20 @@
   {
     "values": {
       "en": {
-        "value": "Dark color",
+        "value": "Dark colour",
         "state": "new"
       },
       "it": {
         "value": "Dark color",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur foncée",
+        "state": ""
+      },
+      "ja": {
+        "value": "ダークカラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1274,12 +2002,20 @@
   {
     "values": {
       "en": {
-        "value": "Main color for texts",
+        "value": "Main colour for texts",
         "state": "new"
       },
       "it": {
         "value": "Colore usato come colore principale per i testi",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur principale utilisée pour les textes",
+        "state": ""
+      },
+      "ja": {
+        "value": "原文に使用される初期カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1288,12 +2024,20 @@
   {
     "values": {
       "en": {
-        "value": "Light color",
+        "value": "Light colour",
         "state": "new"
       },
       "it": {
         "value": "Light color",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur claire",
+        "state": ""
+      },
+      "ja": {
+        "value": "ライトカラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1302,12 +2046,20 @@
   {
     "values": {
       "en": {
-        "value": "Main color for backgrounds",
+        "value": "Main colour for backgrounds",
         "state": "new"
       },
       "it": {
         "value": "Colore usato come colore principale per i background",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur principale utilisée pour l’arrière-plan",
+        "state": ""
+      },
+      "ja": {
+        "value": "初期設定の背景カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -1322,6 +2074,14 @@
       "it": {
         "value": "Chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット",
+        "state": ""
       }
     },
     "description": "",
@@ -1336,6 +2096,14 @@
       "it": {
         "value": "Chiusura Modal",
         "state": "new"
+      },
+      "fr": {
+        "value": "Fermeture fenêtre modale",
+        "state": ""
+      },
+      "ja": {
+        "value": "様式を閉じる",
+        "state": ""
       }
     },
     "description": "",
@@ -1350,6 +2118,14 @@
       "it": {
         "value": "Data Collection",
         "state": "new"
+      },
+      "fr": {
+        "value": "Collecte des données",
+        "state": ""
+      },
+      "ja": {
+        "value": "データ収集",
+        "state": ""
       }
     },
     "description": "",
@@ -1364,6 +2140,14 @@
       "it": {
         "value": "Strumenti multimediali",
         "state": "new"
+      },
+      "fr": {
+        "value": "Instruments multimédia",
+        "state": ""
+      },
+      "ja": {
+        "value": "マルチメディアの変更",
+        "state": ""
       }
     },
     "description": "",
@@ -1378,6 +2162,14 @@
       "it": {
         "value": "Messaggi",
         "state": "new"
+      },
+      "fr": {
+        "value": "Messages",
+        "state": ""
+      },
+      "ja": {
+        "value": "メッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1392,6 +2184,14 @@
       "it": {
         "value": "No chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Pas de chat",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットできません",
+        "state": ""
       }
     },
     "description": "",
@@ -1406,6 +2206,14 @@
       "it": {
         "value": "Coda",
         "state": "new"
+      },
+      "fr": {
+        "value": "File d’attente",
+        "state": ""
+      },
+      "ja": {
+        "value": "順番",
+        "state": ""
       }
     },
     "description": "",
@@ -1414,12 +2222,20 @@
   {
     "values": {
       "en": {
-        "value": "Survey",
+        "value": "Questionnaire",
         "state": "new"
       },
       "it": {
         "value": "Questionario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Questionnaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "質問",
+        "state": ""
       }
     },
     "description": "",
@@ -1434,6 +2250,14 @@
       "it": {
         "value": "Strumenti",
         "state": "new"
+      },
+      "fr": {
+        "value": "Outils",
+        "state": ""
+      },
+      "ja": {
+        "value": "ツール",
+        "state": ""
       }
     },
     "description": "",
@@ -1448,6 +2272,14 @@
       "it": {
         "value": "Topbar",
         "state": "new"
+      },
+      "fr": {
+        "value": "Barre de navigation supérieure",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバー",
+        "state": ""
       }
     },
     "description": "",
@@ -1456,12 +2288,20 @@
   {
     "values": {
       "en": {
-        "value": "Placeholder of chat textarea",
+        "value": "Placeholder of chat text area",
         "state": "new"
       },
       "it": {
         "value": "Placeholder del box di chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Placeholder de la zone de conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットボックスのプレスホルダー",
+        "state": ""
       }
     },
     "description": "",
@@ -1476,6 +2316,14 @@
       "it": {
         "value": "Messaggio di chiusura chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de fermeture de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットの終了メッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1490,6 +2338,14 @@
       "it": {
         "value": "Testo \"annulla\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Annuler texte",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキスト \"キャンセル\"",
+        "state": ""
       }
     },
     "description": "",
@@ -1504,6 +2360,14 @@
       "it": {
         "value": "Testo \"conferma\" ",
         "state": "new"
+      },
+      "fr": {
+        "value": "Confirmer texte ",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキスト \"確認\" ",
+        "state": ""
       }
     },
     "description": "",
@@ -1518,6 +2382,14 @@
       "it": {
         "value": "Messaggio di benvenuto",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de bienvenue",
+        "state": ""
+      },
+      "ja": {
+        "value": "ようこそ メッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1526,12 +2398,20 @@
   {
     "values": {
       "en": {
-        "value": "Hide chat text",
+        "value": "Hide chat button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone chiusura chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Masquer le texte de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン チャットの終了",
+        "state": ""
       }
     },
     "description": "",
@@ -1540,12 +2420,20 @@
   {
     "values": {
       "en": {
-        "value": "Show chat text",
+        "value": "Show chat button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone mostra chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Afficher le texte de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン チャットを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -1554,12 +2442,20 @@
   {
     "values": {
       "en": {
-        "value": "Expand chat text",
+        "value": "Expand chat button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone espandi chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Agrandir le texte de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン チャットを広める",
+        "state": ""
       }
     },
     "description": "",
@@ -1568,12 +2464,20 @@
   {
     "values": {
       "en": {
-        "value": "Hangup text",
+        "value": "Hang-up button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone chiudi chiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bloquer le texte de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン 電話を切る",
+        "state": ""
       }
     },
     "description": "",
@@ -1582,12 +2486,20 @@
   {
     "values": {
       "en": {
-        "value": "Minimize chat text",
+        "value": "Minimize chat button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone minimizza chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Diminuer le texte de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン チャットを 縮小する",
+        "state": ""
       }
     },
     "description": "",
@@ -1596,12 +2508,20 @@
   {
     "values": {
       "en": {
-        "value": "Mute text",
+        "value": "Mute button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone abilita muto",
         "state": "new"
+      },
+      "fr": {
+        "value": "Activer les alertes pendant la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン ミュートをオンにする",
+        "state": ""
       }
     },
     "description": "",
@@ -1610,12 +2530,20 @@
   {
     "values": {
       "en": {
-        "value": "Unmute text",
+        "value": "Unmute button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone disabilita muto",
         "state": "new"
+      },
+      "fr": {
+        "value": "Désactiver les alertes pendant la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン ミュートをオフにする",
+        "state": ""
       }
     },
     "description": "",
@@ -1624,12 +2552,20 @@
   {
     "values": {
       "en": {
-        "value": "Video off text",
+        "value": "Video off button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone spegni video",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte pour vidéo off",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン ビデオを閉じる",
+        "state": ""
       }
     },
     "description": "",
@@ -1638,12 +2574,20 @@
   {
     "values": {
       "en": {
-        "value": "Video on text",
+        "value": "Video on button text",
         "state": "new"
       },
       "it": {
         "value": "Testo bottone abilita video",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte pour vidéo on",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン ビデオをオンにする",
+        "state": ""
       }
     },
     "description": "",
@@ -1652,12 +2596,20 @@
   {
     "values": {
       "en": {
-        "value": "Accept message",
+        "value": "Accept message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio Accetta",
         "state": "new"
+      },
+      "fr": {
+        "value": "Accepter un message",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ 承認する",
+        "state": ""
       }
     },
     "description": "",
@@ -1666,12 +2618,20 @@
   {
     "values": {
       "en": {
-        "value": "Compile message",
+        "value": "Compile message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio Compila",
         "state": "new"
+      },
+      "fr": {
+        "value": "Écrire un message",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ 入力する",
+        "state": ""
       }
     },
     "description": "",
@@ -1680,12 +2640,20 @@
   {
     "values": {
       "en": {
-        "value": "Continue message",
+        "value": "Continue message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio Continua",
         "state": "new"
+      },
+      "fr": {
+        "value": "Continuer un message",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ 続ける",
+        "state": ""
       }
     },
     "description": "",
@@ -1694,12 +2662,20 @@
   {
     "values": {
       "en": {
-        "value": "Decline message",
+        "value": "Decline message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio Rifiuta",
         "state": "new"
+      },
+      "fr": {
+        "value": "Refuser un message",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ 拒否する",
+        "state": ""
       }
     },
     "description": "",
@@ -1708,12 +2684,20 @@
   {
     "values": {
       "en": {
-        "value": "Download message",
+        "value": "Download message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio Scarica",
         "state": "new"
+      },
+      "fr": {
+        "value": "Télécharger un message",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ ダウンロードする",
+        "state": ""
       }
     },
     "description": "",
@@ -1722,12 +2706,20 @@
   {
     "values": {
       "en": {
-        "value": "File uploading message",
+        "value": "File uploading message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio durante invio file",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de chargement d’un fichier",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ ファイル送信中",
+        "state": ""
       }
     },
     "description": "",
@@ -1736,12 +2728,20 @@
   {
     "values": {
       "en": {
-        "value": "Form filling message",
+        "value": "Form filling message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio durante compilazione modulo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de compilation d’un formulaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ 記入中",
+        "state": ""
       }
     },
     "description": "",
@@ -1750,12 +2750,20 @@
   {
     "values": {
       "en": {
-        "value": "Information request message",
+        "value": "Information request message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio richiesta di informazioni",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de demande d’informations",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ 詳細を聞く",
+        "state": ""
       }
     },
     "description": "",
@@ -1764,12 +2772,20 @@
   {
     "values": {
       "en": {
-        "value": "Error message for form sending",
+        "value": "Error message text for form sending",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per modulo inviato correttamente",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’envoi réussi pour envoi de formulaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルが正常に送信された時のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1778,12 +2794,20 @@
   {
     "values": {
       "en": {
-        "value": "Success message for form sending",
+        "value": "Success message text for form sending",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per errore invio modulo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’erreur pour envoi de formulaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "ファイルが正しく送信されなかった場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1792,12 +2816,20 @@
   {
     "values": {
       "en": {
-        "value": "Agent left message",
+        "value": "Contact closed by agent message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per contatto chiuso da operatore",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de fermeture d’un contact de la part d’un agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "オペレーターにより通信が中断された場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1806,12 +2838,20 @@
   {
     "values": {
       "en": {
-        "value": "Video connection error message",
+        "value": "Video connection error message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per videochiamata fallita",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’erreur de connexion vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話が繋がらなかった場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1820,12 +2860,20 @@
   {
     "values": {
       "en": {
-        "value": "Video rejected by the agent message",
+        "value": "Video call rejected message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per videochiamata rifiutata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de vidéo rejetée par l’agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話を 拒否された場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1834,12 +2882,20 @@
   {
     "values": {
       "en": {
-        "value": "Call connection error message",
+        "value": "Call connection error message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per errore di connessione",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’erreur de connexion d’un appel",
+        "state": ""
+      },
+      "ja": {
+        "value": "接続エラーが 出た場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1848,12 +2904,20 @@
   {
     "values": {
       "en": {
-        "value": "Call rejected by the agent message",
+        "value": "Call rejected message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per chiamata rifiutata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’appel rejeté",
+        "state": ""
+      },
+      "ja": {
+        "value": " 着信を拒否された場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1862,12 +2926,20 @@
   {
     "values": {
       "en": {
-        "value": "Retry message",
+        "value": "Retry message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per \"riprova\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de retentative",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ  \"もう一度試す\"",
+        "state": ""
       }
     },
     "description": "",
@@ -1876,12 +2948,20 @@
   {
     "values": {
       "en": {
-        "value": "Send message",
+        "value": "Send message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per \"invia\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message pour envoi",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ \"送信する\"",
+        "state": ""
       }
     },
     "description": "",
@@ -1890,12 +2970,20 @@
   {
     "values": {
       "en": {
-        "value": "Contact transferred message",
+        "value": "Contact transferred message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per contatto trasferito",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de contact transféré",
+        "state": ""
+      },
+      "ja": {
+        "value": "連絡相手が変更する場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1904,12 +2992,20 @@
   {
     "values": {
       "en": {
-        "value": "Video call terminated message",
+        "value": "Video call terminated message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per fine videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’appel vidéo terminé",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話終了の際のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1918,12 +3014,20 @@
   {
     "values": {
       "en": {
-        "value": "Video call rejected message",
+        "value": "Video call rejected message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per videochiamata rifiutata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’appel vidéo rejeté",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話を 拒否された場合のテキストメッセージper videochiamata rifiutata",
+        "state": ""
       }
     },
     "description": "",
@@ -1932,12 +3036,20 @@
   {
     "values": {
       "en": {
-        "value": "Video call request message",
+        "value": "Video call request message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per richiesta di videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de demande d’appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話のリクエストを受信した場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -1946,12 +3058,20 @@
   {
     "values": {
       "en": {
-        "value": "The video call is started message",
+        "value": "Started video call message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per inizio videochiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de début d’appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話開始のテキストメッセージinizio videochiamata",
+        "state": ""
       }
     },
     "description": "",
@@ -1960,12 +3080,20 @@
   {
     "values": {
       "en": {
-        "value": "View message",
+        "value": "View message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per \"vedi\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Afficher le message",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ \"見る\"",
+        "state": ""
       }
     },
     "description": "",
@@ -1974,12 +3102,20 @@
   {
     "values": {
       "en": {
-        "value": "Voice call terminated message",
+        "value": "Voice call terminated message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per fine chiamata voce",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’appel vocal terminé",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話終了した際のテキストメッセージchiamata voce",
+        "state": ""
       }
     },
     "description": "",
@@ -1988,12 +3124,20 @@
   {
     "values": {
       "en": {
-        "value": "Only voice message",
+        "value": "Only voice message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per \"solo voce\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message pour appel vocal uniquement",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ \"音声のみ\"",
+        "state": ""
       }
     },
     "description": "",
@@ -2002,12 +3146,20 @@
   {
     "values": {
       "en": {
-        "value": "Call rejected message",
+        "value": "Call rejected message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per chiamata rifiutata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message d’appel rejeté",
+        "state": ""
+      },
+      "ja": {
+        "value": " 着信を拒否した場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2016,12 +3168,20 @@
   {
     "values": {
       "en": {
-        "value": "Voice call request message",
+        "value": "Voice call request message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per richiesta di chiamata",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de demande d’appel vocal",
+        "state": ""
+      },
+      "ja": {
+        "value": "着信を受けた場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2030,12 +3190,20 @@
   {
     "values": {
       "en": {
-        "value": "The voice call is started message",
+        "value": "The voice call is started message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per inizio chiamata voce",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de début d’appel vocal",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話開始時のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2044,12 +3212,20 @@
   {
     "values": {
       "en": {
-        "value": "Contact terminated message",
+        "value": "Contact terminated message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio per contatto terminato",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de fin de contact",
+        "state": ""
+      },
+      "ja": {
+        "value": "連絡が終了した場合のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2058,12 +3234,20 @@
   {
     "values": {
       "en": {
-        "value": "Main welcome message",
+        "value": "Main welcome message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio di benvenuto principale",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message principal de bienvenue",
+        "state": ""
+      },
+      "ja": {
+        "value": "始まりのテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2072,12 +3256,20 @@
   {
     "values": {
       "en": {
-        "value": "Secondary message",
+        "value": "Secondary message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio di benvenuto secondario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message secondaire de bienvenue",
+        "state": ""
+      },
+      "ja": {
+        "value": "二回目の連絡の際のテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2086,12 +3278,20 @@
   {
     "values": {
       "en": {
-        "value": "Queue message",
+        "value": "Queue message text shown to user ",
         "state": "new"
       },
       "it": {
         "value": "Testo del messaggio mostrato all'utente in coda",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de file d’attente",
+        "state": ""
+      },
+      "ja": {
+        "value": "順番待ちの方向けのテキストメッセージ",
+        "state": ""
       }
     },
     "description": "",
@@ -2100,12 +3300,20 @@
   {
     "values": {
       "en": {
-        "value": "Welcome message",
+        "value": "Welcome message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio di benvenuto",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de bienvenue",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストメッセージ ようこそ",
+        "state": ""
       }
     },
     "description": "",
@@ -2120,6 +3328,14 @@
       "it": {
         "value": "Testo email",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte e-mail",
+        "state": ""
+      },
+      "ja": {
+        "value": "メール テキスト",
+        "state": ""
       }
     },
     "description": "",
@@ -2134,6 +3350,14 @@
       "it": {
         "value": "Testo placeholder email",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte Placeholder e-mail",
+        "state": ""
+      },
+      "ja": {
+        "value": "メールプレスホルダーのテキスト",
+        "state": ""
       }
     },
     "description": "",
@@ -2142,12 +3366,20 @@
   {
     "values": {
       "en": {
-        "value": "Feedback request message",
+        "value": "Feedback request text",
         "state": "new"
       },
       "it": {
         "value": "Testo richiesta feedback",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de demande de feedback",
+        "state": ""
+      },
+      "ja": {
+        "value": "フィードバック要求のテキスト",
+        "state": ""
       }
     },
     "description": "",
@@ -2156,12 +3388,20 @@
   {
     "values": {
       "en": {
-        "value": "rating request message",
+        "value": "Rating request text",
         "state": "new"
       },
       "it": {
         "value": "Testo richiesta rating",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de demande d’évaluation",
+        "state": ""
+      },
+      "ja": {
+        "value": "評価を お願いする際のテキスト",
+        "state": ""
       }
     },
     "description": "",
@@ -2176,6 +3416,14 @@
       "it": {
         "value": "Testo bottone invio modulo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte du bouton d’envoi",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン ファイル送信",
+        "state": ""
       }
     },
     "description": "",
@@ -2190,6 +3438,14 @@
       "it": {
         "value": "Testo titolo questionario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte du titre de l’enquête",
+        "state": ""
+      },
+      "ja": {
+        "value": "質問の テキスト題名",
+        "state": ""
       }
     },
     "description": "",
@@ -2198,12 +3454,20 @@
   {
     "values": {
       "en": {
-        "value": "Survey welcome message",
+        "value": "Survey welcome message text",
         "state": "new"
       },
       "it": {
         "value": "Testo messaggio benvenuto del questionario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de bienvenue dans l’enquête",
+        "state": ""
+      },
+      "ja": {
+        "value": "質問の場へようこそテキストメッセージの",
+        "state": ""
       }
     },
     "description": "",
@@ -2218,6 +3482,14 @@
       "it": {
         "value": "Testo bottone \"sfoglia\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte du bouton de navigation",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン \"選択する\"",
+        "state": ""
       }
     },
     "description": "",
@@ -2232,6 +3504,14 @@
       "it": {
         "value": "Etichetta \"Descrizione file\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte de description du fichier",
+        "state": ""
+      },
+      "ja": {
+        "value": "タグ \"ファイルの詳細\"",
+        "state": ""
       }
     },
     "description": "",
@@ -2240,12 +3520,20 @@
   {
     "values": {
       "en": {
-        "value": "Max filesize label",
+        "value": "Max size text",
         "state": "new"
       },
       "it": {
         "value": "Testo \"dimensione massima\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Étiquette taille maximale de fichier",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキスト \"最大サイズ\"",
+        "state": ""
       }
     },
     "description": "",
@@ -2254,12 +3542,20 @@
   {
     "values": {
       "en": {
-        "value": "File select placeholder",
+        "value": "Selection file to be uploaded text",
         "state": "new"
       },
       "it": {
         "value": "Testo selezione file da caricare",
         "state": "new"
+      },
+      "fr": {
+        "value": "Placeholder sélectionner fichier",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキスト ファイルを選択する",
+        "state": ""
       }
     },
     "description": "",
@@ -2274,6 +3570,14 @@
       "it": {
         "value": "Testo bottone \"invia\"",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte du bouton d’envoi",
+        "state": ""
+      },
+      "ja": {
+        "value": "テキストボタン \"送信する\"",
+        "state": ""
       }
     },
     "description": "",
@@ -2282,12 +3586,20 @@
   {
     "values": {
       "en": {
-        "value": "Agent is writing text",
+        "value": "Agent is writing warning text",
         "state": "new"
       },
       "it": {
         "value": "Testo di avviso quando l'agente sta scrivendo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Texte agent en train d’écrire",
+        "state": ""
+      },
+      "ja": {
+        "value": "エージェントが書き込んでいる際のお知らせテキスト",
+        "state": ""
       }
     },
     "description": "",
@@ -2296,12 +3608,20 @@
   {
     "values": {
       "en": {
-        "value": "Welcome message",
+        "value": "Welcome in chat message",
         "state": "new"
       },
       "it": {
         "value": "Messaggio di benvenuto in chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Message de bienvenue au « chat »",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットへ ようこそ んlメッセージ",
+        "state": ""
       }
     },
     "description": "",
