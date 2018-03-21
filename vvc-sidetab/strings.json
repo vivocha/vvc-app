@@ -9,6 +9,14 @@
       "it": {
         "value": "Vivocha Sidetab",
         "state": "new"
+      },
+      "fr": {
+        "value": "Barre latérale Vivocha",
+        "state": ""
+      },
+      "ja": {
+        "value": "Vivocha サイドタブ",
+        "state": ""
       }
     }
   },
@@ -22,6 +30,14 @@
       "it": {
         "value": "Etichetta laterale a scomparsa con scelta del media per l'ingaggio",
         "state": "new"
+      },
+      "fr": {
+        "value": "Étiquette latérale déroulante avec sélection du média pour l’engagement",
+        "state": ""
+      },
+      "ja": {
+        "value": "登録の ためメディアによってサイドタグが取り除かれました",
+        "state": ""
       }
     }
   },
@@ -29,12 +45,20 @@
     "id": "VARIABLES.PRIMARY",
     "values": {
       "en": {
-        "value": "Primary color",
+        "value": "Primary colour",
         "state": "new"
       },
       "it": {
         "value": "Colore primario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": ""
       }
     }
   },
@@ -48,6 +72,14 @@
       "it": {
         "value": "Posizionamento Verticale",
         "state": "new"
+      },
+      "fr": {
+        "value": "Positionnement vertical",
+        "state": ""
+      },
+      "ja": {
+        "value": "縦配置",
+        "state": ""
       }
     }
   },
@@ -61,6 +93,14 @@
       "it": {
         "value": "Posizionamento Orizzontale",
         "state": "new"
+      },
+      "fr": {
+        "value": "Positionnement horizontal",
+        "state": ""
+      },
+      "ja": {
+        "value": "横配置",
+        "state": ""
       }
     }
   },
@@ -74,6 +114,14 @@
       "it": {
         "value": "Aiuto?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Aide ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "ヘルプ?",
+        "state": ""
       }
     }
   },
@@ -81,12 +129,20 @@
     "id": "STRINGS.HOW_CAN_HELP",
     "values": {
       "en": {
-        "value": "How can we help you?",
+        "value": "How would you prefer to contact us?",
         "state": "new"
       },
       "it": {
         "value": "Come preferisci contattarci?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Comment préférez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どの方法でお問い合わせしたいですか?",
+        "state": ""
       }
     }
   },
@@ -100,6 +156,14 @@
       "it": {
         "value": "CHAT",
         "state": "new"
+      },
+      "fr": {
+        "value": "CONVERSATION",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット",
+        "state": ""
       }
     }
   },
@@ -113,6 +177,14 @@
       "it": {
         "value": "VOCE",
         "state": "new"
+      },
+      "fr": {
+        "value": "VOIX",
+        "state": ""
+      },
+      "ja": {
+        "value": "音声",
+        "state": ""
       }
     }
   },
@@ -126,6 +198,14 @@
       "it": {
         "value": "VIDEO",
         "state": "new"
+      },
+      "fr": {
+        "value": "VIDÉO",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": ""
       }
     }
   }

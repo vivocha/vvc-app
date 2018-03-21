@@ -9,6 +9,14 @@
       "it": {
         "value": "Vivocha Halo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Vivocha Halo",
+        "state": ""
+      },
+      "ja": {
+        "value": "Vivocha Halo",
+        "state": ""
       }
     }
   },
@@ -22,6 +30,14 @@
       "it": {
         "value": "Ingaggio tramite un avatar posizionato nell'angolo in basso a destra dello schermo",
         "state": "new"
+      },
+      "fr": {
+        "value": "Engagement à travers un avatar positionné dans l’angle inférieur droit de l’écran.",
+        "state": ""
+      },
+      "ja": {
+        "value": "画面の右下にあるアバターを使用して登録する",
+        "state": ""
       }
     }
   },
@@ -29,12 +45,20 @@
     "id": "VARIABLES.PRIMARY",
     "values": {
       "en": {
-        "value": "Primary color",
+        "value": "Primary colour",
         "state": "new"
       },
       "it": {
         "value": "Colore primario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": ""
       }
     }
   },
@@ -42,12 +66,20 @@
     "id": "VARIABLES.HALO_IMG",
     "values": {
       "en": {
-        "value": "Halo Avatar Image",
+        "value": "Avatar Image",
         "state": "new"
       },
       "it": {
         "value": "Immagine Avatar",
         "state": "new"
+      },
+      "fr": {
+        "value": "Image avatar",
+        "state": ""
+      },
+      "ja": {
+        "value": "アバターイメージ",
+        "state": ""
       }
     }
   },
@@ -55,12 +87,20 @@
     "id": "STRINGS.HOW_CAN_HELP",
     "values": {
       "en": {
-        "value": "How can we help you?",
+        "value": "How would you prefer to contact us?",
         "state": "new"
       },
       "it": {
         "value": "Come preferisci contattarci?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Comment préférez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どのような方法でお問い合わせしますか?",
+        "state": ""
       }
     }
   },

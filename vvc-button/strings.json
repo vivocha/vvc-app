@@ -9,6 +9,14 @@
       "it": {
         "value": "Bottone di ingaggio Vivocha",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bouton d’engagement Vivocha",
+        "state": ""
+      },
+      "ja": {
+        "value": "Vivocha登録ボタン",
+        "state": ""
       }
     }
   },
@@ -22,6 +30,14 @@
       "it": {
         "value": "Bottone",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bouton",
+        "state": ""
+      },
+      "ja": {
+        "value": "ボタン",
+        "state": ""
       }
     }
   },
@@ -35,6 +51,14 @@
       "it": {
         "value": "Entra in chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Rejoindre la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットに入る",
+        "state": ""
       }
     }
   },
@@ -42,12 +66,20 @@
     "id": "VARIABLES.BUTTON_BG",
     "values": {
       "en": {
-        "value": "Button color",
+        "value": "Button colour",
         "state": "new"
       },
       "it": {
         "value": "Colore del bottone",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur du bouton",
+        "state": ""
+      },
+      "ja": {
+        "value": "ボタンの色",
+        "state": ""
       }
     }
   },
@@ -55,12 +87,20 @@
     "id": "VARIABLES.BUTTON_BG_PH",
     "values": {
       "en": {
-        "value": "Insert a color for the button background",
+        "value": "Insert a colour for the button background",
         "state": "new"
       },
       "it": {
         "value": "Colore di sfondo del bottone",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur d’arrière plan du bouton",
+        "state": ""
+      },
+      "ja": {
+        "value": "ボタンの背景色",
+        "state": ""
       }
     }
   }

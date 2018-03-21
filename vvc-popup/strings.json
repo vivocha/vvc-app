@@ -9,6 +9,14 @@
       "it": {
         "value": "Vivocha Popup",
         "state": "new"
+      },
+      "fr": {
+        "value": "Fenêtre popup Vivocha",
+        "state": ""
+      },
+      "ja": {
+        "value": "Vivocha Popup",
+        "state": ""
       }
     }
   },
@@ -22,6 +30,14 @@
       "it": {
         "value": "Popup di ingaggio con scelta dei media",
         "state": "new"
+      },
+      "fr": {
+        "value": "Popup d’engagement avec sélection de médias",
+        "state": ""
+      },
+      "ja": {
+        "value": "マスメディア選択の登録 popup",
+        "state": ""
       }
     }
   },
@@ -29,12 +45,20 @@
     "id": "VARIABLES.PRIMARY",
     "values": {
       "en": {
-        "value": "Primary color",
+        "value": "Primary colour",
         "state": "new"
       },
       "it": {
         "value": "Colore primario",
         "state": "new"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": ""
       }
     }
   },
@@ -48,6 +72,14 @@
       "it": {
         "value": "Variante",
         "state": "new"
+      },
+      "fr": {
+        "value": "Variante",
+        "state": ""
+      },
+      "ja": {
+        "value": "変更可能な",
+        "state": ""
       }
     }
   },
@@ -61,6 +93,14 @@
       "it": {
         "value": "Inserire il logo aziendale",
         "state": "new"
+      },
+      "fr": {
+        "value": "Insérer le logo de la société",
+        "state": ""
+      },
+      "ja": {
+        "value": "会社ロゴを入力してください",
+        "state": ""
       }
     }
   },
@@ -74,6 +114,14 @@
       "it": {
         "value": "Logo aziendale",
         "state": "new"
+      },
+      "fr": {
+        "value": "Logo de la société",
+        "state": ""
+      },
+      "ja": {
+        "value": "会社ロゴ",
+        "state": ""
       }
     }
   },
@@ -87,6 +135,14 @@
       "it": {
         "value": "Immagine principale",
         "state": "new"
+      },
+      "fr": {
+        "value": "Image principale",
+        "state": ""
+      },
+      "ja": {
+        "value": "メインイメージ",
+        "state": ""
       }
     }
   },
@@ -100,6 +156,14 @@
       "it": {
         "value": "Serve aiuto?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Avez-vous besoin d’aide ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "ヘルプ?",
+        "state": ""
       }
     }
   },
@@ -113,6 +177,14 @@
       "it": {
         "value": "I nostri operatori sono a tua disposizione. Contattaci!",
         "state": "new"
+      },
+      "fr": {
+        "value": "Nos opérateurs sont à votre disposition. Contactez-nous ! ",
+        "state": ""
+      },
+      "ja": {
+        "value": "オペレーターがあなたを待っています。お気軽に連絡ください!",
+        "state": ""
       }
     }
   },
@@ -120,12 +192,20 @@
     "id": "STRINGS.MESSAGE2",
     "values": {
       "en": {
-        "value": "How would you like to contact us?",
+        "value": "How would you prefer to contact us?",
         "state": "new"
       },
       "it": {
         "value": "Come desideri contattacti?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Comment voulez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どの方法でお問い合わせしますか?",
+        "state": ""
       }
     }
   },
@@ -139,6 +219,14 @@
       "it": {
         "value": "CHAT",
         "state": "new"
+      },
+      "fr": {
+        "value": "CONVERSATION",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット",
+        "state": ""
       }
     }
   },
@@ -152,6 +240,14 @@
       "it": {
         "value": "VOCE",
         "state": "new"
+      },
+      "fr": {
+        "value": "VOIX",
+        "state": ""
+      },
+      "ja": {
+        "value": "音声",
+        "state": ""
       }
     }
   },
@@ -165,6 +261,14 @@
       "it": {
         "value": "VIDEO",
         "state": "new"
+      },
+      "fr": {
+        "value": "VIDÉO",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": ""
       }
     }
   },
