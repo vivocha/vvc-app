@@ -12,11 +12,11 @@
       },
       "fr": {
         "value": "Vivocha Halo",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "Vivocha Halo",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -33,11 +33,11 @@
       },
       "fr": {
         "value": "Engagement à travers un avatar positionné dans l’angle inférieur droit de l’écran.",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "画面の右下にあるアバターを使用して登録する",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -54,11 +54,11 @@
       },
       "fr": {
         "value": "Couleur primaire",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "初期カラー",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -75,11 +75,11 @@
       },
       "fr": {
         "value": "Image avatar",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アバターイメージ",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -96,11 +96,11 @@
       },
       "fr": {
         "value": "Comment préférez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どのような方法でお問い合わせしますか?",
-        "state": ""
+        "state": "final"
       }
     }
   },

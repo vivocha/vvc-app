@@ -12,11 +12,11 @@
       },
       "fr": {
         "value": "Barre latérale Vivocha",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "Vivocha サイドタブ",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -33,11 +33,11 @@
       },
       "fr": {
         "value": "Étiquette latérale déroulante avec sélection du média pour l’engagement",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "登録の ためメディアによってサイドタグが取り除かれました",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -54,11 +54,11 @@
       },
       "fr": {
         "value": "Couleur primaire",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "初期カラー",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -75,11 +75,11 @@
       },
       "fr": {
         "value": "Positionnement vertical",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "縦配置",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -96,11 +96,11 @@
       },
       "fr": {
         "value": "Positionnement horizontal",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "横配置",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -117,11 +117,11 @@
       },
       "fr": {
         "value": "Aide ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ヘルプ?",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -138,11 +138,11 @@
       },
       "fr": {
         "value": "Comment préférez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どの方法でお問い合わせしたいですか?",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -159,11 +159,11 @@
       },
       "fr": {
         "value": "CONVERSATION",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャット",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -180,11 +180,11 @@
       },
       "fr": {
         "value": "VOIX",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "音声",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -201,11 +201,11 @@
       },
       "fr": {
         "value": "VIDÉO",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ビデオ",
-        "state": ""
+        "state": "final"
       }
     }
   }

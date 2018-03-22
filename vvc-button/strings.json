@@ -12,11 +12,11 @@
       },
       "fr": {
         "value": "Bouton d’engagement Vivocha",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "Vivocha登録ボタン",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -33,11 +33,11 @@
       },
       "fr": {
         "value": "Bouton",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ボタン",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -54,11 +54,11 @@
       },
       "fr": {
         "value": "Rejoindre la conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットに入る",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -75,11 +75,11 @@
       },
       "fr": {
         "value": "Couleur du bouton",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ボタンの色",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -96,11 +96,11 @@
       },
       "fr": {
         "value": "Couleur d’arrière plan du bouton",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ボタンの背景色",
-        "state": ""
+        "state": "final"
       }
     }
   }

@@ -12,11 +12,11 @@
       },
       "fr": {
         "value": "Fenêtre popup Vivocha",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "Vivocha Popup",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -33,11 +33,11 @@
       },
       "fr": {
         "value": "Popup d’engagement avec sélection de médias",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "マスメディア選択の登録 popup",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -54,11 +54,11 @@
       },
       "fr": {
         "value": "Couleur primaire",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "初期カラー",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -75,11 +75,11 @@
       },
       "fr": {
         "value": "Variante",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "変更可能な",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -96,11 +96,11 @@
       },
       "fr": {
         "value": "Insérer le logo de la société",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "会社ロゴを入力してください",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -117,11 +117,11 @@
       },
       "fr": {
         "value": "Logo de la société",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "会社ロゴ",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -138,11 +138,11 @@
       },
       "fr": {
         "value": "Image principale",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "メインイメージ",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -159,11 +159,11 @@
       },
       "fr": {
         "value": "Avez-vous besoin d’aide ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ヘルプ?",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -180,11 +180,11 @@
       },
       "fr": {
         "value": "Nos opérateurs sont à votre disposition. Contactez-nous ! ",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "オペレーターがあなたを待っています。お気軽に連絡ください!",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -201,11 +201,11 @@
       },
       "fr": {
         "value": "Comment voulez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どの方法でお問い合わせしますか?",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -222,11 +222,11 @@
       },
       "fr": {
         "value": "CONVERSATION",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャット",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -243,11 +243,11 @@
       },
       "fr": {
         "value": "VOIX",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "音声",
-        "state": ""
+        "state": "final"
       }
     }
   },
@@ -264,11 +264,11 @@
       },
       "fr": {
         "value": "VIDÉO",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ビデオ",
-        "state": ""
+        "state": "final"
       }
     }
   },
