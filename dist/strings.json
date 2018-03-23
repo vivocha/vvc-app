@@ -3626,5 +3626,265 @@
     },
     "description": "",
     "id": "META.TOPBAR.WELCOME"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "How do you want to be contacted?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Come vuoi essere contattato?",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.QUESTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "By e-mail",
+        "state": "new"
+      },
+      "it": {
+        "value": "Via e-mail",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.MAIL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "By SMS",
+        "state": "new"
+      },
+      "it": {
+        "value": "Via SMS",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.SMS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "By phone",
+        "state": "new"
+      },
+      "it": {
+        "value": "Al telefono",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "To which e-mail address would you like to receive assistence?",
+        "state": "new"
+      },
+      "it": {
+        "value": "A quale indirizzo e-mail desideri essere contattato?",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.MAIL.QUESTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "To which phone number would you like to receive assistance via SMS?",
+        "state": "new"
+      },
+      "it": {
+        "value": "A quale numero di telefono desideri essere contattato via SMS?",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.SMS.QUESTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "To which phone number would you like to receive assistance?",
+        "state": "new"
+      },
+      "it": {
+        "value": "A quale numero di telefono desideri essere contattato?",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.QUESTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Thank you! Our agents will contatact you as requested",
+        "state": "new"
+      },
+      "it": {
+        "value": "Grazie! I nostri agenti ti contatteranno secondo le modalità richieste",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.THANKYOU"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send address",
+        "state": "new"
+      },
+      "it": {
+        "value": "Invia recapito",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.ADDRESS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Your e-mail address",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il tuo indirizzo e-mail*",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.MAIL.FIELDLABEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Your phone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il tuo numero di telefono",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.SMS.FIELDLABEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Your phone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il tuo numero di telefono",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.FIELDLABEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Type your e-mail address",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserisci il tuo indirizzo e-mail*",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.MAIL.FIELDPLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Type your phone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserisci il tuo numero di telefono",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.SMS.FIELDPLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Type your phone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserisci il tuo numero di telefono",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.FIELDPLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Type your phone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inserisci il tuo numero di telefono",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.FIELDPLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "When do you want to be called back?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Quando vuoi essere contattato?",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.WHENCAL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "At what time of the day?",
+        "state": "new"
+      },
+      "it": {
+        "value": "In quale momento della giornata?",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.FIXEDSLOTS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Select a time slot",
+        "state": "new"
+      },
+      "it": {
+        "value": "Seleziona uno slot orario",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.PHONE.INTERVALS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send address",
+        "state": "new"
+      },
+      "it": {
+        "value": "Invia recapito",
+        "state": "new"
+      }
+    },
+    "id": "RECALL.SEND"
   }
 ]
