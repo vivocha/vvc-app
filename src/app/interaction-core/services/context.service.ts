@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {WindowRef} from './window.service';
 import {Store} from '@ngrx/store';
 import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
@@ -20,7 +20,8 @@ export class VvcContextService {
   constructor(
     private store: Store<fromStore.AppState>,
     private wref: WindowRef,
-    private ts: TranslateService){
+    private ts: TranslateService,
+    private zone: NgZone){
 
     this.window = wref.nativeWindow;
     this.parseIframeUrl();
@@ -30,10 +31,12 @@ export class VvcContextService {
     if (this.window.vivocha && this.window.vivocha.ready) {
       this.window.vivocha.ready(this.busId).then(() => {
         this.window.vivocha.pageRequest('getContext').then((context: any) => {
-          this.vivocha = this.window.vivocha;
-          this.isMobile = this.window.vivocha.isMobile();
-          this.context = context;
-          this.dispatchContext(context);
+          this.zone.run( () => {
+            this.vivocha = this.window.vivocha;
+            this.isMobile = this.window.vivocha.isMobile();
+            this.context = context;
+            this.dispatchContext(context);
+          });
         });
       });
     } else {

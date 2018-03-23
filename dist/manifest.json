@@ -110,6 +110,16 @@
   "stringIds": [
     "DESCRIPTION",
     "NAME",
+    "META.GROUPS.CHAT",
+    "META.GROUPS.CLOSEMODAL",
+    "META.GROUPS.INITIAL_DATA",
+    "META.GROUPS.MEDIATOOLS",
+    "META.GROUPS.MESSAGES",
+    "META.GROUPS.NOCHAT",
+    "META.GROUPS.QUEUE",
+    "META.GROUPS.SURVEY",
+    "META.GROUPS.TOOLS",
+    "META.GROUPS.TOPBAR",
     "META.VARIABLES.APP.INITIAL_WIDTH",
     "META.VARIABLES.APP.INITIAL_HEIGHT",
     "META.VARIABLES.TOPBAR.SHOW_AVATAR",
@@ -181,24 +191,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "b35455bd219990eb0b63dfe6d5d6c183e79473b6beeeb540bc3824b2507dc283",
+      "hash": "9b539b6ecc8c943c0ce7b1a221f50a51b7ce1cf743dcd2fe69233830937b0199",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
-      "type": "application/json",
-      "size": 5911
+      "size": 5911,
+      "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "09156e937b578ad035f2195a292cc734d2fcdc39042f815927c434589554b075",
+      "hash": "fab6928f5bfc1243ddaaa0d861f2281902f6ebc000553b567499ad2802f1cd66",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "type": "application/javascript",
-      "size": 147071
+      "size": 149226,
+      "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "421a8161af79a3e5b27c8a771c778a053b8c67a25e0e9d548ead82b953c7b908",
+      "hash": "71a685d5911d8d4cc1a93a0e21a70fdba1c2040aa9c3c558903aea4ed2103bd7",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "type": "application/json",
-      "size": 162734
+      "size": 165678,
+      "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",

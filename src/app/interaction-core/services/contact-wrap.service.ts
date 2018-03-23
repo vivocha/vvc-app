@@ -55,10 +55,10 @@ export class VvcContactWrap {
       const msg = transcript[m];
       switch (msg.type) {
         case 'text':
-          this.dispatch(new fromStore.NewMessage({text: msg.body, type: 'chat', isAgent: msg.agent}));
+          this.messageService.addChatMessage(msg, this.agent);
           break;
         case 'attachment':
-          this.dispatch(new fromStore.NewMessage({
+          this.store.dispatch(new fromStore.NewMessage({
             text: msg.meta.desc || msg.meta.originalName,
             type: 'chat',
             isAgent: msg.agent,
@@ -91,9 +91,7 @@ export class VvcContactWrap {
     });
   }
   dispatch(action){
-    //console.log('emitting outside the zone', action);
     //this.zone.run( () => {
-      //console.log('emitting inside the zone', action);
       this.store.dispatch(action);
     //});
   }
@@ -160,43 +158,56 @@ export class VvcContactWrap {
       //this.dispatch(new fromStore.WidgetRemoteCaps(caps));
     });
     this.contact.on('joined', (c) => {
-      if (c.user) {
-        this.onAgentJoin(c);
-      } else {
-        this.onLocalJoin(c);
-      }
+        if (c.user) {
+          this.onAgentJoin(c);
+        } else {
+          this.onLocalJoin(c);
+        }
     });
     this.contact.on('rawmessage', (msg) => {
-      if (msg.type != 'text') return;
-      if (msg.quick_replies){
-        this.messageService.addQuickRepliesMessage(msg);
-      }
-      else if (msg.template) {
-        this.messageService.addTemplateMessage(msg);
-      } else {
-        console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
-        this.messageService.addChatMessage(msg, this.agent);
-        if (msg.agent) this.uiService.setIsWriting(false);
-      }
-      this.uiService.newMessageReceived();
-      //this.playAudioNotification();
+      this.zone.run( () => {
+        if (msg.type != 'text') return;
+        if (msg.quick_replies){
+          this.messageService.addQuickRepliesMessage(msg);
+        }
+        else if (msg.template) {
+          this.messageService.addTemplateMessage(msg);
+        } else {
+          console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
+          this.messageService.addChatMessage(msg, this.agent);
+          if (msg.agent) this.uiService.setIsWriting(false);
+        }
+        this.uiService.newMessageReceived();
+        //this.playAudioNotification();
+      });
+
     });
     this.contact.on('iswriting', (from_id, from_nick, agent) => {
-      if (agent) {
-        this.setIsWriting();
-      }
+      this.zone.run( () => {
+        if (agent) {
+          this.setIsWriting();
+        }
+      });
     });
     this.contact.on('localtext', (text) => {
-      this.messageService.addLocalMessage(text);
+      this.zone.run( () => {
+        if (this.agent.is_bot){
+          this.setIsWriting();
+        }
+        this.messageService.addLocalMessage(text);
+      });
     });
     this.contact.on('left', obj => {
-      console.log('LEFT', obj);
-      if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
-        //this.store.dispatch(new fromStore.WidgetClosedByAgent());
-        this.uiService.setClosedByAgent();
-        this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
-        this.isClosed = true;
-      }
+      this.zone.run( () => {
+        console.log('LEFT', obj);
+        if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
+          //this.store.dispatch(new fromStore.WidgetClosedByAgent());
+          this.uiService.setClosedByAgent();
+          this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+          this.isClosed = true;
+        }
+      });
+
     });
       /*
 
@@ -265,35 +276,56 @@ export class VvcContactWrap {
   }
   onAgentJoin(join){
     this.contact.getMedia().then( (media) => {
-      console.log('AGENT JOIN', join);
-      const agent : {
-        id: string,
-        nick: string,
-        is_bot: boolean,
-        is_agent: boolean,
-        avatar?: string
-      } = {
-        id: join.user,
-        nick: join.nick,
-        is_bot: !!join.is_bot,
-        is_agent: !join.is_bot,
-      };
-      if (join.avatar){
-        agent.avatar = (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
-      }
-      this.agent = agent;
-      this.vivocha.pageRequest('interactionAnswered', agent);
-      //this.dispatch(new fromStore.WidgetMediaChange(media));
-      this.setAnsweredState(agent)
+      this.zone.run( () => {
+        console.log('AGENT JOIN', join);
+        const agent : {
+          id: string,
+          nick: string,
+          is_bot: boolean,
+          is_agent: boolean,
+          avatar?: string
+        } = {
+          id: join.user,
+          nick: join.nick,
+          is_bot: !!join.is_bot,
+          is_agent: !join.is_bot,
+        };
+        if (join.avatar){
+          agent.avatar = (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+        }
+        this.agent = agent;
+        this.vivocha.pageRequest('interactionAnswered', agent);
+        //this.dispatch(new fromStore.WidgetMediaChange(media));
+        this.setAnsweredState(agent)
+      });
     });
   }
   onLocalJoin(join){
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
-        const agent = this.contact.contact.agentInfo;
-        this.uiService.setAgent(agent);
-        //this.dispatch(new fromStore.WidgetMediaChange(media));
-        this.checkForTranscript();
+        this.zone.run( () => {
+          const agentInfo = this.contact.contact.agentInfo;
+          const agent : {
+            id: string,
+            nick: string,
+            is_bot: boolean,
+            is_agent: boolean,
+            avatar?: string
+          } = {
+            id: agentInfo.id,
+            nick: agentInfo.nick,
+            is_bot: !!agentInfo.bot,
+            is_agent: !agentInfo.bot,
+          };
+          if (join.avatar){
+            agent.avatar = (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+          }
+          console.log('LOCAL JOIN', agent, this.contact);
+          this.agent = agent;
+          this.uiService.setAgent(agent);
+          //this.dispatch(new fromStore.WidgetMediaChange(media));
+          this.checkForTranscript();
+        });
       });
     }
   }
@@ -311,6 +343,31 @@ export class VvcContactWrap {
         this.vivocha.pageRequest('interactionFailed', err.message);
       });
     });
+
+    /*
+    this.callStartedWith = context.requestedMedia.toUpperCase();
+    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+      this.dispatch({type: 'INITIAL_OFFER', payload: {
+          offer: contactData.initial_offer,
+          context: context
+        }});
+      this.vivocha.resumeContact(contactData).then((contact) => {
+        this.vivocha.pageRequest('interactionCreated', contact);
+        console.log('contact created, looking for the caps', contact);
+        contact.getLocalCapabilities().then( caps => {
+          this.dispatch({type: 'LOCAL_CAPS', payload: caps });
+        });
+        contact.getRemoteCapabilities().then( caps => {
+          this.dispatch({type: 'REMOTE_CAPS', payload: caps });
+        });
+        this.contact = contact;
+        this.mapContact();
+      }, (err) => {
+        console.log('Failed to resume contact', err);
+        this.vivocha.pageRequest('interactionFailed', err.message);
+      });
+    });
+    */
   }
   sendPostBack(msg){
     const vvcPostBack = {

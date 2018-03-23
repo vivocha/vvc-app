@@ -28,6 +28,146 @@
   {
     "values": {
       "en": {
+        "value": "Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Modal closure",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiusura Modal",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CLOSEMODAL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Initial Data",
+        "state": "new"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.INITIAL_DATA"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Media Tools",
+        "state": "new"
+      },
+      "it": {
+        "value": "Strumenti multimediali",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MEDIATOOLS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MESSAGES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "No chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.NOCHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Queue",
+        "state": "new"
+      },
+      "it": {
+        "value": "Coda",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.QUEUE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Survey",
+        "state": "new"
+      },
+      "it": {
+        "value": "Questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.SURVEY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Tools",
+        "state": "new"
+      },
+      "it": {
+        "value": "Strumenti",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TOOLS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Topbar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Topbar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TOPBAR"
+  },
+  {
+    "values": {
+      "en": {
         "value": "App initial width",
         "state": "new"
       },
@@ -476,4 +616,5 @@
     "description": "",
     "id": "STRINGS.CHAT.ISWRITING"
   }
+
 ]

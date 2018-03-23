@@ -1,5 +1,5 @@
 <div class="vvc-quick-replies vertical">
-  <div class="reply-message">{{ message.body }} - {{ message.replied | json }}</div>
+  <div class="reply-message">{{ message.body }}</div>
   <div class="qr-buttons" *ngIf="!message.replied">
     <div class="reply" *ngFor="let btn of message.quick_replies" [ngClass]="{ 'img': btn.image_url }">
       <button (click)="btnClicked(btn)">
