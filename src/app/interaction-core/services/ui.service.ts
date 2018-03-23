@@ -130,8 +130,8 @@ export class VvcUiService {
   }
   setUploadPanel(show: boolean){
     this.extendAndDispatch(this.currentState, {
-      isWriting: show,
-
+      showUploadPanel: show,
+      isSendAreaVisible: !show,
       lastAction: show ? 'showUploadPanel' : 'hideUploadPanel'
     });
   }

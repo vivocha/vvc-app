@@ -382,6 +382,9 @@ export class AppComponent implements OnInit {
   closeContact(){
     this.interactionService.closeContact();
   }
+  closeUploadPanel(){
+    this.interactionService.closeUploadPanel();
+  }
   dismissCloseModal(){
     this.interactionService.dismissCloseModal()
   }
@@ -403,6 +406,9 @@ export class AppComponent implements OnInit {
   }
   showCloseModal(){
     this.interactionService.showCloseModal()
+  }
+  showUploadPanel(){
+    this.interactionService.showUploadPanel();
   }
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();

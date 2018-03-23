@@ -7,6 +7,7 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 })
 export class ChatComponent {
 
+  /*
   @Input() set context(_context){
     if (_context.showEmojiPanel === true){
       this._showEmojiPanel = true;
@@ -19,4 +20,6 @@ export class ChatComponent {
   }
   _showEmojiPanel = false;
   _showMessageArea = true;
+  */
+  @Input() context;
 }

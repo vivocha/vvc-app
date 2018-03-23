@@ -190,6 +190,72 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
     }
   }
 }
+
+@mixin upload-panel(){
+  margin: 40px;
+  padding: 8px;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  display: flex;
+  flex: auto;
+  .vvc-upload-panel {
+    display: flex;
+    flex: auto;
+  }
+  .vvc-upload-inner{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .vvc-upload-area{
+      height: 200px;
+      margin: 8px;
+      background: #D8D8D8;
+      svg {
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 40px;
+        width: 100px;
+        height: 100px;
+        path {
+          fill:  #979797;
+        }
+      }
+      img{
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .vvc-upload-description{
+      margin: 8px;
+      textarea {
+        width: 100%;
+        resize: none;
+        height: 40px;
+        padding:  8px 4px;
+        outline: none;
+      }
+      .input-file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+    .vvc-upload-button-wrap{
+      margin: 8px;
+      button {
+        margin-top: 10px;
+        width: 100%;
+        @include btn-label();
+      }
+    }
+  }
+}
 @mixin system-message($color: #727273,$fontSize: 15px){
   .system-message {
     text-align: center;
@@ -673,6 +739,9 @@ body, input, textarea{ font-family: $appFontFamily; }
       flex-direction: column;
       #vvc-emoji-panel {
         @include emoji-panel();
+      }
+      #vvc-upload-panel{
+        @include upload-panel();
       }
       #vvc-messages {
         flex: auto;

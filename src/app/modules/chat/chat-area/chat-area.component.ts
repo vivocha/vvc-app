@@ -12,10 +12,15 @@ export class ChatAreaComponent {
   @Input() readonly;
   @Output() onSendText = new EventEmitter();
   @Output() toggleEmojiPanel = new EventEmitter();
+  @Output() showUploadPanel = new EventEmitter();
 
   appendText(value){
     this.box.nativeElement.value += value;
     this.box.nativeElement.focus();
+  }
+  showUpload(){
+    if (this.readonly) return;
+    this.showUploadPanel.emit()
   }
   toggleEmoji(){
     if (this.readonly) return;

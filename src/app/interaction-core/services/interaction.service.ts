@@ -68,6 +68,9 @@ export class VvcInteractionService {
   closeContact(){
     this.contactService.closeContact();
   }
+  closeUploadPanel(){
+    this.contactService.closeUploadPanel();
+  }
   dismissCloseModal(){
     this.contactService.showCloseModal(false);
   }
@@ -98,6 +101,9 @@ export class VvcInteractionService {
   }
   showCloseModal(){
     this.contactService.showCloseModal(true);
+  }
+  showUploadPanel(){
+    this.contactService.showUploadPanel();
   }
   toggleEmojiPanel(){
     this.contactService.toggleEmojiPanel();

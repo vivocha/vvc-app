@@ -79,6 +79,9 @@ export class VvcContactWrap {
       this.isClosed = true;
     }
   }
+  closeUploadPanel(){
+    this.uiService.setUploadPanel(false);
+  }
   createContact(dataToMerge?){
     this.setQueueState();
     const conf = this.getContactOptions(dataToMerge);
@@ -175,8 +178,8 @@ export class VvcContactWrap {
         } else {
           console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
           this.messageService.addChatMessage(msg, this.agent);
-          if (msg.agent) this.uiService.setIsWriting(false);
         }
+        if (msg.agent) this.uiService.setIsWriting(false);
         this.uiService.newMessageReceived();
         //this.playAudioNotification();
       });
@@ -406,6 +409,9 @@ export class VvcContactWrap {
   }
   showCloseModal(show: boolean){
     this.uiService.setCloseModal(show);
+  }
+  showUploadPanel(){
+    this.uiService.setUploadPanel(true);
   }
   toggleEmojiPanel(){
     this.uiService.toggleEmojiPanel();

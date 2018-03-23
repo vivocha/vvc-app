@@ -25,6 +25,11 @@
                            (addEmoji)="appendText($event)"></vvc-emoji-panel>
         </div>
 
+        <div class="vvc-upload-panel">
+          <vvc-upload-panel class="vvc-upload-inner"
+                            (close)="closeUploadPanel()"></vvc-upload-panel>
+        </div>
+
         <div class="vvc-messages">
           <div *ngFor="let m of appState.messages">
             <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
@@ -41,7 +46,8 @@
                          [readonly]="appState.isSendAreaDisabled"
                          [context]="appState"
                          (onSendText)="sendText($event, appState.showEmojiPanel)"
-                         (toggleEmojiPanel)="toggleEmojiPanel()"></vvc-chat-area>
+                         (toggleEmojiPanel)="toggleEmojiPanel()"
+                         (showUploadPanel)="showUploadPanel()"></vvc-chat-area>
         </div>
 
         <div class="vvc-is-writing" *ngIf="appState.isWriting">

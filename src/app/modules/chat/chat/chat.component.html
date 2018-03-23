@@ -1,7 +1,10 @@
-<div id="vvc-emoji-panel" [style.display]="_showEmojiPanel ? 'flex' : 'none'">
+<div id="vvc-emoji-panel" [style.display]="context.showEmojiPanel ? 'flex' : 'none'">
   <ng-content select="'.vvc-emoji-panel"></ng-content>
 </div>
-<div id="vvc-messages" [style.display]="_showMessageArea ? 'flex' : 'none'" ngx-auto-scroll lock-y-offset="10">
+<div id="vvc-upload-panel" [style.display]="context.showUploadPanel ? 'flex' : 'none'">
+  <ng-content select="'.vvc-upload-panel"></ng-content>
+</div>
+<div id="vvc-messages" [style.display]="(!context.showEmojiPanel && !context.showUploadPanel) ? 'flex' : 'none'" ngx-auto-scroll lock-y-offset="10">
   <ng-content select="'.vvc-messages'"></ng-content>
 </div>
 <div id="vvc-is-writing">
