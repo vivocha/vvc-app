@@ -4,11 +4,11 @@
     "values": {
       "en": {
         "value": "Vivocha Popup",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Vivocha Popup",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Fenêtre popup Vivocha",
@@ -25,11 +25,11 @@
     "values": {
       "en": {
         "value": "Engage the visitor by showing a multimedia popup",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Popup di ingaggio con scelta dei media",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Popup d’engagement avec sélection de médias",
@@ -46,11 +46,11 @@
     "values": {
       "en": {
         "value": "Primary colour",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Colore primario",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Couleur primaire",
@@ -67,11 +67,11 @@
     "values": {
       "en": {
         "value": "Theme",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Variante",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Variante",
@@ -88,11 +88,11 @@
     "values": {
       "en": {
         "value": "Use the company logo",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Inserire il logo aziendale",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Insérer le logo de la société",
@@ -109,11 +109,11 @@
     "values": {
       "en": {
         "value": "Company logo",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Logo aziendale",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Logo de la société",
@@ -130,11 +130,11 @@
     "values": {
       "en": {
         "value": "Main image",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Immagine principale",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Image principale",
@@ -151,11 +151,11 @@
     "values": {
       "en": {
         "value": "Need help?",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Serve aiuto?",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Avez-vous besoin d’aide ?",
@@ -172,11 +172,11 @@
     "values": {
       "en": {
         "value": "Our agents are available to help you. Don't hesitate to contact us!",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "I nostri operatori sono a tua disposizione. Contattaci!",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Nos opérateurs sont à votre disposition. Contactez-nous ! ",
@@ -193,11 +193,11 @@
     "values": {
       "en": {
         "value": "How would you prefer to contact us?",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Come desideri contattacti?",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Comment voulez-vous être contacté(e) ?",
@@ -214,11 +214,11 @@
     "values": {
       "en": {
         "value": "CHAT",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "CHAT",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "CONVERSATION",
@@ -235,11 +235,11 @@
     "values": {
       "en": {
         "value": "VOICE",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "VOCE",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "VOIX",
@@ -256,11 +256,11 @@
     "values": {
       "en": {
         "value": "VIDEO",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "VIDEO",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "VIDÉO",
@@ -276,11 +276,11 @@
     "values": {
       "en": {
         "value": "Or we'll contact you!",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Oppure ti contattiamo noi!",
-        "state": "new"
+        "state": "final"
       }
     },
     "id": "STRINGS.RECALL"

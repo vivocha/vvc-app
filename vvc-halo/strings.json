@@ -50,7 +50,7 @@
       },
       "it": {
         "value": "Colore primario",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Couleur primaire",
@@ -67,11 +67,11 @@
     "values": {
       "en": {
         "value": "Avatar Image",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Immagine Avatar",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Image avatar",
@@ -88,11 +88,11 @@
     "values": {
       "en": {
         "value": "How would you prefer to contact us?",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Come preferisci contattarci?",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Comment préférez-vous être contacté(e) ?",
@@ -108,11 +108,11 @@
     "values": {
       "en": {
         "value": "We contact you",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Ti contattiamo",
-        "state": "new"
+        "state": "final"
       }
     },
     "id": "STRINGS.RECALL"
@@ -121,11 +121,11 @@
     "values": {
       "en": {
         "value": "Video call",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Videochiamata",
-        "state": "new"
+        "state": "final"
       }
     },
     "id": "STRINGS.VIDEO_CALL"
@@ -134,11 +134,11 @@
     "values": {
       "en": {
         "value": "Voice call",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Chiamata voce",
-        "state": "new"
+        "state": "final"
       }
     },
     "id": "STRINGS.VOICE_CALL"
@@ -147,11 +147,11 @@
     "values": {
       "en": {
         "value": "Chat",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Chat",
-        "state": "new"
+        "state": "final"
       }
     },
     "id": "STRINGS.CHAT"
