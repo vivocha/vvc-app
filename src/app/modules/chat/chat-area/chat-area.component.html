@@ -1,7 +1,7 @@
 <div id="vvc-box-inner">
   <div class="text-box">
     <input [readonly]="readonly"
-           placeholder="Scrivi il tuo messaggio"
+           [placeholder]="'STRINGS.TEXTAREA.PLACEHOLDER' | translate"
            type="text"
            #box
            (keyup.enter)="sendText(box.value);box.value=''">

@@ -32,6 +32,7 @@ export interface WidgetState {
   isMaximized?: boolean;
   isMinimized?: boolean;
   isInQueue?: boolean;
+  isUploading?: boolean;
 
   not_read?: number;
 
@@ -91,6 +92,7 @@ export interface ChatMessage extends BaseMessage{
   isBot?: boolean;
   time?: string;
   agent?: any;
+  meta?: any;
 }
 export interface MessagesState {
   list: any[];

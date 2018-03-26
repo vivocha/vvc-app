@@ -388,11 +388,18 @@ export class AppComponent implements OnInit {
   dismissCloseModal(){
     this.interactionService.dismissCloseModal()
   }
-  minimizeWidget(){
-    this.interactionService.minimize(true);
+  doUpload(upload){
+    this.interactionService.sendAttachment(upload);
   }
   expandWidget(){
     this.interactionService.minimize(false);
+  }
+  minimizeWidget(){
+    this.interactionService.minimize(true);
+  }
+  openAttachment(url){
+    console.log('openAttachment', url);
+    this.interactionService.openAttachment(url);
   }
   processAction(action){
     this.interactionService.sendPostBack(action);

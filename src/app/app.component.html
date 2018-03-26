@@ -27,13 +27,16 @@
 
         <div class="vvc-upload-panel">
           <vvc-upload-panel class="vvc-upload-inner"
-                            (close)="closeUploadPanel()"></vvc-upload-panel>
+                            [context]="appState"
+                            (close)="closeUploadPanel()"
+                            (upload)="doUpload($event)"></vvc-upload-panel>
         </div>
 
         <div class="vvc-messages">
           <div *ngFor="let m of appState.messages">
             <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
-            <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"></vvc-chat-message>
+            <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"
+                              (showDoc)="openAttachment($event)"></vvc-chat-message>
             <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
                                (action)="processQuickReply($event)"></vvc-quick-replies>
             <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"

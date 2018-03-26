@@ -160,6 +160,33 @@ export class VvcContactWrap {
     this.contact.getRemoteCapabilities().then( caps => {
       //this.dispatch(new fromStore.WidgetRemoteCaps(caps));
     });
+    this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
+      this.zone.run( () => {
+        const attachment = {url, meta, fromId, fromNick, isAgent};
+        console.log('ATTACHMENT', attachment);
+        meta.url = (meta.originalUrl) ? meta.originalUrl : url;
+        const msg = {
+          body: meta.desc || meta.originalName,
+          type: 'chat',
+          isAgent: isAgent,
+          meta: meta,
+          from_nick: fromNick,
+          from_id: fromId
+        };
+        this.messageService.addChatMessage(msg, this.agent);
+      });
+      /*
+      this.dispatch(new fromStore.NewMessage({
+        text: meta.desc || meta.originalName,
+        type: 'chat',
+        isAgent: isAgent,
+        meta: meta,
+        url: (meta.originalUrl) ? meta.originalUrl : url,
+        from_nick: fromNick,
+        from_id: fromId
+      }))
+      */
+    });
     this.contact.on('joined', (c) => {
         if (c.user) {
           this.onAgentJoin(c);
@@ -332,6 +359,11 @@ export class VvcContactWrap {
       });
     }
   }
+  openAttachment(url){
+    const msg = { type: 'web_url', url: url };
+    this.vivocha.pageRequest('interactionEvent', msg.type, msg);
+    console.log('sending onpen url', msg);
+  }
   processQuickReply(reply){
     this.messageService.updateQuickReply(reply.msgId);
     this.contact.sendText(reply.action.title)
@@ -371,6 +403,14 @@ export class VvcContactWrap {
       });
     });
     */
+  }
+  sendAttachment(upload) {
+    this.uiService.setUploading();
+    this.contact.attach(upload.file, upload.text).then(() => {
+      this.zone.run( () => {
+        this.uiService.setUploaded();
+      })
+    })
   }
   sendPostBack(msg){
     const vvcPostBack = {

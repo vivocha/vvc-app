@@ -90,8 +90,14 @@ export class VvcInteractionService {
   minimize(minimize: boolean){
     this.contactService.minimize(minimize);
   }
+  openAttachment(url){
+    this.contactService.openAttachment(url);
+  }
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
+  }
+  sendAttachment(upload){
+    this.contactService.sendAttachment(upload);
   }
   sendPostBack(action){
     this.contactService.sendPostBack(action);

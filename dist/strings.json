@@ -615,6 +615,89 @@
     },
     "description": "",
     "id": "STRINGS.CHAT.ISWRITING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "close panel",
+        "state": "new"
+      },
+      "it": {
+        "value": "chiudi pannello",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.EMOJI.CLOSE_PANEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "close panel",
+        "state": "new"
+      },
+      "it": {
+        "value": "chiudi pannello",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.CLOSE_PANEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "send file",
+        "state": "new"
+      },
+      "it": {
+        "value": "invia file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.SEND_FILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "select file",
+        "state": "new"
+      },
+      "it": {
+        "value": "seleziona file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.SELECT_FILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "file description",
+        "state": "new"
+      },
+      "it": {
+        "value": "descrizione file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.FILE_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Write here",
+        "state": "new"
+      },
+      "it": {
+        "value": "Scrivi il tuo messaggio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.TEXTAREA.PLACEHOLDER"
   }
-
 ]

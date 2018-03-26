@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'vvc-chat-message',
@@ -8,5 +8,10 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 export class ChatMessageComponent {
 
   @Input() message;
+  @Output() showDoc = new EventEmitter();
+
+  openDocument(url){
+    this.showDoc.emit(url);
+  }
 
 }

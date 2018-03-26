@@ -5,18 +5,46 @@
         <path d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path>
       </svg>
     </label>
-    <img [src]="dataFile" *ngIf="dataFile">
+    <img [src]="dataFile" *ngIf="dataFile && isImage">
+    <svg viewBox="0 0 384 512" *ngIf="dataFile && !isImage">
+      <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path>
+    </svg>
   </div>
+
+  <div class="vvc-upload-loading" *ngIf="_context.isUploading">
+    <div class="inner-loading-panel">
+      <div class="loading-container">
+        <div class="progress-bar">
+          <div class="loaded"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="vvc-upload-description">
     <textarea #fileDescr
-              placeholder="aggiungi descrizione"></textarea>
+              [readonly]="_context.isUploading"
+              [placeholder]="'STRINGS.UPLOAD.FILE_DESCRIPTION' | translate"></textarea>
     <form id="formUploader" #formUploader enctype="multipart/form-data" onsubmit="return false;">
       <input type="file" id="theFile" name="theFile" class="input-file" (change)="onUploading($event)">
     </form>
   </div>
   <div class="vvc-upload-button-wrap">
-    <div *ngIf="!dataFile"><button class="select-file"><label for="theFile">seleziona file</label></button></div>
-    <div *ngIf="dataFile"><button class="upload" (click)="doUpload(fileDescr)">invia file</button></div>
-    <div><button class="close" (click)="close.emit();">chiudi pannello</button></div>
+    <div *ngIf="!dataFile">
+      <button class="select-file"
+              [disabled]="_context.isUploading">
+        <label for="theFile">{{ 'STRINGS.UPLOAD.SELECT_FILE' | translate }}</label>
+      </button>
+    </div>
+    <div *ngIf="dataFile">
+      <button class="upload"
+              [disabled]="_context.isUploading"
+              (click)="doUpload(fileDescr)">{{ 'STRINGS.UPLOAD.SEND_FILE' | translate }}</button>
+    </div>
+    <div>
+      <button class="close"
+              [disabled]="_context.isUploading"
+              (click)="close.emit();">{{ 'STRINGS.UPLOAD.CLOSE_PANEL' | translate }}</button>
+    </div>
   </div>
 </div>

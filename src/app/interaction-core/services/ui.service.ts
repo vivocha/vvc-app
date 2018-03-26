@@ -135,6 +135,18 @@ export class VvcUiService {
       lastAction: show ? 'showUploadPanel' : 'hideUploadPanel'
     });
   }
+  setUploading(){
+    this.extendAndDispatch(this.currentState, {
+      isUploading: true
+    });
+  }
+  setUploaded(){
+    this.extendAndDispatch(this.currentState, {
+      isUploading: false,
+      showUploadPanel: false,
+      isSendAreaVisible: true
+    });
+  }
   toggleEmojiPanel(){
     this.extendAndDispatch(this.currentState, {
       showEmojiPanel: !this.currentState.showEmojiPanel,

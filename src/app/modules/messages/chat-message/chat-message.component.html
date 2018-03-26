@@ -4,7 +4,20 @@
     <img [src]="message.agent.avatar">
   </div>
   <div class="message">
-    <div class="bubble" [ngClass]="{ 'arrow' : message.isFirst }">{{ message.text }}</div>
+    <div *ngIf="!message.meta" class="bubble" [ngClass]="{ 'arrow' : message.isFirst }">{{ message.text }}</div>
+    <div *ngIf="message.meta" class="bubble attachment" [ngClass]="{ 'arrow' : message.isFirst }" (click)="openDocument(message.meta.url)">
+      <div class="attachment-img" *ngIf="message.meta.mimetype.indexOf('image/') !== -1">
+        <img [src]="message.meta.url">
+      </div>
+      <div class="attachment-img" *ngIf="message.meta.mimetype.indexOf('image/') === -1">
+        <svg viewBox="0 0 384 512">
+          <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path>
+        </svg>
+      </div>
+      <div class="attachment-text">
+        {{ message.text }}
+      </div>
+    </div>
     <div class="time" *ngIf="message.isLast">{{ message.time }}</div>
   </div>
   <div class="message-avatar" *ngIf="!message.isAgent" [style.visibility]="message.isFirst ? 'visible' : 'hidden'">

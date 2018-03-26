@@ -7,12 +7,24 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Inp
 })
 export class UploadPanelComponent {
 
+  @Input()
+  set context(context){
+    if (this._context && this._context.showUploadPanel === false){
+      this.uploadFile = undefined;
+      this.dataFile = undefined;
+      this.isImage = undefined;
+    }
+    this._context = Object.assign({}, context);
+  };
+  get context(){
+    return this._context;
+  }
+  _context;
   @Output() close = new EventEmitter();
   @Output() upload = new EventEmitter();
 
-  uploading = false;
-  //upload;
   dataFile;
+  isImage;
   uploadFile: File;
 
   constructor(private cdr: ChangeDetectorRef){}
@@ -22,31 +34,18 @@ export class UploadPanelComponent {
       this.upload.emit({ text: inputFileDescr.value, file: this.uploadFile });
       console.log('UPLOADING THAT STUFF', this.uploadFile);
       inputFileDescr.value = '';
-      this.uploadFile = undefined;
-      this.dataFile = undefined;
     }
   }
   onUploading(evt){
     if (evt.srcElement.files[0]) {
-      this.uploading = true;
-
       const file = evt.target.files[0];
-
       const fr = new FileReader();
       fr.onload = (e) => {
-        /*
-        this.upload = {
-          loading: true,
-          id: fileId,
-          fileName: file.name,
-          dataFile: e.target['result'],
-          fileObj: file
-        }
-        */
         this.dataFile = e.target['result'];
         this.uploadFile = file;
+        this.isImage = file.type.indexOf('image/') !== -1;
         this.cdr.detectChanges();
-      }
+      };
       fr.readAsDataURL(file);
     }
     /*

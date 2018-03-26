@@ -20,6 +20,8 @@ $icon-vvc-video: './assets/static/icons/vvc-video.png';
 $icon-vvc-emoji: './assets/static/icons/vvc-emoji.png';
 $icon-vvc-clip: './assets/static/icons/vvc-clip.png';
 $icon-vvc-send: './assets/static/icons/vvc-send.png';
+$icon-vvc-scroll-right: './assets/static/icons/vvc-arrow-right.png';
+$icon-vvc-scroll-left: './assets/static/icons/vvc-arrow-left.png';
 
 @import 'variables';
 /**
@@ -191,7 +193,7 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
   }
 }
 
-@mixin upload-panel(){
+@mixin upload-panel($loadingBarColor: #0351A1){
   margin: 40px;
   padding: 8px;
   border: 1px solid #eeeeee;
@@ -226,6 +228,32 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
         margin: auto;
         max-width: 100%;
         max-height: 100%;
+      }
+    }
+    .vvc-upload-loading{
+      .inner-loading-panel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        .loading-container{
+          width: 200px;
+          height: 5px;
+          margin: auto;
+
+          .progress-bar{
+            height:2px;
+            width:200px;
+            background: rgba($loadingBarColor,0.6);
+            .loaded{
+              height:100%;
+              width:100%;
+              animation:2s linear infinite loading;
+              transform-origin:0%;
+              background: $loadingBarColor;
+            }
+          }
+        }
       }
     }
     .vvc-upload-description{
@@ -274,6 +302,34 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
       white-space: pre-line;
       font-size: $fontSize;
       font-weight: 300;
+      &.attachment{
+        white-space: normal;
+      }
+      .attachment-img{
+        height: 180px;
+        img{
+          display: block;
+          margin: auto;
+          max-width: 100%;
+          max-height: 100%;
+          cursor: pointer;
+        }
+        svg {
+          margin: auto;
+          display: block;
+          position: relative;
+          top: 40px;
+          width: 100px;
+          height: 100px;
+          path {
+            fill:  #979797;
+          }
+        }
+      }
+      .attachment-text{
+        font-size: 12px;
+        font-style: italic;
+      }
     }
     .message{
       max-width: 100%;
@@ -449,10 +505,58 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
 }
 @mixin template-message(){
 
+  .tpl-navigation{
+    position: relative;
+
+    .tpl-left{
+      display: none;
+      position: absolute;
+      cursor: pointer;
+      left: 7px;
+      top: 80px;
+      width: 30px;
+      height: 30px;
+      background-color: #ccc;
+      background-image: url($icon-vvc-scroll-left);
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      background-position: 6px 5px;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+
+    .tpl-right{
+      display: none;
+      position: absolute;
+      cursor: pointer;
+      right: 7px;
+      top: 80px;
+      width: 30px;
+      height: 30px;
+      background-color: #ccc;
+      background-image: url($icon-vvc-scroll-right);
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      background-position: 6px 5px;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+
+    &:hover{
+      .tpl-right,
+      .tpl-left {
+        display: block;
+      }
+    }
+  }
+
   .tpl-container{
     &.carousel{
       display: flex;
       overflow-x: scroll;
+      transition-timing-function: ease;
     }
     margin: 10px 15px;
     .tpl-element {
@@ -598,10 +702,6 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
   }
 }
 @mixin loading-panel($background: #0351A1, $loadingBarColor: #FFFFFF){
-  @keyframes loading {
-    0% { transform: scaleX(0); }
-    100% { transform: scaleX(100%); }
-  }
   position: absolute;
   top: 0;
   bottom: 0;
@@ -777,6 +877,10 @@ body, input, textarea{ font-family: $appFontFamily; }
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+@keyframes loading {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(100%); }
 }
 @-webkit-keyframes fadeIn {
   from {

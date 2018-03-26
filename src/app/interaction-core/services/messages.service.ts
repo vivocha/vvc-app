@@ -21,6 +21,7 @@ export class VvcMessageService {
       time: this.getChatTimestamp(message.ts)
     };
     if (agent) msg.agent = agent;
+    if (message.meta) msg.meta = message.meta;
     this.store.dispatch(new fromStore.NewMessage(msg));
     return id;
   }
