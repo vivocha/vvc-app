@@ -8,10 +8,11 @@ import {MessagesModule} from '../modules/messages/messages.module';
 import {ClosePanelModule} from '../modules/close-panel/close-panel.module';
 import {LoadingPanelModule} from '../modules/loading-panel/loading-panel.module';
 import {MinimizedModule} from '../modules/minimized/minimized.module';
-
+import {DataCollectionModule} from '../modules/data-collection/data-collection.module';
 
 const layoutModules = [
   TopBarModule,
+  DataCollectionModule,
   ChatModule,
   ChatPanelsModule,
   MessagesModule,

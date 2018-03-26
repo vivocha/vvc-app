@@ -197,24 +197,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "44cf1f0cc2d9ffc0738f2c054cce30a7ffe6639d4d900398c77f9fe71b1e2f39",
+      "hash": "fb3623e2a68cdd60589c2d7e04ff8e1514435902ad36acaf629254c93f606d45",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "25dfd4bdf582c9a7c9c6b286feab40b68bb2172f2bb797147fc19a45cbc40b83",
+      "hash": "186ae32bdf37ac595b2331687839e9545488703762e83a878f8715c8facb1966",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "type": "application/javascript",
-      "size": 162229
+      "size": 183172,
+      "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "6899ad2c5e46955dfa50a7c4b8a13dfd1c84b8ffb5fbc95c7473b2398956540e",
+      "hash": "1d4c5566c3cab1dd91be85f8a04af5da72f7a2a6b6c549df03bf908797896bd1",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "type": "application/json",
-      "size": 180583
+      "size": 205905,
+      "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -232,10 +232,10 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "7313851171efc196d78fff0e86f3f15e1221a71050050d14d4e65e9d809763d2",
+      "hash": "39e035a8383918ab04591f6bb32502f449e9aaf42d153af113849228c56db021",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
       "type": "text/x-scss",
-      "size": 20253
+      "size": 25820
     },
     {
       "path": "assets/scss/variables.scss",
@@ -351,17 +351,17 @@
     },
     {
       "path": "assets/vendor.bundle.js",
-      "hash": "40a087a90235676cfd503ba77a60e2ce3f9654be1b2f73a078d355088df7a517",
+      "hash": "768a30e1eff29eb976ebe0c8839a8d0de9089d7c6cb31a951597729c0ea76b88",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/vendor.bundle.js",
-      "type": "application/javascript",
-      "size": 2838184
+      "size": 3138583,
+      "type": "application/javascript"
     },
     {
       "path": "assets/vendor.bundle.js.map",
-      "hash": "0018310890f38c564be6aa6106dd3b10cc55b1f95beb5b9d363312fbb282c3d0",
+      "hash": "157025ad3d33687e0b85efea41f5b5929a1cccc1a8ef54dd082aa8d404a681d1",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/vendor.bundle.js.map",
-      "type": "application/json",
-      "size": 3445450
+      "size": 3804163,
+      "type": "application/json"
     }
   ]
 }

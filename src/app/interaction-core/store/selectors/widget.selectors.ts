@@ -24,5 +24,6 @@ export const getUiState = createSelector(
 export const getUiState = createSelector(
   fromFeature.getWidgetState,
   fromFeature.getMessagesState,
+  fromFeature.getDataCollectionState,
   fromWidget.getUiState
 );

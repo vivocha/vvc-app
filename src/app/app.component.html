@@ -10,12 +10,16 @@
     <div id="vvc-fullscreen-media">
 
     </div>
-
     <div id="vvc-normal-container">
       <vvc-top-bar [context]="appState"
                    (onMinimize)="minimizeWidget(true)"
                    (onClose)="showCloseModal()"
                    (onRemove)="closeApp()"></vvc-top-bar>
+
+      <vvc-data-collection id="vvc-data-collection"
+                           [context]="appState"
+                           *ngIf="appState.showDataCollectionPanel"
+                           (submit)="submitDataCollection($event)"></vvc-data-collection>
 
       <vvc-chat id="vvc-chat" [context]="appState" *ngIf="appState.isChatVisible">
 

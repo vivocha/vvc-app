@@ -111,6 +111,9 @@ export class VvcInteractionService {
   showUploadPanel(){
     this.contactService.showUploadPanel();
   }
+  submitDataCollection(dc){
+    this.contactService.submitDataCollection(dc);
+  }
   toggleEmojiPanel(){
     this.contactService.toggleEmojiPanel();
   }

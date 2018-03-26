@@ -417,6 +417,9 @@ export class AppComponent implements OnInit {
   showUploadPanel(){
     this.interactionService.showUploadPanel();
   }
+  submitDataCollection(dc){
+    this.interactionService.submitDataCollection(dc);
+  }
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
   }

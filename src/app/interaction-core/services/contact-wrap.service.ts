@@ -8,6 +8,7 @@ import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {VvcMessageService} from './messages.service';
 import {objectToDataCollection} from '@vivocha/global-entities/dist/wrappers/data_collection';
 import {VvcUiService} from './ui.service';
+import {DataCollectionState} from '../store/models.interface';
 
 @Injectable()
 export class VvcContactWrap {
@@ -117,9 +118,10 @@ export class VvcContactWrap {
     }
     else return Object.assign({}, initialOpts);
   }
+  /*
   hasDataCollection() {
-    return (this.context.dataCollections && this.context.dataCollections.length > 0);
-  }
+    return this.dcService.hasDataCollection(this.context);
+  }*/
   hasRecallForNoAgent(){
     return false;
   }
@@ -129,6 +131,14 @@ export class VvcContactWrap {
     this.uiService.initializeUi(this.context);
     if (this.isInPersistence()) this.resumeContact(context);
     else {
+
+      this.dcService.onDataCollectionCompleted(context).subscribe( (data: DataCollectionState) => {
+        if (data.completed) {
+          this.createContact(data.creationOptions);
+        }
+      });
+      this.dcService.processDataCollections();
+      /*
       if (this.isRecallContact()){
         this.dcService.showRecall();
       } else {
@@ -137,10 +147,16 @@ export class VvcContactWrap {
             this.dcService.showDcWithRecall();
           }
         } else {
-          if (this.hasDataCollection()) this.attachDataAndCreateContact(context);
+          if (this.hasDataCollection()) {
+            if (this.dcService.dcAlreadyFilled()) {
+              this.attachDataAndCreateContact(context);
+            }
+            else console.log("should render dc");
+          }
           else this.createContact();
         }
       }
+      */
     }
   }
   isChatEmulationContact(){
@@ -362,7 +378,6 @@ export class VvcContactWrap {
   openAttachment(url){
     const msg = { type: 'web_url', url: url };
     this.vivocha.pageRequest('interactionEvent', msg.type, msg);
-    console.log('sending onpen url', msg);
   }
   processQuickReply(reply){
     this.messageService.updateQuickReply(reply.msgId);
@@ -419,11 +434,9 @@ export class VvcContactWrap {
       body: msg.title
     };
     if (msg.type === "postback") {
-      console.log('dispatching from contact service', msg, vvcPostBack);
       this.contact.send(vvcPostBack);
     }
     else {
-      console.log('message type differs from postback', msg);
       this.vivocha.pageRequest('interactionEvent', msg.type, msg);
     }
   }
@@ -452,6 +465,9 @@ export class VvcContactWrap {
   }
   showUploadPanel(){
     this.uiService.setUploadPanel(true);
+  }
+  submitDataCollection(dc){
+    this.dcService.submitDataCollection(dc);
   }
   toggleEmojiPanel(){
     this.uiService.toggleEmojiPanel();

@@ -20,6 +20,12 @@ export interface AgentState {
   nick: string;
   avatar: string;
 }
+export interface DataCollectionState {
+  list?: any[];
+  completed: boolean;
+  selected?: any;
+  creationOptions?: any;
+}
 export interface WidgetState {
   agent?: AgentState;
   chat?: ChatState;
@@ -38,7 +44,9 @@ export interface WidgetState {
 
   protocol? : ProtocolState;
   showCloseModal?: boolean;
+  showDataCollectionPanel?: boolean;
   showEmojiPanel?: boolean;
+
   topBar?: TopBarState;
 
   [id:string]: any;
@@ -46,6 +54,7 @@ export interface WidgetState {
 
 export interface UiState extends WidgetState{
   messages: any[];
+  selectedDataCollection?: any;
 }
 
 export interface TopBarState {

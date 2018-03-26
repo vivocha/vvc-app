@@ -106,6 +106,26 @@ export class VvcUiService {
       lastAction: show ? 'showCloseModal' : 'hideCloseModal'
     });
   }
+  setDataCollectionCompleted(){
+    this.extendAndDispatch(this.currentState, {
+      isLoading: false,
+      isInQueue: true,
+      isChatVisible: true,
+      showDataCollectionPanel: false,
+      topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
+      lastAction: 'setDataCollectionCompleted'
+    });
+  }
+  setDataCollectionPanel(show: boolean, topBarTitle: string){
+    this.extendAndDispatch(this.currentState, {
+      isLoading: false,
+      isInQueue: false,
+      isChatVisible: false,
+      showDataCollectionPanel: show,
+      topbar_subtitle: topBarTitle,
+      lastAction: show ? 'showDataCollectionPanel' : 'hideDataCollectionPanel'
+    });
+  }
   setIsWriting(isWriting: boolean){
     this.extendAndDispatch(this.currentState, {
       isWriting: isWriting,
