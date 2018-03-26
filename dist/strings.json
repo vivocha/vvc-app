@@ -3886,5 +3886,654 @@
       }
     },
     "id": "RECALL.SEND"
+  },
+
+
+
+
+
+  {
+    "values": {
+      "en": {
+        "value": "Video icon",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona video",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_VIDEO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Phone/voice icon",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona telefono/voce",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_PHONE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Icon to switch to fullsize state",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona per passare allo stato fullsize",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_MAXIMIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar menu option's icon",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona del menu di selezione opzioni nella Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_MENU"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send chat message button's icon",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona del bottone di invio messaggio di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_SEND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Icon to open to emoji board on the send message area",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona nell'area di invio messaggio per l'apertura del pannello di selezione emoji",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_EMOJI"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Icon to open to upload board on the send message area",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona nell'area di invio messaggio per aprire il pannello di upload",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_UPLOAD"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Icon on the Top Bar to close the App",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona nella Top Bar per chiudere la chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Icon on the Top Bar to minimize the App",
+        "state": "new"
+      },
+      "it": {
+        "value": "Icona nella Top Bar per passare allo stato minimizzato",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.ICON_REDUCE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "App shadow",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ombra dell'App",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.APP_SHADOW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "App border radious",
+        "state": "new"
+      },
+      "it": {
+        "value": "Radius del bordo dell'App",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.APP_RADIUS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Text dimension for the button used on multimedia messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione testo del bottone usato nei multimedia messages",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.LABEL_BUTTON_PRIMARY_SIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Main color of the button used on multimedia messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore principale del bottone usato nei multimedia messages",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.LABEL_BUTTON_PRIMARY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Initial distance of the App from the bottom border of the page",
+        "state": "new"
+      },
+      "it": {
+        "value": "Distanza iniziale dell'App dal bordo inferiore della pagina",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.APP_BOTTOM_DISTANCE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The Font Family you wawnt to use in the App",
+        "state": "new"
+      },
+      "it": {
+        "value": "Font Family da utilizzare nell'App",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.APP_FONT_FAMILY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Link to the web font you want to use in the App",
+        "state": "new"
+      },
+      "it": {
+        "value": "Link web font da utilizzare nell'App",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.APP_FONT_URL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Send message button's background color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore di sfondo del bottone di invio messaggio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_SEND_BUTTON_BG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Message text area's dimension",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione del campo di testo per la scrittura del messaggio di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_TEXT_INPUT_SIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Message text area's color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del campo di testo per la scrittura del messaggio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_TEXT_INPUT_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Message text area's border color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del bordo del campo di scrittura del messaggio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_INPUT_BORDER_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Message text area's background color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sfondo dell'area di scrittura messaggio di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_BOX_BACKGROUND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show arrow's balloon for agent ",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza balloon con arrow per l'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SHOW_CHAT_AGENT_ARROW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show agent's avatar on chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar dell'agente nella chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SHOW_CHAT_AGENT_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Width of the application when minimized (desktop version).",
+        "state": "new"
+      },
+      "it": {
+        "value": "Larghezza dell'applicazione quando minimizzata (versione desktop).",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.MINIMIZED_WIDTH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Height of the application when minimized (desktop version).",
+        "state": "new"
+      },
+      "it": {
+        "value": "Altezza dell'applicazione quando minimizzata (versione desktop).",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.MINIMIZED_HEIGHT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar background color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore di sfondo della Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_BG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar title color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del titolo della Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_TITLE_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar subtitle color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore del sottotitolo della Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_SUBTITLE_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar title dimension",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione del titolo della Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_TITLE_SIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar subtitle dimension",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione del sottotitolo della Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_SUBTITLE_SIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show avatar on the Top Bar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar nella Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_SHOW_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show agent's avatar on the Top Bar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza l'avatar dell'agente nella Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_SHOW_AGENT_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar default avatar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Default avatar della Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.TOP_BAR_DEFAULT_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "System messages' text color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore testo dei messaggi di sistema",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SYSTEM_MESSAGE_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "System messages text dimension",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione testo messaggi di sistema",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SYSTEM_MESSAGE_SIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat text dimension",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione testo chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_MESSAGE_SIZE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat message timestamp color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore timestamp del messaggio di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_TIME_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "User balloon background color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore sfondo del balloon di chat dell'utente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_VISITOR_BALLOON_BG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "User chat balloon text color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore testo del balloon di chat dell'utente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_VISITOR_BALLOON_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "User chat balloon radius",
+        "state": "new"
+      },
+      "it": {
+        "value": "Radius del balloon di chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_BALLOON_RADIUS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "User chat balloon border color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore bordo del balloon di chat per l'utente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_VISITOR_BALLOON_BORDER_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show user's avatar on chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar dell'utente nella chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SHOW_CHAT_VISITOR_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show arrow's balloon for user",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza balloon con arrow per l'utente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.SHOW_CHAT_VISITOR_ARROW"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent chat balloon background color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore sfondo del balloon di chat dell'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_AGENT_BALLOON_BG"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent chat balloon text color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore testo del balloon di chat dell'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_AGENT_BALLOON_COLOR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent chat balloon border color",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colore bordo del balloon di chat per l'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "VARIABLES.CHAT_AGENT_BALLOON_BORDER_COLOR"
   }
 ]
