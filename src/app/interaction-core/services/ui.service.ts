@@ -34,9 +34,10 @@ export class VvcUiService {
   initializeUi(context){
     const varsObj = this.flatObj('var',context.variables);
     varsObj['requestedMedia'] = context.requestedMedia;
+
     this.extendAndDispatch(this.currentState, {
       ...varsObj,
-
+      hasSurvey: context.survey,
       isLoading: false,
       isInQueue: true,
       isChatVisible: context.requestedMedia === 'chat',
@@ -147,6 +148,21 @@ export class VvcUiService {
 
       lastAction: 'setNormalState'
     });
+  }
+  setSurveyCompleted(){
+    this.extendAndDispatch(this.currentState, {
+      surveyCompleted : true
+    })
+  }
+  setSurveyPanel(){
+    this.extendAndDispatch(this.currentState, {
+      showSurveyPanel: true,
+      isSendAreaVisible: false,
+      isChatVisible: false,
+
+      topbar_title: 'STRINGS.SURVEY.TITLE',
+      topbar_subtitle: 'STRINGS.SURVEY.SUBTITLE'
+    })
   }
   setUploadPanel(show: boolean){
     this.extendAndDispatch(this.currentState, {

@@ -5,7 +5,7 @@
     <div id="vvc-top-subtitle">{{ context.topbar_subtitle | translate }}</div>
   </div>
   <div class="vvc-top-controls" *ngIf="context.canRemoveApp">
-    <span (click)="onRemove.emit()">
+    <span (click)="removeApp()">
       <i class="icon icon-vvc-close"></i>
     </span>
   </div>

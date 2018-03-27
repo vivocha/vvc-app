@@ -25,5 +25,6 @@ export const getUiState = createSelector(
   fromFeature.getWidgetState,
   fromFeature.getMessagesState,
   fromFeature.getDataCollectionState,
+  fromFeature.getSurveyState,
   fromWidget.getUiState
 );

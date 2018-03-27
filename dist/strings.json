@@ -699,5 +699,47 @@
     },
     "description": "",
     "id": "STRINGS.TEXTAREA.PLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Write here",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vivocha Survey",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.SURVEY.TITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Fill the form",
+        "state": "new"
+      },
+      "it": {
+        "value": "Compila il form",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.SURVEY.SUBTITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Thanks for your feedback",
+        "state": "new"
+      },
+      "it": {
+        "value": "Grazie per aver completato il questionario",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.SURVEY.FEEDBACK"
   }
 ]

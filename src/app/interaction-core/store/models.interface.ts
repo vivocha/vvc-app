@@ -26,6 +26,12 @@ export interface DataCollectionState {
   selected?: any;
   creationOptions?: any;
 }
+export interface SurveyState {
+  list?: any[];
+  completed: boolean;
+  selected?: any;
+  surveyToSend?: any;
+}
 export interface WidgetState {
   agent?: AgentState;
   chat?: ChatState;
@@ -33,6 +39,7 @@ export interface WidgetState {
   closedByAgent?: boolean;
   closedByVisitor?: boolean;
 
+  hasSurvey?: boolean;
   isLoading?: boolean;
   isWriting?: boolean;
   isMaximized?: boolean;
@@ -45,7 +52,9 @@ export interface WidgetState {
   protocol? : ProtocolState;
   showCloseModal?: boolean;
   showDataCollectionPanel?: boolean;
+  showSurveyPanel?: boolean;
   showEmojiPanel?: boolean;
+  surveyCompleted?: boolean;
 
   topBar?: TopBarState;
 
@@ -55,6 +64,7 @@ export interface WidgetState {
 export interface UiState extends WidgetState{
   messages: any[];
   selectedDataCollection?: any;
+  selectedSurvey?: any;
 }
 
 export interface TopBarState {

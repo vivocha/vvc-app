@@ -23,10 +23,111 @@ $icon-vvc-send: './assets/static/icons/vvc-send.png';
 $icon-vvc-scroll-right: './assets/static/icons/vvc-arrow-right.png';
 $icon-vvc-scroll-left: './assets/static/icons/vvc-arrow-left.png';
 
+$icon-survey-star-on: './assets/static/icons/star-on.png';
+$icon-survey-star-off: './assets/static/icons/star-off.png';
+$icon-survey-heart-on: './assets/static/icons/heart-on.png';
+$icon-survey-heart-off: './assets/static/icons/heart-off.png';
+$icon-survey-smile-on: './assets/static/icons/smile-on.png';
+$icon-survey-smile-off: './assets/static/icons/smile-off.png';
+
+
+
 @import 'variables';
 /**
   MIXINS
  */
+@mixin barRating($primaryColor: #0351A1, $darkColor: #333333) {
+  .vvc-bar-rating {
+    padding-top: 8px;
+    margin: 0 auto;
+    width: 208px;
+    height: 40px;
+
+    label {
+      float: right;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      &:not(:first-of-type) {
+        padding-right: 2px;
+      }
+      &:before {
+        color: lighten($darkColor, 15%);
+        width: 35px;
+        height: 35px;
+        content: '';
+        display: block;
+      }
+    }
+
+    &.vvc-bar-rating-stars {
+      label:before {
+        background-image: url($icon-survey-star-off);
+      }
+      input:checked~label:before,
+      &:not(:checked)>label:hover:before,
+      &:not(:checked)>label:hover~label:before {
+        background-image: url($icon-survey-star-on);
+      }
+    }
+    &.vvc-bar-rating-hearts {
+      label:before {
+        background-image: url($icon-survey-heart-off);
+      }
+      input:checked~label:before,
+      &:not(:checked)>label:hover:before,
+      &:not(:checked)>label:hover~label:before {
+        background-image: url($icon-survey-heart-on);
+      }
+    }
+    &.vvc-bar-rating-smilies {
+      label:before {
+        background-image: url($icon-survey-smile-off);
+      }
+      input:checked~label:before,
+      &:not(:checked)>label:hover:before,
+      &:not(:checked)>label:hover~label:before {
+        background-image: url($icon-survey-smile-on);
+      }
+    }
+
+    input {
+      display: none;
+    }
+    /*
+    input:checked~label:before,
+    &:not(:checked)>label:hover:before,
+    &:not(:checked)>label:hover~label:before {
+      color: $primaryColor;
+    }
+    */
+  }
+}
+
+@mixin singleRating($darkColor: #333333, $successColor: green, $warningColor: red) {
+  .vvc-single-rating {
+    input[type='radio'] {
+      opacity: 0;
+      float: left;
+      width: 1px;
+      border: 1px solid black
+    }
+    input[type='radio']+label {
+      cursor: pointer;
+      padding: 4px;
+      float: right;
+      color: lighten($darkColor, 15%);
+      font-size: 30px;
+    }
+    input[type='radio']:checked+label.good {
+      color: $successColor;
+    }
+    input[type='radio']:checked+label.bad {
+      color: $warningColor;
+    }
+  }
+}
 @mixin btn-label($primaryColor: #0351A1,$fontSize: 12px){
   outline: none;
   cursor: pointer;
@@ -295,8 +396,8 @@ $icon-vvc-scroll-left: './assets/static/icons/vvc-arrow-left.png';
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
-    //@include barRating();
-    //@include singleRating();
+    @include barRating();
+    @include singleRating();
     .form-title {
       color: darken($primaryColor, 5%);
       text-align: center;
@@ -949,6 +1050,7 @@ body, input, textarea{ font-family: $appFontFamily; }
     #vvc-top-bar {
       @include top-bar()
     }
+    #vvc-survey,
     #vvc-data-collection {
       flex: auto;
       @include data-collection();

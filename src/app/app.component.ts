@@ -398,7 +398,6 @@ export class AppComponent implements OnInit {
     this.interactionService.minimize(true);
   }
   openAttachment(url){
-    console.log('openAttachment', url);
     this.interactionService.openAttachment(url);
   }
   processAction(action){
@@ -417,8 +416,14 @@ export class AppComponent implements OnInit {
   showUploadPanel(){
     this.interactionService.showUploadPanel();
   }
+  showSurvey(){
+    this.interactionService.showSurvey();
+  }
   submitDataCollection(dc){
     this.interactionService.submitDataCollection(dc);
+  }
+  submitSurvey(survey){
+    this.interactionService.submitSurvey(survey);
   }
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();

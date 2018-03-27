@@ -18,6 +18,9 @@ export class VvcDataCollectionService {
     this.context = context;
     return this.store.select(fromStore.getDataCollectionCompleted);
   }
+  onSurveyCompleted(){
+    return this.store.select(fromStore.getSurveyCompleted);
+  }
   processDataCollections(){
     if (!this.hasDataCollection()) {
       this.store.dispatch(new fromStore.DataCollectionCompleted({}));
@@ -39,6 +42,15 @@ export class VvcDataCollectionService {
     }
     return false;
   }
+  hasSurvey(){
+    return (this.context.survey);
+  }
+  showSurvey(){
+    if (this.hasSurvey()) {
+      this.store.dispatch(new fromStore.SurveySelected(this.context.survey));
+      this.uiService.setSurveyPanel();
+    }
+  }
   submitDataCollection(dc){
     const dataCollection = dc.dcDefinition;
     const data = dc.dcData;
@@ -55,6 +67,10 @@ export class VvcDataCollectionService {
       this.store.dispatch(new fromStore.DataCollectionCompleted(this.contactOptions));
       this.uiService.setDataCollectionCompleted();
     }
+  }
+  submitSurvey(survey){
+   this.store.dispatch(new fromStore.SurveyLoaded(survey));
+   this.uiService.setSurveyCompleted();
   }
 /*
   collectDc(context){

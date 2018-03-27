@@ -14,12 +14,17 @@
       <vvc-top-bar [context]="appState"
                    (onMinimize)="minimizeWidget(true)"
                    (onClose)="showCloseModal()"
+                   (onSurvey)="showSurvey()"
                    (onRemove)="closeApp()"></vvc-top-bar>
 
       <vvc-data-collection id="vvc-data-collection"
                            [context]="appState"
                            *ngIf="appState.showDataCollectionPanel"
                            (submit)="submitDataCollection($event)"></vvc-data-collection>
+      <vvc-survey id="vvc-survey"
+                     [context]="appState"
+                     *ngIf="appState.showSurveyPanel"
+                     (submit)="submitSurvey($event)"></vvc-survey>
 
       <vvc-chat id="vvc-chat" [context]="appState" *ngIf="appState.isChatVisible">
 

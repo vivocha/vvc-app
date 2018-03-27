@@ -111,8 +111,14 @@ export class VvcInteractionService {
   showUploadPanel(){
     this.contactService.showUploadPanel();
   }
+  showSurvey(){
+    this.contactService.showSurvey();
+  }
   submitDataCollection(dc){
     this.contactService.submitDataCollection(dc);
+  }
+  submitSurvey(dc){
+    this.contactService.submitSurvey(dc);
   }
   toggleEmojiPanel(){
     this.contactService.toggleEmojiPanel();

@@ -78,6 +78,7 @@ export class VvcContactWrap {
       this.uiService.setClosedByVisitor();
       this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
       this.isClosed = true;
+
     }
   }
   closeUploadPanel(){
@@ -131,12 +132,18 @@ export class VvcContactWrap {
     this.uiService.initializeUi(this.context);
     if (this.isInPersistence()) this.resumeContact(context);
     else {
-
       this.dcService.onDataCollectionCompleted(context).subscribe( (data: DataCollectionState) => {
         if (data.completed) {
           this.createContact(data.creationOptions);
         }
       });
+      if (this.dcService.hasSurvey()){
+        this.dcService.onSurveyCompleted().subscribe( (survey) => {
+          if (survey.completed){
+            this.contact.storeSurvey(survey.surveyToSend);
+          }
+        });
+      }
       this.dcService.processDataCollections();
       /*
       if (this.isRecallContact()){
@@ -466,8 +473,14 @@ export class VvcContactWrap {
   showUploadPanel(){
     this.uiService.setUploadPanel(true);
   }
+  showSurvey(){
+    this.dcService.showSurvey();
+  }
   submitDataCollection(dc){
     this.dcService.submitDataCollection(dc);
+  }
+  submitSurvey(survey){
+    this.dcService.submitSurvey(survey)
   }
   toggleEmojiPanel(){
     this.uiService.toggleEmojiPanel();

@@ -1,6 +1,6 @@
 import * as fromWidget from '../actions/widget.actions';
 import {
-  ChatState, ContextState, DataCollectionState, MessagesState, TopBarState, UiState, WidgetState
+  ChatState, ContextState, DataCollectionState, MessagesState, SurveyState, TopBarState, UiState, WidgetState
 } from '../models.interface';
 
 const initialState = {
@@ -132,7 +132,11 @@ export const getUiState = (widgetState: WidgetState, topBarState: TopBarState, c
   }
 };
 */
-export const getUiState = (widgetState: WidgetState, messagesState: MessagesState, dataCollectionState: DataCollectionState): UiState => {
+export const getUiState = (
+  widgetState: WidgetState,
+  messagesState: MessagesState,
+  dataCollectionState: DataCollectionState,
+  surveyState: SurveyState): UiState => {
   const messages = messagesState.list.map( (elem, idx) => {
     let isLast = false;
     let isFirst = false;
@@ -155,6 +159,7 @@ export const getUiState = (widgetState: WidgetState, messagesState: MessagesStat
   return {
     ...widgetState,
     messages: [...messages],
-    selectedDataCollection: dataCollectionState.selected
+    selectedDataCollection: dataCollectionState.selected,
+    selectedSurvey: surveyState.selected
   }
 };
