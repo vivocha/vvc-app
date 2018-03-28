@@ -37,7 +37,7 @@ export class VvcUiService {
 
     this.extendAndDispatch(this.currentState, {
       ...varsObj,
-      hasSurvey: context.survey,
+      hasSurvey: !!context.survey,
       isLoading: false,
       isInQueue: true,
       isChatVisible: context.requestedMedia === 'chat',

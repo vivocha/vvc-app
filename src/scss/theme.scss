@@ -1,8 +1,8 @@
 $appFontUrl: 'https://fonts.googleapis.com/css?family=Roboto:300,400';
 $appFontFamily: 'Roboto', sans-serif;
 
-$color1: #0351A1;
-$color2: #13AF6C;
+//$color1: #0351A1;
+//$color2: #13AF6C;
 
 $appWidth: 350px;
 $appHeight: 580px;
@@ -36,7 +36,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 /**
   MIXINS
  */
-@mixin barRating($primaryColor: #0351A1, $darkColor: #333333) {
+@mixin barRating($primaryColor: $color1, $darkColor: #333333) {
   .vvc-bar-rating {
     padding-top: 8px;
     margin: 0 auto;
@@ -95,13 +95,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     input {
       display: none;
     }
-    /*
-    input:checked~label:before,
-    &:not(:checked)>label:hover:before,
-    &:not(:checked)>label:hover~label:before {
-      color: $primaryColor;
-    }
-    */
   }
 }
 
@@ -128,7 +121,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin btn-label($primaryColor: #0351A1,$fontSize: 12px){
+@mixin btn-label($primaryColor: $color1,$fontSize: 12px){
   outline: none;
   cursor: pointer;
   font-size: $fontSize;
@@ -152,7 +145,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     border: 1px solid #CCCCCC;
   }
 }
-@mixin top-bar($background: #0351A1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showAvatar: $showAvatar){
+@mixin top-bar($background: $color1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showAvatar: $showAvatar){
 
   flex: none;
   background: $background;
@@ -293,7 +286,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin upload-panel($loadingBarColor: #0351A1){
+@mixin upload-panel($loadingBarColor: $color1){
   margin: 40px;
   padding: 8px;
   border: 1px solid #eeeeee;
@@ -384,7 +377,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin data-collection($primaryColor: #0351A1, $darkColor: #333333, $warningColor: red){
+@mixin data-collection($primaryColor: $color1, $darkColor: #333333, $warningColor: red){
 
   margin: 20px;
   padding: 10px;
@@ -632,7 +625,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin chat-agent-bubble($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: #0351A1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
+@mixin chat-agent-bubble($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
   padding: 6px;
   margin-left: 8px;
   margin-right: 50px;
@@ -671,7 +664,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin chat-agent-message($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: #0351A1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
+@mixin chat-agent-message($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
 
   .chat-message{
     &.agent{
@@ -796,7 +789,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         }
         .title {
           padding-top: 5px;
-          color: #0351A1;
+          color: $color1;
           font-size: 14px;
           font-weight: bold;
         }
@@ -819,7 +812,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin chat-box-area($background: #FFFFFF, $textBoxBorder: #CCCCCC, $fontColor: #000000, $fontSize: 12px, $sendButtonBackground: #0351A1){
+@mixin chat-box-area($background: #FFFFFF, $textBoxBorder: #CCCCCC, $fontColor: #000000, $fontSize: 12px, $sendButtonBackground: $color1){
   flex: none;
   background: $background;
   #vvc-box-inner{
@@ -921,7 +914,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin loading-panel($background: #0351A1, $loadingBarColor: #FFFFFF){
+@mixin loading-panel($background: $color1, $loadingBarColor: #FFFFFF){
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1169,4 +1162,7 @@ body, input, textarea{ font-family: $appFontFamily; }
   #vvc-fullscreen-container #vvc-normal-container #vvc-chat #vvc-chat-box-area {
     @include chat-box-area(#FFFFFF,#CCCCCC, #000000, 12px, $color2);
   }
+}
+.testclass{
+  background: $color1;
 }

@@ -103,6 +103,18 @@
       "nameId": "META.VARIABLES.CHAT.SHOW_AVATAR_ON_IS_WRITING",
       "defaultValue": true,
       "type": "boolean"
+    },
+    {
+      "id": "color1",
+      "nameId": "META.VARIABLES.COLOR1",
+      "defaultValue": "#0351A1",
+      "type": "color"
+    },
+    {
+      "id": "color2",
+      "nameId": "META.VARIABLES.COLOR2",
+      "defaultValue": "#13AF6C",
+      "type": "color"
     }
   ],
   "htmlId": "marchitos/widgets/vvc-optimized-app2/main.html",
@@ -200,24 +212,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "b413c81491a9874546a89ab35fe6141525bda6cc5cec14ba06d2763fec5266a6",
+      "hash": "dfb7b27f2edb7a965cb76a2f74fc633c360862e77e5790dfba2e6c502d2bc7de",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "b5303ff3d75af254e18775144c7a419558c955e32a65d3fa579d57955a8bbf17",
+      "hash": "f109031b5ee9d4fa8f54dcd71b0190c58477af68dd6d6a032f5bdb086d28a0c8",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "type": "application/javascript",
-      "size": 192050
+      "size": 192050,
+      "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "95fc6eee984cfd941daefe79382cab3c52ea2a618d0dc6df8da1465420259281",
+      "hash": "f089c82a9e96dcd434aefbb85d4c9c2614a561b202ff29a7182a04bd53441d9f",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "type": "application/json",
-      "size": 216473
+      "size": 216482,
+      "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -235,17 +247,17 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "6e10ee8a0d6eca078c2e22838cd19a951bb50c1fd7582a0c7e5f1f778ebe3259",
+      "hash": "142d8d746f66543b9264de6bbe062028115db11bef3a8d177d8defac51573b93",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
-      "size": 28398,
+      "size": 28272,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/variables.scss",
-      "hash": "1ffe2dded3ed5d62b99d492bccf60a3a20c1897f700c7463f23affb7b7178b79",
+      "hash": "705ba10c0e080ab761bf5e0fb18118ce198d7b0a109c35a81fa236e90558b389",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/variables.scss",
-      "size": 237,
-      "type": "text/x-scss"
+      "type": "text/x-scss",
+      "size": 239
     },
     {
       "path": "assets/static/acct-img.png",
