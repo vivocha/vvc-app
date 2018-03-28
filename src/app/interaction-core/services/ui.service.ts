@@ -37,6 +37,7 @@ export class VvcUiService {
 
     this.extendAndDispatch(this.currentState, {
       ...varsObj,
+      isMobile: context.isMobile,
       hasSurvey: !!context.survey,
       isLoading: false,
       isInQueue: true,

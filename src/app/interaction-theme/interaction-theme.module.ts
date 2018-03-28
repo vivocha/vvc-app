@@ -9,6 +9,7 @@ import {ClosePanelModule} from '../modules/close-panel/close-panel.module';
 import {LoadingPanelModule} from '../modules/loading-panel/loading-panel.module';
 import {MinimizedModule} from '../modules/minimized/minimized.module';
 import {DataCollectionModule} from '../modules/data-collection/data-collection.module';
+import {MultimediaModule} from '../modules/multimedia/multimedia.module';
 
 const layoutModules = [
   TopBarModule,
@@ -16,6 +17,7 @@ const layoutModules = [
   ChatModule,
   ChatPanelsModule,
   MessagesModule,
+  MultimediaModule,
   ClosePanelModule,
   LoadingPanelModule,
   MinimizedModule

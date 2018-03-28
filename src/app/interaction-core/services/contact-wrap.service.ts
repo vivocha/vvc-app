@@ -179,9 +179,11 @@ export class VvcContactWrap {
     this.vivocha.pageRequest('interactionCreated', this.contact);
     this.contact.getLocalCapabilities().then( caps => {
       //this.dispatch(new fromStore.WidgetLocalCaps(caps));
+      console.log('LOCALCAPS', caps);
     });
     this.contact.getRemoteCapabilities().then( caps => {
       //this.dispatch(new fromStore.WidgetRemoteCaps(caps));
+      console.log('REMOTECAPS', caps);
     });
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       this.zone.run( () => {
@@ -198,17 +200,6 @@ export class VvcContactWrap {
         };
         this.messageService.addChatMessage(msg, this.agent);
       });
-      /*
-      this.dispatch(new fromStore.NewMessage({
-        text: meta.desc || meta.originalName,
-        type: 'chat',
-        isAgent: isAgent,
-        meta: meta,
-        url: (meta.originalUrl) ? meta.originalUrl : url,
-        from_nick: fromNick,
-        from_id: fromId
-      }))
-      */
     });
     this.contact.on('joined', (c) => {
         if (c.user) {
@@ -393,8 +384,10 @@ export class VvcContactWrap {
   resumeContact(context: InteractionContext){
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
       this.vivocha.resumeContact(contactData).then((contact) => {
-        this.contact = contact;
-        this.mapContact();
+        this.zone.run( () => {
+          this.contact = contact;
+          this.mapContact();
+        });
       }, (err) => {
         console.log('Failed to resume contact', err);
         this.vivocha.pageRequest('interactionFailed', err.message);

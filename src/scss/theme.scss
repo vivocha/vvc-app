@@ -36,6 +36,32 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 /**
   MIXINS
  */
+@mixin loading-bar($loadingBarColor: $color1){
+  .inner-loading-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    .loading-container{
+      width: 200px;
+      height: 5px;
+      margin: auto;
+
+      .progress-bar{
+        height:2px;
+        width:200px;
+        background: rgba($loadingBarColor,0.6);
+        .loaded{
+          height:100%;
+          width:100%;
+          animation:2s linear infinite loading;
+          transform-origin:0%;
+          background: $loadingBarColor;
+        }
+      }
+    }
+  }
+}
 @mixin barRating($primaryColor: $color1, $darkColor: #333333) {
   .vvc-bar-rating {
     padding-top: 8px;
@@ -97,7 +123,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-
 @mixin singleRating($darkColor: #333333, $successColor: green, $warningColor: red) {
   .vvc-single-rating {
     input[type='radio'] {
@@ -494,6 +519,90 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       margin-top: 18px;
       width: 100%;
       @include btn-label();
+    }
+  }
+}
+@mixin media-layer($bgColor: $color1){
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: $bgColor;
+  .media-title{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    padding: 10px 5px 30px 5px;
+  }
+  .media-avatar{
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid white;
+      display: block;
+      margin: auto;
+    }
+  }
+  .media-loading-view{
+    margin: 25px;
+    .media-loading{
+      @include loading-bar(#FFFFFF);
+    }
+  }
+  .media-connected-view{
+    display: flex;
+    flex-direction: column;
+    .media-content{
+      flex: auto;
+      margin-bottom: 50px;
+      .media-tools{
+        display: flex;
+        justify-content: center;
+        background: rgba(255,255,255,0.6);
+        .button-wrapper{
+          margin: 8px 0;
+          flex: auto;
+          .round-button{
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            display: block;
+            border-radius: 50%;
+            border: 1px solid white;
+            cursor: pointer;
+            background: transparent;
+
+            svg{
+              display: block;
+              margin: auto;
+              height: 100%;
+            }
+
+            &.to-remove:hover{
+              border: 2px solid #C85E6B;
+            }
+            &.to-add:hover{
+              border: 2px solid #60A618;
+            }
+          }
+        }
+      }
+    }
+    .media-bottom{
+      cursor: pointer;
+      flex: none;
+      font-size: 12px;
+      font-weight: 300;
+      font-style: italic;
+      color: white;
+      padding-left: 40px;
+      span{
+        position: relative;
+        top: -4px;
+        padding-left: 4px;
+      }
+
     }
   }
 }
@@ -1049,7 +1158,8 @@ body, input, textarea{ font-family: $appFontFamily; }
       @include data-collection();
     }
     #vvc-media {
-      flex: none;
+      flex: auto;
+      @include media-layer();
     }
     #vvc-chat {
       flex: auto;
@@ -1082,6 +1192,18 @@ body, input, textarea{ font-family: $appFontFamily; }
         @include chat-box-area();
       }
     }
+  }
+
+  &.mobile #vvc-loading-panel,
+  &.mobile #vvc-close-panel,
+  &.mobile #vvc-normal-container{
+    border-radius: 0;
+    box-shadow: none;
+    position: absolute;
+    top: 0;right:0; left: 0; bottom: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
   }
 }
 #vvc-minimized-layout {
@@ -1151,7 +1273,7 @@ body, input, textarea{ font-family: $appFontFamily; }
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
-/** CUSTOMIZATION **/
+/** CUSTOMIZATION
 .connected-with-agent {
   #vvc-fullscreen-container #vvc-normal-container #vvc-top-bar{
     @include top-bar($color2);
@@ -1165,4 +1287,4 @@ body, input, textarea{ font-family: $appFontFamily; }
 }
 .testclass{
   background: $color1;
-}
+}**/

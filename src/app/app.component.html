@@ -1,5 +1,7 @@
 <div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.agent_is_agent }">
-  <div id="vvc-fullscreen-container" *ngIf="!appState.isMinimized">
+  <div id="vvc-fullscreen-container"
+       *ngIf="!appState.isMinimized"
+      [ngClass]="{ 'mobile': appState.isMobile }">
     <div id="vvc-loading-panel" *ngIf="appState.isLoading">
       <vvc-loading-panel></vvc-loading-panel>
     </div>
@@ -25,6 +27,10 @@
                      [context]="appState"
                      *ngIf="appState.showSurveyPanel"
                      (submit)="submitSurvey($event)"></vvc-survey>
+
+      <vvc-media id="vvc-media"
+                 *ngIf="appState.isInQueue && appState.requestedMedia === 'voice'"
+                 [context]="appState"></vvc-media>
 
       <vvc-chat id="vvc-chat" [context]="appState" *ngIf="appState.isChatVisible">
 
