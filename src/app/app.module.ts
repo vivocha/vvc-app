@@ -27,6 +27,9 @@ import { MinimizedComponent } from './minimized/minimized.component';
 import { NoChatComponent } from './no-chat/no-chat.component';
 import { VideoThumbsComponent } from './video-thumbs/video-thumbs.component';
 import { DraggableDirective } from './draggable.directive';
+import { TemplateMessageComponent } from './template-message/template-message.component';
+import { TemplateGenericComponent } from './template-message/template-generic/template-generic.component';
+import { QuickMessageComponent } from './quick-message/quick-message.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -58,7 +61,10 @@ export function createTranslateLoader(http: HttpClient) {
     MinimizedComponent,
     NoChatComponent,
     VideoThumbsComponent,
-    DraggableDirective
+    DraggableDirective,
+    TemplateMessageComponent,
+    TemplateGenericComponent,
+    QuickMessageComponent
   ],
   imports: [
     BrowserModule,

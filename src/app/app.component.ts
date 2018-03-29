@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
   public widgetState: VvcWidgetState;
   public messages: Array<any>;
 
-  waitingInititalDataCollections: {
+  waitingInitialDataCollections: {
     [id: string]: (...args) => void;
   } = {};
 
@@ -188,7 +188,7 @@ export class AppComponent implements OnInit {
         const showDataCollection = (dataCollection): Promise<boolean> => {
           //console.log(JSON.stringify(dataCollection, null, 2));
           return (new Promise((resolve, reject) => {
-            this.waitingInititalDataCollections[dataCollection.id] = (data) => {
+            this.waitingInitialDataCollections[dataCollection.id] = (data) => {
               for (let i = 0; i < dataCollection.fields.length; i++) {
                 if (dataCollection.fields[i].format === 'nickname' && data[dataCollection.fields[i].id]) {
                   this.contactOptions.nick = data[dataCollection.fields[i].id];
@@ -303,6 +303,12 @@ export class AppComponent implements OnInit {
       this.acct = hashParts[1];
       this.world = hashParts[2];
     }
+  }
+  processAction(action: any){
+    this.cserv.sendPostBack(action);
+  }
+  processQuickReply(action: any){
+    this.cserv.sendText(action.title);
   }
   removeLocalVideo() {
     this.cserv.removeLocalVideo();
@@ -490,7 +496,7 @@ export class AppComponent implements OnInit {
     this.callTimer = 0;
   }
   submitInitialData(id, dataCollection) {
-    this.waitingInititalDataCollections[id].call(this, dataCollection);
+    this.waitingInitialDataCollections[id].call(this, dataCollection);
   }
   syncDataCollection(obj) {
     const dc = obj.dataCollection;
