@@ -10,38 +10,5 @@
       "defaultValue": "#F47929",
       "type": "color"
     }
-  ],
-  "stringIds": [
-    "DESCRIPTION",
-    "NAME",
-    "STRINGS.BUTTON_TEXT",
-    "VARIABLES.BUTTON_BG",
-    "VARIABLES.BUTTON_BG_PH"
-  ],
-  "assets": [
-    {
-      "path": "main.html",
-      "hash": "02cfc8b7c447c7d6a7a2b83f087b361b4b61e47c7575e77a2a8d182dd947fcfc",
-      "id": "_/widgets/vvc-button/main.html",
-      "size": 139,
-      "type": "text/html"
-    },
-    {
-      "path": "main.scss",
-      "hash": "f17ab00a7ae0efe1d76241f2609730f569234f391bfc7223dcbd742c2c28f6a3",
-      "id": "_/widgets/vvc-button/main.scss",
-      "size": 418,
-      "type": "text/x-scss"
-    },
-    {
-      "path": "thumbnail.png",
-      "hash": "69aa65534956948d2099135693e359483523290831151be9f91ef5a2fbef8723",
-      "id": "_/widgets/vvc-button/thumbnail.png",
-      "size": 2868,
-      "type": "image/png"
-    }
-  ],
-  "htmlId": "_/widgets/vvc-button/main.html",
-  "scssId": "_/widgets/vvc-button/main.scss",
-  "thumbnailId": "_/widgets/vvc-button/thumbnail.png"
+  ]
 }
