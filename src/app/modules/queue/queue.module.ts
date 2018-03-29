@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MediaComponent } from './media/media.component';
+import { QueueComponent } from './queue/queue.component';
 import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
@@ -8,7 +8,9 @@ import {TranslateModule} from '@ngx-translate/core';
     CommonModule,
     TranslateModule
   ],
-  exports: [MediaComponent],
-  declarations: [MediaComponent]
+  exports: [
+    QueueComponent
+  ],
+  declarations: [QueueComponent]
 })
-export class MultimediaModule { }
+export class QueueModule { }

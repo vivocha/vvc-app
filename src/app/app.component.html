@@ -28,9 +28,21 @@
                      *ngIf="appState.showSurveyPanel"
                      (submit)="submitSurvey($event)"></vvc-survey>
 
+      <vvc-queue id="vvc-queue"
+                 *ngIf="appState.isInQueue"
+                 [context]="appState"></vvc-queue>
+
+
       <vvc-media id="vvc-media"
-                 *ngIf="appState.isInQueue && appState.requestedMedia === 'voice'"
-                 [context]="appState"></vvc-media>
+                 *ngIf="appState.isMediaVisible"
+                 [ngClass]="{'minimized': appState.media_is_minimized}"
+                 [context]="appState"
+                 (onAccept)="acceptOffer()"
+                 (onReject)="rejectOffer()"
+                 (displayChat)="minimizeMedia()"
+                 (videoToggle)="videoToggle($event)"
+                 (muteToggle)="muteToggle($event)"
+                 (hangUp)="hangUpCall()"></vvc-media>
 
       <vvc-chat id="vvc-chat" [context]="appState" *ngIf="appState.isChatVisible">
 

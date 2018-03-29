@@ -10,10 +10,12 @@ import {LoadingPanelModule} from '../modules/loading-panel/loading-panel.module'
 import {MinimizedModule} from '../modules/minimized/minimized.module';
 import {DataCollectionModule} from '../modules/data-collection/data-collection.module';
 import {MultimediaModule} from '../modules/multimedia/multimedia.module';
+import {QueueModule} from '../modules/queue/queue.module';
 
 const layoutModules = [
   TopBarModule,
   DataCollectionModule,
+  QueueModule,
   ChatModule,
   ChatPanelsModule,
   MessagesModule,

@@ -158,6 +158,11 @@
     "STRINGS.QUEUE.TOPBAR.CONNECTED",
     "STRINGS.QUEUE.CONNECTING",
     "STRINGS.CHAT.WELCOME_MESSAGE",
+    "STRINGS.VOICE.WELCOME_MESSAGE",
+    "STRINGS.VOICE.INCOMING_MESSAGE",
+    "STRINGS.VOICE.OPEN_CHAT",
+    "STRINGS.VOICE.NOT_READ",
+    "STRINGS.VOICE.CONTACT_CLOSED",
     "STRINGS.CLOSEMODAL.CLOSE_MESSAGE",
     "STRINGS.CLOSEMODAL.NO",
     "STRINGS.CLOSEMODAL.YES",
@@ -212,23 +217,23 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "dfb7b27f2edb7a965cb76a2f74fc633c360862e77e5790dfba2e6c502d2bc7de",
+      "hash": "b4e919d15947494ecb96776bec4cb7e123bcfb0332b23c3cf654b65c4974908b",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "d482469103a0457b8fb1d64e77eddfdbe006a86416b10d2b2c6d440f4bbbc3c7",
+      "hash": "393d145297cba3855f66a71aa1f74569e55c1fdb9fb35fa7972de501388a47ff",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "size": 201826,
+      "size": 225642,
       "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "bdbd5dfe2f0cfb465f385a7867b6882454da0bd8d1f40f3b18289601c2724427",
+      "hash": "6ce7ca00b55c888b0b981beb8e8c17bf9d8db51bf0c5022f7b219f96cd2551ab",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "size": 225534,
+      "size": 256465,
       "type": "application/json"
     },
     {
@@ -247,10 +252,10 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "38835debbddf0435c5432c882248abfc6264b548f1f2ffc21347d161e994cd62",
+      "hash": "9b2dceea6d3f11508e3d73c6fd1a58b64169fee6ccbae8bc85f45ecbee81d903",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
       "type": "text/x-scss",
-      "size": 30885
+      "size": 31899
     },
     {
       "path": "assets/scss/variables.scss",

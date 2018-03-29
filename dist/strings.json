@@ -535,6 +535,76 @@
   {
     "values": {
       "en": {
+        "value": "In call with<br><b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sei in linea con<br><b>{{nickname}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.WELCOME_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Incoming call from<br><b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.INCOMING_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "open chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "apri chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.OPEN_CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "new messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "messaggi non letti",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.NOT_READ"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "the contact is over",
+        "state": "new"
+      },
+      "it": {
+        "value": "contatto terminato",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.CONTACT_CLOSED"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Do you really want to quit?",
         "state": "new"
       },

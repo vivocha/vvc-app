@@ -41,9 +41,9 @@ export class VvcUiService {
       hasSurvey: !!context.survey,
       isLoading: false,
       isInQueue: true,
-      isChatVisible: context.requestedMedia === 'chat',
-      isSendAreaDisabled: true,
-      isSendAreaVisible: true,
+      //isChatVisible: context.requestedMedia === 'chat',
+      //isSendAreaDisabled: true,
+      //isSendAreaVisible: true,
       canRemoveApp: true,
       canMinimize: true,
       canMaximize: false,
@@ -51,14 +51,15 @@ export class VvcUiService {
       canStartVideo: false,
       showSendButton: true,
 
-      topbar_title: 'STRINGS.QUEUE.TOPBAR.TITLE',
-      topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
-
+      //topbar_title: 'STRINGS.QUEUE.TOPBAR.TITLE',
+      //topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
+      queue_message: 'STRINGS.QUEUE.CONNECTING',
+      voice_connected: 'STRINGS.VOICE.WELCOME_MESSAGE',
       lastAction: 'initializeUi'
     });
   }
   newMessageReceived(){
-    if (this.currentState.isMinimized){
+    if (this.currentState.isMinimized || this.currentState.isChatVisible === false){
       this.extendAndDispatch(this.currentState, {
         not_read: this.currentState.not_read + 1,
 
@@ -72,8 +73,14 @@ export class VvcUiService {
       ...agentProps,
 
       isInQueue: false,
-      isSendAreaDisabled: false,
       canRemoveApp: false,
+
+
+      isChatVisible: this.currentState.requestedMedia === 'chat',
+      isVoiceVisible: this.currentState.requestedMedia === 'voice',
+      isSendAreaDisabled: false,
+      isSendAreaVisible: true,
+
 
       topbar_title: agent.nick,
       topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED',
@@ -88,7 +95,12 @@ export class VvcUiService {
       isSendAreaVisible: false,
       canRemoveApp: true,
 
+      topbar_title: '',
+      topbar_subtitle: '',
+      topbar_avatar: '',
+
       lastAction: 'setClosedByAgent'
+
     })
   }
   setClosedByVisitor(){
@@ -97,6 +109,10 @@ export class VvcUiService {
       showCloseModal: false,
       isSendAreaVisible: false,
       canRemoveApp: true,
+
+      topbar_title: '',
+      topbar_subtitle: '',
+      topbar_avatar: '',
 
       lastAction: 'setClosedByVisitor'
     });
@@ -112,9 +128,9 @@ export class VvcUiService {
     this.extendAndDispatch(this.currentState, {
       isLoading: false,
       isInQueue: true,
-      isChatVisible: true,
+      isChatVisible: this.currentState.requestedMedia === 'chat',
       showDataCollectionPanel: false,
-      topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
+      //topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
       lastAction: 'setDataCollectionCompleted'
     });
   }
@@ -128,6 +144,20 @@ export class VvcUiService {
       lastAction: show ? 'showDataCollectionPanel' : 'hideDataCollectionPanel'
     });
   }
+  setIncomingMedia(media){
+    this.extendAndDispatch(this.currentState, {
+      media_incoming: true,
+      media_is_minimized: false,
+      media_incoming_message: 'STRINGS.MEDIA.INCOMING_' + media.toUpperCase(),
+      isChatVisible: false,
+      isMediaVisible: true
+    });
+  }
+  setIsOffering(){
+    this.extendAndDispatch(this.currentState, {
+      isOffering: true,
+    });
+  }
   setIsWriting(isWriting: boolean){
     this.extendAndDispatch(this.currentState, {
       isWriting: isWriting,
@@ -135,11 +165,62 @@ export class VvcUiService {
       lastAction: isWriting ? 'setIsWriting' : 'removeIsWriting'
     });
   }
+  setMediaState(media) {
+    const o = {};
+
+    if (media.Chat) o['chat_tx'] = media.Chat.tx;
+    if (media.Chat) o['chat_rx'] = media.Chat.rx;
+
+    if (media.Voice) o['voice_tx'] = media.Voice.tx;
+    if (media.Voice) o['voice_rx'] = media.Voice.rx;
+    if (
+      media.Voice && media.Voice.data
+      && media.Voice.data.tx_stream && media.Voice.data.tx_stream.url
+    ) o['voice_tx_stream'] = media.Voice.data.tx_stream.url;
+    if (
+      media.Voice && media.Voice.data
+      && media.Voice.data.rx_stream && media.Voice.data.rx_stream.url
+    ) o['voice_rx_stream'] = media.Voice.data.rx_stream.url;
+
+    if (media.Video) o['video_tx'] = media.Video.tx;
+    if (media.Video) o['video_rx'] = media.Video.rx;
+    if (
+      media.Video && media.Video.data
+      && media.Video.data.tx_stream && media.Video.data.tx_stream.url
+    ) o['video_tx_stream'] = media.Voice.data.tx_stream.url;
+    if (
+      media.Video && media.Video.data
+      && media.Video.data.rx_stream && media.Video.data.rx_stream.url
+    ) o['video_rx_stream'] = media.Video.data.rx_stream.url;
+
+    o['isOffering'] = false;
+    console.log('MERGING MEDIA STATE', o);
+    this.extendAndDispatch(this.currentState, o);
+  }
   setMinimizedState(){
     this.extendAndDispatch(this.currentState, {
       isMinimized: true,
-
       lastAction: 'setMinimized'
+    });
+  }
+  setMinimizedMedia(){
+    this.extendAndDispatch(this.currentState, {
+      media_is_minimized: true,
+      isChatVisible: true,
+      lastAction: 'setMinimizedMedia'
+    });
+  }
+  setMuted(muted){
+    this.extendAndDispatch(this.currentState, {
+      is_muted: muted,
+      is_muted_in_progress: false,
+      lastAction: 'setMuted'
+    });
+  }
+  setMuteInProgress(){
+    this.extendAndDispatch(this.currentState, {
+      is_muted_in_progress: true,
+      lastAction: 'muteInProgress'
     });
   }
   setNormalState(){
@@ -149,6 +230,14 @@ export class VvcUiService {
 
       lastAction: 'setNormalState'
     });
+  }
+  setRemovedVoice(){
+    if (!this.currentState.closedByAgent && !this.currentState.closedByAgent){
+      this.extendAndDispatch(this.currentState, {
+        isVoiceVisible: false,
+        isChatVisible: true
+      })
+    }
   }
   setSurveyCompleted(){
     this.extendAndDispatch(this.currentState, {
@@ -182,6 +271,11 @@ export class VvcUiService {
       isUploading: false,
       showUploadPanel: false,
       isSendAreaVisible: true
+    });
+  }
+  setVoiceAccepted(){
+    this.extendAndDispatch(this.currentState, {
+      media_incoming: false
     });
   }
   toggleEmojiPanel(){

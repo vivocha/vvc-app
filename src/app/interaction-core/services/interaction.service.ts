@@ -23,44 +23,8 @@ export class VvcInteractionService {
   }
 
   /**** PUBLIC METHOD ****/
-  acceptOffer(opts) {
-    /*
-    const diffOffer = this.incomingOffer;
-    this.callStartedWith = 'VOICE';
-    if (opts === 'voice-only' && diffOffer.Video) {
-      diffOffer.Video.tx = 'off';
-      this.callStartedWith = 'VIDEO';
-    }
-    if (opts === 'video-full' && diffOffer.Video) {
-      diffOffer.Video.tx = 'required'; // TODO CHECK FOR CAPS
-      this.callStartedWith = 'VIDEO';
-    }
-    this.mergeOffer(diffOffer);
-    this.dispatch(new fromStore.UpdateMessage({
-      id: this.incomingId,
-      state: 'loading'
-    }))
-    */
-  }
-  acceptRequest(res, msg) {
-    /*
-    this.agentRequestCallback(null, res);
-    this.dispatch(new fromStore.RemoveMessage({ id: this.incomingId }));
-    this.dispatch(new fromStore.NewMessage({
-      id: new Date().getTime(),
-      type: 'incoming-request',
-      media: msg.media,
-      state: 'closed',
-      text: msg.text + '_ACCEPTED'
-    }))*/
-  }
-  acceptIncomingRequest(evt, msg) {
-    if (msg.type === 'incoming-request') {
-      this.acceptRequest(evt, msg);
-    } else {
-      this.acceptOffer(evt);
-
-    }
+  acceptOffer(){
+    this.contactService.acceptOffer();
   }
   closeApp(){
     this.contextService.closeApp();
@@ -77,6 +41,9 @@ export class VvcInteractionService {
   getState(){
     return this.store.select(fromStore.getUiState);
   }
+  hangUp(){
+    this.contactService.hangUp();
+  }
   init(){
     this.contextService.ready().subscribe( (context:ContextState) => {
       if (context.loaded) {
@@ -90,11 +57,20 @@ export class VvcInteractionService {
   minimize(minimize: boolean){
     this.contactService.minimize(minimize);
   }
+  minimizeMedia(){
+    this.contactService.minimizeMedia();
+  }
+  muteToggle(muted){
+    this.contactService.muteToggle(muted);
+  }
   openAttachment(url){
     this.contactService.openAttachment(url);
   }
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
+  }
+  rejectOffer(){
+    this.contactService.rejectOffer();
   }
   sendAttachment(upload){
     this.contactService.sendAttachment(upload);

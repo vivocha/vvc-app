@@ -372,7 +372,9 @@ export class AppComponent implements OnInit {
 
 
 
-
+  acceptOffer(){
+    this.interactionService.acceptOffer();
+  }
   appendText(text){
     this.chat.appendText(text);
   }
@@ -394,8 +396,17 @@ export class AppComponent implements OnInit {
   expandWidget(){
     this.interactionService.minimize(false);
   }
+  hangUpCall(){
+    this.interactionService.hangUp();
+  }
   minimizeWidget(){
     this.interactionService.minimize(true);
+  }
+  minimizeMedia(){
+    this.interactionService.minimizeMedia();
+  }
+  muteToggle(muted){
+    this.interactionService.muteToggle(muted);
   }
   openAttachment(url){
     this.interactionService.openAttachment(url);
@@ -405,6 +416,9 @@ export class AppComponent implements OnInit {
   }
   processQuickReply(reply){
     this.interactionService.processQuickReply(reply);
+  }
+  rejectOffer(){
+    this.interactionService.rejectOffer();
   }
   sendText(value, isEmojiPanelVisible){
     if (isEmojiPanelVisible) this.toggleEmojiPanel();
@@ -427,5 +441,8 @@ export class AppComponent implements OnInit {
   }
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
+  }
+  videoToggle(){
+
   }
 }

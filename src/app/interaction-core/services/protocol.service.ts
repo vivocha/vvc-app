@@ -6,10 +6,55 @@ import {ContactMediaOffer} from '@vivocha/global-entities/dist';
 @Injectable()
 export class VvcProtocolService {
 
+  lastMediaChange: any;
+  previousChannels = [];
+  currentChannels = [];
   constructor(
     private store: Store<fromStore.AppState>
   ){
 
+  }
+  confirmNeeded(offer){
+    const resp = { askForConfirmation : false, offer: {}, media: '' };
+
+    for (const i in offer) {
+      switch (i) {
+        case 'Voice':
+          if (!this.isAlreadyConnectedWith('Voice') &&
+              offer[i]['tx'] !== 'off' &&
+              offer[i]['rx'] !== 'off'
+          ) {
+            resp.askForConfirmation = true;
+            resp.offer[i] = offer[i];
+          }
+          break;
+        case 'Video':
+          if (!this.isAlreadyConnectedWith('Video') &&
+              offer[i]['tx'] !== 'off' || offer[i]['rx'] !== 'off'
+          ) {
+            if (!this.isAlreadyConnectedWith('Voice')) {
+              resp.askForConfirmation = true;
+              resp.offer[i] = offer[i];
+            }
+          }
+          break;
+      }
+    }
+    if (resp.offer['Voice']) {
+      resp.media = 'Voice';
+    }
+    if (resp.offer['Video']) {
+      resp.media = 'Video';
+    }
+    return resp;
+
+  }
+  getChannels(mediaChange){
+    const c = [];
+    Object.keys(mediaChange).forEach( k => {
+      if (mediaChange[k].tx && mediaChange[k].rx) c.push(k);
+    });
+    return c;
   }
   getInitialOffer(type: string): ContactMediaOffer {
     switch (type) {
@@ -24,5 +69,33 @@ export class VvcProtocolService {
       };
       default: return { Chat: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'} };
     }
+  }
+  getRemovedChannel(){
+    let removed;
+    this.previousChannels.forEach( c => {
+      if (c.indexOf(this.currentChannels) === -1) removed = c;
+    });
+    return removed;
+  }
+  isAlreadyConnectedWith(media){
+    return (
+      this.lastMediaChange[media] &&
+      this.lastMediaChange[media].tx &&
+      this.lastMediaChange[media].rx);
+  }
+  mergeOffer(diffOffer){
+    for (const m in diffOffer) {
+      if (m === 'Video' && diffOffer[m].tx === 'optional') {
+        diffOffer[m].tx = 'off';
+      }
+      diffOffer[m].rx = (diffOffer[m].rx !== 'off');
+      diffOffer[m].tx = (diffOffer[m].tx !== 'off');
+    }
+    return diffOffer;
+  }
+  setMediaChange(media){
+    this.previousChannels = this.getChannels(this.lastMediaChange || []);
+    this.currentChannels = this.getChannels(media);
+    this.lastMediaChange = media;
   }
 }

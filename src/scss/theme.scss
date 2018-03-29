@@ -522,6 +522,26 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
+@mixin queue($primaryColor: $color1, $loadingColor: #FFFFFF){
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: $primaryColor;
+  .queue-view{
+    margin: 25px;
+    .queue-message{
+      color: $loadingColor;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+      padding: 10px 5px 30px 5px;
+    }
+    .queue-loading{
+      @include loading-bar($loadingColor);
+    }
+  }
+
+}
 @mixin media-layer($bgColor: $color1){
   flex-direction: column;
   display: flex;
@@ -543,16 +563,26 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       display: block;
       margin: auto;
     }
+    margin-bottom: 20px;
   }
-  .media-loading-view{
-    margin: 25px;
-    .media-loading{
-      @include loading-bar(#FFFFFF);
+  .media-video-wrapper{
+    position: relative;
+    .big-video{
+      margin: auto;
+      max-width: 100%;
+      display:block;
+    }
+    .small-video{
+      position: absolute;
+      width: 28%;
+      bottom: 15px;
+      right: 10px;
     }
   }
   .media-connected-view{
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
     .media-content{
       flex: auto;
       margin-bottom: 50px;
@@ -602,7 +632,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         top: -4px;
         padding-left: 4px;
       }
-
     }
   }
 }
@@ -1157,9 +1186,28 @@ body, input, textarea{ font-family: $appFontFamily; }
       flex: auto;
       @include data-collection();
     }
+    #vvc-queue {
+      flex: auto;
+      @include queue();
+    }
     #vvc-media {
       flex: auto;
       @include media-layer();
+      &.minimized {
+        flex: none;
+        .media-bottom,
+        .media-title,
+        .media-avatar { display: none }
+        .media-content{
+          margin-bottom: 10px;
+        }
+        .media-connected-view{
+          margin-bottom: 0;
+        }
+        .big-video{
+          max-height: 150px;
+        }
+      }
     }
     #vvc-chat {
       flex: auto;
