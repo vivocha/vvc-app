@@ -113,6 +113,12 @@ export class AppComponent implements OnInit {
           if(!this.context.campaign.channels.web.interaction.variables) {
             this.context.campaign.channels.web.interaction.variables = {};
           }
+          // check companyLogoUrl
+          if (this.context.campaign.channels.web.interaction.variables.companyLogoUrl) {
+            this.context.campaign.channels.web.interaction.variables.companyLogoUrl = '../../../' + this.context.campaign.channels.web.interaction.variables.companyLogoUrl;
+          } else {
+            this.context.campaign.channels.web.interaction.variables.companyLogoUrl = 'assets/static/acct-img.png';
+          }
 
           this.cserv.init(this.vivocha);
           this.translate.getTranslation(context.language);

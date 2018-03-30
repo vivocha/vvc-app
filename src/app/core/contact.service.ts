@@ -6,8 +6,6 @@ import { ClientContactCreationOptions } from '@vivocha/global-entities/dist/cont
 import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { VivochaVisitorContact } from '@vivocha/client-visitor-core/dist/contact.d';
 
-declare var vvcAssets: {[path: string]: string};
-
 @Injectable()
 export class VvcContactService {
   vivocha;
@@ -525,7 +523,7 @@ export class VvcContactService {
   }
   playAudioNotification() {
     const notif = new Audio();
-    notif.src = vvcAssets['assets/static/beep.mp3'];
+    notif.src = 'assets/static/beep.mp3';
     notif.load();
     notif.play();
   }

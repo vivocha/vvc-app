@@ -73,6 +73,6 @@ export class TopbarComponent {
     return (this.state.agent && this.state.agent.nick) ? this.state.agent.nick : 'nonick';
   }
   getAvatar() {
-    return this.state.agent && this.state.agent.avatar ? this.state.agent.avatar : this.variables.companyLogoUrl;
+    return this.state.agent && this.state.agent.avatar ? this.state.agent.avatar : this.variables.companyLogoUrl || 'assets/static/acct-img.png';
   }
 }
