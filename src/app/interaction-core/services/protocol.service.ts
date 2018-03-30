@@ -52,7 +52,7 @@ export class VvcProtocolService {
   getChannels(mediaChange){
     const c = [];
     Object.keys(mediaChange).forEach( k => {
-      if (mediaChange[k].tx && mediaChange[k].rx) c.push(k);
+      if (mediaChange[k].tx || mediaChange[k].rx) c.push(k);
     });
     return c;
   }
@@ -69,13 +69,6 @@ export class VvcProtocolService {
       };
       default: return { Chat: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'} };
     }
-  }
-  getRemovedChannel(){
-    let removed;
-    this.previousChannels.forEach( c => {
-      if (c.indexOf(this.currentChannels) === -1) removed = c;
-    });
-    return removed;
   }
   isAlreadyConnectedWith(media){
     return (
@@ -94,8 +87,6 @@ export class VvcProtocolService {
     return diffOffer;
   }
   setMediaChange(media){
-    this.previousChannels = this.getChannels(this.lastMediaChange || []);
-    this.currentChannels = this.getChannels(media);
     this.lastMediaChange = media;
   }
 }

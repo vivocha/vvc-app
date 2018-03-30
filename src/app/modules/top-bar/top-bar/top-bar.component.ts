@@ -12,6 +12,10 @@ export class TopBarComponent{
   @Output() onClose = new EventEmitter();
   @Output() onSurvey = new EventEmitter();
   @Output() onRemove = new EventEmitter();
+  @Output() onHideChat = new EventEmitter();
+  @Output() onVoiceUpgrade = new EventEmitter();
+  @Output() onVideoUpgrade = new EventEmitter();
+  @Output() onMaximize = new EventEmitter();
 
   isMenuVisible = false;
   closeAttempts = 0;
@@ -22,7 +26,15 @@ export class TopBarComponent{
     this.isMenuVisible = false;
   }
   hasMenu(){
-    return (this.context && (this.context.canMaximize || this.context.canStartAudio || this.context.canStarVideo));
+    return (
+      this.context &&
+      (
+        this.context.canMaximize ||
+        this.context.canStartAudio ||
+        this.context.canStarVideo ||
+        this.context.media_is_minimized
+      )
+    );
   }
   removeApp(){
     if (this.context.hasSurvey) {

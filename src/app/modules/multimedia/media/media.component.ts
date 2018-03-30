@@ -32,7 +32,8 @@ export class MediaComponent {
     this.muteToggle.emit(!this.context.is_muted);
   }
   toggleVideo(){
-    this.videoToggle.emit(!this.context.has_local_video);
+    if (this.context.in_transit) return;
+    this.videoToggle.emit(!this.context.video_tx);
   }
 
   trustedSrc(url) {

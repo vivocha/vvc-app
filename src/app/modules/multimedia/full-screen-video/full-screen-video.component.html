@@ -1,0 +1,12 @@
+<div class="media-video-wrapper">
+  <video class="big-video"
+         autoplay
+         *ngIf="context.video_rx && context.video_rx_stream"
+         [src]="trustedSrc(context.video_rx_stream)"></video>
+
+  <video class="small-video"
+         autoplay
+         muted
+         *ngIf="context.video_tx && context.video_tx_stream"
+         [src]="trustedSrc(context.video_tx_stream)"></video>
+</div>

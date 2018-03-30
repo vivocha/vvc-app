@@ -17,6 +17,8 @@ $icon-vvc-menu: './assets/static/icons/vvc-menu.png';
 $icon-vvc-maximize: './assets/static/icons/vvc-maximize.png';
 $icon-vvc-audio: './assets/static/icons/vvc-audio.png';
 $icon-vvc-video: './assets/static/icons/vvc-video.png';
+$icon-vvc-chat: './assets/static/icons/vvc-chat.png';
+
 $icon-vvc-emoji: './assets/static/icons/vvc-emoji.png';
 $icon-vvc-clip: './assets/static/icons/vvc-clip.png';
 $icon-vvc-send: './assets/static/icons/vvc-send.png';
@@ -221,6 +223,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     display: inline-block;
     width: 19px;
     height: 19px;
+    background-repeat: no-repeat;
 
     &.icon-vvc-reduce {
       background: url($icon-vvc-reduce);
@@ -239,6 +242,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
     &.icon-vvc-video {
       background: url($icon-vvc-video);
+    }
+    &.icon-vvc-chat {
+      background: url($icon-vvc-chat);
     }
   }
 
@@ -553,6 +559,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     font-weight: 300;
     text-align: center;
     padding: 10px 5px 30px 5px;
+  }
+  .media-loading{
+    @include loading-bar(#fff);
   }
   .media-avatar{
     img {
@@ -1239,6 +1248,37 @@ body, input, textarea{ font-family: $appFontFamily; }
       #vvc-chat-box-area {
         @include chat-box-area();
       }
+    }
+  }
+
+  &.fullscreen{
+    display:flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    #vvc-fullscreen-media{
+      flex: auto;
+      border: 1px solid green;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      .media-video-wrapper{
+        .big-video{
+          height: 100%
+        }
+        .small-video{
+          height: 20%;
+        }
+      }
+    }
+    #vvc-normal-container{
+      flex: none;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
     }
   }
 

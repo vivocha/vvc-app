@@ -46,11 +46,23 @@ export class VvcContactWrap {
         rx: 'required',
         via: 'net'
       };
+      if (media === 'Video'){
+        offer['Voice'] = {
+          tx: 'required',
+          rx: 'required',
+          via: 'net'
+        };
+      }
       if (media === 'Voice' || media === 'Video') offer[media].engine = 'WebRTC';
+      this.uiService.setIsOffering(media);
       this.contact.offerMedia(offer).then(() => {
         this.zone.run( () => {
-          this.uiService.setIsOffering();
+
         });
+      }, (err) => {
+        this.zone.run( () => {
+          this.uiService.setOfferRejected();
+        })
       })
     })
 
@@ -163,6 +175,9 @@ export class VvcContactWrap {
   }
   hasRecallForNoAgent(){
     return false;
+  }
+  hideChat(){
+    this.uiService.hideChat();
   }
   initializeContact(vivocha, context){
     this.vivocha = vivocha;
@@ -296,7 +311,6 @@ export class VvcContactWrap {
           this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
           this.isClosed = true;
         }
-        if (obj.reason && obj.reason === 'removed') this.updateRemoved();
       });
 
     });
@@ -425,20 +439,6 @@ export class VvcContactWrap {
       this.uiService.setIncomingMedia(o.media);
       this.incomingCallback = cb;
       this.incomingOffer = o.offer;
-      /*
-      if (o.media === 'Voice') {
-        this.incomingMedia = 'Voice';
-        this.uiService.setIncomingVoice();
-        this.incomingCallback = cb;
-        this.incomingOffer = o.offer;
-      }
-      if (o.media === 'Video') {
-        this.incomingMedia = 'Video';
-        this.uiService.setIncomingVoice();
-        this.incomingCallback = cb;
-        this.incomingOffer = o.offer;
-      }
-      */
     }
     else {
       const newOffer = this.protocolService.mergeOffer(offer);
@@ -455,8 +455,8 @@ export class VvcContactWrap {
   }
   rejectOffer(){
     this.incomingCallback('error', {});
-    this.messageService.sendSystemMessage('chiamata rifiutata');
-    this.uiService.setRemovedVoice();
+    this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
+    this.uiService.setOfferRejected();
   }
   resumeContact(context: InteractionContext){
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
@@ -537,6 +537,10 @@ export class VvcContactWrap {
   setQueueState(){
     this.lastSystemMessageId = this.messageService.sendSystemMessage('STRINGS.QUEUE.CONNECTING');
   }
+  setFullScreen(){
+    this.uiService.setFullScreen();
+    this.vivocha.setFullScreen();
+  }
   showCloseModal(show: boolean){
     this.uiService.setCloseModal(show);
   }
@@ -555,11 +559,20 @@ export class VvcContactWrap {
   toggleEmojiPanel(){
     this.uiService.toggleEmojiPanel();
   }
-  updateRemoved(){
-    const channel = this.protocolService.getRemovedChannel();
-    if (channel === 'Voice') {
-      this.messageService.sendSystemMessage('fine chiamata voce');
-      this.uiService.setRemovedVoice()
-    }
+  toggleVideo(show){
+    const mode = show ? 'required' : 'off';
+    this.contact.getMediaOffer().then(mediaOffer => {
+      if (mediaOffer['Video']) {
+        mediaOffer['Video'].tx = mode;
+      }
+      this.zone.run( () => {
+        this.uiService.setInTransit(true);
+      });
+      this.contact.offerMedia(mediaOffer).then( () => {
+        this.zone.run( () => {
+          this.uiService.setInTransit(false);
+        });
+      });
+    });
   }
 }

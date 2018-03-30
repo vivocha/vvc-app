@@ -31,28 +31,30 @@ export class VvcUiService {
     });
     return varsObj;
   }
+  hideChat(){
+    this.extendAndDispatch(this.currentState, {
+      isChatVisible: false,
+      media_is_minimized: false,
+      not_read: 0
+    })
+  }
   initializeUi(context){
     const varsObj = this.flatObj('var',context.variables);
     varsObj['requestedMedia'] = context.requestedMedia;
-
+    varsObj['canStartAudio'] = context.media.voice === 'both' || context.media.voice === 'visitor';
+    varsObj['canStartVideo'] = context.media.video === 'both' || context.media.video === 'visitor';
     this.extendAndDispatch(this.currentState, {
       ...varsObj,
       isMobile: context.isMobile,
       hasSurvey: !!context.survey,
       isLoading: false,
       isInQueue: true,
-      //isChatVisible: context.requestedMedia === 'chat',
-      //isSendAreaDisabled: true,
-      //isSendAreaVisible: true,
+
       canRemoveApp: true,
       canMinimize: true,
       canMaximize: false,
-      canStartAudio: false,
-      canStartVideo: false,
       showSendButton: true,
 
-      //topbar_title: 'STRINGS.QUEUE.TOPBAR.TITLE',
-      //topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
       queue_message: 'STRINGS.QUEUE.CONNECTING',
       voice_connected: 'STRINGS.VOICE.WELCOME_MESSAGE',
       lastAction: 'initializeUi'
@@ -74,10 +76,10 @@ export class VvcUiService {
 
       isInQueue: false,
       canRemoveApp: false,
-
+      canMaximize: true,
 
       isChatVisible: this.currentState.requestedMedia === 'chat',
-      isVoiceVisible: this.currentState.requestedMedia === 'voice',
+      isMediaVisible: this.currentState.requestedMedia === 'voice' || this.currentState.requestedMedia === 'video',
       isSendAreaDisabled: false,
       isSendAreaVisible: true,
 
@@ -128,9 +130,11 @@ export class VvcUiService {
     this.extendAndDispatch(this.currentState, {
       isLoading: false,
       isInQueue: true,
-      isChatVisible: this.currentState.requestedMedia === 'chat',
+      isChatVisible: false,
+      isMediaVisible: false,
+
       showDataCollectionPanel: false,
-      //topbar_subtitle: 'STRINGS.QUEUE.TOPBAR.SUBTITLE',
+      topbar_subtitle: '',
       lastAction: 'setDataCollectionCompleted'
     });
   }
@@ -139,9 +143,15 @@ export class VvcUiService {
       isLoading: false,
       isInQueue: false,
       isChatVisible: false,
+      isMediaVisible: false,
       showDataCollectionPanel: show,
       topbar_subtitle: topBarTitle,
       lastAction: show ? 'showDataCollectionPanel' : 'hideDataCollectionPanel'
+    });
+  }
+  setFullScreen(){
+    this.extendAndDispatch(this.currentState, {
+      isFullScreen: true
     });
   }
   setIncomingMedia(media){
@@ -153,10 +163,20 @@ export class VvcUiService {
       isMediaVisible: true
     });
   }
-  setIsOffering(){
+  setInTransit(transit){
     this.extendAndDispatch(this.currentState, {
-      isOffering: true,
+      in_transit: transit
     });
+  }
+  setIsOffering(media){
+    const o = {
+      isOffering: true,
+      isMediaVisible: (media === 'Voice' || media === 'Video'),
+      isChatVisible: !(media === 'Voice' || media === 'Video')
+    };
+    console.log('settingIsOffering', media, o);
+
+    this.extendAndDispatch(this.currentState, o);
   }
   setIsWriting(isWriting: boolean){
     this.extendAndDispatch(this.currentState, {
@@ -187,13 +207,26 @@ export class VvcUiService {
     if (
       media.Video && media.Video.data
       && media.Video.data.tx_stream && media.Video.data.tx_stream.url
-    ) o['video_tx_stream'] = media.Voice.data.tx_stream.url;
+    ) o['video_tx_stream'] = media.Video.data.tx_stream.url;
     if (
       media.Video && media.Video.data
       && media.Video.data.rx_stream && media.Video.data.rx_stream.url
     ) o['video_rx_stream'] = media.Video.data.rx_stream.url;
 
     o['isOffering'] = false;
+    if (
+      o['voice_tx'] === false &&
+      o['voice_rx'] === false &&
+      o['video_tx'] === false &&
+      o['video_rx'] === false &&
+      !this.currentState.closedByVisitor &&
+      !this.currentState.closedByAgent
+    ){
+      o['isMediaVisible'] = false;
+      if (o['chat_tx'] && o['chat_rx']) {
+        o['isChatVisible'] = true;
+      }
+    }
     console.log('MERGING MEDIA STATE', o);
     this.extendAndDispatch(this.currentState, o);
   }
@@ -231,13 +264,12 @@ export class VvcUiService {
       lastAction: 'setNormalState'
     });
   }
-  setRemovedVoice(){
-    if (!this.currentState.closedByAgent && !this.currentState.closedByAgent){
-      this.extendAndDispatch(this.currentState, {
-        isVoiceVisible: false,
-        isChatVisible: true
-      })
-    }
+  setOfferRejected(){
+    this.extendAndDispatch(this.currentState, {
+      isChatVisible : true,
+      isMediaVisible: false,
+      isOffering: false
+    });
   }
   setSurveyCompleted(){
     this.extendAndDispatch(this.currentState, {
@@ -249,6 +281,7 @@ export class VvcUiService {
       showSurveyPanel: true,
       isSendAreaVisible: false,
       isChatVisible: false,
+      isMediaVisible: false,
 
       topbar_title: 'STRINGS.SURVEY.TITLE',
       topbar_subtitle: 'STRINGS.SURVEY.SUBTITLE'

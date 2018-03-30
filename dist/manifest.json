@@ -153,6 +153,7 @@
     "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON",
     "STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON",
     "STRINGS.QUEUE.TOPBAR.VOICE_BUTTON",
+    "STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON",
     "STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON",
     "STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON",
     "STRINGS.QUEUE.TOPBAR.CONNECTED",
@@ -160,6 +161,7 @@
     "STRINGS.CHAT.WELCOME_MESSAGE",
     "STRINGS.VOICE.WELCOME_MESSAGE",
     "STRINGS.VOICE.INCOMING_MESSAGE",
+    "STRINGS.VOICE.MEDIA_OFFERING",
     "STRINGS.VOICE.OPEN_CHAT",
     "STRINGS.VOICE.NOT_READ",
     "STRINGS.VOICE.CONTACT_CLOSED",
@@ -177,7 +179,9 @@
     "STRINGS.TEXTAREA.PLACEHOLDER",
     "STRINGS.SURVEY.TITLE",
     "STRINGS.SURVEY.SUBTITLE",
-    "STRINGS.SURVEY.FEEDBACK"
+    "STRINGS.SURVEY.FEEDBACK",
+    "STRINGS.NEXT_BUTTON",
+    "STRINGS.CALL_REJECTED"
   ],
   "assets": [
     {
@@ -217,23 +221,23 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "b4e919d15947494ecb96776bec4cb7e123bcfb0332b23c3cf654b65c4974908b",
+      "hash": "143c43ba0242a34da094e0f025377e475f4d33ff13b25b34323e2ed444370d5d",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/inline.bundle.js.map",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "393d145297cba3855f66a71aa1f74569e55c1fdb9fb35fa7972de501388a47ff",
+      "hash": "660f2f2900b5f667c184f618954582fd58daddb44169fa6d859c272093333129",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "size": 225642,
+      "size": 222547,
       "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "6ce7ca00b55c888b0b981beb8e8c17bf9d8db51bf0c5022f7b219f96cd2551ab",
+      "hash": "fb1404225aa9f2489635639edccb2af6b196ed7276f40a4baf88edb8df2e4c35",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "size": 256465,
+      "size": 253193,
       "type": "application/json"
     },
     {
@@ -252,10 +256,10 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "9b2dceea6d3f11508e3d73c6fd1a58b64169fee6ccbae8bc85f45ecbee81d903",
+      "hash": "5dca85b6e8621028e5064bac26ade98a2e9ee6a201a5e3183b2ef7c0f91eff49",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
       "type": "text/x-scss",
-      "size": 31899
+      "size": 32662
     },
     {
       "path": "assets/scss/variables.scss",
@@ -346,6 +350,13 @@
       "hash": "88e1fd6a8fd46e56b3a0cb4f3c22afcf9c1ed79bc51f2bdacf826791ec1f0418",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-audio.png",
       "size": 249,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/static/icons/vvc-chat.png",
+      "hash": "91f32d6adb0fa960f91bf67358cc744587b8b9b72bcbe1d9200f556653594337",
+      "id": "marchitos/widgets/vvc-optimized-app2/assets/static/icons/vvc-chat.png",
+      "size": 386,
       "type": "image/png"
     },
     {

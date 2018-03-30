@@ -26,6 +26,12 @@ export class VvcInteractionService {
   acceptOffer(){
     this.contactService.acceptOffer();
   }
+  askForVideoUpgrade(){
+    this.contactService.askForUpgrade('Video');
+  }
+  askForVoiceUpgrade(){
+    this.contactService.askForUpgrade('Voice');
+  }
   closeApp(){
     this.contextService.closeApp();
   }
@@ -43,6 +49,9 @@ export class VvcInteractionService {
   }
   hangUp(){
     this.contactService.hangUp();
+  }
+  hideChat(){
+    this.contactService.hideChat();
   }
   init(){
     this.contextService.ready().subscribe( (context:ContextState) => {
@@ -81,6 +90,9 @@ export class VvcInteractionService {
   sendText(text){
     this.contactService.sendText(text);
   }
+  setFullScreen(){
+    this.contactService.setFullScreen();
+  }
   showCloseModal(){
     this.contactService.showCloseModal(true);
   }
@@ -98,5 +110,8 @@ export class VvcInteractionService {
   }
   toggleEmojiPanel(){
     this.contactService.toggleEmojiPanel();
+  }
+  toggleVideo(show){
+    this.contactService.toggleVideo(show);
   }
 }

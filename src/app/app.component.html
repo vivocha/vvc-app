@@ -1,7 +1,7 @@
 <div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.agent_is_agent }">
   <div id="vvc-fullscreen-container"
        *ngIf="!appState.isMinimized"
-      [ngClass]="{ 'mobile': appState.isMobile }">
+      [ngClass]="{ 'mobile': appState.isMobile, 'fullscreen': appState.isFullScreen }">
     <div id="vvc-loading-panel" *ngIf="appState.isLoading">
       <vvc-loading-panel></vvc-loading-panel>
     </div>
@@ -9,15 +9,19 @@
       <vvc-close-panel (cancel)="dismissCloseModal()"
                        (confirm)="closeContact()"></vvc-close-panel>
     </div>
-    <div id="vvc-fullscreen-media">
-
+    <div id="vvc-fullscreen-media" *ngIf="appState.isFullScreen">
+      <vvc-full-screen-video [context]="appState"></vvc-full-screen-video>
     </div>
     <div id="vvc-normal-container">
       <vvc-top-bar [context]="appState"
                    (onMinimize)="minimizeWidget(true)"
+                   (onMaximize)="setFullScreen()"
                    (onClose)="showCloseModal()"
                    (onSurvey)="showSurvey()"
-                   (onRemove)="closeApp()"></vvc-top-bar>
+                   (onRemove)="closeApp()"
+                   (onHideChat)="hideChat()"
+                   (onVideoUpgrade)="askForVideoUpgrade()"
+                   (onVoiceUpgrade)="askForVoiceUpgrade()"></vvc-top-bar>
 
       <vvc-data-collection id="vvc-data-collection"
                            [context]="appState"

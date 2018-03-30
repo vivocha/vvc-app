@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuickMessageComponent } from './quick-message.component';
+import { FullScreenVideoComponent } from './full-screen-video.component';
 
-describe('QuickMessageComponent', () => {
-  let component: QuickMessageComponent;
-  let fixture: ComponentFixture<QuickMessageComponent>;
+describe('FullScreenVideoComponent', () => {
+  let component: FullScreenVideoComponent;
+  let fixture: ComponentFixture<FullScreenVideoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuickMessageComponent ]
+      declarations: [ FullScreenVideoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuickMessageComponent);
+    fixture = TestBed.createComponent(FullScreenVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

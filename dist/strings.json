@@ -465,6 +465,20 @@
   {
     "values": {
       "en": {
+        "value": "Hide chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nascondi chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Video",
         "state": "new"
       },
@@ -559,6 +573,20 @@
     },
     "description": "",
     "id": "STRINGS.VOICE.INCOMING_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "We are connecting you<br>with <b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.MEDIA_OFFERING"
   },
   {
     "values": {
@@ -811,5 +839,33 @@
     },
     "description": "",
     "id": "STRINGS.SURVEY.FEEDBACK"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Continue",
+        "state": "new"
+      },
+      "it": {
+        "value": "Continua",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.NEXT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call rejected",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CALL_REJECTED"
   }
 ]
