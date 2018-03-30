@@ -3636,6 +3636,14 @@
       "it": {
         "value": "Come vuoi essere contattato?",
         "state": "final"
+      },
+      "fr": {
+        "value": "Comment voulez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どのような方法でお問い合わせを受けますか？",
+        "state": ""
       }
     },
     "id": "RECALL.QUESTION"
@@ -3649,6 +3657,14 @@
       "it": {
         "value": "Via e-mail",
         "state": "final"
+      },
+      "fr": {
+        "value": "Par email",
+        "state": ""
+      },
+      "ja": {
+        "value": "Eメールで",
+        "state": ""
       }
     },
     "id": "RECALL.MAIL"
@@ -3662,6 +3678,14 @@
       "it": {
         "value": "Via SMS",
         "state": "final"
+      },
+      "fr": {
+        "value": "Par texto",
+        "state": ""
+      },
+      "ja": {
+        "value": "SMSで",
+        "state": ""
       }
     },
     "id": "RECALL.SMS"
@@ -3675,6 +3699,14 @@
       "it": {
         "value": "Al telefono",
         "state": "final"
+      },
+      "fr": {
+        "value": "Par téléphone",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話で",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE"
@@ -3682,12 +3714,20 @@
   {
     "values": {
       "en": {
-        "value": "To which e-mail address would you like to receive assistence?",
+        "value": "To which e-mail address would you like to receive assistance?",
         "state": "needs-review"
       },
       "it": {
         "value": "A quale indirizzo e-mail desideri essere contattato?",
         "state": "final"
+      },
+      "fr": {
+        "value": "À quelle adresse souhaitez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どのメールアドレスに連絡をもらいますか？",
+        "state": ""
       }
     },
     "id": "RECALL.MAIL.QUESTION"
@@ -3701,6 +3741,14 @@
       "it": {
         "value": "A quale numero di telefono desideri essere contattato via SMS?",
         "state": "final"
+      },
+      "fr": {
+        "value": "À quel numéro de téléphone souhaitez-vous être contacté(e) par texto ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どの電話番号にSMSメッセージを受け取りますか？",
+        "state": ""
       }
     },
     "id": "RECALL.SMS.QUESTION"
@@ -3714,6 +3762,14 @@
       "it": {
         "value": "A quale numero di telefono desideri essere contattato?",
         "state": "final"
+      },
+      "fr": {
+        "value": "À quel numéro de téléphone souhaitez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どの電話番号で電話を受けたいですか？",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.QUESTION"
@@ -3721,12 +3777,20 @@
   {
     "values": {
       "en": {
-        "value": "Thank you! Our agents will contatact you as requested",
+        "value": "Thank you! Our agents will contact you as requested",
         "state": "needs-review"
       },
       "it": {
         "value": "Grazie! I nostri agenti ti contatteranno secondo le modalità richieste",
         "state": "final"
+      },
+      "fr": {
+        "value": "Merci ! Nos agents vous contacteront selon les modalités requises",
+        "state": ""
+      },
+      "ja": {
+        "value": "ありがとうございます！お選び頂いた方法で我々のアシスタントから連絡があります。",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.THANKYOU"
@@ -3740,6 +3804,14 @@
       "it": {
         "value": "Invia recapito",
         "state": "final"
+      },
+      "fr": {
+        "value": "Envoi de contact",
+        "state": ""
+      },
+      "ja": {
+        "value": "アドレスを送信する",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.ADDRESS"
@@ -3753,6 +3825,14 @@
       "it": {
         "value": "Il tuo indirizzo e-mail*",
         "state": "final"
+      },
+      "fr": {
+        "value": "Votre adresse email*",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたのメールアドレス*",
+        "state": ""
       }
     },
     "id": "RECALL.MAIL.FIELDLABEL"
@@ -3766,6 +3846,14 @@
       "it": {
         "value": "Il tuo numero di telefono",
         "state": "final"
+      },
+      "fr": {
+        "value": "Votre numéro de téléphone",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたの電話番号",
+        "state": ""
       }
     },
     "id": "RECALL.SMS.FIELDLABEL"
@@ -3779,6 +3867,14 @@
       "it": {
         "value": "Il tuo numero di telefono",
         "state": "final"
+      },
+      "fr": {
+        "value": "Votre numéro de téléphone",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたの電話番号",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.FIELDLABEL"
@@ -3792,6 +3888,14 @@
       "it": {
         "value": "Inserisci il tuo indirizzo e-mail*",
         "state": "final"
+      },
+      "fr": {
+        "value": "Saisir votre adresse email*",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたのメールアドレスを入力してください*",
+        "state": ""
       }
     },
     "id": "RECALL.MAIL.FIELDPLACEHOLDER"
@@ -3805,6 +3909,14 @@
       "it": {
         "value": "Inserisci il tuo numero di telefono",
         "state": "final"
+      },
+      "fr": {
+        "value": "Saisir votre numéro de téléphone",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたの電話番号を入力してください",
+        "state": ""
       }
     },
     "id": "RECALL.SMS.FIELDPLACEHOLDER"
@@ -3818,19 +3930,14 @@
       "it": {
         "value": "Inserisci il tuo numero di telefono",
         "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.FIELDPLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Type your phone number",
-        "state": "needs-review"
       },
-      "it": {
-        "value": "Inserisci il tuo numero di telefono",
-        "state": "final"
+      "fr": {
+        "value": "Saisir votre numéro de téléphone",
+        "state": ""
+      },
+      "ja": {
+        "value": "あなたの電話番号を入力してください",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.FIELDPLACEHOLDER"
@@ -3844,6 +3951,14 @@
       "it": {
         "value": "Quando vuoi essere contattato?",
         "state": "final"
+      },
+      "fr": {
+        "value": "Quand voulez-vous être contacté(e) ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "いつお問い合わせを受け取りたいですか？",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.WHENCAL"
@@ -3857,6 +3972,14 @@
       "it": {
         "value": "In quale momento della giornata?",
         "state": "final"
+      },
+      "fr": {
+        "value": "À quel moment de la journée ?",
+        "state": ""
+      },
+      "ja": {
+        "value": "どの時間帯がよろしいですか？",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.FIXEDSLOTS"
@@ -3870,6 +3993,14 @@
       "it": {
         "value": "Seleziona uno slot orario",
         "state": "final"
+      },
+      "fr": {
+        "value": "Choisir une tranche horaire",
+        "state": ""
+      },
+      "ja": {
+        "value": "時間スロットを選択してください",
+        "state": ""
       }
     },
     "id": "RECALL.PHONE.INTERVALS"
@@ -3883,6 +4014,14 @@
       "it": {
         "value": "Invia recapito",
         "state": "final"
+      },
+      "fr": {
+        "value": "Envoi de contact",
+        "state": ""
+      },
+      "ja": {
+        "value": "アドレスを送信する",
+        "state": ""
       }
     },
     "id": "RECALL.SEND"
@@ -3896,6 +4035,14 @@
       "it": {
         "value": "Icona video",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3910,6 +4057,14 @@
       "it": {
         "value": "Icona telefono/voce",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône téléphone/vocal",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話/音声アイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3918,12 +4073,20 @@
   {
     "values": {
       "en": {
-        "value": "Icon to switch to fullsize state",
+        "value": "Icon to switch to full size state",
         "state": "needs-review"
       },
       "it": {
         "value": "Icona per passare allo stato fullsize",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône pour plein écran",
+        "state": ""
+      },
+      "ja": {
+        "value": "フルサイズに変更するアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3938,6 +4101,14 @@
       "it": {
         "value": "Icona del menu di selezione opzioni nella Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône du menu de sélection dans la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバー内でのオプション選択のメニューアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3952,6 +4123,14 @@
       "it": {
         "value": "Icona del bottone di invio messaggio di chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône du bouton d’envoi de message en conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット内でのメッセージ送信ボタンのアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3966,6 +4145,14 @@
       "it": {
         "value": "Icona nell'area di invio messaggio per l'apertura del pannello di selezione emoji",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône dans la zone d’envoi de message pour l’ouverture du panneau de sélection des émoticons",
+        "state": ""
+      },
+      "ja": {
+        "value": "絵文字選択パネルを開くためのメッセージ送信エリア内のアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3980,6 +4167,14 @@
       "it": {
         "value": "Icona nell'area di invio messaggio per aprire il pannello di upload",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône dans la zone d’envoi de message pour l’ouverture du panneau de chargement en amont",
+        "state": ""
+      },
+      "ja": {
+        "value": "アップロードパネルを開くためのメッセージ送信エリア内のアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -3994,6 +4189,14 @@
       "it": {
         "value": "Icona nella Top Bar per chiudere la chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône dans la barre du haut pour clore la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットを閉じるトップバー内のアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -4008,6 +4211,14 @@
       "it": {
         "value": "Icona nella Top Bar per passare allo stato minimizzato",
         "state": "final"
+      },
+      "fr": {
+        "value": "Icône dans la barre du haut pour réduire la fenêtre",
+        "state": ""
+      },
+      "ja": {
+        "value": "縮小に変更するためのトップバー内のアイコン",
+        "state": ""
       }
     },
     "description": "",
@@ -4022,6 +4233,14 @@
       "it": {
         "value": "Ombra dell'App",
         "state": "final"
+      },
+      "fr": {
+        "value": "Ombre de l'application",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリの影",
+        "state": ""
       }
     },
     "description": "",
@@ -4030,12 +4249,20 @@
   {
     "values": {
       "en": {
-        "value": "App border radious",
+        "value": "App border radius",
         "state": "needs-review"
       },
       "it": {
         "value": "Radius del bordo dell'App",
         "state": "final"
+      },
+      "fr": {
+        "value": "Rayon du bord de l'application",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリの枠のラディウス",
+        "state": ""
       }
     },
     "description": "",
@@ -4050,6 +4277,14 @@
       "it": {
         "value": "Dimensione testo del bottone usato nei multimedia messages",
         "state": "final"
+      },
+      "fr": {
+        "value": "Dimension du texte du bouton utilisé dans les messages multimédia",
+        "state": ""
+      },
+      "ja": {
+        "value": "マルチメディアメッセージ内で使用されたボタンのテキストの大きさ",
+        "state": ""
       }
     },
     "description": "",
@@ -4058,12 +4293,20 @@
   {
     "values": {
       "en": {
-        "value": "Main color of the button used on multimedia messages",
+        "value": "Main colour of the button used on multimedia messages",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore principale del bottone usato nei multimedia messages",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur principale du bouton utilisé dans les messages multimédia",
+        "state": ""
+      },
+      "ja": {
+        "value": "マルチメディアメッセージ内で使われるボタンの初期カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4078,6 +4321,14 @@
       "it": {
         "value": "Distanza iniziale dell'App dal bordo inferiore della pagina",
         "state": "final"
+      },
+      "fr": {
+        "value": "Distance initiale de l’application du bord inférieur de la page",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリページの下縁部からの初期距離",
+        "state": ""
       }
     },
     "description": "",
@@ -4086,12 +4337,20 @@
   {
     "values": {
       "en": {
-        "value": "The Font Family you wawnt to use in the App",
+        "value": "The Font Family you want to use in the App",
         "state": "needs-review"
       },
       "it": {
         "value": "Font Family da utilizzare nell'App",
         "state": "final"
+      },
+      "fr": {
+        "value": "Famille de polices à utiliser dans l’application",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリで使用するフォントファミリー",
+        "state": ""
       }
     },
     "description": "",
@@ -4106,6 +4365,14 @@
       "it": {
         "value": "Link web font da utilizzare nell'App",
         "state": "final"
+      },
+      "fr": {
+        "value": "Police Web du lien à utiliser dans l’application",
+        "state": ""
+      },
+      "ja": {
+        "value": "アプリで使用するウェブリンクのフォント",
+        "state": ""
       }
     },
     "description": "",
@@ -4114,12 +4381,20 @@
   {
     "values": {
       "en": {
-        "value": "Send message button's background color",
+        "value": "Send message button's background colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore di sfondo del bottone di invio messaggio",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur de l'arrière plan du bouton d'envoi de message",
+        "state": ""
+      },
+      "ja": {
+        "value": "メッセージ送信ボタンの背景の色",
+        "state": ""
       }
     },
     "description": "",
@@ -4134,6 +4409,14 @@
       "it": {
         "value": "Dimensione del campo di testo per la scrittura del messaggio di chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Dimension du champ de texte pour la rédaction du message de conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットメッセージの書き込み用のテキスト枠の大きさ",
+        "state": ""
       }
     },
     "description": "",
@@ -4142,12 +4425,20 @@
   {
     "values": {
       "en": {
-        "value": "Message text area's color",
+        "value": "Message text area's colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore del campo di testo per la scrittura del messaggio",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du champ de texte pour la rédaction du message",
+        "state": ""
+      },
+      "ja": {
+        "value": "メッセージの書き込みテキスト枠内の色",
+        "state": ""
       }
     },
     "description": "",
@@ -4156,12 +4447,20 @@
   {
     "values": {
       "en": {
-        "value": "Message text area's border color",
+        "value": "Message text area's border colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore del bordo del campo di scrittura del messaggio",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du bord du champ de rédaction du message",
+        "state": ""
+      },
+      "ja": {
+        "value": "メッセージ書き込み枠の色",
+        "state": ""
       }
     },
     "description": "",
@@ -4170,12 +4469,20 @@
   {
     "values": {
       "en": {
-        "value": "Message text area's background color",
+        "value": "Message text area's background colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Sfondo dell'area di scrittura messaggio di chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Arrière plan de la zone de rédaction du message de conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットメッセージの書き込みエリアの背景",
+        "state": ""
       }
     },
     "description": "",
@@ -4184,12 +4491,20 @@
   {
     "values": {
       "en": {
-        "value": "Show arrow's balloon for agent ",
+        "value": "Show arrow's balloon for the agent ",
         "state": "needs-review"
       },
       "it": {
         "value": "Visualizza balloon con arrow per l'agente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de la bulle avec flèche pour l'agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "エージェントの吹き出しを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -4204,6 +4519,14 @@
       "it": {
         "value": "Visualizza avatar dell'agente nella chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar de l'agent dans la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット内にエージェントのアバターを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -4212,12 +4535,20 @@
   {
     "values": {
       "en": {
-        "value": "Width of the application when minimized (desktop version).",
+        "value": "The width of the application when minimized (desktop version).",
         "state": "needs-review"
       },
       "it": {
         "value": "Larghezza dell'applicazione quando minimizzata (versione desktop).",
         "state": "final"
+      },
+      "fr": {
+        "value": "Largeur de l'application en état réduit (version bureau).",
+        "state": ""
+      },
+      "ja": {
+        "value": "最小サイズに設定した場合のアプリの幅 (ディスクトップヴァージョン)。",
+        "state": ""
       }
     },
     "description": "",
@@ -4226,12 +4557,20 @@
   {
     "values": {
       "en": {
-        "value": "Height of the application when minimized (desktop version).",
+        "value": "The height of the application when minimized (desktop version).",
         "state": "needs-review"
       },
       "it": {
         "value": "Altezza dell'applicazione quando minimizzata (versione desktop).",
         "state": "final"
+      },
+      "fr": {
+        "value": "Largeur de l'application en état réduit (version bureau).",
+        "state": ""
+      },
+      "ja": {
+        "value": "最小サイズに設定した場合のアプリの高さ （ディスクトップヴァージョン）。",
+        "state": ""
       }
     },
     "description": "",
@@ -4240,12 +4579,20 @@
   {
     "values": {
       "en": {
-        "value": "Top Bar background color",
+        "value": "Top Bar background colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore di sfondo della Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur d’arrière-plan de la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバーの背景カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4254,12 +4601,20 @@
   {
     "values": {
       "en": {
-        "value": "Top Bar title color",
+        "value": "Top Bar title colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore del titolo della Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du titre de la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバーのタイトルの色",
+        "state": ""
       }
     },
     "description": "",
@@ -4268,12 +4623,20 @@
   {
     "values": {
       "en": {
-        "value": "Top Bar subtitle color",
+        "value": "Top Bar subtitle colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore del sottotitolo della Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du sous-titre de la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバーのサブタイトルの色",
+        "state": ""
       }
     },
     "description": "",
@@ -4288,6 +4651,14 @@
       "it": {
         "value": "Dimensione del titolo della Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Dimension du titre de la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバーのタイトルの大きさ",
+        "state": ""
       }
     },
     "description": "",
@@ -4302,6 +4673,14 @@
       "it": {
         "value": "Dimensione del sottotitolo della Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Dimension du sous-titre de la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバーのサブタイトルの大きさ",
+        "state": ""
       }
     },
     "description": "",
@@ -4316,6 +4695,14 @@
       "it": {
         "value": "Visualizza avatar nella Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar dans la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバー内にアバターを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -4330,6 +4717,14 @@
       "it": {
         "value": "Visualizza l'avatar dell'agente nella Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar de l'agent dans la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバー内にエージェントのアバターを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -4344,6 +4739,14 @@
       "it": {
         "value": "Default avatar della Top Bar",
         "state": "final"
+      },
+      "fr": {
+        "value": "Avatar par défaut de la barre du haut",
+        "state": ""
+      },
+      "ja": {
+        "value": "トップバーのアバターデフォルト",
+        "state": ""
       }
     },
     "description": "",
@@ -4352,12 +4755,20 @@
   {
     "values": {
       "en": {
-        "value": "System messages' text color",
+        "value": "System messages' text colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore testo dei messaggi di sistema",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du texte des messages du système",
+        "state": ""
+      },
+      "ja": {
+        "value": "システムメッセージのテキストカラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4372,6 +4783,14 @@
       "it": {
         "value": "Dimensione testo messaggi di sistema",
         "state": "final"
+      },
+      "fr": {
+        "value": "Dimension du texte des messages du système",
+        "state": ""
+      },
+      "ja": {
+        "value": "システムメッセージのテキストの大きさ",
+        "state": ""
       }
     },
     "description": "",
@@ -4386,6 +4805,14 @@
       "it": {
         "value": "Dimensione testo chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Dimension du texte de la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットテキストの大きさ",
+        "state": ""
       }
     },
     "description": "",
@@ -4394,12 +4821,20 @@
   {
     "values": {
       "en": {
-        "value": "Chat message timestamp color",
+        "value": "Chat message timestamp colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore timestamp del messaggio di chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur d’horodatage du message de conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットメッセージのタイムスタンプの色",
+        "state": ""
       }
     },
     "description": "",
@@ -4408,12 +4843,20 @@
   {
     "values": {
       "en": {
-        "value": "User balloon background color",
+        "value": "User balloon background colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore sfondo del balloon di chat dell'utente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur de l'arrière-plan de la bulle de conversation du client",
+        "state": ""
+      },
+      "ja": {
+        "value": "ユーザーのチャットの吹き出しの背景カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4422,12 +4865,20 @@
   {
     "values": {
       "en": {
-        "value": "User chat balloon text color",
+        "value": "User chat balloon text colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore testo del balloon di chat dell'utente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du texte de la bulle de conversation du client",
+        "state": ""
+      },
+      "ja": {
+        "value": "ユーザーのチャットの吹き出し内のテキストカラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4442,6 +4893,14 @@
       "it": {
         "value": "Radius del balloon di chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Rayon de la bulle de conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャットのバルーンラディウス",
+        "state": ""
       }
     },
     "description": "",
@@ -4450,12 +4909,20 @@
   {
     "values": {
       "en": {
-        "value": "User chat balloon border color",
+        "value": "User chat balloon border colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore bordo del balloon di chat per l'utente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du bord de la bulle de conversation du client",
+        "state": ""
+      },
+      "ja": {
+        "value": "ユーザーのチャット吹き出しの枠の色",
+        "state": ""
       }
     },
     "description": "",
@@ -4470,6 +4937,14 @@
       "it": {
         "value": "Visualizza avatar dell'utente nella chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar de l'utilisateur dans la conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット内にユーザーのアバターを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -4484,6 +4959,14 @@
       "it": {
         "value": "Visualizza balloon con arrow per l'utente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de la bulle avec flèche pour le client",
+        "state": ""
+      },
+      "ja": {
+        "value": "ユーザーに吹き出しを表示する",
+        "state": ""
       }
     },
     "description": "",
@@ -4492,12 +4975,20 @@
   {
     "values": {
       "en": {
-        "value": "Agent chat balloon background color",
+        "value": "Agent chat balloon background colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore sfondo del balloon di chat dell'agente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur de l'arrière-plan de la bulle de conversation de l’agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "エージェントのチャット吹き出しの背景カラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4506,12 +4997,20 @@
   {
     "values": {
       "en": {
-        "value": "Agent chat balloon text color",
+        "value": "Agent chat balloon text colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore testo del balloon di chat dell'agente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du texte de la bulle de conversation de l’agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "エージェントのチャット吹き出しのテキストカラー",
+        "state": ""
       }
     },
     "description": "",
@@ -4520,12 +5019,20 @@
   {
     "values": {
       "en": {
-        "value": "Agent chat balloon border color",
+        "value": "Agent chat balloon border colour",
         "state": "needs-review"
       },
       "it": {
         "value": "Colore bordo del balloon di chat per l'agente",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du bord de la bulle de conversation de l’agent",
+        "state": ""
+      },
+      "ja": {
+        "value": "エージェントのチャット吹き出しの枠の色",
+        "state": ""
       }
     },
     "description": "",
