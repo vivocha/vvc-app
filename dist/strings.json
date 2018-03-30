@@ -4,11 +4,19 @@
     "values": {
       "en": {
         "value": "Default Interaction App",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Application di interazione di default",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Application d’interaction par défaut",
+        "state": "final"
+      },
+      "ja": {
+        "value": "デフォルト対話アプリ",
+        "state": "final"
       }
     }
   },
@@ -17,11 +25,19 @@
     "values": {
       "en": {
         "value": "Default",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Default",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Par défaut",
+        "state": "final"
+      },
+      "ja": {
+        "value": "デフォルト",
+        "state": "final"
       }
     }
   },
@@ -29,11 +45,19 @@
     "values": {
       "en": {
         "value": "Chat",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Chat",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "final"
       }
     },
     "description": "",
@@ -43,11 +67,19 @@
     "values": {
       "en": {
         "value": "Modal closure",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Chiusura Modal",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Fermeture fenêtre modale",
+        "state": "final"
+      },
+      "ja": {
+        "value": "様式を閉じる",
+        "state": "final"
       }
     },
     "description": "",
@@ -57,11 +89,19 @@
     "values": {
       "en": {
         "value": "Initial Data",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Data Collection",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Collecte des données",
+        "state": "final"
+      },
+      "ja": {
+        "value": "データ収集",
+        "state": "final"
       }
     },
     "description": "",
@@ -71,11 +111,19 @@
     "values": {
       "en": {
         "value": "Media Tools",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Strumenti multimediali",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Instruments multimédia",
+        "state": "final"
+      },
+      "ja": {
+        "value": "マルチメディアの変更",
+        "state": "final"
       }
     },
     "description": "",
@@ -85,11 +133,19 @@
     "values": {
       "en": {
         "value": "Messages",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Messaggi",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Messages",
+        "state": "final"
+      },
+      "ja": {
+        "value": "メッセージ",
+        "state": "final"
       }
     },
     "description": "",
@@ -99,11 +155,19 @@
     "values": {
       "en": {
         "value": "No Chat",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "No chat",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Pas de chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャットできません",
+        "state": "final"
       }
     },
     "description": "",
@@ -113,11 +177,19 @@
     "values": {
       "en": {
         "value": "Queue",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Coda",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "File d’attente",
+        "state": "final"
+      },
+      "ja": {
+        "value": "順番",
+        "state": "final"
       }
     },
     "description": "",
@@ -126,12 +198,20 @@
   {
     "values": {
       "en": {
-        "value": "Survey",
-        "state": "new"
+        "value": "Questionnaire",
+        "state": "final"
       },
       "it": {
         "value": "Questionario",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "質問",
+        "state": "final"
       }
     },
     "description": "",
@@ -141,11 +221,19 @@
     "values": {
       "en": {
         "value": "Tools",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Strumenti",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Outils",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ツール",
+        "state": "final"
       }
     },
     "description": "",
@@ -155,25 +243,42 @@
     "values": {
       "en": {
         "value": "Topbar",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Topbar",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Barre de navigation supérieure",
+        "state": "final"
+      },
+      "ja": {
+        "value": "トップバー",
+        "state": "final"
       }
     },
     "description": "",
     "id": "META.GROUPS.TOPBAR"
   },
+
   {
     "values": {
       "en": {
-        "value": "App initial width",
-        "state": "new"
+        "value": "Initial width of the application (desktop version).",
+        "state": "final"
       },
       "it": {
-        "value": "Larghezza iniziale dell'App",
-        "state": "new"
+        "value": "Larghezza iniziale dell'applicazione (versione desktop).",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Largeur initiale de l’application (version bureau).",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
+        "state": "final"
       }
     },
     "description": "",
@@ -182,12 +287,20 @@
   {
     "values": {
       "en": {
-        "value": "App initial height",
-        "state": "new"
+        "value": "Initial height of the application (desktop version).",
+        "state": "final"
       },
       "it": {
-        "value": "Altezza iniziale dell'App",
-        "state": "new"
+        "value": "Altezza iniziale dell'applicazione (versione desktop).",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Hauteur initiale de l’application (version bureau).",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
+        "state": "final"
       }
     },
     "description": "",
@@ -210,12 +323,20 @@
   {
     "values": {
       "en": {
-        "value": "Topbar default avatar",
-        "state": "new"
+        "value": "Show avatar on the Top Bar",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Immagine di default dell'avatar nella Topbar",
-        "state": "new"
+        "value": "Visualizza avatar nella Top Bar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar dans la barre du haut",
+        "state": "final"
+      },
+      "ja": {
+        "value": "トップバー内にアバターを表示する",
+        "state": "final"
       }
     },
     "description": "",
@@ -238,12 +359,20 @@
   {
     "values": {
       "en": {
-        "value": "Display send emoji button",
-        "state": "new"
+        "value": "Allow the visitor to display emoji panel.",
+        "state": "final"
       },
       "it": {
-        "value": "Visualizza bottone per l'invio di emoji",
-        "state": "new"
+        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur de visualiser la fenêtre d’envoi des Emoji.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "訪問者に絵文字パネルの使用を許可する",
+        "state": "final"
       }
     },
     "description": "",
@@ -252,12 +381,20 @@
   {
     "values": {
       "en": {
-        "value": "Display send uploads button",
-        "state": "new"
+        "value": "Allow the user to send file to the agent",
+        "state": "final"
       },
       "it": {
-        "value": "Visualizza bottone per l'invio di file",
-        "state": "new"
+        "value": "Permetti al visitatore di inviare un file all'operatore.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur d’envoyer un fichier à l’agent.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "訪問者にオペレーターへのファイルの転送を許可する",
+        "state": "final"
       }
     },
     "description": "",
@@ -336,12 +473,20 @@
   {
     "values": {
       "en": {
-        "value": "Show agent avatar in chat message",
-        "state": "new"
+        "value": "Show agent's avatar on chat",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Visualizza avatar dell'agente nel messaggio di chat",
-        "state": "new"
+        "value": "Visualizza avatar dell'agente nella chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar de l'agent dans la conversation",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット内にエージェントのアバターを表示する",
+        "state": "final"
       }
     },
     "description": "",
@@ -350,12 +495,20 @@
   {
     "values": {
       "en": {
-        "value": "Show arrow in the agent balloon chat message",
-        "state": "new"
+        "value": "Show arrow's balloon for the agent ",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Visualizza freccia tra balloon ed avatar nel messaggio dell'agente",
-        "state": "new"
+        "value": "Visualizza balloon con arrow per l'agente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de la bulle avec flèche pour l'agent",
+        "state": "final"
+      },
+      "ja": {
+        "value": "エージェントの吹き出しを表示する",
+        "state": "final"
       }
     },
     "description": "",
@@ -364,12 +517,20 @@
   {
     "values": {
       "en": {
-        "value": "Agent chat balloon color",
-        "state": "new"
+        "value": "Agent chat balloon text colour",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Colore del balloon di chat dell'agente",
-        "state": "new"
+        "value": "Colore testo del balloon di chat dell'agente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du texte de la bulle de conversation de l’agent",
+        "state": "final"
+      },
+      "ja": {
+        "value": "エージェントのチャット吹き出しのテキストカラー",
+        "state": "final"
       }
     },
     "description": "",
@@ -437,12 +598,20 @@
   {
     "values": {
       "en": {
-        "value": "Minimize",
-        "state": "new"
+        "value": "minimize",
+        "state": "final"
       },
       "it": {
-        "value": "Minimizze",
-        "state": "new"
+        "value": "minimizza",
+        "state": "final"
+      },
+      "fr": {
+        "value": "réduire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "縮小する",
+        "state": "final"
       }
     },
     "description": "",
@@ -451,12 +620,20 @@
   {
     "values": {
       "en": {
-        "value": "Maximize",
-        "state": "new"
+        "value": "expand",
+        "state": "final"
       },
       "it": {
-        "value": "Espandi",
-        "state": "new"
+        "value": "espandi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "étendre",
+        "state": "final"
+      },
+      "ja": {
+        "value": "広める",
+        "state": "final"
       }
     },
     "description": "",
@@ -466,11 +643,19 @@
     "values": {
       "en": {
         "value": "Voice",
-        "state": "new"
+        "state": "final"
       },
       "it": {
-        "value": "Audio",
-        "state": "new"
+        "value": "Voce",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voix",
+        "state": "final"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
       }
     },
     "description": "",
@@ -494,11 +679,19 @@
     "values": {
       "en": {
         "value": "Video",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Video",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vidéo",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": "final"
       }
     },
     "description": "",
@@ -535,12 +728,20 @@
   {
     "values": {
       "en": {
-        "value": "We are connecting you with an agent",
-        "state": "new"
+        "value": "Just a moment,<br>we are connecting you with the first available agent.",
+        "state": "final"
       },
       "it": {
-        "value": "Ti stiamo mettendo in contatto con un'agente",
-        "state": "new"
+        "value": "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Veuillez patienter,<br>nous vous mettons en relation avec le premier agent disponible.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
+        "state": "final"
       }
     },
     "description": "",
@@ -633,12 +834,20 @@
   {
     "values": {
       "en": {
-        "value": "the contact is over",
-        "state": "new"
+        "value": "The contact has ended<br>Thanks.",
+        "state": "final"
       },
       "it": {
-        "value": "contatto terminato",
-        "state": "new"
+        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Le contact est terminé<br>Merci.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
+        "state": "final"
       }
     },
     "description": "",
@@ -648,11 +857,19 @@
     "values": {
       "en": {
         "value": "Do you really want to quit?",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Vuoi interrompere il contatto?",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voulez-vous vraiment quitter l’application  ?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "書き込みを中止しますか?",
+        "state": "final"
       }
     },
     "description": "",
@@ -662,11 +879,19 @@
     "values": {
       "en": {
         "value": "No",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "No",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Non",
+        "state": "final"
+      },
+      "ja": {
+        "value": "いいえ",
+        "state": "final"
       }
     },
     "description": "",
@@ -676,11 +901,19 @@
     "values": {
       "en": {
         "value": "Yes",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Si",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Oui",
+        "state": "final"
+      },
+      "ja": {
+        "value": "はい",
+        "state": "final"
       }
     },
     "description": "",
@@ -690,11 +923,19 @@
     "values": {
       "en": {
         "value": "The agent left the contact",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "L'operatore ha chiuso il contatto",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "L’agent a quitté le contact",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの通信が途切れました",
+        "state": "final"
       }
     },
     "description": "",
@@ -704,11 +945,19 @@
     "values": {
       "en": {
         "value": "The contact has ended<br>Thanks.",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Il contatto è terminato<br>Grazie per averci contattato.",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Le contact est terminé<br>Merci.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
+        "state": "final"
       }
     },
     "description": "",
@@ -718,11 +967,19 @@
     "values": {
       "en": {
         "value": "{{agent}} is writing...",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "{{agent}} sta scrivendo...",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "{{agent}} est en train d'écrire...",
+        "state": "final"
+      },
+      "ja": {
+        "value": "{{オペレーター}} 書き込み中",
+        "state": "final"
       }
     },
     "description": "",
@@ -731,12 +988,20 @@
   {
     "values": {
       "en": {
-        "value": "close panel",
-        "state": "new"
+        "value": "close",
+        "state": "final"
       },
       "it": {
-        "value": "chiudi pannello",
-        "state": "new"
+        "value": "chiudi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "fermer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": "final"
       }
     },
     "description": "",
@@ -745,12 +1010,20 @@
   {
     "values": {
       "en": {
-        "value": "close panel",
-        "state": "new"
+        "value": "close",
+        "state": "final"
       },
       "it": {
-        "value": "chiudi pannello",
-        "state": "new"
+        "value": "chiudi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "fermer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": "final"
       }
     },
     "description": "",
@@ -773,12 +1046,20 @@
   {
     "values": {
       "en": {
-        "value": "select file",
-        "state": "new"
+        "value": "Select a file to upload",
+        "state": "final"
       },
       "it": {
-        "value": "seleziona file",
-        "state": "new"
+        "value": "seleziona il file da caricare",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Sélectionner le fichier à charger",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルを選択する",
+        "state": "final"
       }
     },
     "description": "",
@@ -787,12 +1068,20 @@
   {
     "values": {
       "en": {
-        "value": "file description",
-        "state": "new"
+        "value": "Write your message here",
+        "state": "final"
       },
       "it": {
-        "value": "descrizione file",
-        "state": "new"
+        "value": "Descrizione file",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Description du fichier",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルの詳細",
+        "state": "final"
       }
     },
     "description": "",
@@ -801,12 +1090,20 @@
   {
     "values": {
       "en": {
-        "value": "Write here",
-        "state": "new"
+        "value": "Type here...",
+        "state": "final"
       },
       "it": {
-        "value": "Scrivi il tuo messaggio",
-        "state": "new"
+        "value": "Scrivi qui...",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Écrire ici...",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ここに書き込んでください",
+        "state": "final"
       }
     },
     "description": "",
@@ -815,12 +1112,20 @@
   {
     "values": {
       "en": {
-        "value": "Write here",
-        "state": "new"
+        "value": "Questionnaire",
+        "state": "final"
       },
       "it": {
-        "value": "Vivocha Survey",
-        "state": "new"
+        "value": "Questionario",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "質問",
+        "state": "final"
       }
     },
     "description": "",
@@ -829,12 +1134,20 @@
   {
     "values": {
       "en": {
-        "value": "Fill the form",
-        "state": "new"
+        "value": "Information Request",
+        "state": "final"
       },
       "it": {
-        "value": "Compila il form",
-        "state": "new"
+        "value": "Richiesta di Informazioni",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Demande d’informations",
+        "state": "final"
+      },
+      "ja": {
+        "value": "詳しく知る",
+        "state": "final"
       }
     },
     "description": "",
@@ -843,12 +1156,20 @@
   {
     "values": {
       "en": {
-        "value": "Thanks for your feedback",
-        "state": "new"
+        "value": "Your rating has been sent.<br>Thank you!",
+        "state": "final"
       },
       "it": {
-        "value": "Grazie per aver completato il questionario",
-        "state": "new"
+        "value": "La tua valutazione è stata inviata.<br>Grazie!",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Votre évaluation a bien été envoyée.<br>Merci !",
+        "state": "final"
+      },
+      "ja": {
+        "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
+        "state": "final"
       }
     },
     "description": "",
@@ -858,11 +1179,19 @@
     "values": {
       "en": {
         "value": "Continue",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Continua",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Continuer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "続ける",
+        "state": "final"
       }
     },
     "description": "",
@@ -872,11 +1201,19 @@
     "values": {
       "en": {
         "value": "Call rejected",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Chiamata rifiutata",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Appel rejeté",
+        "state": "final"
+      },
+      "ja": {
+        "value": "電話が途切れました",
+        "state": "final"
       }
     },
     "description": "",
