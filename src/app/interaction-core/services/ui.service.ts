@@ -10,7 +10,6 @@ export class VvcUiService {
   currentState: WidgetState;
   constructor(private store: Store<fromStore.AppState>){
     this.store.select(fromStore.getWidgetState).subscribe( state => {
-      console.log(state.lastAction, Object.assign({}, state));
       this.currentState = state
     });
   }

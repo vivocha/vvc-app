@@ -297,7 +297,7 @@ export class VvcContactWrap {
         }
         if (msg.agent) this.uiService.setIsWriting(false);
         this.uiService.newMessageReceived();
-        //this.playAudioNotification();
+        if (this.context.variables.playAudioNotification) this.playAudioNotification();
       });
 
     });
@@ -329,20 +329,20 @@ export class VvcContactWrap {
 
     });
     this.contact.on('localcapabilities', caps => {
-      console.log('ON_LOCAL',caps);
+      //console.log('ON_LOCAL',caps);
     });
     this.contact.on('capabilities', caps => {
-      console.log('ON_REMOTE',caps);
+      //console.log('ON_REMOTE',caps);
     });
     this.contact.on('mediachange', (media, changed) => {
-      console.log('MEDIACHANGE', media, changed);
+      //console.log('MEDIACHANGE', media, changed);
       this.zone.run( () => {
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
       })
     });
     this.contact.on('mediaoffer', (offer, cb) => {
-      console.log('OFFER', offer);
+      //console.log('OFFER', offer);
       this.zone.run( () => {
         this.onMediaOffer(offer, cb);
       })
@@ -364,7 +364,6 @@ export class VvcContactWrap {
         engine.unmuteLocalAudio();
       }
       this.zone.run( () => {
-        console.log('setting muted', muted);
         this.uiService.setMuted(muted);
       });
     });
@@ -380,7 +379,6 @@ export class VvcContactWrap {
   }
   minimizeMedia(){
     if (!this.protocolService.isAlreadyConnectedWith('Chat')){
-      //this.prococolService.sendOffer(this.protocolService.getOfferWithChat());
       this.askForUpgrade('Chat');
     }
     this.uiService.setMinimizedMedia();
@@ -463,6 +461,12 @@ export class VvcContactWrap {
     const msg = { type: 'web_url', url: url };
     this.vivocha.pageRequest('interactionEvent', msg.type, msg);
   }
+  playAudioNotification() {
+    const notif = new Audio();
+    notif.src = './assets/static/beep.mp3';
+    notif.load();
+    notif.play();
+  }
   processQuickReply(reply){
     this.messageService.updateQuickReply(reply.msgId);
     this.contact.sendText(reply.action.title)
@@ -484,31 +488,6 @@ export class VvcContactWrap {
         this.vivocha.pageRequest('interactionFailed', err.message);
       });
     });
-
-    /*
-    this.callStartedWith = context.requestedMedia.toUpperCase();
-    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
-      this.dispatch({type: 'INITIAL_OFFER', payload: {
-          offer: contactData.initial_offer,
-          context: context
-        }});
-      this.vivocha.resumeContact(contactData).then((contact) => {
-        this.vivocha.pageRequest('interactionCreated', contact);
-        console.log('contact created, looking for the caps', contact);
-        contact.getLocalCapabilities().then( caps => {
-          this.dispatch({type: 'LOCAL_CAPS', payload: caps });
-        });
-        contact.getRemoteCapabilities().then( caps => {
-          this.dispatch({type: 'REMOTE_CAPS', payload: caps });
-        });
-        this.contact = contact;
-        this.mapContact();
-      }, (err) => {
-        console.log('Failed to resume contact', err);
-        this.vivocha.pageRequest('interactionFailed', err.message);
-      });
-    });
-    */
   }
   sendAttachment(upload) {
     this.uiService.setUploading();

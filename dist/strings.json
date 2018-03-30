@@ -389,6 +389,20 @@
     "description": "",
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR"
   },
+  {
+    "values": {
+      "en": {
+        "value": "Message received audio notification",
+        "state": "new"
+      },
+      "it": {
+        "value": "Notifica acustica ricezione messaggio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION"
+  },
 
 
 

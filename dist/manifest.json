@@ -105,6 +105,12 @@
       "type": "boolean"
     },
     {
+      "id": "playAudioNotification",
+      "nameId": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
       "id": "color1",
       "nameId": "META.VARIABLES.COLOR1",
       "defaultValue": "#0351A1",
@@ -148,6 +154,7 @@
     "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW",
     "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR",
     "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
+    "META.VARIABLES.PLAY_AUDIO_NOTIFICATION",
     "STRINGS.QUEUE.TOPBAR.TITLE",
     "STRINGS.QUEUE.TOPBAR.SUBTITLE",
     "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON",
@@ -228,17 +235,17 @@
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "1c153d5228080eb939cd6d59cb9d29e09e247307e4b3b25672e421c22bdd8a1d",
+      "hash": "c389a239860ab6ae354b285801a71da0ad9a58a32a2c318753e747e7877e1095",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
       "type": "application/javascript",
-      "size": 237054
+      "size": 236036
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "95de952c183a342cc864078a8859efce2bdc642924431656ae89d3fb0b08df5a",
+      "hash": "1ed91773c61a73bff94580cd6206c0a2603ea690727fa13768a05a4f2c03db19",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
       "type": "application/json",
-      "size": 268774
+      "size": 267665
     },
     {
       "path": "assets/polyfills.bundle.js",
