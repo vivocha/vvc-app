@@ -281,6 +281,14 @@
       "it": {
         "value": "Oppure ti contattiamo noi!",
         "state": "final"
+      },
+      "fr": {
+        "value": "Ou nous vous contacterons nous-même !",
+        "state": ""
+      },
+      "ja": {
+        "value": "もしくは我々がご連絡差し上げますi!",
+        "state": ""
       }
     },
     "id": "STRINGS.RECALL"

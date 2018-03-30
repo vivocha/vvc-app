@@ -24,7 +24,7 @@
     "id": "DESCRIPTION",
     "values": {
       "en": {
-        "value": "Engage the visitor by showing an avatar image in the bottom right corner of the screen",
+        "value": "Engagement via an avatar located in the lower right corner of the screen",
         "state": "new"
       },
       "it": {
@@ -113,6 +113,14 @@
       "it": {
         "value": "Ti contattiamo",
         "state": "final"
+      },
+      "fr": {
+        "value": "Nous vous contactons",
+        "state": ""
+      },
+      "ja": {
+        "value": "連絡いたします",
+        "state": ""
       }
     },
     "id": "STRINGS.RECALL"
@@ -126,6 +134,14 @@
       "it": {
         "value": "Videochiamata",
         "state": "final"
+      },
+      "fr": {
+        "value": "Appel vidéo",
+        "state": ""
+      },
+      "ja": {
+        "value": "ビデオ電話",
+        "state": ""
       }
     },
     "id": "STRINGS.VIDEO_CALL"
@@ -139,6 +155,14 @@
       "it": {
         "value": "Chiamata voce",
         "state": "final"
+      },
+      "fr": {
+        "value": "Appel VoIP",
+        "state": ""
+      },
+      "ja": {
+        "value": "電話",
+        "state": ""
       }
     },
     "id": "STRINGS.VOICE_CALL"
@@ -152,6 +176,14 @@
       "it": {
         "value": "Chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": ""
+      },
+      "ja": {
+        "value": "チャット",
+        "state": ""
       }
     },
     "id": "STRINGS.CHAT"
