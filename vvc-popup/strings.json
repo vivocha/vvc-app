@@ -284,11 +284,11 @@
       },
       "fr": {
         "value": "Ou nous vous contacterons nous-même !",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "もしくは我々がご連絡差し上げますi!",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "STRINGS.RECALL"

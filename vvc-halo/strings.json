@@ -116,11 +116,11 @@
       },
       "fr": {
         "value": "Nous vous contactons",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "連絡いたします",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "STRINGS.RECALL"
@@ -137,11 +137,11 @@
       },
       "fr": {
         "value": "Appel vidéo",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ビデオ電話",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "STRINGS.VIDEO_CALL"
@@ -158,11 +158,11 @@
       },
       "fr": {
         "value": "Appel VoIP",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "電話",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "STRINGS.VOICE_CALL"
@@ -179,11 +179,11 @@
       },
       "fr": {
         "value": "Conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャット",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "STRINGS.CHAT"
