@@ -96,7 +96,7 @@ export class VvcUiService {
       closedByAgent: true,
       isSendAreaVisible: false,
       canRemoveApp: true,
-
+      isFullScreen: false,
       topbar_title: '',
       topbar_subtitle: '',
       topbar_avatar: '',
@@ -111,7 +111,7 @@ export class VvcUiService {
       showCloseModal: false,
       isSendAreaVisible: false,
       canRemoveApp: true,
-
+      isFullScreen: false,
       topbar_title: '',
       topbar_subtitle: '',
       topbar_avatar: '',
@@ -149,9 +149,28 @@ export class VvcUiService {
       lastAction: show ? 'showDataCollectionPanel' : 'hideDataCollectionPanel'
     });
   }
+  setFullScreenChat(show){
+    this.extendAndDispatch(this.currentState, {
+      showChatOnFullScreen: show,
+      not_read: 0
+    });
+  }
   setFullScreen(){
     this.extendAndDispatch(this.currentState, {
-      isFullScreen: true
+      isFullScreen: true,
+      showChatOnFullScreen: false
+    });
+  }
+  setHangUpState(){
+    this.extendAndDispatch(this.currentState, {
+      isFullScreen: false,
+      showChatOnFullScreen: false
+    });
+  }
+  setNormalScreen(){
+    this.extendAndDispatch(this.currentState, {
+      isFullScreen: false,
+      showChatOnFullScreen: false
     });
   }
   setIncomingMedia(media){

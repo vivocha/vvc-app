@@ -30,6 +30,9 @@ export class AppComponent implements OnInit {
   acceptOffer(){
     this.interactionService.acceptOffer();
   }
+  addChatToFullScreen(show){
+    this.interactionService.addChatToFullScreen(show);
+  }
   appendText(text){
     this.chat.appendText(text);
   }
@@ -53,6 +56,9 @@ export class AppComponent implements OnInit {
   }
   doUpload(upload){
     this.interactionService.sendAttachment(upload);
+  }
+  exitFromFullScreen(){
+    this.interactionService.setNormalScreen();
   }
   expandWidget(){
     this.interactionService.minimize(false);

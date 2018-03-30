@@ -26,6 +26,9 @@ export class VvcInteractionService {
   acceptOffer(){
     this.contactService.acceptOffer();
   }
+  addChatToFullScreen(show){
+    this.contactService.addChatToFullScreen(show);
+  }
   askForVideoUpgrade(){
     this.contactService.askForUpgrade('Video');
   }
@@ -92,6 +95,9 @@ export class VvcInteractionService {
   }
   setFullScreen(){
     this.contactService.setFullScreen();
+  }
+  setNormalScreen(){
+    this.contactService.setNormalScreen();
   }
   showCloseModal(){
     this.contactService.showCloseModal(true);

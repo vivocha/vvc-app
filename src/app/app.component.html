@@ -1,7 +1,7 @@
 <div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.agent_is_agent }">
   <div id="vvc-fullscreen-container"
        *ngIf="!appState.isMinimized"
-      [ngClass]="{ 'mobile': appState.isMobile, 'fullscreen': appState.isFullScreen }">
+      [ngClass]="{ 'mobile': appState.isMobile, 'fullscreen': appState.isFullScreen, 'hide-chat': !appState.showChatOnFullScreen }">
     <div id="vvc-loading-panel" *ngIf="appState.isLoading">
       <vvc-loading-panel></vvc-loading-panel>
     </div>
@@ -9,9 +9,14 @@
       <vvc-close-panel (cancel)="dismissCloseModal()"
                        (confirm)="closeContact()"></vvc-close-panel>
     </div>
-    <div id="vvc-fullscreen-media" *ngIf="appState.isFullScreen">
-      <vvc-full-screen-video [context]="appState"></vvc-full-screen-video>
-    </div>
+    <vvc-full-screen-video id="vvc-fullscreen-media"
+                           [context]="appState"
+                           *ngIf="appState.isFullScreen"
+                           (displayChat)="addChatToFullScreen($event)"
+                           (videoToggle)="videoToggle($event)"
+                           (muteToggle)="muteToggle($event)"
+                           (hangUp)="hangUpCall()"
+                           (normalScreen)="exitFromFullScreen()"></vvc-full-screen-video>
     <div id="vvc-normal-container">
       <vvc-top-bar [context]="appState"
                    (onMinimize)="minimizeWidget(true)"

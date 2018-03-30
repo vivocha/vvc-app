@@ -39,6 +39,10 @@ export class VvcContactWrap {
     this.mergeOffer(this.incomingOffer, this.incomingCallback);
     this.uiService.setVoiceAccepted();
   }
+  addChatToFullScreen(show){
+    this.uiService.setFullScreenChat(show);
+    if (this.context.requestedMedia !== 'Chat') this.askForUpgrade('Chat');
+  }
   askForUpgrade(media){
     this.contact.getMediaOffer().then(offer => {
       offer[media] = {
@@ -112,6 +116,7 @@ export class VvcContactWrap {
       this.contact.leave();
       this.uiService.setClosedByVisitor();
       this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
+      this.vivocha.setNormalScreen();
       this.isClosed = true;
 
     }
@@ -170,7 +175,15 @@ export class VvcContactWrap {
         mediaOffer['Video'].tx = 'off';
         mediaOffer['Video'].rx = 'off';
       }
-      this.contact.offerMedia(mediaOffer);
+      this.zone.run(() => {
+        this.vivocha.setNormalScreen();
+        this.uiService.setHangUpState();
+      });
+      this.contact.offerMedia(mediaOffer).then( () => {
+        this.zone.run( () => {
+          if (this.context.requestedMedia != 'Chat') this.askForUpgrade('Chat');
+        })
+      });
     });
   }
   hasRecallForNoAgent(){
@@ -308,6 +321,7 @@ export class VvcContactWrap {
         console.log('LEFT', obj);
         if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
           this.uiService.setClosedByAgent();
+          this.vivocha.setNormalScreen();
           this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
           this.isClosed = true;
         }
@@ -540,6 +554,10 @@ export class VvcContactWrap {
   setFullScreen(){
     this.uiService.setFullScreen();
     this.vivocha.setFullScreen();
+  }
+  setNormalScreen(){
+    this.uiService.setNormalScreen();
+    this.vivocha.setNormalScreen();
   }
   showCloseModal(show: boolean){
     this.uiService.setCloseModal(show);
