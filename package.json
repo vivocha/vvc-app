@@ -1,0 +1,19 @@
+{
+  "name": "@vivocha/client-visitor-default-widgets",
+  "version": "5.9.0",
+  "description": "Vivocha Widgets Sources",
+  "scripts": {
+    "push:button": "cd vvc-button && vvc widget push -g && vvc widget activate -g && cd ..",
+    "push:halo": "cd vvc-halo && vvc widget push -g && vvc widget activate -g && cd ..",
+    "push:popup": "cd vvc-popup && vvc widget push -g && vvc widget activate -g && cd ..",
+    "push:sidetab": "cd vvc-sidetab && vvc widget push -g && vvc widget activate -g && cd ..",
+    "push:all": "npm run push:button && npm run push:halo && npm run push:popup && npm run push:sidetab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/vivocha/client-visitor-default-widgets.git"
+  },
+  "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://bitbucket.org/vivocha/client-visitor-default-widgets#readme"
+}
