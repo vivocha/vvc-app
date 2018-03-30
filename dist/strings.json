@@ -3639,11 +3639,11 @@
       },
       "fr": {
         "value": "Comment voulez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どのような方法でお問い合わせを受けますか？",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.QUESTION"
@@ -3660,11 +3660,11 @@
       },
       "fr": {
         "value": "Par email",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "Eメールで",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.MAIL"
@@ -3681,11 +3681,11 @@
       },
       "fr": {
         "value": "Par texto",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "SMSで",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.SMS"
@@ -3702,11 +3702,11 @@
       },
       "fr": {
         "value": "Par téléphone",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "電話で",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE"
@@ -3723,11 +3723,11 @@
       },
       "fr": {
         "value": "À quelle adresse souhaitez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どのメールアドレスに連絡をもらいますか？",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.MAIL.QUESTION"
@@ -3744,11 +3744,11 @@
       },
       "fr": {
         "value": "À quel numéro de téléphone souhaitez-vous être contacté(e) par texto ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どの電話番号にSMSメッセージを受け取りますか？",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.SMS.QUESTION"
@@ -3765,11 +3765,11 @@
       },
       "fr": {
         "value": "À quel numéro de téléphone souhaitez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どの電話番号で電話を受けたいですか？",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.QUESTION"
@@ -3786,11 +3786,11 @@
       },
       "fr": {
         "value": "Merci ! Nos agents vous contacteront selon les modalités requises",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ありがとうございます！お選び頂いた方法で我々のアシスタントから連絡があります。",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.THANKYOU"
@@ -3807,11 +3807,11 @@
       },
       "fr": {
         "value": "Envoi de contact",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アドレスを送信する",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.ADDRESS"
@@ -3828,11 +3828,11 @@
       },
       "fr": {
         "value": "Votre adresse email*",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "あなたのメールアドレス*",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.MAIL.FIELDLABEL"
@@ -3849,11 +3849,11 @@
       },
       "fr": {
         "value": "Votre numéro de téléphone",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "あなたの電話番号",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.SMS.FIELDLABEL"
@@ -3870,11 +3870,11 @@
       },
       "fr": {
         "value": "Votre numéro de téléphone",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "あなたの電話番号",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.FIELDLABEL"
@@ -3891,11 +3891,11 @@
       },
       "fr": {
         "value": "Saisir votre adresse email*",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "あなたのメールアドレスを入力してください*",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.MAIL.FIELDPLACEHOLDER"
@@ -3912,11 +3912,11 @@
       },
       "fr": {
         "value": "Saisir votre numéro de téléphone",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "あなたの電話番号を入力してください",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.SMS.FIELDPLACEHOLDER"
@@ -3933,11 +3933,11 @@
       },
       "fr": {
         "value": "Saisir votre numéro de téléphone",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "あなたの電話番号を入力してください",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.FIELDPLACEHOLDER"
@@ -3954,11 +3954,11 @@
       },
       "fr": {
         "value": "Quand voulez-vous être contacté(e) ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "いつお問い合わせを受け取りたいですか？",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.WHENCAL"
@@ -3975,11 +3975,11 @@
       },
       "fr": {
         "value": "À quel moment de la journée ?",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "どの時間帯がよろしいですか？",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.FIXEDSLOTS"
@@ -3996,11 +3996,11 @@
       },
       "fr": {
         "value": "Choisir une tranche horaire",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "時間スロットを選択してください",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.PHONE.INTERVALS"
@@ -4017,11 +4017,11 @@
       },
       "fr": {
         "value": "Envoi de contact",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アドレスを送信する",
-        "state": ""
+        "state": "final"
       }
     },
     "id": "RECALL.SEND"
@@ -4038,11 +4038,11 @@
       },
       "fr": {
         "value": "Icône vidéo",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ビデオアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4060,11 +4060,11 @@
       },
       "fr": {
         "value": "Icône téléphone/vocal",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "電話/音声アイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4082,11 +4082,11 @@
       },
       "fr": {
         "value": "Icône pour plein écran",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "フルサイズに変更するアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4104,11 +4104,11 @@
       },
       "fr": {
         "value": "Icône du menu de sélection dans la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバー内でのオプション選択のメニューアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4126,11 +4126,11 @@
       },
       "fr": {
         "value": "Icône du bouton d’envoi de message en conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャット内でのメッセージ送信ボタンのアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4148,11 +4148,11 @@
       },
       "fr": {
         "value": "Icône dans la zone d’envoi de message pour l’ouverture du panneau de sélection des émoticons",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "絵文字選択パネルを開くためのメッセージ送信エリア内のアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4170,11 +4170,11 @@
       },
       "fr": {
         "value": "Icône dans la zone d’envoi de message pour l’ouverture du panneau de chargement en amont",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アップロードパネルを開くためのメッセージ送信エリア内のアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4192,11 +4192,11 @@
       },
       "fr": {
         "value": "Icône dans la barre du haut pour clore la conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットを閉じるトップバー内のアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4214,11 +4214,11 @@
       },
       "fr": {
         "value": "Icône dans la barre du haut pour réduire la fenêtre",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "縮小に変更するためのトップバー内のアイコン",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4236,11 +4236,11 @@
       },
       "fr": {
         "value": "Ombre de l'application",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アプリの影",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4258,11 +4258,11 @@
       },
       "fr": {
         "value": "Rayon du bord de l'application",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アプリの枠のラディウス",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4280,11 +4280,11 @@
       },
       "fr": {
         "value": "Dimension du texte du bouton utilisé dans les messages multimédia",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "マルチメディアメッセージ内で使用されたボタンのテキストの大きさ",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4302,11 +4302,11 @@
       },
       "fr": {
         "value": "Couleur principale du bouton utilisé dans les messages multimédia",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "マルチメディアメッセージ内で使われるボタンの初期カラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4324,11 +4324,11 @@
       },
       "fr": {
         "value": "Distance initiale de l’application du bord inférieur de la page",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アプリページの下縁部からの初期距離",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4346,11 +4346,11 @@
       },
       "fr": {
         "value": "Famille de polices à utiliser dans l’application",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アプリで使用するフォントファミリー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4368,11 +4368,11 @@
       },
       "fr": {
         "value": "Police Web du lien à utiliser dans l’application",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "アプリで使用するウェブリンクのフォント",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4390,11 +4390,11 @@
       },
       "fr": {
         "value": "Couleur de l'arrière plan du bouton d'envoi de message",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "メッセージ送信ボタンの背景の色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4412,11 +4412,11 @@
       },
       "fr": {
         "value": "Dimension du champ de texte pour la rédaction du message de conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットメッセージの書き込み用のテキスト枠の大きさ",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4434,11 +4434,11 @@
       },
       "fr": {
         "value": "Couleur du champ de texte pour la rédaction du message",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "メッセージの書き込みテキスト枠内の色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4456,11 +4456,11 @@
       },
       "fr": {
         "value": "Couleur du bord du champ de rédaction du message",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "メッセージ書き込み枠の色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4478,11 +4478,11 @@
       },
       "fr": {
         "value": "Arrière plan de la zone de rédaction du message de conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットメッセージの書き込みエリアの背景",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4500,11 +4500,11 @@
       },
       "fr": {
         "value": "Affichage de la bulle avec flèche pour l'agent",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "エージェントの吹き出しを表示する",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4522,11 +4522,11 @@
       },
       "fr": {
         "value": "Affichage de l’avatar de l'agent dans la conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャット内にエージェントのアバターを表示する",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4544,11 +4544,11 @@
       },
       "fr": {
         "value": "Largeur de l'application en état réduit (version bureau).",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "最小サイズに設定した場合のアプリの幅 (ディスクトップヴァージョン)。",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4566,11 +4566,11 @@
       },
       "fr": {
         "value": "Largeur de l'application en état réduit (version bureau).",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "最小サイズに設定した場合のアプリの高さ （ディスクトップヴァージョン）。",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4588,11 +4588,11 @@
       },
       "fr": {
         "value": "Couleur d’arrière-plan de la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバーの背景カラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4610,11 +4610,11 @@
       },
       "fr": {
         "value": "Couleur du titre de la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバーのタイトルの色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4632,11 +4632,11 @@
       },
       "fr": {
         "value": "Couleur du sous-titre de la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバーのサブタイトルの色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4654,11 +4654,11 @@
       },
       "fr": {
         "value": "Dimension du titre de la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバーのタイトルの大きさ",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4676,11 +4676,11 @@
       },
       "fr": {
         "value": "Dimension du sous-titre de la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバーのサブタイトルの大きさ",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4698,11 +4698,11 @@
       },
       "fr": {
         "value": "Affichage de l’avatar dans la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバー内にアバターを表示する",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4720,11 +4720,11 @@
       },
       "fr": {
         "value": "Affichage de l’avatar de l'agent dans la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバー内にエージェントのアバターを表示する",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4742,11 +4742,11 @@
       },
       "fr": {
         "value": "Avatar par défaut de la barre du haut",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "トップバーのアバターデフォルト",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4764,11 +4764,11 @@
       },
       "fr": {
         "value": "Couleur du texte des messages du système",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "システムメッセージのテキストカラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4786,11 +4786,11 @@
       },
       "fr": {
         "value": "Dimension du texte des messages du système",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "システムメッセージのテキストの大きさ",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4808,11 +4808,11 @@
       },
       "fr": {
         "value": "Dimension du texte de la conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットテキストの大きさ",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4830,11 +4830,11 @@
       },
       "fr": {
         "value": "Couleur d’horodatage du message de conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットメッセージのタイムスタンプの色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4852,11 +4852,11 @@
       },
       "fr": {
         "value": "Couleur de l'arrière-plan de la bulle de conversation du client",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ユーザーのチャットの吹き出しの背景カラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4874,11 +4874,11 @@
       },
       "fr": {
         "value": "Couleur du texte de la bulle de conversation du client",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ユーザーのチャットの吹き出し内のテキストカラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4896,11 +4896,11 @@
       },
       "fr": {
         "value": "Rayon de la bulle de conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャットのバルーンラディウス",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4918,11 +4918,11 @@
       },
       "fr": {
         "value": "Couleur du bord de la bulle de conversation du client",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ユーザーのチャット吹き出しの枠の色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4940,11 +4940,11 @@
       },
       "fr": {
         "value": "Affichage de l’avatar de l'utilisateur dans la conversation",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "チャット内にユーザーのアバターを表示する",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4962,11 +4962,11 @@
       },
       "fr": {
         "value": "Affichage de la bulle avec flèche pour le client",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "ユーザーに吹き出しを表示する",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -4984,11 +4984,11 @@
       },
       "fr": {
         "value": "Couleur de l'arrière-plan de la bulle de conversation de l’agent",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "エージェントのチャット吹き出しの背景カラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -5006,11 +5006,11 @@
       },
       "fr": {
         "value": "Couleur du texte de la bulle de conversation de l’agent",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "エージェントのチャット吹き出しのテキストカラー",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
@@ -5028,11 +5028,11 @@
       },
       "fr": {
         "value": "Couleur du bord de la bulle de conversation de l’agent",
-        "state": ""
+        "state": "final"
       },
       "ja": {
         "value": "エージェントのチャット吹き出しの枠の色",
-        "state": ""
+        "state": "final"
       }
     },
     "description": "",
