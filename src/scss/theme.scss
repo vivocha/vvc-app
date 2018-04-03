@@ -772,7 +772,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin chat-agent-bubble($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
+@mixin chat-agent-bubble($background: $color1, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
   padding: 6px;
   margin-left: 8px;
   margin-right: 50px;
@@ -811,7 +811,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin chat-agent-message($background: $agentBalloonColor, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
+@mixin chat-agent-message($background: $color1, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
 
   .chat-message{
     &.agent{

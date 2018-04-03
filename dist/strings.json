@@ -309,6 +309,42 @@
   {
     "values": {
       "en": {
+        "value": "Primary colour",
+        "state": "final"
+      },
+      "it": {
+        "value": "Primary color",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.COLOR1"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "BOT app color",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore applicazione BOT",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.COLOR2"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Show avatar in the Topbar",
         "state": "new"
       },
