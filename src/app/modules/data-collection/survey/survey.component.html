@@ -2,7 +2,6 @@
   <vvc-form [dc]="context.selectedSurvey"
             (submit)="submitData($event)"></vvc-form>
 </div>
-<div *ngIf="context.surveyCompleted">
-  {{ 'STRINGS.SURVEY.FEEDBACK' | translate }}
+<div *ngIf="context.surveyCompleted" [innerHtml]="'STRINGS.SURVEY.FEEDBACK' | translate">
 </div>
 
