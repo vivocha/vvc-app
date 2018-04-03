@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-visitor-default-widgets",
-  "version": "5.9.0",
+  "version": "6.0.0",
   "description": "Vivocha Widgets Sources",
   "scripts": {
     "push:button": "cd vvc-button && vvc widget push -g && vvc widget activate -g && cd ..",
