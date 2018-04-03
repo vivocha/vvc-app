@@ -1,7 +1,20 @@
 /** FONTS **/
-@import url('https://d3btqb6knwd3a4.cloudfront.net/lib/font-google/css/open-sans.css');
+@import url("https://cdn.vivocha.com/lib/font-google/css/open-sans.css");
 /** ICONS **/
-@import url("./assets/vivicon/style.css");
+@at-root {
+  @font-face {
+    font-family: 'vvc-widget-ico';
+    src: url('assets/fonts/vvc-widget-ico.eot?4jwt95');
+    src: url('assets/fonts/vvc-widget-ico.eot?4jwt95#iefix') format('embedded-opentype'),
+    url('assets/fonts/vvc-widget-ico.ttf?4jwt95') format('truetype'),
+    url('assets/fonts/vvc-widget-ico.woff?4jwt95') format('woff'),
+    url('assets/fonts/vvc-widget-ico.svg?4jwt95#vvc-widget-ico') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+@import "assets/vivicon.scss";
+
 $boxColor: #F2F2F2;
 
 @mixin mediaBox() {
