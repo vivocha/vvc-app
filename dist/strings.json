@@ -44,2030 +44,6 @@
   {
     "values": {
       "en": {
-        "value": "Type here...",
-        "state": "final"
-      },
-      "it": {
-        "value": "Scrivi qui...",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Écrire ici...",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ここに書き込んでください",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CHAT.TEXTAREA_PLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Do you really want to quit?",
-        "state": "final"
-      },
-      "it": {
-        "value": "Vuoi interrompere il contatto?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Voulez-vous vraiment quitter l’application  ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "書き込みを中止しますか?",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "No",
-        "state": "final"
-      },
-      "it": {
-        "value": "No",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Non",
-        "state": "final"
-      },
-      "ja": {
-        "value": "いいえ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CLOSEMODAL.NO"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Yes",
-        "state": "final"
-      },
-      "it": {
-        "value": "Si",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Oui",
-        "state": "final"
-      },
-      "ja": {
-        "value": "はい",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CLOSEMODAL.YES"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The agent is asking to you to fill the from",
-        "state": "final"
-      },
-      "it": {
-        "value": "L'operatore ha richiesto la compilazione del modulo",
-        "state": "final"
-      },
-      "fr": {
-        "value": "L’agent demande la compilation du formulaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターは書類の正しい入力を要求しています",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.ASK_FOR_COMPILE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Fill",
-        "state": "final"
-      },
-      "it": {
-        "value": "Compila",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Compiler",
-        "state": "final"
-      },
-      "ja": {
-        "value": "入力する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.COMPILE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "invalid email",
-        "state": "final"
-      },
-      "it": {
-        "value": "email non valida",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Email non valide",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メールアドレスが正しくありません。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.EMAIL_ERR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Information Request",
-        "state": "final"
-      },
-      "it": {
-        "value": "Richiesta di Informazioni",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Demande d’informations",
-        "state": "final"
-      },
-      "ja": {
-        "value": "詳しく知る",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.INCOMING_HEAD"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Next",
-        "state": "final"
-      },
-      "it": {
-        "value": "Avanti",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Suivant",
-        "state": "final"
-      },
-      "ja": {
-        "value": "次へ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.NEXT_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "required field",
-        "state": "final"
-      },
-      "it": {
-        "value": "campo obbligatorio",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Champ obligatoire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "必須",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.REQUIRED_ERR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "* required fields",
-        "state": "final"
-      },
-      "it": {
-        "value": "* campi obbligatori",
-        "state": "final"
-      },
-      "fr": {
-        "value": "*champs obligatoires",
-        "state": "final"
-      },
-      "ja": {
-        "value": "* 必須項目です",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.REQUIRED_LEGEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "View",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Visualiser",
-        "state": "final"
-      },
-      "ja": {
-        "value": "表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.DC.VIEW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome<br>to Vivocha’s customer service",
-        "state": "final"
-      },
-      "it": {
-        "value": "Benvenuto<br>nel customer service di Vivocha",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Bienvenue<br>au service client de Vivocha",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ようこそ<br> Vivocha のカスタマーサービスへ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.INITIAL_DATA.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "close",
-        "state": "final"
-      },
-      "it": {
-        "value": "chiudi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "fermer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "閉じる",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.CHAT_HIDE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "show",
-        "state": "final"
-      },
-      "it": {
-        "value": "mostra",
-        "state": "final"
-      },
-      "fr": {
-        "value": "afficher",
-        "state": "final"
-      },
-      "ja": {
-        "value": "表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.CHAT_SHOW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "expand",
-        "state": "final"
-      },
-      "it": {
-        "value": "espandi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "étendre",
-        "state": "final"
-      },
-      "ja": {
-        "value": "広める",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.EXPAND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "hangup",
-        "state": "final"
-      },
-      "it": {
-        "value": "chiudi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "fermer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "閉じる",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.HANGUP"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "minimize",
-        "state": "final"
-      },
-      "it": {
-        "value": "minimizza",
-        "state": "final"
-      },
-      "fr": {
-        "value": "réduire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "縮小する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.MINIMIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "mute",
-        "state": "final"
-      },
-      "it": {
-        "value": "muto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "muet",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ミュート",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.MUTE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "unmute",
-        "state": "final"
-      },
-      "it": {
-        "value": "muto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "réactiver le son",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ミュート",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.UNMUTE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "video off",
-        "state": "final"
-      },
-      "it": {
-        "value": "video off",
-        "state": "final"
-      },
-      "fr": {
-        "value": "vidéo off",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ  オフ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.VIDEO_OFF"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "video on",
-        "state": "final"
-      },
-      "it": {
-        "value": "video on",
-        "state": "final"
-      },
-      "fr": {
-        "value": "vidéo on",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ オン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIATOOLS.VIDEO_ON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Accept",
-        "state": "final"
-      },
-      "it": {
-        "value": "Accetta",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Accepter",
-        "state": "final"
-      },
-      "ja": {
-        "value": "承諾する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.ACCEPT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Fill",
-        "state": "final"
-      },
-      "it": {
-        "value": "Compila",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Compiler",
-        "state": "final"
-      },
-      "ja": {
-        "value": "入力する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.COMPILE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Continue",
-        "state": "final"
-      },
-      "it": {
-        "value": "Continua",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Continuer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "続ける",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.CONTINUE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Decline",
-        "state": "final"
-      },
-      "it": {
-        "value": "Rifiuta",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Refuser",
-        "state": "final"
-      },
-      "ja": {
-        "value": "放棄する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.DECLINE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Download",
-        "state": "final"
-      },
-      "it": {
-        "value": "Scarica",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Télécharger",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ダウンロードする",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.DOWNLOAD"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "file uploading...",
-        "state": "final"
-      },
-      "it": {
-        "value": "invio file in corso...",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Chargement en cours...",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイル送信中…",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.FILE_SENDING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The form filling is pending",
-        "state": "final"
-      },
-      "it": {
-        "value": "Compilazione modulo in corso",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Compilation du formulaire en cours",
-        "state": "final"
-      },
-      "ja": {
-        "value": "入力しています",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.FORM_PENDING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Information request",
-        "state": "final"
-      },
-      "it": {
-        "value": "Richiesta di Informazioni",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Demande d’informations",
-        "state": "final"
-      },
-      "ja": {
-        "value": "詳しく聞く",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.FORM_REQUEST"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Error sending the form",
-        "state": "final"
-      },
-      "it": {
-        "value": "Errore inviando il modulo",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Une erreur s’est produite lors de l’envoi du formulaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "書類送信中にエラーがでました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.FORM_SUBMIT_ERROR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Form sent successfully",
-        "state": "final"
-      },
-      "it": {
-        "value": "Modulo inviato correttamente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Formulaire envoyé correctement",
-        "state": "final"
-      },
-      "ja": {
-        "value": "正常に送信出来ました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.FORM_SUBMIT_SUCCESS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The agent left the contact",
-        "state": "final"
-      },
-      "it": {
-        "value": "L'operatore ha chiuso il contatto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "L’agent a quitté le contact",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターとの通信が途切れました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REMOTE_CLOSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Connection error",
-        "state": "final"
-      },
-      "it": {
-        "value": "Errore di connessione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Erreur de connexion",
-        "state": "final"
-      },
-      "ja": {
-        "value": "接続のエラーが出ました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REMOTE_VIDEO_FAILED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video rejected by the agent",
-        "state": "final"
-      },
-      "it": {
-        "value": "Videochiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel vidéo rejeté",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ通話が途切れました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REMOTE_VIDEO_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Connection error",
-        "state": "final"
-      },
-      "it": {
-        "value": "Errore di connessione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Erreur de connexion",
-        "state": "final"
-      },
-      "ja": {
-        "value": "接続のエラーが出ました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REMOTE_VOICE_FAILED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call rejected by the agent",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel rejeté",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話が途切れました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REMOTE_VOICE_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Would you like to start a form sharing session?",
-        "state": "final"
-      },
-      "it": {
-        "value": "Vuoi accettare la richiesta di condivisione moduli?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Voulez-vous accepter la demande de partage de formulaire ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルの共有を承諾しますか?",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Form sharing session accepted",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sessione di condivisione moduli accettata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Session de partage de formulaire acceptée",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルの共有に成功しました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_ACCEPTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Form sharing session rejected",
-        "state": "final"
-      },
-      "it": {
-        "value": "Hai rifiutato la sessione di condivisione moduli",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Session de partage de formulaire rejetée",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルの共有を拒否しました。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Would you like to start a co-browsing session?",
-        "state": "final"
-      },
-      "it": {
-        "value": "Vuoi accettare la richiesta di navigazione assistita?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Voulez-vous commencer une session de navigation collaborative ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アシスト付接続の要求を承諾しますか? ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Co-browsing session accepted",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sessione di navigazione assistita accettata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Session de navigation collaborative acceptée",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アシスト付接続の要求を承諾しました。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Co-browsing session rejected",
-        "state": "final"
-      },
-      "it": {
-        "value": "Hai rifiutato la sessione di navigazione assistita",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Session de navigation collaborative rejetée",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アシスト付接続を拒否しました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Retry",
-        "state": "final"
-      },
-      "it": {
-        "value": "Riprova",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Réessayer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "再送信する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.RETRY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send",
-        "state": "final"
-      },
-      "it": {
-        "value": "Invia",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Envoyer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "送信する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.SEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "You have been transferred to another agent",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sei stato trasferito a un altro operatore",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Vous avez été transféré vers un autre agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "他のオペレーターと繋がりました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.TRANSFERRED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The video call is ended",
-        "state": "final"
-      },
-      "it": {
-        "value": "fine videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Fin de l’appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話 終了",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VIDEO_ENDED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call rejected",
-        "state": "final"
-      },
-      "it": {
-        "value": "hai rifiutato la videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Vous avez rejeté l’appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話を断りました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VIDEO_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call request",
-        "state": "final"
-      },
-      "it": {
-        "value": "Richiesta di videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Demande d’appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話  着信中",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VIDEO_REQUEST"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The video call is started",
-        "state": "final"
-      },
-      "it": {
-        "value": "inizio videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Début de l’appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話 開始",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VIDEO_STARTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "View",
-        "state": "final"
-      },
-      "it": {
-        "value": "Vedi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Voir",
-        "state": "final"
-      },
-      "ja": {
-        "value": "見る",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VIEW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The voice call is ended",
-        "state": "final"
-      },
-      "it": {
-        "value": "fine chiamata voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Fin de l’appel vocal",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話を切る",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VOICE_ENDED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Only voice",
-        "state": "final"
-      },
-      "it": {
-        "value": "Solo voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel vocal seulement",
-        "state": "final"
-      },
-      "ja": {
-        "value": "音声のみ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VOICE_ONLY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "call rejected",
-        "state": "final"
-      },
-      "it": {
-        "value": "hai rifiutato la chiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Vous avez rejeté l’appel",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話を切りました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VOICE_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Voice call request",
-        "state": "final"
-      },
-      "it": {
-        "value": "Richiesta di chiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Demande d’appel",
-        "state": "final"
-      },
-      "ja": {
-        "value": "着信中",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VOICE_REQUEST"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The voice call is started",
-        "state": "final"
-      },
-      "it": {
-        "value": "inizio chiamata voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Début de l’appel vocal",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.VOICE_STARTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The contact has ended<br>Thanks.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Le contact est terminé<br>Merci.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.NOCHAT.END_MSG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome<br>to Vivocha Customer care",
-        "state": "final"
-      },
-      "it": {
-        "value": "Benvenuto<br>nel customer service di Vivocha",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Bienvenue<br>au service client de Vivocha",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ようこそ<br>Vivocha のカスタマーサービスへ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.NOCHAT.MAIN_MSG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Our agents are online every working day from 9 AM to 6 PM",
-        "state": "final"
-      },
-      "it": {
-        "value": "Our agents are online every working day from 9 AM to 6 PM",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Nos agents vous accueillent en ligne tous les jours ouvrables de 9 à 18h00.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターは平日の9時から18時までご利用いただけます",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.NOCHAT.SUB_MSG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Just a moment,<br>we are connecting you with the first available agent.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Veuillez patienter,<br>nous vous mettons en relation avec le premier agent disponible.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.INFO"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome<br>to Vivocha Customer care",
-        "state": "final"
-      },
-      "it": {
-        "value": "Benvenuto<br>nel customer service di Vivocha",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Bienvenue<br>au service client de Vivocha",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ようこそ <br> Vivocha のカスタマーサービスへ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Email",
-        "state": "final"
-      },
-      "it": {
-        "value": "Email",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Email",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メールアドレス",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.EMAIL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "email to which you want the transcript sent",
-        "state": "final"
-      },
-      "it": {
-        "value": "email per l'invio della trascrizione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Recevoir une copie de la conversation à votre adresse e-mail",
-        "state": "final"
-      },
-      "ja": {
-        "value": "会話を転写するメールアドレス",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.EMAIL_PH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your rating has been sent.<br>Thank you!",
-        "state": "final"
-      },
-      "it": {
-        "value": "La tua valutazione è stata inviata.<br>Grazie!",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Votre évaluation a bien été envoyée.<br>Merci !",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.FEEDBACK"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Please rate your experience with our customer care",
-        "state": "final"
-      },
-      "it": {
-        "value": "Quanto sei soddisfatto dell'assistenza ricevuta?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Veuillez évaluer notre service clientèle",
-        "state": "final"
-      },
-      "ja": {
-        "value": "サービスの満足度はいかがでしたか?",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.RATING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send rating",
-        "state": "final"
-      },
-      "it": {
-        "value": "Invia Valutazione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Envoyer évaluation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "評価を送信する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.SUBMIT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Rate your experience",
-        "state": "final"
-      },
-      "it": {
-        "value": "Valuta la tua esperienza",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Évaluer votre expérience",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの受けたサービスの経験を評価する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.TITLE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Help us<br>to improve our service",
-        "state": "final"
-      },
-      "it": {
-        "value": "Aiutaci<br>a migliorare il servizio",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Aidez-nous<br>à améliorer le service",
-        "state": "final"
-      },
-      "ja": {
-        "value": "サービスの向上に<br>ご協力お願いします",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Browse",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sfoglia",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Parcourir",
-        "state": "final"
-      },
-      "ja": {
-        "value": "添付する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOOLS.UPLOADER.BROWSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Write your message here",
-        "state": "final"
-      },
-      "it": {
-        "value": "Descrizione file",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Description du fichier",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルの詳細",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOOLS.UPLOADER.FILE_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "File Max Size - 10Mb",
-        "state": "final"
-      },
-      "it": {
-        "value": "Dimensione massima - 10Mb",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Taille maximale - 10 Mb",
-        "state": "final"
-      },
-      "ja": {
-        "value": "最大 - 10Mb",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOOLS.UPLOADER.MAX_FILESIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Select a file to upload",
-        "state": "final"
-      },
-      "it": {
-        "value": "seleziona il file da caricare",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Sélectionner le fichier à charger",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルを選択する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOOLS.UPLOADER.SELECT_PLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send",
-        "state": "final"
-      },
-      "it": {
-        "value": "Invia",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Envoyer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "送信する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOOLS.UPLOADER.SEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "{{agent}} is writing...",
-        "state": "final"
-      },
-      "it": {
-        "value": "{{agent}} sta scrivendo...",
-        "state": "final"
-      },
-      "fr": {
-        "value": "{{agent}} est en train d'écrire...",
-        "state": "final"
-      },
-      "ja": {
-        "value": "{{オペレーター}} 書き込み中",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOPBAR.ISWRITING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome<br>you are talking with",
-        "state": "final"
-      },
-      "it": {
-        "value": "Benvenuto<br>stai parlando con",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Bienvenue<br>votre interlocuteur est",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ようこそ<br>___と話しています",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOPBAR.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Application Logo",
-        "state": "final"
-      },
-      "it": {
-        "value": "Logo Applicazione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Logo de l’application",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリ ロゴ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.COMPANY_LOGO"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the user to send file to the agent",
-        "state": "final"
-      },
-      "it": {
-        "value": "Permetti al visitatore di inviare un file all'operatore.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Permet à l’utilisateur d’envoyer un fichier à l’agent.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "訪問者にオペレーターへのファイルの転送を許可する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.ALLOW_FILE_TRANSFER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the visitor to drag the application.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Permetti al visitatore di spostare l'applicazione.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Permet à l’utilisateur de déplacer l’application.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "訪問者にアプリの移動を許可する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.ALLOW_DRAG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the visitor to display emoji panel.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Permet à l’utilisateur de visualiser la fenêtre d’envoi des Emoji.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "訪問者に絵文字パネルの使用を許可する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.ALLOW_EMOJI"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the visitor to resize the application.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Permetti al visitatore di ridimensionare l'applicazione.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Permet à l’utilisateur de redimensionner l’application.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "訪問者にアプリの縮小を許可する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.ALLOW_RESIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Initial width of the application (desktop version).",
-        "state": "final"
-      },
-      "it": {
-        "value": "Larghezza iniziale dell'applicazione (versione desktop).",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Largeur initiale de l’application (version bureau).",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.INITIAL_WIDTH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Initial height of the application (desktop version).",
-        "state": "final"
-      },
-      "it": {
-        "value": "Altezza iniziale dell'applicazione (versione desktop).",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Hauteur initiale de l’application (version bureau).",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.INITIAL_HEIGHT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Primary colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Primary color",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur primaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "初期カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.PRIMARY_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Main colour of the application",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore usato come colore principale dell'applicazione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur principale de l’application",
-        "state": "final"
-      },
-      "ja": {
-        "value": "初期設定で使用される色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.PRIMARY_COLOR_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Warning colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Warning color",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur de signalisation d’un danger",
-        "state": "final"
-      },
-      "ja": {
-        "value": "警告カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.WARNING_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Colour used for critical messages",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore usato per mostrare messaggi critici",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur utilisée pour afficher des messages importants",
-        "state": "final"
-      },
-      "ja": {
-        "value": "攻撃的な発言メッセージに使用される色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.WARNING_COLOR_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Success colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Success color",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur associée au succès",
-        "state": "final"
-      },
-      "ja": {
-        "value": "成功カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.SUCCESS_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Colour used for successful messages",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore utilizzato per sottolineare le operazioni andate a buon fine",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur utilisée pour passer un message de réussite",
-        "state": "final"
-      },
-      "ja": {
-        "value": "作業が成功した際の下線の色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.SUCCESS_COLOR_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Dark colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Dark color",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur foncée",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ダークカラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.DARK_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Main colour for texts",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore usato come colore principale per i testi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur principale utilisée pour les textes",
-        "state": "final"
-      },
-      "ja": {
-        "value": "原文に使用される初期カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.DARK_COLOR_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Light colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Light color",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur claire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ライトカラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.LIGHT_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Main colour for backgrounds",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore usato come colore principale per i background",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur principale utilisée pour l’arrière-plan",
-        "state": "final"
-      },
-      "ja": {
-        "value": "初期設定の背景カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.LIGHT_COLOR_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
         "value": "Chat",
         "state": "final"
       },
@@ -2285,2406 +261,100 @@
     "description": "",
     "id": "META.GROUPS.TOPBAR"
   },
+
   {
     "values": {
       "en": {
-        "value": "Placeholder of chat text area",
+        "value": "Initial width of the application (desktop version).",
         "state": "final"
       },
       "it": {
-        "value": "Placeholder del box di chat",
+        "value": "Larghezza iniziale dell'applicazione (versione desktop).",
         "state": "final"
       },
       "fr": {
-        "value": "Placeholder de la zone de conversation",
+        "value": "Largeur initiale de l’application (version bureau).",
         "state": "final"
       },
       "ja": {
-        "value": "チャットボックスのプレスホルダー",
+        "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
         "state": "final"
       }
     },
     "description": "",
-    "id": "META.CHAT.TEXTAREA_PLACEHOLDER"
+    "id": "META.VARIABLES.APP.INITIAL_WIDTH"
   },
   {
     "values": {
       "en": {
-        "value": "Chat closure message",
+        "value": "Initial height of the application (desktop version).",
         "state": "final"
       },
       "it": {
-        "value": "Messaggio di chiusura chat",
+        "value": "Altezza iniziale dell'applicazione (versione desktop).",
         "state": "final"
       },
       "fr": {
-        "value": "Message de fermeture de la conversation",
+        "value": "Hauteur initiale de l’application (version bureau).",
         "state": "final"
       },
       "ja": {
-        "value": "チャットの終了メッセージ",
+        "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
         "state": "final"
       }
     },
     "description": "",
-    "id": "META.CLOSEMODAL.CLOSE_MESSAGE"
+    "id": "META.VARIABLES.APP.INITIAL_HEIGHT"
   },
   {
     "values": {
       "en": {
-        "value": "Cancel text",
+        "value": "Primary colour",
         "state": "final"
       },
       "it": {
-        "value": "Testo \"annulla\"",
+        "value": "Primary color",
         "state": "final"
       },
       "fr": {
-        "value": "Annuler texte",
+        "value": "Couleur primaire",
         "state": "final"
       },
       "ja": {
-        "value": "テキスト \"キャンセル\"",
+        "value": "初期カラー",
         "state": "final"
       }
     },
     "description": "",
-    "id": "META.CLOSEMODAL.NO"
+    "id": "META.VARIABLES.COLOR1"
   },
   {
     "values": {
       "en": {
-        "value": "Confirm text",
+        "value": "BOT app color",
         "state": "final"
       },
       "it": {
-        "value": "Testo \"conferma\" ",
+        "value": "Colore applicazione BOT",
         "state": "final"
-      },
-      "fr": {
-        "value": "Confirmer texte ",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキスト \"確認\" ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.CLOSEMODAL.YES"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome message",
-        "state": "final"
-      },
-      "it": {
-        "value": "Messaggio di benvenuto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de bienvenue",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ようこそ メッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.INITIAL_DATA.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Hide chat button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone chiusura chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Masquer le texte de la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン チャットの終了",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.CHAT_HIDE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show chat button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone mostra chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Afficher le texte de la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン チャットを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.CHAT_SHOW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Expand chat button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone espandi chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Agrandir le texte de la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン チャットを広める",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.EXPAND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Hang-up button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone chiudi chiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Bloquer le texte de la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン 電話を切る",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.HANGUP"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Minimize chat button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone minimizza chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Diminuer le texte de la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン チャットを 縮小する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.MINIMIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Mute button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone abilita muto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Activer les alertes pendant la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン ミュートをオンにする",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.MUTE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Unmute button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone disabilita muto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Désactiver les alertes pendant la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン ミュートをオフにする",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.UNMUTE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video off button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone spegni video",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte pour vidéo off",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン ビデオを閉じる",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.VIDEO_OFF"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video on button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone abilita video",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte pour vidéo on",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン ビデオをオンにする",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MEDIATOOLS.VIDEO_ON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Accept message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio Accetta",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Accepter un message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ 承認する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.ACCEPT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Compile message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio Compila",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Écrire un message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ 入力する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.COMPILE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Continue message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio Continua",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Continuer un message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ 続ける",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.CONTINUE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Decline message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio Rifiuta",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Refuser un message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ 拒否する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.DECLINE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Download message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio Scarica",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Télécharger un message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ ダウンロードする",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.DOWNLOAD"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "File uploading message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio durante invio file",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de chargement d’un fichier",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ ファイル送信中",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.FILE_SENDING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Form filling message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio durante compilazione modulo",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de compilation d’un formulaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ 記入中",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.FORM_PENDING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Information request message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio richiesta di informazioni",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de demande d’informations",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ 詳細を聞く",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.FORM_REQUEST"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Error message text for form sending",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per modulo inviato correttamente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’envoi réussi pour envoi de formulaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルが正常に送信された時のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.FORM_SUBMIT_SUCCESS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Success message text for form sending",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per errore invio modulo",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’erreur pour envoi de formulaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルが正しく送信されなかった場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.FORM_SUBMIT_ERROR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Contact closed by agent message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per contatto chiuso da operatore",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de fermeture d’un contact de la part d’un agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターにより通信が中断された場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.REMOTE_CLOSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video connection error message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per videochiamata fallita",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’erreur de connexion vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話が繋がらなかった場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.REMOTE_VIDEO_FAILED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call rejected message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per videochiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de vidéo rejetée par l’agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話を 拒否された場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.REMOTE_VIDEO_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call connection error message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per errore di connessione",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’erreur de connexion d’un appel",
-        "state": "final"
-      },
-      "ja": {
-        "value": "接続エラーが 出た場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.REMOTE_VOICE_FAILED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call rejected message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per chiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’appel rejeté",
-        "state": "final"
-      },
-      "ja": {
-        "value": " 着信を拒否された場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.REMOTE_VOICE_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Retry message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per \"riprova\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de retentative",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ  \"もう一度試す\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.RETRY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per \"invia\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message pour envoi",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ \"送信する\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.SEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Contact transferred message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per contatto trasferito",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de contact transféré",
-        "state": "final"
-      },
-      "ja": {
-        "value": "連絡相手が変更する場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.TRANSFERRED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call terminated message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per fine videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’appel vidéo terminé",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話終了の際のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VIDEO_ENDED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call rejected message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per videochiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’appel vidéo rejeté",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話を 拒否された場合のテキストメッセージper videochiamata rifiutata",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VIDEO_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call request message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per richiesta di videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de demande d’appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話のリクエストを受信した場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VIDEO_REQUEST"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Started video call message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per inizio videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de début d’appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話開始のテキストメッセージinizio videochiamata",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VIDEO_STARTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "View message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per \"vedi\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Afficher le message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ \"見る\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VIEW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Voice call terminated message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per fine chiamata voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’appel vocal terminé",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話終了した際のテキストメッセージchiamata voce",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VOICE_ENDED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Only voice message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per \"solo voce\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message pour appel vocal uniquement",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ \"音声のみ\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VOICE_ONLY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call rejected message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per chiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message d’appel rejeté",
-        "state": "final"
-      },
-      "ja": {
-        "value": " 着信を拒否した場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VOICE_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Voice call request message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per richiesta di chiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de demande d’appel vocal",
-        "state": "final"
-      },
-      "ja": {
-        "value": "着信を受けた場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VOICE_REQUEST"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The voice call is started message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per inizio chiamata voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de début d’appel vocal",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話開始時のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.MESSAGES.VOICE_STARTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Contact terminated message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio per contatto terminato",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de fin de contact",
-        "state": "final"
-      },
-      "ja": {
-        "value": "連絡が終了した場合のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.NOCHAT.END_MSG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Main welcome message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio di benvenuto principale",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message principal de bienvenue",
-        "state": "final"
-      },
-      "ja": {
-        "value": "始まりのテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.NOCHAT.MAIN_MSG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Secondary message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio di benvenuto secondario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message secondaire de bienvenue",
-        "state": "final"
-      },
-      "ja": {
-        "value": "二回目の連絡の際のテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.NOCHAT.SUB_MSG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Queue message text shown to user ",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo del messaggio mostrato all'utente in coda",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de file d’attente",
-        "state": "final"
-      },
-      "ja": {
-        "value": "順番待ちの方向けのテキストメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.QUEUE.INFO"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio di benvenuto",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de bienvenue",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストメッセージ ようこそ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.QUEUE.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Email text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo email",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte e-mail",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メール テキスト",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.EMAIL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Email placeholder text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo placeholder email",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte Placeholder e-mail",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メールプレスホルダーのテキスト",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.EMAIL_PH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Feedback request text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo richiesta feedback",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de demande de feedback",
-        "state": "final"
-      },
-      "ja": {
-        "value": "フィードバック要求のテキスト",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.FEEDBACK"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Rating request text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo richiesta rating",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de demande d’évaluation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "評価を お願いする際のテキスト",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.RATING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Submit button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone invio modulo",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte du bouton d’envoi",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン ファイル送信",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.SUBMIT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Survey title text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo titolo questionario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte du titre de l’enquête",
-        "state": "final"
-      },
-      "ja": {
-        "value": "質問の テキスト題名",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.TITLE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Survey welcome message text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo messaggio benvenuto del questionario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de bienvenue dans l’enquête",
-        "state": "final"
-      },
-      "ja": {
-        "value": "質問の場へようこそテキストメッセージの",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.SURVEY.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Browse button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone \"sfoglia\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte du bouton de navigation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン \"選択する\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOOLS.UPLOADER.BROWSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "File description text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Etichetta \"Descrizione file\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte de description du fichier",
-        "state": "final"
-      },
-      "ja": {
-        "value": "タグ \"ファイルの詳細\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOOLS.UPLOADER.FILE_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Max size text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo \"dimensione massima\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Étiquette taille maximale de fichier",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキスト \"最大サイズ\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOOLS.UPLOADER.MAX_FILESIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Selection file to be uploaded text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo selezione file da caricare",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Placeholder sélectionner fichier",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキスト ファイルを選択する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOOLS.UPLOADER.SELECT_PLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send button text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo bottone \"invia\"",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte du bouton d’envoi",
-        "state": "final"
-      },
-      "ja": {
-        "value": "テキストボタン \"送信する\"",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOOLS.UPLOADER.SEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Agent is writing warning text",
-        "state": "final"
-      },
-      "it": {
-        "value": "Testo di avviso quando l'agente sta scrivendo",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Texte agent en train d’écrire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "エージェントが書き込んでいる際のお知らせテキスト",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOPBAR.ISWRITING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Welcome in chat message",
-        "state": "final"
-      },
-      "it": {
-        "value": "Messaggio di benvenuto in chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Message de bienvenue au « chat »",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットへ ようこそ んlメッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.TOPBAR.WELCOME"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "How do you want to be contacted?",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Come vuoi essere contattato?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Comment voulez-vous être contacté(e) ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "どのような方法でお問い合わせを受けますか？",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.QUESTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "By e-mail",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Via e-mail",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Par email",
-        "state": "final"
-      },
-      "ja": {
-        "value": "Eメールで",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.MAIL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "By SMS",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Via SMS",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Par texto",
-        "state": "final"
-      },
-      "ja": {
-        "value": "SMSで",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.SMS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "By phone",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Al telefono",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Par téléphone",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話で",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "To which e-mail address would you like to receive assistance?",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "A quale indirizzo e-mail desideri essere contattato?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "À quelle adresse souhaitez-vous être contacté(e) ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "どのメールアドレスに連絡をもらいますか？",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.MAIL.QUESTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "To which phone number would you like to receive assistance via SMS?",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "A quale numero di telefono desideri essere contattato via SMS?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "À quel numéro de téléphone souhaitez-vous être contacté(e) par texto ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "どの電話番号にSMSメッセージを受け取りますか？",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.SMS.QUESTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "To which phone number would you like to receive assistance?",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "A quale numero di telefono desideri essere contattato?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "À quel numéro de téléphone souhaitez-vous être contacté(e) ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "どの電話番号で電話を受けたいですか？",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.QUESTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Thank you! Our agents will contact you as requested",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Grazie! I nostri agenti ti contatteranno secondo le modalità richieste",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Merci ! Nos agents vous contacteront selon les modalités requises",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ありがとうございます！お選び頂いた方法で我々のアシスタントから連絡があります。",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.THANKYOU"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send address",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Invia recapito",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Envoi de contact",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アドレスを送信する",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.ADDRESS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your e-mail address",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Il tuo indirizzo e-mail*",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Votre adresse email*",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたのメールアドレス*",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.MAIL.FIELDLABEL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your phone number",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Il tuo numero di telefono",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Votre numéro de téléphone",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの電話番号",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.SMS.FIELDLABEL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your phone number",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Il tuo numero di telefono",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Votre numéro de téléphone",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの電話番号",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.FIELDLABEL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Type your e-mail address",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Inserisci il tuo indirizzo e-mail*",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Saisir votre adresse email*",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたのメールアドレスを入力してください*",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.MAIL.FIELDPLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Type your phone number",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Inserisci il tuo numero di telefono",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Saisir votre numéro de téléphone",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの電話番号を入力してください",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.SMS.FIELDPLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Type your phone number",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Inserisci il tuo numero di telefono",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Saisir votre numéro de téléphone",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの電話番号を入力してください",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.FIELDPLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "When do you want to be called back?",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Quando vuoi essere contattato?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Quand voulez-vous être contacté(e) ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "いつお問い合わせを受け取りたいですか？",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.WHENCAL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "At what time of the day?",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "In quale momento della giornata?",
-        "state": "final"
-      },
-      "fr": {
-        "value": "À quel moment de la journée ?",
-        "state": "final"
-      },
-      "ja": {
-        "value": "どの時間帯がよろしいですか？",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.FIXEDSLOTS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Select a time slot",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Seleziona uno slot orario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Choisir une tranche horaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "時間スロットを選択してください",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.PHONE.INTERVALS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send address",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Invia recapito",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Envoi de contact",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アドレスを送信する",
-        "state": "final"
-      }
-    },
-    "id": "RECALL.SEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video icon",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona video",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_VIDEO"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Phone/voice icon",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona telefono/voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône téléphone/vocal",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話/音声アイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_PHONE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Icon to switch to full size state",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona per passare allo stato fullsize",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône pour plein écran",
-        "state": "final"
-      },
-      "ja": {
-        "value": "フルサイズに変更するアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_MAXIMIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Top Bar menu option's icon",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona del menu di selezione opzioni nella Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône du menu de sélection dans la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバー内でのオプション選択のメニューアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_MENU"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send chat message button's icon",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona del bottone di invio messaggio di chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône du bouton d’envoi de message en conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャット内でのメッセージ送信ボタンのアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_SEND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Icon to open to emoji board on the send message area",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona nell'area di invio messaggio per l'apertura del pannello di selezione emoji",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône dans la zone d’envoi de message pour l’ouverture du panneau de sélection des émoticons",
-        "state": "final"
-      },
-      "ja": {
-        "value": "絵文字選択パネルを開くためのメッセージ送信エリア内のアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_EMOJI"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Icon to open to upload board on the send message area",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona nell'area di invio messaggio per aprire il pannello di upload",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône dans la zone d’envoi de message pour l’ouverture du panneau de chargement en amont",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アップロードパネルを開くためのメッセージ送信エリア内のアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_UPLOAD"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Icon on the Top Bar to close the App",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona nella Top Bar per chiudere la chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône dans la barre du haut pour clore la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットを閉じるトップバー内のアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_CLOSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Icon on the Top Bar to minimize the App",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Icona nella Top Bar per passare allo stato minimizzato",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Icône dans la barre du haut pour réduire la fenêtre",
-        "state": "final"
-      },
-      "ja": {
-        "value": "縮小に変更するためのトップバー内のアイコン",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.ICON_REDUCE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "App shadow",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Ombra dell'App",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Ombre de l'application",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリの影",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.APP_SHADOW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "App border radius",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Radius del bordo dell'App",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Rayon du bord de l'application",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリの枠のラディウス",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.APP_RADIUS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Text dimension for the button used on multimedia messages",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Dimensione testo del bottone usato nei multimedia messages",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Dimension du texte du bouton utilisé dans les messages multimédia",
-        "state": "final"
-      },
-      "ja": {
-        "value": "マルチメディアメッセージ内で使用されたボタンのテキストの大きさ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.LABEL_BUTTON_PRIMARY_SIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Main colour of the button used on multimedia messages",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore principale del bottone usato nei multimedia messages",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur principale du bouton utilisé dans les messages multimédia",
-        "state": "final"
-      },
-      "ja": {
-        "value": "マルチメディアメッセージ内で使われるボタンの初期カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.LABEL_BUTTON_PRIMARY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Initial distance of the App from the bottom border of the page",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Distanza iniziale dell'App dal bordo inferiore della pagina",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Distance initiale de l’application du bord inférieur de la page",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリページの下縁部からの初期距離",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.APP_BOTTOM_DISTANCE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The Font Family you want to use in the App",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Font Family da utilizzare nell'App",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Famille de polices à utiliser dans l’application",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリで使用するフォントファミリー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.APP_FONT_FAMILY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Link to the web font you want to use in the App",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Link web font da utilizzare nell'App",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Police Web du lien à utiliser dans l’application",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリで使用するウェブリンクのフォント",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.APP_FONT_URL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Send message button's background colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore di sfondo del bottone di invio messaggio",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur de l'arrière plan du bouton d'envoi de message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メッセージ送信ボタンの背景の色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.CHAT_SEND_BUTTON_BG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Message text area's dimension",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Dimensione del campo di testo per la scrittura del messaggio di chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Dimension du champ de texte pour la rédaction du message de conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットメッセージの書き込み用のテキスト枠の大きさ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.CHAT_TEXT_INPUT_SIZE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Message text area's colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore del campo di testo per la scrittura del messaggio",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur du champ de texte pour la rédaction du message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メッセージの書き込みテキスト枠内の色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.CHAT_TEXT_INPUT_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Message text area's border colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore del bordo del campo di scrittura del messaggio",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur du bord du champ de rédaction du message",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メッセージ書き込み枠の色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.CHAT_INPUT_BORDER_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Message text area's background colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Sfondo dell'area di scrittura messaggio di chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Arrière plan de la zone de rédaction du message de conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットメッセージの書き込みエリアの背景",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.CHAT_BOX_BACKGROUND"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show arrow's balloon for the agent ",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Visualizza balloon con arrow per l'agente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de la bulle avec flèche pour l'agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "エージェントの吹き出しを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.SHOW_CHAT_AGENT_ARROW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show agent's avatar on chat",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Visualizza avatar dell'agente nella chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de l’avatar de l'agent dans la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャット内にエージェントのアバターを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.SHOW_CHAT_AGENT_AVATAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The width of the application when minimized (desktop version).",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Larghezza dell'applicazione quando minimizzata (versione desktop).",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Largeur de l'application en état réduit (version bureau).",
-        "state": "final"
-      },
-      "ja": {
-        "value": "最小サイズに設定した場合のアプリの幅 (ディスクトップヴァージョン)。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.MINIMIZED_WIDTH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The height of the application when minimized (desktop version).",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Altezza dell'applicazione quando minimizzata (versione desktop).",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Largeur de l'application en état réduit (version bureau).",
-        "state": "final"
-      },
-      "ja": {
-        "value": "最小サイズに設定した場合のアプリの高さ （ディスクトップヴァージョン）。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.MINIMIZED_HEIGHT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Top Bar background colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore di sfondo della Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur d’arrière-plan de la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバーの背景カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.TOP_BAR_BG"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Top Bar title colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore del titolo della Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur du titre de la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバーのタイトルの色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.TOP_BAR_TITLE_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Top Bar subtitle colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore del sottotitolo della Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur du sous-titre de la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバーのサブタイトルの色",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.TOP_BAR_SUBTITLE_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Top Bar title dimension",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Dimensione del titolo della Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Dimension du titre de la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバーのタイトルの大きさ",
-        "state": "final"
       }
     },
     "description": "",
-    "id": "VARIABLES.TOP_BAR_TITLE_SIZE"
+    "id": "META.VARIABLES.COLOR2"
   },
   {
     "values": {
       "en": {
-        "value": "Top Bar subtitle dimension",
-        "state": "needs-review"
+        "value": "Show avatar in the Topbar",
+        "state": "new"
       },
       "it": {
-        "value": "Dimensione del sottotitolo della Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Dimension du sous-titre de la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバーのサブタイトルの大きさ",
-        "state": "final"
+        "value": "Visualizza avatar nella Topbar",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.TOP_BAR_SUBTITLE_SIZE"
+    "id": "META.VARIABLES.TOPBAR.SHOW_AVATAR"
   },
   {
     "values": {
@@ -4706,293 +376,179 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.TOP_BAR_SHOW_AVATAR"
+    "id": "META.VARIABLES.TOPBAR.DEFAULT_AGENT_AVATAR"
   },
   {
     "values": {
       "en": {
-        "value": "Show agent's avatar on the Top Bar",
-        "state": "needs-review"
+        "value": "Show agent info in the Topbar",
+        "state": "new"
       },
       "it": {
-        "value": "Visualizza l'avatar dell'agente nella Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de l’avatar de l'agent dans la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバー内にエージェントのアバターを表示する",
-        "state": "final"
+        "value": "Visualizza informazioni agente nella Topbar",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.TOP_BAR_SHOW_AGENT_AVATAR"
+    "id": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO"
   },
   {
     "values": {
       "en": {
-        "value": "Top Bar default avatar",
-        "state": "needs-review"
+        "value": "Allow the visitor to display emoji panel.",
+        "state": "final"
       },
       "it": {
-        "value": "Default avatar della Top Bar",
+        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
         "state": "final"
       },
       "fr": {
-        "value": "Avatar par défaut de la barre du haut",
+        "value": "Permet à l’utilisateur de visualiser la fenêtre d’envoi des Emoji.",
         "state": "final"
       },
       "ja": {
-        "value": "トップバーのアバターデフォルト",
+        "value": "訪問者に絵文字パネルの使用を許可する",
         "state": "final"
       }
     },
     "description": "",
-    "id": "VARIABLES.TOP_BAR_DEFAULT_AVATAR"
+    "id": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON"
   },
   {
     "values": {
       "en": {
-        "value": "System messages' text colour",
-        "state": "needs-review"
+        "value": "Allow the user to send file to the agent",
+        "state": "final"
       },
       "it": {
-        "value": "Colore testo dei messaggi di sistema",
+        "value": "Permetti al visitatore di inviare un file all'operatore.",
         "state": "final"
       },
       "fr": {
-        "value": "Couleur du texte des messages du système",
+        "value": "Permet à l’utilisateur d’envoyer un fichier à l’agent.",
         "state": "final"
       },
       "ja": {
-        "value": "システムメッセージのテキストカラー",
+        "value": "訪問者にオペレーターへのファイルの転送を許可する",
         "state": "final"
       }
     },
     "description": "",
-    "id": "VARIABLES.SYSTEM_MESSAGE_COLOR"
+    "id": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON"
   },
   {
     "values": {
       "en": {
-        "value": "System messages text dimension",
-        "state": "needs-review"
+        "value": "Display welcome message when the agent is connected to the chat",
+        "state": "new"
       },
       "it": {
-        "value": "Dimensione testo messaggi di sistema",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Dimension du texte des messages du système",
-        "state": "final"
-      },
-      "ja": {
-        "value": "システムメッセージのテキストの大きさ",
-        "state": "final"
+        "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.SYSTEM_MESSAGE_SIZE"
+    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE"
   },
   {
     "values": {
       "en": {
-        "value": "Chat text dimension",
-        "state": "needs-review"
+        "value": "Show visitor avatar in chat message",
+        "state": "new"
       },
       "it": {
-        "value": "Dimensione testo chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Dimension du texte de la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットテキストの大きさ",
-        "state": "final"
+        "value": "Visualizza avatar del visitatore nel messaggio di chat",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_MESSAGE_SIZE"
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR"
   },
   {
     "values": {
       "en": {
-        "value": "Chat message timestamp colour",
-        "state": "needs-review"
+        "value": "Show arrow in the visitor balloon chat message",
+        "state": "new"
       },
       "it": {
-        "value": "Colore timestamp del messaggio di chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur d’horodatage du message de conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットメッセージのタイムスタンプの色",
-        "state": "final"
+        "value": "Visualizza freccia tra balloon ed avatar nel messaggio del visitatore",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_TIME_COLOR"
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW"
   },
   {
     "values": {
       "en": {
-        "value": "User balloon background colour",
-        "state": "needs-review"
+        "value": "Visitor chat balloon color",
+        "state": "new"
       },
       "it": {
-        "value": "Colore sfondo del balloon di chat dell'utente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur de l'arrière-plan de la bulle de conversation du client",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ユーザーのチャットの吹き出しの背景カラー",
-        "state": "final"
+        "value": "Colore del balloon di chat del visitatore",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_VISITOR_BALLOON_BG"
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR"
   },
   {
     "values": {
       "en": {
-        "value": "User chat balloon text colour",
-        "state": "needs-review"
+        "value": "Default visitor avatar",
+        "state": "new"
       },
       "it": {
-        "value": "Colore testo del balloon di chat dell'utente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur du texte de la bulle de conversation du client",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ユーザーのチャットの吹き出し内のテキストカラー",
-        "state": "final"
+        "value": "Avatar di default per il visitatore",
+        "state": "new"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_VISITOR_BALLOON_COLOR"
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR"
   },
   {
     "values": {
       "en": {
-        "value": "User chat balloon radius",
+        "value": "Show agent's avatar on chat",
         "state": "needs-review"
       },
       "it": {
-        "value": "Radius del balloon di chat",
+        "value": "Visualizza avatar dell'agente nella chat",
         "state": "final"
       },
       "fr": {
-        "value": "Rayon de la bulle de conversation",
+        "value": "Affichage de l’avatar de l'agent dans la conversation",
         "state": "final"
       },
       "ja": {
-        "value": "チャットのバルーンラディウス",
+        "value": "チャット内にエージェントのアバターを表示する",
         "state": "final"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_BALLOON_RADIUS"
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR"
   },
   {
     "values": {
       "en": {
-        "value": "User chat balloon border colour",
+        "value": "Show arrow's balloon for the agent ",
         "state": "needs-review"
       },
       "it": {
-        "value": "Colore bordo del balloon di chat per l'utente",
+        "value": "Visualizza balloon con arrow per l'agente",
         "state": "final"
       },
       "fr": {
-        "value": "Couleur du bord de la bulle de conversation du client",
+        "value": "Affichage de la bulle avec flèche pour l'agent",
         "state": "final"
       },
       "ja": {
-        "value": "ユーザーのチャット吹き出しの枠の色",
+        "value": "エージェントの吹き出しを表示する",
         "state": "final"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_VISITOR_BALLOON_BORDER_COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show user's avatar on chat",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Visualizza avatar dell'utente nella chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de l’avatar de l'utilisateur dans la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャット内にユーザーのアバターを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.SHOW_CHAT_VISITOR_AVATAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show arrow's balloon for user",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Visualizza balloon con arrow per l'utente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de la bulle avec flèche pour le client",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ユーザーに吹き出しを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.SHOW_CHAT_VISITOR_ARROW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Agent chat balloon background colour",
-        "state": "needs-review"
-      },
-      "it": {
-        "value": "Colore sfondo del balloon di chat dell'agente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur de l'arrière-plan de la bulle de conversation de l’agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "エージェントのチャット吹き出しの背景カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "VARIABLES.CHAT_AGENT_BALLOON_BG"
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW"
   },
   {
     "values": {
@@ -5014,28 +570,689 @@
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_AGENT_BALLOON_COLOR"
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR"
   },
   {
     "values": {
       "en": {
-        "value": "Agent chat balloon border colour",
-        "state": "needs-review"
+        "value": "Default agent avatar",
+        "state": "new"
       },
       "it": {
-        "value": "Colore bordo del balloon di chat per l'agente",
+        "value": "Avatar di default per l'agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Message received audio notification",
+        "state": "new"
+      },
+      "it": {
+        "value": "Notifica acustica ricezione messaggio",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION"
+  },
+
+
+
+  {
+    "values": {
+      "en": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.TITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "connecting...",
+        "state": "new"
+      },
+      "it": {
+        "value": "connessione in corso...",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.SUBTITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "minimize",
+        "state": "final"
+      },
+      "it": {
+        "value": "minimizza",
         "state": "final"
       },
       "fr": {
-        "value": "Couleur du bord de la bulle de conversation de l’agent",
+        "value": "réduire",
         "state": "final"
       },
       "ja": {
-        "value": "エージェントのチャット吹き出しの枠の色",
+        "value": "縮小する",
         "state": "final"
       }
     },
     "description": "",
-    "id": "VARIABLES.CHAT_AGENT_BALLOON_BORDER_COLOR"
+    "id": "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "expand",
+        "state": "final"
+      },
+      "it": {
+        "value": "espandi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "étendre",
+        "state": "final"
+      },
+      "ja": {
+        "value": "広める",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice",
+        "state": "final"
+      },
+      "it": {
+        "value": "Voce",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voix",
+        "state": "final"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.VOICE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hide chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nascondi chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video",
+        "state": "final"
+      },
+      "it": {
+        "value": "Video",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vidéo",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Close",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiudi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Contact established",
+        "state": "new"
+      },
+      "it": {
+        "value": "Contatto in corso",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.TOPBAR.CONNECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Just a moment,<br>we are connecting you with the first available agent.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Veuillez patienter,<br>nous vous mettons en relation avec le premier agent disponible.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.CONNECTING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hello, <b>{{nickname}}</b> here,<br> how can I help you?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CHAT.WELCOME_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "In call with<br><b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sei in linea con<br><b>{{nickname}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.WELCOME_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Incoming call from<br><b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.INCOMING_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "We are connecting you<br>with <b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.MEDIA_OFFERING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "open chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "apri chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.OPEN_CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "new messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "messaggi non letti",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.NOT_READ"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The contact has ended<br>Thanks.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Le contact est terminé<br>Merci.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.VOICE.CONTACT_CLOSED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Do you really want to quit?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Vuoi interrompere il contatto?",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voulez-vous vraiment quitter l’application  ?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "書き込みを中止しますか?",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No",
+        "state": "final"
+      },
+      "it": {
+        "value": "No",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Non",
+        "state": "final"
+      },
+      "ja": {
+        "value": "いいえ",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CLOSEMODAL.NO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Yes",
+        "state": "final"
+      },
+      "it": {
+        "value": "Si",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Oui",
+        "state": "final"
+      },
+      "ja": {
+        "value": "はい",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CLOSEMODAL.YES"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The agent left the contact",
+        "state": "final"
+      },
+      "it": {
+        "value": "L'operatore ha chiuso il contatto",
+        "state": "final"
+      },
+      "fr": {
+        "value": "L’agent a quitté le contact",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの通信が途切れました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REMOTE_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The contact has ended<br>Thanks.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Le contact est terminé<br>Merci.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.LOCAL_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "{{agent}} is writing...",
+        "state": "final"
+      },
+      "it": {
+        "value": "{{agent}} sta scrivendo...",
+        "state": "final"
+      },
+      "fr": {
+        "value": "{{agent}} est en train d'écrire...",
+        "state": "final"
+      },
+      "ja": {
+        "value": "{{オペレーター}} 書き込み中",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CHAT.ISWRITING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "close",
+        "state": "final"
+      },
+      "it": {
+        "value": "chiudi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "fermer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.EMOJI.CLOSE_PANEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "close",
+        "state": "final"
+      },
+      "it": {
+        "value": "chiudi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "fermer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.CLOSE_PANEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "send file",
+        "state": "new"
+      },
+      "it": {
+        "value": "invia file",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.SEND_FILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Select a file to upload",
+        "state": "final"
+      },
+      "it": {
+        "value": "seleziona il file da caricare",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Sélectionner le fichier à charger",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルを選択する",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.SELECT_FILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Write your message here",
+        "state": "final"
+      },
+      "it": {
+        "value": "Descrizione file",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Description du fichier",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルの詳細",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.UPLOAD.FILE_DESCRIPTION"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Type here...",
+        "state": "final"
+      },
+      "it": {
+        "value": "Scrivi qui...",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Écrire ici...",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ここに書き込んでください",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.TEXTAREA.PLACEHOLDER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "it": {
+        "value": "Questionario",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "質問",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.SURVEY.TITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Information Request",
+        "state": "final"
+      },
+      "it": {
+        "value": "Richiesta di Informazioni",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Demande d’informations",
+        "state": "final"
+      },
+      "ja": {
+        "value": "詳しく知る",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.SURVEY.SUBTITLE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Your rating has been sent.<br>Thank you!",
+        "state": "final"
+      },
+      "it": {
+        "value": "La tua valutazione è stata inviata.<br>Grazie!",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Votre évaluation a bien été envoyée.<br>Merci !",
+        "state": "final"
+      },
+      "ja": {
+        "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.SURVEY.FEEDBACK"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Continue",
+        "state": "final"
+      },
+      "it": {
+        "value": "Continua",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Continuer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "続ける",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.NEXT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call rejected",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chiamata rifiutata",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Appel rejeté",
+        "state": "final"
+      },
+      "ja": {
+        "value": "電話が途切れました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CALL_REJECTED"
   }
 ]

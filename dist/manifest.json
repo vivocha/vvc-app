@@ -3,87 +3,129 @@
   "type": "interaction",
   "variables": [
     {
-      "id": "primaryColor",
-      "nameId": "VARIABLES.PRIMARY_COLOR",
-      "descriptionId": "VARIABLES.PRIMARY_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#F47929",
-      "type": "color"
-    },
-    {
-      "id": "warningColor",
-      "nameId": "VARIABLES.WARNING_COLOR",
-      "descriptionId": "VARIABLES.WARNING_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#FF1A10",
-      "type": "color"
-    },
-    {
-      "id": "successColor",
-      "nameId": "VARIABLES.SUCCESS_COLOR",
-      "descriptionId": "VARIABLES.SUCCESS_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#6AB913",
-      "type": "color"
-    },
-    {
-      "id": "darkColor",
-      "nameId": "VARIABLES.DARK_COLOR",
-      "descriptionId": "VARIABLES.DARK_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#787878",
-      "type": "color"
-    },
-    {
-      "id": "lightColor",
-      "nameId": "VARIABLES.LIGHT_COLOR",
-      "descriptionId": "VARIABLES.LIGHT_COLOR_DESCRIPTION",
-      "required": true,
-      "defaultValue": "#FFFFFF",
-      "type": "color"
-    },
-    {
-      "id": "companyLogoUrl",
-      "nameId": "VARIABLES.COMPANY_LOGO",
-      "descriptionId": "VARIABLES.COMPANY_LOGO",
-      "defaultValue": "./assets/company.png",
-      "type": "file"
-    },
-    {
-      "id": "fileTransfer",
-      "nameId": "VARIABLES.ALLOW_FILE_TRANSFER",
-      "defaultValue": true,
-      "type": "boolean"
-    },
-    {
-      "id": "emojiPanel",
-      "nameId": "VARIABLES.ALLOW_EMOJI",
-      "defaultValue": true,
-      "type": "boolean"
-    },
-    {
-      "id": "canBeDragged",
-      "nameId": "VARIABLES.ALLOW_DRAG",
-      "defaultValue": false,
-      "type": "boolean"
-    },
-    {
-      "id": "canBeResized",
-      "nameId": "VARIABLES.ALLOW_RESIZE",
-      "defaultValue": false,
-      "type": "boolean"
-    },
-    {
       "id": "initialWidth",
-      "nameId": "VARIABLES.INITIAL_WIDTH",
+      "nameId": "META.VARIABLES.APP.INITIAL_WIDTH",
       "defaultValue": "370",
       "type": "string"
     },
     {
       "id": "initialHeight",
-      "nameId": "VARIABLES.INITIAL_HEIGHT",
+      "nameId": "META.VARIABLES.APP.INITIAL_HEIGHT",
       "defaultValue": "600",
       "type": "string"
+    },
+    {
+      "id": "showAvatar",
+      "nameId": "META.VARIABLES.TOPBAR.SHOW_AVATAR",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "defaultTopBarAvatar",
+      "nameId": "META.VARIABLES.TOPBAR.DEFAULT_AVATAR",
+      "defaultValue": "./assets/static/acct-img.png",
+      "type": "file",
+      "hidden": true
+    },
+    {
+      "id": "showAgentInfoOnTopBar",
+      "nameId": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "showEmojiButton",
+      "nameId": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "showUploadButton",
+      "nameId": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "showWelcomeMessage",
+      "nameId": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "showVisitorAvatar",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "showVisitorBalloonArrow",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "visitorBalloonColor",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR",
+      "defaultValue": "#E6E6E6",
+      "type": "color",
+      "hidden": true
+    },
+    {
+      "id": "visitorAvatarDefault",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR",
+      "defaultValue": "./assets/static/visitor_default.png",
+      "type": "file"
+    },
+    {
+      "id": "showAgentAvatar",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "showAgentBalloonArrow",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "agentBalloonColor",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR",
+      "defaultValue": "#0351A1",
+      "type": "color",
+      "hidden": true
+    },
+    {
+      "id": "agentAvatarDefault",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
+      "defaultValue": "./assets/static/agent_default.png",
+      "type": "file"
+    },
+    {
+      "id": "showAvatarOnIsWriting",
+      "nameId": "META.VARIABLES.CHAT.SHOW_AVATAR_ON_IS_WRITING",
+      "defaultValue": true,
+      "type": "boolean",
+      "hidden": true
+    },
+    {
+      "id": "playAudioNotification",
+      "nameId": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "color1",
+      "nameId": "META.VARIABLES.COLOR1",
+      "defaultValue": "#0351A1",
+      "type": "color"
+    },
+    {
+      "id": "color2",
+      "nameId": "META.VARIABLES.COLOR2",
+      "defaultValue": "#13AF6C",
+      "type": "color",
+      "hidden": true
     }
   ]
 }
