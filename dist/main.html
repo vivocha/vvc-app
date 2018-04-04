@@ -9,16 +9,16 @@
   <link href="__BASE_URL__/main.css" rel="stylesheet">
   <script type="text/javascript">
     (function() {
-      var busId, acct, world;
+      var busId, acct, host;
       try {
         if (location.hash.indexOf(';') !== -1) {
           var hashParts = location.hash.substr(2).split(';');
           busId = hashParts[1];
           acct = hashParts[1];
-          world = hashParts[2];
+          host = hashParts[2];
         }
-        if (busId && acct && world) {
-          var url = "https://"+world+".vivocha.com/a/"+acct+"/js/vivocha_interaction.js";
+        if (busId && acct && host) {
+          var url = "https://"+host+"/a/"+acct+"/js/vivocha_interaction.js";
           var script = document.createElement('script');
           script.type = 'text/javascript';
           script.charset = 'utf-8';
@@ -26,7 +26,7 @@
           script.src = url;
           document.getElementsByTagName('head')[0].appendChild(script);
         } else {
-          throw new Error('cannot find vivocha configuration ' + busId + '-' + acct + '-' + world);
+          throw new Error('cannot find vivocha configuration ' + busId + '-' + acct + '-' + host);
         }
       } catch(e) {
         console.error(e);
