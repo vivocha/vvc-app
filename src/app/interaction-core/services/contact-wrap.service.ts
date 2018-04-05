@@ -469,7 +469,14 @@ export class VvcContactWrap {
   }
   processQuickReply(reply){
     this.messageService.updateQuickReply(reply.msgId);
-    this.contact.sendText(reply.action.title)
+    const vvcQuickReply = {
+      code: "message",
+      type: "text",
+      body: reply.title,
+      payload: reply.payload
+    };
+    //this.contact.sendText(reply.action.title)
+    this.contact.send(vvcQuickReply);
   }
   rejectOffer(){
     this.incomingCallback('error', {});
@@ -501,7 +508,8 @@ export class VvcContactWrap {
     const vvcPostBack = {
       code: "message",
       type: "postback",
-      body: msg.title
+      body: msg.title,
+      payload: msg.payload
     };
     if (msg.type === "postback") {
       this.contact.send(vvcPostBack);
