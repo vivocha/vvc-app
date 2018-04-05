@@ -472,10 +472,9 @@ export class VvcContactWrap {
     const vvcQuickReply = {
       code: "message",
       type: "text",
-      body: reply.title,
-      payload: reply.payload
+      body: reply.action.title,
+      payload: reply.action.payload
     };
-    //this.contact.sendText(reply.action.title)
     this.contact.send(vvcQuickReply);
   }
   rejectOffer(){
