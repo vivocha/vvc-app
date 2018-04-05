@@ -3,19 +3,19 @@
     "id": "NAME",
     "values": {
       "en": {
-        "value": "Vivocha Sidetab",
+        "value": "Sidetab",
         "state": "new"
       },
       "it": {
-        "value": "Vivocha Sidetab",
+        "value": "Sidetab",
         "state": "new"
       },
       "fr": {
-        "value": "Barre latérale Vivocha",
+        "value": "Barre latérale",
         "state": "final"
       },
       "ja": {
-        "value": "Vivocha サイドタブ",
+        "value": "サイドタブ",
         "state": "final"
       }
     }

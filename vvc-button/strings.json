@@ -3,19 +3,19 @@
     "id": "DESCRIPTION",
     "values": {
       "en": {
-        "value": "Vivocha Engage Button",
+        "value": "Engagement Button",
         "state": "new"
       },
       "it": {
-        "value": "Bottone di ingaggio Vivocha",
+        "value": "Bottone di ingaggio",
         "state": "new"
       },
       "fr": {
-        "value": "Bouton d’engagement Vivocha",
+        "value": "Bouton d’engagement",
         "state": "final"
       },
       "ja": {
-        "value": "Vivocha登録ボタン",
+        "value": "登録ボタン",
         "state": "final"
       }
     }

@@ -3,19 +3,19 @@
     "id": "NAME",
     "values": {
       "en": {
-        "value": "Vivocha Popup",
+        "value": "Popup",
         "state": "final"
       },
       "it": {
-        "value": "Vivocha Popup",
+        "value": "Popup",
         "state": "final"
       },
       "fr": {
-        "value": "Fenêtre popup Vivocha",
+        "value": "Fenêtre popup",
         "state": "final"
       },
       "ja": {
-        "value": "Vivocha Popup",
+        "value": "Popup",
         "state": "final"
       }
     }
