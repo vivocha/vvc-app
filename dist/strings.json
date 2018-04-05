@@ -337,6 +337,10 @@
       "it": {
         "value": "Colore applicazione BOT",
         "state": "final"
+      },
+      "fr": {
+        "value": "Couleur de la BOT app",
+        "state": "final"
       }
     },
     "description": "",
@@ -350,6 +354,10 @@
       },
       "it": {
         "value": "Visualizza avatar nella Topbar",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Montrer l'avatar dans la barre du haut",
         "state": "new"
       }
     },
@@ -386,6 +394,10 @@
       },
       "it": {
         "value": "Visualizza informazioni agente nella Topbar",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Montrer les informations agents dans la barre du haut",
         "state": "new"
       }
     },
@@ -445,6 +457,10 @@
       "it": {
         "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
+        "state": "new"
       }
     },
     "description": "",
@@ -459,6 +475,10 @@
       "it": {
         "value": "Visualizza avatar del visitatore nel messaggio di chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Montrer l'avatar du visiteur dans le message chat",
+        "state": "new"
       }
     },
     "description": "",
@@ -467,11 +487,15 @@
   {
     "values": {
       "en": {
-        "value": "Show arrow in the visitor balloon chat message",
+        "value": "Show arrow in the user balloon chat message",
         "state": "new"
       },
       "it": {
         "value": "Visualizza freccia tra balloon ed avatar nel messaggio del visitatore",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Montrer la flèche dans la bulle du message chat",
         "state": "new"
       }
     },
@@ -595,6 +619,10 @@
       "it": {
         "value": "Notifica acustica ricezione messaggio",
         "state": "new"
+      },
+      "fr": {
+        "value": "Notification audio d'un message reçu",
+        "state": "new"
       }
     },
     "description": "",
@@ -612,6 +640,10 @@
       "it": {
         "value": "Vivocha Customer Care",
         "state": "new"
+      },
+      "fr": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
       }
     },
     "description": "",
@@ -625,6 +657,10 @@
       },
       "it": {
         "value": "connessione in corso...",
+        "state": "new"
+      },
+      "fr": {
+        "value": "connection en cours...",
         "state": "new"
       }
     },
@@ -706,6 +742,10 @@
       "it": {
         "value": "Nascondi chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Cacher le chat",
+        "state": "new"
       }
     },
     "description": "",
@@ -756,6 +796,10 @@
       "it": {
         "value": "Contatto in corso",
         "state": "new"
+      },
+      "fr": {
+        "value": "Contact établi",
+        "state": "new"
       }
     },
     "description": "",
@@ -792,6 +836,10 @@
       "it": {
         "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
         "state": "new"
+      },
+      "fr": {
+        "value": "Bonjour, <b>{{nickname}}</b> ici,<br> Comment puis je vous aider?",
+        "state": "new"
       }
     },
     "description": "",
@@ -805,6 +853,10 @@
       },
       "it": {
         "value": "Sei in linea con<br><b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "fr": {
+        "value": "En communication avec<br><b>{{nickname}}</b>",
         "state": "new"
       }
     },
@@ -820,6 +872,10 @@
       "it": {
         "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
         "state": "new"
+      },
+      "fr": {
+        "value": "Appel entrant de<br><b>{{nickname}}</b>",
+        "state": "new"
       }
     },
     "description": "",
@@ -833,6 +889,10 @@
       },
       "it": {
         "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Nous vous connectons <br>avec <b>{{nickname}}</b>",
         "state": "new"
       }
     },
@@ -848,6 +908,10 @@
       "it": {
         "value": "apri chat",
         "state": "new"
+      },
+      "fr": {
+        "value": "Ouvrir le chat ",
+        "state": "new"
       }
     },
     "description": "",
@@ -861,6 +925,10 @@
       },
       "it": {
         "value": "messaggi non letti",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Nouveauw messages",
         "state": "new"
       }
     },
