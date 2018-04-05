@@ -261,7 +261,6 @@
     "description": "",
     "id": "META.GROUPS.TOPBAR"
   },
-
   {
     "values": {
       "en": {
@@ -628,9 +627,6 @@
     "description": "",
     "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION"
   },
-
-
-
   {
     "values": {
       "en": {
@@ -782,6 +778,14 @@
       "it": {
         "value": "Chiudi",
         "state": "new"
+      },
+      "fr": {
+        "value": "Fermer",
+        "state": "final"
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": "final"
       }
     },
     "description": "",
@@ -910,7 +914,7 @@
         "state": "new"
       },
       "fr": {
-        "value": "Ouvrir le chat ",
+        "value": "ouvrir le chat ",
         "state": "new"
       }
     },
@@ -928,7 +932,7 @@
         "state": "new"
       },
       "fr": {
-        "value": "Nouveauw messages",
+        "value": "nouveau messages",
         "state": "new"
       }
     },
@@ -968,7 +972,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Voulez-vous vraiment quitter l’application  ?",
+        "value": "Voulez-vous vraiment quitter l’application?",
         "state": "final"
       },
       "ja": {
