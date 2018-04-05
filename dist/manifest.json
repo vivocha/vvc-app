@@ -256,17 +256,17 @@
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "c389a239860ab6ae354b285801a71da0ad9a58a32a2c318753e747e7877e1095",
+      "hash": "b1d9d59b24cdc308afdd5ca42f76ac787cd89000ad805cd3ea97af20db71b570",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js",
-      "size": 236036,
-      "type": "application/javascript"
+      "type": "application/javascript",
+      "size": 236050
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "1ed91773c61a73bff94580cd6206c0a2603ea690727fa13768a05a4f2c03db19",
+      "hash": "5bd95fea800b71af123cb57094c39b6e4792e4b5eee8c2aa1d67046418742ea7",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/main.bundle.js.map",
-      "size": 267665,
-      "type": "application/json"
+      "type": "application/json",
+      "size": 267656
     },
     {
       "path": "assets/main.c43641aa96cf680af292.bundle.js",
@@ -300,8 +300,8 @@
       "path": "assets/scss/theme.scss",
       "hash": "de058a35dc943a06429e40cb40e33a832748f94f7adaf2821fa1142748238c82",
       "id": "marchitos/widgets/vvc-optimized-app2/assets/scss/theme.scss",
-      "type": "text/x-scss",
-      "size": 33929
+      "size": 33929,
+      "type": "text/x-scss"
     },
     {
       "path": "assets/scss/variables.scss",
