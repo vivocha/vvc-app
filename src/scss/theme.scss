@@ -709,6 +709,16 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         position: relative;
         top: -2px;
       }
+      .message-visitor{
+        background-image: url($visitorAvatarDefault);
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        top: -2px;
+        display: block;
+      }
     }
     .message-spacer{
       flex: auto;

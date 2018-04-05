@@ -463,7 +463,7 @@ export class VvcContactWrap {
   }
   playAudioNotification() {
     const notif = new Audio();
-    notif.src = './assets/static/beep.mp3';
+    notif.src = window['beepmp3'];
     notif.load();
     notif.play();
   }

@@ -21,7 +21,7 @@
     <div class="time" *ngIf="message.isLast">{{ message.time }}</div>
   </div>
   <div class="message-avatar" *ngIf="!message.isAgent" [style.visibility]="message.isFirst ? 'visible' : 'hidden'">
-    <img src="./assets/static/visitor_default.png">
+    <div class="message-visitor"></div>
   </div>
   <div class="message-spacer" *ngIf="message.isAgent"></div>
 </div>
