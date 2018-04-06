@@ -261,7 +261,6 @@
     "description": "",
     "id": "META.GROUPS.TOPBAR"
   },
-
   {
     "values": {
       "en": {
@@ -367,10 +366,6 @@
       "ja": {
         "value": "",
         "state": "new"
-      },
-      "fr": {
-        "value": "Montrer l'avatar dans la barre du haut",
-        "state": "new"
       }
     },
     "description": "",
@@ -414,10 +409,6 @@
       },
       "ja": {
         "value": "",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Montrer les informations agents dans la barre du haut",
         "state": "new"
       }
     },
@@ -485,10 +476,6 @@
       "ja": {
         "value": "",
         "state": "new"
-      },
-      "fr": {
-        "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
-        "state": "new"
       }
     },
     "description": "",
@@ -503,15 +490,15 @@
       "it": {
         "value": "Visualizza avatar dell'utente nel messaggio di chat",
         "state": "final"
+      },
+      "fr": {
+        "value": "Montrer l'avatar du visiteur dans le message chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
       }
-    },
-    "fr": {
-      "value": "Montrer l'avatar du visiteur dans le message chat",
-      "state": "needs-review"
-    },
-    "ja": {
-      "value": "",
-      "state": "new"
     },
     "description": "",
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR"
@@ -666,7 +653,6 @@
         "value": "",
         "state": "new"
       }
-    },
     },
     "description": "",
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR"
