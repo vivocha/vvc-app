@@ -1,11 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
 import { WidgetState } from './interaction-core/store/models.interface';
 import {VvcInteractionService} from './interaction-core/services';
 
-import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
-import {TopBarComponent} from './modules/top-bar/top-bar/top-bar.component';
-import {ChatIsWritingComponent} from './modules/chat/chat-is-writing/chat-is-writing.component';
+//import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
+//import {TopBarComponent} from './modules/top-bar/top-bar/top-bar.component';
+//import {ChatIsWritingComponent} from './modules/chat/chat-is-writing/chat-is-writing.component';
+import {ChatAreaComponent, TopBarComponent, ChatIsWritingComponent} from '@vivocha/client-interaction-layout';
+
 
 @Component({
   selector: 'vvc-root',
