@@ -1,11 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { WidgetState } from './interaction-core/store/models.interface';
-import {VvcInteractionService} from './interaction-core/services';
+import {VvcInteractionService} from '@vivocha/client-interaction-core';
 
-//import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
-//import {TopBarComponent} from './modules/top-bar/top-bar/top-bar.component';
-//import {ChatIsWritingComponent} from './modules/chat/chat-is-writing/chat-is-writing.component';
-import {ChatAreaComponent, TopBarComponent, ChatIsWritingComponent} from '@vivocha/client-interaction-layout';
+import {ChatAreaComponent, TopBarComponent} from '@vivocha/client-interaction-layout';
 
 
 @Component({
@@ -17,7 +13,6 @@ export class AppComponent implements OnInit {
   @ViewChild(TopBarComponent) topBar: TopBarComponent;
   @ViewChild(ChatAreaComponent) chat: ChatAreaComponent;
 
-  public widgetState: WidgetState;
   public messages: Array<any>;
 
   public appState$:any;
