@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction-layout",
-  "version": "5.9.3",
+  "version": "5.9.4",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "clean": "[ ! -d ./dist ] || rm -rf dist/*",
@@ -28,9 +28,7 @@
     "@ngx-translate/http-loader": "2.0.1",
     "ngx-auto-scroll": "1.1.0"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/cli": "~1.7.1",
     "@angular/compiler-cli": "^5.2.0",
