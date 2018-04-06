@@ -340,7 +340,11 @@
       },
       "fr": {
         "value": "Couleur de la BOT app",
-        "state": "final"
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
       }
     },
     "description": "",
@@ -350,10 +354,18 @@
     "values": {
       "en": {
         "value": "Show avatar in the Topbar",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza avatar nella Topbar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer l'avatar dans la barre du hau",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       },
       "fr": {
@@ -368,7 +380,7 @@
     "values": {
       "en": {
         "value": "Show avatar on the Top Bar",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza avatar nella Top Bar",
@@ -390,10 +402,18 @@
     "values": {
       "en": {
         "value": "Show agent info in the Topbar",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza informazioni agente nella Topbar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer les informations agents dans la barre du haut",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       },
       "fr": {
@@ -452,10 +472,18 @@
     "values": {
       "en": {
         "value": "Display welcome message when the agent is connected to the chat",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       },
       "fr": {
@@ -469,17 +497,21 @@
   {
     "values": {
       "en": {
-        "value": "Show visitor avatar in chat message",
-        "state": "new"
+        "value": "Show user avatar in chat message",
+        "state": "final"
       },
       "it": {
-        "value": "Visualizza avatar del visitatore nel messaggio di chat",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Montrer l'avatar du visiteur dans le message chat",
-        "state": "new"
+        "value": "Visualizza avatar dell'utente nel messaggio di chat",
+        "state": "final"
       }
+    },
+    "fr": {
+      "value": "Montrer l'avatar du visiteur dans le message chat",
+      "state": "needs-review"
+    },
+    "ja": {
+      "value": "",
+      "state": "new"
     },
     "description": "",
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR"
@@ -488,14 +520,18 @@
     "values": {
       "en": {
         "value": "Show arrow in the user balloon chat message",
-        "state": "new"
+        "state": "final"
       },
       "it": {
-        "value": "Visualizza freccia tra balloon ed avatar nel messaggio del visitatore",
-        "state": "new"
+        "value": "Visualizza freccia tra balloon ed avatar nel messaggio dell'utente",
+        "state": "final"
       },
       "fr": {
         "value": "Montrer la flèche dans la bulle du message chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -505,11 +541,19 @@
   {
     "values": {
       "en": {
-        "value": "Visitor chat balloon color",
-        "state": "new"
+        "value": "User chat balloon color",
+        "state": "final"
       },
       "it": {
-        "value": "Colore del balloon di chat del visitatore",
+        "value": "Colore del balloon di chat dell'utente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -519,11 +563,19 @@
   {
     "values": {
       "en": {
-        "value": "Default visitor avatar",
-        "state": "new"
+        "value": "Default user avatar",
+        "state": "final"
       },
       "it": {
-        "value": "Avatar di default per il visitatore",
+        "value": "Avatar di default per il utente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -534,7 +586,7 @@
     "values": {
       "en": {
         "value": "Show agent's avatar on chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza avatar dell'agente nella chat",
@@ -556,7 +608,7 @@
     "values": {
       "en": {
         "value": "Show arrow's balloon for the agent ",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza balloon con arrow per l'agente",
@@ -578,7 +630,7 @@
     "values": {
       "en": {
         "value": "Agent chat balloon text colour",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Colore testo del balloon di chat dell'agente",
@@ -600,12 +652,21 @@
     "values": {
       "en": {
         "value": "Default agent avatar",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Avatar di default per l'agente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Avatar par défaut de l'agent",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
+    },
     },
     "description": "",
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR"
@@ -614,35 +675,40 @@
     "values": {
       "en": {
         "value": "Message received audio notification",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Notifica acustica ricezione messaggio",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Notification audio d'un message reçu",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
     "description": "",
     "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION"
   },
-
-
-
   {
     "values": {
       "en": {
         "value": "Vivocha Customer Care",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Vivocha Customer Care",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
-        "value": "Vivocha Service client",
+        "value": "Vivocha Customer Care",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -653,14 +719,18 @@
     "values": {
       "en": {
         "value": "connecting...",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "connessione in corso...",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "connection en cours...",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -737,14 +807,18 @@
     "values": {
       "en": {
         "value": "Hide chat",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Nascondi chat",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Cacher le chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -777,10 +851,18 @@
     "values": {
       "en": {
         "value": "Close",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Chiudi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Fermer",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "閉じる",
         "state": "new"
       }
     },
@@ -791,14 +873,18 @@
     "values": {
       "en": {
         "value": "Contact established",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Contatto in corso",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Contact établi",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -831,14 +917,18 @@
     "values": {
       "en": {
         "value": "Hello, <b>{{nickname}}</b> here,<br> how can I help you?",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Bonjour, <b>{{nickname}}</b> ici,<br> Comment puis je vous aider?",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -849,14 +939,18 @@
     "values": {
       "en": {
         "value": "In call with<br><b>{{nickname}}</b>",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Sei in linea con<br><b>{{nickname}}</b>",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
-        "value": "En communication avec<br><b>{{nickname}}</b>",
+        "value": "En communication avec <br><b>{{nickname}}</b>",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -867,14 +961,18 @@
     "values": {
       "en": {
         "value": "Incoming call from<br><b>{{nickname}}</b>",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
-        "value": "Appel entrant de<br><b>{{nickname}}</b>",
+        "value": "Appel entrant de <br><b>{{nickname}}</b>",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -885,14 +983,18 @@
     "values": {
       "en": {
         "value": "We are connecting you<br>with <b>{{nickname}}</b>",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Nous vous connectons <br>avec <b>{{nickname}}</b>",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -903,14 +1005,18 @@
     "values": {
       "en": {
         "value": "open chat",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "apri chat",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
-        "value": "Ouvrir le chat ",
+        "value": "Ouvrir le chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -921,14 +1027,18 @@
     "values": {
       "en": {
         "value": "new messages",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "messaggi non letti",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Nouveauw messages",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
@@ -1137,10 +1247,18 @@
     "values": {
       "en": {
         "value": "send file",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "invia file",
+        "state": "final"
+      },
+      "fr": {
+        "value": "envoyer un fichier",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     },
