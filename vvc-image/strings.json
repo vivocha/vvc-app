@@ -4,10 +4,18 @@
     "values": {
       "en": {
         "value": "Vivocha Engage Image",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Immagine di ingaggio Vivocha",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -17,10 +25,18 @@
     "values": {
       "en": {
         "value": "Image",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -30,10 +46,18 @@
     "values": {
       "en": {
         "value": "Image background color",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Colore di sfondo dell'immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -43,10 +67,18 @@
     "values": {
       "en": {
         "value": "Insert a background color for the image background",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Inserire un colore di background per l'immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -56,10 +88,18 @@
     "values": {
       "en": {
         "value": "Image",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -69,10 +109,18 @@
     "values": {
       "en": {
         "value": "Image width",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Larghezza immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -82,10 +130,18 @@
     "values": {
       "en": {
         "value": "Insert the image width",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Inserire la larghezza dell'immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -95,10 +151,18 @@
     "values": {
       "en": {
         "value": "Image height",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Altezza immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -108,10 +172,18 @@
     "values": {
       "en": {
         "value": "Insert the image height",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Inserire l'altezza dell'immagine",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }

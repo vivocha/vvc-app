@@ -4,10 +4,18 @@
     "values": {
       "en": {
         "value": "Minimal Empty Widget",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Widget vuoto da utilizzare come base per la creazione di altri widget",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }
@@ -17,10 +25,18 @@
     "values": {
       "en": {
         "value": "Blank Widget",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Blank Widget",
+        "state": "final"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
         "state": "new"
       }
     }

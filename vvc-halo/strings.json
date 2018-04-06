@@ -25,11 +25,11 @@
     "values": {
       "en": {
         "value": "Engagement via an avatar located in the lower right corner of the screen",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Ingaggio tramite un avatar posizionato nell'angolo in basso a destra dello schermo",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Engagement à travers un avatar positionné dans l’angle inférieur droit de l’écran.",
@@ -46,7 +46,7 @@
     "values": {
       "en": {
         "value": "Primary colour",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Colore primario",
@@ -108,7 +108,7 @@
     "values": {
       "en": {
         "value": "We contact you",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Ti contattiamo",
@@ -129,7 +129,7 @@
     "values": {
       "en": {
         "value": "Video call",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Videochiamata",
@@ -150,7 +150,7 @@
     "values": {
       "en": {
         "value": "Voice call",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Chiamata voce",

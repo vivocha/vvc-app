@@ -25,11 +25,11 @@
     "values": {
       "en": {
         "value": "Engage the visitor by showing a side multimedia label",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Etichetta laterale a scomparsa con scelta del media per l'ingaggio",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Étiquette latérale déroulante avec sélection du média pour l’engagement",
@@ -158,7 +158,7 @@
         "state": "new"
       },
       "fr": {
-        "value": "CONVERSATION",
+        "value": "CHAT",
         "state": "final"
       },
       "ja": {

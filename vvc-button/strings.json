@@ -25,11 +25,11 @@
     "values": {
       "en": {
         "value": "Button",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Bottone",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Bouton",
@@ -46,11 +46,11 @@
     "values": {
       "en": {
         "value": "Chat with us",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Entra in chat",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Rejoindre la conversation",
@@ -67,11 +67,11 @@
     "values": {
       "en": {
         "value": "Button colour",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Colore del bottone",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Couleur du bouton",
@@ -88,11 +88,11 @@
     "values": {
       "en": {
         "value": "Insert a colour for the button background",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Colore di sfondo del bottone",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Couleur d’arrière plan du bouton",
