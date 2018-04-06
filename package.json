@@ -18,7 +18,8 @@
   "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
   "homepage": "https://bitbucket.org/vivocha/client-interaction-core#readme",
   "peerDependencies": {},
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
@@ -33,9 +34,7 @@
     "@ngx-translate/http-loader": "2.0.1",
     "core-js": "^2.5.3",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.19",
     "@angular/cli": "~1.7.1",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",

@@ -14,4 +14,4 @@ export function reducer(state: ContextState = initialState, action: fromContext.
   }
 }
 
-export const getContext = (state: ContextState) => state;
+export const getContext = (state: ContextState):ContextState => state;
