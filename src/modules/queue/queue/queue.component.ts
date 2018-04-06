@@ -1,17 +1,12 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'vvc-queue',
-  templateUrl: './queue.component.html'
+  templateUrl: './queue.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class QueueComponent implements OnInit {
+export class QueueComponent {
 
-  @Input() type = '';
-  @Input() variables;
-  @Output() leave = new EventEmitter();
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() context;
 
 }

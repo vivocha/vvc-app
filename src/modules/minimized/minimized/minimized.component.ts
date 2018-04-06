@@ -1,25 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'vvc-minimized',
-  templateUrl: './minimized.component.html'
+  templateUrl: './minimized.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MinimizedComponent implements OnInit {
+export class MinimizedComponent {
 
-  @Input() state;
-  @Input() variables;
+  @Input() context;
+  @Output() expand = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-  getAvatar() {
-    return (this.state.agent &&
-    this.state.agent.avatar &&
-    this.state.agent.avatar.images &&
-    this.state.agent.avatar.images[0] &&
-    this.state.agent.avatar.images[0].file &&
-    this.state.agent.avatar.base_url) ? this.state.agent.avatar.base_url + this.state.agent.avatar.images[0].file
-        : this.variables.companyLogoUrl || 'assets/static/acct-img.png';
-  }
 }

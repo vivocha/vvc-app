@@ -1,24 +1,19 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-
-export interface DataCollection {
-  status: string;
-  type: string;
-}
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'vvc-survey',
-  templateUrl: './survey.component.html'
+  templateUrl: './survey.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SurveyComponent implements OnInit {
-  sent: boolean;
+export class SurveyComponent {
 
-  @Input() dataCollection: DataCollection;
-  @Input() variables;
-  @Output() datasubmit = new EventEmitter();
-  @Output() close = new EventEmitter();
-  constructor() { }
+  @Input() context;
+  @Output() submit = new EventEmitter();
 
-  ngOnInit() {
+  submitData(dc){
+    this.submit.emit({
+      surveyDefinition: this.context.selectedSurvey,
+      surveyData: dc
+    });
   }
-
 }

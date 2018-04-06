@@ -1,5 +1,4 @@
 <div class="vvc-form">
-  <div class="form-title" *ngIf="dc.labelId">{{ dc.labelId | translate }}</div>
   <div class="form-required-legend" *ngIf="hasRequired">{{ 'STRINGS.DC.REQUIRED_LEGEND' | translate }}</div>
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <div *ngFor="let elem of dc.fields">
@@ -64,7 +63,7 @@
     </div>
     <div *ngIf="!readMode">
       <button class="btn-primary"
-              [disabled]="form.invalid">{{ 'STRINGS.DC.NEXT_BUTTON' | translate }}</button>
+              [disabled]="form.invalid">{{ 'STRINGS.NEXT_BUTTON' | translate }}</button>
     </div>
   </form>
 </div>

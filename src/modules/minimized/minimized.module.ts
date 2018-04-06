@@ -9,8 +9,6 @@ import { MinimizedComponent } from './minimized/minimized.component';
   exports: [
     MinimizedComponent
   ],
-  declarations: [
-    MinimizedComponent
-  ]
+  declarations: [MinimizedComponent]
 })
 export class MinimizedModule { }

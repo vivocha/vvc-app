@@ -1,31 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SurveyComponent } from './survey/survey.component';
+import { DataCollectionComponent } from './data-collection/data-collection.component';
 import { FormComponent } from './form/form.component';
-import { TranslateModule } from '@ngx-translate/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { IncDcComponent } from './inc-dc/inc-dc.component';
-import { DcViewerComponent } from './dc-viewer/dc-viewer.component';
-import { InitialDataComponent } from './initial-data/initial-data.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import { SurveyComponent } from './survey/survey.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ],
   exports: [
-    SurveyComponent,
-    IncDcComponent,
-    DcViewerComponent,
-    InitialDataComponent
+    DataCollectionComponent, SurveyComponent
   ],
-  declarations: [
-    FormComponent,
-    SurveyComponent,
-    IncDcComponent,
-    DcViewerComponent,
-    InitialDataComponent
-  ]
+  declarations: [DataCollectionComponent, FormComponent, SurveyComponent]
 })
 export class DataCollectionModule { }

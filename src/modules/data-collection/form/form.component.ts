@@ -1,11 +1,12 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import { DataCollection, DataCollectionField } from '@vivocha/global-entities/dist/data_collection';
 
 @Component({
   selector: 'vvc-form',
-  templateUrl: './form.component.html'
+  templateUrl: './form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormComponent implements OnInit {
 
@@ -83,7 +84,7 @@ export class FormComponent implements OnInit {
     let element;
     switch(elem.format) {
       case 'dropdown':
-        element = 'select'
+        element = 'select';
         break;
       case 'checkbox':
       case 'radio':

@@ -1,2 +1,4 @@
-<img class='agent-img' [src]="getAvatar()">
-<div class='badge' *ngIf="state.not_read && state.not_read > 0">{{ state.not_read }}</div>
+<div (click)="expand.emit()">
+  <img class='agent-img' [src]="context && context.agent_avatar">
+  <div class='badge' *ngIf="context.not_read && context.not_read > 0">{{ context.not_read }}</div>
+</div>
