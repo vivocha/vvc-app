@@ -5,6 +5,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { reducers } from './store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment}  from '../../environments/environment';
 
 import * as fromServices from './services';
 
@@ -26,10 +28,11 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [
     ...fromServices.services
   ]
 })
-export class InteractionCoreModule { }
+export class InteractionCoreDebugModule { }
