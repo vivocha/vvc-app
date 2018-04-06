@@ -300,6 +300,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     .vvc-emoji-container {
       flex: auto;
       overflow-y: scroll;
+      height: 100px;
       .emoji {
         display: inline-block;
         cursor: pointer;
@@ -1240,6 +1241,7 @@ body, input, textarea{ font-family: $appFontFamily; }
       }
       #vvc-messages {
         flex: auto;
+        height: 100px; /* firefox fix */
         display: flex;
         flex-direction: column;
         overflow-y: scroll;

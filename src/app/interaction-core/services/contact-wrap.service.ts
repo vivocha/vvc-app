@@ -469,13 +469,16 @@ export class VvcContactWrap {
   }
   processQuickReply(reply){
     this.messageService.updateQuickReply(reply.msgId);
-    const vvcQuickReply = {
+    const vvcQuickReply: any = {
       code: "message",
       type: "text",
-      body: reply.action.title,
-      payload: reply.action.payload
+      body: reply.action.title
     };
+    if (reply.action.payload !== undefined){
+      vvcQuickReply.payload = reply.action.payload;
+    }
     this.contact.send(vvcQuickReply);
+    this.messageService.addLocalMessage(reply.action.title);
   }
   rejectOffer(){
     this.incomingCallback('error', {});
@@ -504,12 +507,14 @@ export class VvcContactWrap {
     })
   }
   sendPostBack(msg){
-    const vvcPostBack = {
+    const vvcPostBack: any = {
       code: "message",
       type: "postback",
-      body: msg.title,
-      payload: msg.payload
+      body: msg.title
     };
+    if (msg.payload !== undefined){
+      vvcPostBack.payload = msg.payload;
+    }
     if (msg.type === "postback") {
       this.contact.send(vvcPostBack);
     }
