@@ -4,7 +4,9 @@ import {Store} from '@ngrx/store';
 import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {TranslateService} from '@ngx-translate/core';
 
-import * as fromStore from '../store';
+import {AppState} from '../store/reducers/main.reducer';
+import {LoadContextSuccess} from '../store/actions/context.actions';
+import {getContext} from '../store/selectors/context.selectors';
 import {Observable} from 'rxjs/Observable';
 import {ContextState} from '../store/models.interface';
 
@@ -20,7 +22,7 @@ export class VvcContextService {
   private context: InteractionContext;
 
   constructor(
-    private store: Store<fromStore.AppState>,
+    private store: Store<AppState>,
     private wref: WindowRef,
     private ts: TranslateService,
     private zone: NgZone){
@@ -53,7 +55,7 @@ export class VvcContextService {
     this.ts.getTranslation(context.language).toPromise().then(
       result => {
         this.ts.use(context.language);
-        this.store.dispatch(new fromStore.LoadContextSuccess({
+        this.store.dispatch(new LoadContextSuccess({
           loaded: true,
           isMobile: this.isMobile,
           busId: this.busId,
@@ -62,7 +64,6 @@ export class VvcContextService {
           variables: context.campaign.channels.web.interaction.variables,
           ...context
         }));
-        //this.store.dispatch(new fromStore.WidgetLoaded());
       }
     );
   }
@@ -79,6 +80,6 @@ export class VvcContextService {
     }
   }
   ready():Observable<ContextState>{
-    return this.store.select(fromStore.getContext);
+    return this.store.select(getContext);
   }
 }

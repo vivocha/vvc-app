@@ -1,5 +1,9 @@
 import {Injectable} from '@angular/core';
-import * as fromStore from '../store';
+import {AppState} from '../store/reducers/main.reducer';
+import {getDataCollectionCompleted} from '../store/selectors/data-collection.selectors';
+import {DataCollectionCompleted,DataCollectionSelected,DataCollectionLoaded} from '../store/actions/dataCollection.actions';
+import {getSurveyCompleted} from '../store/selectors/survey.selectors';
+import {SurveyLoaded,SurveySelected} from '../store/actions/survey.actions';
 import {Store} from '@ngrx/store';
 import {VvcUiService} from './ui.service';
 import {objectToDataCollection} from '@vivocha/global-entities/dist/wrappers/data_collection';
@@ -8,24 +12,23 @@ import {DataCollectionState, SurveyState} from '../store/models.interface';
 
 @Injectable()
 export class VvcDataCollectionService {
-  private vivocha;
   private context;
 
   contactOptions = { data : [] };
   selectedIdx = 0;
-  constructor(private store: Store<fromStore.AppState>, private uiService: VvcUiService){
+  constructor(private store: Store<AppState>, private uiService: VvcUiService){
 
   }
   onDataCollectionCompleted(context):Observable<DataCollectionState>{
     this.context = context;
-    return this.store.select(fromStore.getDataCollectionCompleted);
+    return this.store.select(getDataCollectionCompleted);
   }
   onSurveyCompleted():Observable<SurveyState>{
-    return this.store.select(fromStore.getSurveyCompleted);
+    return this.store.select(getSurveyCompleted);
   }
   processDataCollections(){
     if (!this.hasDataCollection()) {
-      this.store.dispatch(new fromStore.DataCollectionCompleted({}));
+      this.store.dispatch(new DataCollectionCompleted({}));
       this.uiService.setDataCollectionCompleted();
     } else {
       this.processDcByIdx(0);
@@ -33,7 +36,7 @@ export class VvcDataCollectionService {
   }
   processDcByIdx(idx){
     this.selectedIdx = idx;
-    this.store.dispatch(new fromStore.DataCollectionSelected(this.context.dataCollections[idx]));
+    this.store.dispatch(new DataCollectionSelected(this.context.dataCollections[idx]));
     if (this.hasVisibleFields(this.context.dataCollections[idx])) {
       this.uiService.setDataCollectionPanel(true, this.context.dataCollections[idx].labelId);
     }
@@ -44,7 +47,7 @@ export class VvcDataCollectionService {
 
   hasDataCollection(){
     if (this.context.dataCollections && this.context.dataCollections.length > 0) {
-      this.store.dispatch(new fromStore.DataCollectionLoaded(this.context.dataCollections));
+      this.store.dispatch(new DataCollectionLoaded(this.context.dataCollections));
       return true;
     }
     return false;
@@ -66,7 +69,7 @@ export class VvcDataCollectionService {
   }
   showSurvey(){
     if (this.hasSurvey()) {
-      this.store.dispatch(new fromStore.SurveySelected(this.context.survey));
+      this.store.dispatch(new SurveySelected(this.context.survey));
       this.uiService.setSurveyPanel();
     }
   }
@@ -83,7 +86,7 @@ export class VvcDataCollectionService {
     this.contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection));
     if (this.context.dataCollections[this.selectedIdx+1]) this.processDcByIdx(this.selectedIdx+1);
     else {
-      this.store.dispatch(new fromStore.DataCollectionCompleted(this.contactOptions));
+      this.store.dispatch(new DataCollectionCompleted(this.contactOptions));
       this.uiService.setDataCollectionCompleted();
     }
   }
@@ -102,7 +105,7 @@ export class VvcDataCollectionService {
     this.submitDataCollection(dataCollection);
   }
   submitSurvey(survey){
-   this.store.dispatch(new fromStore.SurveyLoaded(survey));
+   this.store.dispatch(new SurveyLoaded(survey));
    this.uiService.setSurveyCompleted();
   }
 /*
@@ -123,8 +126,8 @@ export class VvcDataCollectionService {
   showDataCollections(vivocha, dataCollections){
     this.vivocha = vivocha;
     this.store.dispatch(new WidgetShowDc(dataCollections));
-    this.store.dispatch(new fromStore.InitializeDataCollections(dataCollections));
-    this.store.dispatch(new fromStore.ShowDataCollection(0));
+    this.store.dispatch(new InitializeDataCollections(dataCollections));
+    this.store.dispatch(new ShowDataCollection(0));
   }
 
   sendDataCollections(dataCollections: any[], contactOptions){
@@ -140,7 +143,7 @@ export class VvcDataCollectionService {
     });
   }
   submitDataCollection(dcId: string, dataCollection: any){
-    //this.store.dispatch(new fromStore.WidgetDataCollectionFilled({ id: dcId, dc: dataCollection }));
+    //this.store.dispatch(new WidgetDataCollectionFilled({ id: dcId, dc: dataCollection }));
   }
   */
 }

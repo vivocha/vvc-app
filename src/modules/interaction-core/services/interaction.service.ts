@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
-import * as fromStore from '../store';
+import {getUiState} from '../store/selectors/widget.selectors';
+import {AppState} from '../store/reducers/main.reducer';
 import {VvcContextService} from './context.service';
 import {ContextState, UiState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
@@ -16,7 +17,7 @@ export class VvcInteractionService {
   agentRequestCallback;
 
   constructor(
-    private store: Store<fromStore.AppState>,
+    private store: Store<AppState>,
     private contextService: VvcContextService,
     private contactService: VvcContactWrap
   ){
@@ -49,7 +50,7 @@ export class VvcInteractionService {
     this.contactService.showCloseModal(false);
   }
   getState():Observable<UiState>{
-    return this.store.select(fromStore.getUiState);
+    return this.store.select(getUiState);
   }
   hangUp(){
     this.contactService.hangUp();

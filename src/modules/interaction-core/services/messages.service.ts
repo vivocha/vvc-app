@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 
-import * as fromStore from '../store';
+import {AppState} from '../store/reducers/main.reducer';
+import {NewMessage,RemoveMessage,UpdateMessage} from '../store/actions/messages.actions';
 import {SystemMessage, ChatMessage} from '../store/models.interface';
 
 @Injectable()
 export class VvcMessageService {
 
   constructor(
-    private store: Store<fromStore.AppState>
+    private store: Store<AppState>
   ){}
 
   addChatMessage(message, agent?){
@@ -22,7 +23,7 @@ export class VvcMessageService {
     };
     if (agent) msg.agent = agent;
     if (message.meta) msg.meta = message.meta;
-    this.store.dispatch(new fromStore.NewMessage(msg));
+    this.store.dispatch(new NewMessage(msg));
     return id;
   }
   addLocalMessage(text){
@@ -34,7 +35,7 @@ export class VvcMessageService {
       isAgent: false,
       time: this.getChatTimestamp()
     };
-    this.store.dispatch(new fromStore.NewMessage(msg));
+    this.store.dispatch(new NewMessage(msg));
     return id;
   }
   addQuickRepliesMessage(message){
@@ -47,7 +48,7 @@ export class VvcMessageService {
       body: message.body,
       quick_replies: message.quick_replies
     };
-    this.store.dispatch(new fromStore.NewMessage(quick));
+    this.store.dispatch(new NewMessage(quick));
     return id;
   }
   addTemplateMessage(message){
@@ -59,7 +60,7 @@ export class VvcMessageService {
       template: message.template.type,
       elements: message.template.elements
     };
-    this.store.dispatch(new fromStore.NewMessage(template));
+    this.store.dispatch(new NewMessage(template));
     return id;
   }
   getChatTimestamp(tsString?: string){
@@ -71,7 +72,7 @@ export class VvcMessageService {
     return h + ":" + m;
   }
   removeMessage(messageId: string){
-    this.store.dispatch(new fromStore.RemoveMessage(messageId));
+    this.store.dispatch(new RemoveMessage(messageId));
   }
   sendSystemMessage(messageNameId: string, context?: any){
     const id = new Date().getTime().toString();
@@ -83,10 +84,10 @@ export class VvcMessageService {
     if (context){
       message.context = context;
     }
-    this.store.dispatch(new fromStore.NewMessage(message));
+    this.store.dispatch(new NewMessage(message));
     return id;
   }
   updateQuickReply(messageId){
-    this.store.dispatch(new fromStore.UpdateMessage({ id: messageId, patch: { replied : true }}))
+    this.store.dispatch(new UpdateMessage({ id: messageId, patch: { replied : true }}))
   }
 }

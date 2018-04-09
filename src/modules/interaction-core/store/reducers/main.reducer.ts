@@ -1,12 +1,12 @@
 import {ActionReducerMap, createFeatureSelector, MemoizedSelector} from '@ngrx/store';
 
-import * as fromContext from './context.reducer';
-import * as fromMessages from './messages.reducer';
-import * as fromWidget from './widget.reducer';
-import * as fromDataCollection from './dataCollection.reducer';
-import * as fromSurvey from './survey.reducer';
 
 import {ContextState, MessagesState, WidgetState, DataCollectionState, SurveyState} from '../models.interface';
+import {reducer as contextReducer} from './context.reducer';
+import {reducer as messageReducer} from './messages.reducer';
+import {reducer as widgetReducer} from './widget.reducer';
+import {reducer as dcReducer} from './dataCollection.reducer';
+import {reducer as surveyReducer} from './survey.reducer';
 
 export interface AppState {
   context: ContextState;
@@ -17,11 +17,11 @@ export interface AppState {
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  context: fromContext.reducer,
-  messages: fromMessages.reducer,
-  widget: fromWidget.reducer,
-  dataCollection: fromDataCollection.reducer,
-  survey: fromSurvey.reducer
+  context: contextReducer,
+  messages: messageReducer,
+  widget: widgetReducer,
+  dataCollection: dcReducer,
+  survey: surveyReducer
 };
 
 export const getContextState = createFeatureSelector<ContextState>('context');

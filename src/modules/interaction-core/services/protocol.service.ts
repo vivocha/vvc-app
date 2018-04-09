@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import * as fromStore from '../store';
 import {Store} from '@ngrx/store';
 import {ContactMediaOffer} from '@vivocha/global-entities/dist';
+import {AppState} from '../store/reducers/main.reducer';
 
 @Injectable()
 export class VvcProtocolService {
@@ -10,7 +10,7 @@ export class VvcProtocolService {
   previousChannels = [];
   currentChannels = [];
   constructor(
-    private store: Store<fromStore.AppState>
+    private store: Store<AppState>
   ){
 
   }

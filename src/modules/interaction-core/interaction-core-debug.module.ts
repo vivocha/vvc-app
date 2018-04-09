@@ -4,11 +4,10 @@ import { StoreModule } from '@ngrx/store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { reducers } from './store';
+import { reducers } from './store/reducers/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment}  from '../../environments/environment';
 
-//import * as fromServices from './services';
 import {VvcDataCollectionService} from './services/data-collection.service';
 import {VvcContactWrap} from './services/contact-wrap.service';
 import {VvcUiService} from './services/ui.service';
@@ -40,7 +39,6 @@ export function createTranslateLoader(http: HttpClient) {
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [
-    //...fromServices.services
     VvcInteractionService,
     VvcMessageService,
     VvcContextService,

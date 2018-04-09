@@ -1,10 +1,10 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 
-import * as fromFeature from '../reducers';
-import * as fromContext from '../reducers/context.reducer';
 import {ContextState} from '../models.interface';
+import {getContextState} from '../reducers/main.reducer';
+import {getContextRedux} from '../reducers/context.reducer';
 
 export const getContext:MemoizedSelector<Object,ContextState> = createSelector(
-  fromFeature.getContextState,
-  fromContext.getContext
+  getContextState,
+  getContextRedux
 );

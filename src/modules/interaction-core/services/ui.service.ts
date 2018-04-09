@@ -2,19 +2,20 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 
 import { WidgetState } from '../store/models.interface';
-import * as fromStore from '../store';
+import {AppState, getWidgetState} from '../store/reducers/main.reducer';
+import {WidgetNewState} from '../store/actions/widget.actions';
 
 @Injectable()
 export class VvcUiService {
 
   currentState: WidgetState;
-  constructor(private store: Store<fromStore.AppState>){
-    this.store.select(fromStore.getWidgetState).subscribe( state => {
+  constructor(private store: Store<AppState>){
+    this.store.select(getWidgetState).subscribe( state => {
       this.currentState = state
     });
   }
   dispatchNewState(state){
-    this.store.dispatch(new fromStore.WidgetNewState(state));
+    this.store.dispatch(new WidgetNewState(state));
   }
   extend(objectToExtend, propObj){
     return Object.assign({}, objectToExtend, propObj);

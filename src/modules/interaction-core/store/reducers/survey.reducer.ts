@@ -18,4 +18,4 @@ export function reducer(state: SurveyState = initialState, action: fromSurvey.Su
   }
 }
 
-export const getSurveyCompleted = (state: SurveyState) => state;
+export const getSurveyCompletedRedux = (state: SurveyState) => state;

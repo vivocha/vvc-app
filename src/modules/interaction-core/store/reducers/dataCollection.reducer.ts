@@ -22,5 +22,5 @@ export function reducer(state: DataCollectionState = initialState, action: fromD
   }
 }
 
-export const getDataCollectionCompleted = (state: DataCollectionState) => state;
+export const getDataCollectionCompletedRedux = (state: DataCollectionState) => state;
 

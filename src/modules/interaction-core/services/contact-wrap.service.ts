@@ -1,5 +1,6 @@
 import {Injectable, NgZone} from '@angular/core';
-import * as fromStore from '../store';
+import {AppState} from '../store/reducers/main.reducer';
+import {NewMessage} from '../store/actions/messages.actions';
 import {Store} from '@ngrx/store';
 import {ClientContactCreationOptions} from '@vivocha/global-entities/dist/contact';
 import {VvcDataCollectionService} from './data-collection.service';
@@ -27,7 +28,7 @@ export class VvcContactWrap {
   incomingMedia;
 
   constructor(
-    private store: Store<fromStore.AppState>,
+    private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
     private protocolService: VvcProtocolService,
     private messageService: VvcMessageService,
@@ -98,7 +99,7 @@ export class VvcContactWrap {
           this.messageService.addChatMessage(msg, this.agent);
           break;
         case 'attachment':
-          this.store.dispatch(new fromStore.NewMessage({
+          this.store.dispatch(new NewMessage({
             text: msg.meta.desc || msg.meta.originalName,
             type: 'chat',
             isAgent: msg.agent,
@@ -249,13 +250,11 @@ export class VvcContactWrap {
     });
 
     this.contact.getLocalCapabilities().then( caps => {
-      //this.dispatch(new fromStore.WidgetLocalCaps(caps));
       console.log('LOCALCAPS', caps);
     }, err => {
       console.log('error retrieving localcaps', err);
     });
     this.contact.getRemoteCapabilities().then( caps => {
-      //this.dispatch(new fromStore.WidgetRemoteCaps(caps));
       console.log('REMOTECAPS', caps);
     }, err => {
       console.log('error retrieving remotecaps', err);
@@ -407,7 +406,6 @@ export class VvcContactWrap {
         }
         this.agent = agent;
         this.vivocha.pageRequest('interactionAnswered', agent);
-        //this.dispatch(new fromStore.WidgetMediaChange(media));
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
         this.setAnsweredState(agent)
