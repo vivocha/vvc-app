@@ -34,7 +34,12 @@ export class VvcDataCollectionService {
   processDcByIdx(idx){
     this.selectedIdx = idx;
     this.store.dispatch(new fromStore.DataCollectionSelected(this.context.dataCollections[idx]));
-    this.uiService.setDataCollectionPanel(true, this.context.dataCollections[idx].labelId);
+    if (this.hasVisibleFields(this.context.dataCollections[idx])) {
+      this.uiService.setDataCollectionPanel(true, this.context.dataCollections[idx].labelId);
+    }
+    else {
+      this.submitHiddenDataCollection(this.context.dataCollections[idx]);
+    }
   }
 
   hasDataCollection(){
@@ -46,6 +51,18 @@ export class VvcDataCollectionService {
   }
   hasSurvey(){
     return (this.context.survey);
+  }
+  hasVisibleFields(dc){
+    let visibleFields = false;
+    if (dc.fields){
+      dc.fields.forEach( elem => {
+        const hasDefault = typeof elem.defaultConstant !== 'undefined';
+        if ((['visitor','both'].indexOf(elem.hidden) === -1 && (!hasDefault || (hasDefault && elem.editIfDefault)))) {
+          visibleFields = true;
+        }
+      });
+    }
+    return visibleFields;
   }
   showSurvey(){
     if (this.hasSurvey()) {
@@ -69,6 +86,20 @@ export class VvcDataCollectionService {
       this.store.dispatch(new fromStore.DataCollectionCompleted(this.contactOptions));
       this.uiService.setDataCollectionCompleted();
     }
+  }
+  submitHiddenDataCollection(dc){
+    let data = {};
+    if (dc.fields){
+      dc.fields.forEach( elem => {
+        const hasDefault = typeof elem.defaultConstant !== 'undefined';
+        data[elem.id] = hasDefault ? elem.defaultConstant.toString() : elem.defaultConstant;
+      });
+    }
+    const dataCollection = {
+      dcDefinition : dc,
+      dcData: data
+    };
+    this.submitDataCollection(dataCollection);
   }
   submitSurvey(survey){
    this.store.dispatch(new fromStore.SurveyLoaded(survey));
