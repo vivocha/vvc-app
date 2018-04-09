@@ -6,7 +6,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { reducers } from './store';
 
-import * as fromServices from './services';
+import {VvcDataCollectionService} from './services/data-collection.service';
+import {VvcContactWrap} from './services/contact-wrap.service';
+import {VvcUiService} from './services/ui.service';
+import {WindowRef} from './services/window.service';
+import {VvcInteractionService} from './services/interaction.service';
+import {VvcContextService} from './services/context.service';
+import {VvcProtocolService} from './services/protocol.service';
+import {VvcMessageService} from './services/messages.service';
+
+//import * as fromServices from './services';
 
 export function createTranslateLoader(http: HttpClient) {
   const reg = /(\/a\/\w+\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
@@ -29,7 +38,15 @@ export function createTranslateLoader(http: HttpClient) {
     })
   ],
   providers: [
-    ...fromServices.services
+    //...fromServices.services
+    VvcInteractionService,
+    VvcMessageService,
+    VvcContextService,
+    VvcContactWrap,
+    VvcUiService,
+    VvcProtocolService,
+    VvcDataCollectionService,
+    WindowRef
   ]
 })
 export class InteractionCoreModule { }
