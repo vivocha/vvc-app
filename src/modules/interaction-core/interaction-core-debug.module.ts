@@ -8,7 +8,15 @@ import { reducers } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment}  from '../../environments/environment';
 
-import * as fromServices from './services';
+//import * as fromServices from './services';
+import {VvcDataCollectionService} from './services/data-collection.service';
+import {VvcContactWrap} from './services/contact-wrap.service';
+import {VvcUiService} from './services/ui.service';
+import {WindowRef} from './services/window.service';
+import {VvcInteractionService} from './services/interaction.service';
+import {VvcContextService} from './services/context.service';
+import {VvcProtocolService} from './services/protocol.service';
+import {VvcMessageService} from './services/messages.service';
 
 export function createTranslateLoader(http: HttpClient) {
   const reg = /(\/a\/\w+\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
@@ -32,7 +40,15 @@ export function createTranslateLoader(http: HttpClient) {
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [
-    ...fromServices.services
+    //...fromServices.services
+    VvcInteractionService,
+    VvcMessageService,
+    VvcContextService,
+    VvcContactWrap,
+    VvcUiService,
+    VvcProtocolService,
+    VvcDataCollectionService,
+    WindowRef
   ]
 })
 export class InteractionCoreDebugModule { }
