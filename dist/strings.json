@@ -1130,6 +1130,182 @@
   {
     "values": {
       "en": {
+        "value": "The agent is asking to you to fill the from",
+        "state": "final"
+      },
+      "it": {
+        "value": "L'operatore ha richiesto la compilazione del modulo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "L’agent demande la compilation du formulaire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターは書類の正しい入力を要求しています",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.ASK_FOR_COMPILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Fill",
+        "state": "final"
+      },
+      "it": {
+        "value": "Compila",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Compiler",
+        "state": "final"
+      },
+      "ja": {
+        "value": "入力する",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.COMPILE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "invalid email",
+        "state": "final"
+      },
+      "it": {
+        "value": "email non valida",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Email non valide",
+        "state": "final"
+      },
+      "ja": {
+        "value": "メールアドレスが正しくありません。",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.EMAIL_ERR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Information Request",
+        "state": "final"
+      },
+      "it": {
+        "value": "Richiesta di Informazioni",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Demande d’informations",
+        "state": "final"
+      },
+      "ja": {
+        "value": "詳しく知る",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.INCOMING_HEAD"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Next",
+        "state": "final"
+      },
+      "it": {
+        "value": "Avanti",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Suivant",
+        "state": "final"
+      },
+      "ja": {
+        "value": "次へ",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.NEXT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "required field",
+        "state": "final"
+      },
+      "it": {
+        "value": "campo obbligatorio",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Champ obligatoire",
+        "state": "final"
+      },
+      "ja": {
+        "value": "必須",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.REQUIRED_ERR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "* required fields",
+        "state": "final"
+      },
+      "it": {
+        "value": "* campi obbligatori",
+        "state": "final"
+      },
+      "fr": {
+        "value": "*champs obligatoires",
+        "state": "final"
+      },
+      "ja": {
+        "value": "* 必須項目です",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.REQUIRED_LEGEND"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "View",
+        "state": "final"
+      },
+      "it": {
+        "value": "Visualizza",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Visualiser",
+        "state": "final"
+      },
+      "ja": {
+        "value": "表示する",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.DC.VIEW"
+  },
+  {
+    "values": {
+      "en": {
         "value": "The agent left the contact",
         "state": "final"
       },
