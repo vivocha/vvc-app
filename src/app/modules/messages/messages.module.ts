@@ -5,12 +5,14 @@ import { SystemMessageComponent } from './system-message/system-message.componen
 import { TemplateGenericComponent } from './template-generic/template-generic.component';
 import { QuickRepliesComponent } from './quick-replies/quick-replies.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { RequestMessageComponent } from './request-message/request-message.component';
 
 const components = [
   ChatMessageComponent,
   SystemMessageComponent,
   TemplateGenericComponent,
-  QuickRepliesComponent
+  QuickRepliesComponent,
+  RequestMessageComponent
 ];
 
 @NgModule({

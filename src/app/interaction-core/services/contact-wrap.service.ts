@@ -19,6 +19,7 @@ export class VvcContactWrap {
 
   lastSystemMessageId;
   agent;
+  agentRequestCallback;
   isClosed = false;
   isWritingTimer;
   isWritingTimeout = 30000;
@@ -35,6 +36,11 @@ export class VvcContactWrap {
     private zone: NgZone
   ){}
 
+  acceptAgentRequest(requestId){
+    this.agentRequestCallback(null, true);
+    this.messageService.removeMessage(this.lastSystemMessageId);
+    this.messageService.sendSystemMessage('STRINGS.MESSAGES.'+requestId.toUpperCase()+'_ACCEPTED');
+  }
   acceptOffer(){
     this.mergeOffer(this.incomingOffer, this.incomingCallback);
     this.uiService.setVoiceAccepted();
@@ -260,6 +266,11 @@ export class VvcContactWrap {
     }, err => {
       console.log('error retrieving remotecaps', err);
     });
+    this.contact.on('agentrequest', (message, cb) => {
+      this.zone.run( () => {
+        this.onAgentRequest(message, cb);
+      });
+    });
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       this.zone.run( () => {
         const attachment = {url, meta, fromId, fromNick, isAgent};
@@ -277,7 +288,7 @@ export class VvcContactWrap {
       });
     });
     this.contact.on('joined', (c) => {
-        if (c.user) {
+      if (c.user) {
           this.onAgentJoin(c);
         } else {
           this.onLocalJoin(c);
@@ -292,7 +303,6 @@ export class VvcContactWrap {
         else if (msg.template) {
           this.messageService.addTemplateMessage(msg);
         } else {
-          console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
           this.messageService.addChatMessage(msg, this.agent);
         }
         if (msg.agent) this.uiService.setIsWriting(false);
@@ -414,6 +424,10 @@ export class VvcContactWrap {
       });
     });
   }
+  onAgentRequest(message, cb){
+    this.agentRequestCallback = cb;
+    this.lastSystemMessageId = this.messageService.sendRequestMessage(message);
+  }
   onLocalJoin(join){
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
@@ -479,6 +493,11 @@ export class VvcContactWrap {
     }
     this.contact.send(vvcQuickReply);
     this.messageService.addLocalMessage(reply.action.title);
+  }
+  rejectAgentRequest(requestId){
+    this.agentRequestCallback(null, false);
+    this.messageService.removeMessage(this.lastSystemMessageId);
+    this.messageService.sendSystemMessage('STRINGS.MESSAGES.'+requestId.toUpperCase()+'_REJECTED');
   }
   rejectOffer(){
     this.incomingCallback('error', {});

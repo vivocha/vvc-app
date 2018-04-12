@@ -77,6 +77,9 @@
                                (action)="processQuickReply($event)"></vvc-quick-replies>
             <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"
                                   (action)="processAction($event)"></vvc-template-generic>
+            <vvc-request-message [message]="m" *ngIf="m.type === 'request'"
+                                 (accept)="acceptAgentRequest($event)"
+                                 (reject)="rejectAgentRequest($event)"></vvc-request-message>
           </div>
         </div>
 

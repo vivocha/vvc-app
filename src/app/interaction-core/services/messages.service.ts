@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 
 import * as fromStore from '../store';
-import {SystemMessage, ChatMessage} from '../store/models.interface';
+import {SystemMessage, ChatMessage, RequestMessage} from '../store/models.interface';
 
 @Injectable()
 export class VvcMessageService {
@@ -72,6 +72,16 @@ export class VvcMessageService {
   }
   removeMessage(messageId: string){
     this.store.dispatch(new fromStore.RemoveMessage(messageId));
+  }
+  sendRequestMessage(message){
+    const id = new Date().getTime().toString();
+    let m: RequestMessage = {
+      id: id,
+      type: 'request',
+      text: message.toUpperCase()
+    };
+    this.store.dispatch(new fromStore.NewMessage(m));
+    return id;
   }
   sendSystemMessage(messageNameId: string, context?: any){
     const id = new Date().getTime().toString();

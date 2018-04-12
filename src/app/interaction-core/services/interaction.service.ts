@@ -23,6 +23,9 @@ export class VvcInteractionService {
   }
 
   /**** PUBLIC METHOD ****/
+  acceptAgentRequest(requestId){
+    this.contactService.acceptAgentRequest(requestId);
+  }
   acceptOffer(){
     this.contactService.acceptOffer();
   }
@@ -80,6 +83,9 @@ export class VvcInteractionService {
   }
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
+  }
+  rejectAgentRequest(requestId){
+    this.contactService.rejectAgentRequest(requestId);
   }
   rejectOffer(){
     this.contactService.rejectOffer();

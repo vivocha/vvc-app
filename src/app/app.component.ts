@@ -26,7 +26,9 @@ export class AppComponent implements OnInit {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init();
   }
-
+  acceptAgentRequest(requestId){
+    this.interactionService.acceptAgentRequest(requestId);
+  }
   acceptOffer(){
     this.interactionService.acceptOffer();
   }
@@ -86,6 +88,9 @@ export class AppComponent implements OnInit {
   }
   processQuickReply(reply){
     this.interactionService.processQuickReply(reply);
+  }
+  rejectAgentRequest(requestId){
+    this.interactionService.rejectAgentRequest(requestId);
   }
   rejectOffer(){
     this.interactionService.rejectOffer();

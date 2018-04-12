@@ -105,6 +105,9 @@ export interface SystemMessage extends BaseMessage{
   type: 'system',
   context?: any,
 }
+export interface RequestMessage extends BaseMessage{
+  type: 'request'
+}
 export interface ChatMessage extends BaseMessage{
   type: 'chat';
   isAgent?: boolean;
