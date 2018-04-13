@@ -1,0 +1,6 @@
+<div class="vvc-emoji-container">
+  <span class="emoji" *ngFor="let em of emojis" (click)="addEmoji.emit(em)">{{em}}</span>
+</div>
+<div class="emoji-close-wrapper">
+  <button class="close" (click)="toggleEmojiPanel.emit()">{{ 'STRINGS.EMOJI.CLOSE_PANEL' | translate }}</button>
+</div>

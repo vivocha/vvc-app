@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { InteractionThemeModule } from './interaction-theme/interaction-theme.module';
-import { InteractionCoreModule } from '@vivocha/client-interaction-core';
+//import { InteractionCoreModule } from '@vivocha/client-interaction-core';
+import { InteractionCoreDebugModule } from './interaction-core/interaction-core-debug.module'
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { InteractionCoreModule } from '@vivocha/client-interaction-core';
   ],
   imports: [
     BrowserModule,
-    InteractionCoreModule,
+    InteractionCoreDebugModule,
     InteractionThemeModule
   ],
   bootstrap: [AppComponent]

@@ -198,10 +198,10 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "b5db0243023fbe5948ffde25e7ae7814beeb4280a5f532cd7de41b86e68248af",
-      "id": "marchitos/widgets/vvc-marco/main.html/b5db024",
-      "type": "text/html",
-      "size": 1685
+      "hash": "5c8c9859b0cc0a8f3f75a5454ad8a0296beb4eeb37f5de73b31c70bbf67af608",
+      "id": "marchitos/widgets/vvc-marco/main.html/5c8c985",
+      "size": 1676,
+      "type": "text/html"
     },
     {
       "path": "main.scss",
@@ -212,10 +212,10 @@
     },
     {
       "path": "assets/3rdpartylicenses.txt",
-      "hash": "6ef90fa4cae8cca3c5e20ba5e7b8dc8def401f5d60b008c99b33d5f6661fcf48",
-      "id": "marchitos/widgets/vvc-marco/assets/3rdpartylicenses.txt/6ef90fa",
-      "type": "text/plain",
-      "size": 8008
+      "hash": "87bad16f32166f122ee5ad984fe84dcb609d8621b14866b36806217e5ebbd11e",
+      "id": "marchitos/widgets/vvc-marco/assets/3rdpartylicenses.txt/87bad16",
+      "size": 8008,
+      "type": "text/plain"
     },
     {
       "path": "assets/favicon.ico",
@@ -226,37 +226,58 @@
     },
     {
       "path": "assets/index.html",
-      "hash": "c6fbff8580bb1c43b6bba5ca94b1bc21482acc953f00c10ea77955a5881ca449",
-      "id": "marchitos/widgets/vvc-marco/assets/index.html/c6fbff8",
-      "type": "text/html",
-      "size": 629
+      "hash": "61e26eee5f5d241db8d2a026161a96fa16bc3cfb4675d92aa0aaf55788756ad6",
+      "id": "marchitos/widgets/vvc-marco/assets/index.html/61e26ee",
+      "size": 725,
+      "type": "text/html"
     },
     {
       "path": "assets/inline.bundle.js",
-      "hash": "006a621241fccb48ba8957dd79cc0248a4313198089d65d0dc4ef208fe51e534",
-      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js/006a621",
-      "type": "application/javascript",
-      "size": 1361
+      "hash": "1f0631ac2462fcc8f4d9d81ee4f30c3970395e42a431e469ede3b65f574874f9",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js/1f0631a",
+      "size": 5830,
+      "type": "application/javascript"
+    },
+    {
+      "path": "assets/inline.bundle.js.map",
+      "hash": "b8f146ea1c67256d4d6693ea0fb89aa042903f721d8d4f2d34b0f1cdc850a2f7",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/b8f146e",
+      "size": 5911,
+      "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "58e35daa39cdd2c719f71276dc59fecd8304eb0b7f262fa239b14f1af143979b",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/58e35da",
+      "hash": "49d68d6dfef95aa3b9247d25bc23255cd870cb851ff933ca01622e7b65c66d8d",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/49d68d6",
       "type": "application/javascript",
-      "size": 456263
+      "size": 226008
+    },
+    {
+      "path": "assets/main.bundle.js.map",
+      "hash": "b442f25f6f0ea0cf2159010102c338b5dacfce86d5c4cc2de7e53c92d989ac59",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/b442f25",
+      "type": "application/json",
+      "size": 246551
     },
     {
       "path": "assets/polyfills.bundle.js",
-      "hash": "71a60b61c8719443d784bb25fd35784e91e991666cbe5b52f8a60f0537ef1686",
-      "id": "marchitos/widgets/vvc-marco/assets/polyfills.bundle.js/71a60b6",
-      "type": "application/javascript",
-      "size": 64386
+      "hash": "825682bca469df9420db2555aa928299cfdf2e79b9d43e628d3ae1f8f8343851",
+      "id": "marchitos/widgets/vvc-marco/assets/polyfills.bundle.js/825682b",
+      "size": 219740,
+      "type": "application/javascript"
+    },
+    {
+      "path": "assets/polyfills.bundle.js.map",
+      "hash": "2b1e8a0e7c4592333acc2b40c17456a3321564f2d177ed82d7c28cbe19251a13",
+      "id": "marchitos/widgets/vvc-marco/assets/polyfills.bundle.js.map/2b1e8a0",
+      "size": 267887,
+      "type": "application/json"
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "32c77c9feacb0c897587c53d3945416d9486645208128db46f7d9ce70fded8c5",
-      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/32c77c9",
-      "size": 34258,
+      "hash": "9fd6adc6ae908a591afcc27868a786274ff979f7a55e6197fbef7453395b3c7a",
+      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/9fd6adc",
+      "size": 34281,
       "type": "text/x-scss"
     },
     {
@@ -419,8 +440,22 @@
       "id": "marchitos/widgets/vvc-marco/assets/static/visitor_default.png/b113afd",
       "size": 1152,
       "type": "image/png"
+    },
+    {
+      "path": "assets/vendor.bundle.js",
+      "hash": "7025f0e8803628890979ffa43b4afdfeb285b071654507fd64ac53b7e39eb9e0",
+      "id": "marchitos/widgets/vvc-marco/assets/vendor.bundle.js/7025f0e",
+      "size": 3243007,
+      "type": "application/javascript"
+    },
+    {
+      "path": "assets/vendor.bundle.js.map",
+      "hash": "2a4cf5a7f2cf21336e68f81741e40f5885d5ffaa3cfb56c1742ceba068671eee",
+      "id": "marchitos/widgets/vvc-marco/assets/vendor.bundle.js.map/2a4cf5a",
+      "size": 3931555,
+      "type": "application/json"
     }
   ],
-  "htmlId": "marchitos/widgets/vvc-marco/main.html/b5db024",
+  "htmlId": "marchitos/widgets/vvc-marco/main.html/5c8c985",
   "scssId": "marchitos/widgets/vvc-marco/main.scss/0b1ac0c"
 }

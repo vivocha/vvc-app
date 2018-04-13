@@ -1,11 +1,11 @@
-<div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.agent_is_agent }">
+<div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.connectedWithAgent }">
   <div id="vvc-fullscreen-container"
        *ngIf="!appState.isMinimized"
       [ngClass]="{ 'mobile': appState.isMobile, 'fullscreen': appState.isFullScreen, 'hide-chat': !appState.showChatOnFullScreen }">
     <div id="vvc-loading-panel" *ngIf="appState.isLoading">
       <vvc-loading-panel></vvc-loading-panel>
     </div>
-    <div id="vvc-close-panel" *ngIf="appState.showCloseModal">
+    <div id="vvc-close-panel" *ngIf="appState.showCloseModal && !appState.isClosed">
       <vvc-close-panel (cancel)="dismissCloseModal()"
                        (confirm)="closeContact()"></vvc-close-panel>
     </div>
@@ -43,7 +43,7 @@
 
 
       <vvc-media id="vvc-media"
-                 *ngIf="appState.isMediaVisible"
+                 *ngIf="appState.isMediaVisible && !appState.isFullScreen"
                  [ngClass]="{'minimized': appState.media_is_minimized}"
                  [context]="appState"
                  (onAccept)="acceptOffer()"

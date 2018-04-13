@@ -1297,6 +1297,7 @@ body, input, textarea{ font-family: $appFontFamily; }
           position: absolute;
           right: 40px;
           top: 40px;
+          z-index: 10;
         }
       }
       .media-controls-wrapper{

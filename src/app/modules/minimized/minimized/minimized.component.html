@@ -1,0 +1,4 @@
+<div (click)="expand.emit()">
+  <img class='agent-img' [src]="context && context.agent.avatar">
+  <div class='badge' *ngIf="context.notRead && context.notRead > 0">{{ context.notRead }}</div>
+</div>
