@@ -26,7 +26,7 @@
               [readonly]="_context.isUploading"
               [placeholder]="'STRINGS.UPLOAD.FILE_DESCRIPTION' | translate"></textarea>
     <form id="formUploader" #formUploader enctype="multipart/form-data" onsubmit="return false;">
-      <input type="file" id="theFile" name="theFile" class="input-file" (change)="onUploading($event)">
+      <input type="file" id="theFile" name="theFile" class="input-file" (change)="onUploading($event, formUploader)">
     </form>
   </div>
   <div class="vvc-upload-button-wrap">

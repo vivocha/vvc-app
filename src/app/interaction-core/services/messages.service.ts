@@ -18,7 +18,7 @@ export class VvcMessageService {
       id: id,
       text: message.body,
       type: 'chat',
-      isAgent: message.agent,
+      isAgent: agent,
       time: this.getChatTimestamp(message.ts)
     };
     if (agent) msg.agent = agent;

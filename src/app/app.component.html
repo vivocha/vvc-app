@@ -80,7 +80,7 @@
           </div>
         </div>
 
-        <div class="vvc-chat-box-area" *ngIf="appState.isSendAreaVisible">
+        <div class="vvc-chat-box-area" *ngIf="appState.isSendAreaVisible && !appState.isClosed">
           <vvc-chat-area #chat
                          [readonly]="appState.isSendAreaDisabled"
                          [context]="appState"

@@ -6,6 +6,8 @@ export interface  ContextState {
   isFullScreen?: boolean;
   isMinimized?: boolean;
   isMobile?: boolean;
+  isUploading?: boolean;
+  uploadCompleted?: boolean;
   showClosePanel?: boolean;
   showQueuePanel?: boolean;
 
@@ -17,6 +19,8 @@ export interface ProtocolState {
   initialOffer?: any;
   canStartAudio?: boolean;
   canStartVideo?: boolean;
+  incomingMedia?: string;
+  incomingOffer?: boolean;
 }
 export interface AgentState {
   id: string,
@@ -41,6 +45,18 @@ export interface ChatState{
 export interface MediaState{
   isVisible: boolean;
   isMinimized: boolean;
+  /*
+  isOffering?: boolean;
+  voiceRx?: boolean;
+  voiceTx?: boolean;
+  videoRx?: boolean;
+  videoTx?: boolean;
+  voiceRxStream?: string;
+  voiceTxStream?: string;
+  videoRxStream?: string;
+  videoTxStream?: string;
+  */
+  media: any;
 }
 export interface DataCollectionState{
   items?: any[],
@@ -52,12 +68,18 @@ export interface SurveyState{
   item?: any;
   completed?: boolean;
 }
+export interface TopBarState{
+  title?: string;
+  subtitle?: string;
+  avatar?: string;
+}
 export interface WidgetState {
   context?: any;
   protocol?: ProtocolState;
   agent?: AgentState;
   chat?: ChatState;
   media?: MediaState;
+  topBar?: TopBarState;
 }
 export interface BaseMessage {
   id: string;
@@ -89,9 +111,15 @@ export interface UiState {
   agent: AgentState;
   messages: Message[];
   variables: any;
+  canMaximize: boolean;
+  canMinimize: boolean;
   canRemoveApp: boolean;
+  canStartAudio: boolean;
+  canStartVideo: boolean;
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
+  incomingMedia?: string;
+  incomingOffer?: boolean;
   isLoading: boolean;
   isInQueue: boolean;
   isChatVisible: boolean;
@@ -104,6 +132,7 @@ export interface UiState {
   isMobile: boolean;
   isFullScreen: boolean;
   isSendAreaVisible: boolean;
+  isUploading: boolean;
   isWriting: boolean;
   notRead: number;
   showCloseModal: boolean;
@@ -112,4 +141,8 @@ export interface UiState {
   showEmojiPanel: boolean;
   showUploadPanel: boolean;
   showSurveyPanel: boolean;
+  topBarTitle: string;
+  topBarSubtitle: string;
+  topBarAvatar: string;
+  uploadCompleted: boolean;
 }

@@ -246,17 +246,16 @@ export class VvcContactWrap {
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       this.zone.run( () => {
         const attachment = {url, meta, fromId, fromNick, isAgent};
-        console.log('ATTACHMENT', attachment);
         meta.url = (meta.originalUrl) ? meta.originalUrl : url;
         const msg = {
           body: meta.desc || meta.originalName,
           type: 'chat',
-          isAgent: isAgent,
           meta: meta,
           from_nick: fromNick,
           from_id: fromId
         };
-        this.messageService.addChatMessage(msg, this.agent);
+        if (isAgent) this.messageService.addChatMessage(msg, this.agent);
+        else this.messageService.addChatMessage(msg);
       });
     });
     this.contact.on('joined', (c) => {
@@ -275,7 +274,6 @@ export class VvcContactWrap {
         else if (msg.template) {
           this.messageService.addTemplateMessage(msg);
         } else {
-          console.log('dispatching chat message', this.contact.contact.agentInfo, this.contact);
           this.messageService.addChatMessage(msg, this.agent);
         }
         if (msg.agent) this.uiService.setIsWriting(false);
@@ -320,7 +318,7 @@ export class VvcContactWrap {
     this.contact.on('mediachange', (media, changed) => {
       //console.log('MEDIACHANGE', media, changed);
       this.zone.run( () => {
-        this.protocolService.setMediaChange(media);
+        //this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
       })
     });
@@ -416,6 +414,7 @@ export class VvcContactWrap {
     }
   }
   onMediaOffer(offer, cb){
+    this.uiService.setMediaOffer(offer);
     const o = this.protocolService.confirmNeeded(offer);
     if (o.askForConfirmation){
       this.incomingMedia = o.media;

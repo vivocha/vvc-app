@@ -13,6 +13,7 @@ export class UploadPanelComponent {
       this.uploadFile = undefined;
       this.dataFile = undefined;
       this.isImage = undefined;
+      console.log('upload clean');
     }
     this._context = Object.assign({}, context);
   };
@@ -26,46 +27,29 @@ export class UploadPanelComponent {
   dataFile;
   isImage;
   uploadFile: File;
+  fileFormRef;
 
   constructor(private cdr: ChangeDetectorRef){}
 
   doUpload(inputFileDescr) {
     if (this.uploadFile) {
       this.upload.emit({ text: inputFileDescr.value, file: this.uploadFile });
-      console.log('UPLOADING THAT STUFF', this.uploadFile);
       inputFileDescr.value = '';
     }
   }
-  onUploading(evt){
+  onUploading(evt, formRef){
     if (evt.srcElement.files[0]) {
-      const file = evt.target.files[0];
+      this.fileFormRef = evt.target.files[0];
       const fr = new FileReader();
       fr.onload = (e) => {
         this.dataFile = e.target['result'];
-        this.uploadFile = file;
-        this.isImage = file.type.indexOf('image/') !== -1;
+        this.uploadFile = this.fileFormRef;
+        this.isImage = this.fileFormRef.type.indexOf('image/') !== -1;
+        formRef.reset();
         this.cdr.detectChanges();
+
       };
-      fr.readAsDataURL(file);
+      fr.readAsDataURL(this.fileFormRef);
     }
-    /*
-    const file = evt.target.files[0];
-    this.upload = { loading: true };
-    const fr = new FileReader();
-    fr.onload = (e) => {
-      this.upload = {
-        loading: true,
-        id: fileId,
-        fileName: file.name,
-        dataFile: e.target['result'],
-        fileObj: file
-      }
-      this.uploader.uploadFile(this.campaignId, 'vvc-app', file).toPromise().then( res => {
-        this.upload.loading = false;
-        this.fileChanged.emit(res);
-      })
-    };
-    fr.readAsDataURL(file);
-     */
   }
 }

@@ -28,6 +28,7 @@ export class TopBarComponent{
   hasMenu(){
     let itemNumber = 0;
     if (this.context){
+      if (this.context.canMinimize) itemNumber++;
       if (this.context.canMaximize) itemNumber++;
       if (this.context.canStartAudio) itemNumber++;
       if (this.context.canStartVideo) itemNumber++;

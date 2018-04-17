@@ -1,15 +1,13 @@
 $appFontUrl: 'https://fonts.googleapis.com/css?family=Roboto:300,400';
 $appFontFamily: 'Roboto', sans-serif;
 
-//$color1: #0351A1;
-//$color2: #13AF6C;
-
 $appWidth: 350px;
 $appHeight: 580px;
 $appMinimizedWidth: 80px;
 $appMinimizedHeight: 80px;
 $appBottomDistance: -5px;
 $appRightDistance: 40px;
+
 
 $icon-vvc-reduce: './assets/static/icons/vvc-reduce.png';
 $icon-vvc-close: './assets/static/icons/vvc-close.png';
@@ -32,9 +30,8 @@ $icon-survey-heart-off: './assets/static/icons/heart-off.png';
 $icon-survey-smile-on: './assets/static/icons/smile-on.png';
 $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 
-
-
 @import 'variables';
+
 /**
   MIXINS
  */
@@ -172,7 +169,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     border: 1px solid #CCCCCC;
   }
 }
-@mixin top-bar($background: $color1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showAvatar: $showAvatar){
+@mixin top-bar($background: $color1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showTopAvatar: $showAvatar){
 
   flex: none;
   background: $background;
@@ -181,10 +178,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   display: flex;
 
   #vvc-top-avatar {
-    @if ($showAvatar){
-      display: block;
-    }
-    @else {
+    @if ($showTopAvatar==false){
       display: none;
     }
     flex: none;
@@ -680,8 +674,8 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           display: block;
           position: relative;
           top: 40px;
-          width: 100px;
-          height: 100px;
+          width: 60px;
+          height: 60px;
           path {
             fill:  #979797;
           }
@@ -1199,7 +1193,7 @@ body, input, textarea{ font-family: $appFontFamily; }
     flex-direction: column;
 
     #vvc-top-bar {
-      @include top-bar()
+      @include top-bar();
     }
     #vvc-survey,
     #vvc-data-collection {
@@ -1445,3 +1439,6 @@ body, input, textarea{ font-family: $appFontFamily; }
 .testclass{
   background: $color1;
 }**/
+/*
+showAvatar: $showAvatar;
+*/

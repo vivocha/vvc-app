@@ -240,24 +240,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "b8f146ea1c67256d4d6693ea0fb89aa042903f721d8d4f2d34b0f1cdc850a2f7",
-      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/b8f146e",
+      "hash": "976e4a9cf08a756f481341b7981e657ccb60a9bfcb2ca990e0f46b2ca0bcb1b5",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/976e4a9",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "49d68d6dfef95aa3b9247d25bc23255cd870cb851ff933ca01622e7b65c66d8d",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/49d68d6",
+      "hash": "4b9ddbf957c55790f11318f99d3250d46b431f2c77c410199b61a4f23f299b3c",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/4b9ddbf",
       "type": "application/javascript",
-      "size": 226008
+      "size": 230184
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "b442f25f6f0ea0cf2159010102c338b5dacfce86d5c4cc2de7e53c92d989ac59",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/b442f25",
+      "hash": "e8140d1983f46a5bf1072b5bd3dff1a23a79cfd6a315da7acb238a5eeaeabd6f",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/e8140d1",
       "type": "application/json",
-      "size": 246551
+      "size": 253681
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -275,16 +275,16 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "9fd6adc6ae908a591afcc27868a786274ff979f7a55e6197fbef7453395b3c7a",
-      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/9fd6adc",
-      "size": 34281,
+      "hash": "39ababc5c1ee6a6c40aea97277795ede4441fab445c814051c5556ad93833bce",
+      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/39ababc",
+      "size": 34243,
       "type": "text/x-scss"
     },
     {
       "path": "assets/scss/variables.scss",
-      "hash": "705ba10c0e080ab761bf5e0fb18118ce198d7b0a109c35a81fa236e90558b389",
-      "id": "marchitos/widgets/vvc-marco/assets/scss/variables.scss/705ba10",
-      "size": 239,
+      "hash": "10fcec5386ac651e814fc0c0bc1072857f3dc6b07a1867105256ee5765908f0f",
+      "id": "marchitos/widgets/vvc-marco/assets/scss/variables.scss/10fcec5",
+      "size": 28,
       "type": "text/x-scss"
     },
     {

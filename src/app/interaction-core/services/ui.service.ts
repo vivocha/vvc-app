@@ -19,7 +19,13 @@ import {
   WidgetSetMinimized,
   WidgetSetNormal,
   WidgetMarkAsRead,
-  WidgetNewMessage
+  WidgetNewMessage,
+  WidgetIsUploading,
+  WidgetUploadCompleted,
+  WidgetSetTopBar,
+  WidgetMediaChange,
+  WidgetMediaOffer,
+  WidgetIncomingMedia
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected, DataCollectionCompleted, DataCollectionLoaded} from '../store/actions/dataCollection.actions';
 
@@ -51,6 +57,7 @@ export class VvcUiService {
   initializeMedia(media){
     this.initializeChat(media);
     this.initializeMultimedia(media);
+    this.setMediaState(media);
   }
   initializeMultimedia(media){
     this.store.dispatch(new WidgetInitializeMultimedia(media));
@@ -103,7 +110,8 @@ export class VvcUiService {
     this.store.dispatch(new DataCollectionSelected(dc));
   }
   setAgent(agent){
-    this.store.dispatch(new WidgetSetAgent(agent))
+    this.store.dispatch(new WidgetSetAgent(agent));
+    this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
     /*
     const agentProps = this.flatObj('agent', agent);
     this.extendAndDispatch(this.currentState, {
@@ -129,6 +137,7 @@ export class VvcUiService {
   }
   setClosedByAgent(){
     this.store.dispatch(new WidgetClosedByAgent());
+    this.store.dispatch(new WidgetSetTopBar({title: '', subtitle: '', avatar: ''}));
     /*
     this.extendAndDispatch(this.currentState, {
       closedByAgent: true,
@@ -146,6 +155,8 @@ export class VvcUiService {
   }
   setClosedByVisitor(){
     this.store.dispatch(new WidgetClosedByVisitor());
+    this.store.dispatch(new WidgetSetTopBar({title: '', subtitle: '', avatar: ''}));
+
     /*
     this.extendAndDispatch(this.currentState, {
       closedByVisitor: true,
@@ -215,6 +226,7 @@ export class VvcUiService {
     */
   }
   setIncomingMedia(media){
+    this.store.dispatch(new WidgetIncomingMedia(media))
     /*
     this.extendAndDispatch(this.currentState, {
       media_incoming: true,
@@ -254,8 +266,11 @@ export class VvcUiService {
     });
     */
   }
+  setMediaOffer(offer){
+    this.store.dispatch(new WidgetMediaOffer(offer));
+  }
   setMediaState(media) {
-
+    this.store.dispatch(new WidgetMediaChange(media));
     /*
     const o = {};
 
@@ -389,6 +404,7 @@ export class VvcUiService {
     */
   }
   setUploading(){
+    this.store.dispatch(new WidgetIsUploading());
     /*
     this.extendAndDispatch(this.currentState, {
       isUploading: true
@@ -396,6 +412,7 @@ export class VvcUiService {
     */
   }
   setUploaded(){
+    this.store.dispatch(new WidgetUploadCompleted())
     /*
     this.extendAndDispatch(this.currentState, {
       isUploading: false,
