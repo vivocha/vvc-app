@@ -21,6 +21,8 @@ export interface ProtocolState {
   canStartVideo?: boolean;
   incomingMedia?: string;
   incomingOffer?: boolean;
+  isOffering?: boolean;
+  offeringMedia?: string;
 }
 export interface AgentState {
   id: string,
@@ -43,20 +45,11 @@ export interface ChatState{
   showOnFullScreen: boolean;
 }
 export interface MediaState{
-  isVisible: boolean;
-  isMinimized: boolean;
-  /*
-  isOffering?: boolean;
-  voiceRx?: boolean;
-  voiceTx?: boolean;
-  videoRx?: boolean;
-  videoTx?: boolean;
-  voiceRxStream?: string;
-  voiceTxStream?: string;
-  videoRxStream?: string;
-  videoTxStream?: string;
-  */
-  media: any;
+  isVisible?: boolean;
+  isMinimized?: boolean;
+  isMuted?: boolean;
+  muteInProgress?: boolean;
+  media?: any;
 }
 export interface DataCollectionState{
   items?: any[],
@@ -106,7 +99,7 @@ export type Message = SystemMessage | ChatMessage | BaseMessage;
 export interface MessagesState {
   list: Message[];
 }
-
+export type streamType = boolean | string;
 export interface UiState {
   agent: AgentState;
   messages: Message[];
@@ -126,15 +119,19 @@ export interface UiState {
   isClosed: boolean;
   isClosedByAgent: boolean;
   isClosedByVisitor: boolean;
+  isMediaConnected: boolean;
   isMediaVisible: boolean;
   isMediaMinimized: boolean;
   isMinimized: boolean;
   isMobile: boolean;
+  isMuted: boolean;
+  isOffering: boolean;
   isFullScreen: boolean;
   isSendAreaVisible: boolean;
   isUploading: boolean;
   isWriting: boolean;
   notRead: number;
+  offeringMedia: string;
   showCloseModal: boolean;
   showChatOnFullScreen: boolean;
   showDataCollectionPanel: boolean;
@@ -145,4 +142,7 @@ export interface UiState {
   topBarSubtitle: string;
   topBarAvatar: string;
   uploadCompleted: boolean;
+  voiceRxStream: streamType;
+  videoRxStream: streamType;
+  videoTxStream: streamType;
 }

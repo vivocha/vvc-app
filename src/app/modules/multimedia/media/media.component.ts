@@ -29,7 +29,7 @@ export class MediaComponent {
     this.onReject.emit();
   }
   toggleMute(){
-    this.muteToggle.emit(!this.context.is_muted);
+    this.muteToggle.emit(!this.context.isMuted);
   }
   toggleVideo(){
     if (this.context.in_transit) return;

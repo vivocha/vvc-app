@@ -44,7 +44,7 @@
 
       <vvc-media id="vvc-media"
                  *ngIf="appState.isMediaVisible && !appState.isFullScreen"
-                 [ngClass]="{'minimized': appState.media_is_minimized}"
+                 [ngClass]="{'minimized': appState.isMediaMinimized}"
                  [context]="appState"
                  (onAccept)="acceptOffer()"
                  (onReject)="rejectOffer()"

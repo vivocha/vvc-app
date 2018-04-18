@@ -1,27 +1,32 @@
 import {Action} from '@ngrx/store';
 import {ProtocolState, AgentState, TopBarState} from '../models.interface';
 
-export const WIDGET_CLOSED_BY_AGENT   = '[Widget] Closed by Agent';
-export const WIDGET_CLOSED_BY_VISITOR = '[Widget] Closed by Visitor';
-export const WIDGET_INCOMING_MEDIA    = '[Widget] Incoming Media';
-export const WIDGET_INIT_CHAT         = '[Widget] Init Chat';
-export const WIDGET_INIT_CONTEXT      = '[Widget] Init Context';
-export const WIDGET_INIT_MULTIMEDIA   = '[Widget] Init Multimedia';
-export const WIDGET_INIT_PROTOCOL     = '[Widget] Init Protocol';
-export const WIDGET_IS_UPLOADING      = '[Widget] Is Uploading';
-export const WIDGET_IS_WRITING        = '[Widget] Is Writing';
-export const WIDGET_MARK_AS_READ      = '[Widget] Mark as read';
-export const WIDGET_MEDIA_CHANGE      = '[Widget] Media Change';
-export const WIDGET_MEDIA_OFFER       = '[Widget] Media Offer';
-export const WIDGET_NEW_MESSAGE       = '[Widget] New Message';
-export const WIDGET_SET_AGENT         = '[Widget] Set Agent';
-export const WIDGET_SET_MINIMIZED     = '[Widget] Set Minimized';
-export const WIDGET_SET_NORMAL        = '[Widget] Set Normal';
-export const WIDGET_SET_TOP_BAR       = '[Widget] Set Top Bar';
-export const WIDGET_SHOW_CLOSE_PANEL  = '[Widget] Show Close Panel';
-export const WIDGET_SHOW_UPLOAD_PANEL = '[Widget] Show Upload Panel';
-export const WIDGET_TOGGLE_EMOJI      = '[Widget] Toggle Emoji Panel';
-export const WIDGET_UPLOAD_COMPLETED  = '[Widget] Upload Completed';
+export const WIDGET_CLOSED_BY_AGENT       = '[Widget] Closed by Agent';
+export const WIDGET_CLOSED_BY_VISITOR     = '[Widget] Closed by Visitor';
+export const WIDGET_INCOMING_MEDIA        = '[Widget] Incoming Media';
+export const WIDGET_INIT_CHAT             = '[Widget] Init Chat';
+export const WIDGET_INIT_CONTEXT          = '[Widget] Init Context';
+export const WIDGET_INIT_MULTIMEDIA       = '[Widget] Init Multimedia';
+export const WIDGET_INIT_PROTOCOL         = '[Widget] Init Protocol';
+export const WIDGET_IS_OFFERING           = '[Widget] Is Offering';
+export const WIDGET_IS_UPLOADING          = '[Widget] Is Uploading';
+export const WIDGET_IS_WRITING            = '[Widget] Is Writing';
+export const WIDGET_MARK_AS_READ          = '[Widget] Mark as read';
+export const WIDGET_MEDIA_CHANGE          = '[Widget] Media Change';
+export const WIDGET_MEDIA_OFFER           = '[Widget] Media Offer';
+export const WIDGET_MUTE_IN_PROGRESS      = '[Widget] Mute in progress';
+export const WIDGET_MUTE_SUCCESS          = '[Widget] Mute Success';
+export const WIDGET_NEW_MESSAGE           = '[Widget] New Message';
+export const WIDGET_OFFER_REJECTED        = '[Widget] Offer Rejected';
+export const WIDGET_SET_AGENT             = '[Widget] Set Agent';
+export const WIDGET_SET_MINIMIZED         = '[Widget] Set Minimized';
+export const WIDGET_SET_MINIMIZED_MEDIA   = '[Widget] Set Minimized Media';
+export const WIDGET_SET_NORMAL            = '[Widget] Set Normal';
+export const WIDGET_SET_TOP_BAR           = '[Widget] Set Top Bar';
+export const WIDGET_SHOW_CLOSE_PANEL      = '[Widget] Show Close Panel';
+export const WIDGET_SHOW_UPLOAD_PANEL     = '[Widget] Show Upload Panel';
+export const WIDGET_TOGGLE_EMOJI          = '[Widget] Toggle Emoji Panel';
+export const WIDGET_UPLOAD_COMPLETED      = '[Widget] Upload Completed';
 
 
 export class WidgetClosedByAgent implements Action {
@@ -50,6 +55,10 @@ export class WidgetInitProtocol implements Action {
   readonly type = WIDGET_INIT_PROTOCOL;
   constructor(public payload: ProtocolState){}
 }
+export class WidgetIsOffering implements Action {
+  readonly type = WIDGET_IS_OFFERING;
+  constructor(public payload: string){}
+}
 export class WidgetIsUploading implements Action{
   readonly type = WIDGET_IS_UPLOADING;
 }
@@ -68,8 +77,18 @@ export class WidgetMediaOffer implements Action {
   readonly type = WIDGET_MEDIA_OFFER;
   constructor(public payload: any){}
 }
+export class WidgetMuteInProgress implements Action {
+  readonly type = WIDGET_MUTE_IN_PROGRESS;
+}
+export class WidgetMuteSuccess implements Action {
+  readonly type = WIDGET_MUTE_SUCCESS;
+  constructor(public payload: boolean){}
+}
 export class WidgetNewMessage implements Action {
   readonly type = WIDGET_NEW_MESSAGE;
+}
+export class WidgetOfferRejected implements Action {
+  readonly type = WIDGET_OFFER_REJECTED;
 }
 export class WidgetSetAgent implements Action {
   readonly type = WIDGET_SET_AGENT;
@@ -77,6 +96,10 @@ export class WidgetSetAgent implements Action {
 }
 export class WidgetSetMinimized implements Action {
   readonly type = WIDGET_SET_MINIMIZED;
+}
+export class WidgetSetMinimizedMedia implements Action {
+  readonly type = WIDGET_SET_MINIMIZED_MEDIA;
+  constructor(public payload: boolean){}
 }
 export class WidgetSetNormal implements Action {
   readonly type = WIDGET_SET_NORMAL;
@@ -107,14 +130,19 @@ export type WidgetActions
   | WidgetInitContext
   | WidgetInitializeMultimedia
   | WidgetInitProtocol
+  | WidgetIsOffering
   | WidgetIsUploading
   | WidgetIsWriting
   | WidgetMarkAsRead
   | WidgetMediaChange
   | WidgetMediaOffer
+  | WidgetMuteInProgress
+  | WidgetMuteSuccess
   | WidgetNewMessage
+  | WidgetOfferRejected
   | WidgetSetAgent
   | WidgetSetMinimized
+  | WidgetSetMinimizedMedia
   | WidgetSetNormal
   | WidgetSetTopBar
   | WidgetShowClosePanel

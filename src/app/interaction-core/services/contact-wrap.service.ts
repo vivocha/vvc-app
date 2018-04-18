@@ -39,13 +39,13 @@ export class VvcContactWrap {
 
   acceptOffer(){
     this.mergeOffer(this.incomingOffer, this.incomingCallback);
-    this.uiService.setVoiceAccepted();
   }
   addChatToFullScreen(show){
     this.uiService.setFullScreenChat(show);
     if (this.context.requestedMedia !== 'chat') this.askForUpgrade('Chat');
   }
   askForUpgrade(media){
+    this.uiService.setIsOffering(media);
     this.contact.getMediaOffer().then(offer => {
       offer[media] = {
         tx: 'required',
@@ -60,7 +60,6 @@ export class VvcContactWrap {
         };
       }
       if (media === 'Voice' || media === 'Video') offer[media].engine = 'WebRTC';
-      this.uiService.setIsOffering(media);
       this.contact.offerMedia(offer).then(() => {
         this.zone.run( () => {
 
@@ -139,11 +138,6 @@ export class VvcContactWrap {
       console.log('Failed to create contact', err);
       this.vivocha.pageRequest('interactionFailed', err.message);
     });
-  }
-  dispatch(action){
-    //this.zone.run( () => {
-      this.store.dispatch(action);
-    //});
   }
   getContactOptions(dataToMerge?):ClientContactCreationOptions {
     const initialOpts =  {
@@ -425,6 +419,7 @@ export class VvcContactWrap {
     else {
       const newOffer = this.protocolService.mergeOffer(offer);
       this.mergeOffer(newOffer, cb);
+
     }
   }
   openAttachment(url){

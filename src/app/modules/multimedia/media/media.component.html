@@ -1,15 +1,15 @@
 <!-- closed state -->
-<div class="media-connected-view animated fadeInUp" *ngIf="context.closedByVisitor || context.closedByAgent">
+<div class="media-connected-view animated fadeInUp" *ngIf="context.isClosed">
   <div class="media-content" >
     <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.CONTACT_CLOSED' | translate"></div>
   </div>
 </div>
 <!-- offering state -->
-<div class="media-connected-view animated fadeInUp" *ngIf="(!context.closedByVisitor && !context.closedByAgent && context.isOffering)">
+<div class="media-connected-view animated fadeInUp" *ngIf="(!context.isClosed && context.isOffering)">
   <div class="media-content" >
-    <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.MEDIA_OFFERING' | translate:{ nickname: context.agent_nick }"></div>
-    <div class="media-avatar" *ngIf="context.agent_avatar">
-      <img [src]="context.agent_avatar">
+    <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.MEDIA_OFFERING' | translate:{ nickname: context.agent.nick }"></div>
+    <div class="media-avatar" *ngIf="context.agent.avatar">
+      <img [src]="context.agent.avatar">
     </div>
     <div class="media-loading">
       <div class="inner-loading-panel">
@@ -23,11 +23,11 @@
   </div>
 </div>
 <!-- incoming state -->
-<div class="media-connected-view animated fadeInUp" *ngIf="(!context.closedByVisitor && !context.closedByAgent && context.media_incoming && !context.isOffering)">
+<div class="media-connected-view animated fadeInUp" *ngIf="(!context.isClosed && context.incomingOffer)">
   <div class="media-content" >
-    <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.INCOMING_MESSAGE' | translate:{ nickname: context.agent_nick }"></div>
-    <div class="media-avatar" *ngIf="context.agent_avatar">
-      <img [src]="context.agent_avatar">
+    <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.INCOMING_MESSAGE' | translate:{ nickname: context.agent.nick }"></div>
+    <div class="media-avatar" *ngIf="context.agent.avatar">
+      <img [src]="context.agent.avatar">
     </div>
     <div class="media-tools">
       <div class="button-wrapper">
@@ -51,45 +51,45 @@
 </div>
 
 <!-- connected state -->
-<div class="media-connected-view animated fadeInUp" *ngIf="!context.closedByVisitor && !context.closedByAgent &&  !context.media_incoming && !context.isOffering">
+<div class="media-connected-view animated fadeInUp" *ngIf="!context.isClosed && context.isMediaConnected">
 
   <div class="media-content" >
-    <div class="media-title" *ngIf="!(context.video_rx || context.video_tx)" [innerHtml]=" 'STRINGS.VOICE.WELCOME_MESSAGE' | translate:{ nickname: context.agent_nick }"></div>
+    <div class="media-title" *ngIf="!(context.videoRxStream || context.videoTxStream)" [innerHtml]=" 'STRINGS.VOICE.WELCOME_MESSAGE' | translate:{ nickname: context.agent.nick }"></div>
 
-    <div class="media-avatar" *ngIf="context.agent_avatar && !(context.video_rx || context.video_tx)">
-      <img [src]="context.agent_avatar">
+    <div class="media-avatar" *ngIf="context.agent.avatar && !(context.videoRxStream || context.videoTxStream)">
+      <img [src]="context.agent.avatar">
     </div>
 
     <audio autoplay
-           *ngIf="context.voice_rx && !context.video_tx && context.voice_rx_stream"
-           [src]="trustedSrc(context.voice_rx_stream)"></audio>
+           *ngIf="context.voiceRxStream"
+           [src]="trustedSrc(context.voiceRxStream)"></audio>
 
 
     <div class="media-video-wrapper">
       <video class="big-video"
              autoplay
-             *ngIf="context.video_rx && context.video_rx_stream"
-             [src]="trustedSrc(context.video_rx_stream)"></video>
+             *ngIf="context.videoRxStream"
+             [src]="trustedSrc(context.videoRxStream)"></video>
 
       <video class="small-video"
              autoplay
              muted
-             *ngIf="context.video_tx && context.video_tx_stream"
-             [src]="trustedSrc(context.video_tx_stream)"></video>
+             *ngIf="context.videoTxStream"
+             [src]="trustedSrc(context.videoTxStream)"></video>
     </div>
 
 
     <div class="media-tools">
       <div class="button-wrapper">
         <div class="round-button to-remove"
-             *ngIf="!context.is_muted"
+             *ngIf="!context.isMuted"
              (click)="toggleMute()">
           <svg width="17px" height="25px" viewBox="0 0 17 25">
             <path fill="#fff" d="M3.515625,12.5 L3.515625,4.6875 C3.515625,2.09868164 5.61430664,0 8.203125,0 C10.7919434,0 12.890625,2.09868164 12.890625,4.6875 L12.890625,12.5 C12.890625,15.0888184 10.7919434,17.1875 8.203125,17.1875 C5.61430664,17.1875 3.515625,15.0888184 3.515625,12.5 Z M15.8203125,9.765625 L14.6484375,9.765625 C14.3248535,9.765625 14.0625,10.0279785 14.0625,10.3515625 L14.0625,12.4355469 C14.0625,15.6687988 11.4706055,18.3407227 8.23740234,18.3592773 C4.99086914,18.3779297 2.34375,15.7422852 2.34375,12.5 L2.34375,10.3515625 C2.34375,10.0279785 2.08139648,9.765625 1.7578125,9.765625 L0.5859375,9.765625 C0.262353516,9.765625 0,10.0279785 0,10.3515625 L0,12.5 C0,16.6253906 3.06118164,20.0486816 7.03125,20.619043 L7.03125,22.8515625 L3.7109375,22.8515625 C3.38735352,22.8515625 3.125,23.113916 3.125,23.4375 L3.125,24.4140625 C3.125,24.7376465 3.38735352,25 3.7109375,25 L12.6953125,25 C13.0188965,25 13.28125,24.7376465 13.28125,24.4140625 L13.28125,23.4375 C13.28125,23.113916 13.0188965,22.8515625 12.6953125,22.8515625 L9.375,22.8515625 L9.375,20.619043 C13.3450684,20.0486816 16.40625,16.6253906 16.40625,12.5 L16.40625,10.3515625 C16.40625,10.0279785 16.1438965,9.765625 15.8203125,9.765625 Z" id="Shape"></path>
           </svg>
         </div>
         <div class="round-button to-add"
-             *ngIf="context.is_muted"
+             *ngIf="context.isMuted"
              (click)="toggleMute()">
           <svg width="26px" height="25px" viewBox="0 0 26 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <path fill="#fff" d="M20.538499,13.9471248 L18.3235867,11.7322612 L18.3235867,10.380117 C18.3235867,10.0571637 18.5854288,9.79532164 18.9083821,9.79532164 L20.0779727,9.79532164 C20.4009259,9.79532164 20.662768,10.0571637 20.662768,10.380117 L20.662768,12.5243665 C20.662768,13.0096004 20.6198343,13.4848928 20.538499,13.9471248 Z M17.1539961,4.72709552 C17.1539961,2.14332359 15.0594055,0.0487329435 12.4756335,0.0487329435 C10.8882066,0.0487329435 9.48567251,0.839522417 8.63986355,2.04848928 L17.1539961,10.5626706 L17.1539961,4.72709552 Z M24.6087232,22.4520468 L2.54795322,0.391276803 C2.09117934,-0.065497076 1.35063353,-0.065497076 0.893908382,0.391276803 L0.34254386,0.942641326 C-0.114181287,1.3994152 -0.114181287,2.13991228 0.34254386,2.59668616 L7.79727096,10.0513645 L7.79727096,12.4673977 C7.79727096,15.0545809 9.91403509,17.2165205 12.5011696,17.2026316 C13.2139376,17.1988304 13.8886452,17.0349903 14.4921053,16.7461988 L15.3569201,17.6110136 C14.5026803,18.0969298 13.5151072,18.3744639 12.4635478,18.3723197 C9.22782651,18.365692 6.62768031,15.6945906 6.62768031,12.4588694 L6.62768031,10.380117 C6.62768031,10.0571637 6.36583821,9.79532164 6.04288499,9.79532164 L4.87329435,9.79532164 C4.55034113,9.79532164 4.28849903,10.0571637 4.28849903,10.380117 L4.28849903,12.5243665 C4.28849903,16.6417154 7.34371345,20.0583333 11.3060429,20.6275828 L11.3060429,22.8557505 L7.99220273,22.8557505 C7.66924951,22.8557505 7.40740741,23.1175926 7.40740741,23.4405458 L7.40740741,24.4152047 C7.40740741,24.7381579 7.66924951,25 7.99220273,25 L16.9590643,25 C17.2820175,25 17.5438596,24.7381579 17.5438596,24.4152047 L17.5438596,23.4405458 C17.5438596,23.1175926 17.2820175,22.8557505 16.9590643,22.8557505 L13.6452242,22.8557505 L13.6452242,20.6275828 C14.8940058,20.4481481 16.0524366,19.9856725 17.0537037,19.3077485 L22.4033626,24.6574074 C22.8601365,25.1141813 23.6006823,25.1141813 24.0574074,24.6574074 L24.6087232,24.1060916 C25.0654483,23.6493177 25.0654483,22.9088207 24.6087232,22.4520468 Z" id="Shape"></path>
@@ -98,14 +98,14 @@
       </div>
       <div class="button-wrapper">
         <div class="round-button to-add"
-             *ngIf="!context.video_tx && context.canStartVideo"
+             *ngIf="!context.videoTxStream && context.canStartVideo"
              (click)="toggleVideo()">
           <svg width="25px" height="17px" viewBox="0 0 25 17">
             <path fill="#fff" d="M14.5920139,0 L2.07465278,0 C0.928819444,0 0,0.928819444 0,2.07465278 L0,14.5920139 C0,15.7378472 0.928819444,16.6666667 2.07465278,16.6666667 L14.5920139,16.6666667 C15.7378472,16.6666667 16.6666667,15.7378472 16.6666667,14.5920139 L16.6666667,2.07465278 C16.6666667,0.928819444 15.7378472,0 14.5920139,0 Z M22.8125,1.63628472 L18.0555556,4.91753472 L18.0555556,11.7491319 L22.8125,15.0260417 C23.7326389,15.6597222 25,15.0130208 25,13.90625 L25,2.75607639 C25,1.65364583 23.7369792,1.00260417 22.8125,1.63628472 Z" id="Shape"></path>
           </svg>
         </div>
         <div class="round-button to-remove"
-             *ngIf="context.video_tx && context.canStartVideo"
+             *ngIf="context.videoRxStream && context.canStartVideo"
              (click)="toggleVideo()">
           <svg width="25px" height="20px" viewBox="0 0 25 20">
             <path fill="#fff" d="M24.7206749,17.8676888 L22.5754602,16.2100229 C23.1761203,16.1554174 23.7143742,15.6756694 23.7143742,14.9970014 L23.7143742,4.97299788 C23.7143742,3.9783983 22.5793606,3.39724012 21.7485774,3.96669713 L17.4737494,6.91539234 L17.4737494,12.2667281 L16.2256244,11.3033316 L16.2256244,4.36063657 C16.2256244,3.33093348 15.3909409,2.49624991 14.3612378,2.49624991 L4.83258382,2.49624991 L1.77467767,0.132613277 C1.50165034,-0.0780078098 1.11161129,-0.0312031239 0.897089813,0.24182421 L0.132613277,1.22472261 C-0.0780078098,1.49774995 -0.0312031239,1.887789 0.24182421,2.09841008 L1.66546674,3.1983202 L16.2256244,14.4548472 L23.1878215,19.837386 C23.4608488,20.0480071 23.8508879,20.0012024 24.0654093,19.7281751 L24.8298859,18.7413763 C25.0444073,18.4722494 24.9937023,18.0783099 24.7206749,17.8676888 Z M1.24812496,15.6093627 C1.24812496,16.6390658 2.08280852,17.4737494 3.11251161,17.4737494 L14.3612378,17.4737494 C14.7980815,17.4737494 15.1959214,17.3177338 15.5157534,17.0642084 L1.24812496,6.03390409 L1.24812496,15.6093627 Z" id="Shape"></path>
@@ -122,7 +122,7 @@
     </div>
   </div>
   <div class="media-bottom animated slideInLeft"
-       *ngIf="context.not_read > 0"
+       *ngIf="context.notRead > 0"
        (click)="displayChat.emit()">
     <svg width="25px" height="22px" viewBox="0 0 25 22">
       <path fill="#fff" d="M12.5,0 C5.59570312,0 0,4.54589844 0,10.15625 C0,12.578125 1.04492188,14.7949219 2.78320312,16.5380859 C2.17285156,18.9990234 0.131835938,21.1914062 0.107421875,21.2158203 C0,21.328125 -0.029296875,21.4941406 0.0341796875,21.640625 C0.09765625,21.7871094 0.234375,21.875 0.390625,21.875 C3.62792969,21.875 6.0546875,20.3222656 7.25585938,19.3652344 C8.85253906,19.9658203 10.625,20.3125 12.5,20.3125 C19.4042969,20.3125 25,15.7666016 25,10.15625 C25,4.54589844 19.4042969,0 12.5,0 Z" id="Shape"></path>
@@ -131,7 +131,7 @@
     <span>{{ 'STRINGS.VOICE.NOT_READ' | translate }}</span>
   </div>
   <div class="media-bottom animated slideInLeft"
-       *ngIf="context.not_read === 0"
+       *ngIf="context.notRead === 0"
        (click)="displayChat.emit()">
     <svg width="25px" height="22px" viewBox="0 0 25 22">
       <path fill="#fff" d="M12.5,0 C5.59570312,0 0,4.54589844 0,10.15625 C0,12.578125 1.04492188,14.7949219 2.78320312,16.5380859 C2.17285156,18.9990234 0.131835938,21.1914062 0.107421875,21.2158203 C0,21.328125 -0.029296875,21.4941406 0.0341796875,21.640625 C0.09765625,21.7871094 0.234375,21.875 0.390625,21.875 C3.62792969,21.875 6.0546875,20.3222656 7.25585938,19.3652344 C8.85253906,19.9658203 10.625,20.3125 12.5,20.3125 C19.4042969,20.3125 25,15.7666016 25,10.15625 C25,4.54589844 19.4042969,0 12.5,0 Z" id="Shape"></path>
