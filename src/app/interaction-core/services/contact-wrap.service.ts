@@ -50,16 +50,17 @@ export class VvcContactWrap {
       offer[media] = {
         tx: 'required',
         rx: 'required',
-        via: 'net'
+        via: 'net',
+        engine: 'WebRTC'
       };
       if (media === 'Video'){
         offer['Voice'] = {
           tx: 'required',
           rx: 'required',
-          via: 'net'
+          via: 'net',
+          engine: 'WebRTC'
         };
       }
-      if (media === 'Voice' || media === 'Video') offer[media].engine = 'WebRTC';
       this.contact.offerMedia(offer).then(() => {
         this.zone.run( () => {
 
@@ -126,7 +127,6 @@ export class VvcContactWrap {
     this.uiService.setUploadPanel(false);
   }
   createContact(dataToMerge?){
-    //this.setQueueState();
     const conf = this.getContactOptions(dataToMerge);
     this.uiService.initializeProtocol(this.context, conf);
     this.vivocha.createContact(conf).then( (contact) => {
@@ -253,6 +253,7 @@ export class VvcContactWrap {
       });
     });
     this.contact.on('joined', (c) => {
+        console.log('JOINED', c);
         if (c.user) {
           this.onAgentJoin(c);
         } else {
@@ -310,9 +311,9 @@ export class VvcContactWrap {
       //console.log('ON_REMOTE',caps);
     });
     this.contact.on('mediachange', (media, changed) => {
-      //console.log('MEDIACHANGE', media, changed);
+      console.log('MEDIACHANGE', JSON.stringify(media,null,2));
       this.zone.run( () => {
-        //this.protocolService.setMediaChange(media);
+        this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
       })
     });
@@ -363,8 +364,10 @@ export class VvcContactWrap {
     return false;
   }
   onAgentJoin(join){
+    console.log('agentjoin outer',join);
     this.contact.getMedia().then( (media) => {
       this.zone.run( () => {
+        console.log('agentjoin inner');
         const agent : AgentState  = {
           id: join.user,
           nick: join.nick,
@@ -384,9 +387,11 @@ export class VvcContactWrap {
     });
   }
   onLocalJoin(join){
+    console.log('onlocaljoin outer', join);
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
         this.zone.run( () => {
+          console.log('onlocaljoin inner');
           const agentInfo = this.contact.contact.agentInfo;
           const agent : AgentState = {
             id: agentInfo.id,
@@ -538,14 +543,17 @@ export class VvcContactWrap {
     this.uiService.toggleEmojiPanel();
   }
   toggleVideo(show){
-    const mode = show ? 'required' : 'off';
     this.contact.getMediaOffer().then(mediaOffer => {
       if (mediaOffer['Video']) {
-        mediaOffer['Video'].tx = mode;
+        //const mode = show ? 'required' : 'off';
+        const videoTx = mediaOffer['Video'].tx;
+        if (videoTx === 'required') mediaOffer['Video'].tx = 'off';
+        else mediaOffer['Video'].tx = 'required';
       }
       this.zone.run( () => {
         this.uiService.setInTransit(true);
       });
+      console.log('TOGGLE VIDEO', show, JSON.stringify(mediaOffer, null, 2));
       this.contact.offerMedia(mediaOffer).then( () => {
         this.zone.run( () => {
           this.uiService.setInTransit(false);

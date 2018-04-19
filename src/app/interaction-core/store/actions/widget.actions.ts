@@ -11,6 +11,7 @@ export const WIDGET_INIT_PROTOCOL         = '[Widget] Init Protocol';
 export const WIDGET_IS_OFFERING           = '[Widget] Is Offering';
 export const WIDGET_IS_UPLOADING          = '[Widget] Is Uploading';
 export const WIDGET_IS_WRITING            = '[Widget] Is Writing';
+export const WIDGET_IN_VIDEO_TRANSIT      = '[Widget] In Video Transit';
 export const WIDGET_MARK_AS_READ          = '[Widget] Mark as read';
 export const WIDGET_MEDIA_CHANGE          = '[Widget] Media Change';
 export const WIDGET_MEDIA_OFFER           = '[Widget] Media Offer';
@@ -67,6 +68,10 @@ export class WidgetIsUploading implements Action{
 }
 export class WidgetIsWriting implements Action {
   readonly type = WIDGET_IS_WRITING;
+  constructor(public payload: boolean){}
+}
+export class WidgetSetVideoTransit implements Action {
+  readonly type = WIDGET_IN_VIDEO_TRANSIT;
   constructor(public payload: boolean){}
 }
 export class WidgetMarkAsRead implements Action {
@@ -146,6 +151,7 @@ export type WidgetActions
   | WidgetIsOffering
   | WidgetIsUploading
   | WidgetIsWriting
+  | WidgetSetVideoTransit
   | WidgetMarkAsRead
   | WidgetMediaChange
   | WidgetMediaOffer

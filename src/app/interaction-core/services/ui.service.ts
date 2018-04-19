@@ -33,7 +33,8 @@ import {
   WidgetIsOffering,
   WidgetOfferAccepted,
   WidgetSetFullScreen,
-  WidgetShowChatOnFullScreen
+  WidgetShowChatOnFullScreen,
+  WidgetSetVideoTransit
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected, DataCollectionCompleted, DataCollectionLoaded} from '../store/actions/dataCollection.actions';
 
@@ -50,6 +51,7 @@ export class VvcUiService {
     this.store.dispatch(new WidgetSetMinimizedMedia(false));
   }
   initializeChat(media){
+    console.log('initializing chat', media);
     this.store.dispatch(new WidgetInitChat(media));
   }
   initializeContext(context){
@@ -62,6 +64,7 @@ export class VvcUiService {
     this.setMediaState(media);
   }
   initializeMultimedia(media){
+    console.log('initializeMultimedia', media);
     this.store.dispatch(new WidgetInitializeMultimedia(media));
   }
   initializeProtocol(context, conf){
@@ -71,28 +74,6 @@ export class VvcUiService {
       canStartVideo: context.media.video === 'both' || context.media.video === 'visitor',
       initialOffer: conf.initialOffer
     }));
-    /*
-    const varsObj = this.flatObj('var',context.variables);
-    varsObj['requestedMedia'] = context.requestedMedia;
-    varsObj['canStartAudio'] = context.media.voice === 'both' || context.media.voice === 'visitor';
-    varsObj['canStartVideo'] = context.media.video === 'both' || context.media.video === 'visitor';
-    this.extendAndDispatch(this.currentState, {
-      ...varsObj,
-      isMobile: context.isMobile,
-      hasSurvey: !!context.survey,
-      isLoading: false,
-      isInQueue: true,
-
-      canRemoveApp: true,
-      canMinimize: true,
-      canMaximize: false,
-      showSendButton: true,
-
-      queue_message: 'STRINGS.QUEUE.CONNECTING',
-      voice_connected: 'STRINGS.VOICE.WELCOME_MESSAGE',
-      lastAction: 'initializeUi'
-    });
-    */
   }
   loadDataCollections(dcList){
     this.store.dispatch(new DataCollectionLoaded(dcList));
@@ -110,6 +91,7 @@ export class VvcUiService {
     this.store.dispatch(new WidgetOfferAccepted());
   }
   setAgent(agent){
+    console.log('setting agent');
     this.store.dispatch(new WidgetSetAgent(agent));
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }
@@ -141,78 +123,34 @@ export class VvcUiService {
   setFullScreenChat(show){
     this.store.dispatch(new WidgetShowChatOnFullScreen(show));
     this.store.dispatch(new WidgetMarkAsRead());
-    /*
-    this.extendAndDispatch(this.currentState, {
-      showChatOnFullScreen: show,
-      isChatVisible: show,
-      not_read: 0
-    });
-    */
   }
   setFullScreen(){
     this.store.dispatch(new WidgetSetFullScreen());
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isFullScreen: true,
-      showChatOnFullScreen: false
-    });
-    */
   }
   setHangUpState(){
     this.store.dispatch(new WidgetSetNormal());
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isFullScreen: false,
-      showChatOnFullScreen: false
-    });
-    */
   }
   setNormalScreen(){
     this.store.dispatch(new WidgetSetNormal());
     this.store.dispatch(new WidgetShowChatOnFullScreen(false));
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isFullScreen: false,
-      showChatOnFullScreen: false
-    });
-    */
   }
   setIncomingMedia(media){
     this.store.dispatch(new WidgetIncomingMedia(media));
-    /*
-    this.extendAndDispatch(this.currentState, {
-      media_incoming: true,
-      media_is_minimized: false,
-      media_incoming_message: 'STRINGS.MEDIA.INCOMING_' + media.toUpperCase(),
-      isChatVisible: false,
-      isMediaVisible: true
-    });
-    */
   }
   setInTransit(transit){
-    /*
-    this.extendAndDispatch(this.currentState, {
-      in_transit: transit
-    });
-    */
+    this.store.dispatch(new WidgetSetVideoTransit(transit));
   }
   setIsOffering(media){
     this.store.dispatch(new WidgetIsOffering(media));
   }
   setIsWriting(isWriting: boolean){
     this.store.dispatch(new WidgetIsWriting(isWriting));
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isWriting: isWriting,
-
-      lastAction: isWriting ? 'setIsWriting' : 'removeIsWriting'
-    });
-    */
   }
   setMediaOffer(offer){
     this.store.dispatch(new WidgetMediaOffer(offer));
   }
   setMediaState(media) {
+    console.log('setting media state', media);
     this.store.dispatch(new WidgetMediaChange(media));
   }
   setMinimizedState(){
@@ -260,38 +198,12 @@ export class VvcUiService {
   }
   setUploadPanel(show: boolean){
     this.store.dispatch(new WidgetShowUploadPanel(show));
-    /*
-    this.extendAndDispatch(this.currentState, {
-      showUploadPanel: show,
-      isSendAreaVisible: !show,
-      lastAction: show ? 'showUploadPanel' : 'hideUploadPanel'
-    });
-    */
   }
   setUploading(){
     this.store.dispatch(new WidgetIsUploading());
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isUploading: true
-    });
-    */
   }
   setUploaded(){
     this.store.dispatch(new WidgetUploadCompleted())
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isUploading: false,
-      showUploadPanel: false,
-      isSendAreaVisible: true
-    });
-    */
-  }
-  setVoiceAccepted(){
-    /*
-    this.extendAndDispatch(this.currentState, {
-      media_incoming: false
-    });
-    */
   }
   toggleEmojiPanel(){
     this.store.dispatch(new WidgetToggleEmoji());

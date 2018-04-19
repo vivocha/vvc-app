@@ -240,24 +240,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "1b476bd64a2048a17fb358e3ed56ac6f1e409627851590220bbe2332d64ee289",
-      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/1b476bd",
+      "hash": "e4b5a11245158793fede57644b20b15a6aa5958859b4e449b3c142df73a17e71",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/e4b5a11",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "e2cbbe97584801bcb2a562243f51760561c5ee18c33dc1be6d7f0802298098aa",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/e2cbbe9",
+      "hash": "b05873a644947b6e0b6bbe9be8cc7f88a1858ea800289417d325a0aac31fdd5e",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/b05873a",
       "type": "application/javascript",
-      "size": 234151
+      "size": 232775
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "5f23a358e84c6d13eb6f5f0ea69e5dcb83bb6b9e78ba74b437f5cc478800c208",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/5f23a35",
+      "hash": "448fe74b570b3152d34db46a64ca947389554e2022364697fb5a31e57c06475f",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/448fe74",
       "type": "application/json",
-      "size": 265237
+      "size": 265022
     },
     {
       "path": "assets/polyfills.bundle.js",

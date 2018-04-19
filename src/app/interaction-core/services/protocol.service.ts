@@ -60,12 +60,12 @@ export class VvcProtocolService {
     switch (type) {
       case 'voice': return {
         Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Sharing: { rx: 'required', tx: 'required'}
+        Sharing: { rx: 'required', tx: 'required', via: 'net'}
       };
       case 'video': return {
         Video: { rx: 'required', tx: 'required', engine: 'WebRTC'},
         Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Sharing: { rx: 'required', tx: 'required'}
+        Sharing: { rx: 'required', tx: 'required', via: 'net'}
       };
       default: return { Chat: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'} };
     }

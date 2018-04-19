@@ -21,6 +21,7 @@ export interface ProtocolState {
   canStartVideo?: boolean;
   incomingMedia?: string;
   incomingOffer?: boolean;
+  inVideoTransit?: boolean;
   isOffering?: boolean;
   offeringMedia?: string;
 }
@@ -33,16 +34,16 @@ export interface AgentState {
 }
 export interface ChatState{
   isVisible: boolean;
-  isSendAreaVisible: boolean;
-  isChatBoxEnabled: boolean;
-  isWriting: boolean;
+  isSendAreaVisible?: boolean;
+  isChatBoxEnabled?: boolean;
+  isWriting?: boolean;
   canUploadFiles: boolean;
   canSendEmoji: boolean;
   uploadPanelOpened: boolean;
   emojiPanelOpened: boolean;
-  showSendButton: boolean;
+  showSendButton?: boolean;
   notRead: number;
-  showOnFullScreen: boolean;
+  showOnFullScreen?: boolean;
 }
 export interface MediaState{
   isVisible?: boolean;
@@ -113,6 +114,7 @@ export interface UiState {
   connectedWithBot: boolean;
   incomingMedia?: string;
   incomingOffer?: boolean;
+  inVideoTransit: boolean;
   isLoading: boolean;
   isInQueue: boolean;
   isChatVisible: boolean;

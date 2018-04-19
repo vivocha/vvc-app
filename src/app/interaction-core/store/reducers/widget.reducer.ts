@@ -21,14 +21,15 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
 
     case fromWidget.WIDGET_INIT_CHAT: {
-      const chatState: ChatState = Object.assign({
+      const chatState: ChatState = {
         isVisible: state.protocol.requestedMedia === 'chat',
         canUploadFiles: state.context.variables.showUploadButton,
         canSendEmoji: state.context.variables.showEmojiButton,
         uploadPanelOpened: false,
         emojiPanelOpened: false,
         notRead: 0
-      });
+      };
+      console.log('INIT_CHAT', chatState);
       return Object.assign({}, state, {chat: chatState});
     }
 
@@ -82,6 +83,10 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const protocol = Object.assign({}, state.protocol, {offeringMedia: action.payload, isOffering: true});
       const multimedia = Object.assign({}, state.media,{ isVisible: true });
       return Object.assign({}, state, {protocol: protocol, media: multimedia });
+    }
+    case fromWidget.WIDGET_IN_VIDEO_TRANSIT:{
+      const protocol = Object.assign({}, state.protocol, {inVideoTransit: action.payload});
+      return Object.assign({}, state, {protocol: protocol});
     }
     case fromWidget.WIDGET_MUTE_IN_PROGRESS: {
       const multimedia = Object.assign({}, state.media,{ muteInProgress: true });
@@ -220,6 +225,7 @@ export const getUiStateRedux = (
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
       incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,
+      inVideoTransit: widgetState.protocol.inVideoTransit,
       isLoading: !widgetState.context.isUiLoaded,
       isInQueue: widgetState.context.showQueuePanel,
       isChatVisible:  widgetState.chat && widgetState.chat.isVisible && (!isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen),
@@ -251,7 +257,7 @@ export const getUiStateRedux = (
       topBarAvatar: (showTopBarInfo) ? widgetState.topBar.avatar : '',
       uploadCompleted: widgetState.context.uploadCompleted,
       voiceRxStream: audioRxStream,
-      videoRxStream: localVideoStream,
-      videoTxStream: remoteVideoStream
+      videoRxStream: remoteVideoStream,
+      videoTxStream: localVideoStream
     }
 };
