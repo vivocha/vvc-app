@@ -364,10 +364,8 @@ export class VvcContactWrap {
     return false;
   }
   onAgentJoin(join){
-    console.log('agentjoin outer',join);
     this.contact.getMedia().then( (media) => {
       this.zone.run( () => {
-        console.log('agentjoin inner');
         const agent : AgentState  = {
           id: join.user,
           nick: join.nick,
@@ -380,18 +378,15 @@ export class VvcContactWrap {
         this.agent = agent;
         this.vivocha.pageRequest('interactionAnswered', agent);
         this.protocolService.setMediaChange(media);
-        //this.uiService.setMediaState(media);
         this.uiService.initializeMedia(media);
         this.setAnsweredState(agent)
       });
     });
   }
   onLocalJoin(join){
-    console.log('onlocaljoin outer', join);
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
         this.zone.run( () => {
-          console.log('onlocaljoin inner');
           const agentInfo = this.contact.contact.agentInfo;
           const agent : AgentState = {
             id: agentInfo.id,
@@ -406,7 +401,6 @@ export class VvcContactWrap {
           this.agent = agent;
           this.uiService.setAgent(agent);
           this.protocolService.setMediaChange(media);
-          //this.uiService.setMediaState(media);
           this.uiService.initializeMedia(media);
           this.checkForTranscript();
         });
@@ -457,6 +451,7 @@ export class VvcContactWrap {
     this.uiService.setOfferRejected();
   }
   resumeContact(context: InteractionContext){
+    console.log('RESUMING');
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
       this.vivocha.resumeContact(contactData).then((contact) => {
         this.zone.run( () => {

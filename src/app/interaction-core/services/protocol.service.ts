@@ -60,12 +60,12 @@ export class VvcProtocolService {
     switch (type) {
       case 'voice': return {
         Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Sharing: { rx: 'required', tx: 'required', via: 'net'}
+        Sharing: { rx: 'required', tx: 'required'}
       };
       case 'video': return {
         Video: { rx: 'required', tx: 'required', engine: 'WebRTC'},
         Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Sharing: { rx: 'required', tx: 'required', via: 'net'}
+        Sharing: { rx: 'required', tx: 'required'}
       };
       default: return { Chat: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'} };
     }
@@ -88,6 +88,5 @@ export class VvcProtocolService {
   }
   setMediaChange(media){
     this.lastMediaChange = media;
-
   }
 }

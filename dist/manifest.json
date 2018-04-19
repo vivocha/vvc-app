@@ -240,24 +240,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "e4b5a11245158793fede57644b20b15a6aa5958859b4e449b3c142df73a17e71",
-      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/e4b5a11",
+      "hash": "eb9f4975db35e6b2661239d003fefa0558485eb7d6be70735cb2ba627b65fdee",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/eb9f497",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "b05873a644947b6e0b6bbe9be8cc7f88a1858ea800289417d325a0aac31fdd5e",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/b05873a",
-      "type": "application/javascript",
-      "size": 232775
+      "hash": "08c6840bb3146afbcb960ad2e5e350b987cae34beef102a1cf6dde686a8aec4e",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/08c6840",
+      "size": 233341,
+      "type": "application/javascript"
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "448fe74b570b3152d34db46a64ca947389554e2022364697fb5a31e57c06475f",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/448fe74",
-      "type": "application/json",
-      "size": 265022
+      "hash": "6d5cb5df53df2322acca76ee949b939bd72757bb5c9bc132cc791d3b1018272a",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/6d5cb5d",
+      "size": 265559,
+      "type": "application/json"
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -275,10 +275,10 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "39ababc5c1ee6a6c40aea97277795ede4441fab445c814051c5556ad93833bce",
-      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/39ababc",
-      "size": 34243,
-      "type": "text/x-scss"
+      "hash": "021711fe6da362c48887a847038c19ea389d469fe13e16d66ae5ae45bbc9976b",
+      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/021711f",
+      "type": "text/x-scss",
+      "size": 35644
     },
     {
       "path": "assets/scss/variables.scss",
