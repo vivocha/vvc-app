@@ -27,16 +27,16 @@
       <div *ngIf="context.canMinimize" (click)="onMinimize.emit()">
         <span><i class="icon icon-vvc-reduce"></i> {{ 'STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON' | translate }}</span>
       </div>
-      <div *ngIf="context.canMaximize && context.video_rx && !context.isFullScreen" (click)="onMaximize.emit()">
+      <div *ngIf="context.canMaximize && !context.isFullScreen" (click)="onMaximize.emit()">
         <span><i class="icon icon-vvc-maximize"></i> {{ 'STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON' | translate }}</span>
       </div>
-      <div *ngIf="context.isMediaMinimized" (click)="onHideChat.emit()">
+      <div *ngIf="context.isMediaMinimized && context.isMediaConnected" (click)="onHideChat.emit()">
         <span><i class="icon icon-vvc-chat"></i> {{ 'STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON' | translate }}</span>
       </div>
-      <div *ngIf="context.canStartAudio &&  !context.isOffering && !context.voice_rx && !context.voice_tx" (click)="onVoiceUpgrade.emit()">
+      <div *ngIf="context.canStartAudio" (click)="onVoiceUpgrade.emit()">
         <span><i class="icon icon-vvc-audio"></i> {{ 'STRINGS.QUEUE.TOPBAR.VOICE_BUTTON' | translate }}</span>
       </div>
-      <div *ngIf="context.canStartVideo &&  !context.isOffering && !context.video_tx && !context.voice_rx" (click)="onVideoUpgrade.emit()">
+      <div *ngIf="context.canStartVideo && !context.isMediaConnected" (click)="onVideoUpgrade.emit()">
         <span><i class="icon icon-vvc-video"></i> {{ 'STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON' | translate }}</span>
       </div>
       <div (click)="onClose.emit()">

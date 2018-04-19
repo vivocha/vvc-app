@@ -17,12 +17,15 @@ export const WIDGET_MEDIA_OFFER           = '[Widget] Media Offer';
 export const WIDGET_MUTE_IN_PROGRESS      = '[Widget] Mute in progress';
 export const WIDGET_MUTE_SUCCESS          = '[Widget] Mute Success';
 export const WIDGET_NEW_MESSAGE           = '[Widget] New Message';
+export const WIDGET_OFFER_ACCEPTED        = '[Widget] Offer Accepted';
 export const WIDGET_OFFER_REJECTED        = '[Widget] Offer Rejected';
 export const WIDGET_SET_AGENT             = '[Widget] Set Agent';
+export const WIDGET_SET_FULLSCREEN        = '[Widget] Set Fullscreen';
 export const WIDGET_SET_MINIMIZED         = '[Widget] Set Minimized';
 export const WIDGET_SET_MINIMIZED_MEDIA   = '[Widget] Set Minimized Media';
 export const WIDGET_SET_NORMAL            = '[Widget] Set Normal';
 export const WIDGET_SET_TOP_BAR           = '[Widget] Set Top Bar';
+export const WIDGET_SHOW_CHAT_FULLSCREEN  = '[Widget] Fullscreen Chat';
 export const WIDGET_SHOW_CLOSE_PANEL      = '[Widget] Show Close Panel';
 export const WIDGET_SHOW_UPLOAD_PANEL     = '[Widget] Show Upload Panel';
 export const WIDGET_TOGGLE_EMOJI          = '[Widget] Toggle Emoji Panel';
@@ -87,12 +90,18 @@ export class WidgetMuteSuccess implements Action {
 export class WidgetNewMessage implements Action {
   readonly type = WIDGET_NEW_MESSAGE;
 }
+export class WidgetOfferAccepted implements Action {
+  readonly type = WIDGET_OFFER_ACCEPTED;
+}
 export class WidgetOfferRejected implements Action {
   readonly type = WIDGET_OFFER_REJECTED;
 }
 export class WidgetSetAgent implements Action {
   readonly type = WIDGET_SET_AGENT;
   constructor(public payload: AgentState){}
+}
+export class WidgetSetFullScreen implements Action {
+  readonly type = WIDGET_SET_FULLSCREEN;
 }
 export class WidgetSetMinimized implements Action {
   readonly type = WIDGET_SET_MINIMIZED;
@@ -107,6 +116,10 @@ export class WidgetSetNormal implements Action {
 export class WidgetSetTopBar implements Action{
   readonly type = WIDGET_SET_TOP_BAR;
   constructor(public payload: TopBarState){}
+}
+export class WidgetShowChatOnFullScreen implements Action {
+  readonly type = WIDGET_SHOW_CHAT_FULLSCREEN;
+  constructor(public payload: boolean){}
 }
 export class WidgetShowClosePanel implements Action {
   readonly type = WIDGET_SHOW_CLOSE_PANEL;
@@ -139,12 +152,15 @@ export type WidgetActions
   | WidgetMuteInProgress
   | WidgetMuteSuccess
   | WidgetNewMessage
+  | WidgetOfferAccepted
   | WidgetOfferRejected
   | WidgetSetAgent
+  | WidgetSetFullScreen
   | WidgetSetMinimized
   | WidgetSetMinimizedMedia
   | WidgetSetNormal
   | WidgetSetTopBar
+  | WidgetShowChatOnFullScreen
   | WidgetShowClosePanel
   | WidgetShowUploadPanel
   | WidgetToggleEmoji

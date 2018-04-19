@@ -120,6 +120,7 @@ export interface UiState {
   isClosedByAgent: boolean;
   isClosedByVisitor: boolean;
   isMediaConnected: boolean;
+  isMediaConnecting: boolean;
   isMediaVisible: boolean;
   isMediaMinimized: boolean;
   isMinimized: boolean;

@@ -327,6 +327,7 @@ export class VvcContactWrap {
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {
       this.zone.run( () => {
         cb(undefined, mergedMedia);
+        //this.uiService.setOfferAccepted();
       })
     });
   }

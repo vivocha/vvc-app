@@ -30,7 +30,10 @@ import {
   WidgetMuteSuccess,
   WidgetMuteInProgress,
   WidgetSetMinimizedMedia,
-  WidgetIsOffering
+  WidgetIsOffering,
+  WidgetOfferAccepted,
+  WidgetSetFullScreen,
+  WidgetShowChatOnFullScreen
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected, DataCollectionCompleted, DataCollectionLoaded} from '../store/actions/dataCollection.actions';
 
@@ -103,6 +106,9 @@ export class VvcUiService {
   selectDataCollection(dc){
     this.store.dispatch(new DataCollectionSelected(dc));
   }
+  setOfferAccepted(){
+    this.store.dispatch(new WidgetOfferAccepted());
+  }
   setAgent(agent){
     this.store.dispatch(new WidgetSetAgent(agent));
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
@@ -133,6 +139,8 @@ export class VvcUiService {
     */
   }
   setFullScreenChat(show){
+    this.store.dispatch(new WidgetShowChatOnFullScreen(show));
+    this.store.dispatch(new WidgetMarkAsRead());
     /*
     this.extendAndDispatch(this.currentState, {
       showChatOnFullScreen: show,
@@ -142,6 +150,7 @@ export class VvcUiService {
     */
   }
   setFullScreen(){
+    this.store.dispatch(new WidgetSetFullScreen());
     /*
     this.extendAndDispatch(this.currentState, {
       isFullScreen: true,
@@ -150,6 +159,7 @@ export class VvcUiService {
     */
   }
   setHangUpState(){
+    this.store.dispatch(new WidgetSetNormal());
     /*
     this.extendAndDispatch(this.currentState, {
       isFullScreen: false,
@@ -159,6 +169,7 @@ export class VvcUiService {
   }
   setNormalScreen(){
     this.store.dispatch(new WidgetSetNormal());
+    this.store.dispatch(new WidgetShowChatOnFullScreen(false));
     /*
     this.extendAndDispatch(this.currentState, {
       isFullScreen: false,

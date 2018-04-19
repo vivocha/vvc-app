@@ -24,11 +24,11 @@ export class FullScreenVideoComponent {
     this.hangUp.emit();
   }
   toggleMute(){
-    this.muteToggle.emit(!this.context.is_muted);
+    this.muteToggle.emit(!this.context.isMuted);
   }
   toggleVideo(){
-    if (this.context.in_transit) return;
-    this.videoToggle.emit(!this.context.video_tx);
+    //if (this.context.in_transit) return;
+    this.videoToggle.emit(!this.context.videoTxStream);
   }
   trustedSrc(url): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(url);

@@ -98,6 +98,10 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       }
       else return state;
     }
+    case fromWidget.WIDGET_OFFER_ACCEPTED: {
+      const protocol = Object.assign({}, state.protocol, {incomingOffer: false, isOffering: false, offeringMedia: ''});
+      return Object.assign({}, state, {protocol: protocol});
+    }
     case fromWidget.WIDGET_OFFER_REJECTED: {
       const protocol = Object.assign({}, state.protocol, {incomingOffer: false, isOffering: false, offeringMedia: ''});
       return Object.assign({}, state, {protocol: protocol});
@@ -105,6 +109,10 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     case fromWidget.WIDGET_SET_AGENT: {
       const context = Object.assign({}, state.context, {showQueuePanel: false});
       return Object.assign({}, state, {agent: action.payload, context: context});
+    }
+    case fromWidget.WIDGET_SET_FULLSCREEN:{
+      const context = Object.assign({}, state.context, {isFullScreen: true});
+      return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_MINIMIZED:{
       const context = Object.assign({}, state.context, {isMinimized: true});
@@ -115,12 +123,16 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {media: multimedia });
     }
     case fromWidget.WIDGET_SET_NORMAL:{
-      const context = Object.assign({}, state.context, {isMinimized: false});
+      const context = Object.assign({}, state.context, {isMinimized: false, isFullScreen: false});
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_TOP_BAR:{
       const topBar = Object.assign({}, state.topBar, action.payload);
       return Object.assign({}, state, {topBar: topBar});
+    }
+    case fromWidget.WIDGET_SHOW_CHAT_FULLSCREEN: {
+      const chat = Object.assign({}, state.chat, {showOnFullScreen: action.payload});
+      return Object.assign({}, state, {chat: chat});
     }
     case fromWidget.WIDGET_SHOW_CLOSE_PANEL:{
       const context = Object.assign({}, state.context, {showClosePanel: action.payload});
@@ -158,17 +170,17 @@ export const getUiStateRedux = (
   const hasLocalVideoStream     = hasLocalVideo &&
                                   widgetState.media.media.Video.data &&
                                   widgetState.media.media.Video.data.tx_stream &&
-                                  widgetState.media.media.Video.data.tx_stream.url;
+                                  !!widgetState.media.media.Video.data.tx_stream.url;
   const localVideoStream        = (hasLocalVideoStream) ? widgetState.media.media.Video.data.tx_stream.url :  false;
   const hasRemoteVideoStream    = hasRemoteVideo &&
                                   widgetState.media.media.Video.data &&
                                   widgetState.media.media.Video.data.rx_stream &&
-                                  widgetState.media.media.Video.data.rx_stream.url;
+                                  !!widgetState.media.media.Video.data.rx_stream.url;
   const remoteVideoStream       = (hasRemoteVideoStream) ? widgetState.media.media.Video.data.rx_stream.url : false;
   const hasAudioStream          = hasAudio &&
                                   widgetState.media.media.Voice.data &&
                                   widgetState.media.media.Voice.data.rx_stream &&
-                                  widgetState.media.media.Voice.data.rx_stream.url;
+                                  !!widgetState.media.media.Voice.data.rx_stream.url;
   const audioRxStream           = (hasAudioStream) ? widgetState.media.media.Voice.data.rx_stream.url : false;
   const isAudioConnecting       = hasAudio && !hasAudioStream;
   const isAudioConnected        = hasAudio && hasAudioStream;
@@ -177,6 +189,7 @@ export const getUiStateRedux = (
   const isLocalVideoConnected   = hasLocalVideo && hasLocalVideoStream;
   const isRemoteVideoConnected  = hasRemoteVideo && hasRemoteVideoStream;
   const isVideoConnecting       = isLocalVideoConnecting || isRemoteVideoConnecting;
+  const isVideoConnected        = isLocalVideoConnected || isRemoteVideoConnected;
   const isMediaConnected        = isAudioConnected || isLocalVideoConnected || isRemoteVideoConnected;
   const isMediaConnecting       = isAudioConnecting || isVideoConnecting;
   const isMediaVisible          = widgetState.protocol.incomingOffer || widgetState.protocol.isOffering || isMediaConnecting || isMediaConnected;
@@ -186,34 +199,42 @@ export const getUiStateRedux = (
                                   widgetState.agent &&
                                   widgetState.agent.is_agent &&
                                   widgetState.protocol.offeringMedia !== 'Voice';
-  const showTopBarInfo          = !isMediaVisible || widgetState.media.isMinimized;
+  const canStartVideo           = widgetState.protocol.canStartVideo &&
+                                  widgetState.agent &&
+                                  widgetState.agent.is_agent &&
+                                  !hasLocalVideo &&
+                                  !isVideoConnecting;
+  const showTopBarInfo          = !isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen;
+  const isClosed                = widgetState.context.closedByAgent ||
+                                  widgetState.context.closedByVisitor;
     return {
       agent: widgetState.agent,
       messages: [...messagesState.list],
       variables: widgetState.context.variables || {},
-      canMaximize: false,
+      canMaximize: isVideoConnected,
       canMinimize: true,
       canRemoveApp: widgetState.context.closedByAgent || widgetState.context.closedByVisitor || widgetState.context.showQueuePanel || !widgetState.context.isUiLoaded,
       canStartAudio: canStartAudio,
-      canStartVideo: widgetState.protocol.canStartVideo && !hasLocalVideo && !isLocalVideoConnecting,
+      canStartVideo: canStartVideo,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
-      incomingOffer: widgetState.protocol.incomingOffer || isMediaConnecting,
+      incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,
       isLoading: !widgetState.context.isUiLoaded,
       isInQueue: widgetState.context.showQueuePanel,
-      isChatVisible:  widgetState.chat && widgetState.chat.isVisible && (!isMediaVisible || widgetState.media.isMinimized),
-      isClosed: widgetState.context.closedByAgent || widgetState.context.closedByVisitor,
+      isChatVisible:  widgetState.chat && widgetState.chat.isVisible && (!isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen),
+      isClosed: isClosed,
       isClosedByAgent: widgetState.context.closedByAgent,
       isClosedByVisitor: widgetState.context.closedByVisitor,
       isMediaConnected: isMediaConnected,
+      isMediaConnecting: isMediaConnecting,
       isMediaVisible: isMediaVisible,
       isMediaMinimized: widgetState.media.isMinimized,
       isMinimized: widgetState.context.isMinimized,
       isMobile: widgetState.context.isMobile,
       isMuted: widgetState.media.isMuted,
       isOffering: widgetState.protocol.isOffering,
-      isFullScreen: widgetState.context.isFullScreen,
+      isFullScreen: widgetState.context.isFullScreen && !isClosed,
       isSendAreaVisible:  widgetState.chat && widgetState.chat.isVisible && !widgetState.chat.uploadPanelOpened,
       isUploading: widgetState.context.isUploading,
       isWriting:  widgetState.chat && widgetState.chat.isWriting,
