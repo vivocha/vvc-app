@@ -55,8 +55,9 @@ export class VvcUiService {
     this.store.dispatch(new WidgetInitChat(media));
   }
   initializeContext(context){
-    this.store.dispatch(new WidgetInitContext(context));
     this.store.dispatch(new LoadContextSuccess(context));
+    this.store.dispatch(new WidgetInitContext(context));
+
   }
   initializeMedia(media){
     this.initializeChat(media);

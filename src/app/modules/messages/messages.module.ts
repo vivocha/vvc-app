@@ -7,13 +7,15 @@ import { SystemMessageComponent } from './system-message/system-message.componen
 import { TemplateGenericComponent } from './template-generic/template-generic.component';
 import { QuickRepliesComponent } from './quick-replies/quick-replies.component';
 import { TemplateListComponent } from './template-list/template-list.component';
+import {RequestMessageComponent} from './request-message/request-message.component';
 
 const components = [
   ChatMessageComponent,
   SystemMessageComponent,
   TemplateGenericComponent,
   TemplateListComponent,
-  QuickRepliesComponent
+  QuickRepliesComponent,
+  RequestMessageComponent
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@ import * as fromWidget from '../actions/widget.actions';
 import {ContextState, WidgetState, DataCollectionState, ChatState, MessagesState, UiState, SurveyState} from '../models.interface';
 
 const initialState = {
-  context: { loaded: false },
+  context: { loaded: false, translationLoaded: false },
   media: {},
   topBar: {},
   protocol: {}
@@ -255,6 +255,7 @@ export const getUiStateRedux = (
       topBarTitle: (showTopBarInfo) ? widgetState.topBar.title : '',
       topBarSubtitle: (showTopBarInfo) ? widgetState.topBar.subtitle: '',
       topBarAvatar: (showTopBarInfo) ? widgetState.topBar.avatar : '',
+      translationLoaded: widgetState.context.translationLoaded,
       uploadCompleted: widgetState.context.uploadCompleted,
       voiceRxStream: audioRxStream,
       videoRxStream: remoteVideoStream,

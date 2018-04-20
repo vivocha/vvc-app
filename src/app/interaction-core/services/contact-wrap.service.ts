@@ -21,6 +21,7 @@ export class VvcContactWrap {
 
   lastSystemMessageId;
   agent;
+  agentRequestCallback
   isClosed = false;
   isWritingTimer;
   isWritingTimeout = 30000;
@@ -37,6 +38,11 @@ export class VvcContactWrap {
     private zone: NgZone
   ){}
 
+  acceptAgentRequest(requestId){
+    this.agentRequestCallback(null, true);
+    this.messageService.removeMessage(this.lastSystemMessageId);
+    this.messageService.sendSystemMessage('STRINGS.MESSAGES.'+requestId.toUpperCase()+'_ACCEPTED');
+  }
   acceptOffer(){
     this.mergeOffer(this.incomingOffer, this.incomingCallback);
   }
@@ -237,6 +243,11 @@ export class VvcContactWrap {
   }
   mapContact(){
     this.vivocha.pageRequest('interactionCreated', this.contact);
+    this.contact.on('agentrequest', (message, cb) => {
+      this.zone.run( () => {
+        this.onAgentRequest(message, cb);
+      });
+    });
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       this.zone.run( () => {
         const attachment = {url, meta, fromId, fromNick, isAgent};
@@ -383,6 +394,10 @@ export class VvcContactWrap {
       });
     });
   }
+  onAgentRequest(message, cb){
+    this.agentRequestCallback = cb;
+    this.lastSystemMessageId = this.messageService.sendRequestMessage(message);
+  }
   onLocalJoin(join){
     if (join.reason && join.reason === 'resume') {
       this.contact.getMedia().then((media) => {
@@ -444,6 +459,11 @@ export class VvcContactWrap {
     }
     this.contact.send(vvcQuickReply);
     this.messageService.addLocalMessage(reply.action.title);
+  }
+  rejectAgentRequest(requestId){
+    this.agentRequestCallback(null, false);
+    this.messageService.removeMessage(this.lastSystemMessageId);
+    this.messageService.sendSystemMessage('STRINGS.MESSAGES.'+requestId.toUpperCase()+'_REJECTED');
   }
   rejectOffer(){
     this.incomingCallback('error', {});

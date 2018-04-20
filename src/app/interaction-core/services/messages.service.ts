@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 
 import {AppState} from '../store/reducers/main.reducer';
 import {NewMessage,RemoveMessage,UpdateMessage} from '../store/actions/messages.actions';
-import {SystemMessage, ChatMessage} from '../store/models.interface';
+import {SystemMessage, ChatMessage, RequestMessage} from '../store/models.interface';
 
 @Injectable()
 export class VvcMessageService {
@@ -39,7 +39,6 @@ export class VvcMessageService {
     return id;
   }
   addQuickRepliesMessage(message){
-    console.log('QUICK_REPLY', message);
     const id = new Date().getTime().toString();
     const quick = {
       id: id,
@@ -53,7 +52,6 @@ export class VvcMessageService {
     return id;
   }
   addTemplateMessage(message){
-    console.log('TEMPLATE', message);
     const id = new Date().getTime().toString();
     const template = {
       id: id,
@@ -75,6 +73,16 @@ export class VvcMessageService {
   }
   removeMessage(messageId: string){
     this.store.dispatch(new RemoveMessage(messageId));
+  }
+  sendRequestMessage(message){
+    const id = new Date().getTime().toString();
+    let m: RequestMessage = {
+      id: id,
+      type: 'request',
+      text: message.toUpperCase()
+    };
+    this.store.dispatch(new NewMessage(m));
+    return id;
   }
   sendSystemMessage(messageNameId: string, context?: any){
     const id = new Date().getTime().toString();

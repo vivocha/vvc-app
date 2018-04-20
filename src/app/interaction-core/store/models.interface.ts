@@ -79,10 +79,14 @@ export interface BaseMessage {
   id: string;
   text: string;
   type: string,
+  agent?: any;
   isAgent?: boolean;
   isLast?: string;
   isFirst?: string;
   replied?: boolean;
+}
+export interface RequestMessage extends BaseMessage{
+  type: 'request'
 }
 export interface SystemMessage extends BaseMessage{
   type: 'system',
@@ -144,6 +148,7 @@ export interface UiState {
   topBarTitle: string;
   topBarSubtitle: string;
   topBarAvatar: string;
+  translationLoaded: boolean;
   uploadCompleted: boolean;
   voiceRxStream: streamType;
   videoRxStream: streamType;

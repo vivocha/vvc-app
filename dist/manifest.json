@@ -200,7 +200,8 @@
     "STRINGS.SURVEY.SUBTITLE",
     "STRINGS.SURVEY.FEEDBACK",
     "STRINGS.NEXT_BUTTON",
-    "STRINGS.CALL_REJECTED"
+    "STRINGS.CALL_REJECTED",
+    "STRINGS.LOADING"
   ],
   "assets": [
     {
@@ -247,24 +248,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "ea3d558c1699c97f51f6580105c996b0ac366c9fc34c57402759cc092bc37795",
-      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/ea3d558",
+      "hash": "9f3fa8e022b29a46ab1f05409f7bed35c491ff0a14357a311b123efc194b8b41",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/9f3fa8e",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "ec7b7efd60eb1b84b252243303edd2f31e01ba4982582501bbf99c8c59fd448c",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/ec7b7ef",
+      "hash": "882d5cca9434a35f9ca84cf64541b0b365540b0482321fd68327405ae4bc0a44",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/882d5cc",
       "type": "application/javascript",
-      "size": 237766
+      "size": 243619
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "85a8a80a5afd5ab3c29044d305561e91791d814751d97346c3807c96cc579526",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/85a8a80",
+      "hash": "db420e1fb875f170b13ef4198f97a2681155591c9c4639310800ec29eb042247",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/db420e1",
       "type": "application/json",
-      "size": 270168
+      "size": 276709
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -282,9 +283,9 @@
     },
     {
       "path": "assets/scss/theme.scss",
-      "hash": "e19a5217c33665a82db393b939d7fc8839d2ee5020b23191e0edece6a7fa02a1",
-      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/e19a521",
-      "size": 36674,
+      "hash": "bd28d8be0f42625a2def075f398af4cced20c2059a8af51ed43197c4be4b9ae3",
+      "id": "marchitos/widgets/vvc-marco/assets/scss/theme.scss/bd28d8b",
+      "size": 37570,
       "type": "text/x-scss"
     },
     {

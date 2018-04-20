@@ -73,6 +73,9 @@
             <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
             <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"
                               (showDoc)="openAttachment($event)"></vvc-chat-message>
+            <vvc-request-message [message]="m" *ngIf="m.type === 'request'"
+                                 (accept)="acceptAgentRequest($event)"
+                                 (reject)="rejectAgentRequest($event)"></vvc-request-message>
             <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
                                (action)="processQuickReply($event)"></vvc-quick-replies>
             <vvc-template-generic [message]="m" *ngIf="m.type === 'template' && m.template === 'generic'"

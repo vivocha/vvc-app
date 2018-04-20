@@ -53,20 +53,20 @@ export class VvcContextService {
     this.vivocha.pageRequest('interactionClosed', 'destroy');
   }
   dispatchContext(context){
+    this.ts.use(context.language);
     this.ts.getTranslation(context.language).toPromise().then(
       result => {
-        this.ts.use(context.language);
-        this.uiService.initializeContext({
-          loaded: true,
-          isMobile: this.isMobile,
-          busId: this.busId,
-          acct: this.acct,
-          world: this.world,
-          variables: context.campaign.channels.web.interaction.variables,
-          ...context
-        });
-      }
-    );
+          this.uiService.initializeContext({
+            loaded: true,
+            translationLoaded: true,
+            isMobile: this.isMobile,
+            busId: this.busId,
+            acct: this.acct,
+            world: this.world,
+            variables: context.campaign.channels.web.interaction.variables,
+            ...context
+          });
+      });
   }
   getVivocha(){
     return this.vivocha;

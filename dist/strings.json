@@ -1335,5 +1335,19 @@
     },
     "description": "",
     "id": "STRINGS.CALL_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Welcome to Vivocha Customer Care",
+        "state": "final"
+      },
+      "it": {
+        "value": "Benvenuto nel Vivocha Customer Care",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.LOADING"
   }
 ]

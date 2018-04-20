@@ -34,12 +34,20 @@ export const getMessageRedux = (state: MessagesState):MessagesState => {
     const nextElem = state.list[idx+1];
     const prevElem = state.list[idx-1];
     if (prevElem){
-      if (elem.type !== prevElem.type || elem.isAgent != prevElem.isAgent) isFirst = true;
+      if (
+        elem.type !== prevElem.type ||
+        elem.isAgent != prevElem.isAgent ||
+        (elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id)
+      ) isFirst = true;
       else isFirst = false;
     }
     else isFirst = true;
     if (nextElem){
-      if (elem.type !== nextElem.type || elem.isAgent != nextElem.isAgent) isLast = true;
+      if (
+        elem.type !== nextElem.type ||
+        elem.isAgent != nextElem.isAgent ||
+        (elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id )
+      ) isLast = true;
       else isLast = false;
     }
     else isLast = true;

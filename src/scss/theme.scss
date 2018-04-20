@@ -942,6 +942,27 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 
   }
 }
+@mixin request-message(){
+  .request-message-wrap {
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    .request-message {
+      text-align: center;
+      padding: 10px 50px;
+      color: #333333;
+      font-size: 15px;
+      font-weight: 300;
+    }
+    .btn {
+      padding: 4px 30px;
+      button {
+        width: 100%;
+        @include btn-label();
+      }
+    }
+  }
+}
 @mixin template-message(){
 
   .tpl-navigation{
@@ -1184,6 +1205,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 }
 @mixin loading-panel($background: $color1, $loadingBarColor: #FFFFFF){
+  /*
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1213,6 +1235,30 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           background: $loadingBarColor;
         }
       }
+    }
+  }
+  */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index:3;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: $background;
+  .loading-view{
+    margin: 25px;
+    .loading-message{
+      color: $loadingBarColor;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+      padding: 10px 5px 30px 5px;
+    }
+    .loading-loading{
+      @include loading-bar($loadingBarColor);
     }
   }
 }
@@ -1363,6 +1409,7 @@ body, input, textarea{ font-family: $appFontFamily; }
         @include chat-agent-message();
         @include chat-visitor-message();
         @include quick-replies();
+        @include request-message();
         @include template-message();
         @include template-list-message();
       }
