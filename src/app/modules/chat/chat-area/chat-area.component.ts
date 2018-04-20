@@ -18,6 +18,11 @@ export class ChatAreaComponent {
     this.box.nativeElement.value += value;
     this.box.nativeElement.focus();
   }
+  canShowUpload(){
+    return (this.context &&
+            this.context.variables.showUploadButton &&
+            !(this.context.variables.hideUploadWithBot && this.context.agent.is_bot));
+  }
   showUpload(){
     if (this.readonly) return;
     this.showUploadPanel.emit()

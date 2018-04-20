@@ -6,7 +6,7 @@
            #box
            (keyup.enter)="sendText(box.value);box.value=''">
   </div>
-  <div *ngIf="context.variables.showUploadButton"
+  <div *ngIf="canShowUpload()"
        (click)="showUpload()"
        class="upload-handler">
     <i class="icon icon-vvc-clip"></i>

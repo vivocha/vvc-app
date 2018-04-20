@@ -836,11 +836,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 }
 @mixin quick-replies(){
   .vvc-quick-replies{
-/*
-    display: flex;
-    flex: none;
-    flex-direction: column;
-*/
 
     .reply-message{
       text-align: center;
@@ -877,7 +872,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         z-index: 2;
         cursor: pointer;
         left: 5px;
-        top: 68px;
+        bottom: 8px;
         width: 30px;
         height: 30px;
         background-color: #ccc;
@@ -885,6 +880,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         background-repeat: no-repeat;
         border-radius: 50%;
         background-position: 6px 5px;
+        &.hasImg{
+          bottom: 12px;
+        }
         &:hover{
           opacity: 0.8;
         }
@@ -895,7 +893,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         z-index: 2;
         cursor: pointer;
         right: 5px;
-        top: 68px;
+        bottom: 8px;
         width: 30px;
         height: 30px;
         background-color: #ccc;
@@ -903,6 +901,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         background-repeat: no-repeat;
         border-radius: 50%;
         background-position: 6px 5px;
+        &.hasImg{
+          bottom: 12px;
+        }
         &:hover{
           opacity: 0.8;
         }
@@ -917,7 +918,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         display: flex;
         width: 100%;
         overflow-y: scroll;
-
+        &.centered {
+          justify-content: center;
+        }
         .reply{
           padding: 4px 6px;
 
@@ -1032,6 +1035,49 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           @include btn-label();
         }
       }
+    }
+  }
+}
+@mixin template-list-message(){
+  .tpl-list-container{
+    margin: 10px 15px;
+    border: 1px solid #E4E4E4;
+    box-shadow: 3px 4px 0 #E6E6E6;
+    .tpl-element{
+      border-bottom: 1px solid #E4E4E4;
+      padding: 10px;
+      .title {
+        padding-top: 5px;
+        color: $color1;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .subtitle {
+        color: #808080;
+        font-size: 12px;
+      }
+      .action{
+        padding-top: 5px;
+        span {
+          padding-right: 8px;
+          color: $color1;
+          font-size: 14px;
+          font-weight: bold;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+    .tpl-element:last-child{
+      border-bottom: 0;
+    }
+  }
+  .tpl-list-action {
+    margin: 10px 15px;
+    button {
+      width: 100%;
+      @include btn-label();
     }
   }
 }
@@ -1318,6 +1364,7 @@ body, input, textarea{ font-family: $appFontFamily; }
         @include chat-visitor-message();
         @include quick-replies();
         @include template-message();
+        @include template-list-message();
       }
       #vvc-is-writing {
         @include chat-is-writing();

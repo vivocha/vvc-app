@@ -451,6 +451,19 @@
   {
     "values": {
       "en": {
+        "value": "Hide upload button when connected with a BOT",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nascondi il bottone di upload quando l'agente è un BOT",
+        "state": "new"
+      }
+    },
+    "id": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Display welcome message when the agent is connected to the chat",
         "state": "new"
       },

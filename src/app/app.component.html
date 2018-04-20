@@ -75,8 +75,10 @@
                               (showDoc)="openAttachment($event)"></vvc-chat-message>
             <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
                                (action)="processQuickReply($event)"></vvc-quick-replies>
-            <vvc-template-generic [message]="m" *ngIf="m.type === 'template'"
+            <vvc-template-generic [message]="m" *ngIf="m.type === 'template' && m.template === 'generic'"
                                   (action)="processAction($event)"></vvc-template-generic>
+            <vvc-template-list [message]="m" *ngIf="m.type === 'template' && m.template === 'list'"
+                                  (action)="processAction($event)"></vvc-template-list>
           </div>
         </div>
 
