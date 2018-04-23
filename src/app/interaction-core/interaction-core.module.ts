@@ -17,7 +17,7 @@ import {VvcMessageService} from './services/messages.service';
 import { reducers } from './store/reducers/main.reducer'
 
 export function createTranslateLoader(http: HttpClient) {
-  const reg = /(\/a\/\w+\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
+  const reg = /(.*\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
   const res = location.pathname.match(reg);
   const url = location.origin + res[1];
   return new TranslateHttpLoader(http, url, res[2] + '/strings.json');

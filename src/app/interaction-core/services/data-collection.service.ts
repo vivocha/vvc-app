@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AppState, getDataCollectionState, getSurveyState} from '../store/reducers/main.reducer';
-import {SurveyLoaded,SurveySelected} from '../store/actions/survey.actions';
+import {SurveyCompleted,SurveySelected} from '../store/actions/survey.actions';
 import {Store} from '@ngrx/store';
 import {VvcUiService} from './ui.service';
 import {objectToDataCollection} from '@vivocha/global-entities/dist/wrappers/data_collection';
@@ -11,7 +11,7 @@ import {DataCollectionState, SurveyState} from '../store/models.interface';
 export class VvcDataCollectionService {
   private context;
 
-  contactOptions = { data : [] };
+  contactOptions: any = { data : [] };
   selectedIdx = 0;
   constructor(private store: Store<AppState>, private uiService: VvcUiService){
 
@@ -32,10 +32,7 @@ export class VvcDataCollectionService {
   }
   processDcByIdx(idx){
     this.selectedIdx = idx;
-    //this.store.dispatch(new DataCollectionSelected(this.context.dataCollections[idx]));
-    //this.uiService.selectDataCollection(this.context.dataCollections[idx]);
     if (this.hasVisibleFields(this.context.dataCollections[idx])) {
-      //this.uiService.setDataCollectionPanel(true, this.context.dataCollections[idx].labelId);
       this.uiService.selectDataCollection(this.context.dataCollections[idx]);
     }
     else {
@@ -68,23 +65,20 @@ export class VvcDataCollectionService {
   showSurvey(){
     if (this.hasSurvey()) {
       this.store.dispatch(new SurveySelected(this.context.survey));
-      this.uiService.setSurveyPanel();
     }
   }
   submitDataCollection(dc){
     const dataCollection = dc.dcDefinition;
     const data = dc.dcData;
-    /*
     for (let i = 0; i < dataCollection.fields.length; i++) {
       if (dataCollection.fields[i].format === 'nickname' && data[dataCollection.fields[i].id]) {
         this.contactOptions.nick = data[dataCollection.fields[i].id];
         break;
       }
-    }*/
+    }
     this.contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection));
     if (this.context.dataCollections[this.selectedIdx+1]) this.processDcByIdx(this.selectedIdx+1);
     else {
-      //this.store.dispatch(new DataCollectionCompleted(this.contactOptions));
       this.uiService.setDataCollectionCompleted(this.contactOptions);
     }
   }
@@ -103,45 +97,6 @@ export class VvcDataCollectionService {
     this.submitDataCollection(dataCollection);
   }
   submitSurvey(survey){
-   this.store.dispatch(new SurveyLoaded(survey));
-   this.uiService.setSurveyCompleted();
+   this.store.dispatch(new SurveyCompleted(survey));
   }
-/*
-  collectDc(context){
-    console.log('found', context.dataCollections[0]);
-  }
-  dcAlreadyFilled(){
-
-  }
-  showDcWithRecall(){
-
-  }
-  showRecall(){
-
-  }
-  */
-  /*
-  showDataCollections(vivocha, dataCollections){
-    this.vivocha = vivocha;
-    this.store.dispatch(new WidgetShowDc(dataCollections));
-    this.store.dispatch(new InitializeDataCollections(dataCollections));
-    this.store.dispatch(new ShowDataCollection(0));
-  }
-
-  sendDataCollections(dataCollections: any[], contactOptions){
-    const opts = Object.assign(contactOptions);
-    dataCollections.forEach( dc => {
-      dc.fields.forEach( f => {
-        if (f.format === 'nickname' && f.id) opts['nick'] = f.id;
-      })
-    });
-    this.vivocha.pageRequest('interactionCreation', opts, (opts: ClientContactCreationOptions) => {
-      console.log('pre-routing callback', opts);
-      //this.createContact(contactOptions);
-    });
-  }
-  submitDataCollection(dcId: string, dataCollection: any){
-    //this.store.dispatch(new WidgetDataCollectionFilled({ id: dcId, dc: dataCollection }));
-  }
-  */
 }

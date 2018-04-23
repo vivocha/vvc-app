@@ -116,6 +116,7 @@ export interface UiState {
   canStartVideo: boolean;
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
+  hasSurvey: boolean;
   incomingMedia?: string;
   incomingOffer?: boolean;
   inVideoTransit: boolean;
@@ -139,12 +140,15 @@ export interface UiState {
   isWriting: boolean;
   notRead: number;
   offeringMedia: string;
+  selectedDataCollection: any;
+  selectedSurvey: any;
   showCloseModal: boolean;
   showChatOnFullScreen: boolean;
   showDataCollectionPanel: boolean;
   showEmojiPanel: boolean;
   showUploadPanel: boolean;
   showSurveyPanel: boolean;
+  surveyCompleted: boolean;
   topBarTitle: string;
   topBarSubtitle: string;
   topBarAvatar: string;

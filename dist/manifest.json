@@ -206,9 +206,9 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "5c8c9859b0cc0a8f3f75a5454ad8a0296beb4eeb37f5de73b31c70bbf67af608",
-      "id": "marchitos/widgets/vvc-marco/main.html/5c8c985",
-      "size": 1676,
+      "hash": "e6ea452f6ba3a64e118176ffc8a039ec7683037ab746d16ac5fd52cd477dffce",
+      "id": "marchitos/widgets/vvc-marco/main.html/e6ea452",
+      "size": 1603,
       "type": "text/html"
     },
     {
@@ -248,24 +248,24 @@
     },
     {
       "path": "assets/inline.bundle.js.map",
-      "hash": "9f3fa8e022b29a46ab1f05409f7bed35c491ff0a14357a311b123efc194b8b41",
-      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/9f3fa8e",
+      "hash": "b7e803be04611e00dab5781a871f33ddc13578515f98def898d9641a8c7e788e",
+      "id": "marchitos/widgets/vvc-marco/assets/inline.bundle.js.map/b7e803b",
       "size": 5911,
       "type": "application/json"
     },
     {
       "path": "assets/main.bundle.js",
-      "hash": "882d5cca9434a35f9ca84cf64541b0b365540b0482321fd68327405ae4bc0a44",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/882d5cc",
+      "hash": "e9028298314d7ea2c39f70253e35b9d9f39f0585c9fbabd2b0d222ff03785a1c",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js/e902829",
       "type": "application/javascript",
-      "size": 243619
+      "size": 243977
     },
     {
       "path": "assets/main.bundle.js.map",
-      "hash": "db420e1fb875f170b13ef4198f97a2681155591c9c4639310800ec29eb042247",
-      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/db420e1",
+      "hash": "87923f910f76a70007bd5a05eb902ff7965f93f40c1384ad898ebc18ef3281a7",
+      "id": "marchitos/widgets/vvc-marco/assets/main.bundle.js.map/87923f9",
       "type": "application/json",
-      "size": 276709
+      "size": 277694
     },
     {
       "path": "assets/polyfills.bundle.js",
@@ -464,6 +464,6 @@
       "type": "application/json"
     }
   ],
-  "htmlId": "marchitos/widgets/vvc-marco/main.html/5c8c985",
+  "htmlId": "marchitos/widgets/vvc-marco/main.html/e6ea452",
   "scssId": "marchitos/widgets/vvc-marco/main.scss/0b1ac0c"
 }

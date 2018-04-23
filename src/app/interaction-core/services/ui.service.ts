@@ -185,6 +185,7 @@ export class VvcUiService {
     */
   }
   setSurveyPanel(){
+
     /*
     this.extendAndDispatch(this.currentState, {
       showSurveyPanel: true,

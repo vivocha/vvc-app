@@ -11,7 +11,7 @@ export function reducer(state: SurveyState = initialState, action: fromSurvey.Su
       return Object.assign({}, state, { completed: true, surveyToSend: action.payload });
     }
     case fromSurvey.SURVEY_SELECTED: {
-      return Object.assign({}, state, { selected: action.payload });
+      return Object.assign({}, state, { item: action.payload });
     }
     default:
       return state;
