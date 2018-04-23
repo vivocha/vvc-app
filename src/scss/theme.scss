@@ -1324,6 +1324,12 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     height: 60px;
     border-radius:50%;
     box-shadow: 0 0 5px #262626;
+
+    &.agent-default{
+      background: url($agentAvatarDefault);
+      background-size: 60px 60px;
+      background-position: center;
+    }
   }
 }
 /**
