@@ -384,7 +384,7 @@ export class VvcContactWrap {
           is_agent: !join.is_bot,
         };
         if (join.avatar){
-          agent.avatar = (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+          agent.avatar = join.avatar
         }
         this.agent = agent;
         this.vivocha.pageRequest('interactionAnswered', agent);
@@ -409,8 +409,8 @@ export class VvcContactWrap {
             is_bot: !!agentInfo.bot,
             is_agent: !agentInfo.bot,
           };
-          if (join.avatar){
-            agent.avatar = (join.avatar.base_url) ? join.avatar.base_url + join.avatar.images[0].file : join.avatar
+          if (agentInfo.avatar){
+            agent.avatar = agentInfo.avatar;
           }
           console.log('LOCAL JOIN', agent, this.contact);
           this.agent = agent;
