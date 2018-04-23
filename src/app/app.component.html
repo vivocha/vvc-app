@@ -91,7 +91,8 @@
                          [context]="appState"
                          (onSendText)="sendText($event, appState.showEmojiPanel)"
                          (toggleEmojiPanel)="toggleEmojiPanel()"
-                         (showUploadPanel)="showUploadPanel()"></vvc-chat-area>
+                         (showUploadPanel)="showUploadPanel()"
+                         (isVisitorWriting)="sendIsWriting()"></vvc-chat-area>
         </div>
 
         <div class="vvc-is-writing" *ngIf="appState.isWriting">

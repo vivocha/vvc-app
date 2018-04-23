@@ -4,6 +4,7 @@
            [placeholder]="'STRINGS.TEXTAREA.PLACEHOLDER' | translate"
            type="text"
            #box
+           (keyup)="isWriting()"
            (keyup.enter)="sendText(box.value);box.value=''">
   </div>
   <div *ngIf="canShowUpload()"

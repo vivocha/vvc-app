@@ -96,6 +96,9 @@ export class VvcInteractionService {
   sendAttachment(upload){
     this.contactService.sendAttachment(upload);
   }
+  sendIsWriting(){
+    this.contactService.sendIsWriting();
+  }
   sendPostBack(action){
     this.contactService.sendPostBack(action);
   }

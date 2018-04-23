@@ -13,6 +13,10 @@ export class ChatAreaComponent {
   @Output() onSendText = new EventEmitter();
   @Output() toggleEmojiPanel = new EventEmitter();
   @Output() showUploadPanel = new EventEmitter();
+  @Output() isVisitorWriting = new EventEmitter();
+
+  isWritingTimer;
+  isWritingTimeout = 20000;
 
   appendText(value){
     this.box.nativeElement.value += value;
@@ -22,6 +26,18 @@ export class ChatAreaComponent {
     return (this.context &&
             this.context.variables.showUploadButton &&
             !(this.context.variables.hideUploadWithBot && this.context.agent.is_bot));
+  }
+  clearIsWriting(){
+    clearTimeout(this.isWritingTimer);
+    this.isWritingTimer = null;
+  }
+  isWriting(){
+    if (!this.isWritingTimer){
+      this.isVisitorWriting.emit();
+      this.isWritingTimer = setTimeout( () => {
+        this.clearIsWriting();
+      }, this.isWritingTimeout);
+    }
   }
   showUpload(){
     if (this.readonly) return;
@@ -35,6 +51,7 @@ export class ChatAreaComponent {
     if (this.readonly) return;
     if (value !== "") {
       this.onSendText.emit(value);
+      this.clearIsWriting();
     }
   }
 }

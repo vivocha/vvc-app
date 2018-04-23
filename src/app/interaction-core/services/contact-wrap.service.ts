@@ -495,6 +495,9 @@ export class VvcContactWrap {
       })
     })
   }
+  sendIsWriting(){
+    this.contact.sendIsWriting();
+  }
   sendPostBack(msg){
     const vvcPostBack: any = {
       code: "message",

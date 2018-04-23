@@ -93,6 +93,9 @@ export class AppComponent implements OnInit {
   rejectOffer(){
     this.interactionService.rejectOffer();
   }
+  sendIsWriting(){
+    this.interactionService.sendIsWriting();
+  }
   sendText(value, isEmojiPanelVisible){
     if (isEmojiPanelVisible) this.toggleEmojiPanel();
     this.interactionService.sendText(value);
