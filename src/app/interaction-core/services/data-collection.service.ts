@@ -66,6 +66,7 @@ export class VvcDataCollectionService {
   showSurvey(){
     if (this.hasSurvey()) {
       this.store.dispatch(new SurveySelected(this.context.survey));
+      this.uiService.setSurveyPanel();
     }
   }
   submitDataCollection(dc){

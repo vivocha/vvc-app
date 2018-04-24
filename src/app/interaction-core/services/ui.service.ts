@@ -65,7 +65,6 @@ export class VvcUiService {
     this.setMediaState(media);
   }
   initializeMultimedia(media){
-    console.log('initializeMultimedia', media);
     this.store.dispatch(new WidgetInitializeMultimedia(media));
   }
   initializeProtocol(context, conf){
@@ -165,26 +164,8 @@ export class VvcUiService {
   setTopBarWithAgentInfo(agent){
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }
-  setSurveyCompleted(){
-    /*
-    this.extendAndDispatch(this.currentState, {
-      surveyCompleted : true
-    })
-    */
-  }
   setSurveyPanel(){
-
-    /*
-    this.extendAndDispatch(this.currentState, {
-      showSurveyPanel: true,
-      isSendAreaVisible: false,
-      isChatVisible: false,
-      isMediaVisible: false,
-
-      topbar_title: 'STRINGS.SURVEY.TITLE',
-      topbar_subtitle: 'STRINGS.SURVEY.SUBTITLE'
-    })
-    */
+    this.store.dispatch(new WidgetSetTopBar({title: 'STRINGS.SURVEY.TITLE', subtitle: 'STRINGS.SURVEY.SUBTITLE'}));
   }
   setUploadPanel(show: boolean){
     this.store.dispatch(new WidgetShowUploadPanel(show));
