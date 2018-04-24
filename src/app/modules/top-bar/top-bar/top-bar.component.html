@@ -13,7 +13,7 @@
     <span (click)="onMinimize.emit()">
       <i class="icon icon-vvc-reduce"></i>
     </span>
-    <span (click)="onClose.emit()">
+    <span (click)="closeContact()">
       <i class="icon icon-vvc-close"></i>
     </span>
   </div>
@@ -39,7 +39,7 @@
       <div *ngIf="context.canStartVideo && !context.isMediaConnected" (click)="onVideoUpgrade.emit()">
         <span><i class="icon icon-vvc-video"></i> {{ 'STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON' | translate }}</span>
       </div>
-      <div (click)="onClose.emit()">
+      <div (click)="closeContact()">
         <span><i class="icon icon-vvc-close"></i> {{ 'STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON' | translate }}</span>
       </div>
     </div>

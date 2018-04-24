@@ -21,7 +21,7 @@
       <vvc-top-bar [context]="appState"
                    (onMinimize)="minimizeWidget(true)"
                    (onMaximize)="setFullScreen()"
-                   (onClose)="showCloseModal()"
+                   (onClose)="showCloseModal($event)"
                    (onSurvey)="showSurvey()"
                    (onRemove)="closeApp()"
                    (onHideChat)="hideChat()"

@@ -22,6 +22,13 @@ export class TopBarComponent{
 
   constructor(){}
 
+  closeContact(){
+    this.onClose.emit({
+      forceClose: !this.context.variables.askCloseConfirm,
+      stayInAppAfterClose: this.context.variables.stayInAppAfterClose,
+      hasSurvey: this.context.hasSurvey
+    });
+  }
   closeMenu(){
     this.isMenuVisible = false;
   }
@@ -38,6 +45,7 @@ export class TopBarComponent{
   }
   removeApp(){
     if (this.context.hasSurvey) {
+      if (this.context.showSurveyPanel) this.closeAttempts++;
       if (this.closeAttempts > 0) {
         this.onRemove.emit();
       } else {

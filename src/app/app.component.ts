@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
     this.interactionService.askForVoiceUpgrade()
   }
   closeApp(){
+    console.log('should close app');
     this.interactionService.closeApp();
   }
   closeContact(){
@@ -103,8 +104,16 @@ export class AppComponent implements OnInit {
   setFullScreen(){
     this.interactionService.setFullScreen();
   }
-  showCloseModal(){
-    this.interactionService.showCloseModal()
+  showCloseModal(closeOpt){
+    if (closeOpt.forceClose) {
+      this.interactionService.closeContact();
+      if (!closeOpt.stayInAppAfterClose && !closeOpt.hasSurvey) this.closeApp();
+      else if (closeOpt.hasSurvey && !closeOpt.stayInAppAfterClose){
+        this.showSurvey();
+      }
+    } else {
+      this.interactionService.showCloseModal();
+    }
   }
   showUploadPanel(){
     this.interactionService.showUploadPanel();

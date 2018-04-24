@@ -287,6 +287,34 @@
   {
     "values": {
       "en": {
+        "value":"Ask confirm on close",
+        "state":"new"
+      },
+      "it": {
+        "value":"Chiedi conferma prima di chiudere il contatto",
+        "state":"new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM"
+  },
+  {
+    "values": {
+      "en": {
+        "value":"Let the user see the transcript after close",
+        "state":"new"
+      },
+      "it": {
+        "value":"Permetti al visitatore di vedere l'area dei messaggi dopo la chiusura del contatto",
+        "state":"new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Initial height of the application (desktop version).",
         "state": "final"
       },
