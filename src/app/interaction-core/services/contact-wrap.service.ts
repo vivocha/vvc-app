@@ -103,7 +103,7 @@ export class VvcContactWrap {
       const msg = transcript[m];
       switch (msg.type) {
         case 'text':
-          this.messageService.addChatMessage(msg, this.agent);
+          this.messageService.addChatMessage(msg, msg.agent);
           break;
         case 'attachment':
           this.store.dispatch(new NewMessage({
@@ -194,11 +194,19 @@ export class VvcContactWrap {
   initializeContact(vivocha, context){
     this.vivocha = vivocha;
     this.context = context;
+    this.dcService.setInitialContext(context);
     if (this.isInPersistence()) {
       this.resumeContact(context);
+      if (this.dcService.hasSurvey()){
+        this.dcService.onSurveyCompleted().subscribe( (survey) => {
+          if (survey && survey.completed){
+            this.contact.storeSurvey(survey.item);
+          }
+        });
+      }
     }
     else {
-      this.dcService.onDataCollectionCompleted(context).subscribe( (data: DataCollectionState) => {
+      this.dcService.onDataCollectionCompleted().subscribe( (data: DataCollectionState) => {
         if (data && data.completed) {
           this.createContact(data.creationOptions);
         }
@@ -329,7 +337,6 @@ export class VvcContactWrap {
       })
     });
     this.contact.on('mediaoffer', (offer, cb) => {
-      //console.log('OFFER', offer);
       this.zone.run( () => {
         this.onMediaOffer(offer, cb);
       })
@@ -471,7 +478,6 @@ export class VvcContactWrap {
     this.uiService.setOfferRejected();
   }
   resumeContact(context: InteractionContext){
-    console.log('RESUMING');
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
       this.vivocha.resumeContact(contactData).then((contact) => {
         this.zone.run( () => {

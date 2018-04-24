@@ -34,7 +34,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
 
     case fromWidget.WIDGET_INIT_CONTEXT: {
-      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true, showQueuePanel: true }});
+      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true}});
     }
 
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
@@ -46,7 +46,8 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
 
     case fromWidget.WIDGET_INIT_PROTOCOL: {
-      return Object.assign({}, state, {protocol: action.payload});
+      const context = Object.assign({}, state.context, {showQueuePanel: true });
+      return Object.assign({}, state, {protocol: action.payload, context: context});
     }
 
     case fromWidget.WIDGET_IS_UPLOADING:{
@@ -209,7 +210,7 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const showTopBarInfo          = !isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen;
+  const showTopBarInfo          = !widgetState.context.showQueuePanel && (!isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen || !dataCollectionState.completed);
   const isClosed                = widgetState.context.closedByAgent ||
                                   widgetState.context.closedByVisitor;
     return {

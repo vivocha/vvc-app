@@ -46,7 +46,7 @@ export const getMessageRedux = (state: MessagesState):MessagesState => {
       if (
         elem.type !== nextElem.type ||
         elem.isAgent != nextElem.isAgent ||
-        (elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id )
+        (prevElem && elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id )
       ) isLast = true;
       else isLast = false;
     }

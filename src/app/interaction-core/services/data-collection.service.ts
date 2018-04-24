@@ -16,8 +16,10 @@ export class VvcDataCollectionService {
   constructor(private store: Store<AppState>, private uiService: VvcUiService){
 
   }
-  onDataCollectionCompleted(context):Observable<DataCollectionState>{
+  setInitialContext(context){
     this.context = context;
+  }
+  onDataCollectionCompleted():Observable<DataCollectionState>{
     return this.store.select(getDataCollectionState);
   }
   onSurveyCompleted():Observable<SurveyState>{
@@ -39,7 +41,6 @@ export class VvcDataCollectionService {
       this.submitHiddenDataCollection(this.context.dataCollections[idx]);
     }
   }
-
   hasDataCollection(){
     if (this.context.dataCollections && this.context.dataCollections.length > 0) {
       this.uiService.loadDataCollections(this.context.dataCollections);
@@ -48,7 +49,7 @@ export class VvcDataCollectionService {
     return false;
   }
   hasSurvey(){
-    return (this.context.survey);
+    return this.context && !!this.context.survey;
   }
   hasVisibleFields(dc){
     let visibleFields = false;

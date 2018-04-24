@@ -73,7 +73,8 @@ export class VvcUiService {
       requestedMedia: context.requestedMedia,
       canStartAudio: context.media.voice === 'both' || context.media.voice === 'visitor',
       canStartVideo: context.media.video === 'both' || context.media.video === 'visitor',
-      initialOffer: conf.initialOffer
+      initialOffer: conf.initialOffer,
+      contactStarted: true
     }));
   }
   loadDataCollections(dcList){
@@ -87,12 +88,12 @@ export class VvcUiService {
   }
   selectDataCollection(dc){
     this.store.dispatch(new DataCollectionSelected(dc));
+    this.store.dispatch(new WidgetSetTopBar({title: 'STRINGS.QUEUE.TOPBAR.TITLE', subtitle: dc.labelId, avatar: ''}));
   }
   setOfferAccepted(){
     this.store.dispatch(new WidgetOfferAccepted());
   }
   setAgent(agent){
-    console.log('setting agent');
     this.store.dispatch(new WidgetSetAgent(agent));
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }
@@ -107,19 +108,6 @@ export class VvcUiService {
   }
   setDataCollectionCompleted(opt){
     this.store.dispatch(new DataCollectionCompleted(opt))
-  }
-  setDataCollectionPanel(show: boolean, topBarTitle: string){
-    /*
-    this.extendAndDispatch(this.currentState, {
-      isLoading: false,
-      isInQueue: false,
-      isChatVisible: false,
-      isMediaVisible: false,
-      showDataCollectionPanel: show,
-      topbar_subtitle: topBarTitle,
-      lastAction: show ? 'showDataCollectionPanel' : 'hideDataCollectionPanel'
-    });
-    */
   }
   setFullScreenChat(show){
     this.store.dispatch(new WidgetShowChatOnFullScreen(show));
