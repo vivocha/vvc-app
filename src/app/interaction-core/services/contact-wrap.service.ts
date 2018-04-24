@@ -320,8 +320,11 @@ export class VvcContactWrap {
       });
     });
     this.contact.on('joined', (c) => {
-        console.log('JOINED', c);
         if (c.user) {
+          if (this.dissuasionTimer) {
+            clearTimeout(this.dissuasionTimer);
+            delete this.dissuasionTimer;
+          }
           this.onAgentJoin(c);
         } else {
           this.onLocalJoin(c);
