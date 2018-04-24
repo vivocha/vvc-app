@@ -21,6 +21,7 @@ export const WIDGET_NEW_MESSAGE           = '[Widget] New Message';
 export const WIDGET_OFFER_ACCEPTED        = '[Widget] Offer Accepted';
 export const WIDGET_OFFER_REJECTED        = '[Widget] Offer Rejected';
 export const WIDGET_SET_AGENT             = '[Widget] Set Agent';
+export const WIDGET_SET_ERROR             = '[Widget] Set Error';
 export const WIDGET_SET_FULLSCREEN        = '[Widget] Set Fullscreen';
 export const WIDGET_SET_MINIMIZED         = '[Widget] Set Minimized';
 export const WIDGET_SET_MINIMIZED_MEDIA   = '[Widget] Set Minimized Media';
@@ -105,6 +106,9 @@ export class WidgetSetAgent implements Action {
   readonly type = WIDGET_SET_AGENT;
   constructor(public payload: AgentState){}
 }
+export class WidgetSetError implements Action {
+  readonly type = WIDGET_SET_ERROR;
+}
 export class WidgetSetFullScreen implements Action {
   readonly type = WIDGET_SET_FULLSCREEN;
 }
@@ -161,6 +165,7 @@ export type WidgetActions
   | WidgetOfferAccepted
   | WidgetOfferRejected
   | WidgetSetAgent
+  | WidgetSetError
   | WidgetSetFullScreen
   | WidgetSetMinimized
   | WidgetSetMinimizedMedia

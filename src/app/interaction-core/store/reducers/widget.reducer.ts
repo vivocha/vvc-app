@@ -117,6 +117,10 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, {showQueuePanel: false});
       return Object.assign({}, state, {agent: action.payload, context: context});
     }
+    case fromWidget.WIDGET_SET_ERROR: {
+      const context = Object.assign({}, state.context, {hasError: true});
+      return Object.assign({}, state, {context: context});
+    }
     case fromWidget.WIDGET_SET_FULLSCREEN:{
       const context = Object.assign({}, state.context, {isFullScreen: true});
       return Object.assign({}, state, {context: context});
@@ -225,7 +229,8 @@ export const getUiStateRedux = (
       canStartVideo: canStartVideo,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
-      hasSurvey: !!widgetState.context.survey && widgetState.protocol.contactStarted,
+      hasError: widgetState.context.hasError,
+      hasSurvey: !!widgetState.context.survey && widgetState.protocol.contactStarted && !widgetState.context.hasError && !widgetState.context.showQueuePanel,
       incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,
       inVideoTransit: widgetState.protocol.inVideoTransit,

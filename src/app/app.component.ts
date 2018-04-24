@@ -43,7 +43,6 @@ export class AppComponent implements OnInit {
     this.interactionService.askForVoiceUpgrade()
   }
   closeApp(){
-    console.log('should close app');
     this.interactionService.closeApp();
   }
   closeContact(){

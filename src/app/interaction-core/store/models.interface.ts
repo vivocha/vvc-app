@@ -10,7 +10,7 @@ export interface  ContextState {
   uploadCompleted?: boolean;
   showClosePanel?: boolean;
   showQueuePanel?: boolean;
-
+  hasError?: boolean;
   [key:string]: any;
 }
 
@@ -117,6 +117,7 @@ export interface UiState {
   canStartVideo: boolean;
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
+  hasError: boolean;
   hasSurvey: boolean;
   incomingMedia?: string;
   incomingOffer?: boolean;

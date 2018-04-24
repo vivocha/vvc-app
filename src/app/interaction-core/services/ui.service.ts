@@ -34,7 +34,8 @@ import {
   WidgetOfferAccepted,
   WidgetSetFullScreen,
   WidgetShowChatOnFullScreen,
-  WidgetSetVideoTransit
+  WidgetSetVideoTransit,
+  WidgetSetError
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected, DataCollectionCompleted, DataCollectionLoaded} from '../store/actions/dataCollection.actions';
 
@@ -107,6 +108,9 @@ export class VvcUiService {
   }
   setDataCollectionCompleted(opt){
     this.store.dispatch(new DataCollectionCompleted(opt))
+  }
+  setDissuasion(){
+    this.store.dispatch(new WidgetSetError());
   }
   setFullScreenChat(show){
     this.store.dispatch(new WidgetShowChatOnFullScreen(show));
