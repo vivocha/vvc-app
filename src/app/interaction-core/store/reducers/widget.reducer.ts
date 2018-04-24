@@ -34,7 +34,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
 
     case fromWidget.WIDGET_INIT_CONTEXT: {
-      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true}});
+      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true, showQueuePanel: true}});
     }
 
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
@@ -46,8 +46,9 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
 
     case fromWidget.WIDGET_INIT_PROTOCOL: {
-      const context = Object.assign({}, state.context, {showQueuePanel: true });
-      return Object.assign({}, state, {protocol: action.payload, context: context});
+      //const context = Object.assign({}, state.context, {showQueuePanel: true });
+      //return Object.assign({}, state, {protocol: action.payload, context: context});
+      return Object.assign({}, state, {protocol: action.payload});
     }
 
     case fromWidget.WIDGET_IS_UPLOADING:{
@@ -210,7 +211,7 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const showTopBarInfo          = !widgetState.context.showQueuePanel && (!isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen || !dataCollectionState.completed);
+  const hideTopBarInfo          = ((widgetState.context.showQueuePanel && dataCollectionState.completed) || (isMediaVisible && widgetState.media.isMinimized));
   const isClosed                = widgetState.context.closedByAgent ||
                                   widgetState.context.closedByVisitor;
     return {
@@ -257,9 +258,9 @@ export const getUiStateRedux = (
       showUploadPanel:  widgetState.chat && widgetState.chat.uploadPanelOpened,
       showSurveyPanel: !!surveyState.item,
       surveyCompleted: surveyState.completed,
-      topBarTitle: (showTopBarInfo) ? widgetState.topBar.title : '',
-      topBarSubtitle: (showTopBarInfo) ? widgetState.topBar.subtitle: '',
-      topBarAvatar: (showTopBarInfo) ? widgetState.topBar.avatar : '',
+      topBarTitle: (hideTopBarInfo) ? '' : widgetState.topBar.title,
+      topBarSubtitle: (hideTopBarInfo) ? '': widgetState.topBar.subtitle,
+      topBarAvatar: (hideTopBarInfo) ? '' : widgetState.topBar.avatar,
       translationLoaded: widgetState.context.translationLoaded,
       uploadCompleted: widgetState.context.uploadCompleted,
       voiceRxStream: audioRxStream,
