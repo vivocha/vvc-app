@@ -39,7 +39,7 @@ export class VvcInteractionService {
     this.contactService.askForUpgrade('Voice');
   }
   closeApp(){
-    this.contextService.closeApp();
+    this.contactService.closeApp();
   }
   closeContact(){
     this.contactService.closeContact();

@@ -148,6 +148,12 @@ export class VvcUiService {
       lastAction: show ? 'showDataCollectionPanel' : 'hideDataCollectionPanel'
     });
   }
+  setDissuasion() {
+    this.extendAndDispatch(this.currentState, {
+      queue_message: 'STRINGS.QUEUE.DISSUASION',
+      hasError: true
+    });
+  }
   setFullScreenChat(show){
     this.extendAndDispatch(this.currentState, {
       showChatOnFullScreen: show,

@@ -20,12 +20,15 @@ export class VvcContactWrap {
   lastSystemMessageId;
   agent;
   agentRequestCallback;
+  dissuasionTimer;
+  hasReceivedMsgs = false;
   isClosed = false;
   isWritingTimer;
   isWritingTimeout = 30000;
   incomingCallback;
   incomingOffer;
   incomingMedia;
+  interactionStart;
 
   constructor(
     private store: Store<fromStore.AppState>,
@@ -117,15 +120,21 @@ export class VvcContactWrap {
       }
     }
   }
+  closeApp() {
+    this.leave().then((reason) => {
+      this.vivocha.pageRequest('interactionClosed', reason);
+      this.vivocha.pageRequest('interactionClosed', 'destroy');
+    });
+  }
   closeContact(){
-    if (this.contact) {
-      this.contact.leave();
-      this.uiService.setClosedByVisitor();
-      this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
-      this.vivocha.setNormalScreen();
-      this.isClosed = true;
-
-    }
+    this.leave().then(() => {
+      this.zone.run(() => {
+        this.uiService.setClosedByVisitor();
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
+        this.vivocha.setNormalScreen();
+        this.isClosed = true;
+      });
+    });
   }
   closeUploadPanel(){
     this.uiService.setUploadPanel(false);
@@ -133,6 +142,16 @@ export class VvcContactWrap {
   createContact(dataToMerge?){
     //this.setQueueState();
     const conf = this.getContactOptions(dataToMerge);
+    this.interactionStart = +new Date();
+    const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
+    this.dissuasionTimer = setTimeout(() => {
+      this.leave('dissuasion').then(() => {
+        this.zone.run(() => {
+          this.uiService.setDissuasion();
+        });
+      });
+    }, timeout);
+
     this.vivocha.createContact(conf).then( (contact) => {
       this.zone.run( () => {
         this.contact = contact;
@@ -247,6 +266,26 @@ export class VvcContactWrap {
   isInPersistence(){
     return !!this.context.persistenceId
   }
+  leave(reason?: string){
+    return new Promise((resolve, reject) => {
+      if (this.contact) {
+        const now = +new Date();
+        const contactTime = (now - this.interactionStart);
+        const ev = reason ? reason : (this.hasReceivedMsgs ? "closed" : (contactTime > 10000 ? "abandoned" : "cancelled") );
+
+        this.contact.leave(ev, () => {
+          this.contact.release();
+          if (this.contact.channel.isConnected()) {
+            this.contact.channel.disconnect();
+          }
+          resolve(ev);
+        });
+      }
+      else {
+        resolve(true);
+      }
+    });
+  }
   mapContact(){
     this.vivocha.pageRequest('interactionCreated', this.contact).then( (data) => {
       console.log('interaction created', data);
@@ -289,6 +328,10 @@ export class VvcContactWrap {
     });
     this.contact.on('joined', (c) => {
       if (c.user) {
+          if (this.dissuasionTimer) {
+            clearTimeout(this.dissuasionTimer);
+            delete this.dissuasionTimer;
+          }
           this.onAgentJoin(c);
         } else {
           this.onLocalJoin(c);
@@ -308,6 +351,7 @@ export class VvcContactWrap {
         if (msg.agent) this.uiService.setIsWriting(false);
         this.uiService.newMessageReceived();
         if (this.context.variables.playAudioNotification) this.playAudioNotification();
+        this.hasReceivedMsgs = true;
       });
 
     });

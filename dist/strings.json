@@ -682,6 +682,28 @@
   {
     "values": {
       "en": {
+        "value": "Sorry there are no available agents. Please try again later.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Siamo spiacenti non ci sono operatori disponibili. Ti preghiamo di riprovare più tardi.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Désolé, aucun agent n'est disponible. Veuillez réessayer ultérieurement.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "申し訳ありません。対応可能なオペレータがいません。しばらくしてから再試行してください。",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.DISSUASION"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Vivocha Customer Care",
         "state": "final"
       },
