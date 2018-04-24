@@ -94,7 +94,7 @@ export class VvcContactWrap {
 
       data[field.id] = field.value;
     }
-    contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection))
+    contactOptions.data.push(objectToDataCollection(data, dataCollection.id, dataCollection));
     this.createContact(contactOptions);
   }
   checkForTranscript() {
@@ -103,7 +103,8 @@ export class VvcContactWrap {
       const msg = transcript[m];
       switch (msg.type) {
         case 'text':
-          this.messageService.addChatMessage(msg, msg.agent);
+          const agent = (msg.agent) ? this.agent : false;
+          this.messageService.addChatMessage(msg, agent);
           break;
         case 'attachment':
           this.store.dispatch(new NewMessage({
