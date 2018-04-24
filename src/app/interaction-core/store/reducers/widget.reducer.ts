@@ -5,7 +5,7 @@ const initialState = {
   context: { loaded: false, translationLoaded: false },
   media: {},
   topBar: {},
-  protocol: {}
+  protocol: { contactStarted: false }
 };
 
 export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState{
@@ -223,7 +223,7 @@ export const getUiStateRedux = (
       canStartVideo: canStartVideo,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
-      hasSurvey: !!widgetState.context.survey,
+      hasSurvey: !!widgetState.context.survey && widgetState.protocol.contactStarted,
       incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,
       inVideoTransit: widgetState.protocol.inVideoTransit,

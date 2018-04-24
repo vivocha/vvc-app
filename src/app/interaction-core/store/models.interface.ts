@@ -24,6 +24,7 @@ export interface ProtocolState {
   inVideoTransit?: boolean;
   isOffering?: boolean;
   offeringMedia?: string;
+  contactStarted: boolean;
 }
 export interface AgentState {
   id: string,
