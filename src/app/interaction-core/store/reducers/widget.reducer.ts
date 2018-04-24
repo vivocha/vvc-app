@@ -211,7 +211,7 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const hideTopBarInfo          = ((widgetState.context.showQueuePanel && dataCollectionState.completed) || (isMediaVisible && widgetState.media.isMinimized));
+  const hideTopBarInfo          = ((widgetState.context.showQueuePanel && dataCollectionState.completed) || (isMediaVisible && !widgetState.media.isMinimized));
   const isClosed                = widgetState.context.closedByAgent ||
                                   widgetState.context.closedByVisitor;
     return {
