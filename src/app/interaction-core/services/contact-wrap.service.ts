@@ -167,8 +167,8 @@ export class VvcContactWrap {
       this.store.dispatch(action);
     //});
   }
-  getContactOptions(dataToMerge?):ClientContactCreationOptions {
-    const initialOpts =  {
+  getContactOptions(dataToMerge?): ClientContactCreationOptions {
+    const initialOpts: ClientContactCreationOptions = {
       campaignId: this.context.campaign.id,
       version: this.context.campaign.version,
       channelId: 'web',
@@ -177,14 +177,20 @@ export class VvcContactWrap {
       initialOffer: this.protocolService.getInitialOffer(this.context.requestedMedia),
       lang: this.context.language,
       vvcu: this.context.page.vvcu,
-      vvct: this.context.page.vvct,
-      first_uri: this.context.page.first_uri,
-      first_title: this.context.page.first_title
+      vvct: this.context.page.vvct
     };
-    if (dataToMerge){
+    if (this.context.page.first_uri) {
+      initialOpts.first_uri = this.context.page.first_uri;
+    }
+    if (this.context.page.first_title) {
+      initialOpts.first_title = this.context.page.first_title;
+    }
+    if (dataToMerge) {
       return Object.assign({}, initialOpts, dataToMerge);
     }
-    else return Object.assign({}, initialOpts);
+    else {
+      return Object.assign({}, initialOpts);
+    }
   }
   /*
   hasDataCollection() {
