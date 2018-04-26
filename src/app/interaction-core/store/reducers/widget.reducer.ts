@@ -14,12 +14,14 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, { closedByAgent: true, showClosePanel: false });
       return Object.assign({}, state, { context: context });
     }
-
     case fromWidget.WIDGET_CLOSED_BY_VISITOR:{
       const context = Object.assign({}, state.context, { closedByVisitor: true, showClosePanel: false });
       return Object.assign({}, state, { context: context });
     }
-
+    case fromWidget.WIDGET_CONTACT_FAILED: {
+      const context = Object.assign({}, state.context, { contactCreationFailed: true, hasError: true });
+      return Object.assign({}, state, { context: context });
+    }
     case fromWidget.WIDGET_INIT_CHAT: {
       const chatState: ChatState = {
         isVisible: state.protocol.requestedMedia === 'chat',
@@ -29,14 +31,11 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
         emojiPanelOpened: false,
         notRead: 0
       };
-      console.log('INIT_CHAT', chatState);
       return Object.assign({}, state, {chat: chatState});
     }
-
     case fromWidget.WIDGET_INIT_CONTEXT: {
       return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true, showQueuePanel: true}});
     }
-
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
       const multimedia = {
         isVisible: (state.protocol.requestedMedia === 'video' || state.protocol.requestedMedia === 'voice'),
@@ -44,34 +43,26 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       };
       return Object.assign({}, state, {media: multimedia});
     }
-
     case fromWidget.WIDGET_INIT_PROTOCOL: {
-      //const context = Object.assign({}, state.context, {showQueuePanel: true });
-      //return Object.assign({}, state, {protocol: action.payload, context: context});
       return Object.assign({}, state, {protocol: action.payload});
     }
-
     case fromWidget.WIDGET_IS_UPLOADING:{
       const context = Object.assign({}, state.context, {isUploading: true, uploadCompleted: false });
       return Object.assign({}, state, { context: context} );
     }
-
     case fromWidget.WIDGET_IS_WRITING: {
       const chat = Object.assign({}, state.chat, {isWriting: action.payload});
       return Object.assign({}, state, {chat: chat});
     }
-
     case fromWidget.WIDGET_MARK_AS_READ: {
       const chat = Object.assign({}, state.chat, {notRead: 0});
       return Object.assign({}, state, {chat: chat});
     }
-
     case fromWidget.WIDGET_MEDIA_CHANGE: {
       const multimedia = Object.assign({}, state.media,{ media: action.payload });
       const protocol = Object.assign({}, state.protocol, {incomingOffer: false, isOffering: false, offeringMedia: ''});
       return Object.assign({}, state, {media: multimedia, protocol: protocol});
     }
-
     case fromWidget.WIDGET_INCOMING_MEDIA: {
       const protocol = Object.assign({}, state.protocol, {incomingMedia: action.payload, incomingOffer: true});
       const multimedia = Object.assign({}, state.media,{ isVisible: true });
@@ -241,6 +232,7 @@ export const getUiStateRedux = (
       canStartVideo: canStartVideo,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
+      contactCreationFailed: widgetState.context.contactCreationFailed,
       hasError: widgetState.context.hasError,
       hasSurvey: !!widgetState.context.survey && widgetState.protocol.contactStarted && !widgetState.context.hasError && !widgetState.context.showQueuePanel,
       incomingOffer: widgetState.protocol.incomingOffer,

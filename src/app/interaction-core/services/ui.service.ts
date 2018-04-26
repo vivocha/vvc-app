@@ -7,6 +7,7 @@ import {LoadContextSuccess} from '../store/actions/context.actions';
 import {
   WidgetClosedByAgent,
   WidgetClosedByVisitor,
+  WidgetContactCreationFailed,
   WidgetInitContext,
   WidgetInitProtocol,
   WidgetSetAgent,
@@ -105,6 +106,9 @@ export class VvcUiService {
   }
   setCloseModal(show: boolean){
     this.store.dispatch(new WidgetShowClosePanel(show));
+  }
+  setCreationFailed(){
+    this.store.dispatch(new WidgetContactCreationFailed());
   }
   setDataCollectionCompleted(opt){
     this.store.dispatch(new DataCollectionCompleted(opt))

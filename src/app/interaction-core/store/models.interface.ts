@@ -2,6 +2,7 @@ export interface  ContextState {
   loaded: boolean;
   closedByAgent?: boolean;
   closedByVisitor?: boolean;
+  contactCreationFailed?: boolean;
   isUiLoaded?: boolean;
   isFullScreen?: boolean;
   isMinimized?: boolean;
@@ -117,6 +118,7 @@ export interface UiState {
   canStartVideo: boolean;
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
+  contactCreationFailed: boolean;
   hasError: boolean;
   hasSurvey: boolean;
   incomingMedia?: string;

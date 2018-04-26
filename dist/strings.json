@@ -694,6 +694,28 @@
   {
     "values": {
       "en": {
+        "value": "An error occurred. Please try again.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Si è verificato un errore. Riprova.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Une erreur est survenue. Veuillez réessayer.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "エラーが発生しました。やり直してください。",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.CONTACT_FAILED"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Vivocha Customer Care",
         "state": "new"
       },

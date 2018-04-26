@@ -3,6 +3,7 @@ import {ProtocolState, AgentState, TopBarState} from '../models.interface';
 
 export const WIDGET_CLOSED_BY_AGENT       = '[Widget] Closed by Agent';
 export const WIDGET_CLOSED_BY_VISITOR     = '[Widget] Closed by Visitor';
+export const WIDGET_CONTACT_FAILED        = '[Widget] Contact Failed';
 export const WIDGET_INCOMING_MEDIA        = '[Widget] Incoming Media';
 export const WIDGET_INIT_CHAT             = '[Widget] Init Chat';
 export const WIDGET_INIT_CONTEXT          = '[Widget] Init Context';
@@ -39,6 +40,9 @@ export class WidgetClosedByAgent implements Action {
 }
 export class WidgetClosedByVisitor implements Action {
   readonly type = WIDGET_CLOSED_BY_VISITOR;
+}
+export class WidgetContactCreationFailed implements Action {
+  readonly type = WIDGET_CONTACT_FAILED;
 }
 export class WidgetIncomingMedia implements Action {
   readonly type = WIDGET_INCOMING_MEDIA;
@@ -147,6 +151,7 @@ export class WidgetUploadCompleted implements Action {
 export type WidgetActions
   = WidgetClosedByAgent
   | WidgetClosedByVisitor
+  | WidgetContactCreationFailed
   | WidgetIncomingMedia
   | WidgetInitChat
   | WidgetInitContext

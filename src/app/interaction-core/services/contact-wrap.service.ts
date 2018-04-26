@@ -133,7 +133,11 @@ export class VvcContactWrap {
   }
   closeApp() {
     this.leave().then((reason) => {
-      this.vivocha.pageRequest('interactionClosed', reason);
+      if (reason === 'failed') {
+
+      } else {
+        this.vivocha.pageRequest('interactionClosed', reason);
+      }
       this.vivocha.pageRequest('interactionClosed', 'destroy');
     });
   }
@@ -179,6 +183,9 @@ export class VvcContactWrap {
     }, (err) => {
       console.log('Failed to create contact', err);
       this.vivocha.pageRequest('interactionFailed', err.message);
+      this.zone.run( () => {
+        this.uiService.setCreationFailed();
+      })
     });
   }
   getContactOptions(dataToMerge?):ClientContactCreationOptions {
@@ -195,6 +202,12 @@ export class VvcContactWrap {
       first_uri: this.context.page.first_uri,
       first_title: this.context.page.first_title
     };
+    if (this.context.page.first_uri) {
+      initialOpts.first_uri = this.context.page.first_uri;
+    }
+    if (this.context.page.first_title) {
+      initialOpts.first_title = this.context.page.first_title;
+    }
     if (dataToMerge){
       return Object.assign({}, initialOpts, dataToMerge);
     }
@@ -287,6 +300,7 @@ export class VvcContactWrap {
   }
   leave(reason?: string){
     return new Promise((resolve, reject) => {
+      console.log('leaving...', this.contact);
       if (this.contact) {
         const now = +new Date();
         const contactTime = (now - this.interactionStart);
@@ -297,11 +311,13 @@ export class VvcContactWrap {
           if (this.contact.channel.isConnected()) {
             this.contact.channel.disconnect();
           }
+          console.log('leaving resolving', ev);
           resolve(ev);
         });
       }
       else {
-        resolve(true);
+        console.log('leaving resolving with true');
+        resolve('failed');
       }
     });
   }
