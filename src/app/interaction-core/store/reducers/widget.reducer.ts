@@ -3,7 +3,7 @@ import {ContextState, WidgetState, DataCollectionState, ChatState, MessagesState
 
 const initialState = {
   context: { loaded: false, translationLoaded: false },
-  media: {},
+  media: { isMinimized: true },
   topBar: {},
   protocol: { contactStarted: false }
 };
@@ -131,7 +131,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
     case fromWidget.WIDGET_SET_MINIMIZED_MEDIA:{
       const multimedia = Object.assign({}, state.media,{ isMinimized: action.payload });
-      return Object.assign({}, state, {media: multimedia });
+      return Object.assign({}, state, {media: multimedia});
     }
     case fromWidget.WIDGET_SET_NORMAL:{
       const context = Object.assign({}, state.context, {isMinimized: false, isFullScreen: false});
@@ -215,9 +215,21 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const hideTopBarInfo          = ((widgetState.context.showQueuePanel && dataCollectionState.completed) || (isMediaVisible && !widgetState.media.isMinimized));
+  const hideTopBarInfo          = ((widgetState.context.showQueuePanel && dataCollectionState.completed) ||
+                                  (isMediaVisible && !widgetState.media.isMinimized && !widgetState.context.isFullScreen)) ||
+                                  widgetState.protocol.isOffering ||
+                                  widgetState.protocol.incomingOffer;
   const isClosed                = widgetState.context.closedByAgent ||
                                   widgetState.context.closedByVisitor;
+  const isChatVisible           = widgetState.chat &&
+                                  !widgetState.context.showQueuePanel &&
+                                  !widgetState.context.showDataCollectionPanel &&
+                                  !surveyState.item &&
+                                  !widgetState.protocol.isOffering &&
+                                  !widgetState.protocol.incomingOffer &&
+                                  !isMediaConnecting &&
+                                  (!isMediaConnected || isMediaConnected && widgetState.media.isMinimized) ||
+                                  widgetState.context.isFullScreen;
     return {
       agent: widgetState.agent,
       messages: [...messagesState.list],
@@ -236,20 +248,20 @@ export const getUiStateRedux = (
       inVideoTransit: widgetState.protocol.inVideoTransit,
       isLoading: !widgetState.context.isUiLoaded,
       isInQueue: widgetState.context.showQueuePanel && dataCollectionState.completed,
-      isChatVisible:  widgetState.chat && widgetState.chat.isVisible && !surveyState.item && (!isMediaVisible || widgetState.media.isMinimized || widgetState.chat.showOnFullScreen),
+      isChatVisible:  isChatVisible,
       isClosed: isClosed,
       isClosedByAgent: widgetState.context.closedByAgent,
       isClosedByVisitor: widgetState.context.closedByVisitor,
       isMediaConnected: isMediaConnected,
       isMediaConnecting: isMediaConnecting,
       isMediaVisible: isMediaVisible,
-      isMediaMinimized: widgetState.media.isMinimized,
+      isMediaMinimized: widgetState.media.isMinimized && !widgetState.protocol.isOffering && !widgetState.protocol.incomingOffer,
       isMinimized: widgetState.context.isMinimized,
       isMobile: widgetState.context.isMobile,
       isMuted: widgetState.media.isMuted,
       isOffering: widgetState.protocol.isOffering,
       isFullScreen: widgetState.context.isFullScreen && !isClosed,
-      isSendAreaVisible:  widgetState.chat && widgetState.chat.isVisible && !widgetState.chat.uploadPanelOpened,
+      isSendAreaVisible:  isChatVisible && !widgetState.chat.uploadPanelOpened,
       isUploading: widgetState.context.isUploading,
       isWriting:  widgetState.chat && widgetState.chat.isWriting,
       notRead: (widgetState.chat) ? widgetState.chat.notRead : 0,

@@ -27,7 +27,7 @@ export class FullScreenVideoComponent {
     this.muteToggle.emit(!this.context.isMuted);
   }
   toggleVideo(){
-    //if (this.context.in_transit) return;
+    if (this.context.inVideoTransit) return;
     this.videoToggle.emit(!this.context.videoTxStream);
   }
   trustedSrc(url): SafeUrl {

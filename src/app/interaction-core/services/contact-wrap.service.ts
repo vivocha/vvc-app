@@ -54,14 +54,22 @@ export class VvcContactWrap {
     if (this.context.requestedMedia !== 'chat') this.askForUpgrade('Chat');
   }
   askForUpgrade(media){
-    this.uiService.setIsOffering(media);
+    if (media !== 'Chat') this.uiService.setIsOffering(media);
     this.contact.getMediaOffer().then(offer => {
-      offer[media] = {
-        tx: 'required',
-        rx: 'required',
-        via: 'net',
-        engine: 'WebRTC'
-      };
+      if (media === 'Chat'){
+        offer[media] = {
+          tx: 'required',
+          rx: 'required'
+        };
+      }
+      else {
+        offer[media] = {
+          tx: 'required',
+          rx: 'required',
+          via: 'net',
+          engine: 'WebRTC'
+        };
+      }
       if (media === 'Video'){
         offer['Voice'] = {
           tx: 'required',
@@ -425,6 +433,7 @@ export class VvcContactWrap {
     }
   }
   minimizeMedia(){
+    console.log('MINIMIZE MEDIA', 'Chat', this.protocolService.isAlreadyConnectedWith('Chat'));
     if (!this.protocolService.isAlreadyConnectedWith('Chat')){
       this.askForUpgrade('Chat');
     }

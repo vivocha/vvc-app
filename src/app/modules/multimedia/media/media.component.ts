@@ -32,8 +32,8 @@ export class MediaComponent {
     this.muteToggle.emit(!this.context.isMuted);
   }
   toggleVideo(){
-    if (this.context.in_transit) return;
-    this.videoToggle.emit(!this.context.video_tx);
+    if (this.context.inVideoTransit) return;
+    this.videoToggle.emit(!this.context.videoTxStream);
   }
 
   trustedSrc(url): SafeUrl {
