@@ -105,6 +105,6 @@
 
   <div id="vvc-minimized-layout" *ngIf="appState.isMinimized">
     <vvc-minimized [context]="appState"
-                   (expand)="expandWidget()"></vvc-minimized>
+                   (expand)="expandWidget(appState.isFullScreen)"></vvc-minimized>
   </div>
 </div>

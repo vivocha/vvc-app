@@ -72,8 +72,8 @@ export class VvcInteractionService {
       }
     })
   }
-  minimize(minimize: boolean){
-    this.contactService.minimize(minimize);
+  minimize(minimize: boolean, isFullScreen?: boolean){
+    this.contactService.minimize(minimize, isFullScreen);
   }
   minimizeMedia(){
     this.contactService.minimizeMedia();

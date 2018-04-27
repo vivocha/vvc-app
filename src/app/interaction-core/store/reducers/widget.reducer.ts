@@ -113,7 +113,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_FULLSCREEN:{
-      const context = Object.assign({}, state.context, {isFullScreen: true});
+      const context = Object.assign({}, state.context, {isFullScreen: true, isMinimized: false});
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_MINIMIZED:{

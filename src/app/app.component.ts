@@ -60,8 +60,8 @@ export class AppComponent implements OnInit {
   exitFromFullScreen(){
     this.interactionService.setNormalScreen();
   }
-  expandWidget(){
-    this.interactionService.minimize(false);
+  expandWidget(isFullScreen){
+    this.interactionService.minimize(false, isFullScreen);
   }
   hangUpCall(){
     this.interactionService.hangUp();

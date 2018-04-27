@@ -439,13 +439,17 @@ export class VvcContactWrap {
       });
     });
   }
-  minimize(minimize){
+  minimize(minimize: boolean, isFullScreen?: boolean){
     if (minimize) {
       this.vivocha.minimize({ bottom: "10px", right: "10px" }, { width: '70px', height: '70px' });
       this.uiService.setMinimizedState();
     } else {
-      this.vivocha.maximize();
-      this.uiService.setNormalState();
+      if (isFullScreen){
+       this.setFullScreen();
+      } else {
+        this.vivocha.maximize();
+        this.uiService.setNormalState();
+      }
     }
   }
   minimizeMedia(){
