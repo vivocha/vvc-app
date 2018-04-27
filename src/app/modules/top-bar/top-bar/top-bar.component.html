@@ -30,7 +30,7 @@
       <div *ngIf="context.canMaximize && !context.isFullScreen" (click)="onMaximize.emit()">
         <span><i class="icon icon-vvc-maximize"></i> {{ 'STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON' | translate }}</span>
       </div>
-      <div *ngIf="context.isMediaMinimized && context.isMediaConnected" (click)="onHideChat.emit()">
+      <div *ngIf="context.isMediaMinimized && context.isMediaConnected && !context.isFullScreen" (click)="onHideChat.emit()">
         <span><i class="icon icon-vvc-chat"></i> {{ 'STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON' | translate }}</span>
       </div>
       <div *ngIf="context.canStartAudio" (click)="onVoiceUpgrade.emit()">

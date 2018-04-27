@@ -449,7 +449,6 @@ export class VvcContactWrap {
     }
   }
   minimizeMedia(){
-    console.log('MINIMIZE MEDIA', 'Chat', this.protocolService.isAlreadyConnectedWith('Chat'));
     if (!this.protocolService.isAlreadyConnectedWith('Chat')){
       this.askForUpgrade('Chat');
     }
