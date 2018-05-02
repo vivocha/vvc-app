@@ -194,7 +194,7 @@ export const getUiStateRedux = (
   const isVideoConnected        = isLocalVideoConnected || isRemoteVideoConnected;
   const isMediaConnected        = isAudioConnected || isLocalVideoConnected || isRemoteVideoConnected;
   const isMediaConnecting       = isAudioConnecting || isVideoConnecting;
-  const isMediaVisible          = widgetState.protocol.incomingOffer || widgetState.protocol.isOffering || isMediaConnecting || isMediaConnected;
+  const isMediaVisible          = widgetState.chat && !widgetState.chat.uploadPanelOpened && (widgetState.protocol.incomingOffer || widgetState.protocol.isOffering || isMediaConnecting || isMediaConnected);
   const canStartAudio           = widgetState.protocol.canStartAudio &&
                                   !hasAudio &&
                                   !isAudioConnecting &&
