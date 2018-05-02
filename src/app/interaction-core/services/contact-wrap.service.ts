@@ -410,6 +410,11 @@ export class VvcContactWrap {
         this.onMediaOffer(offer, cb);
       })
     });
+    this.contact.on('transferred', () => {
+      this.zone.run( () => {
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
+      });
+    });
   }
   mergeOffer(diffOffer, cb){
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {

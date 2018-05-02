@@ -1418,5 +1418,27 @@
     },
     "description": "",
     "id": "STRINGS.LOADING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "You have been transferred to another agent",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sei stato trasferito a un altro operatore",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vous avez été transféré vers un autre agent",
+        "state": "final"
+      },
+      "ja": {
+        "value": "他のオペレーターと繋がりました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.TRANSFERRED"
   }
 ]
