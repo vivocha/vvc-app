@@ -118,15 +118,17 @@ export class VvcContactWrap {
           this.messageService.addChatMessage(msg, agent);
           break;
         case 'attachment':
-          this.store.dispatch(new NewMessage({
-            text: msg.meta.desc || msg.meta.originalName,
+          const meta = msg.meta;
+          meta.url = (meta.originalUrl) ? meta.originalUrl : msg.url;
+          const attachment = {
+            body: meta.desc || meta.originalName,
             type: 'chat',
-            isAgent: msg.agent,
-            meta: msg.meta,
-            url: (msg.meta.originalUrl) ? msg.meta.originalUrl : msg.url,
+            meta: meta,
             from_nick: msg.from_nick,
             from_id: msg.from_id
-          }));
+          };
+          if (msg.agent) this.messageService.addChatMessage(attachment, this.agent);
+          else this.messageService.addChatMessage(attachment);
           break;
       }
     }
@@ -142,15 +144,6 @@ export class VvcContactWrap {
     });
   }
   closeContact(){
-    /*
-    if (this.contact) {
-      this.contact.leave();
-      this.uiService.setClosedByVisitor();
-      this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
-      this.vivocha.setNormalScreen();
-      this.isClosed = true;
-    }
-    */
     this.leave().then(() => {
       this.zone.run(() => {
         this.uiService.setClosedByVisitor();
