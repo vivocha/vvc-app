@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
   "name": "@vivocha/client-interaction-layout",
   "version": "5.9.6",
   "license": "SEE LICENSE IN LICENSE",
@@ -6,7 +7,7 @@
     "clean": "[ ! -d ./dist ] || rm -rf dist/*",
     "clean:all": "npm run clean && rm -rf node_modules",
     "prebuild": "npm run clean",
-    "build": "ng-packagr -p ng-package.json",
+    "build": "ng-packagr -p package.json",
     "precommit": "npm run build",
     "version": "jsonref -f ./package.json /version",
     "build:all": "npm run clean:all && npm install && npm run build"
@@ -17,6 +18,12 @@
   },
   "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
   "homepage": "https://bitbucket.org/vivocha/client-interaction-layout#readme",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts",
+      "licensePath": "LICENSE"
+    }
+  },
   "peerDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
@@ -28,7 +35,6 @@
     "@ngx-translate/http-loader": "2.0.1",
     "ngx-auto-scroll": "1.1.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",

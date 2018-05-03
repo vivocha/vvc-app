@@ -1,0 +1,15 @@
+<div class="tpl-list-container">
+  <div *ngFor="let elem of message.elements" class="tpl-element">
+    <div class="vvc-template-inner">
+      <div class="title" (click)="defaultAction(elem)">{{ elem.title }}</div>
+      <div class="subtitle">{{ elem.subtitle }}</div>
+      <div class="action">
+        <span *ngFor="let b of elem.buttons"
+                (click)="action.emit(b)">{{b.title}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tpl-list-action" *ngFor="let btn of message.buttons">
+  <button (click)="action.emit(btn)">{{ btn.title }}</button>
+</div>
