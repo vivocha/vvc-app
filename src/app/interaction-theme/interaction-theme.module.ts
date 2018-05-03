@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+/*
 import { TopBarModule } from '../modules/top-bar/top-bar.module';
 import { ChatModule } from '../modules/chat/chat.module';
 import { ChatPanelsModule } from '../modules/chat-panels/chat-panels.module';
@@ -10,7 +11,7 @@ import { MinimizedModule } from '../modules/minimized/minimized.module';
 import { DataCollectionModule } from '../modules/data-collection/data-collection.module';
 import { MultimediaModule } from '../modules/multimedia/multimedia.module';
 import { QueueModule } from '../modules/queue/queue.module';
-/*
+*/
 import {
   TopBarModule,
   ChatModule,
@@ -23,7 +24,6 @@ import {
   MultimediaModule,
   QueueModule
 } from '@vivocha/client-interaction-layout';
-*/
 
 const layoutModules = [
   TopBarModule,
