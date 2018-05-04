@@ -1,31 +1,34 @@
 import {ActionReducerMap, createFeatureSelector, MemoizedSelector} from '@ngrx/store';
 
 
-import {ContextState, MessagesState, WidgetState, DataCollectionState, SurveyState} from '../models.interface';
-import {reducer as contextReducer} from './context.reducer';
-import {reducer as messageReducer} from './messages.reducer';
+import {
+  WidgetState, MessagesState, DataCollectionState, SurveyState,
+  ContextState
+} from '../models.interface';
 import {reducer as widgetReducer} from './widget.reducer';
+import {reducer as messageReducer} from './messages.reducer';
 import {reducer as dcReducer} from './dataCollection.reducer';
 import {reducer as surveyReducer} from './survey.reducer';
+import {reducer as contextReducer} from './context.reducer';
 
 export interface AppState {
   context: ContextState;
-  messages: MessagesState;
   widget: WidgetState;
+  messages: MessagesState;
   dataCollection: DataCollectionState;
   survey: SurveyState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  context: contextReducer,
-  messages: messageReducer,
   widget: widgetReducer,
+  messages: messageReducer,
   dataCollection: dcReducer,
-  survey: surveyReducer
+  survey: surveyReducer,
+  context: contextReducer
 };
 
-export const getContextState = createFeatureSelector<ContextState>('context');
-export const getMessagesState = createFeatureSelector<MessagesState>('messages');
 export const getWidgetState = createFeatureSelector<WidgetState>('widget');
+export const getMessagesState = createFeatureSelector<MessagesState>('messages');
 export const getDataCollectionState = createFeatureSelector<DataCollectionState>('dataCollection');
 export const getSurveyState = createFeatureSelector<SurveyState>('survey');
+export const getContextState = createFeatureSelector<ContextState>('context');

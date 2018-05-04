@@ -1,12 +1,12 @@
 import {Injectable, NgZone} from '@angular/core';
 import {WindowRef} from './window.service';
+import {VvcUiService} from './ui.service';
 import {Store} from '@ngrx/store';
 import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {TranslateService} from '@ngx-translate/core';
 
 import {AppState} from '../store/reducers/main.reducer';
-import {LoadContextSuccess} from '../store/actions/context.actions';
-import {getContext} from '../store/selectors/context.selectors';
+import {getContextState} from '../store/reducers/main.reducer';
 import {Observable} from 'rxjs/Observable';
 import {ContextState} from '../store/models.interface';
 
@@ -23,6 +23,7 @@ export class VvcContextService {
 
   constructor(
     private store: Store<AppState>,
+    private uiService: VvcUiService,
     private wref: WindowRef,
     private ts: TranslateService,
     private zone: NgZone){
@@ -47,25 +48,21 @@ export class VvcContextService {
       setTimeout( () => this.checkForVivocha(), 200);
     }
   }
-  closeApp(){
-    this.vivocha.pageRequest('interactionClosed', 'close');
-    this.vivocha.pageRequest('interactionClosed', 'destroy');
-  }
   dispatchContext(context){
+    this.ts.use(context.language);
     this.ts.getTranslation(context.language).toPromise().then(
       result => {
-        this.ts.use(context.language);
-        this.store.dispatch(new LoadContextSuccess({
-          loaded: true,
-          isMobile: this.isMobile,
-          busId: this.busId,
-          acct: this.acct,
-          world: this.world,
-          variables: context.campaign.channels.web.interaction.variables,
-          ...context
-        }));
-      }
-    );
+          this.uiService.initializeContext({
+            loaded: true,
+            translationLoaded: true,
+            isMobile: this.isMobile,
+            busId: this.busId,
+            acct: this.acct,
+            world: this.world,
+            variables: context.campaign.channels.web.interaction.variables,
+            ...context
+          });
+      });
   }
   getVivocha(){
     return this.vivocha;
@@ -80,6 +77,6 @@ export class VvcContextService {
     }
   }
   ready():Observable<ContextState>{
-    return this.store.select(getContext);
+    return this.store.select(getContextState);
   }
 }

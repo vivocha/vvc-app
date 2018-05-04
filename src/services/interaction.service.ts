@@ -25,6 +25,9 @@ export class VvcInteractionService {
   }
 
   /**** PUBLIC METHOD ****/
+  acceptAgentRequest(requestId){
+    this.contactService.acceptAgentRequest(requestId);
+  }
   acceptOffer(){
     this.contactService.acceptOffer();
   }
@@ -38,7 +41,7 @@ export class VvcInteractionService {
     this.contactService.askForUpgrade('Voice');
   }
   closeApp(){
-    this.contextService.closeApp();
+    this.contactService.closeApp();
   }
   closeContact(){
     this.contactService.closeContact();
@@ -50,6 +53,7 @@ export class VvcInteractionService {
     this.contactService.showCloseModal(false);
   }
   getState():Observable<UiState>{
+    this.store.select(getUiState).subscribe(uistate => console.log('UISTATE', uistate));
     return this.store.select(getUiState);
   }
   hangUp(){
@@ -68,8 +72,8 @@ export class VvcInteractionService {
       }
     })
   }
-  minimize(minimize: boolean){
-    this.contactService.minimize(minimize);
+  minimize(minimize: boolean, isFullScreen?: boolean){
+    this.contactService.minimize(minimize, isFullScreen);
   }
   minimizeMedia(){
     this.contactService.minimizeMedia();
@@ -83,11 +87,17 @@ export class VvcInteractionService {
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
   }
+  rejectAgentRequest(requestId){
+    this.contactService.rejectAgentRequest(requestId);
+  }
   rejectOffer(){
     this.contactService.rejectOffer();
   }
   sendAttachment(upload){
     this.contactService.sendAttachment(upload);
+  }
+  sendIsWriting(){
+    this.contactService.sendIsWriting();
   }
   sendPostBack(action){
     this.contactService.sendPostBack(action);

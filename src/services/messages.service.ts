@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 
 import {AppState} from '../store/reducers/main.reducer';
 import {NewMessage,RemoveMessage,UpdateMessage} from '../store/actions/messages.actions';
-import {SystemMessage, ChatMessage} from '../store/models.interface';
+import {SystemMessage, ChatMessage, RequestMessage} from '../store/models.interface';
 
 @Injectable()
 export class VvcMessageService {
@@ -18,7 +18,7 @@ export class VvcMessageService {
       id: id,
       text: message.body,
       type: 'chat',
-      isAgent: message.agent,
+      isAgent: agent,
       time: this.getChatTimestamp(message.ts)
     };
     if (agent) msg.agent = agent;
@@ -39,26 +39,26 @@ export class VvcMessageService {
     return id;
   }
   addQuickRepliesMessage(message){
-    console.log('QUICK_REPLY', message);
     const id = new Date().getTime().toString();
     const quick = {
       id: id,
       code: "message",
       type: "quick-replies",
       body: message.body,
-      quick_replies: message.quick_replies
+      quick_replies: message.quick_replies,
+      quick_replies_orientation: message.quick_replies_orientation
     };
     this.store.dispatch(new NewMessage(quick));
     return id;
   }
   addTemplateMessage(message){
-    console.log('TEMPLATE', message);
     const id = new Date().getTime().toString();
     const template = {
       id: id,
       type: 'template',
       template: message.template.type,
-      elements: message.template.elements
+      elements: message.template.elements,
+      buttons: message.template.buttons
     };
     this.store.dispatch(new NewMessage(template));
     return id;
@@ -73,6 +73,16 @@ export class VvcMessageService {
   }
   removeMessage(messageId: string){
     this.store.dispatch(new RemoveMessage(messageId));
+  }
+  sendRequestMessage(message){
+    const id = new Date().getTime().toString();
+    let m: RequestMessage = {
+      id: id,
+      type: 'request',
+      text: message.toUpperCase()
+    };
+    this.store.dispatch(new NewMessage(m));
+    return id;
   }
   sendSystemMessage(messageNameId: string, context?: any){
     const id = new Date().getTime().toString();

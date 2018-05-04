@@ -9,13 +9,13 @@ const initialState: DataCollectionState = {
 export function reducer(state: DataCollectionState = initialState, action: fromDataCollection.DataCollectionActions){
   switch (action.type){
     case fromDataCollection.DC_LOADED: {
-      return Object.assign({}, state, { list: [...action.payload] });
+      return Object.assign({}, state, { items: [...action.payload] });
     }
     case fromDataCollection.DC_COMPLETED: {
       return Object.assign({}, state, { completed: true, creationOptions: action.payload });
     }
     case fromDataCollection.DC_SELECTED: {
-      return Object.assign({}, state, { selected: action.payload });
+      return Object.assign({}, state, { selectedItem: action.payload });
     }
     default:
       return state;

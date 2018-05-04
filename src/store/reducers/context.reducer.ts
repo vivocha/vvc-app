@@ -13,5 +13,3 @@ export function reducer(state: ContextState = initialState, action: fromContext.
     default: return state;
   }
 }
-
-export const getContextRedux = (state: ContextState):ContextState => state;

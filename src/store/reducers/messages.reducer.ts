@@ -27,4 +27,34 @@ export function reducer(state: MessagesState = initialState, action: fromMessage
   }
 }
 
-export const getMessages = (state: MessagesState) => state.list;
+export const getMessageRedux = (state: MessagesState):MessagesState => {
+  const messages = state.list.map( (elem, idx) => {
+    let isLast = false;
+    let isFirst = false;
+    const nextElem = state.list[idx+1];
+    const prevElem = state.list[idx-1];
+    if (prevElem){
+      if (
+        elem.type !== prevElem.type ||
+        elem.isAgent != prevElem.isAgent ||
+        (elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id)
+      ) isFirst = true;
+      else isFirst = false;
+    }
+    else isFirst = true;
+    if (nextElem){
+      if (
+        elem.type !== nextElem.type ||
+        elem.isAgent != nextElem.isAgent ||
+        (prevElem && elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id )
+      ) isLast = true;
+      else isLast = false;
+    }
+    else isLast = true;
+    let obj = Object.assign({}, elem, { isLast: isLast, isFirst: isFirst });
+    return obj;
+  });
+  return {
+    list: [...messages]
+  }
+}

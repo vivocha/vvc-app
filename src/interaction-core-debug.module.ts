@@ -6,7 +6,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { reducers } from './store/reducers/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment}  from '../../environments/environment';
 
 import {VvcDataCollectionService} from './services/data-collection.service';
 import {VvcContactWrap} from './services/contact-wrap.service';
@@ -18,7 +17,7 @@ import {VvcProtocolService} from './services/protocol.service';
 import {VvcMessageService} from './services/messages.service';
 
 export function createTranslateLoader(http: HttpClient) {
-  const reg = /(\/a\/\w+\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
+  const reg = /(.*\/api\/v2\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
   const res = location.pathname.match(reg);
   const url = location.origin + res[1];
   return new TranslateHttpLoader(http, url, res[2] + '/strings.json');
@@ -36,7 +35,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
+    StoreDevtoolsModule.instrument({ maxAge: 50 }),
   ],
   providers: [
     VvcInteractionService,
