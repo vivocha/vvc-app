@@ -1,10 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-//import {VvcInteractionService} from '@vivocha/client-interaction-core';
-import { VvcInteractionService } from './interaction-core/services/interaction.service';
-
+import {VvcInteractionService} from '@vivocha/client-interaction-core';
 import {ChatAreaComponent, TopBarComponent} from '@vivocha/client-interaction-layout';
-//import { ChatAreaComponent } from './modules/chat/chat-area/chat-area.component';
-//import { TopBarComponent } from './modules/top-bar/top-bar/top-bar.component';
 
 @Component({
   selector: 'vvc-root',
