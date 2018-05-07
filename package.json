@@ -51,6 +51,6 @@
     "@vivocha/global-entities": "^5.9.77",
     "jsonref-cli": "^1.0.0",
     "ng-packagr": "^2.1.0",
-    "typescript": "~2.6.2"
+    "typescript": "2.6.2"
   }
 }

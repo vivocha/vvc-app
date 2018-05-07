@@ -25,6 +25,7 @@ export class ChatAreaComponent {
   canShowUpload(){
     return (this.context &&
             this.context.variables.showUploadButton &&
+            !this.context.isAutoChat &&
             !(this.context.variables.hideUploadWithBot && this.context.agent.is_bot));
   }
   clearIsWriting(){
