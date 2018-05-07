@@ -1304,8 +1304,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   display: block;
   position: relative;
   cursor: pointer;
-  top: 5px;
-  left: 5px;
 
   .badge{
     background-color: red;
@@ -1324,7 +1322,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     height: 60px;
     border-radius:50%;
     box-shadow: 0 0 5px #262626;
-
+    margin-top: 2px;
     &.agent-default{
       background: url($agentAvatarDefault);
       background-size: 60px 60px;

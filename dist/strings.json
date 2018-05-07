@@ -1408,16 +1408,30 @@
   {
     "values": {
       "en": {
-        "value": "Welcome to Vivocha Customer Care",
+        "value": "Default Topbar Title",
         "state": "final"
       },
       "it": {
-        "value": "Benvenuto nel Vivocha Customer Care",
+        "value": "Titolo Default Topbar",
         "state": "final"
       }
     },
     "description": "",
-    "id": "STRINGS.LOADING"
+    "id": "STRINGS.TOPBAR.TITLE_DEFAULT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Default Topbar Subtitle",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sottotitolo Default Topbar",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.TOPBAR.SUBTITLE_DEFAULT"
   },
   {
     "values": {
