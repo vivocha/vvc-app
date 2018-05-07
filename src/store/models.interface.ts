@@ -35,6 +35,7 @@ export interface AgentState {
   avatar?: string
 }
 export interface ChatState{
+  isAutoChat?: boolean;
   isVisible: boolean;
   isSendAreaVisible?: boolean;
   isChatBoxEnabled?: boolean;
@@ -121,6 +122,7 @@ export interface UiState {
   contactCreationFailed: boolean;
   hasError: boolean;
   hasSurvey: boolean;
+  isAutoChat?: boolean;
   incomingMedia?: string;
   incomingOffer?: boolean;
   inVideoTransit: boolean;

@@ -22,6 +22,7 @@ export const WIDGET_NEW_MESSAGE           = '[Widget] New Message';
 export const WIDGET_OFFER_ACCEPTED        = '[Widget] Offer Accepted';
 export const WIDGET_OFFER_REJECTED        = '[Widget] Offer Rejected';
 export const WIDGET_SET_AGENT             = '[Widget] Set Agent';
+export const WIDGET_SET_AUTO_CHAT         = '[Widget] Set Auto Chat';
 export const WIDGET_SET_ERROR             = '[Widget] Set Error';
 export const WIDGET_SET_FULLSCREEN        = '[Widget] Set Fullscreen';
 export const WIDGET_SET_MINIMIZED         = '[Widget] Set Minimized';
@@ -30,6 +31,7 @@ export const WIDGET_SET_NORMAL            = '[Widget] Set Normal';
 export const WIDGET_SET_TOP_BAR           = '[Widget] Set Top Bar';
 export const WIDGET_SHOW_CHAT_FULLSCREEN  = '[Widget] Fullscreen Chat';
 export const WIDGET_SHOW_CLOSE_PANEL      = '[Widget] Show Close Panel';
+export const WIDGET_SHOW_QUEUE_PANEL      = '[Widget] Show Queue Panel';
 export const WIDGET_SHOW_UPLOAD_PANEL     = '[Widget] Show Upload Panel';
 export const WIDGET_TOGGLE_EMOJI          = '[Widget] Toggle Emoji Panel';
 export const WIDGET_UPLOAD_COMPLETED      = '[Widget] Upload Completed';
@@ -110,6 +112,9 @@ export class WidgetSetAgent implements Action {
   readonly type = WIDGET_SET_AGENT;
   constructor(public payload: AgentState){}
 }
+export class WidgetSetAutoChat implements Action {
+  readonly type = WIDGET_SET_AUTO_CHAT;
+}
 export class WidgetSetError implements Action {
   readonly type = WIDGET_SET_ERROR;
 }
@@ -137,6 +142,9 @@ export class WidgetShowChatOnFullScreen implements Action {
 export class WidgetShowClosePanel implements Action {
   readonly type = WIDGET_SHOW_CLOSE_PANEL;
   constructor(public payload: boolean){}
+}
+export class WidgetShowQueuePanel implements Action {
+  readonly type = WIDGET_SHOW_QUEUE_PANEL;
 }
 export class WidgetShowUploadPanel implements Action {
   readonly type = WIDGET_SHOW_UPLOAD_PANEL;
@@ -170,6 +178,7 @@ export type WidgetActions
   | WidgetOfferAccepted
   | WidgetOfferRejected
   | WidgetSetAgent
+  | WidgetSetAutoChat
   | WidgetSetError
   | WidgetSetFullScreen
   | WidgetSetMinimized
@@ -178,6 +187,7 @@ export type WidgetActions
   | WidgetSetTopBar
   | WidgetShowChatOnFullScreen
   | WidgetShowClosePanel
+  | WidgetShowQueuePanel
   | WidgetShowUploadPanel
   | WidgetToggleEmoji
   | WidgetUploadCompleted

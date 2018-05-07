@@ -32,6 +32,10 @@ export class VvcContactWrap {
   incomingMedia;
   interactionStart;
 
+  autoChat = false;
+  autoChatInitialData;
+  messageArchive = [];
+
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -156,6 +160,12 @@ export class VvcContactWrap {
   closeUploadPanel(){
     this.uiService.setUploadPanel(false);
   }
+  createAutoContact(dataToMerge?){
+    this.autoChat = true;
+    this.autoChatInitialData = dataToMerge;
+    this.uiService.setAutoChat();
+    this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
+  }
   createContact(dataToMerge?){
     const conf = this.getContactOptions(dataToMerge);
     this.interactionStart = +new Date();
@@ -248,41 +258,39 @@ export class VvcContactWrap {
       }
     }
     else {
-      this.dcService.onDataCollectionCompleted().subscribe( (data: DataCollectionState) => {
+      this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionState) => {
         if (data && data.completed) {
-          this.createContact(data.creationOptions);
+          if (this.isAutoChat()){
+            this.createAutoContact(data.creationOptions)
+          }
+          else {
+            this.uiService.showQueuePanel();
+            this.createContact(data.creationOptions);
+          }
         }
       });
-      if (this.dcService.hasSurvey()){
-        this.dcService.onSurveyCompleted().subscribe( (survey) => {
-          if (survey && survey.completed){
+      if (this.dcService.hasSurvey()) {
+        this.dcService.onSurveyCompleted().subscribe((survey) => {
+          if (survey && survey.completed) {
             this.contact.storeSurvey(survey.item);
           }
         });
       }
       this.dcService.processDataCollections();
-      /*
-      if (this.isRecallContact()){
-        this.dcService.showRecall();
-      } else {
-        if (this.isChatEmulationContact()) {
-          if (this.hasDataCollection() && this.hasRecallForNoAgent() && this.noAgents()) {
-            this.dcService.showDcWithRecall();
-          }
-        } else {
-          if (this.hasDataCollection()) {
-            if (this.dcService.dcAlreadyFilled()) {
-              this.attachDataAndCreateContact(context);
-            }
-            else console.log("should render dc");
-          }
-          else this.createContact();
-        }
-      }
-      */
     }
   }
+  isAutoChat(){
+    return true;
+  }
   isChatEmulationContact(){
+    return false;
+  }
+  isOfflineMessage(text){
+    const m = this.messageArchive.filter( m => m === text)[0];
+    if (m){
+      this.messageArchive = [...this.messageArchive.filter( m => m !== text)];
+      return true;
+    }
     return false;
   }
   isRecallContact(){
@@ -377,7 +385,7 @@ export class VvcContactWrap {
         if (this.agent.is_bot){
           this.setIsWriting();
         }
-        this.messageService.addLocalMessage(text);
+        if (!this.isOfflineMessage(text)) this.messageService.addLocalMessage(text);
       });
     });
     this.contact.on('left', obj => {
@@ -475,7 +483,11 @@ export class VvcContactWrap {
         this.vivocha.pageRequest('interactionAnswered', agent);
         this.protocolService.setMediaChange(media);
         this.uiService.initializeMedia(media);
-        this.setAnsweredState(agent)
+        this.setAnsweredState(agent);
+        if (this.autoChat){
+          this.messageArchive.map( m => this.contact.sendText(m));
+          this.autoChat = false;
+        }
       });
     });
   }
@@ -580,7 +592,7 @@ export class VvcContactWrap {
     })
   }
   sendIsWriting(){
-    this.contact.sendIsWriting();
+    if (!this.autoChat) this.contact.sendIsWriting();
   }
   sendPostBack(msg){
     const vvcPostBack: any = {
@@ -599,11 +611,23 @@ export class VvcContactWrap {
     }
   }
   sendText(text){
-    this.contact.sendText(text);
+    if (this.autoChat){
+      this.messageArchive.push(text);
+      this.messageService.addChatMessage({ body: text, ts: +new Date().getTime()});
+      if (this.messageArchive.length === 1) this.createContact(this.autoChatInitialData);
+    }
+    else {
+      this.contact.sendText(text);
+    }
   }
   setAnsweredState(agent){
-    this.uiService.setAgent(agent);
     this.messageService.removeMessage(this.lastSystemMessageId);
+    this.uiService.setAgent(agent);
+    if (this.context.variables.showAgentInfoOnTopBar){
+      this.uiService.setTopBarWithAgentInfo(agent);
+    } else {
+      this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
+    }
     if (this.context.variables.showWelcomeMessage){
       this.lastSystemMessageId = this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick });
     }

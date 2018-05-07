@@ -17,6 +17,7 @@ import {
   WidgetToggleEmoji,
   WidgetShowUploadPanel,
   WidgetIsWriting,
+  WidgetSetAutoChat,
   WidgetSetMinimized,
   WidgetSetNormal,
   WidgetMarkAsRead,
@@ -35,6 +36,7 @@ import {
   WidgetOfferAccepted,
   WidgetSetFullScreen,
   WidgetShowChatOnFullScreen,
+  WidgetShowQueuePanel,
   WidgetSetVideoTransit,
   WidgetSetError
 } from '../store/actions/widget.actions';
@@ -96,7 +98,11 @@ export class VvcUiService {
   }
   setAgent(agent){
     this.store.dispatch(new WidgetSetAgent(agent));
-    this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
+    //this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
+  }
+  setAutoChat(){
+    this.store.dispatch(new WidgetSetAutoChat());
+    //this.store.dispatch(new WidgetSetTopBar({title: 'AutoChatNick', subtitle: 'AutoChatConnected'}));
   }
   setClosedByAgent(){
     this.store.dispatch(new WidgetClosedByAgent());
@@ -169,6 +175,9 @@ export class VvcUiService {
   setOfferRejected(){
     this.store.dispatch(new WidgetOfferRejected());
   }
+  setTopBar(topBarObject){
+    this.store.dispatch(new WidgetSetTopBar({title: topBarObject.title, subtitle: topBarObject.subtitle}));
+  }
   setTopBarWithAgentInfo(agent){
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }
@@ -183,6 +192,9 @@ export class VvcUiService {
   }
   setUploaded(){
     this.store.dispatch(new WidgetUploadCompleted())
+  }
+  showQueuePanel(){
+    this.store.dispatch(new WidgetShowQueuePanel());
   }
   toggleEmojiPanel(){
     this.store.dispatch(new WidgetToggleEmoji());

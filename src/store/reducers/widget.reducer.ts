@@ -34,7 +34,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {chat: chatState});
     }
     case fromWidget.WIDGET_INIT_CONTEXT: {
-      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true, showQueuePanel: true}});
+      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true}});
     }
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
       const multimedia = {
@@ -90,7 +90,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {media: multimedia });
     }
     case fromWidget.WIDGET_NEW_MESSAGE: {
-      if (state.context.isMinimized || !state.chat.isVisible || !state.media.isMinimized) {
+      if (state.context.isMinimized || !state.chat.isVisible || (state.media.isVisible && !state.media.isMinimized)) {
         const chat = Object.assign({}, state.chat, {notRead: state.chat.notRead+1});
         return Object.assign({}, state, {chat: chat});
       }
@@ -105,11 +105,24 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {protocol: protocol});
     }
     case fromWidget.WIDGET_SET_AGENT: {
+      const chat = Object.assign({}, state.chat, {isAutoChat: false});
       const context = Object.assign({}, state.context, {showQueuePanel: false});
-      return Object.assign({}, state, {agent: action.payload, context: context});
+      return Object.assign({}, state, {agent: action.payload, context: context, chat: chat});
+    }
+    case fromWidget.WIDGET_SET_AUTO_CHAT: {
+      const chatState: ChatState = {
+        isVisible: true,
+        isAutoChat: true,
+        canUploadFiles: false,
+        canSendEmoji: false,
+        uploadPanelOpened: false,
+        emojiPanelOpened: false,
+        notRead: 0
+      };
+      return Object.assign({}, state, {chat: chatState});
     }
     case fromWidget.WIDGET_SET_ERROR: {
-      const context = Object.assign({}, state.context, {hasError: true});
+      const context = Object.assign({}, state.context, {hasError: true, showQueuePanel: true});
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_FULLSCREEN:{
@@ -139,6 +152,9 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     case fromWidget.WIDGET_SHOW_CLOSE_PANEL:{
       const context = Object.assign({}, state.context, {showClosePanel: action.payload});
       return Object.assign({}, state, {context: context});
+    }
+    case fromWidget.WIDGET_SHOW_QUEUE_PANEL: {
+      return Object.assign({}, state, {context: { showQueuePanel: true}});
     }
     case fromWidget.WIDGET_SHOW_UPLOAD_PANEL: {
       const chat = Object.assign({}, state.chat, {uploadPanelOpened: action.payload});
@@ -238,6 +254,7 @@ export const getUiStateRedux = (
       incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,
       inVideoTransit: widgetState.protocol.inVideoTransit,
+      isAutoChat: widgetState.chat && widgetState.chat.isAutoChat,
       isLoading: !widgetState.context.isUiLoaded,
       isInQueue: widgetState.context.showQueuePanel && dataCollectionState.completed,
       isChatVisible:  isChatVisible,
