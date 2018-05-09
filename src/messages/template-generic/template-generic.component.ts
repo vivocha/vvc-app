@@ -12,11 +12,11 @@ export class TemplateGenericComponent {
   @ViewChild('carousel') container: ElementRef;
 
   scrollRight(){
-    this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft + 200;
+    this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft + 260;
   }
 
   scrollLeft(){
-    this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft - 200;
+    this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft - 260;
   }
 
   defaultAction(elem){
