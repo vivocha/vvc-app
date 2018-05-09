@@ -9,7 +9,7 @@
     <div *ngFor="let elem of message.elements" class="tpl-element" [ngClass]="{'carousel' : (message.elements.length > 1) }">
       <div class="vvc-template-inner">
         <div *ngIf="elem.image_url" class="cover" [style.background-image]="'url(' + elem.image_url + ')'"></div>
-        <div class="title">{{ elem.title }}</div>
+        <div class="title" (click)="defaultAction(elem)">{{ elem.title }}</div>
         <div class="subtitle">{{ elem.subtitle }}</div>
       </div>
       <div class="vvc-template-action" *ngFor="let btn of elem.buttons">

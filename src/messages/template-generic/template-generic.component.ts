@@ -18,4 +18,8 @@ export class TemplateGenericComponent {
   scrollLeft(){
     this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft - 200;
   }
+
+  defaultAction(elem){
+    if (elem.default_action) this.action.emit(elem.default_action);
+  }
 }
