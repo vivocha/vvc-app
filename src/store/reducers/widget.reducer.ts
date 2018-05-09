@@ -34,7 +34,8 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {chat: chatState});
     }
     case fromWidget.WIDGET_INIT_CONTEXT: {
-      return Object.assign({}, state, {context: { ...action.payload, isUiLoaded: true}});
+      const context = Object.assign({}, state.context, { ...action.payload, isUiLoaded: true});
+      return Object.assign({}, state, { context: context} );
     }
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
       const multimedia = {
@@ -154,7 +155,8 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SHOW_QUEUE_PANEL: {
-      return Object.assign({}, state, {context: { showQueuePanel: true}});
+      const context = Object.assign({}, state.context, {showQueuePanel: true});
+      return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SHOW_UPLOAD_PANEL: {
       const chat = Object.assign({}, state.chat, {uploadPanelOpened: action.payload});

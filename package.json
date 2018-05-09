@@ -51,6 +51,6 @@
     "ts-node": "~4.0.2",
     "tslint": "~5.8.0",
     "typescript": "2.4.0",
-    "ng-packagr": "^2.1.0"
+    "ng-packagr": "2.4.2"
   }
 }

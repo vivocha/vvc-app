@@ -280,7 +280,7 @@ export class VvcContactWrap {
     }
   }
   isAutoChat(){
-    return true;
+    return this.context.requestedMedia === 'chat' && this.context.variables.autoChat;
   }
   isChatEmulationContact(){
     return false;
@@ -382,7 +382,7 @@ export class VvcContactWrap {
     });
     this.contact.on('localtext', (text) => {
       this.zone.run( () => {
-        if (this.agent.is_bot){
+        if (this.agent && this.agent.is_bot){
           this.setIsWriting();
         }
         if (!this.isOfflineMessage(text)) this.messageService.addLocalMessage(text);
@@ -484,10 +484,6 @@ export class VvcContactWrap {
         this.protocolService.setMediaChange(media);
         this.uiService.initializeMedia(media);
         this.setAnsweredState(agent);
-        if (this.autoChat){
-          this.messageArchive.map( m => this.contact.sendText(m));
-          this.autoChat = false;
-        }
       });
     });
   }
@@ -517,6 +513,10 @@ export class VvcContactWrap {
           this.checkForTranscript();
         });
       });
+    }
+    if (this.autoChat){
+      this.messageArchive.map( m => this.contact.sendText(m));
+      this.autoChat = false;
     }
   }
   onMediaOffer(offer, cb){

@@ -102,7 +102,6 @@ export class VvcUiService {
   }
   setAutoChat(){
     this.store.dispatch(new WidgetSetAutoChat());
-    //this.store.dispatch(new WidgetSetTopBar({title: 'AutoChatNick', subtitle: 'AutoChatConnected'}));
   }
   setClosedByAgent(){
     this.store.dispatch(new WidgetClosedByAgent());
