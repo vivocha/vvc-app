@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
   "name": "@vivocha/client-interaction-core",
-  "version": "5.9.17",
+  "version": "5.9.18",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "clean": "[ ! -d ./dist ] || rm -rf dist/*",
