@@ -53,7 +53,7 @@ export class VvcInteractionService {
     this.contactService.showCloseModal(false);
   }
   getState():Observable<UiState>{
-    this.store.select(getUiState).subscribe(uistate => console.log('UISTATE', JSON.stringify(uistate, null, 2)));
+    //this.store.select(getUiState).subscribe(uistate => console.log('UISTATE', JSON.stringify(uistate, null, 2)));
     return this.store.select(getUiState);
   }
   hangUp(){

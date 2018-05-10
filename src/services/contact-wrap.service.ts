@@ -148,12 +148,16 @@ export class VvcContactWrap {
     });
   }
   closeContact(){
-    this.leave().then(() => {
+    this.leave().then((reason) => {
       this.zone.run(() => {
         this.uiService.setClosedByVisitor();
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
         this.vivocha.setNormalScreen();
         this.isClosed = true;
+        if (!this.context.variables.stayInAppAfterClose && !this.dcService.hasSurvey()){
+          this.vivocha.pageRequest('interactionClosed', reason);
+          this.vivocha.pageRequest('interactionClosed', 'destroy');
+        }
       });
     });
   }
@@ -301,7 +305,6 @@ export class VvcContactWrap {
   }
   leave(reason?: string){
     return new Promise((resolve, reject) => {
-      console.log('leaving...', this.contact);
       if (this.contact) {
         const now = +new Date();
         const contactTime = (now - this.interactionStart);
@@ -312,12 +315,10 @@ export class VvcContactWrap {
           if (this.contact.channel.isConnected()) {
             this.contact.channel.disconnect();
           }
-          console.log('leaving resolving', ev);
           resolve(ev);
         });
       }
       else {
-        console.log('leaving resolving with true');
         resolve('failed');
       }
     });
