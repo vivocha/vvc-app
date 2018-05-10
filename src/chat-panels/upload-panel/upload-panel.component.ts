@@ -13,7 +13,6 @@ export class UploadPanelComponent {
       this.uploadFile = undefined;
       this.dataFile = undefined;
       this.isImage = undefined;
-      console.log('upload clean');
     }
     this._context = Object.assign({}, context);
   };
