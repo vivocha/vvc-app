@@ -64,6 +64,12 @@
       "type": "boolean"
     },
     {
+      "id": "autoChat",
+      "nameId": "META.VARIABLES.CHAT.AUTO_CHAT",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
       "id": "showWelcomeMessage",
       "nameId": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE",
       "defaultValue": true,

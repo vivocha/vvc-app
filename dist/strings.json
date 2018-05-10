@@ -479,6 +479,19 @@
   {
     "values": {
       "en": {
+        "value": "Allow the visitor to enter in chat before the agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di entrare in chat prima dell'agente",
+        "state": "new"
+      }
+    },
+    "id": "META.VARIABLES.CHAT.AUTO_CHAT"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Hide upload button when connected with a BOT",
         "state": "new"
       },

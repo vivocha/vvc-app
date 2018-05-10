@@ -915,7 +915,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       .qr-buttons {
         display: flex;
         width: 100%;
-        overflow-y: scroll;
+        overflow: hidden;
         &.centered {
           justify-content: center;
         }
@@ -1013,14 +1013,17 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   .tpl-container{
     &.carousel{
       display: flex;
-      overflow-x: scroll;
+      overflow: hidden;
       transition-timing-function: ease;
     }
     margin: 10px 15px;
     .tpl-element {
       &.carousel {
         flex: none;
-        margin: 20px;
+        margin: 20px 5px;
+        .vvc-template-inner{
+          width: 250px;
+        }
       }
       .vvc-template-inner {
         border: 1px solid #E4E4E4;
@@ -1037,6 +1040,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           color: $color1;
           font-size: 14px;
           font-weight: bold;
+          cursor: pointer;
         }
         .subtitle {
           color: #808080;
