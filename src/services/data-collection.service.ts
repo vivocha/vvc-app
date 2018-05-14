@@ -3,7 +3,7 @@ import {AppState, getDataCollectionState, getSurveyState} from '../store/reducer
 import {SurveyCompleted,SurveySelected} from '../store/actions/survey.actions';
 import {Store} from '@ngrx/store';
 import {VvcUiService} from './ui.service';
-import {objectToDataCollection} from '@vivocha/global-entities/dist/wrappers/data_collection';
+import {objectToDataCollection} from '@vivocha/public-entities/dist/wrappers/data_collection';
 import {Observable} from 'rxjs/Observable';
 import {DataCollectionState, SurveyState} from '../store/models.interface';
 

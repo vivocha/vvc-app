@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {ContactMediaOffer} from '@vivocha/global-entities/dist';
+import {ContactMediaOffer} from '@vivocha/public-entities/dist/contact';
 import {AppState} from '../store/reducers/main.reducer';
 
 @Injectable()

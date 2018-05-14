@@ -2,7 +2,7 @@ import {Injectable, NgZone} from '@angular/core';
 import {WindowRef} from './window.service';
 import {VvcUiService} from './ui.service';
 import {Store} from '@ngrx/store';
-import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
+//import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {TranslateService} from '@ngx-translate/core';
 
 import {AppState} from '../store/reducers/main.reducer';
@@ -19,7 +19,7 @@ export class VvcContextService {
   private isMobile = false;
   private window;
   private vivocha;
-  private context: InteractionContext;
+  private context: any;
 
   constructor(
     private store: Store<AppState>,

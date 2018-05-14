@@ -1,16 +1,14 @@
 import {Injectable, NgZone} from '@angular/core';
 import {AppState} from '../store/reducers/main.reducer';
-import {NewMessage} from '../store/actions/messages.actions';
 import {Store} from '@ngrx/store';
-import {ClientContactCreationOptions} from '@vivocha/global-entities/dist/contact';
 import {VvcDataCollectionService} from './data-collection.service';
 import {VvcProtocolService} from './protocol.service';
-import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {VvcMessageService} from './messages.service';
-import {objectToDataCollection} from '@vivocha/global-entities/dist/wrappers/data_collection';
+import {objectToDataCollection} from '@vivocha/public-entities/dist/wrappers/data_collection';
 import {VvcUiService} from './ui.service';
 import {DataCollectionState} from '../store/models.interface';
 import {AgentState} from '../store/models.interface';
+import {ClientContactCreationOptions} from '@vivocha/public-entities/dist/contact';
 
 @Injectable()
 export class VvcContactWrap {
@@ -568,7 +566,7 @@ export class VvcContactWrap {
     this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
     this.uiService.setOfferRejected();
   }
-  resumeContact(context: InteractionContext){
+  resumeContact(context: any){
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
       this.vivocha.resumeContact(contactData).then((contact) => {
         this.zone.run( () => {
