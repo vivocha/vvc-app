@@ -1467,5 +1467,92 @@
     },
     "description": "",
     "id": "STRINGS.MESSAGES.TRANSFERRED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Would you like to start a co-browsing session?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vuoi accettare la richiesta di navigazione assistita?",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Co-browsing session accepted",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sessione di navigazione assistita accettata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Co-browsing session rejected",
+        "state": "new"
+      },
+      "it": {
+        "value": "Hai rifiutato la sessione di navigazione assistita",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No",
+        "state": "final"
+      },
+      "it": {
+        "value": "No",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Non",
+        "state": "final"
+      },
+      "ja": {
+        "value": "いいえ",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_REJECT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Yes",
+        "state": "final"
+      },
+      "it": {
+        "value": "Si",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Oui",
+        "state": "final"
+      },
+      "ja": {
+        "value": "はい",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_ACCEPT"
   }
+
 ]

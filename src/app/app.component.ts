@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {VvcInteractionService} from '@vivocha/client-interaction-core';
+import {VvcInteractionService, UiState} from '@vivocha/client-interaction-core';
 import {ChatAreaComponent, TopBarComponent} from '@vivocha/client-interaction-layout';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'vvc-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
 
   public messages: Array<any>;
 
-  public appState$:any;
+  public appState$:Observable<UiState>;
 
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
