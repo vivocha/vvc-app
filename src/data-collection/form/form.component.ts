@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
-import { DataCollection, DataCollectionField } from '@vivocha/global-entities/dist/data_collection';
+import {DataCollectionField} from '@vivocha/public-entities/dist/data_collection';
 
 @Component({
   selector: 'vvc-form',
