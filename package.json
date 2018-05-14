@@ -33,7 +33,6 @@
     "@angular/platform-browser": "^5.2.0",
     "@ngx-translate/core": "9.0.2",
     "@ngx-translate/http-loader": "2.0.1",
-    "@vivocha/public-entities": "6.3.0",
     "ngx-auto-scroll": "1.1.0"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@ngx-translate/core": "9.0.2",
     "@ngx-translate/http-loader": "2.0.1",
+    "@vivocha/public-entities": "6.3.0",
     "ngx-auto-scroll": "1.1.0",
     "@angular/cli": "~1.7.1",
     "@angular/compiler-cli": "^5.2.0",
