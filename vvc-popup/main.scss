@@ -154,17 +154,18 @@ $darkBackgroundBorder: #D8D8D8;
           text-align: center;
           font-size: 16px;
           font-weight: 300;
+          padding: 2px 5px 10px 5px;
         }
         .vvc-popup-message2 {
-          padding: 17px 10px 15px 10px;
+          padding: 9px;
           text-align: center;
           font-size: 12px;
           font-weight: 400;
           text-transform: uppercase;
         }
-        .vvc-popup-media {
+        .vvc-media {
           text-align: center;
-          .vvc-popup-media-item {
+          .vvc-media-item {
             cursor: pointer;
             margin: 0 10px;
             display: inline-block;
