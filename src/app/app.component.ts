@@ -1,11 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { InteractionContext } from '@vivocha/client-visitor-core/dist/widget.d';
-import { WidgetState } from './interaction-core/store/models.interface';
-import {VvcInteractionService} from './interaction-core/services';
-
-import {ChatAreaComponent} from './modules/chat/chat-area/chat-area.component';
-import {TopBarComponent} from './modules/top-bar/top-bar/top-bar.component';
-import {ChatIsWritingComponent} from './modules/chat/chat-is-writing/chat-is-writing.component';
+import {VvcInteractionService, UiState} from '@vivocha/client-interaction-core';
+import {ChatAreaComponent, TopBarComponent} from '@vivocha/client-interaction-layout';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'vvc-root',
@@ -16,10 +12,9 @@ export class AppComponent implements OnInit {
   @ViewChild(TopBarComponent) topBar: TopBarComponent;
   @ViewChild(ChatAreaComponent) chat: ChatAreaComponent;
 
-  public widgetState: WidgetState;
   public messages: Array<any>;
 
-  public appState$:any;
+  public appState$:Observable<UiState>;
 
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
@@ -62,8 +57,8 @@ export class AppComponent implements OnInit {
   exitFromFullScreen(){
     this.interactionService.setNormalScreen();
   }
-  expandWidget(){
-    this.interactionService.minimize(false);
+  expandWidget(isFullScreen){
+    this.interactionService.minimize(false, isFullScreen);
   }
   hangUpCall(){
     this.interactionService.hangUp();
@@ -95,6 +90,9 @@ export class AppComponent implements OnInit {
   rejectOffer(){
     this.interactionService.rejectOffer();
   }
+  sendIsWriting(){
+    this.interactionService.sendIsWriting();
+  }
   sendText(value, isEmojiPanelVisible){
     if (isEmojiPanelVisible) this.toggleEmojiPanel();
     this.interactionService.sendText(value);
@@ -102,8 +100,16 @@ export class AppComponent implements OnInit {
   setFullScreen(){
     this.interactionService.setFullScreen();
   }
-  showCloseModal(){
-    this.interactionService.showCloseModal()
+  showCloseModal(closeOpt){
+    if (closeOpt.forceClose) {
+      this.interactionService.closeContact();
+      if (!closeOpt.stayInAppAfterClose && !closeOpt.hasSurvey) this.closeApp();
+      else if (closeOpt.hasSurvey && !closeOpt.stayInAppAfterClose){
+        this.showSurvey();
+      }
+    } else {
+      this.interactionService.showCloseModal();
+    }
   }
   showUploadPanel(){
     this.interactionService.showUploadPanel();

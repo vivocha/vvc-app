@@ -7,7 +7,7 @@
         "state": "final"
       },
       "it": {
-        "value": "Application di interazione di default",
+        "value": "Applicatione di interazione predefinita",
         "state": "final"
       },
       "fr": {
@@ -286,6 +286,34 @@
   {
     "values": {
       "en": {
+        "value":"Ask confirm on close",
+        "state":"new"
+      },
+      "it": {
+        "value":"Chiedi conferma prima di chiudere il contatto",
+        "state":"new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM"
+  },
+  {
+    "values": {
+      "en": {
+        "value":"Let the user see the transcript after close",
+        "state":"new"
+      },
+      "it": {
+        "value":"Permetti al visitatore di vedere l'area dei messaggi dopo la chiusura del contatto",
+        "state":"new"
+      }
+    },
+    "description": "",
+    "id": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Initial height of the application (desktop version).",
         "state": "final"
       },
@@ -462,6 +490,32 @@
   {
     "values": {
       "en": {
+        "value": "Allow the visitor to enter in chat before the agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Permetti al visitatore di entrare in chat prima dell'agente",
+        "state": "new"
+      }
+    },
+    "id": "META.VARIABLES.CHAT.AUTO_CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hide upload button when connected with a BOT",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nascondi il bottone di upload quando l'agente è un BOT",
+        "state": "new"
+      }
+    },
+    "id": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Display welcome message when the agent is connected to the chat",
         "state": "final"
       },
@@ -554,7 +608,7 @@
         "state": "final"
       },
       "it": {
-        "value": "Avatar di default per il utente",
+        "value": "Avatar predefinito per l'utente",
         "state": "final"
       },
       "fr": {
@@ -642,7 +696,7 @@
         "state": "final"
       },
       "it": {
-        "value": "Avatar di default per l'agente",
+        "value": "Avatar predefinito per l'agente",
         "state": "final"
       },
       "fr": {
@@ -704,19 +758,37 @@
   {
     "values": {
       "en": {
-        "value": "Vivocha Customer Care",
+        "value": "An error occurred. Please try again.",
         "state": "final"
       },
       "it": {
-        "value": "Vivocha Customer Care",
+        "value": "Si è verificato un errore. Riprova.",
         "state": "final"
       },
       "fr": {
-        "value": "Vivocha Customer Care",
-        "state": "needs-review"
+        "value": "Une erreur est survenue. Veuillez réessayer.",
+        "state": "final"
       },
       "ja": {
-        "value": "",
+        "value": "エラーが発生しました。やり直してください。",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.CONTACT_FAILED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
+      },
+      "it": {
+        "value": "Vivocha Customer Care",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Vivocha Service client",
         "state": "new"
       }
     },
@@ -864,14 +936,6 @@
       "it": {
         "value": "Chiudi",
         "state": "final"
-      },
-      "fr": {
-        "value": "Fermer",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "閉じる",
-        "state": "new"
       },
       "fr": {
         "value": "Fermer",
@@ -1632,6 +1696,56 @@
     },
     "description": "",
     "id": "STRINGS.CALL_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Default Topbar Title",
+        "state": "final"
+      },
+      "it": {
+        "value": "Titolo Default Topbar",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.TOPBAR.TITLE_DEFAULT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Default Topbar Subtitle",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sottotitolo Default Topbar",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.TOPBAR.SUBTITLE_DEFAULT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "You have been transferred to another agent",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sei stato trasferito a un altro operatore",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vous avez été transféré vers un autre agent",
+        "state": "final"
+      },
+      "ja": {
+        "value": "他のオペレーターと繋がりました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.TRANSFERRED"
   },
   {
     "values": {

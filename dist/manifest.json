@@ -15,6 +15,24 @@
       "type": "string"
     },
     {
+      "id": "askCloseConfirm",
+      "nameId": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM",
+      "type": "boolean",
+      "defaultValue": true
+    },
+    {
+      "id": "stayInAppAfterClose",
+      "nameId": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE",
+      "type": "boolean",
+      "defaultValue": true
+    },
+    {
+      "id": "hideUploadWithBot",
+      "nameId": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT",
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
       "id": "showAvatar",
       "nameId": "META.VARIABLES.TOPBAR.SHOW_AVATAR",
       "defaultValue": false,
@@ -43,6 +61,12 @@
       "id": "showUploadButton",
       "nameId": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON",
       "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "autoChat",
+      "nameId": "META.VARIABLES.CHAT.AUTO_CHAT",
+      "defaultValue": false,
       "type": "boolean"
     },
     {

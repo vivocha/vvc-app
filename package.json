@@ -13,7 +13,7 @@
     "build:prod": "ng build --prod --output-hashing none",
     "version": "jsonref -f ./package.json /version",
     "build:all": "npm run clean:all && npm install && npm run build:prod",
-    "build:watch": "ng build --delete-output-path=false --watch",
+    "build:watch": "ng build --delete-output-path=false --preserve-symlinks --watch",
     "push": "cd dist && vvc widget push && cd -",
     "push:global": "cd dist && vvc widget push -g && cd -",
     "push:all": "npm run build:all && cd dist && vvc widget push && cd -",
@@ -58,6 +58,8 @@
     "@ngrx/store": "5.1.0",
     "@ngx-translate/core": "9.0.2",
     "@ngx-translate/http-loader": "2.0.1",
+    "@vivocha/client-interaction-layout": "6.0.1",
+    "@vivocha/client-interaction-core": "6.0.0",
     "core-js": "^2.5.3",
     "ngx-auto-scroll": "1.1.0",
     "rxjs": "^5.5.6",
@@ -69,8 +71,7 @@
     "@angular/compiler-cli": "^5.1.2",
     "@types/jasmine": "2.8.2",
     "@types/node": "~8.5.2",
-    "@vivocha/client-visitor-core": "^6.0.7",
-    "@vivocha/global-entities": "^6.0.2",
+    "@vivocha/public-entities": "^6.3.0",
     "@ngrx/store-devtools": "5.1.0",
     "codelyzer": "~4.0.2",
     "jasmine-core": "~2.8.0",
@@ -85,6 +86,6 @@
     "protractor": "~5.2.2",
     "ts-node": "~4.0.2",
     "tslint": "~5.8.0",
-    "typescript": "~2.6.2"
+    "typescript": "2.4.0"
   }
 }

@@ -1,15 +1,13 @@
 $appFontUrl: 'https://fonts.googleapis.com/css?family=Roboto:300,400';
 $appFontFamily: 'Roboto', sans-serif;
 
-//$color1: #0351A1;
-//$color2: #13AF6C;
-
 $appWidth: 350px;
 $appHeight: 580px;
 $appMinimizedWidth: 80px;
 $appMinimizedHeight: 80px;
 $appBottomDistance: -5px;
 $appRightDistance: 40px;
+
 
 $icon-vvc-reduce: './assets/static/icons/vvc-reduce.png';
 $icon-vvc-close: './assets/static/icons/vvc-close.png';
@@ -32,9 +30,6 @@ $icon-survey-heart-off: './assets/static/icons/heart-off.png';
 $icon-survey-smile-on: './assets/static/icons/smile-on.png';
 $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 
-
-
-@import 'variables';
 /**
   MIXINS
  */
@@ -172,7 +167,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     border: 1px solid #CCCCCC;
   }
 }
-@mixin top-bar($background: $color1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showAvatar: $showAvatar){
+@mixin top-bar($background: $color1, $titleColor: #FFFFFF, $titleSize: 18px, $subtitleColor: #FFFFFF, $subtitleSize: 12px, $showTopAvatar: $showAvatar){
 
   flex: none;
   background: $background;
@@ -181,10 +176,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   display: flex;
 
   #vvc-top-avatar {
-    @if ($showAvatar){
-      display: block;
-    }
-    @else {
+    @if ($showTopAvatar==false){
       display: none;
     }
     flex: none;
@@ -680,8 +672,8 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           display: block;
           position: relative;
           top: 40px;
-          width: 100px;
-          height: 100px;
+          width: 60px;
+          height: 60px;
           path {
             fill:  #979797;
           }
@@ -842,36 +834,110 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 }
 @mixin quick-replies(){
   .vvc-quick-replies{
-    display: flex;
-    flex: none;
-    &.vertical{
-      flex-direction: column;
-      .reply-message{
-        text-align: center;
-        padding: 10px 50px;
-        color: #333333;
-        font-size: 15px;
-        font-weight: 300;
+
+    .reply-message{
+      text-align: center;
+      padding: 10px 50px;
+      color: #333333;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .reply{
+      padding: 4px 30px;
+      button {
+        width: 100%;
+        @include btn-label();
       }
-      .reply{
-        padding: 4px 30px;
-        button {
-          width: 100%;
-          @include btn-label();
+      &.img{
+        img {
+          width: 25px;
+          height: 25px;
+          float: left;
         }
-        &.img{
-          img {
-            width: 25px;
-            height: 25px;
-            float: left;
-          }
-          button{
-            padding: 10px 20px 10px 10px;
-            line-height: 24px;
+        button{
+          padding: 10px 20px 10px 10px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &.horizontal {
+      position: relative;
+      .tpl-left{
+        display: none;
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        left: 5px;
+        bottom: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        background-image: url($icon-vvc-scroll-left);
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        background-position: 6px 5px;
+        &.hasImg{
+          bottom: 12px;
+        }
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+      .tpl-right{
+        display: none;
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        right: 5px;
+        bottom: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        background-image: url($icon-vvc-scroll-right);
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        background-position: 6px 5px;
+        &.hasImg{
+          bottom: 12px;
+        }
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+      &:hover{
+        .tpl-right,
+        .tpl-left {
+          display: block;
+        }
+      }
+      .qr-buttons {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        &.centered {
+          justify-content: center;
+        }
+        .reply{
+          padding: 4px 6px;
+
+          &.img{
+            button {
+              position: relative;
+              padding-left: 40px;
+              img {
+                position: absolute;
+                margin-left: -30px;
+                float: none;
+              }
+            }
+
           }
         }
       }
     }
+
   }
 }
 @mixin request-message(){
@@ -947,14 +1013,17 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   .tpl-container{
     &.carousel{
       display: flex;
-      overflow-x: scroll;
+      overflow: hidden;
       transition-timing-function: ease;
     }
     margin: 10px 15px;
     .tpl-element {
       &.carousel {
         flex: none;
-        margin: 20px;
+        margin: 20px 5px;
+        .vvc-template-inner{
+          width: 250px;
+        }
       }
       .vvc-template-inner {
         border: 1px solid #E4E4E4;
@@ -971,6 +1040,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           color: $color1;
           font-size: 14px;
           font-weight: bold;
+          cursor: pointer;
         }
         .subtitle {
           color: #808080;
@@ -988,6 +1058,49 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           @include btn-label();
         }
       }
+    }
+  }
+}
+@mixin template-list-message(){
+  .tpl-list-container{
+    margin: 10px 15px;
+    border: 1px solid #E4E4E4;
+    box-shadow: 3px 4px 0 #E6E6E6;
+    .tpl-element{
+      border-bottom: 1px solid #E4E4E4;
+      padding: 10px;
+      .title {
+        padding-top: 5px;
+        color: $color1;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .subtitle {
+        color: #808080;
+        font-size: 12px;
+      }
+      .action{
+        padding-top: 5px;
+        span {
+          padding-right: 8px;
+          color: $color1;
+          font-size: 14px;
+          font-weight: bold;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+    .tpl-element:last-child{
+      border-bottom: 0;
+    }
+  }
+  .tpl-list-action {
+    margin: 10px 15px;
+    button {
+      width: 100%;
+      @include btn-label();
     }
   }
 }
@@ -1094,6 +1207,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 }
 @mixin loading-panel($background: $color1, $loadingBarColor: #FFFFFF){
+  /*
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1123,6 +1237,30 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           background: $loadingBarColor;
         }
       }
+    }
+  }
+  */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index:3;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: $background;
+  .loading-view{
+    margin: 25px;
+    .loading-message{
+      color: $loadingBarColor;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+      padding: 10px 5px 30px 5px;
+    }
+    .loading-loading{
+      @include loading-bar($loadingBarColor);
     }
   }
 }
@@ -1170,8 +1308,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   display: block;
   position: relative;
   cursor: pointer;
-  top: 5px;
-  left: 5px;
 
   .badge{
     background-color: red;
@@ -1190,6 +1326,12 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     height: 60px;
     border-radius:50%;
     box-shadow: 0 0 5px #262626;
+    margin-top: 2px;
+    &.agent-default{
+      background: url($agentAvatarDefault);
+      background-size: 60px 60px;
+      background-position: center;
+    }
   }
 }
 /**
@@ -1220,7 +1362,7 @@ body, input, textarea{ font-family: $appFontFamily; }
     flex-direction: column;
 
     #vvc-top-bar {
-      @include top-bar()
+      @include top-bar();
     }
     #vvc-survey,
     #vvc-data-collection {
@@ -1273,8 +1415,9 @@ body, input, textarea{ font-family: $appFontFamily; }
         @include chat-agent-message();
         @include chat-visitor-message();
         @include quick-replies();
-        @include template-message();
         @include request-message();
+        @include template-message();
+        @include template-list-message();
       }
       #vvc-is-writing {
         @include chat-is-writing();
@@ -1319,6 +1462,7 @@ body, input, textarea{ font-family: $appFontFamily; }
           position: absolute;
           right: 40px;
           top: 40px;
+          z-index: 10;
         }
       }
       .media-controls-wrapper{
@@ -1466,3 +1610,6 @@ body, input, textarea{ font-family: $appFontFamily; }
 .testclass{
   background: $color1;
 }**/
+/*
+showAvatar: $showAvatar;
+*/
