@@ -169,28 +169,31 @@ export class VvcContactWrap {
     this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
   }
   createContact(dataToMerge?){
-    const conf = this.getContactOptions(dataToMerge);
-    this.interactionStart = +new Date();
-    const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
-    this.dissuasionTimer = setTimeout(() => {
-      this.leave('dissuasion').then(() => {
-        this.zone.run(() => {
-          this.uiService.setDissuasion();
+    const conf: ClientContactCreationOptions = this.getContactOptions(dataToMerge);
+    this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
+      console.log('pre-routing callback', opts);
+      this.interactionStart = +new Date();
+      const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
+      this.dissuasionTimer = setTimeout(() => {
+        this.leave('dissuasion').then(() => {
+          this.zone.run(() => {
+            this.uiService.setDissuasion();
+          });
         });
+      }, timeout);
+      this.uiService.initializeProtocol(this.context, opts);
+      this.vivocha.createContact(opts).then( (contact) => {
+        this.zone.run( () => {
+          this.contact = contact;
+          this.mapContact();
+        });
+      }, (err) => {
+        console.log('Failed to create contact', err);
+        this.vivocha.pageRequest('interactionFailed', err.message);
+        this.zone.run( () => {
+          this.uiService.setCreationFailed();
+        })
       });
-    }, timeout);
-    this.uiService.initializeProtocol(this.context, conf);
-    this.vivocha.createContact(conf).then( (contact) => {
-      this.zone.run( () => {
-        this.contact = contact;
-        this.mapContact();
-      });
-    }, (err) => {
-      console.log('Failed to create contact', err);
-      this.vivocha.pageRequest('interactionFailed', err.message);
-      this.zone.run( () => {
-        this.uiService.setCreationFailed();
-      })
     });
   }
   getContactOptions(dataToMerge?):ClientContactCreationOptions {
