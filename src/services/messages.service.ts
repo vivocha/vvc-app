@@ -12,7 +12,7 @@ export class VvcMessageService {
     private store: Store<AppState>
   ){}
 
-  addChatMessage(message, agent?){
+  addChatMessage(message, agent?, visitorNick?){
     const id = new Date().getTime().toString();
     const msg:ChatMessage = {
       id: id,
@@ -23,7 +23,19 @@ export class VvcMessageService {
     };
     if (agent) msg.agent = agent;
     if (message.meta) msg.meta = message.meta;
+    if (visitorNick) msg.visitorNick = visitorNick;
     this.store.dispatch(new NewMessage(msg));
+    return id;
+  }
+  addCustomMessage(message){
+    const id = new Date().getTime().toString();
+    const m = {
+      id: id,
+      code: "message",
+      type: "custom",
+      body: { ...message }
+    };
+    this.store.dispatch(new NewMessage(m));
     return id;
   }
   addLocalMessage(text){

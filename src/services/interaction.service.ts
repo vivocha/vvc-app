@@ -72,8 +72,8 @@ export class VvcInteractionService {
       }
     })
   }
-  minimize(minimize: boolean, isFullScreen?: boolean){
-    this.contactService.minimize(minimize, isFullScreen);
+  minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any){
+    this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
   minimizeMedia(){
     this.contactService.minimizeMedia();
@@ -86,6 +86,9 @@ export class VvcInteractionService {
   }
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
+  }
+  registerCustomAction(action):Observable<any>{
+    return this.contactService.registerCustomAction(action);
   }
   rejectAgentRequest(requestId){
     this.contactService.rejectAgentRequest(requestId);
@@ -101,6 +104,9 @@ export class VvcInteractionService {
   }
   sendPostBack(action){
     this.contactService.sendPostBack(action);
+  }
+  sendRequest(requestId, requestData){
+    return this.contactService.sendRequest(requestId, requestData);
   }
   sendText(text){
     this.contactService.sendText(text);

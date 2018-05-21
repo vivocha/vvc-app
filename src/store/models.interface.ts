@@ -12,6 +12,7 @@ export interface  ContextState {
   showClosePanel?: boolean;
   showQueuePanel?: boolean;
   hasError?: boolean;
+  visitorNick?: string;
   [key:string]: any;
 }
 
@@ -102,6 +103,7 @@ export interface ChatMessage extends BaseMessage{
   time?: string;
   agent?: any;
   meta?: any;
+  visitorNick?: string;
 }
 export type Message = SystemMessage | ChatMessage | BaseMessage;
 export interface MessagesState {

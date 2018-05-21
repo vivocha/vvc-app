@@ -9,6 +9,8 @@ import {VvcUiService} from './ui.service';
 import {DataCollectionState} from '../store/models.interface';
 import {AgentState} from '../store/models.interface';
 import {ClientContactCreationOptions} from '@vivocha/public-entities/dist/contact';
+import { Subject } from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class VvcContactWrap {
@@ -33,6 +35,9 @@ export class VvcContactWrap {
   autoChat = false;
   autoChatInitialData;
   messageArchive = [];
+
+  customActions = {};
+  visitorNick;
 
   constructor(
     private store: Store<AppState>,
@@ -117,7 +122,7 @@ export class VvcContactWrap {
       switch (msg.type) {
         case 'text':
           const agent = (msg.agent) ? this.agent : false;
-          this.messageService.addChatMessage(msg, agent);
+          this.messageService.addChatMessage(msg, agent, this.visitorNick);
           break;
         case 'attachment':
           const meta = msg.meta;
@@ -129,8 +134,8 @@ export class VvcContactWrap {
             from_nick: msg.from_nick,
             from_id: msg.from_id
           };
-          if (msg.agent) this.messageService.addChatMessage(attachment, this.agent);
-          else this.messageService.addChatMessage(attachment);
+          if (msg.agent) this.messageService.addChatMessage(attachment, this.agent, this.visitorNick);
+          else this.messageService.addChatMessage(attachment, null, this.visitorNick);
           break;
       }
     }
@@ -170,6 +175,7 @@ export class VvcContactWrap {
   }
   createContact(dataToMerge?){
     const conf: ClientContactCreationOptions = this.getContactOptions(dataToMerge);
+    if (conf && conf.nick) this.visitorNick = conf.nick;
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
       console.log('pre-routing callback', opts);
       this.interactionStart = +new Date();
@@ -342,8 +348,8 @@ export class VvcContactWrap {
           from_nick: fromNick,
           from_id: fromId
         };
-        if (isAgent) this.messageService.addChatMessage(msg, this.agent);
-        else this.messageService.addChatMessage(msg);
+        if (isAgent) this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
+        else this.messageService.addChatMessage(msg, null, this.visitorNick);
       });
     });
     this.contact.on('joined', (c) => {
@@ -366,7 +372,7 @@ export class VvcContactWrap {
         else if (msg.template) {
           this.messageService.addTemplateMessage(msg);
         } else {
-          this.messageService.addChatMessage(msg, this.agent);
+          this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
         }
         if (msg.agent) this.uiService.setIsWriting(false);
         this.uiService.newMessageReceived();
@@ -425,6 +431,14 @@ export class VvcContactWrap {
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
       });
     });
+    Object.keys(this.customActions).forEach( a => {
+      this.contact.on(a, (message, callback) => {
+        this.zone.run( () => {
+          this.customActions[a]['callback'] = callback;
+          this.customActions[a].stream.next(message);
+        });
+      })
+    })
   }
   mergeOffer(diffOffer, cb){
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {
@@ -447,9 +461,16 @@ export class VvcContactWrap {
       });
     });
   }
-  minimize(minimize: boolean, isFullScreen?: boolean){
+  minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any){
     if (minimize) {
-      this.vivocha.minimize({ bottom: "10px", right: "10px" }, { width: '70px', height: '70px' });
+      this.vivocha.minimize({
+        bottom: (positionObject && positionObject.bottom) ? positionObject.bottom : '10px',
+        right: (positionObject && positionObject.right) ? positionObject.right : '10px'
+      }, {
+        width: (sizeObject && sizeObject.width) ? sizeObject.width : '70px',
+        height: (sizeObject && sizeObject.height) ? sizeObject.height : '70px'
+      });
+
       this.uiService.setMinimizedState();
     } else {
       if (isFullScreen){
@@ -510,6 +531,11 @@ export class VvcContactWrap {
           console.log('LOCAL JOIN', agent, this.contact);
           this.agent = agent;
           this.uiService.setAgent(agent);
+          if (this.context.variables.showAgentInfoOnTopBar){
+            this.uiService.setTopBarWithAgentInfo(agent);
+          } else {
+            this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
+          }
           this.protocolService.setMediaChange(media);
           this.uiService.initializeMedia(media);
           this.checkForTranscript();
@@ -558,6 +584,10 @@ export class VvcContactWrap {
     }
     this.contact.send(vvcQuickReply);
     this.messageService.addLocalMessage(reply.action.title);
+  }
+  registerCustomAction(action): Observable<any>{
+    this.customActions[action.id] = { stream: new Subject() };
+    return this.customActions[action.id].stream;
   }
   rejectAgentRequest(requestId){
     this.agentRequestCallback(null, false);
@@ -611,6 +641,9 @@ export class VvcContactWrap {
     else {
       this.vivocha.pageRequest('interactionEvent', msg.type, msg);
     }
+  }
+  sendRequest(requestId, requestData){
+    return this.contact.request(requestId, requestData);
   }
   sendText(text){
     if (this.autoChat){
