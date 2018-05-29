@@ -17,7 +17,7 @@ export interface  ContextState {
 }
 
 export interface ProtocolState {
-  requestedMedia?: 'chat' | 'video' | 'voice' | 'recall';
+  mediaPreset?: 'chat' | 'video' | 'voice' | 'recall';
   initialOffer?: any;
   canStartAudio?: boolean;
   canStartVideo?: boolean;

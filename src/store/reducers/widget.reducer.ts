@@ -24,7 +24,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
     case fromWidget.WIDGET_INIT_CHAT: {
       const chatState: ChatState = {
-        isVisible: state.protocol.requestedMedia === 'chat',
+        isVisible: state.protocol.mediaPreset === 'chat',
         canUploadFiles: state.context.variables.showUploadButton,
         canSendEmoji: state.context.variables.showEmojiButton,
         uploadPanelOpened: false,
@@ -39,7 +39,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
       const multimedia = {
-        isVisible: (state.protocol.requestedMedia === 'video' || state.protocol.requestedMedia === 'voice'),
+        isVisible: (state.protocol.mediaPreset === 'video' || state.protocol.mediaPreset === 'voice'),
         isMinimized: false
       };
       return Object.assign({}, state, {media: multimedia});

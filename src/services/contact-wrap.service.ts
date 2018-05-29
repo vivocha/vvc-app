@@ -58,7 +58,7 @@ export class VvcContactWrap {
   }
   addChatToFullScreen(show){
     this.uiService.setFullScreenChat(show);
-    if (this.context.requestedMedia !== 'chat') this.askForUpgrade('Chat');
+    if (this.context.mediaPreset !== 'chat') this.askForUpgrade('Chat');
   }
   askForUpgrade(media){
     if (media !== 'Chat') this.uiService.setIsOffering(media);
@@ -187,9 +187,11 @@ export class VvcContactWrap {
           });
         });
       }, timeout);
-      this.uiService.initializeProtocol(this.context, opts);
       this.vivocha.createContact(opts).then( (contact) => {
         this.zone.run( () => {
+          this.uiService.initializeProtocol(this.context, {
+            initialOffer: contact.initial_offer
+          });
           this.contact = contact;
           this.mapContact();
         });
@@ -203,13 +205,13 @@ export class VvcContactWrap {
     });
   }
   getContactOptions(dataToMerge?):ClientContactCreationOptions {
-    const initialOpts =  {
+    const initialOpts:ClientContactCreationOptions = {
       campaignId: this.context.campaign.id,
       version: this.context.campaign.version,
       channelId: 'web',
       entryPointId: this.context.entryPointId,
       engagementId: this.context.engagementId,
-      initialOffer: this.protocolService.getInitialOffer(this.context.requestedMedia),
+      mediaPreset: this.context.mediaPreset,
       lang: this.context.language,
       vvcu: this.context.page.vvcu,
       vvct: this.context.page.vvct,
@@ -243,7 +245,7 @@ export class VvcContactWrap {
       });
       this.contact.offerMedia(mediaOffer).then( () => {
         this.zone.run( () => {
-          if (this.context.requestedMedia != 'chat') this.askForUpgrade('Chat');
+          if (this.context.mediaPreset != 'chat') this.askForUpgrade('Chat');
         })
       });
     });
@@ -291,7 +293,7 @@ export class VvcContactWrap {
     }
   }
   isAutoChat(){
-    return this.context.requestedMedia === 'chat' && this.context.variables.autoChat;
+    return this.context.mediaPreset === 'chat' && this.context.variables.autoChat;
   }
   isChatEmulationContact(){
     return false;
@@ -604,7 +606,7 @@ export class VvcContactWrap {
       this.vivocha.resumeContact(contactData).then((contact) => {
         this.zone.run( () => {
           this.uiService.initializeProtocol(context, {
-            initialOffer: this.protocolService.getInitialOffer(context.requestedMedia)
+            initialOffer: contact.initial_offer
           });
           this.contact = contact;
           this.mapContact();

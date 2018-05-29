@@ -73,7 +73,7 @@ export class VvcUiService {
   }
   initializeProtocol(context, conf){
     this.store.dispatch(new WidgetInitProtocol({
-      requestedMedia: context.requestedMedia,
+      mediaPreset: context.mediaPreset,
       canStartAudio: context.media.voice === 'both' || context.media.voice === 'visitor',
       canStartVideo: context.media.video === 'both' || context.media.video === 'visitor',
       initialOffer: conf.initialOffer,

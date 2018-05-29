@@ -56,20 +56,6 @@ export class VvcProtocolService {
     });
     return c;
   }
-  getInitialOffer(type: string): ContactMediaOffer {
-    switch (type) {
-      case 'voice': return {
-        Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Sharing: { rx: 'required', tx: 'required'}
-      };
-      case 'video': return {
-        Video: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Voice: { rx: 'required', tx: 'required', engine: 'WebRTC'},
-        Sharing: { rx: 'required', tx: 'required'}
-      };
-      default: return { Chat: { rx: 'required', tx: 'required'}, Sharing: { rx: 'required', tx: 'required'} };
-    }
-  }
   isAlreadyConnectedWith(media){
     return (
       this.lastMediaChange[media] &&
