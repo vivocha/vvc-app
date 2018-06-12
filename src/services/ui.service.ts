@@ -177,6 +177,18 @@ export class VvcUiService {
   setTopBar(topBarObject){
     this.store.dispatch(new WidgetSetTopBar({title: topBarObject.title, subtitle: topBarObject.subtitle}));
   }
+  setTopBarAvatar(avatarUrl: string){
+    this.store.dispatch(new WidgetSetTopBar({avatar: avatarUrl}));
+  }
+  setTopBarSubtitle(subtitle: string){
+    this.store.dispatch(new WidgetSetTopBar({subtitle: subtitle}));
+  }
+  setTopBarTitle(title: string){
+    this.store.dispatch(new WidgetSetTopBar({title: title}));
+  }
+  setTopBarWithAvatar(avatarUrl: string, title: string, subtitle: string){
+    this.store.dispatch(new WidgetSetTopBar({title: title, subtitle: subtitle, avatar: avatarUrl}));
+  }
   setTopBarWithAgentInfo(agent){
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }

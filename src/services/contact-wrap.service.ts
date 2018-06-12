@@ -183,14 +183,17 @@ export class VvcContactWrap {
       this.dissuasionTimer = setTimeout(() => {
         this.leave('dissuasion').then(() => {
           this.zone.run(() => {
+            console.log('PRE-DISSUASION', JSON.stringify(this.context, null, 2));
             this.uiService.setDissuasion();
           });
         });
       }, timeout);
       this.vivocha.createContact(opts).then( (contact) => {
         this.zone.run( () => {
+          console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
+
           this.uiService.initializeProtocol(this.context, {
-            initialOffer: contact.initial_offer
+            initialOffer: contact.contact.initial_offer
           });
           this.contact = contact;
           this.mapContact();
@@ -686,6 +689,18 @@ export class VvcContactWrap {
   setNormalScreen(){
     this.uiService.setNormalScreen();
     this.vivocha.setNormalScreen();
+  }
+  setTopBar(avatarUrl: string, title: string, subtitle: string){
+    this.uiService.setTopBarWithAvatar(avatarUrl,title,subtitle);
+  }
+  setTopBarAvatar(avatarUrl: string){
+    this.uiService.setTopBarAvatar(avatarUrl);
+  }
+  setTopBarSubtitle(subtitle: string){
+    this.uiService.setTopBarSubtitle(subtitle);
+  }
+  setTopBarTitle(title: string){
+    this.uiService.setTopBarTitle(title);
   }
   showCloseModal(show: boolean){
     this.uiService.setCloseModal(show);

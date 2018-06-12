@@ -117,6 +117,18 @@ export class VvcInteractionService {
   setNormalScreen(){
     this.contactService.setNormalScreen();
   }
+  setTopBar(avatarUrl: string, title: string, subtitle: string){
+    this.contactService.setTopBar(avatarUrl, title, subtitle);
+  }
+  setTopBarAvatar(avatarUrl: string){
+    this.contactService.setTopBarAvatar(avatarUrl);
+  }
+  setTopBarSubtitle(subtitle: string){
+    this.contactService.setTopBarSubtitle(subtitle);
+  }
+  setTopBarTitle(title: string){
+    this.contactService.setTopBarTitle(title);
+  }
   showCloseModal(){
     this.contactService.showCloseModal(true);
   }
