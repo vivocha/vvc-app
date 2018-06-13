@@ -50,28 +50,32 @@ export class VvcMessageService {
     this.store.dispatch(new NewMessage(msg));
     return id;
   }
-  addQuickRepliesMessage(message){
+  addQuickRepliesMessage(message, agent?){
     const id = new Date().getTime().toString();
-    const quick = {
+    const quick: any = {
       id: id,
       code: "message",
       type: "quick-replies",
       body: message.body,
       quick_replies: message.quick_replies,
-      quick_replies_orientation: message.quick_replies_orientation
+      quick_replies_orientation: message.quick_replies_orientation,
+      time: this.getChatTimestamp()
     };
+    if (agent) quick.agent = agent;
     this.store.dispatch(new NewMessage(quick));
     return id;
   }
-  addTemplateMessage(message){
+  addTemplateMessage(message, agent?){
     const id = new Date().getTime().toString();
-    const template = {
+    const template: any = {
       id: id,
       type: 'template',
       template: message.template.type,
       elements: message.template.elements,
-      buttons: message.template.buttons
+      buttons: message.template.buttons,
+      time: this.getChatTimestamp()
     };
+    if (agent) template.agent = agent;
     this.store.dispatch(new NewMessage(template));
     return id;
   }

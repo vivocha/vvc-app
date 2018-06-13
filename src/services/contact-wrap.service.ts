@@ -122,7 +122,14 @@ export class VvcContactWrap {
       switch (msg.type) {
         case 'text':
           const agent = (msg.agent) ? this.agent : false;
-          this.messageService.addChatMessage(msg, agent, this.visitorNick);
+          if (msg.quick_replies){
+            this.messageService.addQuickRepliesMessage(msg, this.agent);
+          }
+          else if (msg.template) {
+            this.messageService.addTemplateMessage(msg, this.agent);
+          } else {
+            this.messageService.addChatMessage(msg, agent, this.visitorNick);
+          }
           break;
         case 'attachment':
           const meta = msg.meta;
@@ -372,10 +379,10 @@ export class VvcContactWrap {
       this.zone.run( () => {
         if (msg.type != 'text') return;
         if (msg.quick_replies){
-          this.messageService.addQuickRepliesMessage(msg);
+          this.messageService.addQuickRepliesMessage(msg, this.agent);
         }
         else if (msg.template) {
-          this.messageService.addTemplateMessage(msg);
+          this.messageService.addTemplateMessage(msg, this.agent);
         } else {
           this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
         }
