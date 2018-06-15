@@ -2,6 +2,7 @@
 
 # compiled output
 /dist/assets
+/dist/main.html
 /tmp
 /out-tsc
 
