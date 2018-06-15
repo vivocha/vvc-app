@@ -38,9 +38,31 @@
 </head>
 <body>
   <vvc-root></vvc-root>
-  <script type="text/javascript" src="assets/inline.bundle.js"></script>
-  <script type="text/javascript" src="assets/polyfills.bundle.js"></script>
-  <!-- script type="text/javascript" src="noassets/vendor.bundle.js"></script -->
-  <script type="text/javascript" src="assets/main.bundle.js"></script>
+  <script type="text/javascript">
+    (function(){
+      function push(src) {
+        var t = document.createElement("script");
+        t.type="text/javascript";
+        t.src=src;
+        document.body.appendChild(t);
+      }
+      var s = [
+        "assets/runtime.js",
+        "assets/polyfills.js",
+        //"noassets/vendor.js",
+        "assets/main.js"
+      ];
+      var s_ie = [
+        "assets/ie/runtime.js",
+        "assets/ie/polyfills.js",
+        //"noassets/ie/vendor.js",
+        "assets/ie/main.js"
+      ];
+      var scripts = !(!!window.MSInputMethodContext && !!document.documentMode) ? s : s_ie;
+      for (var i = 0; i < scripts.length; i++) {
+        push(scripts[i]);
+      }
+    })();
+  </script>
 </body>
 </html>
