@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <title>Vivocha Interaction App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link href="main.css" rel="stylesheet">
+  <script type="text/javascript">
+    (function() {
+      var busId, acct, host;
+      try {
+        if (location.hash.indexOf(';') !== -1) {
+          var hashParts = location.hash.substr(2).split(';');
+          busId = hashParts[1];
+          acct = hashParts[1];
+          host = hashParts[2];
+        }
+        if (busId && acct && host) {
+          var url = "https://"+host+"/a/"+acct+"/js/vivocha_interaction.js";
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.charset = 'utf-8';
+          script.async = true;
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        } else {
+          throw new Error('cannot find vivocha configuration ' + busId + '-' + acct + '-' + host);
+        }
+      } catch(e) {
+        console.error(e);
+      }
+    }());
+  </script>
+  <script type="text/javascript">
+    var beepmp3 = "assets/static/beep.mp3";
+  </script>
+</head>
+<body>
+  <vvc-root></vvc-root>
+  <script type="text/javascript">
+    (function(){
+      function push(src) {
+        var t = document.createElement("script");
+        t.type="text/javascript";
+        t.src=src;
+        document.body.appendChild(t);
+      }
+      var s = [
+        "assets/runtime.js",
+        "assets/polyfills.js",
+        "assets/main.js"
+      ];
+      var s_ie = [
+        "assets/ie/runtime.js",
+        "assets/ie/polyfills.js",
+        "assets/ie/main.js"
+      ];
+      var scripts = !(!!window.MSInputMethodContext && !!document.documentMode) ? s : s_ie;
+      for (var i = 0; i < scripts.length; i++) {
+        push(scripts[i]);
+      }
+    })();
+  </script>
+</body>
+</html>
