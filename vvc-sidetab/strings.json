@@ -208,5 +208,45 @@
         "state": "final"
       }
     }
+  },
+  {
+    "id": "STRINGS.WEBLEAD",
+    "values": {
+      "en": {
+        "value": "EMAIL",
+        "state": "new"
+      },
+      "it": {
+        "value": "EMAIL",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN",
+    "values": {
+      "en": {
+        "value": "PHONE",
+        "state": "new"
+      },
+      "it": {
+        "value": "PHONE",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.RECONTACT",
+    "values": {
+      "en": {
+        "value": "or we'll contact you",
+        "state": "new"
+      },
+      "it": {
+        "value": "oppure ti contattiamo noi",
+        "state": "new"
+      }
+    }
   }
+
 ]

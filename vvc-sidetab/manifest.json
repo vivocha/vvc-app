@@ -32,5 +32,81 @@
       ],
       "type": "enum"
     }
-  ]
+  ],
+  "stringIds": [
+    "NAME",
+    "DESCRIPTION",
+    "VARIABLES.PRIMARY",
+    "VARIABLES.VERTICAL",
+    "VARIABLES.HORIZONTAL",
+    "STRINGS.NEED_HELP",
+    "STRINGS.HOW_CAN_HELP",
+    "STRINGS.CHAT",
+    "STRINGS.VOICE",
+    "STRINGS.VIDEO",
+    "STRINGS.WEBLEAD",
+    "STRINGS.CBN",
+    "STRINGS.RECONTACT"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "b39e3dd63a89d2e943f88f94c57be7ac0371cfc9206a998a4d5f15391a4c37b2",
+      "id": "marchitos/widgets/vvc-sidetab/main.html/b39e3dd",
+      "size": 2300,
+      "type": "text/html"
+    },
+    {
+      "path": "main.scss",
+      "hash": "5068b8254341bbcd1c072110f187fd08af14a44581a5d6462f5b94526a79baf6",
+      "id": "marchitos/widgets/vvc-sidetab/main.scss/5068b82",
+      "size": 7334,
+      "type": "text/x-scss"
+    },
+    {
+      "path": "thumbnail.png",
+      "hash": "20383aa608510f3792d179fcba569ecba1896def666da300b7f6d5c81d4117aa",
+      "id": "marchitos/widgets/vvc-sidetab/thumbnail.png/20383aa",
+      "size": 2084,
+      "type": "image/png"
+    },
+    {
+      "path": "assets/fonts/vvc-widget-ico.eot",
+      "hash": "68624a21886e6f0238fe30370eb197988aaa6076d5d0f723443959d980985e93",
+      "id": "marchitos/widgets/vvc-sidetab/assets/fonts/vvc-widget-ico.eot/68624a2",
+      "size": 8376,
+      "type": "application/vnd.ms-fontobject"
+    },
+    {
+      "path": "assets/fonts/vvc-widget-ico.svg",
+      "hash": "6d6fa4b5730e0e8e89efe196f34d51c281d5a2e63b1f754fccfdd696da218149",
+      "id": "marchitos/widgets/vvc-sidetab/assets/fonts/vvc-widget-ico.svg/6d6fa4b",
+      "size": 27309,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "assets/fonts/vvc-widget-ico.ttf",
+      "hash": "6c8963542117727545e7c540f75c706886e63ecba4a92a36a481525a087d377b",
+      "id": "marchitos/widgets/vvc-sidetab/assets/fonts/vvc-widget-ico.ttf/6c89635",
+      "size": 8184,
+      "type": "font/ttf"
+    },
+    {
+      "path": "assets/fonts/vvc-widget-ico.woff",
+      "hash": "2867f349d5416f60955f232f7c093fac65705be67c9b7ae702853d0a2a4b967b",
+      "id": "marchitos/widgets/vvc-sidetab/assets/fonts/vvc-widget-ico.woff/2867f34",
+      "size": 8260,
+      "type": "application/font-woff"
+    },
+    {
+      "path": "assets/vivicon.scss",
+      "hash": "8a8735e6aac831f12d3524049c7e270a1ed236bf45e2ace48d2085804a29c988",
+      "id": "marchitos/widgets/vvc-sidetab/assets/vivicon.scss/8a8735e",
+      "size": 1936,
+      "type": "text/x-scss"
+    }
+  ],
+  "htmlId": "marchitos/widgets/vvc-sidetab/main.html/b39e3dd",
+  "scssId": "marchitos/widgets/vvc-sidetab/main.scss/5068b82",
+  "thumbnailId": "marchitos/widgets/vvc-sidetab/thumbnail.png/20383aa"
 }

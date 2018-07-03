@@ -10,7 +10,8 @@
     }
   }
 </script>
-<div class="vvc-sidetab vvc-container vvc-label-revealed vvc-widget-__ENGAGEMENT_ID__">
+<div class="vvc-media-info">
+  <div class="vvc-sidetab vvc-container vvc-label-revealed vvc-widget-__ENGAGEMENT_ID__">
   <div class="vvc-label" onclick="vvcSideTabToggle(this)">
     <i class="vvc-headphones"></i> __STRINGS.NEED_HELP__
   </div>
@@ -30,7 +31,23 @@
           <div class="vvc-media-rounded"><i class="vvc-video"></i></div>
           <div class="vvc-media-label">__STRINGS.VIDEO__</div>
         </div>
+        <div class="vvc-media-weblead vvc-media-item" onclick="__WIDGET__.engage('weblead')">
+          <div class="vvc-media-rounded"><i class="vvc-web-lead"></i></div>
+          <div class="vvc-media-label">__STRINGS.WEBLEAD__</div>
+        </div>
+        <!--
+        <div class="vvc-media-cbn vvc-media-item" onclick="__WIDGET__.engage('cbn')">
+          <div class="vvc-media-rounded"><i class="vvc-call-me-back"></i></div>
+          <div class="vvc-media-label">__STRINGS.CBN__</div>
+        </div>
+        -->
+      </div>
+      <div class="vvc-inner-links">
+        <div class="weblead-link">
+          <a href="#" onclick="__WIDGET__.engage('weblead')">__STRINGS.RECONTACT__</a>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
