@@ -51,17 +51,17 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "b39e3dd63a89d2e943f88f94c57be7ac0371cfc9206a998a4d5f15391a4c37b2",
-      "id": "marchitos/widgets/vvc-sidetab/main.html/b39e3dd",
-      "size": 2300,
+      "hash": "852f77dd8feed4c56ced5fd41e0f4bd73b28c33a17973f50c9eb4628775c74bf",
+      "id": "marchitos/widgets/vvc-sidetab/main.html/852f77d",
+      "size": 2291,
       "type": "text/html"
     },
     {
       "path": "main.scss",
-      "hash": "5068b8254341bbcd1c072110f187fd08af14a44581a5d6462f5b94526a79baf6",
-      "id": "marchitos/widgets/vvc-sidetab/main.scss/5068b82",
-      "size": 7334,
-      "type": "text/x-scss"
+      "hash": "5a51d4260d6f20be1fe4f11b6ff9a08aeae12b7ae2e7c0d27b200360d81c7232",
+      "id": "marchitos/widgets/vvc-sidetab/main.scss/5a51d42",
+      "type": "text/x-scss",
+      "size": 7379
     },
     {
       "path": "thumbnail.png",
@@ -106,7 +106,7 @@
       "type": "text/x-scss"
     }
   ],
-  "htmlId": "marchitos/widgets/vvc-sidetab/main.html/b39e3dd",
-  "scssId": "marchitos/widgets/vvc-sidetab/main.scss/5068b82",
+  "htmlId": "marchitos/widgets/vvc-sidetab/main.html/852f77d",
+  "scssId": "marchitos/widgets/vvc-sidetab/main.scss/5a51d42",
   "thumbnailId": "marchitos/widgets/vvc-sidetab/thumbnail.png/20383aa"
 }

@@ -195,7 +195,7 @@ $darkBackgroundBorder: #D8D8D8;
         font-size: 13px;
         text-align: center;
         padding-top: 10px;
-        a { color: #262626 }
+        a { color: #262626; text-decoration: underline; cursor: pointer }
       }
     }
   }
