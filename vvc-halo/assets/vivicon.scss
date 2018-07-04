@@ -1,13 +1,3 @@
-@font-face {
-  font-family: 'vvc-widget-ico';
-  src:  url('fonts/vvc-widget-ico.eot?4jwt95');
-  src:  url('fonts/vvc-widget-ico.eot?4jwt95#iefix') format('embedded-opentype'),
-    url('fonts/vvc-widget-ico.ttf?4jwt95') format('truetype'),
-    url('fonts/vvc-widget-ico.woff?4jwt95') format('woff'),
-    url('fonts/vvc-widget-ico.svg?4jwt95#vvc-widget-ico') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -24,29 +14,11 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.vvc-file:before {
-  content: "\e920";
+.vvc-call-me-back:before {
+  content: "\e922";
 }
-.vvc-see:before {
-  content: "\e921";
-}
-.vvc-download:before {
-  content: "\e91f";
-}
-.vvc-not-send:before {
-  content: "\e91e";
-}
-.vvc-writing:before {
-  content: "\e91d";
-}
-.vvc-star-empty:before {
-  content: "\e91b";
-}
-.vvc-star:before {
-  content: "\e91c";
-}
-.vvc-calendar:before {
-  content: "\e91a";
+.vvc-web-lead:before {
+  content: "\e923";
 }
 .vvc-arrow-left:before {
   content: "\e900";
@@ -126,4 +98,27 @@ i {
 .vvc-video-off:before {
   content: "\e919";
 }
-
+.vvc-calendar:before {
+  content: "\e91a";
+}
+.vvc-star-empty:before {
+  content: "\e91b";
+}
+.vvc-star:before {
+  content: "\e91c";
+}
+.vvc-writing:before {
+  content: "\e91d";
+}
+.vvc-not-send:before {
+  content: "\e91e";
+}
+.vvc-download:before {
+  content: "\e91f";
+}
+.vvc-file:before {
+  content: "\e920";
+}
+.vvc-see:before {
+  content: "\e921";
+}
