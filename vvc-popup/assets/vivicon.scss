@@ -1,3 +1,4 @@
+
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'vvc-widget-ico' !important;
@@ -13,29 +14,11 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.vvc-file:before {
-  content: "\e920";
+.vvc-call-me-back:before {
+  content: "\e922";
 }
-.vvc-see:before {
-  content: "\e921";
-}
-.vvc-download:before {
-  content: "\e91f";
-}
-.vvc-not-send:before {
-  content: "\e91e";
-}
-.vvc-writing:before {
-  content: "\e91d";
-}
-.vvc-star-empty:before {
-  content: "\e91b";
-}
-.vvc-star:before {
-  content: "\e91c";
-}
-.vvc-calendar:before {
-  content: "\e91a";
+.vvc-web-lead:before {
+  content: "\e923";
 }
 .vvc-arrow-left:before {
   content: "\e900";
@@ -115,4 +98,27 @@ i {
 .vvc-video-off:before {
   content: "\e919";
 }
-
+.vvc-calendar:before {
+  content: "\e91a";
+}
+.vvc-star-empty:before {
+  content: "\e91b";
+}
+.vvc-star:before {
+  content: "\e91c";
+}
+.vvc-writing:before {
+  content: "\e91d";
+}
+.vvc-not-send:before {
+  content: "\e91e";
+}
+.vvc-download:before {
+  content: "\e91f";
+}
+.vvc-file:before {
+  content: "\e920";
+}
+.vvc-see:before {
+  content: "\e921";
+}

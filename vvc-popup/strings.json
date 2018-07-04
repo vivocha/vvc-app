@@ -273,6 +273,19 @@
     }
   },
   {
+    "id": "STRINGS.WEBLEAD",
+    "values": {
+      "en": {
+        "value": "EMAIL",
+        "state": "new"
+      },
+      "it": {
+        "value": "EMAIL",
+        "state": "new"
+      }
+    }
+  },
+  {
     "values": {
       "en": {
         "value": "Or we'll contact you!",

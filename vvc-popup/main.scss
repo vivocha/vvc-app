@@ -189,6 +189,14 @@ $darkBackgroundBorder: #D8D8D8;
           }
         }
       }
+
+      .vvc-inner-links{
+        display: none;
+        font-size: 13px;
+        text-align: center;
+        padding-top: 10px;
+        a { color: #262626 }
+      }
     }
   }
 
@@ -240,6 +248,7 @@ $darkBackgroundBorder: #D8D8D8;
           display: inline-block;
           border-radius: 8px 0 0 8px
         }
+
       }
     }
   }
@@ -256,4 +265,21 @@ $darkBackgroundBorder: #D8D8D8;
   animation-duration: .5s;
 
   @include popup($theme, $primaryColor, $artBoardUrl, $useCompanyLogo, $companyLogoUrl);
+}
+
+.vvc-media-chat.vvc-media-voice,
+.vvc-media-chat.vvc-media-video {
+  &.vvc-media-weblead {
+    .vvc-media {
+      .vvc-media-weblead {
+        display: none !important;
+      }
+    }
+    .vvc-popup-message2{
+      display: none !important;
+    }
+    .vvc-inner-links {
+      display: block;
+    }
+  }
 }
