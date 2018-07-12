@@ -2,12 +2,27 @@
   "name": "@vivocha/client-interaction-core",
   "version": "6.2.2",
   "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "clean": "[ ! -d ./dist ] || rm -rf dist/*",
+    "clean:all": "npm run clean && rm -rf node_modules",
+    "prebuild": "npm run clean",
+    "build": "ng-packagr -p ng-package.json",
+    "precommit": "npm run build",
+    "version": "jsonref -f ./package.json /version",
+    "fixdeps": "[ ! -f ./dist/package.json ] || ./fixdeps.js",
+    "build:all": "npm run clean:all && npm install && npm run build && npm run fixdeps"
+  },
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/vivocha/client-interaction-core"
   },
   "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
   "homepage": "https://bitbucket.org/vivocha/client-interaction-core#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "peerDependencies": {
     "@angular/common": "^6.0.9",
     "@angular/core": "^6.0.9",
@@ -23,7 +38,8 @@
     "@angular/cli": "^6.0.8",
     "@angular/compiler": "^6.0.9",
     "@angular/compiler-cli": "^6.0.9",
-    "ng-packagr": "^3.0.3"
+    "ng-packagr": "^3.0.3",
+    "typescript": "~2.7.2"
   },
   "dependencies": {
     "@angular/common": "^6.0.9",
