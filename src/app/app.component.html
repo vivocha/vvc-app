@@ -7,7 +7,7 @@
     </div>
     <div id="vvc-close-panel" *ngIf="appState.showCloseModal && !appState.isClosed">
       <vvc-close-panel (cancel)="dismissCloseModal()"
-                       (confirm)="closeContact()"></vvc-close-panel>
+                       (confirm)="closeContact(appState)"></vvc-close-panel>
     </div>
     <vvc-full-screen-video id="vvc-fullscreen-media"
                            [context]="appState"
@@ -18,10 +18,11 @@
                            (hangUp)="hangUpCall()"
                            (normalScreen)="exitFromFullScreen()"></vvc-full-screen-video>
     <div id="vvc-normal-container">
+
       <vvc-top-bar [context]="appState"
                    (onMinimize)="minimizeWidget(true)"
                    (onMaximize)="setFullScreen()"
-                   (onClose)="showCloseModal($event)"
+                   (onClose)="closeContact(appState)"
                    (onSurvey)="showSurvey()"
                    (onRemove)="closeApp()"
                    (onHideChat)="hideChat()"
@@ -32,15 +33,10 @@
                            [context]="appState"
                            *ngIf="appState.showDataCollectionPanel"
                            (submit)="submitDataCollection($event)"></vvc-data-collection>
-      <vvc-survey id="vvc-survey"
-                     [context]="appState"
-                     *ngIf="appState.showSurveyPanel"
-                     (submit)="submitSurvey($event)"></vvc-survey>
 
       <vvc-queue id="vvc-queue"
                  *ngIf="appState.isInQueue"
                  [context]="appState"></vvc-queue>
-
 
       <vvc-media id="vvc-media"
                  *ngIf="appState.isMediaVisible && !appState.isFullScreen"
@@ -71,6 +67,8 @@
         <div class="vvc-messages">
           <div *ngFor="let m of appState.messages">
             <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
+            <vvc-link-message [message]="m" *ngIf="m.type === 'link'"
+                              (linkClicked)="openAttachment($event, true)"></vvc-link-message>
             <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"
                               (showDoc)="openAttachment($event)"></vvc-chat-message>
             <vvc-request-message [message]="m" *ngIf="m.type === 'request'"
@@ -82,10 +80,11 @@
                                   (action)="processAction($event)"></vvc-template-generic>
             <vvc-template-list [message]="m" *ngIf="m.type === 'template' && m.template === 'list'"
                                   (action)="processAction($event)"></vvc-template-list>
+
           </div>
         </div>
 
-        <div class="vvc-chat-box-area" *ngIf="appState.isSendAreaVisible && !appState.isClosed">
+        <div class="vvc-chat-box-area" *ngIf="appState.isChatBoxVisible">
           <vvc-chat-area #chat
                          [readonly]="appState.isSendAreaDisabled"
                          [context]="appState"

@@ -172,8 +172,10 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   flex: none;
   background: $background;
   color: $titleColor;
-  padding: 8px 10px 8px 20px;
+  /*padding: 8px 10px 8px 20px;*/
+  padding: 12px 16px 12px 12px;
   display: flex;
+  height: 64px;
 
   #vvc-top-avatar {
     @if ($showTopAvatar==false){
@@ -181,8 +183,8 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
     flex: none;
     img {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       margin-right: 10px;
     }
@@ -193,12 +195,14 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       font-size: $titleSize;
       color: $titleColor;
       font-weight: 300;
+      line-height: 24px;
 
     }
     #vvc-top-subtitle{
       font-size: $subtitleSize;
       color: $subtitleColor;
       font-weight: 300;
+      line-height: 16px;
     }
   }
   .vvc-top-controls {
@@ -644,6 +648,18 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     color: $color;
     font-size: $fontSize;
     font-weight: 300;
+    overflow: hidden;
+    &.message-link{
+      cursor: pointer;
+      b {
+        font-size: 13px;
+      }
+      &:hover{
+        b {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 @mixin chat-message($fontSize: 16px, $timeSize: 12px, $timeColor: #727273){
@@ -651,10 +667,12 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     padding: 1px 4px;
     flex: none;
     display: flex;
+    overflow: hidden;
     .bubble{
       white-space: pre-line;
       font-size: $fontSize;
       font-weight: 300;
+      overflow: hidden;
       &.attachment{
         white-space: normal;
       }
@@ -690,6 +708,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         font-size: $timeSize;
         font-weight: 300;
         color: $timeColor;
+        padding-top: 3px;
       }
     }
     .message-avatar{
@@ -700,7 +719,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         height: 30px;
         border-radius: 50%;
         position: relative;
-        top: -2px;
+        top: 8px;
       }
       .message-visitor{
         background-image: url($visitorAvatarDefault);
@@ -746,7 +765,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
             position: absolute;
             width: 0;
             right:-6px;
-            top: 6px;
+            top: 16px;
             border-left: 6px solid $background;
             border-top: 6px solid transparent;
             border-bottom: 6px solid transparent;
@@ -759,7 +778,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 
             content: "";
             position: absolute;
-            top: 4px;
+            top: 15px;
             right: -8px;
             width: 0;
             border-left: 8px solid $borderColor;
@@ -776,7 +795,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 }
 @mixin chat-agent-bubble($background: $color1, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
-  padding: 6px;
+  padding: 13px 12px;
   margin-left: 8px;
   margin-right: 50px;
   border: 1px solid $borderColor;
@@ -793,7 +812,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       position: absolute;
       width: 0;
       left:-6px;
-      top: 6px;
+      top: 16px;
       border-right: 6px solid $borderColor;
       border-top: 6px solid transparent;
       border-bottom: 6px solid transparent;
@@ -805,7 +824,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       }
       content: "";
       position: absolute;
-      top: 4px;
+      top: 15px;
       left: -8px;
       width: 0;
       border-right: 8px solid $background;
@@ -1365,6 +1384,7 @@ body, input, textarea{ font-family: $appFontFamily; }
       @include top-bar();
     }
     #vvc-survey,
+    #vvc-recontact,
     #vvc-data-collection {
       flex: auto;
       @include data-collection();
@@ -1607,9 +1627,4 @@ body, input, textarea{ font-family: $appFontFamily; }
     @include chat-box-area(#FFFFFF,#CCCCCC, #000000, 12px, $color2);
   }
 }
-.testclass{
-  background: $color1;
-}**/
-/*
-showAvatar: $showAvatar;
-*/
+**/

@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {VvcInteractionService, UiState} from '@vivocha/client-interaction-core';
-import {ChatAreaComponent, TopBarComponent} from '@vivocha/client-interaction-layout';
-import {Observable} from 'rxjs/Observable';
+import {VvcInteractionService} from '@vivocha/client-interaction-core';
+import {ChatAreaComponent} from '@vivocha/client-interaction-layout';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'vvc-root',
@@ -9,17 +9,20 @@ import {Observable} from 'rxjs/Observable';
 })
 export class AppComponent implements OnInit {
 
-  @ViewChild(TopBarComponent) topBar: TopBarComponent;
   @ViewChild(ChatAreaComponent) chat: ChatAreaComponent;
 
   public messages: Array<any>;
 
-  public appState$:Observable<UiState>;
+  public appState$:Observable<any>;
+
+  public closeModalVisible = false;
+  public surveyVisible = false;
 
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init();
+    //this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
   }
   acceptAgentRequest(requestId){
     this.interactionService.acceptAgentRequest(requestId);
@@ -42,13 +45,43 @@ export class AppComponent implements OnInit {
   closeApp(){
     this.interactionService.closeApp();
   }
-  closeContact(){
-    this.interactionService.closeContact();
+  closeContact(context){
+    const step = this.getCloseStep(context);
+    console.log('CLOSE CONTACT', step, context.variables, context);
+
+    switch(step){
+      case 'remove-app':
+        this.closeApp();
+        break;
+      case 'show-survey':
+        this.surveyVisible = true;
+        this.interactionService.showSurvey();
+        break;
+      case 'close-and-survey':
+        this.surveyVisible = true;
+        this.interactionService.closeContact();
+        this.interactionService.showSurvey();
+        break;
+      case 'show-close-modal':
+        this.closeModalVisible = true;
+        this.interactionService.showCloseModal();
+        break;
+      case 'close-and-stay':
+        this.dismissCloseModal();
+        this.closeModalVisible = true;
+        this.interactionService.closeContact();
+        break;
+      case 'close-and-remove':
+        this.interactionService.closeContact();
+        this.closeApp();
+        break;
+    }
   }
   closeUploadPanel(){
     this.interactionService.closeUploadPanel();
   }
   dismissCloseModal(){
+    this.closeModalVisible = false;
     this.interactionService.dismissCloseModal()
   }
   doUpload(upload){
@@ -60,8 +93,48 @@ export class AppComponent implements OnInit {
   expandWidget(isFullScreen){
     this.interactionService.minimize(false, isFullScreen);
   }
+  getCloseStep(context){
+    if (!context.contactStarted) return 'remove-app';
+    if (context.isClosed){
+      if (context.hasSurvey && !context.canRemoveApp){
+        if (this.surveyVisible) return 'remove-app';
+        else return 'show-survey';
+      }
+      else return 'remove-app';
+    }
+    else {
+      if (context.variables.askCloseConfirm){
+        if (this.closeModalVisible){
+          if (context.variables.stayInAppAfterClose) return 'close-and-stay';
+          else {
+            if (context.hasSurvey){
+              if (this.surveyVisible) return 'remove-app';
+              else return 'close-and-survey';
+            }
+            else return 'close-and-remove';
+          }
+        }
+        else {
+          return 'show-close-modal';
+        }
+      }
+      else {
+        if (context.variables.stayInAppAfterClose) return 'close-and-stay';
+        else {
+          if (context.hasSurvey){
+            if (this.surveyVisible) return 'remove-app';
+            else return 'close-and-survey';
+          }
+          else return 'close-and-remove';
+        }
+      }
+    }
+  }
   hangUpCall(){
     this.interactionService.hangUp();
+  }
+  hasToStayInApp(context){
+    return (context.isClosed && context.variables.stayInAppAfterClose);
   }
   hideChat(){
     this.interactionService.hideChat();
@@ -75,8 +148,8 @@ export class AppComponent implements OnInit {
   muteToggle(muted){
     this.interactionService.muteToggle(muted);
   }
-  openAttachment(url){
-    this.interactionService.openAttachment(url);
+  openAttachment(url: string, click?: boolean){
+    this.interactionService.openAttachment(url, click);
   }
   processAction(action){
     this.interactionService.sendPostBack(action);
@@ -100,6 +173,9 @@ export class AppComponent implements OnInit {
   setFullScreen(){
     this.interactionService.setFullScreen();
   }
+  showCloseDialog(context){
+    return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);
+  }
   showCloseModal(closeOpt){
     if (closeOpt.forceClose) {
       this.interactionService.closeContact();
@@ -120,9 +196,13 @@ export class AppComponent implements OnInit {
   submitDataCollection(dc){
     this.interactionService.submitDataCollection(dc);
   }
+  /*
+  submitRecontact(recontact){
+    this.interactionService.submitRecontactData(recontact);
+  }
   submitSurvey(survey){
     this.interactionService.submitSurvey(survey);
-  }
+  }*/
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
   }
