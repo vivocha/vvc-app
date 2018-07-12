@@ -2,12 +2,11 @@ import {Injectable, NgZone} from '@angular/core';
 import {WindowRef} from './window.service';
 import {VvcUiService} from './ui.service';
 import {Store} from '@ngrx/store';
-//import {InteractionContext} from '@vivocha/client-visitor-core/dist/widget';
 import {TranslateService} from '@ngx-translate/core';
 
 import {AppState} from '../store/reducers/main.reducer';
 import {getContextState} from '../store/reducers/main.reducer';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ContextState} from '../store/models.interface';
 
 @Injectable()
@@ -32,17 +31,20 @@ export class VvcContextService {
     this.parseIframeUrl();
     this.checkForVivocha();
   }
-  checkForVivocha(){
+  async checkForVivocha(){
     if (this.window.vivocha && this.window.vivocha.ready) {
-      this.window.vivocha.ready(this.busId).then(() => {
-        this.window.vivocha.pageRequest('getContext').then((context: any) => {
-          this.zone.run( () => {
-            this.vivocha = this.window.vivocha;
-            this.isMobile = this.window.vivocha.isMobile();
-            this.context = context;
-            this.dispatchContext(context);
-          });
-        });
+      await this.window.vivocha.ready(this.busId);
+      const context = await this.window.vivocha.pageRequest('getContext');
+      const extraDataCollection = await this.window.vivocha.pageRequest('getInteractionModeDataCollectionId', context.mediaPreset);
+      if (extraDataCollection){
+        if (!context.dataCollectionIds) context.dataCollectionIds = [];
+        context.dataCollectionIds.push(extraDataCollection);
+      }
+      this.zone.run( () => {
+        this.vivocha = this.window.vivocha;
+        this.isMobile = this.window.vivocha.isMobile();
+        this.context = context;
+        this.dispatchContext(context);
       });
     } else {
       setTimeout( () => this.checkForVivocha(), 200);
@@ -59,7 +61,8 @@ export class VvcContextService {
             busId: this.busId,
             acct: this.acct,
             world: this.world,
-            variables: context.campaign.channels.web.interaction.variables,
+            //variables: context.campaign.channels.web.interaction.variables,
+            variables: this.window.VVC_VAR_ASSETS || {},
             ...context
           });
       });

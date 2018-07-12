@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 
 import {AppState} from '../store/reducers/main.reducer';
 import {NewMessage,RemoveMessage,UpdateMessage} from '../store/actions/messages.actions';
-import {SystemMessage, ChatMessage, RequestMessage} from '../store/models.interface';
+import {SystemMessage, ChatMessage, RequestMessage, LinkMessage} from '../store/models.interface';
 
 @Injectable()
 export class VvcMessageService {
@@ -38,6 +38,16 @@ export class VvcMessageService {
     this.store.dispatch(new NewMessage(m));
     return id;
   }
+  addDialogMessage(message, agent?){
+    if (message.quick_replies){
+      this.addQuickRepliesMessage(message, agent);
+    }
+    else if (message.template) {
+      this.addTemplateMessage(message, agent);
+    } else {
+      this.addChatMessage(message, agent);
+    }
+  }
   addLocalMessage(text){
     const id = new Date().getTime().toString();
     const msg: ChatMessage = {
@@ -45,6 +55,20 @@ export class VvcMessageService {
       text:text,
       type: 'chat',
       isAgent: false,
+      time: this.getChatTimestamp()
+    };
+    this.store.dispatch(new NewMessage(msg));
+    return id;
+  }
+  addLinkMessage(url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean){
+    const id = new Date().getTime().toString();
+    const msg: LinkMessage = {
+      id: id,
+      text:desc || url,
+      url: url,
+      from_id: from_id,
+      from_nick: from_nick,
+      type: 'link',
       time: this.getChatTimestamp()
     };
     this.store.dispatch(new NewMessage(msg));

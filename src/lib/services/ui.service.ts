@@ -38,9 +38,10 @@ import {
   WidgetShowChatOnFullScreen,
   WidgetShowQueuePanel,
   WidgetSetVideoTransit,
-  WidgetSetError
+  WidgetSetError,
+  WidgetSetDialogUi, WidgetWebleadSent, WidgetUiReady, WidgetHideQueueForChat
 } from '../store/actions/widget.actions';
-import {DataCollectionSelected, DataCollectionCompleted, DataCollectionLoaded} from '../store/actions/dataCollection.actions';
+import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
 
 @Injectable()
 export class VvcUiService {
@@ -53,6 +54,9 @@ export class VvcUiService {
   }
   hideChat(){
     this.store.dispatch(new WidgetSetMinimizedMedia(false));
+  }
+  hideQueueForChat(){
+    this.store.dispatch(new WidgetHideQueueForChat());
   }
   initializeChat(media){
     console.log('initializing chat', media);
@@ -81,7 +85,7 @@ export class VvcUiService {
     }));
   }
   loadDataCollections(dcList){
-    this.store.dispatch(new DataCollectionLoaded(dcList));
+    //this.store.dispatch(new DataCollectionLoaded(dcList));
   }
   newMessageReceived(){
     this.store.dispatch(new WidgetNewMessage());
@@ -115,8 +119,12 @@ export class VvcUiService {
   setCreationFailed(){
     this.store.dispatch(new WidgetContactCreationFailed());
   }
-  setDataCollectionCompleted(opt){
-    this.store.dispatch(new DataCollectionCompleted(opt))
+  setDataCollectionCompleted(opt, dcType: string){
+    //this.store.dispatch(new DataCollectionCompleted(opt))
+
+  }
+  setDialogUi(){
+    this.store.dispatch(new WidgetSetDialogUi());
   }
   setDissuasion(){
     this.store.dispatch(new WidgetSetError());
@@ -195,6 +203,9 @@ export class VvcUiService {
   setSurveyPanel(){
     this.store.dispatch(new WidgetSetTopBar({title: 'STRINGS.SURVEY.TITLE', subtitle: 'STRINGS.SURVEY.SUBTITLE'}));
   }
+  setUiReady(){
+    this.store.dispatch(new WidgetUiReady());
+  }
   setUploadPanel(show: boolean){
     this.store.dispatch(new WidgetShowUploadPanel(show));
   }
@@ -203,6 +214,9 @@ export class VvcUiService {
   }
   setUploaded(){
     this.store.dispatch(new WidgetUploadCompleted())
+  }
+  setWebleadSent(){
+    this.store.dispatch(new WidgetWebleadSent());
   }
   showQueuePanel(){
     this.store.dispatch(new WidgetShowQueuePanel());

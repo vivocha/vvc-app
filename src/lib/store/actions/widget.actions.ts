@@ -4,6 +4,7 @@ import {ProtocolState, AgentState, TopBarState} from '../models.interface';
 export const WIDGET_CLOSED_BY_AGENT       = '[Widget] Closed by Agent';
 export const WIDGET_CLOSED_BY_VISITOR     = '[Widget] Closed by Visitor';
 export const WIDGET_CONTACT_FAILED        = '[Widget] Contact Failed';
+export const WIDGET_HIDE_QUEUE_FOR_CHAT   = '[Widget] Hide Queue For Chat';
 export const WIDGET_INCOMING_MEDIA        = '[Widget] Incoming Media';
 export const WIDGET_INIT_CHAT             = '[Widget] Init Chat';
 export const WIDGET_INIT_CONTEXT          = '[Widget] Init Context';
@@ -23,6 +24,7 @@ export const WIDGET_OFFER_ACCEPTED        = '[Widget] Offer Accepted';
 export const WIDGET_OFFER_REJECTED        = '[Widget] Offer Rejected';
 export const WIDGET_SET_AGENT             = '[Widget] Set Agent';
 export const WIDGET_SET_AUTO_CHAT         = '[Widget] Set Auto Chat';
+export const WIDGET_SET_DIALOG_UI         = '[Widget] Set Dialog UI';
 export const WIDGET_SET_ERROR             = '[Widget] Set Error';
 export const WIDGET_SET_FULLSCREEN        = '[Widget] Set Fullscreen';
 export const WIDGET_SET_MINIMIZED         = '[Widget] Set Minimized';
@@ -34,7 +36,9 @@ export const WIDGET_SHOW_CLOSE_PANEL      = '[Widget] Show Close Panel';
 export const WIDGET_SHOW_QUEUE_PANEL      = '[Widget] Show Queue Panel';
 export const WIDGET_SHOW_UPLOAD_PANEL     = '[Widget] Show Upload Panel';
 export const WIDGET_TOGGLE_EMOJI          = '[Widget] Toggle Emoji Panel';
+export const WIDGET_UI_READY              = '[Widget] Ui Ready';
 export const WIDGET_UPLOAD_COMPLETED      = '[Widget] Upload Completed';
+export const WIDGET_WEBLEAD_SENT          = '[Widget] Weblead Sent';
 
 
 export class WidgetClosedByAgent implements Action {
@@ -45,6 +49,9 @@ export class WidgetClosedByVisitor implements Action {
 }
 export class WidgetContactCreationFailed implements Action {
   readonly type = WIDGET_CONTACT_FAILED;
+}
+export class WidgetHideQueueForChat implements Action {
+  readonly type = WIDGET_HIDE_QUEUE_FOR_CHAT;
 }
 export class WidgetIncomingMedia implements Action {
   readonly type = WIDGET_INCOMING_MEDIA;
@@ -115,6 +122,9 @@ export class WidgetSetAgent implements Action {
 export class WidgetSetAutoChat implements Action {
   readonly type = WIDGET_SET_AUTO_CHAT;
 }
+export class WidgetSetDialogUi implements Action {
+  readonly type = WIDGET_SET_DIALOG_UI;
+}
 export class WidgetSetError implements Action {
   readonly type = WIDGET_SET_ERROR;
 }
@@ -156,10 +166,17 @@ export class WidgetToggleEmoji implements Action {
 export class WidgetUploadCompleted implements Action {
   readonly type = WIDGET_UPLOAD_COMPLETED;
 }
+export class WidgetUiReady implements Action {
+  readonly type = WIDGET_UI_READY;
+}
+export class WidgetWebleadSent implements Action {
+  readonly type = WIDGET_WEBLEAD_SENT;
+}
 export type WidgetActions
   = WidgetClosedByAgent
   | WidgetClosedByVisitor
   | WidgetContactCreationFailed
+  | WidgetHideQueueForChat
   | WidgetIncomingMedia
   | WidgetInitChat
   | WidgetInitContext
@@ -179,6 +196,7 @@ export type WidgetActions
   | WidgetOfferRejected
   | WidgetSetAgent
   | WidgetSetAutoChat
+  | WidgetSetDialogUi
   | WidgetSetError
   | WidgetSetFullScreen
   | WidgetSetMinimized
@@ -191,4 +209,6 @@ export type WidgetActions
   | WidgetShowUploadPanel
   | WidgetToggleEmoji
   | WidgetUploadCompleted
+  | WidgetUiReady
+  | WidgetWebleadSent
   ;

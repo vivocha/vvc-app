@@ -1,3 +1,10 @@
+import {
+  AdvancedDataCollection,
+  ClientContactCreationOptions,
+  ContactDataCollectionForm,
+  DataCollection
+} from '@vivocha/public-entities/dist';
+
 export interface  ContextState {
   loaded: boolean;
   closedByAgent?: boolean;
@@ -13,6 +20,7 @@ export interface  ContextState {
   showQueuePanel?: boolean;
   hasError?: boolean;
   visitorNick?: string;
+  webleadSent?: boolean;
   [key:string]: any;
 }
 
@@ -56,15 +64,43 @@ export interface MediaState{
   muteInProgress?: boolean;
   media?: any;
 }
+
+/*
 export interface DataCollectionState{
   items?: any[],
   selectedItem?: any;
   completed?: boolean;
   creationOptions?: any;
 }
+export interface RecontactState{
+  item?: any;
+  type?: string;
+  completed?: boolean;
+  messages?: any[]
+}
 export interface SurveyState{
   item?: any;
   completed?: boolean;
+}
+*/
+export interface DataCollectionDictionary{
+  [key:string]: DataCollection;
+}
+export interface DataCollectionCompleted {
+  type: 'dc' | 'survey' | 'recontact';
+  contactCreateOptions?: ClientContactCreationOptions;
+  dataCollection?: ContactDataCollectionForm;
+  lastCompletedType?: 'form' | 'dialog';
+}
+export interface DataCollectionState {
+  items: DataCollectionDictionary;
+  dataCollectionIds?: string[];
+  surveyId?: string;
+  selectedId?: string;
+  selectedItem?: { dc: AdvancedDataCollection, type: string };
+  showDataCollectionPanel?: boolean;
+  lastCompleted?: DataCollectionCompleted;
+  completed: boolean;
 }
 export interface TopBarState{
   title?: string;
@@ -88,13 +124,19 @@ export interface BaseMessage {
   isLast?: string;
   isFirst?: string;
   replied?: boolean;
+  time?: string;
 }
 export interface RequestMessage extends BaseMessage{
   type: 'request'
 }
 export interface SystemMessage extends BaseMessage{
-  type: 'system',
-  context?: any,
+  type: 'system';
+  context?: any;
+}
+export interface LinkMessage extends BaseMessage {
+  url: string;
+  from_id: string;
+  from_nick: string;
 }
 export interface ChatMessage extends BaseMessage{
   type: 'chat';
@@ -122,6 +164,7 @@ export interface UiState {
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
   contactCreationFailed: boolean;
+  contactStarted: boolean;
   hasError: boolean;
   hasSurvey: boolean;
   isAutoChat?: boolean;
@@ -131,6 +174,7 @@ export interface UiState {
   isLoading: boolean;
   isInQueue: boolean;
   isChatVisible: boolean;
+  isChatBoxVisible: boolean;
   isClosed: boolean;
   isClosedByAgent: boolean;
   isClosedByVisitor: boolean;
@@ -149,14 +193,11 @@ export interface UiState {
   notRead: number;
   offeringMedia: string;
   selectedDataCollection: any;
-  selectedSurvey: any;
   showCloseModal: boolean;
   showChatOnFullScreen: boolean;
   showDataCollectionPanel: boolean;
   showEmojiPanel: boolean;
   showUploadPanel: boolean;
-  showSurveyPanel: boolean;
-  surveyCompleted: boolean;
   topBarTitle: string;
   topBarSubtitle: string;
   topBarAvatar: string;
@@ -165,4 +206,5 @@ export interface UiState {
   voiceRxStream: streamType;
   videoRxStream: streamType;
   videoTxStream: streamType;
+  webleadSent: boolean;
 }

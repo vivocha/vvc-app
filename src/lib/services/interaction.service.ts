@@ -5,7 +5,7 @@ import {AppState} from '../store/reducers/main.reducer';
 import {VvcContextService} from './context.service';
 import {ContextState, UiState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 
 @Injectable()
@@ -81,8 +81,8 @@ export class VvcInteractionService {
   muteToggle(muted){
     this.contactService.muteToggle(muted);
   }
-  openAttachment(url){
-    this.contactService.openAttachment(url);
+  openAttachment(url, click?: boolean){
+    this.contactService.openAttachment(url, click);
   }
   processQuickReply(reply){
     this.contactService.processQuickReply(reply);
@@ -141,6 +141,10 @@ export class VvcInteractionService {
   submitDataCollection(dc){
     this.contactService.submitDataCollection(dc);
   }
+  /*
+  submitRecontactData(recontact){
+    this.contactService.submitRecontactData(recontact);
+  }*/
   submitSurvey(dc){
     this.contactService.submitSurvey(dc);
   }
