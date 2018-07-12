@@ -1,0 +1,5 @@
+<div *ngIf="!context.recontactCompleted">
+  <vvc-form [dc]="context.selectedRecontactItem"
+            (submit)="submitData($event)"></vvc-form>
+</div>
+<div *ngIf="context.recontactCompleted" [innerHtml]="'STRINGS.RECONTACT.FEEDBACK' | translate"></div>
