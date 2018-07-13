@@ -206,6 +206,10 @@ export class AppComponent implements OnInit {
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
   }
+  updateLeftScrollOffset(scrollObject: { scrollLeft: number, messageId: string}){
+    console.log('should update left scroll', scrollObject);
+    this.interactionService.updateLeftScrollOffset(scrollObject);
+  }
   videoToggle(show){
     this.interactionService.toggleVideo(show)
   }

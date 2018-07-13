@@ -70,13 +70,14 @@
             <vvc-link-message [message]="m" *ngIf="m.type === 'link'"
                               (linkClicked)="openAttachment($event, true)"></vvc-link-message>
             <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"
-                              (showDoc)="openAttachment($event)"></vvc-chat-message>
+                              (showDoc)="openAttachment($event, true)"></vvc-chat-message>
             <vvc-request-message [message]="m" *ngIf="m.type === 'request'"
                                  (accept)="acceptAgentRequest($event)"
                                  (reject)="rejectAgentRequest($event)"></vvc-request-message>
             <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
                                (action)="processQuickReply($event)"></vvc-quick-replies>
             <vvc-template-generic [message]="m" *ngIf="m.type === 'template' && m.template === 'generic'"
+                                  (scrollUpdate)="updateLeftScrollOffset($event)"
                                   (action)="processAction($event)"></vvc-template-generic>
             <vvc-template-list [message]="m" *ngIf="m.type === 'template' && m.template === 'list'"
                                   (action)="processAction($event)"></vvc-template-list>
