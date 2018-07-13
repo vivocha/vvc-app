@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 import {DomSanitizer, SafeStyle} from '@angular/platform-browser';
 
 @Component({
@@ -10,6 +10,14 @@ export class ChatMessageComponent {
 
   @Input() message;
   @Output() showDoc = new EventEmitter();
+
+  @HostListener('click', ['$event'])
+  onClick(event) {
+    event.preventDefault();
+    if (event.target.href){
+      this.openDocument(event.target.href);
+    }
+  }
 
   constructor(private sanitizer: DomSanitizer){}
 

@@ -9,6 +9,7 @@ import { QuickRepliesComponent } from './quick-replies/quick-replies.component';
 import { TemplateListComponent } from './template-list/template-list.component';
 import {RequestMessageComponent} from './request-message/request-message.component';
 import { LinkMessageComponent } from './link-message/link-message.component';
+import {VvcLinkPipe} from './vvc-link.pipe';
 
 const components = [
   ChatMessageComponent,
@@ -17,7 +18,8 @@ const components = [
   TemplateListComponent,
   QuickRepliesComponent,
   RequestMessageComponent,
-  LinkMessageComponent
+  LinkMessageComponent,
+  VvcLinkPipe
 ];
 
 @NgModule({

@@ -4,7 +4,10 @@
     <img [src]="message.agent.avatar">
   </div>
   <div class="message">
-    <div *ngIf="!message.meta" class="bubble" [ngClass]="{ 'arrow' : message.isFirst }">{{ message.text }}</div>
+    <div *ngIf="!message.meta"
+         class="bubble"
+         [ngClass]="{ 'arrow' : message.isFirst }"
+         [innerHTML]="message.text | vvcLink"></div>
     <div *ngIf="message.meta" class="bubble attachment" [ngClass]="{ 'arrow' : message.isFirst }" (click)="openDocument(message.meta.url)">
       <div class="attachment-img" *ngIf="message.meta.mimetype.indexOf('image/') !== -1">
         <img [src]="message.meta.url">
