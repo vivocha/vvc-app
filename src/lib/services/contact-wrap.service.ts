@@ -6,7 +6,7 @@ import {VvcProtocolService} from './protocol.service';
 import {VvcMessageService} from './messages.service';
 import {objectToDataCollection} from '@vivocha/public-entities/dist/wrappers/data_collection';
 import {VvcUiService} from './ui.service';
-import {DataCollectionCompleted, DataCollectionState} from '../store/models.interface';
+import {DataCollectionCompleted, DataCollectionState, LeftScrollOffset} from '../store/models.interface';
 import {AgentState} from '../store/models.interface';
 import {ClientContactCreationOptions} from '@vivocha/public-entities/dist/contact';
 import {Observable, Subject} from 'rxjs';
@@ -852,5 +852,8 @@ export class VvcContactWrap {
         });
       });
     });
+  }
+  updateLeftScrollOffset(o: LeftScrollOffset){
+    this.messageService.updateLeftScroll(o);
   }
 }

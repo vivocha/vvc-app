@@ -5,12 +5,11 @@ const initialState: MessagesState = {
   list: []
 };
 
-export function reducer(state: MessagesState = initialState, action: fromMessages.MessagesActions){
-  switch (action.type){
+export function reducer(state: MessagesState = initialState, action: fromMessages.MessagesActions) {
+  switch (action.type) {
     case fromMessages.UPDATE_MESSAGE: {
       const newMessages = state.list.map( el => {
-        if (el.id === action.payload.id){
-          const o = Object.assign({}, el, action.payload.patch);
+        if (el.id === action.payload.id) {
           return Object.assign({}, el, action.payload.patch);
         }
         return el;
@@ -27,34 +26,41 @@ export function reducer(state: MessagesState = initialState, action: fromMessage
   }
 }
 
-export const getMessageRedux = (state: MessagesState):MessagesState => {
+export const getMessageRedux = (state: MessagesState): MessagesState => {
   const messages = state.list.map( (elem, idx) => {
     let isLast = false;
     let isFirst = false;
-    const nextElem = state.list[idx+1];
-    const prevElem = state.list[idx-1];
-    if (prevElem){
+    const nextElem = state.list[idx + 1];
+    const prevElem = state.list[idx - 1];
+    if (prevElem) {
       if (
         elem.type !== prevElem.type ||
-        elem.isAgent != prevElem.isAgent ||
-        (elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id)
-      ) isFirst = true;
-      else isFirst = false;
+        elem.isAgent !== prevElem.isAgent ||
+        (elem.agent && prevElem.agent && elem.agent.id !== prevElem.agent.id)
+      ) {
+        isFirst = true;
+      } else {
+        isFirst = false;
+      }
+    } else {
+      isFirst = true;
     }
-    else isFirst = true;
-    if (nextElem){
+    if (nextElem) {
       if (
         elem.type !== nextElem.type ||
-        elem.isAgent != nextElem.isAgent ||
-        (prevElem && elem.agent && prevElem.agent && elem.agent.id != prevElem.agent.id )
-      ) isLast = true;
-      else isLast = false;
+        elem.isAgent !== nextElem.isAgent ||
+        (prevElem && elem.agent && prevElem.agent && elem.agent.id !== prevElem.agent.id )
+      ) {
+        isLast = true;
+      } else {
+        isLast = false;
+      }
+    } else {
+      isLast = true;
     }
-    else isLast = true;
-    let obj = Object.assign({}, elem, { isLast: isLast, isFirst: isFirst });
-    return obj;
+    return Object.assign({}, elem, { isLast: isLast, isFirst: isFirst });
   });
   return {
     list: [...messages]
-  }
-}
+  };
+};

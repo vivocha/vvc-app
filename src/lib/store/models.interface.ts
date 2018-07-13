@@ -21,7 +21,7 @@ export interface  ContextState {
   hasError?: boolean;
   visitorNick?: string;
   webleadSent?: boolean;
-  [key:string]: any;
+  [key: string]: any;
 }
 
 export interface ProtocolState {
@@ -37,13 +37,13 @@ export interface ProtocolState {
   contactStarted: boolean;
 }
 export interface AgentState {
-  id: string,
-  nick: string,
-  is_bot: boolean,
-  is_agent: boolean,
-  avatar?: string
+  id: string;
+  nick: string;
+  is_bot: boolean;
+  is_agent: boolean;
+  avatar?: string;
 }
-export interface ChatState{
+export interface ChatState {
   isAutoChat?: boolean;
   isVisible: boolean;
   isSendAreaVisible?: boolean;
@@ -57,7 +57,7 @@ export interface ChatState{
   notRead: number;
   showOnFullScreen?: boolean;
 }
-export interface MediaState{
+export interface MediaState {
   isVisible?: boolean;
   isMinimized?: boolean;
   isMuted?: boolean;
@@ -65,26 +65,8 @@ export interface MediaState{
   media?: any;
 }
 
-/*
-export interface DataCollectionState{
-  items?: any[],
-  selectedItem?: any;
-  completed?: boolean;
-  creationOptions?: any;
-}
-*/
-export interface RecontactState{
-  item?: any;
-  type?: string;
-  completed?: boolean;
-  messages?: any[]
-}
-export interface SurveyState{
-  item?: any;
-  completed?: boolean;
-}
-export interface DataCollectionDictionary{
-  [key:string]: DataCollection;
+export interface DataCollectionDictionary {
+  [key: string]: DataCollection;
 }
 export interface DataCollectionCompleted {
   type: 'dc' | 'survey' | 'recontact';
@@ -102,7 +84,7 @@ export interface DataCollectionState {
   lastCompleted?: DataCollectionCompleted;
   completed: boolean;
 }
-export interface TopBarState{
+export interface TopBarState {
   title?: string;
   subtitle?: string;
   avatar?: string;
@@ -115,10 +97,14 @@ export interface WidgetState {
   media?: MediaState;
   topBar?: TopBarState;
 }
+export interface LeftScrollOffset {
+ scrollLeft: number;
+ messageId: string;
+}
 export interface BaseMessage {
   id: string;
   text: string;
-  type: string,
+  type: string;
   agent?: any;
   isAgent?: boolean;
   isLast?: string;
@@ -126,10 +112,10 @@ export interface BaseMessage {
   replied?: boolean;
   time?: string;
 }
-export interface RequestMessage extends BaseMessage{
-  type: 'request'
+export interface RequestMessage extends BaseMessage {
+  type: 'request';
 }
-export interface SystemMessage extends BaseMessage{
+export interface SystemMessage extends BaseMessage {
   type: 'system';
   context?: any;
 }
@@ -138,7 +124,7 @@ export interface LinkMessage extends BaseMessage {
   from_id: string;
   from_nick: string;
 }
-export interface ChatMessage extends BaseMessage{
+export interface ChatMessage extends BaseMessage {
   type: 'chat';
 
   isBot?: boolean;

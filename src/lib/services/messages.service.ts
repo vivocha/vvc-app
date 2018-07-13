@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 
 import {AppState} from '../store/reducers/main.reducer';
 import {NewMessage,RemoveMessage,UpdateMessage} from '../store/actions/messages.actions';
-import {SystemMessage, ChatMessage, RequestMessage, LinkMessage} from '../store/models.interface';
+import {SystemMessage, ChatMessage, RequestMessage, LinkMessage, LeftScrollOffset} from '../store/models.interface';
 
 @Injectable()
 export class VvcMessageService {
@@ -97,6 +97,7 @@ export class VvcMessageService {
       template: message.template.type,
       elements: message.template.elements,
       buttons: message.template.buttons,
+      scrollLeft: 0,
       time: this.getChatTimestamp()
     };
     if (agent) template.agent = agent;
@@ -139,5 +140,9 @@ export class VvcMessageService {
   }
   updateQuickReply(messageId){
     this.store.dispatch(new UpdateMessage({ id: messageId, patch: { replied : true }}))
+  }
+  updateLeftScroll(o: LeftScrollOffset){
+    console.log('patching left scroll', o);
+    this.store.dispatch(new UpdateMessage( {id: o.messageId, patch: { scrollLeft: o.scrollLeft }}));
   }
 }
