@@ -72,6 +72,7 @@ export interface DataCollectionState{
   completed?: boolean;
   creationOptions?: any;
 }
+*/
 export interface RecontactState{
   item?: any;
   type?: string;
@@ -82,7 +83,6 @@ export interface SurveyState{
   item?: any;
   completed?: boolean;
 }
-*/
 export interface DataCollectionDictionary{
   [key:string]: DataCollection;
 }
