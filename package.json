@@ -8,7 +8,7 @@
     "prebuild": "npm run clean",
     "build": "ng-packagr -p ng-package.json",
     "precommit": "npm run build",
-    "version": "which jsonref || npm i jsonref-cli && jsonref -f ./package.json /version",
+    "version": "which jsonref > /dev/null || npm i jsonref-cli && jsonref -f ./package.json /version",
     "fixdeps": "[ ! -f ./dist/package.json ] || ./fixdeps.js",
     "build:all": "npm run clean:all && npm install && npm run build && npm run fixdeps"
   },
