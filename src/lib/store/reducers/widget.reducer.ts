@@ -15,18 +15,23 @@ const initialState = {
   protocol: { contactStarted: false }
 };
 
-export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState{
-  switch (action.type){
-    case fromWidget.WIDGET_CLOSED_BY_AGENT:{
+export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState {
+  switch (action.type) {
+    case fromWidget.WIDGET_CLOSED_BY_AGENT: {
       const context = Object.assign({}, state.context, { closedByAgent: true, showClosePanel: false });
       return Object.assign({}, state, { context: context });
     }
-    case fromWidget.WIDGET_CLOSED_BY_VISITOR:{
+    case fromWidget.WIDGET_CLOSED_BY_VISITOR: {
       const context = Object.assign({}, state.context, { closedByVisitor: true, showClosePanel: false });
       return Object.assign({}, state, { context: context });
     }
     case fromWidget.WIDGET_CONTACT_FAILED: {
-      const context = Object.assign({}, state.context, { isUiLoaded: true, contactCreationFailed: true, hasError: true, showQueuePanel: true });
+      const context = Object.assign({}, state.context, {
+        isUiLoaded: true,
+        contactCreationFailed: true,
+        hasError: true,
+        showQueuePanel: true
+      });
       return Object.assign({}, state, { context: context });
     }
     case fromWidget.WIDGET_HIDE_QUEUE_FOR_CHAT: {
@@ -74,7 +79,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     case fromWidget.WIDGET_INIT_PROTOCOL: {
       return Object.assign({}, state, {protocol: action.payload});
     }
-    case fromWidget.WIDGET_IS_UPLOADING:{
+    case fromWidget.WIDGET_IS_UPLOADING: {
       const context = Object.assign({}, state.context, {isUploading: true, uploadCompleted: false });
       return Object.assign({}, state, { context: context} );
     }
@@ -87,13 +92,13 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {chat: chat});
     }
     case fromWidget.WIDGET_MEDIA_CHANGE: {
-      const multimedia = Object.assign({}, state.media,{ media: action.payload });
+      const multimedia = Object.assign({}, state.media, { media: action.payload });
       const protocol = Object.assign({}, state.protocol, {incomingOffer: false, isOffering: false, offeringMedia: ''});
       return Object.assign({}, state, {media: multimedia, protocol: protocol});
     }
     case fromWidget.WIDGET_INCOMING_MEDIA: {
       const protocol = Object.assign({}, state.protocol, {incomingMedia: action.payload, incomingOffer: true});
-      const multimedia = Object.assign({}, state.media,{ isVisible: true });
+      const multimedia = Object.assign({}, state.media, { isVisible: true });
       return Object.assign({}, state, {protocol: protocol, media: multimedia });
     }
     case fromWidget.WIDGET_MEDIA_OFFER: {
@@ -102,27 +107,28 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
     case fromWidget.WIDGET_IS_OFFERING: {
       const protocol = Object.assign({}, state.protocol, {offeringMedia: action.payload, isOffering: true});
-      const multimedia = Object.assign({}, state.media,{ isVisible: true });
+      const multimedia = Object.assign({}, state.media, { isVisible: true });
       return Object.assign({}, state, {protocol: protocol, media: multimedia });
     }
-    case fromWidget.WIDGET_IN_VIDEO_TRANSIT:{
+    case fromWidget.WIDGET_IN_VIDEO_TRANSIT: {
       const protocol = Object.assign({}, state.protocol, {inVideoTransit: action.payload});
       return Object.assign({}, state, {protocol: protocol});
     }
     case fromWidget.WIDGET_MUTE_IN_PROGRESS: {
-      const multimedia = Object.assign({}, state.media,{ muteInProgress: true });
+      const multimedia = Object.assign({}, state.media, { muteInProgress: true });
       return Object.assign({}, state, {media: multimedia });
     }
     case fromWidget.WIDGET_MUTE_SUCCESS: {
-      const multimedia = Object.assign({}, state.media,{ muteInProgress: false, isMuted: action.payload });
+      const multimedia = Object.assign({}, state.media, { muteInProgress: false, isMuted: action.payload });
       return Object.assign({}, state, {media: multimedia });
     }
     case fromWidget.WIDGET_NEW_MESSAGE: {
       if (state.context.isMinimized || !state.chat.isVisible || (state.media.isVisible && !state.media.isMinimized)) {
-        const chat = Object.assign({}, state.chat, {notRead: state.chat.notRead+1});
+        const chat = Object.assign({}, state.chat, {notRead: state.chat.notRead + 1});
         return Object.assign({}, state, {chat: chat});
+      } else {
+        return state;
       }
-      else return state;
     }
     case fromWidget.WIDGET_OFFER_ACCEPTED: {
       const protocol = Object.assign({}, state.protocol, {incomingOffer: false, isOffering: false, offeringMedia: ''});
@@ -165,23 +171,23 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, {hasError: true, showQueuePanel: true});
       return Object.assign({}, state, {context: context});
     }
-    case fromWidget.WIDGET_SET_FULLSCREEN:{
+    case fromWidget.WIDGET_SET_FULLSCREEN: {
       const context = Object.assign({}, state.context, {isFullScreen: true, isMinimized: false});
       return Object.assign({}, state, {context: context});
     }
-    case fromWidget.WIDGET_SET_MINIMIZED:{
+    case fromWidget.WIDGET_SET_MINIMIZED: {
       const context = Object.assign({}, state.context, {isMinimized: true});
       return Object.assign({}, state, {context: context});
     }
-    case fromWidget.WIDGET_SET_MINIMIZED_MEDIA:{
-      const multimedia = Object.assign({}, state.media,{ isMinimized: action.payload });
+    case fromWidget.WIDGET_SET_MINIMIZED_MEDIA: {
+      const multimedia = Object.assign({}, state.media, { isMinimized: action.payload });
       return Object.assign({}, state, {media: multimedia});
     }
-    case fromWidget.WIDGET_SET_NORMAL:{
+    case fromWidget.WIDGET_SET_NORMAL: {
       const context = Object.assign({}, state.context, {isMinimized: false, isFullScreen: false});
       return Object.assign({}, state, {context: context});
     }
-    case fromWidget.WIDGET_SET_TOP_BAR:{
+    case fromWidget.WIDGET_SET_TOP_BAR: {
       const topBar = Object.assign({}, state.topBar, action.payload);
       return Object.assign({}, state, {topBar: topBar});
     }
@@ -189,7 +195,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const chat = Object.assign({}, state.chat, {showOnFullScreen: action.payload});
       return Object.assign({}, state, {chat: chat});
     }
-    case fromWidget.WIDGET_SHOW_CLOSE_PANEL:{
+    case fromWidget.WIDGET_SHOW_CLOSE_PANEL: {
       const context = Object.assign({}, state.context, {showClosePanel: action.payload});
       return Object.assign({}, state, {context: context});
     }
@@ -201,7 +207,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const chat = Object.assign({}, state.chat, {uploadPanelOpened: action.payload, emojiPanelOpened: false});
       return Object.assign({}, state, {chat: chat});
     }
-    case fromWidget.WIDGET_TOGGLE_EMOJI:{
+    case fromWidget.WIDGET_TOGGLE_EMOJI: {
       const chat = Object.assign({}, state.chat, {emojiPanelOpened: !state.chat.emojiPanelOpened});
       return Object.assign({}, state, { chat: chat });
     }
@@ -223,14 +229,16 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
 }
 
 
-export const getContextRedux = (state: WidgetState):ContextState => state.context;
+export const getContextRedux = (state: WidgetState): ContextState => state.context;
 export const getUiStateRedux = (
   widgetState: WidgetState,
   messagesState: MessagesState,
   dataCollectionState: DataCollectionState
 ): UiState => {
   const hasMultimedia           = widgetState.media.media;
-  const hasAudio                = hasMultimedia && widgetState.media.media.Voice && (widgetState.media.media.Voice.rx || widgetState.media.media.Voice.tx);
+  const hasAudio                = hasMultimedia &&
+                                  widgetState.media.media.Voice &&
+                                  (widgetState.media.media.Voice.rx || widgetState.media.media.Voice.tx);
   const hasVideo                = hasMultimedia && widgetState.media.media.Video;
   const hasLocalVideo           = hasVideo && widgetState.media.media.Video.tx;
   const hasRemoteVideo          = hasVideo && widgetState.media.media.Video.rx;
@@ -259,7 +267,20 @@ export const getUiStateRedux = (
   const isVideoConnected        = isLocalVideoConnected || isRemoteVideoConnected;
   const isMediaConnected        = isAudioConnected || isLocalVideoConnected || isRemoteVideoConnected;
   const isMediaConnecting       = isAudioConnecting || isVideoConnecting;
-  const isMediaVisible          = widgetState.chat && !widgetState.chat.uploadPanelOpened && (widgetState.protocol.incomingOffer || widgetState.protocol.isOffering || isMediaConnecting || isMediaConnected);
+  const isMediaVisible          = widgetState.chat &&
+                                  !widgetState.chat.uploadPanelOpened &&
+                                  (
+                                    widgetState.protocol.incomingOffer ||
+                                    widgetState.protocol.isOffering ||
+                                    isMediaConnecting ||
+                                    isMediaConnected
+                                  );
+  const canRemoveApp            = widgetState.context.webleadSent ||
+                                  widgetState.context.closedByAgent ||
+                                  widgetState.context.closedByVisitor ||
+                                  widgetState.context.showQueuePanel ||
+                                  !widgetState.context.isUiLoaded ||
+                                  (dataCollectionState.selectedItem && !dataCollectionState.completed);
   const canStartAudio           = widgetState.protocol.canStartAudio &&
                                   !hasAudio &&
                                   !isAudioConnecting &&
@@ -271,7 +292,7 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const hideTopBarInfo          = ((widgetState.context.showQueuePanel /*&& dataCollectionState.completed*/) ||
+  const hideTopBarInfo          = ((widgetState.context.showQueuePanel) ||
                                   (isMediaVisible && !widgetState.media.isMinimized && !widgetState.context.isFullScreen)) ||
                                   widgetState.protocol.isOffering ||
                                   widgetState.protocol.incomingOffer;
@@ -281,22 +302,28 @@ export const getUiStateRedux = (
                                   widgetState.context.hasError;
   const isChatVisible           = widgetState.chat &&
                                   !widgetState.context.showQueuePanel &&
-                                  //!widgetState.context.showDataCollectionPanel &&
                                   !dataCollectionState.showDataCollectionPanel &&
-                                  //!surveyState.item &&
                                   !widgetState.protocol.isOffering &&
                                   !widgetState.protocol.incomingOffer &&
                                   !isMediaConnecting &&
                                   (!isMediaConnected || isMediaConnected && widgetState.media.isMinimized) ||
                                   widgetState.context.isFullScreen;
-  const isChatBoxVisible        = isChatVisible && (!isClosed || (dataCollectionState.selectedItem && dataCollectionState.selectedItem.dc.type === 'dialog' && dataCollectionState.lastCompleted.type !=='survey'));
+  const isChatBoxVisible        = isChatVisible &&
+                                  (
+                                    !isClosed ||
+                                    (
+                                      dataCollectionState.selectedItem &&
+                                      dataCollectionState.selectedItem.dc.type === 'dialog' &&
+                                      dataCollectionState.lastCompleted.type !== 'survey'
+                                    )
+                                  );
     return {
       agent: widgetState.agent,
       messages: [...messagesState.list],
       variables: widgetState.context.variables || {},
       canMaximize: isVideoConnected,
       canMinimize: true,
-      canRemoveApp: widgetState.context.webleadSent || widgetState.context.closedByAgent || widgetState.context.closedByVisitor || widgetState.context.showQueuePanel || !widgetState.context.isUiLoaded || (dataCollectionState.selectedItem && !dataCollectionState.completed),
+      canRemoveApp: canRemoveApp,
       canStartAudio: canStartAudio,
       canStartVideo: canStartVideo,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
@@ -325,7 +352,6 @@ export const getUiStateRedux = (
       isMuted: widgetState.media.isMuted,
       isOffering: widgetState.protocol.isOffering,
       isFullScreen: widgetState.context.isFullScreen && !isClosed,
-      //isSendAreaVisible:  (isChatVisible && !widgetState.chat.uploadPanelOpened) || (dataCollectionState.selectedItem && dataCollectionState.selectedItem.type === 'dialog'),
       isSendAreaVisible: isChatBoxVisible,
       isUploading: widgetState.context.isUploading,
       isWriting:  widgetState.chat && widgetState.chat.isWriting,
@@ -338,7 +364,7 @@ export const getUiStateRedux = (
       showEmojiPanel:  widgetState.chat && widgetState.chat.emojiPanelOpened,
       showUploadPanel:  widgetState.chat && widgetState.chat.uploadPanelOpened,
       topBarTitle: (hideTopBarInfo) ? '' : widgetState.topBar.title,
-      topBarSubtitle: (hideTopBarInfo) ? '': widgetState.topBar.subtitle,
+      topBarSubtitle: (hideTopBarInfo) ? '' : widgetState.topBar.subtitle,
       topBarAvatar: (hideTopBarInfo) ? '' : widgetState.topBar.avatar,
       translationLoaded: widgetState.context.translationLoaded,
       uploadCompleted: widgetState.context.uploadCompleted,
@@ -346,5 +372,5 @@ export const getUiStateRedux = (
       videoRxStream: remoteVideoStream,
       videoTxStream: localVideoStream,
       webleadSent: widgetState.context && widgetState.context.webleadSent
-    }
+    };
 };
