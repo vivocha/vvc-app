@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   public messages: Array<any>;
 
-  public appState$:Observable<any>;
+  public appState$: Observable<any>;
 
   public closeModalVisible = false;
   public surveyVisible = false;
@@ -22,34 +22,34 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init();
-    //this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
+    // this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
   }
-  acceptAgentRequest(requestId){
+  acceptAgentRequest(requestId) {
     this.interactionService.acceptAgentRequest(requestId);
   }
-  acceptOffer(){
+  acceptOffer() {
     this.interactionService.acceptOffer();
   }
-  addChatToFullScreen(show){
+  addChatToFullScreen(show) {
     this.interactionService.addChatToFullScreen(show);
   }
-  appendText(text){
+  appendText(text) {
     this.chat.appendText(text);
   }
-  askForVideoUpgrade(){
-    this.interactionService.askForVideoUpgrade()
+  askForVideoUpgrade() {
+    this.interactionService.askForVideoUpgrade();
   }
-  askForVoiceUpgrade(){
-    this.interactionService.askForVoiceUpgrade()
+  askForVoiceUpgrade() {
+    this.interactionService.askForVoiceUpgrade();
   }
-  closeApp(){
+  closeApp() {
     this.interactionService.closeApp();
   }
-  closeContact(context){
+  closeContact(context) {
     const step = this.getCloseStep(context);
     console.log('CLOSE CONTACT', step, context.variables, context);
 
-    switch(step){
+    switch (step) {
       case 'remove-app':
         this.closeApp();
         break;
@@ -77,140 +77,149 @@ export class AppComponent implements OnInit {
         break;
     }
   }
-  closeUploadPanel(){
+  closeUploadPanel() {
     this.interactionService.closeUploadPanel();
   }
-  dismissCloseModal(){
+  dismissCloseModal() {
     this.closeModalVisible = false;
-    this.interactionService.dismissCloseModal()
+    this.interactionService.dismissCloseModal();
   }
-  doUpload(upload){
+  doUpload(upload) {
     this.interactionService.sendAttachment(upload);
   }
-  exitFromFullScreen(){
+  exitFromFullScreen() {
     this.interactionService.setNormalScreen();
   }
-  expandWidget(isFullScreen){
+  expandWidget(isFullScreen) {
     this.interactionService.minimize(false, isFullScreen);
   }
-  getCloseStep(context){
-    if (!context.contactStarted) return 'remove-app';
-    if (context.isClosed){
-      if (context.hasSurvey && !context.canRemoveApp){
-        if (this.surveyVisible) return 'remove-app';
-        else return 'show-survey';
-      }
-      else return 'remove-app';
+  getCloseStep(context) {
+    if (!context.contactStarted) {
+      return 'remove-app';
     }
-    else {
-      if (context.variables.askCloseConfirm){
-        if (this.closeModalVisible){
-          if (context.variables.stayInAppAfterClose) return 'close-and-stay';
-          else {
-            if (context.hasSurvey){
-              if (this.surveyVisible) return 'remove-app';
-              else return 'close-and-survey';
-            }
-            else return 'close-and-remove';
-          }
+    if (context.isClosed) {
+      if (context.hasSurvey && context.canRemoveApp) {
+        if (this.surveyVisible) {
+          return 'remove-app';
+        } else {
+          return 'show-survey';
         }
-        else {
+      } else {
+        return 'remove-app';
+      }
+    } else {
+      if (context.variables.askCloseConfirm) {
+        if (this.closeModalVisible) {
+          if (context.variables.stayInAppAfterClose) {
+            return 'close-and-stay';
+          } else {
+            if (context.hasSurvey) {
+              if (this.surveyVisible) {
+                return 'remove-app';
+              } else {
+                return 'close-and-survey';
+              }
+            } else {
+              return 'close-and-remove';
+            }
+          }
+        } else {
           return 'show-close-modal';
         }
-      }
-      else {
-        if (context.variables.stayInAppAfterClose) return 'close-and-stay';
-        else {
-          if (context.hasSurvey){
-            if (this.surveyVisible) return 'remove-app';
-            else return 'close-and-survey';
+      } else {
+        if (context.variables.stayInAppAfterClose) {
+          return 'close-and-stay';
+        } else {
+          if (context.hasSurvey) {
+            if (this.surveyVisible) {
+              return 'remove-app';
+            } else {
+              return 'close-and-survey';
+            }
+          } else {
+            return 'close-and-remove';
           }
-          else return 'close-and-remove';
         }
       }
     }
   }
-  hangUpCall(){
+  hangUpCall() {
     this.interactionService.hangUp();
   }
-  hasToStayInApp(context){
+  hasToStayInApp(context) {
     return (context.isClosed && context.variables.stayInAppAfterClose);
   }
-  hideChat(){
+  hideChat() {
     this.interactionService.hideChat();
   }
-  minimizeWidget(){
+  minimizeWidget() {
     this.interactionService.minimize(true);
   }
-  minimizeMedia(){
+  minimizeMedia() {
     this.interactionService.minimizeMedia();
   }
-  muteToggle(muted){
+  muteToggle(muted) {
     this.interactionService.muteToggle(muted);
   }
-  openAttachment(url: string, click?: boolean){
+  openAttachment(url: string, click?: boolean) {
     this.interactionService.openAttachment(url, click);
   }
-  processAction(action){
+  processAction(action) {
     this.interactionService.sendPostBack(action);
   }
-  processQuickReply(reply){
+  processQuickReply(reply) {
     this.interactionService.processQuickReply(reply);
   }
-  rejectAgentRequest(requestId){
+  rejectAgentRequest(requestId) {
     this.interactionService.rejectAgentRequest(requestId);
   }
-  rejectOffer(){
+  rejectOffer() {
     this.interactionService.rejectOffer();
   }
-  sendIsWriting(){
+  sendIsWriting() {
     this.interactionService.sendIsWriting();
   }
-  sendText(value, isEmojiPanelVisible){
-    if (isEmojiPanelVisible) this.toggleEmojiPanel();
+  sendText(value, isEmojiPanelVisible) {
+    if (isEmojiPanelVisible) {
+      this.toggleEmojiPanel();
+    }
     this.interactionService.sendText(value);
   }
-  setFullScreen(){
+  setFullScreen() {
     this.interactionService.setFullScreen();
   }
-  showCloseDialog(context){
+  showCloseDialog(context) {
     return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);
   }
-  showCloseModal(closeOpt){
+  showCloseModal(closeOpt) {
     if (closeOpt.forceClose) {
       this.interactionService.closeContact();
-      if (!closeOpt.stayInAppAfterClose && !closeOpt.hasSurvey) this.closeApp();
-      else if (closeOpt.hasSurvey && !closeOpt.stayInAppAfterClose){
+      if (!closeOpt.stayInAppAfterClose && !closeOpt.hasSurvey) {
+        this.closeApp();
+      } else if (closeOpt.hasSurvey && !closeOpt.stayInAppAfterClose) {
         this.showSurvey();
       }
     } else {
       this.interactionService.showCloseModal();
     }
   }
-  showUploadPanel(){
+  showUploadPanel() {
     this.interactionService.showUploadPanel();
   }
-  showSurvey(){
+  showSurvey() {
     this.interactionService.showSurvey();
   }
-  submitDataCollection(dc){
+  submitDataCollection(dc) {
     this.interactionService.submitDataCollection(dc);
   }
-  /*
-  submitRecontact(recontact){
-    this.interactionService.submitRecontactData(recontact);
-  }
-  submitSurvey(survey){
-    this.interactionService.submitSurvey(survey);
-  }*/
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
   }
-  updateLeftScrollOffset(scrollObject: { scrollLeft: number, messageId: string}){
+  updateLeftScrollOffset(scrollObject: { scrollLeft: number, messageId: string}) {
     console.log('should update left scroll', scrollObject);
     this.interactionService.updateLeftScrollOffset(scrollObject);
   }
-  videoToggle(show){
-    this.interactionService.toggleVideo(show)
+  videoToggle(show) {
+    this.interactionService.toggleVideo(show);
   }
 }
