@@ -33,8 +33,8 @@ export class FormComponent implements OnInit {
       const hasDefault = typeof elem.defaultConstant !== 'undefined';
 
       elem.value = hasDefault ? elem.defaultConstant.toString() : elem.defaultConstant;
-      //elem.value = elem.defaultConstant;
-      if ((['visitor','both'].indexOf(elem.hidden) === -1 && (!hasDefault || (hasDefault && elem.editIfDefault)))) {
+      // elem.value = elem.defaultConstant;
+      if ((['visitor', 'both'].indexOf(elem.hidden) === -1 && (!hasDefault || (hasDefault && elem.editIfDefault)))) {
         elem.showElement = true;
         visibleElements = true;
       }
@@ -59,7 +59,8 @@ export class FormComponent implements OnInit {
         }
       }
       if (elem.validation) {
-        validators.push(Validators.pattern(elem.validation));
+        const validation = (typeof elem.validation === 'boolean') ? elem.validation.toString() : elem.valiation;
+        validators.push(Validators.pattern(validation));
       }
       if (elem.format === 'email') {
         validators.push(Validators.email);
@@ -86,7 +87,7 @@ export class FormComponent implements OnInit {
 
   getInputElement(elem: DataCollectionField): string {
     let element;
-    switch(elem.format) {
+    switch (elem.format) {
       case 'dropdown':
         element = 'select';
         break;
@@ -104,13 +105,13 @@ export class FormComponent implements OnInit {
   }
 
   getInputType(elem: DataCollectionField) {
-    if (['text','email','date','time'].indexOf(elem.format) !== -1) {
+    if (['text', 'email', 'date', 'time'].indexOf(elem.format) !== -1) {
       return elem.format;
-    } else if (elem.format === 'phonenum'){
+    } else if (elem.format === 'phonenum') {
       return 'tel';
-    } else if (elem.format === 'link'){
+    } else if (elem.format === 'link') {
       return 'url';
-    } else if (elem.format === 'date-time'){
+    } else if (elem.format === 'date-time') {
       return 'datetime-local';
     } else {
       return elem.type;
