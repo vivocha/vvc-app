@@ -245,18 +245,18 @@ export const getUiStateRedux = (
   const hasLocalVideoStream     = hasLocalVideo &&
                                   widgetState.media.media.Video.data &&
                                   widgetState.media.media.Video.data.tx_stream &&
-                                  !!widgetState.media.media.Video.data.tx_stream.url;
-  const localVideoStream        = (hasLocalVideoStream) ? widgetState.media.media.Video.data.tx_stream.url :  false;
+                                  !!widgetState.media.media.Video.data.tx_stream.media;
+  const localVideoStream        = (hasLocalVideoStream) ? widgetState.media.media.Video.data.tx_stream.media :  false;
   const hasRemoteVideoStream    = hasRemoteVideo &&
                                   widgetState.media.media.Video.data &&
                                   widgetState.media.media.Video.data.rx_stream &&
-                                  !!widgetState.media.media.Video.data.rx_stream.url;
-  const remoteVideoStream       = (hasRemoteVideoStream) ? widgetState.media.media.Video.data.rx_stream.url : false;
+                                  !!widgetState.media.media.Video.data.rx_stream.media;
+  const remoteVideoStream       = (hasRemoteVideoStream) ? widgetState.media.media.Video.data.rx_stream.media : false;
   const hasAudioStream          = hasAudio &&
                                   widgetState.media.media.Voice.data &&
                                   widgetState.media.media.Voice.data.rx_stream &&
-                                  !!widgetState.media.media.Voice.data.rx_stream.url;
-  const audioRxStream           = (hasAudioStream) ? widgetState.media.media.Voice.data.rx_stream.url : false;
+                                  !!widgetState.media.media.Voice.data.rx_stream.media;
+  const audioRxStream           = (hasAudioStream) ? widgetState.media.media.Voice.data.rx_stream.media : false;
   const isAudioConnecting       = hasAudio && !hasAudioStream;
   const isAudioConnected        = hasAudio && hasAudioStream;
   const isLocalVideoConnecting  = hasLocalVideo && !hasLocalVideoStream;

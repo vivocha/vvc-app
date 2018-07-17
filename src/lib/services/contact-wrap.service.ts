@@ -480,8 +480,20 @@ export class VvcContactWrap {
     this.contact.on('capabilities', caps => {
       // console.log('ON_REMOTE',caps);
     });
-    this.contact.on('mediachange', (media, changed) => {
+    this.contact.on('mediachange', async (media, changed) => {
       console.log('MEDIACHANGE', JSON.stringify(media, null, 2));
+      if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
+        this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'))
+      }
+      if (this.vivocha.dot(media, 'Video.data.tx_stream.id')) {
+        this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'))
+      }
+      if (this.vivocha.dot(media, 'Voice.data.rx_stream.id')) {
+        this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'))
+      }
+      if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
+        this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'))
+      }
       this.zone.run( () => {
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
