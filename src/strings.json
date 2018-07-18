@@ -490,15 +490,28 @@
   {
     "values": {
       "en": {
-        "value": "Allow the visitor to enter in chat before the agent",
+        "value": "Allow the visitor to enter in chat before the agent (EarlyChat)",
         "state": "new"
       },
       "it": {
-        "value": "Permetti al visitatore di entrare in chat prima dell'agente",
+        "value": "Permetti al visitatore di entrare in chat prima dell'agente (EarlyChat)",
         "state": "new"
       }
     },
     "id": "META.VARIABLES.CHAT.AUTO_CHAT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show connection to agent message (EarlyChat)",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza messaggio di connessione con l'agente (EarlyChat)",
+        "state": "new"
+      }
+    },
+    "id": "META.VARIABLES.CHAT.SHOW_AUTO_CHAT_CONNECTING"
   },
   {
     "values": {
@@ -534,6 +547,20 @@
     },
     "description": "",
     "id": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE"
+  },
+  {
+    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_AUTO_CHAT",
+    "description": "",
+    "values": {
+      "en": {
+        "value": "Show wellcome message on EarlyChat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza messaggio di benvenuto in EarlyChat",
+        "state": "new"
+      }
+    }
   },
   {
     "values": {
@@ -780,6 +807,34 @@
   {
     "values": {
       "en": {
+        "value": "Your request as been registered. We will contact you as soon as possible.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Abbiamo preso in carico la tua richiesta.<br>Ti contatteremo il prima possibile.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.WEBLEAD_SENT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No available agents.<br>Please retry later.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Al momento non ci sono agenti disponibili.<br>Ti preghiamo di riprovare più tardi.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.QUEUE.NO_AGENTS"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Vivocha Customer Care",
         "state": "new"
       },
@@ -1014,6 +1069,20 @@
     },
     "description": "",
     "id": "STRINGS.CHAT.WELCOME_MESSAGE"
+  },
+  {
+    "id": "STRINGS.CHAT.AUTO_CHAT_FIRST_MESSAGE",
+    "description": "",
+    "values": {
+      "en": {
+        "value": "How can I help you?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Come posso aiutarti?",
+        "state": "new"
+      }
+    }
   },
   {
     "values": {
@@ -1656,6 +1725,20 @@
   {
     "values": {
       "en": {
+        "value": "We will contact you soon.<br>Thanks!",
+        "state": "new"
+      },
+      "it": {
+        "value": "Abbiamo preso in carico la tua richiesta. <br> Verrai contattato al più presto.",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.RECONTACT.FEEDBACK"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Continue",
         "state": "final"
       },
@@ -1750,12 +1833,86 @@
   {
     "values": {
       "en": {
+        "value": "Would you like to start a form sharing session?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Vuoi accettare la richiesta di condivisione moduli?",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voulez-vous accepter la demande de partage de formulaire ?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルの共有を承諾しますか?",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Form sharing session accepted",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sessione di condivisione moduli accettata",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Session de partage de formulaire acceptée",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルの共有に成功しました",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_ACCEPTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Form sharing session rejected",
+        "state": "final"
+      },
+      "it": {
+        "value": "Hai rifiutato la sessione di condivisione moduli",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Session de partage de formulaire rejetée",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ファイルの共有を拒否しました。",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Would you like to start a co-browsing session?",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Vuoi accettare la richiesta di navigazione assistita?",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voulez-vous commencer une session de navigation collaborative ?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アシスト付接続の要求を承諾しますか? ",
+        "state": "final"
       }
     },
     "description": "",
@@ -1765,29 +1922,23 @@
     "values": {
       "en": {
         "value": "Co-browsing session accepted",
-        "state": "new"
+        "state": "final"
       },
       "it": {
         "value": "Sessione di navigazione assistita accettata",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "Session de navigation collaborative acceptée",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アシスト付接続の要求を承諾しました。",
+        "state": "final"
       }
     },
     "description": "",
     "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Co-browsing session rejected",
-        "state": "new"
-      },
-      "it": {
-        "value": "Hai rifiutato la sessione di navigazione assistita",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED"
   },
   {
     "values": {
@@ -1832,5 +1983,19 @@
     },
     "description": "",
     "id": "STRINGS.MESSAGES.REQUEST_ACCEPT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The agent sent you a link: <b>{{link}}</b>",
+        "state": "new"
+      },
+      "it": {
+        "value": "L'agente ti ha inviato un link: <b>{{link}}</b>",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.LINK_PUSH"
   }
 ]
