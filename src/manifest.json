@@ -15,6 +15,20 @@
       "type": "string"
     },
     {
+      "id": "initialBottom",
+      "nameId": "META.VARIABLES.APP.INITIAL_BOTTOM",
+      "defaultValue": "-5",
+      "type": "string",
+      "hidden": true
+    },
+    {
+      "id": "initialRight",
+      "nameId": "META.VARIABLES.APP.INITIAL_RIGHT",
+      "defaultValue": "-5",
+      "type": "string",
+      "hidden": true
+    },
+    {
       "id": "askCloseConfirm",
       "nameId": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM",
       "type": "boolean",
@@ -67,6 +81,18 @@
       "id": "autoChat",
       "nameId": "META.VARIABLES.CHAT.AUTO_CHAT",
       "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "showWelcomeOnAutoChat",
+      "nameId": "META.VARIABLES.CHAT.SHOW_WELCOME_AUTO_CHAT",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "showConnectingOnAutoChat",
+      "nameId": "META.VARIABLES.CHAT.SHOW_AUTO_CHAT_CONNECTING",
+      "defaultValue": true,
       "type": "boolean"
     },
     {
@@ -150,6 +176,12 @@
       "defaultValue": "#13AF6C",
       "type": "color",
       "hidden": true
+    },
+    {
+      "id": "collectorDefaultAvatar",
+      "nameId": "META.VARIABLES.COLLECTOR_AVATAR",
+      "defaultValue": "./assets/static/collector_avatar.png",
+      "type": "file"
     }
   ]
 }
