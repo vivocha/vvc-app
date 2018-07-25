@@ -595,24 +595,28 @@ export class VvcContactWrap {
     this.lastSystemMessageId = this.messageService.sendRequestMessage(message);
   }
   onClose(obj) {
-    this.zone.run( () => {
-      this.uiService.setClosedByAgent();
-      this.vivocha.setNormalScreen();
-      this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
-      this.isClosed = true;
-      this.vivocha.pageRequest('interactionClosed', 'closed');
-    });
-  }
-  onLeft(obj) {
-    this.zone.run( () => {
-      if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
+    this.leave('remote').then(() => {
+      this.zone.run( () => {
         this.uiService.setClosedByAgent();
         this.vivocha.setNormalScreen();
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
         this.isClosed = true;
         this.vivocha.pageRequest('interactionClosed', 'closed');
-      }
+      });
     });
+  }
+  onLeft(obj) {
+    if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
+      this.leave('remote').then(() => {
+        this.zone.run(() => {
+          this.uiService.setClosedByAgent();
+          this.vivocha.setNormalScreen();
+          this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+          this.isClosed = true;
+          this.vivocha.pageRequest('interactionClosed', 'closed');
+        });
+      });
+    }
   }
   onLocalJoin(join) {
     console.log('local join', join);
