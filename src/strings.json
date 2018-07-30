@@ -1921,6 +1921,20 @@
   {
     "values": {
       "en": {
+        "value": "Co-browsing session rejected",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Sessione di navigazione assistita rifiutata",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Co-browsing session accepted",
         "state": "final"
       },
