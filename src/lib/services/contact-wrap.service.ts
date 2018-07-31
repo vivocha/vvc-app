@@ -748,6 +748,7 @@ export class VvcContactWrap {
         this.dcService.sendMessageViaCollector(true, vvcPostBack.body, vvcPostBack.payload);
       }
     } else {
+      msg.click = true;
       this.vivocha.pageRequest('interactionEvent', msg.type, msg);
     }
   }
