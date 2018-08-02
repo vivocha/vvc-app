@@ -5,7 +5,11 @@
       <div class="vvc-input"
            *ngIf="elem.showElement"
            [ngClass]="{'error' : form.get(elem.id) && form.get(elem.id).errors && form.get(elem.id).touched}">
-        <label>{{ (elem.labelId | translate) || elem.id }}<span *ngIf="elem.required" class="required"> *</span></label>
+
+        <label *ngIf="elem.format !== 'message'">{{ (elem.labelId | translate) || elem.id }}<span *ngIf="elem.required" class="required"> *</span></label>
+
+        <!-- message -->
+        <div  class="message" *ngIf="getInputElement(elem) === 'message'" [innerHTML]="elem.message | translate"></div>
 
         <!-- text -->
         <input *ngIf="!readMode && getInputElement(elem) === 'input'"

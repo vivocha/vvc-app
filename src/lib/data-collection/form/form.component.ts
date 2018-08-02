@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
-import {DataCollectionField} from '@vivocha/public-entities/dist/data_collection';
+import {DataCollectionField, MessageMetaField} from '@vivocha/public-entities/dist/data_collection';
 
 @Component({
   selector: 'vvc-form',
@@ -26,7 +26,7 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     const controllers = {};
     let visibleElements = false;
-    this.fields = this.dc.fields.filter( f => f.type !== 'meta');
+    this.fields = this.dc.fields.filter( f => f.type !== 'meta' || f.format === 'message');
     for (const idx in this.fields) {
       const elem = this.fields[idx];
       const validators = [];
@@ -37,7 +37,6 @@ export class FormComponent implements OnInit {
         elem.showElement = true;
         visibleElements = true;
       }
-
       // validators.push(el.value || '');
       if (elem.required) {
         validators.push(Validators.required);
@@ -84,7 +83,7 @@ export class FormComponent implements OnInit {
     return this.form;
   }
 
-  getInputElement(elem: DataCollectionField): string {
+  getInputElement(elem: DataCollectionField  | MessageMetaField): string {
     let element;
     switch (elem.format) {
       case 'dropdown':
@@ -94,6 +93,7 @@ export class FormComponent implements OnInit {
       case 'radio':
       case 'rating':
       case 'textarea':
+      case 'message':
         element = elem.format;
         break;
       default:
