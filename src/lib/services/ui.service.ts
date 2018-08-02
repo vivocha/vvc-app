@@ -47,35 +47,34 @@ import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
 export class VvcUiService {
 
   currentState: WidgetState;
-  constructor(private store: Store<AppState>){
+  constructor(private store: Store<AppState>) {
     this.store.select(getWidgetState).subscribe( state => {
-      this.currentState = state
+      this.currentState = state;
     });
   }
-  hideChat(){
+  hideChat() {
     this.store.dispatch(new WidgetSetMinimizedMedia(false));
   }
-  hideQueueForChat(){
+  hideQueueForChat() {
     this.store.dispatch(new WidgetHideQueueForChat());
   }
-  initializeChat(media){
-    console.log('initializing chat', media);
+  initializeChat(media) {
     this.store.dispatch(new WidgetInitChat(media));
   }
-  initializeContext(context){
+  initializeContext(context) {
     this.store.dispatch(new LoadContextSuccess(context));
     this.store.dispatch(new WidgetInitContext(context));
 
   }
-  initializeMedia(media){
+  initializeMedia(media) {
     this.initializeChat(media);
     this.initializeMultimedia(media);
     this.setMediaState(media);
   }
-  initializeMultimedia(media){
+  initializeMultimedia(media) {
     this.store.dispatch(new WidgetInitializeMultimedia(media));
   }
-  initializeProtocol(context, conf){
+  initializeProtocol(context, conf) {
     this.store.dispatch(new WidgetInitProtocol({
       mediaPreset: context.mediaPreset,
       canStartAudio: context.media.voice === 'both' || context.media.voice === 'visitor',
@@ -84,144 +83,142 @@ export class VvcUiService {
       contactStarted: true
     }));
   }
-  loadDataCollections(dcList){
-    //this.store.dispatch(new DataCollectionLoaded(dcList));
+  loadDataCollections(dcList) {
+    // this.store.dispatch(new DataCollectionLoaded(dcList));
   }
-  newMessageReceived(){
+  newMessageReceived() {
     this.store.dispatch(new WidgetNewMessage());
   }
-  resetTopBar(){
+  resetTopBar() {
     this.store.dispatch(new WidgetSetTopBar({title: '', subtitle: '', avatar: ''}));
   }
-  selectDataCollection(dc){
+  selectDataCollection(dc) {
     this.store.dispatch(new DataCollectionSelected(dc));
     this.store.dispatch(new WidgetSetTopBar({title: 'STRINGS.QUEUE.TOPBAR.TITLE', subtitle: dc.labelId, avatar: ''}));
   }
-  setOfferAccepted(){
+  setOfferAccepted() {
     this.store.dispatch(new WidgetOfferAccepted());
   }
-  setAgent(agent){
+  setAgent(agent) {
     this.store.dispatch(new WidgetSetAgent(agent));
-    //this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
+    // this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }
-  setAutoChat(){
+  setAutoChat() {
     this.store.dispatch(new WidgetSetAutoChat());
   }
-  setClosedByAgent(){
+  setClosedByAgent() {
     this.store.dispatch(new WidgetClosedByAgent());
   }
-  setClosedByVisitor(){
+  setClosedByVisitor() {
     this.store.dispatch(new WidgetClosedByVisitor());
   }
-  setCloseModal(show: boolean){
+  setCloseModal(show: boolean) {
     this.store.dispatch(new WidgetShowClosePanel(show));
   }
-  setCreationFailed(){
+  setCreationFailed() {
     this.store.dispatch(new WidgetContactCreationFailed());
   }
-  setDataCollectionCompleted(opt, dcType: string){
-    //this.store.dispatch(new DataCollectionCompleted(opt))
-
+  setDataCollectionCompleted(opt, dcType: string) {
+    // this.store.dispatch(new DataCollectionCompleted(opt))
   }
-  setDialogUi(){
+  setDialogUi() {
     this.store.dispatch(new WidgetSetDialogUi());
   }
-  setDissuasion(){
+  setDissuasion() {
     this.store.dispatch(new WidgetSetError());
   }
-  setFullScreenChat(show){
+  setFullScreenChat(show) {
     this.store.dispatch(new WidgetShowChatOnFullScreen(show));
     this.store.dispatch(new WidgetMarkAsRead());
   }
-  setFullScreen(){
+  setFullScreen() {
     this.store.dispatch(new WidgetSetFullScreen());
   }
-  setHangUpState(){
+  setHangUpState() {
     this.store.dispatch(new WidgetSetNormal());
   }
-  setNormalScreen(){
+  setNormalScreen() {
     this.store.dispatch(new WidgetSetNormal());
     this.store.dispatch(new WidgetShowChatOnFullScreen(false));
   }
-  setIncomingMedia(media){
+  setIncomingMedia(media) {
     this.store.dispatch(new WidgetIncomingMedia(media));
   }
-  setInTransit(transit){
+  setInTransit(transit) {
     this.store.dispatch(new WidgetSetVideoTransit(transit));
   }
-  setIsOffering(media){
+  setIsOffering(media) {
     this.store.dispatch(new WidgetIsOffering(media));
   }
-  setIsWriting(isWriting: boolean){
+  setIsWriting(isWriting: boolean) {
     this.store.dispatch(new WidgetIsWriting(isWriting));
   }
-  setMediaOffer(offer){
+  setMediaOffer(offer) {
     this.store.dispatch(new WidgetMediaOffer(offer));
   }
   setMediaState(media) {
-    console.log('setting media state', media);
     this.store.dispatch(new WidgetMediaChange(media));
   }
-  setMinimizedState(){
+  setMinimizedState() {
     this.store.dispatch(new WidgetSetMinimized());
   }
-  setMinimizedMedia(){
+  setMinimizedMedia() {
     this.store.dispatch(new WidgetSetMinimizedMedia(true));
     this.store.dispatch(new WidgetMarkAsRead());
   }
-  setMuted(muted){
+  setMuted(muted) {
     this.store.dispatch(new WidgetMuteSuccess(muted));
   }
-  setMuteInProgress(){
+  setMuteInProgress() {
     this.store.dispatch(new WidgetMuteInProgress());
   }
-  setNormalState(){
+  setNormalState() {
     this.store.dispatch(new WidgetSetNormal());
     this.store.dispatch(new WidgetMarkAsRead());
   }
-  setOfferRejected(){
+  setOfferRejected() {
     this.store.dispatch(new WidgetOfferRejected());
   }
-  setTopBar(topBarObject){
+  setTopBar(topBarObject) {
     this.store.dispatch(new WidgetSetTopBar({title: topBarObject.title, subtitle: topBarObject.subtitle}));
   }
-  setTopBarAvatar(avatarUrl: string){
+  setTopBarAvatar(avatarUrl: string) {
     this.store.dispatch(new WidgetSetTopBar({avatar: avatarUrl}));
   }
-  setTopBarSubtitle(subtitle: string){
+  setTopBarSubtitle(subtitle: string) {
     this.store.dispatch(new WidgetSetTopBar({subtitle: subtitle}));
   }
-  setTopBarTitle(title: string){
+  setTopBarTitle(title: string) {
     this.store.dispatch(new WidgetSetTopBar({title: title}));
   }
-  setTopBarWithAvatar(avatarUrl: string, title: string, subtitle: string){
+  setTopBarWithAvatar(avatarUrl: string, title: string, subtitle: string) {
     this.store.dispatch(new WidgetSetTopBar({title: title, subtitle: subtitle, avatar: avatarUrl}));
   }
-  setTopBarWithAgentInfo(agent){
+  setTopBarWithAgentInfo(agent) {
     this.store.dispatch(new WidgetSetTopBar({title: agent.nick, subtitle: 'STRINGS.QUEUE.TOPBAR.CONNECTED', avatar: agent.avatar}));
   }
-  setSurveyPanel(){
+  setSurveyPanel() {
     this.store.dispatch(new WidgetSetTopBar({title: 'STRINGS.SURVEY.TITLE', subtitle: 'STRINGS.SURVEY.SUBTITLE'}));
   }
-  setUiReady(){
+  setUiReady() {
     this.store.dispatch(new WidgetUiReady());
   }
-  setUploadPanel(show: boolean){
+  setUploadPanel(show: boolean) {
     this.store.dispatch(new WidgetShowUploadPanel(show));
   }
-  setUploading(){
+  setUploading() {
     this.store.dispatch(new WidgetIsUploading());
   }
-  setUploaded(){
-    this.store.dispatch(new WidgetUploadCompleted())
+  setUploaded() {
+    this.store.dispatch(new WidgetUploadCompleted());
   }
-  setWebleadSent(){
+  setWebleadSent() {
     this.store.dispatch(new WidgetWebleadSent());
   }
-  showQueuePanel(){
+  showQueuePanel() {
     this.store.dispatch(new WidgetShowQueuePanel());
   }
-  toggleEmojiPanel(){
+  toggleEmojiPanel() {
     this.store.dispatch(new WidgetToggleEmoji());
   }
 }

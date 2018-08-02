@@ -200,11 +200,11 @@ export class VvcContactWrap {
     if (conf && conf.nick) {
       this.visitorNick = conf.nick;
     }
-    console.log('CREATING CONTACTS WITH OPTIONS', conf);
+    // console.log('CREATING CONTACTS WITH OPTIONS', conf);
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
-      console.log('pre-routing callback-----', opts);
+      // console.log('pre-routing callback-----', opts);
       this.interactionStart = +new Date();
-      console.log('TRANSFER ROUTING', this.context.routing);
+      // console.log('TRANSFER ROUTING', this.context.routing);
       const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
       this.dissuasionTimer = setTimeout(() => {
         this.leave('dissuasion').then(() => {
@@ -214,7 +214,7 @@ export class VvcContactWrap {
       this.vivocha.createContact(opts).then( (contact) => {
         this.vivocha.pageRequest('interactionCreated', contact).then( () => {
           this.zone.run( () => {
-            console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
+            // console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
             this.contact = contact;
             this.uiService.setUiReady();
             if (contact.contact.initial_offer.Sharing) {
@@ -321,7 +321,7 @@ export class VvcContactWrap {
     } else {
       this.dcService.onDataCollectionCompleted().subscribe( (data: DataCollectionCompleted) => {
         if (data) {
-          console.log('DATA', data);
+          // console.log('DATA', data);
           const hideQueue = data.lastCompletedType && data.lastCompletedType === 'dialog';
           switch (data.type) {
             case 'dc':
@@ -413,7 +413,7 @@ export class VvcContactWrap {
       });
     });
     this.contact.on('close', obj => {
-      console.log('CLOSE', obj);
+      // console.log('CLOSE', obj);
       this.onClose(obj);
     });
     this.contact.on('joined', (c) => {
@@ -471,7 +471,7 @@ export class VvcContactWrap {
       });
     });
     this.contact.on('left', obj => {
-      console.log('LEFT', obj);
+      // console.log('LEFT', obj);
       this.onLeft(obj);
     });
     this.contact.on('localcapabilities', caps => {
@@ -481,18 +481,17 @@ export class VvcContactWrap {
       // console.log('ON_REMOTE',caps);
     });
     this.contact.on('mediachange', async (media, changed) => {
-      console.log('MEDIACHANGE', JSON.stringify(media, null, 2));
       if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
-        this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'))
+        this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
       }
       if (this.vivocha.dot(media, 'Video.data.tx_stream.id')) {
-        this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'))
+        this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'));
       }
       if (this.vivocha.dot(media, 'Voice.data.rx_stream.id')) {
-        this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'))
+        this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'));
       }
       if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
-        this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'))
+        this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'));
       }
       this.zone.run( () => {
         this.protocolService.setMediaChange(media);
@@ -619,7 +618,7 @@ export class VvcContactWrap {
     }
   }
   onLocalJoin(join) {
-    console.log('local join', join);
+    // console.log('local join', join);
   }
   onMediaOffer(offer, cb) {
     this.uiService.setMediaOffer(offer);
@@ -699,7 +698,7 @@ export class VvcContactWrap {
               if (agentInfo.avatar) {
                 agent.avatar = agentInfo.avatar;
               }
-              console.log('LOCAL JOIN', agent, this.contact);
+              // console.log('LOCAL JOIN', agent, this.contact);
               this.agent = agent;
               this.uiService.setAgent(agent);
               if (this.context.variables.showAgentInfoOnTopBar) {
@@ -891,7 +890,7 @@ export class VvcContactWrap {
       this.zone.run( () => {
         this.uiService.setInTransit(true);
       });
-      console.log('TOGGLE VIDEO', show, JSON.stringify(mediaOffer, null, 2));
+      // console.log('TOGGLE VIDEO', show, JSON.stringify(mediaOffer, null, 2));
       this.contact.offerMedia(mediaOffer).then( () => {
         this.zone.run( () => {
           this.uiService.setInTransit(false);
