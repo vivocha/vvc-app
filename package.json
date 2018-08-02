@@ -84,7 +84,7 @@
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "@vivocha/client-interaction-core": "^6.4.4",
-    "@vivocha/client-interaction-layout": "^6.4.2",
+    "@vivocha/client-interaction-layout": "^6.4.3",
     "@vivocha/public-entities": "^6.4.16",
     "autolinker": "^1.6.2",
     "classlist.js": "^1.1.20150312",

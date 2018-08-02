@@ -462,6 +462,20 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       padding: 8px 0;
       font-size: 0.875rem;
       color: $darkColor;
+
+      .message{
+        line-height: 18px;
+        font-size: 13px;
+        padding: 10px 0 5px 0;
+
+        a {
+          color: $primaryColor;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+
       label {
         display: block;
         font-weight: bold;
