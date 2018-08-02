@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   }
   closeContact(context) {
     const step = this.getCloseStep(context);
-    console.log('CLOSE CONTACT', step, context.variables, context);
+    // console.log('CLOSE CONTACT', step, context.variables, context);
 
     switch (step) {
       case 'remove-app':
@@ -216,7 +216,6 @@ export class AppComponent implements OnInit {
     this.interactionService.toggleEmojiPanel();
   }
   updateLeftScrollOffset(scrollObject: { scrollLeft: number, messageId: string}) {
-    console.log('should update left scroll', scrollObject);
     this.interactionService.updateLeftScrollOffset(scrollObject);
   }
   videoToggle(show) {
