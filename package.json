@@ -25,7 +25,7 @@
     "@angular/platform-browser": "^6.0.9",
     "@angular/platform-browser-dynamic": "^6.0.9",
     "@ngx-translate/core": "^10.0.2",
-    "@vivocha/public-entities": "^6.4.15",
+    "@vivocha/public-entities": "^6.4.16",
     "autolinker": "^1.6.2"
   },
   "devDependencies": {
