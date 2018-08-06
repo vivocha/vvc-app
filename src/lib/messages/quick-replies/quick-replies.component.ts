@@ -1,5 +1,5 @@
 import {
-  ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input,
+  ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit,
   Output, ViewChild
 } from '@angular/core';
 
@@ -8,22 +8,39 @@ import {
   templateUrl: './quick-replies.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class QuickRepliesComponent {
+export class QuickRepliesComponent implements OnInit, OnDestroy {
 
   @Input() message;
   @Output() action = new EventEmitter();
+  @Output() scrollUpdate = new EventEmitter();
   @ViewChild('qrContainer') container: ElementRef;
   hasReplied = false;
 
-  constructor(private cd: ChangeDetectorRef){}
+  scrollOffset = 0;
+  transition = 'none';
 
-  btnClicked(btn){
+  constructor() {}
+
+  ngOnInit() {
+    if (this.message) {
+      this.scrollOffset = this.message.scrollLeft;
+      this.transition = 'smooth';
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.scrollOffset !== this.message.scrollLeft) {
+      this.scrollUpdate.emit({scrollLeft: this.scrollOffset, messageId: this.message.id});
+    }
+  }
+
+  btnClicked(btn) {
     this.action.emit({ action: btn, msgId: this.message.id });
   }
 
-  hasImage(){
+  hasImage() {
     let img = false;
-    if (this.message && this.message.quick_replies){
+    if (this.message && this.message.quick_replies) {
       this.message.quick_replies.forEach( m => {
         if (m.image_url) {
           img = true;
@@ -32,19 +49,19 @@ export class QuickRepliesComponent {
     }
     return img;
   }
-  showCentered(){
+  showCentered() {
     return (this.message && this.message.quick_replies.length === 2);
   }
-  showScrollers(){
+  showScrollers() {
     return (this.message && this.message.quick_replies.length > 2);
   }
 
-  scrollRight(){
-    this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft + 200;
+  scrollRight() {
+    this.scrollOffset = this.scrollOffset + 200;
   }
 
-  scrollLeft(){
-    this.container.nativeElement.scrollLeft = this.container.nativeElement.scrollLeft - 200;
+  scrollLeft() {
+    this.scrollOffset = this.scrollOffset - 200;
   }
 
 }

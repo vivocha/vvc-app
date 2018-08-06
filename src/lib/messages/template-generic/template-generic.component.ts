@@ -24,30 +24,32 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
   scrollOffset = 0;
   transition = 'none';
 
-  constructor(){}
+  constructor() {}
 
-  ngOnInit(){
-    if (this.message){
+  ngOnInit() {
+    if (this.message) {
       this.scrollOffset = this.message.scrollLeft;
       this.transition = 'smooth';
     }
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     if (this.scrollOffset !== this.message.scrollLeft) {
       this.scrollUpdate.emit({scrollLeft: this.scrollOffset, messageId: this.message.id});
     }
   }
 
-  scrollRight(){
+  scrollRight() {
     this.scrollOffset = this.scrollOffset + 260;
   }
 
-  scrollLeft(){
+  scrollLeft() {
     this.scrollOffset = this.scrollOffset - 260;
   }
 
-  defaultAction(elem){
-    if (elem.default_action) this.action.emit(elem.default_action);
+  defaultAction(elem) {
+    if (elem.default_action) {
+      this.action.emit(elem.default_action);
+    }
   }
 }
