@@ -147,24 +147,25 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   outline: none;
   cursor: pointer;
   font-size: $fontSize;
-  padding: 10px 40px;
-  color: #333333;
-  background: #FFFFFF;
-  border: 1px solid #333333;
-  border-radius: 25px;
+  padding: 12px 24px;
+  color: rgba(0,0,0,0.54);
+  background: #F1F1F4;
+  border: 0;
+  border-radius: 8px;
+
   &:hover{
     color: $primaryColor;
-    border: 1px solid $primaryColor;
+    // border: 1px solid $primaryColor;
   }
   &:active{
     color: #FFFFFF;
     background: $primaryColor;
-    border: 1px solid $primaryColor;
+    // border: 1px solid $primaryColor;
   }
   &:disabled{
     cursor: default;
     color: #CCCCCC;
-    border: 1px solid #CCCCCC;
+    // border: 1px solid #CCCCCC;
   }
 }
 @mixin btn-template($primaryColor: $color1,$fontSize: 14px){
@@ -896,14 +897,15 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 
     .reply-message{
       text-align: center;
-      padding: 10px 50px;
-      color: #333333;
-      font-size: 15px;
+      padding: 22px 50px 10px 50px;
+      color: #727272;
+      font-size: 16px;
       font-weight: 300;
+      line-height: 21px;
     }
 
     .reply{
-      padding: 4px 30px;
+      padding: 3px 12px;
       button {
         width: 100%;
         @include btn-label();
@@ -928,15 +930,16 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         position: absolute;
         z-index: 2;
         cursor: pointer;
-        left: 5px;
-        bottom: 8px;
+        left: 0;
+        top: calc(50% - 25px);
         width: 30px;
-        height: 30px;
-        background-color: #ccc;
+        height: 49px;
+        border-radius: 0 3px 3px 0;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
         background-image: url($icon-vvc-scroll-left);
         background-repeat: no-repeat;
-        border-radius: 50%;
-        background-position: 6px 5px;
+        background-position: 10px;
         &.hasImg{
           bottom: 12px;
         }
@@ -949,15 +952,16 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         position: absolute;
         z-index: 2;
         cursor: pointer;
-        right: 5px;
-        bottom: 8px;
+        right: 0;
+        top: calc(50% - 25px);
+        height: 49px;
         width: 30px;
-        height: 30px;
-        background-color: #ccc;
+        border-radius: 3px 0 0 3px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
         background-image: url($icon-vvc-scroll-right);
         background-repeat: no-repeat;
-        border-radius: 50%;
-        background-position: 6px 5px;
+        background-position: 10px;
         &.hasImg{
           bottom: 12px;
         }
@@ -980,7 +984,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         }
         .reply{
           padding: 4px 6px;
-
+          flex: auto;
           &.img{
             button {
               position: relative;
