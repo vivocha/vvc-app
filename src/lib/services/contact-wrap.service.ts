@@ -605,7 +605,10 @@ export class VvcContactWrap {
     });
   }
   onLeft(obj) {
-    if (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) {
+    if (
+        (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) ||
+        (obj.reason && obj.reason === 'disconnect')
+    ) {
       this.leave('remote').then(() => {
         this.zone.run(() => {
           this.uiService.setClosedByAgent();
