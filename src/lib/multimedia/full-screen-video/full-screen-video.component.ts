@@ -17,17 +17,19 @@ export class FullScreenVideoComponent {
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  chatToggle(){
+  chatToggle() {
     this.displayChat.emit(!this.context.showChatOnFullScreen);
   }
-  hangup(){
+  hangup() {
     this.hangUp.emit();
   }
-  toggleMute(){
+  toggleMute() {
     this.muteToggle.emit(!this.context.isMuted);
   }
-  toggleVideo(){
-    if (this.context.inVideoTransit) return;
+  toggleVideo() {
+    if (this.context.inVideoTransit) {
+      return;
+    }
     this.videoToggle.emit(!this.context.videoTxStream);
   }
   trustedSrc(url): SafeUrl {
