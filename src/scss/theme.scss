@@ -698,6 +698,57 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
+
+@mixin chat-arrow($orientation: 'left', $showArrow: true, $background: $color1, $borderColor: $color1){
+  position: relative;
+  &.arrow {
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      @if ($showArrow == false) {
+        display: none;
+      }
+      @if ($orientation == 'right'){
+        top: 9px;
+        right: 0;
+        border-left: 8px solid $borderColor;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+
+      @if ($orientation == 'left'){
+        top: 15px;
+        left: 0;
+        border-right: 8px solid $background;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      @if ($showArrow == false) {
+        display: none;
+      }
+      @if ($orientation == 'right'){
+        top: 11px;
+        right:2px;
+        border-left: 6px solid $background;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+      }
+      @if ($orientation == 'left'){
+        top: 17px;
+        left:2px;
+        border-right: 6px solid $borderColor;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+      }
+    }
+  }
+}
 @mixin chat-message($fontSize: 16px, $timeSize: 12px, $timeColor: #727273){
   .chat-message{
     padding: 1px 4px;
@@ -761,11 +812,12 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       .message-visitor{
         background-image: url($visitorAvatarDefault);
         background-repeat: no-repeat;
+        background-size: contain;
         width: 30px;
         height: 30px;
         border-radius: 50%;
         position: relative;
-        top: -2px;
+        top: 1px;
         display: block;
       }
     }
@@ -782,6 +834,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           display: none;
         }
       }
+      .message{
+        @include chat-arrow('right', $showArrow, $background, $borderColor);
+      }
       .bubble {
         padding: 6px;
         margin-right: 8px;
@@ -792,6 +847,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         border-radius: $radius;
 
         position: relative;
+        /*
         &.arrow {
           &:after {
             @if ($showArrow == false) {
@@ -823,6 +879,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
             border-bottom: 8px solid transparent;
           }
         }
+        */
       }
       .time{
         text-align: right;
@@ -844,6 +901,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   a {
     color: $color;
   }
+  /*
   &.arrow {
     &:after {
       @if ($showArrow == false) {
@@ -873,6 +931,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       border-bottom: 8px solid transparent;
     }
   }
+  */
 }
 @mixin chat-agent-message($background: $color1, $color: #FFFFFF, $radius: 6px, $borderColor: $color1, $showAvatar: $showAgentAvatar, $showArrow: $showAgentBalloonArrow){
 
@@ -882,6 +941,9 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         @if ($showAvatar == false) {
           display: none;
         }
+      }
+      .message{
+        @include chat-arrow('left', $showArrow, $background, $borderColor);
       }
       .bubble {
         @include chat-agent-bubble($background, $color, $radius, $borderColor, $showAvatar, $showArrow);
