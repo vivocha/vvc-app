@@ -123,7 +123,12 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {media: multimedia });
     }
     case fromWidget.WIDGET_NEW_MESSAGE: {
-      if (state.context.isMinimized || !state.chat.isVisible || (state.media.isVisible && !state.media.isMinimized)) {
+      if (
+          state.context.isMinimized ||
+          !state.chat.isVisible ||
+          (state.media.isVisible && !state.media.isMinimized) ||
+          (state.context.isFullScreen && !state.chat.showOnFullScreen)
+      ) {
         const chat = Object.assign({}, state.chat, {notRead: state.chat.notRead + 1});
         return Object.assign({}, state, {chat: chat});
       } else {
