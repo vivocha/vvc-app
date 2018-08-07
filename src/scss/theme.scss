@@ -9,17 +9,29 @@ $appBottomDistance: -5px;
 $appRightDistance: 40px;
 
 
-$icon-vvc-reduce: './assets/static/icons/vvc-reduce.png';
-$icon-vvc-close: './assets/static/icons/vvc-close.png';
-$icon-vvc-menu: './assets/static/icons/vvc-menu.png';
-$icon-vvc-maximize: './assets/static/icons/vvc-maximize.png';
-$icon-vvc-audio: './assets/static/icons/vvc-audio.png';
-$icon-vvc-video: './assets/static/icons/vvc-video.png';
-$icon-vvc-chat: './assets/static/icons/vvc-chat.png';
+//$icon-vvc-reduce: './assets/static/icons/vvc-reduce.png';
+$icon-vvc-reduce: './assets/static/icons/vvc-menu-minimize.svg';
+//$icon-vvc-close: './assets/static/icons/vvc-close.png';
+$icon-vvc-close: './assets/static/icons/vvc-close.svg';
+//$icon-vvc-menu: './assets/static/icons/vvc-menu.png';
+$icon-vvc-menu: './assets/static/icons/vvc-kebab-menu.svg';
+//$icon-vvc-maximize: './assets/static/icons/vvc-maximize.png';
+$icon-vvc-maximize: './assets/static/icons/vvc-menu-expand.svg';
+//$icon-vvc-audio: './assets/static/icons/vvc-audio.png';
+//$icon-vvc-video: './assets/static/icons/vvc-video.png';
+$icon-vvc-audio: './assets/static/icons/vvc-menu-voice.svg';
+$icon-vvc-video: './assets/static/icons/vvc-menu-video.svg';
 
-$icon-vvc-emoji: './assets/static/icons/vvc-emoji.png';
-$icon-vvc-clip: './assets/static/icons/vvc-clip.png';
-$icon-vvc-send: './assets/static/icons/vvc-send.png';
+//$icon-vvc-chat: './assets/static/icons/vvc-chat.png';
+$icon-vvc-chat: './assets/static/icons/vvc-menu-hide-chat.svg';
+
+//$icon-vvc-emoji: './assets/static/icons/vvc-emoji.png';
+$icon-vvc-emoji: './assets/static/icons/vvc-smile.svg';
+//$icon-vvc-clip: './assets/static/icons/vvc-clip.png';
+$icon-vvc-clip: './assets/static/icons/vvc-paperclip.svg';
+//$icon-vvc-send: './assets/static/icons/vvc-send.png';
+$icon-vvc-send: './assets/static/icons/vvc-send-messages.svg';
+
 $icon-vvc-scroll-right: './assets/static/icons/vvc-arrow-right.svg';
 $icon-vvc-scroll-left: './assets/static/icons/vvc-arrow-left.svg';
 
@@ -241,28 +253,35 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     display: inline-block;
     width: 19px;
     height: 19px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
 
     &.icon-vvc-reduce {
       background: url($icon-vvc-reduce);
+      background-position: 50% 85%;
     }
     &.icon-vvc-close {
       background: url($icon-vvc-close);
+      background-position: center;
     }
     &.icon-vvc-menu {
       background: url($icon-vvc-menu);
+      background-position: center;
     }
     &.icon-vvc-maximize {
       background: url($icon-vvc-maximize);
+      background-position: center;
     }
     &.icon-vvc-audio {
       background: url($icon-vvc-audio);
+      background-position: center;
     }
     &.icon-vvc-video {
       background: url($icon-vvc-video);
+      background-position: center;
     }
     &.icon-vvc-chat {
       background: url($icon-vvc-chat);
+      background-position: center;
     }
   }
 
@@ -278,9 +297,10 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       background: darken($background, 10%);
       width: 180px;
       position: relative;
-      margin-top: 10px;
-      margin-right: 15px;
+      margin-top: 56px;
+      margin-right: 28px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      text-transform: capitalize;
       div {
         .icon{
           position: relative;
@@ -1323,12 +1343,18 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
 
       &.icon-vvc-emoji {
         background: url($icon-vvc-emoji);
+        background-repeat: no-repeat;
+        background-position: center;
       }
       &.icon-vvc-clip {
         background: url($icon-vvc-clip);
+        background-repeat: no-repeat;
+        background-position: center;
       }
       &.icon-vvc-send {
         background: url($icon-vvc-send);
+        background-repeat: no-repeat;
+        background-position: 30% 70%;
       }
     }
   }
@@ -1600,29 +1626,39 @@ body, input, textarea{ font-family: $appFontFamily; }
         display: flex;
         justify-content: center;
         .big-video{
-
+          width: 100%;
         }
         .small-video{
           position: absolute;
           height: 20%;
-          left: 30px;
-          bottom: 18px;
+          left: 24px;
+          bottom: 24px;
+          transform: scaleX(-1);
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
         }
         .chat-toggle {
           cursor: pointer;
           position: absolute;
-          right: 40px;
-          top: 40px;
+          right: 0;
+          top: 0;
+          width: 72px;
+          height: 64px;
           z-index: 10;
+          background-color: $color1;
+          padding: 10px 0 12px 0;
+          border-radius: 0 0 0 20px;
+          div {
+            text-align: center;
+            line-height: 51px;
+          }
         }
       }
       .media-controls-wrapper{
         flex: none;
-        height: 100px;
         .media-tools{
           display: flex;
           justify-content: center;
-          background: rgba(255,255,255,0.6);
+          background-color: #F0F3F5;
           .button-wrapper{
             margin: 8px 0;
             flex: auto;
@@ -1632,22 +1668,54 @@ body, input, textarea{ font-family: $appFontFamily; }
               height: 50px;
               display: block;
               border-radius: 50%;
-              border: 1px solid white;
+              border: 1px solid #0351A1;
               cursor: pointer;
               background: transparent;
 
+              .fill {
+                fill: #0351A1;
+              }
               svg{
                 display: block;
                 margin: auto;
                 height: 100%;
               }
 
+              &:hover{
+                background-color: #0351A1;
+                border: 1px solid #FFF;
+                .fill {
+                  fill: #FFF;
+                }
+              }
+
+              &.hangup{
+                background-color: #D7293B;
+                border: 1px solid #fff;
+                .fill {
+                  fill: #fff;
+                }
+              }
+
+              &.hangup:hover{
+                background-color: #C12434;
+              }
+/*
               &.to-remove:hover{
                 border: 2px solid #C85E6B;
               }
               &.to-add:hover{
                 border: 2px solid #60A618;
               }
+              */
+            }
+            .button-label{
+              text-align: center;
+              font-size: 11px;
+              font-weight: bold;
+              line-height: 13px;
+              color: #282828;
+              padding: 3px;
             }
           }
         }
