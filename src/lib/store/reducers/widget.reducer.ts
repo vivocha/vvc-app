@@ -213,7 +213,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {chat: chat});
     }
     case fromWidget.WIDGET_TOGGLE_EMOJI: {
-      const chat = Object.assign({}, state.chat, {emojiPanelOpened: !state.chat.emojiPanelOpened});
+      const chat = Object.assign({}, state.chat, {emojiPanelOpened: !state.chat.emojiPanelOpened, uploadPanelOpened: false});
       return Object.assign({}, state, { chat: chat });
     }
     case fromWidget.WIDGET_UI_READY: {

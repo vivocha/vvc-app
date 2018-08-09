@@ -55,56 +55,56 @@ export class WidgetHideQueueForChat implements Action {
 }
 export class WidgetIncomingMedia implements Action {
   readonly type = WIDGET_INCOMING_MEDIA;
-  constructor(public payload: any){}
+  constructor(public payload: any) {}
 }
 export class WidgetInitChat implements Action {
   readonly type = WIDGET_INIT_CHAT;
-  constructor(public payload: any){}
+  constructor(public payload: any) {}
 }
 export class WidgetInitContext implements Action {
   readonly type = WIDGET_INIT_CONTEXT;
-  constructor(public payload: any){}
+  constructor(public payload: any) {}
 }
 export class WidgetInitializeMultimedia implements Action {
   readonly type = WIDGET_INIT_MULTIMEDIA;
-  constructor(public payload: any){}
+  constructor(public payload: any) {}
 }
 export class WidgetInitProtocol implements Action {
   readonly type = WIDGET_INIT_PROTOCOL;
-  constructor(public payload: ProtocolState){}
+  constructor(public payload: ProtocolState) {}
 }
 export class WidgetIsOffering implements Action {
   readonly type = WIDGET_IS_OFFERING;
-  constructor(public payload: string){}
+  constructor(public payload: string) {}
 }
-export class WidgetIsUploading implements Action{
+export class WidgetIsUploading implements Action {
   readonly type = WIDGET_IS_UPLOADING;
 }
 export class WidgetIsWriting implements Action {
   readonly type = WIDGET_IS_WRITING;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetSetVideoTransit implements Action {
   readonly type = WIDGET_IN_VIDEO_TRANSIT;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetMarkAsRead implements Action {
   readonly type = WIDGET_MARK_AS_READ;
 }
 export class WidgetMediaChange implements Action {
   readonly type = WIDGET_MEDIA_CHANGE;
-  constructor(public payload: any){}
+  constructor(public payload: any) {}
 }
 export class WidgetMediaOffer implements Action {
   readonly type = WIDGET_MEDIA_OFFER;
-  constructor(public payload: any){}
+  constructor(public payload: any) {}
 }
 export class WidgetMuteInProgress implements Action {
   readonly type = WIDGET_MUTE_IN_PROGRESS;
 }
 export class WidgetMuteSuccess implements Action {
   readonly type = WIDGET_MUTE_SUCCESS;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetNewMessage implements Action {
   readonly type = WIDGET_NEW_MESSAGE;
@@ -117,7 +117,7 @@ export class WidgetOfferRejected implements Action {
 }
 export class WidgetSetAgent implements Action {
   readonly type = WIDGET_SET_AGENT;
-  constructor(public payload: AgentState){}
+  constructor(public payload: AgentState) {}
 }
 export class WidgetSetAutoChat implements Action {
   readonly type = WIDGET_SET_AUTO_CHAT;
@@ -136,29 +136,29 @@ export class WidgetSetMinimized implements Action {
 }
 export class WidgetSetMinimizedMedia implements Action {
   readonly type = WIDGET_SET_MINIMIZED_MEDIA;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetSetNormal implements Action {
   readonly type = WIDGET_SET_NORMAL;
 }
-export class WidgetSetTopBar implements Action{
+export class WidgetSetTopBar implements Action {
   readonly type = WIDGET_SET_TOP_BAR;
-  constructor(public payload: TopBarState){}
+  constructor(public payload: TopBarState) {}
 }
 export class WidgetShowChatOnFullScreen implements Action {
   readonly type = WIDGET_SHOW_CHAT_FULLSCREEN;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetShowClosePanel implements Action {
   readonly type = WIDGET_SHOW_CLOSE_PANEL;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetShowQueuePanel implements Action {
   readonly type = WIDGET_SHOW_QUEUE_PANEL;
 }
 export class WidgetShowUploadPanel implements Action {
   readonly type = WIDGET_SHOW_UPLOAD_PANEL;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 export class WidgetToggleEmoji implements Action {
   readonly type = WIDGET_TOGGLE_EMOJI;

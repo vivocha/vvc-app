@@ -20,141 +20,136 @@ export class VvcInteractionService {
     private store: Store<AppState>,
     private contextService: VvcContextService,
     private contactService: VvcContactWrap
-  ){
+  ) {
 
   }
 
   /**** PUBLIC METHOD ****/
-  acceptAgentRequest(requestId){
+  acceptAgentRequest(requestId) {
     this.contactService.acceptAgentRequest(requestId);
   }
-  acceptOffer(){
+  acceptOffer() {
     this.contactService.acceptOffer();
   }
-  addChatToFullScreen(show){
+  addChatToFullScreen(show) {
     this.contactService.addChatToFullScreen(show);
   }
-  askForVideoUpgrade(){
+  askForVideoUpgrade() {
     this.contactService.askForUpgrade('Video');
   }
-  askForVoiceUpgrade(){
+  askForVoiceUpgrade() {
     this.contactService.askForUpgrade('Voice');
   }
-  closeApp(){
+  closeApp() {
     this.contactService.closeApp();
   }
-  closeContact(){
+  closeContact() {
     this.contactService.closeContact();
   }
-  closeUploadPanel(){
+  closeUploadPanel() {
     this.contactService.closeUploadPanel();
   }
-  dismissCloseModal(){
+  dismissCloseModal() {
     this.contactService.showCloseModal(false);
   }
-  getState():Observable<UiState>{
-    //this.store.select(getUiState).subscribe(uistate => console.log('UISTATE', JSON.stringify(uistate, null, 2)));
+  getState(): Observable<UiState> {
     return this.store.select(getUiState);
   }
-  hangUp(){
+  hangUp() {
     this.contactService.hangUp();
   }
-  hideChat(){
+  hideChat() {
     this.contactService.hideChat();
   }
-  init(){
-    this.contextService.ready().subscribe( (context:ContextState) => {
+  init() {
+    this.contextService.ready().subscribe( (context: ContextState) => {
       if (context.loaded) {
         this.vivocha = this.contextService.getVivocha();
         this.context = context;
 
         this.contactService.initializeContact(this.vivocha, this.context);
       }
-    })
+    });
   }
-  minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any){
+  minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any) {
     this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
-  minimizeMedia(){
+  minimizeMedia() {
     this.contactService.minimizeMedia();
   }
-  muteToggle(muted){
+  muteToggle(muted) {
     this.contactService.muteToggle(muted);
   }
-  openAttachment(url, click?: boolean){
+  openAttachment(url, click?: boolean) {
     this.contactService.openAttachment(url, click);
   }
-  processQuickReply(reply){
+  processQuickReply(reply) {
     this.contactService.processQuickReply(reply);
   }
-  registerCustomAction(action):Observable<any>{
+  registerCustomAction(action): Observable<any> {
     return this.contactService.registerCustomAction(action);
   }
-  rejectAgentRequest(requestId){
+  rejectAgentRequest(requestId) {
     this.contactService.rejectAgentRequest(requestId);
   }
-  rejectOffer(){
+  rejectOffer() {
     this.contactService.rejectOffer();
   }
-  sendAttachment(upload){
+  sendAttachment(upload) {
     this.contactService.sendAttachment(upload);
   }
-  sendIsWriting(){
+  sendIsWriting() {
     this.contactService.sendIsWriting();
   }
-  sendPostBack(action){
+  sendPostBack(action) {
     this.contactService.sendPostBack(action);
   }
-  sendRequest(requestId, requestData){
+  sendRequest(requestId, requestData) {
     return this.contactService.sendRequest(requestId, requestData);
   }
-  sendText(text){
+  sendText(text) {
     this.contactService.sendText(text);
   }
-  setFullScreen(){
+  setFullScreen() {
     this.contactService.setFullScreen();
   }
-  setNormalScreen(){
+  setNormalScreen() {
     this.contactService.setNormalScreen();
   }
-  setTopBar(avatarUrl: string, title: string, subtitle: string){
+  setTopBar(avatarUrl: string, title: string, subtitle: string) {
     this.contactService.setTopBar(avatarUrl, title, subtitle);
   }
-  setTopBarAvatar(avatarUrl: string){
+  setTopBarAvatar(avatarUrl: string) {
     this.contactService.setTopBarAvatar(avatarUrl);
   }
-  setTopBarSubtitle(subtitle: string){
+  setTopBarSubtitle(subtitle: string) {
     this.contactService.setTopBarSubtitle(subtitle);
   }
-  setTopBarTitle(title: string){
+  setTopBarTitle(title: string) {
     this.contactService.setTopBarTitle(title);
   }
-  showCloseModal(){
+  showCloseModal() {
     this.contactService.showCloseModal(true);
   }
-  showUploadPanel(){
+  showUploadPanel() {
     this.contactService.showUploadPanel();
   }
-  showSurvey(){
+  showSurvey() {
     this.contactService.showSurvey();
   }
-  submitDataCollection(dc){
+  submitDataCollection(dc) {
     this.contactService.submitDataCollection(dc);
   }
-  /*
-  submitRecontactData(recontact){
-    this.contactService.submitRecontactData(recontact);
-  }*/
-  submitSurvey(dc){
+  submitSurvey(dc) {
     this.contactService.submitSurvey(dc);
   }
-  toggleEmojiPanel(){
+  toggleEmojiPanel() {
     this.contactService.toggleEmojiPanel();
   }
-  toggleVideo(show){
+  toggleVideo(show) {
     this.contactService.toggleVideo(show);
   }
-  updateLeftScrollOffset(o: LeftScrollOffset){
+  updateLeftScrollOffset(o: LeftScrollOffset) {
     this.contactService.updateLeftScrollOffset(o);
   }
 }
