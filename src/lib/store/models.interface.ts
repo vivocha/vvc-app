@@ -192,5 +192,6 @@ export interface UiState {
   voiceRxStream: streamType;
   videoRxStream: streamType;
   videoTxStream: streamType;
+  screenRxStream: streamType;
   webleadSent: boolean;
 }

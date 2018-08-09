@@ -261,7 +261,11 @@ export const getUiStateRedux = (
                                   widgetState.media.media.Voice.data &&
                                   widgetState.media.media.Voice.data.rx_stream &&
                                   !!widgetState.media.media.Voice.data.rx_stream.media;
+  const hasScreenStream         = widgetState.media.media.Screen.data &&
+                                  widgetState.media.media.Screen.data.rx_stream &&
+                                  !!widgetState.media.media.Screen.data.rx_stream.media;
   const audioRxStream           = (hasAudioStream) ? widgetState.media.media.Voice.data.rx_stream.media : false;
+  const screenRxStream          = (hasScreenStream) ? widgetState.media.media.Screen.data.rx_stream.media : false;
   const isAudioConnecting       = hasAudio && !hasAudioStream;
   const isAudioConnected        = hasAudio && hasAudioStream;
   const isLocalVideoConnecting  = hasLocalVideo && !hasLocalVideoStream;
@@ -376,6 +380,7 @@ export const getUiStateRedux = (
       voiceRxStream: audioRxStream,
       videoRxStream: remoteVideoStream,
       videoTxStream: localVideoStream,
+      screenRxStream: screenRxStream,
       webleadSent: widgetState.context && widgetState.context.webleadSent
     };
 };

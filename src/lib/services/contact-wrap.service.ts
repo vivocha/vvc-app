@@ -493,6 +493,12 @@ export class VvcContactWrap {
       if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
         this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'));
       }
+      if (this.vivocha.dot(media, 'Screen.data.rx_stream.id')) {
+        this.vivocha.dot(media, 'Screen.data.rx_stream.media', await this.contact.getMediaStream('screen', 'rx'));
+      }
+      if (this.vivocha.dot(media, 'Screen.data.tx_stream.id')) {
+        this.vivocha.dot(media, 'Screen.data.tx_stream.media', await this.contact.getMediaStream('screen', 'tx'));
+      }
       this.zone.run( () => {
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
