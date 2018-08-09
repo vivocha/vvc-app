@@ -16,28 +16,29 @@ export class MediaComponent {
   @Output() displayChat = new EventEmitter();
   @Output() hangUp = new EventEmitter();
 
+  hideVideo = false;
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  acceptOffer(){
+  acceptOffer() {
     this.onAccept.emit();
   }
-  hangup(){
+  hangup() {
     this.hangUp.emit();
   }
-  rejectIncomingOffer(){
+  rejectIncomingOffer() {
     this.onReject.emit();
   }
-  toggleMute(){
+  toggleMute() {
     this.muteToggle.emit(!this.context.isMuted);
   }
-  toggleVideo(){
-    if (this.context.inVideoTransit) return;
+  toggleVideo() {
+    if (this.context.inVideoTransit) {
+      return;
+    }
     this.videoToggle.emit(!this.context.videoTxStream);
   }
-
   trustedSrc(url): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
-
 }

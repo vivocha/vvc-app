@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
@@ -14,6 +14,8 @@ export class FullScreenVideoComponent {
   @Output() displayChat = new EventEmitter();
   @Output() hangUp = new EventEmitter();
   @Output() normalScreen = new EventEmitter();
+
+  hideVideo = false;
 
   constructor(private sanitizer: DomSanitizer) { }
 
