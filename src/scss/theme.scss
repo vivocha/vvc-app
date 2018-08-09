@@ -357,7 +357,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 }
 @mixin upload-panel($loadingBarColor: $color1){
-  margin: 40px;
+  margin: 27px;
   padding: 8px;
   border: 1px solid #eeeeee;
   border-radius: 8px;
@@ -601,6 +601,116 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 
 }
+@mixin media-toolbar(){
+  flex: none;
+  .media-tools{
+    display: flex;
+    justify-content: center;
+    background-color: #F0F3F5;
+
+    .button-wrapper{
+      margin: 8px 0;
+      flex: auto;
+      .round-button{
+        margin: auto;
+        width: 50px;
+        height: 50px;
+        display: block;
+        border-radius: 50%;
+        border: 1px solid $color1;
+        cursor: pointer;
+        background: transparent;
+
+        .fill {
+          fill: $color1;
+        }
+        svg{
+          display: block;
+          margin: auto;
+          height: 100%;
+        }
+
+        &:hover{
+          background-color: $color1;
+          border: 1px solid #FFF;
+          .fill {
+            fill: #FFF;
+          }
+        }
+
+        &.hangup{
+          background-color: #D7293B;
+          border: 1px solid #fff;
+          .fill {
+            fill: #fff;
+          }
+        }
+
+        &.hangup:hover{
+          background-color: #C12434;
+        }
+      }
+      .button-label{
+        text-align: center;
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 13px;
+        color: #282828;
+        padding: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: auto;
+      }
+    }
+    &.fit{
+      background-color: $color1;
+      padding-top: 8px;
+      .button-wrapper{
+        flex:none;
+        width: 110px;
+
+        .round-button{
+          border: 1px solid #fff;
+          width: 40px;
+          height: 40px;
+
+          .fill {
+            fill: #fff;
+          }
+
+          &.hangup{
+            border: 1px solid #D7293B;
+          }
+        }
+        .round-button:hover{
+          background: darken($color1, 10%);
+        }
+        .round-button.hangup:hover{
+          background: #C12434;
+        }
+      }
+      .button-label{
+        font-size: 9px;
+        color: #fff;
+      }
+      &.incoming{
+        background-color: rgba(255,255,255,0.8);
+        .button-wrapper{
+          width: 158px;
+        }
+        .round-button{
+          width: 50px;
+          height: 50px;
+
+        }
+        .button-label{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
 @mixin media-layer($bgColor: $color1){
   flex-direction: column;
   display: flex;
@@ -636,9 +746,20 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
     .small-video{
       position: absolute;
-      width: 28%;
-      bottom: 15px;
-      right: 10px;
+      bottom: 9px;
+      right: -10px;
+      height: 34%;
+      width: 34%;
+      video{
+        height: 100%;
+        transform: scaleX(-1);
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+      }
+      &.hide{
+        video {
+          display: none;
+        }
+      }
     }
   }
   .media-connected-view{
@@ -646,54 +767,28 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     flex-direction: column;
     margin-bottom: 60px;
     .media-content{
-      flex: auto;
-      margin-bottom: 50px;
-      .media-tools{
-        display: flex;
-        justify-content: center;
-        background: rgba(255,255,255,0.6);
-        .button-wrapper{
-          margin: 8px 0;
-          flex: auto;
-          .round-button{
-            margin: auto;
-            width: 50px;
-            height: 50px;
-            display: block;
-            border-radius: 50%;
-            border: 1px solid white;
-            cursor: pointer;
-            background: transparent;
-
-            svg{
-              display: block;
-              margin: auto;
-              height: 100%;
-            }
-
-            &.to-remove:hover{
-              border: 2px solid #C85E6B;
-            }
-            &.to-add:hover{
-              border: 2px solid #60A618;
-            }
-          }
-        }
-      }
+      @include media-toolbar();
     }
     .media-bottom{
-      cursor: pointer;
-      flex: none;
-      font-size: 12px;
-      font-weight: 300;
-      font-style: italic;
-      color: white;
-      padding-left: 40px;
-      span{
-        position: relative;
-        top: -4px;
-        padding-left: 4px;
+      text-align: center;
+      padding-top: 40px;
+      .chat-button{
+        cursor: pointer;
+        flex: none;
+        font-size: 12px;
+        font-weight: 300;
+        color: white;
+        display: inline-block;
+        border: 1px solid white;
+        border-radius: 100px;
+        padding: 15px 30px;
+        span{
+          position: relative;
+          top: -4px;
+          padding-left: 2px;
+        }
       }
+
     }
   }
 }
@@ -1383,39 +1478,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 }
 @mixin loading-panel($background: $color1, $loadingBarColor: #FFFFFF){
-  /*
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: $background;
-  z-index: 3;
-  .inner-loading-panel{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    .loading-container{
-      width: 200px;
-      height: 5px;
-      margin: auto;
-
-      .progress-bar{
-        height:2px;
-        width:200px;
-        background: rgba($loadingBarColor,0.6);
-        .loaded{
-          height:100%;
-          width:100%;
-          animation:2s linear infinite loading;
-          transform-origin:0%;
-          background: $loadingBarColor;
-        }
-      }
-    }
-  }
-  */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1510,6 +1572,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
+
 /**
   LAYOUT
  */
@@ -1558,14 +1621,19 @@ body, input, textarea{ font-family: $appFontFamily; }
         .media-bottom,
         .media-title,
         .media-avatar { display: none }
-        .media-content{
-          margin-bottom: 10px;
-        }
         .media-connected-view{
           margin-bottom: 0;
         }
         .big-video{
-          max-height: 150px;
+          background-color: black;
+          max-height: 206px;
+          width: 100%;
+        }
+      }
+      .big-video{
+        &.no-remote{
+          background-color: black;
+          height: 206px;
         }
       }
     }
@@ -1629,12 +1697,22 @@ body, input, textarea{ font-family: $appFontFamily; }
           width: 100%;
         }
         .small-video{
+          padding: 5px;
           position: absolute;
-          height: 20%;
           left: 24px;
           bottom: 24px;
-          transform: scaleX(-1);
-          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+          height: 20%;
+          width: 20%;
+          video{
+            height: 100%;
+            transform: scaleX(-1);
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+          }
+          &.hide{
+            video {
+              display: none;
+            }
+          }
         }
         .chat-toggle {
           cursor: pointer;
@@ -1654,71 +1732,7 @@ body, input, textarea{ font-family: $appFontFamily; }
         }
       }
       .media-controls-wrapper{
-        flex: none;
-        .media-tools{
-          display: flex;
-          justify-content: center;
-          background-color: #F0F3F5;
-          .button-wrapper{
-            margin: 8px 0;
-            flex: auto;
-            .round-button{
-              margin: auto;
-              width: 50px;
-              height: 50px;
-              display: block;
-              border-radius: 50%;
-              border: 1px solid #0351A1;
-              cursor: pointer;
-              background: transparent;
-
-              .fill {
-                fill: #0351A1;
-              }
-              svg{
-                display: block;
-                margin: auto;
-                height: 100%;
-              }
-
-              &:hover{
-                background-color: #0351A1;
-                border: 1px solid #FFF;
-                .fill {
-                  fill: #FFF;
-                }
-              }
-
-              &.hangup{
-                background-color: #D7293B;
-                border: 1px solid #fff;
-                .fill {
-                  fill: #fff;
-                }
-              }
-
-              &.hangup:hover{
-                background-color: #C12434;
-              }
-/*
-              &.to-remove:hover{
-                border: 2px solid #C85E6B;
-              }
-              &.to-add:hover{
-                border: 2px solid #60A618;
-              }
-              */
-            }
-            .button-label{
-              text-align: center;
-              font-size: 11px;
-              font-weight: bold;
-              line-height: 13px;
-              color: #282828;
-              padding: 3px;
-            }
-          }
-        }
+        @include media-toolbar();
       }
     }
     #vvc-normal-container{

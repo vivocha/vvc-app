@@ -2011,5 +2011,181 @@
     },
     "description": "",
     "id": "STRINGS.LINK_PUSH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Microphone disabled",
+        "state": "new"
+      },
+      "it": {
+        "value": "Microfono disabilitato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Microphone muet",
+        "state": "new"
+      },
+      "ja": {
+        "value": "マイクが無効",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.MUTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Microphone enabled",
+        "state": "new"
+      },
+      "it": {
+        "value": "Microfono abilitato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Microphone activé",
+        "state": "new"
+      },
+      "ja": {
+        "value": "マイクが有効",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.UNMUTED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video enabled",
+        "state": "new"
+      },
+      "it": {
+        "value": "Video abilitato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Vidéo activée",
+        "state": "new"
+      },
+      "ja": {
+        "value": "ビデオ使用可",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.VIDEO_ENABLED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Video disabled",
+        "state": "new"
+      },
+      "it": {
+        "value": "Video disabilitato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Vidéo désactivée",
+        "state": "new"
+      },
+      "ja": {
+        "value": "ビデオ使用不可",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.VIDEO_DISABLED"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Close call",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiudi chiamata",
+        "state": "new"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.CLOSE_CALL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Collapse video",
+        "state": "new"
+      },
+      "it": {
+        "value": "Riduci video",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Réduire la vidéo",
+        "state": "new"
+      },
+      "ja": {
+        "value": "ビデオを抑える",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.MINIMIZE_VIDEO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Decline",
+        "state": "new"
+      },
+      "it": {
+        "value": "Rifiuta",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Refuser",
+        "state": "new"
+      },
+      "ja": {
+        "value": "拒否",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.DECLINE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Accept",
+        "state": "new"
+      },
+      "it": {
+        "value": "Accetta",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Accepter",
+        "state": "new"
+      },
+      "ja": {
+        "value": "受領",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.ACCEPT"
   }
 ]
