@@ -261,7 +261,9 @@ export const getUiStateRedux = (
                                   widgetState.media.media.Voice.data &&
                                   widgetState.media.media.Voice.data.rx_stream &&
                                   !!widgetState.media.media.Voice.data.rx_stream.media;
-  const hasScreenStream         = widgetState.media.media.Screen.data &&
+  const hasScreenStream         = widgetState.media.media &&
+                                  widgetState.media.media.Screen &&
+                                  widgetState.media.media.Screen.data &&
                                   widgetState.media.media.Screen.data.rx_stream &&
                                   !!widgetState.media.media.Screen.data.rx_stream.media;
   const audioRxStream           = (hasAudioStream) ? widgetState.media.media.Voice.data.rx_stream.media : false;
@@ -274,7 +276,7 @@ export const getUiStateRedux = (
   const isRemoteVideoConnected  = hasRemoteVideo && hasRemoteVideoStream;
   const isVideoConnecting       = isLocalVideoConnecting || isRemoteVideoConnecting;
   const isVideoConnected        = isLocalVideoConnected || isRemoteVideoConnected;
-  const isMediaConnected        = isAudioConnected || isLocalVideoConnected || isRemoteVideoConnected;
+  const isMediaConnected        = isAudioConnected || isLocalVideoConnected || isRemoteVideoConnected || screenRxStream;
   const isMediaConnecting       = isAudioConnecting || isVideoConnecting;
   const isMediaVisible          = widgetState.chat &&
                                   !widgetState.chat.uploadPanelOpened &&
@@ -330,7 +332,7 @@ export const getUiStateRedux = (
       agent: widgetState.agent,
       messages: [...messagesState.list],
       variables: widgetState.context.variables || {},
-      canMaximize: isVideoConnected,
+      canMaximize: isVideoConnected || screenRxStream,
       canMinimize: true,
       canRemoveApp: canRemoveApp,
       canStartAudio: canStartAudio,

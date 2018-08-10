@@ -287,8 +287,11 @@ export class VvcContactWrap {
         mediaOffer['Video'].rx = 'off';
       }
       this.zone.run(() => {
-        this.vivocha.setNormalScreen();
-        this.uiService.setHangUpState();
+        // console.log('MEDIAOFFER', mediaOffer);
+        if (!mediaOffer['Screen'] || mediaOffer['Screen'].rx === 'off') {
+          this.vivocha.setNormalScreen();
+          this.uiService.setHangUpState();
+        }
       });
       this.contact.offerMedia(mediaOffer).then( () => {
         this.zone.run( () => {
@@ -502,6 +505,10 @@ export class VvcContactWrap {
       this.zone.run( () => {
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
+        if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
+          this.vivocha.setNormalScreen();
+          this.uiService.setHangUpState();
+        }
       });
     });
     this.contact.on('mediaoffer', (offer, cb) => {
