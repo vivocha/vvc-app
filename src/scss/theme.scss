@@ -747,18 +747,23 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     .small-video{
       position: absolute;
       bottom: 9px;
-      right: -10px;
       height: 34%;
       width: 34%;
       video{
         height: 100%;
-        transform: scaleX(-1);
         box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
       }
       &.hide{
         video {
           display: none;
         }
+      }
+      &.local{
+        left: 0;
+        transform: scaleX(-1);
+      }
+      &.remote{
+        right: -10px;
       }
     }
   }
@@ -1628,12 +1633,19 @@ body, input, textarea{ font-family: $appFontFamily; }
           background-color: black;
           max-height: 206px;
           width: 100%;
+
         }
       }
       .big-video{
         &.no-remote{
           background-color: black;
           height: 206px;
+        }
+        &.switch-enabled{
+          cursor: alias;
+        }
+        &.flipped{
+          transform: scaleX(-1);
         }
       }
     }
@@ -1695,23 +1707,36 @@ body, input, textarea{ font-family: $appFontFamily; }
         justify-content: center;
         .big-video{
           width: 100%;
+          &.switch-enabled{
+            cursor: alias;
+          }
+          &.flipped{
+            transform: scaleX(-1);
+          }
         }
         .small-video{
           padding: 5px;
           position: absolute;
-          left: 24px;
           bottom: 24px;
           height: 20%;
           width: 20%;
           video{
             height: 100%;
-            transform: scaleX(-1);
             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
           }
           &.hide{
             video {
               display: none;
             }
+          }
+          &.local{
+            left: 24px;
+            video{
+              transform: scaleX(-1);
+            }
+          }
+          &.remote{
+            right: 24px;
           }
         }
         .chat-toggle {
