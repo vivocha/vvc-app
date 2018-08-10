@@ -67,24 +67,38 @@
     <div class="media-video-wrapper">
       <video class="big-video"
              autoplay
-             *ngIf="context.videoRxStream"
-             [srcObject]="context.videoRxStream"></video>
-      <div class="big-video no-remote" *ngIf="!context.videoRxStream && context.videoTxStream"></div>
+             (click)="switchVideo = !switchVideo"
+             [ngClass]="{'switch-enabled': this.context.screenRxStream && this.context.videoRxStream, 'flipped': isFlipped()}"
+             *ngIf="isVideoVisible('big')"
+             [srcObject]="getSrcForVideo('big')"></video>
 
-      <div #svideo
-           class="small-video"
-           [ngClass]="{ 'hide': hideVideo }"
-           (mouseover)="hideVideo=true"
-           (mouseleave)="hideVideo=false">
+      <!--
+      <div class="big-video no-remote" *ngIf="!context.videoRxStream && context.videoTxStream"></div>
+      -->
+
+      <div class="small-video local"
+           [ngClass]="{ 'hide': hideLocalVideo }"
+           (mouseover)="hideLocalVideo=true"
+           (mouseleave)="hideLocalVideo=false">
         <video autoplay
                muted
-               *ngIf="context.videoTxStream"
-               [srcObject]="context.videoTxStream"></video>
+               *ngIf="isVideoVisible('local')"
+               [srcObject]="getSrcForVideo('local')"></video>
+      </div>
+
+      <div class="small-video remote"
+           [ngClass]="{ 'hide': hideRemoteVideo }"
+           (mouseover)="hideRemoteVideo=true"
+           (mouseleave)="hideRemoteVideo=false">
+        <video autoplay
+               muted
+               *ngIf="isVideoVisible('remote')"
+               [srcObject]="getSrcForVideo('remote')"></video>
       </div>
     </div>
 
 
-    <div class="media-tools fit">
+    <div class="media-tools fit" *ngIf="isMediaToolbarVisible()">
       <div class="button-wrapper">
         <div class="round-button"
              *ngIf="!context.isMuted"
