@@ -39,8 +39,7 @@ export class TopBarComponent{
     let itemNumber = 0;
     if (this.context && !this.context.isMediaConnecting){
       if (this.context.canMinimize) itemNumber++;
-      if (this.context.canMaximize && !this.context.isFullScreen) itemNumber++;
-      if (this.context.canStartAudio) itemNumber++;
+      if (this.context.canStartAudio && !this.context.isMediaConnected) itemNumber++;
       if (this.context.canStartVideo && !this.context.isMediaConnected) itemNumber++;
       if ((this.context.isMediaMinimized && this.context.isMediaConnected) && !this.context.isAutoChat) itemNumber++;
     }
