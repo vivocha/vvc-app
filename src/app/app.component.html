@@ -16,6 +16,8 @@
                            (videoToggle)="videoToggle($event)"
                            (muteToggle)="muteToggle($event)"
                            (hangUp)="hangUpCall()"
+                           (onAccept)="acceptOffer()"
+                           (onReject)="rejectOffer()"
                            (normalScreen)="exitFromFullScreen()"></vvc-full-screen-video>
     <div id="vvc-normal-container">
 
@@ -44,6 +46,7 @@
                  [context]="appState"
                  (onAccept)="acceptOffer()"
                  (onReject)="rejectOffer()"
+                 (onMaximize)="setFullScreen()"
                  (displayChat)="minimizeMedia()"
                  (videoToggle)="videoToggle($event)"
                  (muteToggle)="muteToggle($event)"
