@@ -97,6 +97,9 @@ export class AppComponent implements OnInit {
     if (!context.contactStarted) {
       return 'remove-app';
     }
+    if (context.isInQueue) {
+      return 'close-and-remove';
+    }
     if (context.isClosed) {
       if (context.hasSurvey && context.canRemoveApp) {
         if (this.surveyVisible) {

@@ -2147,6 +2147,137 @@
   {
     "values": {
       "en": {
+        "value": "Collapse video",
+        "state": "new"
+      },
+      "it": {
+        "value": "Riduci video",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Réduire la vidéo",
+        "state": "new"
+      },
+      "ja": {
+        "value": "ビデオを抑える",
+        "state": "new"
+      }
+    },
+    "id": "STRINGS.MEDIA.TOOLTIPS.MINIMIZE_VIDEO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "expand",
+        "state": "final"
+      },
+      "it": {
+        "value": "espandi",
+        "state": "final"
+      },
+      "fr": {
+        "value": "étendre",
+        "state": "final"
+      },
+      "ja": {
+        "value": "広める",
+        "state": "final"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.TOOLTIPS.MAXIMIZE_VIDEO"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Hide small videos",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nascondi gli altri video",
+        "state": "new"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.TOOLTOPS.HIDE_VIDEOS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Show small videos",
+        "state": "new"
+      },
+      "it": {
+        "value": "Mostra gli altri video",
+        "state": "new"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.TOOLTOPS.SHOW_VIDEOS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Switch remote video with sharing",
+        "state": "new"
+      },
+      "it": {
+        "value": "Cambia il video remoto con lo sharing",
+        "state": "new"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Switch sharing with remote video",
+        "state": "new"
+      },
+      "it": {
+        "value": "Cambia lo sharing con il video remoto",
+        "state": "new"
+      },
+      "fr": {
+        "value": "",
+        "state": "new"
+      },
+      "ja": {
+        "value": "",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_SHARING_REMOTE"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Decline",
         "state": "new"
       },

@@ -609,7 +609,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     background-color: #F0F3F5;
 
     .button-wrapper{
-      margin: 8px 0;
+      margin: 4px 0 0 0;
       flex: auto;
       .round-button{
         margin: auto;
@@ -695,7 +695,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         color: #fff;
       }
       &.incoming{
-        background-color: rgba(255,255,255,0.8);
+        background-color: rgba(255,255,255,0.2);
         .button-wrapper{
           width: 158px;
         }
@@ -784,7 +784,31 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         .buttons{
           padding: 5px;
           cursor: pointer;
+          position: relative;
+          .tooltip{
+            visibility: hidden;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: 120%;
+            left: 20%;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+            font-size: 12px;
+          }
+          &:hover{
+            .tooltip{
+              visibility: visible;
+              opacity: 1;
+            }
+          }
         }
+
       }
       &:hover{
         .size-tools{
