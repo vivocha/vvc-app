@@ -24,11 +24,6 @@
   </div>
   <div id="vvc-top-bar-menu" *ngIf="isMenuVisible" (click)="closeMenu()">
     <div id="vvc-menu-inner" class="animated" [ngClass]="{ 'fadeIn': isMenuVisible }">
-      <!--
-      <div *ngIf="context.canMaximize && !context.isFullScreen" (click)="onMaximize.emit()">
-        <span><i class="icon icon-vvc-maximize"></i> {{ 'STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON' | translate }}</span>
-      </div>
-      -->
       <div *ngIf="context.isMediaMinimized && context.isMediaConnected && !context.isFullScreen" (click)="onHideChat.emit()">
         <span><i class="icon icon-vvc-chat"></i> {{ 'STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON' | translate }}</span>
       </div>

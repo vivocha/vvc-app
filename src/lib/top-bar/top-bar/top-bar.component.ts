@@ -5,7 +5,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
   templateUrl: './top-bar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TopBarComponent{
+export class TopBarComponent {
 
   @Input() context;
   @Output() onMinimize = new EventEmitter();
@@ -20,47 +20,36 @@ export class TopBarComponent{
   isMenuVisible = false;
   closeAttempts = 0;
 
-  constructor(){}
+  constructor() {}
 
-  closeContact(){
-    /*
-    this.onClose.emit({
-      forceClose: !this.context.variables.askCloseConfirm,
-      stayInAppAfterClose: this.context.variables.stayInAppAfterClose,
-      hasSurvey: this.context.hasSurvey
-    });
-    */
+  closeContact() {
     this.onClose.emit();
   }
-  closeMenu(){
+  closeMenu() {
     this.isMenuVisible = false;
   }
-  hasMenu(){
+  hasMenu() {
     let itemNumber = 0;
-    if (this.context && !this.context.isMediaConnecting){
-      if (this.context.canMinimize) itemNumber++;
-      if (this.context.canStartAudio && !this.context.isMediaConnected) itemNumber++;
-      if (this.context.canStartVideo && !this.context.isMediaConnected) itemNumber++;
-      if ((this.context.isMediaMinimized && this.context.isMediaConnected) && !this.context.isAutoChat) itemNumber++;
+    if (this.context && !this.context.isMediaConnecting && !this.context.cbnMode) {
+      if (this.context.canMinimize) {
+        itemNumber++;
+      }
+      if (this.context.canStartAudio && !this.context.isMediaConnected) {
+        itemNumber++;
+      }
+      if (this.context.canStartVideo && !this.context.isMediaConnected) {
+        itemNumber++;
+      }
+      if ((this.context.isMediaMinimized && this.context.isMediaConnected) && !this.context.isAutoChat) {
+        itemNumber++;
+      }
     }
     return (itemNumber > 1);
   }
-  removeApp(){
-    /*
-    if (this.context.hasSurvey) {
-      if (this.context.showSurveyPanel) this.closeAttempts++;
-      if (this.closeAttempts > 0) {
-        this.onRemove.emit();
-      } else {
-        this.closeAttempts++;
-        this.onSurvey.emit();
-      }
-    }
-    else this.onRemove.emit();
-    */
+  removeApp() {
     this.closeContact();
   }
-  showMenu(){
+  showMenu() {
     this.isMenuVisible = true;
   }
 }
