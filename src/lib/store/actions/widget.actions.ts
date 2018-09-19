@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {ProtocolState, AgentState, TopBarState} from '../models.interface';
+import {ProtocolState, AgentState, TopBarState, CbnStatus} from '../models.interface';
 
 export const WIDGET_CLOSED_BY_AGENT       = '[Widget] Closed by Agent';
 export const WIDGET_CLOSED_BY_VISITOR     = '[Widget] Closed by Visitor';
@@ -24,6 +24,8 @@ export const WIDGET_OFFER_ACCEPTED        = '[Widget] Offer Accepted';
 export const WIDGET_OFFER_REJECTED        = '[Widget] Offer Rejected';
 export const WIDGET_SET_AGENT             = '[Widget] Set Agent';
 export const WIDGET_SET_AUTO_CHAT         = '[Widget] Set Auto Chat';
+export const WIDGET_SET_CBN_MODE          = '[Widget] Set Cbn Mode';
+export const WIDGET_SET_CBN_STATE         = '[Widget] Set Cbn State';
 export const WIDGET_SET_DIALOG_UI         = '[Widget] Set Dialog UI';
 export const WIDGET_SET_ERROR             = '[Widget] Set Error';
 export const WIDGET_SET_FULLSCREEN        = '[Widget] Set Fullscreen';
@@ -122,6 +124,14 @@ export class WidgetSetAgent implements Action {
 export class WidgetSetAutoChat implements Action {
   readonly type = WIDGET_SET_AUTO_CHAT;
 }
+export class WidgetSetCbnMode implements Action {
+  readonly type = WIDGET_SET_CBN_MODE;
+  constructor(public payload: boolean) {}
+}
+export class WidgetSetCbnState implements Action {
+  readonly type = WIDGET_SET_CBN_STATE;
+  constructor(public payload: CbnStatus) {}
+}
 export class WidgetSetDialogUi implements Action {
   readonly type = WIDGET_SET_DIALOG_UI;
 }
@@ -196,6 +206,8 @@ export type WidgetActions
   | WidgetOfferRejected
   | WidgetSetAgent
   | WidgetSetAutoChat
+  | WidgetSetCbnMode
+  | WidgetSetCbnState
   | WidgetSetDialogUi
   | WidgetSetError
   | WidgetSetFullScreen

@@ -3,9 +3,10 @@ import {Store} from '@ngrx/store';
 import {getUiState} from '../store/selectors/widget.selectors';
 import {AppState} from '../store/reducers/main.reducer';
 import {VvcContextService} from './context.service';
-import {ContextState, LeftScrollOffset, UiState} from '../store/models.interface';
+import {ContextState, Dimension, LeftScrollOffset, UiState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
 import {Observable} from 'rxjs';
+import {filter} from 'rxjs/operators';
 
 
 @Injectable()
@@ -55,14 +56,15 @@ export class VvcInteractionService {
   getState(): Observable<UiState> {
     return this.store.select(getUiState);
   }
-  hangUp() {
-    this.contactService.hangUp();
+  hangUp(dim: Dimension) {
+    this.contactService.hangUp(dim);
   }
   hideChat() {
     this.contactService.hideChat();
   }
   init() {
-    this.contextService.ready().subscribe( (context: ContextState) => {
+    const contextReady = this.contextService.ready();
+    contextReady.subscribe( (context: ContextState) => {
       if (context.loaded) {
         this.vivocha = this.contextService.getVivocha();
         this.context = context;
@@ -70,12 +72,19 @@ export class VvcInteractionService {
         this.contactService.initializeContact(this.vivocha, this.context);
       }
     });
+    return contextReady.pipe(filter(context => context.loaded));
   }
   minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any) {
     this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
+  maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+    this.contactService.maximizeWidget(isFullScreen, dim);
+  }
   minimizeMedia() {
     this.contactService.minimizeMedia();
+  }
+  minimizeWidget(dim: Dimension) {
+     this.contactService.minimizeWidget(dim);
   }
   muteToggle(muted) {
     this.contactService.muteToggle(muted);
@@ -109,6 +118,9 @@ export class VvcInteractionService {
   }
   sendText(text) {
     this.contactService.sendText(text);
+  }
+  setDimensions(dim) {
+    this.contactService.setDimension(dim);
   }
   setFullScreen() {
     this.contactService.setFullScreen();

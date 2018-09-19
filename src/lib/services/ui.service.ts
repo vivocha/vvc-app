@@ -39,7 +39,7 @@ import {
   WidgetShowQueuePanel,
   WidgetSetVideoTransit,
   WidgetSetError,
-  WidgetSetDialogUi, WidgetWebleadSent, WidgetUiReady, WidgetHideQueueForChat
+  WidgetSetDialogUi, WidgetWebleadSent, WidgetUiReady, WidgetHideQueueForChat, WidgetSetCbnMode, WidgetSetCbnState
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
 
@@ -51,6 +51,9 @@ export class VvcUiService {
     this.store.select(getWidgetState).subscribe( state => {
       this.currentState = state;
     });
+  }
+  setCbnMode() {
+    this.store.dispatch(new WidgetSetCbnMode(true));
   }
   hideChat() {
     this.store.dispatch(new WidgetSetMinimizedMedia(false));
@@ -105,6 +108,9 @@ export class VvcUiService {
   }
   setAutoChat() {
     this.store.dispatch(new WidgetSetAutoChat());
+  }
+  setCbnState(state) {
+    this.store.dispatch(new WidgetSetCbnState(state));
   }
   setClosedByAgent() {
     this.store.dispatch(new WidgetClosedByAgent());

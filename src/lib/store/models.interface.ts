@@ -5,8 +5,22 @@ import {
   DataCollection
 } from '@vivocha/public-entities/dist';
 
+export type CbnStatus = 'dialing' | 'ringing' | 'busy' | 'no-answer' | 'unassigned' | 'failed' | 'cancel' | 'answer';
+
+export interface Dimension {
+  position: 'fixed' | 'absolute' | 'relative';
+  width: string;
+  height: string;
+  top?: string;
+  right?: string;
+  bottom?: string;
+  left?: string;
+}
+
 export interface  ContextState {
   loaded: boolean;
+  cbnMode?: boolean;
+  cbnState?: CbnStatus;
   closedByAgent?: boolean;
   closedByVisitor?: boolean;
   contactCreationFailed?: boolean;
@@ -147,6 +161,8 @@ export interface UiState {
   canRemoveApp: boolean;
   canStartAudio: boolean;
   canStartVideo: boolean;
+  cbnMode?: boolean;
+  cbnState?: CbnStatus;
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
   contactCreationFailed: boolean;

@@ -160,6 +160,14 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       };
       return Object.assign({}, state, {chat: chatState});
     }
+    case fromWidget.WIDGET_SET_CBN_MODE: {
+      const context = Object.assign({}, state.context, {cbnMode: action.payload});
+      return Object.assign({}, state, {context: context});
+    }
+    case fromWidget.WIDGET_SET_CBN_STATE: {
+      const context = Object.assign({}, state.context, {cbnState: action.payload});
+      return Object.assign({}, state, {context: context});
+    }
     case fromWidget.WIDGET_SET_DIALOG_UI: {
       const chatState: ChatState = {
         isVisible: true,
@@ -303,7 +311,7 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const hideTopBarInfo          = ((widgetState.context.showQueuePanel) ||
+  const hideTopBarInfo          = ((widgetState.context.showQueuePanel) || widgetState.context.cbnMode ||
                                   (isMediaVisible && !widgetState.media.isMinimized && !widgetState.context.isFullScreen)) ||
                                   widgetState.protocol.isOffering ||
                                   widgetState.protocol.incomingOffer;
@@ -337,6 +345,8 @@ export const getUiStateRedux = (
       canRemoveApp: canRemoveApp,
       canStartAudio: canStartAudio,
       canStartVideo: canStartVideo,
+      cbnMode: widgetState.context.cbnMode && !widgetState.context.showQueuePanel,
+      cbnState: widgetState.context.cbnState,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
       contactCreationFailed: widgetState.context.contactCreationFailed,
@@ -349,7 +359,7 @@ export const getUiStateRedux = (
       isAutoChat: widgetState.chat && widgetState.chat.isAutoChat,
       isLoading: !widgetState.context.isUiLoaded,
       isInQueue: widgetState.context.showQueuePanel && dataCollectionState.completed,
-      isChatVisible: isChatVisible,
+      isChatVisible: isChatVisible && !widgetState.context.cbnMode,
       isChatBoxVisible: isChatBoxVisible,
       isClosed: isClosed,
       isClosedByAgent: widgetState.context.closedByAgent,

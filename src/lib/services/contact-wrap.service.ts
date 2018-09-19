@@ -6,7 +6,7 @@ import {VvcProtocolService} from './protocol.service';
 import {VvcMessageService} from './messages.service';
 import {objectToDataCollection} from '@vivocha/public-entities/dist/wrappers/data_collection';
 import {VvcUiService} from './ui.service';
-import {DataCollectionCompleted, LeftScrollOffset} from '../store/models.interface';
+import {CbnStatus, DataCollectionCompleted, Dimension, LeftScrollOffset} from '../store/models.interface';
 import {AgentState} from '../store/models.interface';
 import {ClientContactCreationOptions} from '@vivocha/public-entities/dist/contact';
 import {Observable, Subject} from 'rxjs';
@@ -40,6 +40,9 @@ export class VvcContactWrap {
   customActions = {};
   visitorNick;
 
+  cbnChannelStatus: CbnStatus[] = ['dialing', 'ringing', 'busy', 'no-answer', 'unassigned', 'failed', 'cancel', 'answer'];
+
+  dimensions = {};
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -131,6 +134,15 @@ export class VvcContactWrap {
       delete this.transferTimer;
     }
   }
+  cbnStatusChanged(id, info) {
+    console.log('CBN STATUS CHANGED', id, info);
+    /*
+    if (!this.contact.isMobile) {
+      this.setDimension('cbnNormal');
+    }
+    */
+    this.uiService.setCbnState(id);
+  }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
     for (const m in transcript) {
@@ -214,9 +226,13 @@ export class VvcContactWrap {
       this.vivocha.createContact(opts).then( (contact) => {
         this.vivocha.pageRequest('interactionCreated', contact).then( () => {
           this.zone.run( () => {
-            // console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
+            console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
             this.contact = contact;
             this.uiService.setUiReady();
+            console.log('contact type', contact.contact.type, contact.contact);
+            if (contact.contact.type === 'inbound') {
+              this.uiService.setCbnMode();
+            }
             if (contact.contact.initial_offer.Sharing) {
               if (!this.autoChat) {
                 if (contact.contact.initial_offer.Chat && hideQueue) {
@@ -276,7 +292,7 @@ export class VvcContactWrap {
       return Object.assign({}, initialOpts);
     }
   }
-  hangUp() {
+  hangUp(dim: Dimension) {
     this.contact.getMediaOffer().then(mediaOffer => {
       if (mediaOffer['Voice']) {
         mediaOffer['Voice'].tx = 'off';
@@ -289,7 +305,8 @@ export class VvcContactWrap {
       this.zone.run(() => {
         // console.log('MEDIAOFFER', mediaOffer);
         if (!mediaOffer['Screen'] || mediaOffer['Screen'].rx === 'off') {
-          this.vivocha.setNormalScreen();
+          // this.vivocha.setNormalScreen();
+          this.setDimension(dim);
           this.uiService.setHangUpState();
         }
       });
@@ -419,6 +436,14 @@ export class VvcContactWrap {
       // console.log('CLOSE', obj);
       this.onClose(obj);
     });
+    this.contact.on('datachannel', dc => {
+      console.log('DATACHANNEL CREATED', dc);
+      if (dc && dc.id === 'callstatus') {
+        this.zone.run( () => {
+          this.registerCallStatusEvents(dc);
+        });
+      }
+    });
     this.contact.on('joined', (c) => {
       if (c.user) {
         this.cancelDissuasionTimeout();
@@ -531,6 +556,10 @@ export class VvcContactWrap {
       });
     });
   }
+  maximizeWidget(isFullScreen: boolean, dim: Dimension){
+    (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
+    this.setDimension(dim);
+  }
   mergeOffer(diffOffer, cb) {
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {
       this.zone.run( () => {
@@ -554,6 +583,7 @@ export class VvcContactWrap {
   }
   minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any) {
     if (minimize) {
+      /*
       this.vivocha.minimize({
         bottom: (positionObject && positionObject.bottom) ? positionObject.bottom : '10px',
         right: (positionObject && positionObject.right) ? positionObject.right : '10px'
@@ -561,13 +591,13 @@ export class VvcContactWrap {
         width: (sizeObject && sizeObject.width) ? sizeObject.width : '70px',
         height: (sizeObject && sizeObject.height) ? sizeObject.height : '70px'
       });
-
+      */
       this.uiService.setMinimizedState();
     } else {
       if (isFullScreen) {
        this.setFullScreen();
       } else {
-        this.vivocha.maximize();
+        // this.vivocha.maximize();
         this.uiService.setNormalState();
       }
     }
@@ -577,6 +607,10 @@ export class VvcContactWrap {
       this.askForUpgrade('Chat');
     }
     this.uiService.setMinimizedMedia();
+  }
+  minimizeWidget(dim: Dimension) {
+    this.uiService.setMinimizedState();
+    this.setDimension(dim);
   }
   noAgents() {
     return false;
@@ -676,6 +710,17 @@ export class VvcContactWrap {
       this.dcService.sendMessageViaCollector(false, vvcQuickReply.body, vvcQuickReply.payload);
     }
     this.messageService.addLocalMessage(reply.action.title);
+  }
+  registerCallStatusEvents(dataChannel) {
+    for (const i in this.cbnChannelStatus) {
+      console.log('adding cbnstatus', this.cbnChannelStatus[i]);
+      dataChannel.on(this.cbnChannelStatus[i], (info) => {
+        console.log('event on ', this.cbnChannelStatus[i], info);
+        this.zone.run( () => {
+          this.cbnStatusChanged(this.cbnChannelStatus[i], info);
+        });
+      });
+    }
   }
   registerCustomAction(action): Observable<any> {
     this.customActions[action.id] = { stream: new Subject() };
@@ -801,9 +846,27 @@ export class VvcContactWrap {
       this.lastSystemMessageId = this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick });
     }
   }
+  setDimension(dim) {
+    /*
+    if (this.dimensions && this.dimensions[dim]) {
+      this.vivocha.pageRequest('dimensions', this.dimensions[dim]);
+    }*/
+    /*
+    if (dim === 'cbn-minimized') {
+      this.vivocha.pageRequest('setSize', {
+        width: this.context.variables.initialWidth,
+        height: '64px'
+      });
+      this.vivocha.pageRequest('setPosition', {
+        right: this.context.variables.initialRight,
+        bottom: '-10px'
+      });
+    }*/
+    this.vivocha.pageRequest('setDimensions', dim);
+  }
   setFullScreen() {
     this.uiService.setFullScreen();
-    this.vivocha.setFullScreen();
+    // this.vivocha.setFullScreen();
   }
   setIsWriting() {
     clearTimeout(this.isWritingTimer);
