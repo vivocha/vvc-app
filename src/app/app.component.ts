@@ -1,7 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {VvcInteractionService} from '@vivocha/client-interaction-core';
+import {VvcInteractionService, Dimension} from '@vivocha/client-interaction-core';
 import {ChatAreaComponent} from '@vivocha/client-interaction-layout';
 import {Observable} from 'rxjs';
+
+interface Dimensions {
+  [key: string]: Dimension;
+}
 
 @Component({
   selector: 'vvc-root',
@@ -18,10 +22,39 @@ export class AppComponent implements OnInit {
   public closeModalVisible = false;
   public surveyVisible = false;
 
+  private dimensions: Dimensions = {
+    fullscreen: { position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0' },
+    minimized: {position: 'fixed', width: '80px', height: '80px', right: '0', bottom: '0'},
+    minimizedCbn: {
+      position: 'fixed',
+      width   : window['VVC_VAR_ASSETS']['initialWidth'],
+      height  : '45px',
+      right   : '40px',
+      bottom  : '0px'
+      // right   : window['VVC_VAR_ASSETS']['initialRight'],
+      // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
+    },
+    normal: {
+      position: 'fixed',
+      width   : window['VVC_VAR_ASSETS']['initialWidth'],
+      height  : window['VVC_VAR_ASSETS']['initialHeight'],
+      right   : '40px',
+      bottom  : '-10px'
+      // right   : window['VVC_VAR_ASSETS']['initialRight'],
+      // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
+    },
+    custom: {position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0'}
+  };
+
+  private isMinimized = false;
+
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
     this.appState$ = this.interactionService.getState();
-    this.interactionService.init();
+    this.interactionService.init().subscribe(context => {
+      console.log('context ready', context);
+      this.interactionService.setDimensions(context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal);
+    });
     // this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
   }
   acceptAgentRequest(requestId) {
@@ -44,6 +77,11 @@ export class AppComponent implements OnInit {
   }
   closeApp() {
     this.interactionService.closeApp();
+  }
+  closeCbn() {
+    console.log('closing cbn');
+    this.interactionService.closeContact();
+    this.closeApp();
   }
   closeContact(context) {
     const step = this.getCloseStep(context);
@@ -91,7 +129,11 @@ export class AppComponent implements OnInit {
     this.interactionService.setNormalScreen();
   }
   expandWidget(isFullScreen) {
+    this.interactionService.maximizeWidget(isFullScreen, isFullScreen ? this.dimensions.fullscreen : this.dimensions.normal);
+    /*
     this.interactionService.minimize(false, isFullScreen);
+    this.interactionService.setDimensions(isFullScreen ? this.dimensions.fullscreen : this.dimensions.normal);
+    */
   }
   getCloseStep(context) {
     if (!context.contactStarted) {
@@ -147,7 +189,7 @@ export class AppComponent implements OnInit {
     }
   }
   hangUpCall() {
-    this.interactionService.hangUp();
+    this.interactionService.hangUp(this.dimensions.normal);
   }
   hasToStayInApp(context) {
     return (context.isClosed && context.variables.stayInAppAfterClose);
@@ -155,8 +197,12 @@ export class AppComponent implements OnInit {
   hideChat() {
     this.interactionService.hideChat();
   }
+  minimizeCbn() {
+    // this.interactionService.setDimensions(minimized ? this.dimensions.minimizedCbn : this.dimensions.normal);
+    this.interactionService.minimizeWidget(this.dimensions.minimizedCbn);
+  }
   minimizeWidget() {
-    this.interactionService.minimize(true);
+    this.interactionService.minimizeWidget(this.dimensions.minimized);
   }
   minimizeMedia() {
     this.interactionService.minimizeMedia();
@@ -189,7 +235,8 @@ export class AppComponent implements OnInit {
     this.interactionService.sendText(value);
   }
   setFullScreen() {
-    this.interactionService.setFullScreen();
+    this.expandWidget(true);
+    // this.interactionService.setFullScreen();
   }
   showCloseDialog(context) {
     return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);

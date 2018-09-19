@@ -22,6 +22,7 @@
     <div id="vvc-normal-container">
 
       <vvc-top-bar [context]="appState"
+                   *ngIf="!appState.cbnMode"
                    (onMinimize)="minimizeWidget(true)"
                    (onMaximize)="setFullScreen()"
                    (onClose)="closeContact(appState)"
@@ -104,11 +105,22 @@
         </div>
 
       </vvc-chat>
+
+      <vvc-cbn id="vvc-cbn"
+               *ngIf="appState.cbnMode"
+               (minimized)="minimizeCbn($event)"
+               (close)="closeCbn()"
+               [context]="appState"></vvc-cbn>
     </div>
   </div>
-
   <div id="vvc-minimized-layout" *ngIf="appState.isMinimized">
-    <vvc-minimized [context]="appState"
+    <vvc-minimized *ngIf="!appState.cbnMode"
+                   [context]="appState"
                    (expand)="expandWidget(appState.isFullScreen)"></vvc-minimized>
+    <vvc-cbn-minimized id="vvc-minimized-cbn"
+                       *ngIf="appState.cbnMode"
+                       [context]="appState"
+                       (expand)="expandWidget()"
+                       (close)="closeCbn()"></vvc-cbn-minimized>
   </div>
 </div>

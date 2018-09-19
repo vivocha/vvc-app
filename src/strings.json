@@ -2318,5 +2318,534 @@
     },
     "description": "",
     "id": "STRINGS.MEDIA.ACCEPT"
+  },
+
+  {
+    "values": {
+      "en": {
+        "value": "The telephone number is busy",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il numero di telefono è occupato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Le numéro est occupé",
+        "state": "new"
+      },
+      "ja": {
+        "value": "電話番号が話し中です",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.BUSY"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The telephone number is busy",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il numero di telefono è occupato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Le numéro est occupé",
+        "state": "new"
+      },
+      "ja": {
+        "value": "電話番号が話し中です",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.BUSY_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call canceled before answering",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata chiusa prima della risposta",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Appel annulé avant d'être pris en charge",
+        "state": "new"
+      },
+      "ja": {
+        "value": "応答前に電話が切れました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.CANCEL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call canceled before answering",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata chiusa prima della risposta",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Appel annulé avant d'être pris en charge",
+        "state": "new"
+      },
+      "ja": {
+        "value": "応答前に電話が切れました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.CANCEL_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent {{nickname}} is dialing the telephone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "L'agente {{nickname}} sta componendo il numero di telefono",
+        "state": "new"
+      },
+      "fr": {
+        "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
+        "state": "new"
+      },
+      "ja": {
+        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.DIAL"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent {{nickname}} is dialing the telephone number",
+        "state": "new"
+      },
+      "it": {
+        "value": "L'agente {{nickname}} sta componendo il numero di telefono",
+        "state": "new"
+      },
+      "fr": {
+        "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
+        "state": "new"
+      },
+      "ja": {
+        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.DIAL_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "On the line with {{nickname}}",
+        "state": "new"
+      },
+      "it": {
+        "value": "In linea con {{nickname}}",
+        "state": "new"
+      },
+      "fr": {
+        "value": "En ligne avec {{nickname}}",
+        "state": "new"
+      },
+      "ja": {
+        "value": "通話相手： {{nickname}}",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.INLINE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "On the line with {{nickname}}",
+        "state": "new"
+      },
+      "it": {
+        "value": "In linea con {{nickname}}",
+        "state": "new"
+      },
+      "fr": {
+        "value": "En ligne avec {{nickname}}",
+        "state": "new"
+      },
+      "ja": {
+        "value": "通話相手： {{nickname}}",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.INLINE_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Our agent has taken the call",
+        "state": "new"
+      },
+      "it": {
+        "value": "Un nostro agente ha preso in carico la chiamata",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Notre agent a pris en charge l'appel",
+        "state": "new"
+      },
+      "ja": {
+        "value": "当社のエージェントが通話を引き継ぎました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.JOIN"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Our agent has taken the call",
+        "state": "new"
+      },
+      "it": {
+        "value": "Un nostro agente ha preso in carico la chiamata",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Notre agent a pris en charge l'appel",
+        "state": "new"
+      },
+      "ja": {
+        "value": "当社のエージェントが通話を引き継ぎました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.JOIN_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The call has been terminated",
+        "state": "new"
+      },
+      "it": {
+        "value": "La chiamata con l'agente {{nickname}} è terminata",
+        "state": "new"
+      },
+      "fr": {
+        "value": "L'appel avec l'agent {{nickname}} est terminé",
+        "state": "new"
+      },
+      "ja": {
+        "value": "エージェント{{nickname}}との通話が終了しました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.LEFT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The call has been terminated",
+        "state": "new"
+      },
+      "it": {
+        "value": "La chiamata con l'agente {{nickname}} è terminata",
+        "state": "new"
+      },
+      "fr": {
+        "value": "L'appel avec l'agent {{nickname}} est terminé",
+        "state": "new"
+      },
+      "ja": {
+        "value": "エージェント{{nickname}}との通話が終了しました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.LEFT_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No answer",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nessuna risposta",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Pas de réponse",
+        "state": "new"
+      },
+      "ja": {
+        "value": "返答なし",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.NOANSWER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "No answer",
+        "state": "new"
+      },
+      "it": {
+        "value": "Nessuna risposta",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Pas de réponse",
+        "state": "new"
+      },
+      "ja": {
+        "value": "返答なし",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.NOANSWER_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Number does not exist",
+        "state": "new"
+      },
+      "it": {
+        "value": "Numero inesistente",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Numéro inexistant",
+        "state": "new"
+      },
+      "ja": {
+        "value": "番号が存在しません",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.NOTEXISTS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Number does not exist",
+        "state": "new"
+      },
+      "it": {
+        "value": "Numero inesistente",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Numéro inexistant",
+        "state": "new"
+      },
+      "ja": {
+        "value": "番号が存在しません",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.NOTEXISTS_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "You have received a link",
+        "state": "new"
+      },
+      "it": {
+        "value": "Hai ricevuto un link",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Vous avez reçu un lien",
+        "state": "new"
+      },
+      "ja": {
+        "value": "リンクを受信しました",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.LINK_PUSH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The telephone is ringing",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il telefono sta squillando",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Le téléphone est en train de sonner",
+        "state": "new"
+      },
+      "ja": {
+        "value": "電話が鳴っています",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.RING"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "The telephone is ringing",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il telefono sta squillando",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Le téléphone est en train de sonner",
+        "state": "new"
+      },
+      "ja": {
+        "value": "電話が鳴っています",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.RING_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Wrong number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Numero sbagliato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Numéro erroné",
+        "state": "new"
+      },
+      "ja": {
+        "value": "番号が間違っています",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.WRONG_NUMBER"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Wrong number",
+        "state": "new"
+      },
+      "it": {
+        "value": "Numero sbagliato",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Numéro erroné",
+        "state": "new"
+      },
+      "ja": {
+        "value": "番号が間違っています",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.WRONG_NUMBER_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Unfortunately it was not possible to fulfill your request.<br />Please try again later.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Purtroppo non è stato possibile soddisfare la tua richiesta.<br /> Riprova più tardi.",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Malheureusement, nous ne pouvons pas donner suite à votre demande.<br/>Veuillez réessayer ultérieurement.",
+        "state": "new"
+      },
+      "ja": {
+        "value": "残念ながら、お客様のリクエストにお答えすることができませんでした。<br/>しばらくしてからもう一度お試しください。",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.ERROR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Your request was recorded successfully.<br />You will be contacted shortly.",
+        "state": "new"
+      },
+      "it": {
+        "value": "La tua richiesta è stata registrata con successo.<br /> A breve verrai contattato.",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Votre demande a bien été enregistrée.<br/>Nous vous rappellerons sous peu.",
+        "state": "new"
+      },
+      "ja": {
+        "value": "リクエストが正常に記録されました。<br />すぐに連絡させていただきます。",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.SUCCESS"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Your request was recorded successfully.<br />You will be contacted shortly.",
+        "state": "new"
+      },
+      "it": {
+        "value": "La tua richiesta è stata registrata con successo.<br /> A breve verrai contattato.",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Votre demande a bien été enregistrée.<br/>Nous vous rappellerons sous peu.",
+        "state": "new"
+      },
+      "ja": {
+        "value": "リクエストが正常に記録されました。<br />すぐに連絡させていただきます。",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.SUCCESS_M"
   }
 ]
