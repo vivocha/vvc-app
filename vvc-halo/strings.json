@@ -105,87 +105,139 @@
     }
   },
   {
+    "id": "STRINGS.CHAT",
     "values": {
       "en": {
-        "value": "We contact you",
+        "value": "CHAT",
         "state": "final"
       },
       "it": {
-        "value": "Ti contattiamo",
+        "value": "CHAT",
         "state": "final"
       },
       "fr": {
-        "value": "Nous vous contactons",
-        "state": "final"
-      },
-      "ja": {
-        "value": "連絡いたします",
-        "state": "final"
-      }
-    },
-    "id": "STRINGS.RECALL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Video call",
-        "state": "final"
-      },
-      "it": {
-        "value": "Videochiamata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ電話",
-        "state": "final"
-      }
-    },
-    "id": "STRINGS.VIDEO_CALL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Voice call",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chiamata voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel VoIP",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話",
-        "state": "final"
-      }
-    },
-    "id": "STRINGS.VOICE_CALL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Conversation",
+        "value": "CHAT",
         "state": "final"
       },
       "ja": {
         "value": "チャット",
         "state": "final"
       }
+    }
+  },
+  {
+    "id": "STRINGS.VOICE",
+    "values": {
+      "en": {
+        "value": "VOICE",
+        "state": "final"
+      },
+      "it": {
+        "value": "VOCE",
+        "state": "final"
+      },
+      "fr": {
+        "value": "VOIX",
+        "state": "final"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.VIDEO",
+    "values": {
+      "en": {
+        "value": "VIDEO",
+        "state": "final"
+      },
+      "it": {
+        "value": "VIDEO",
+        "state": "final"
+      },
+      "fr": {
+        "value": "VIDÉO",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.WEBLEAD",
+    "values": {
+      "en": {
+        "value": "EMAIL",
+        "state": "new"
+      },
+      "it": {
+        "value": "EMAIL",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Or we'll contact you!",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Oppure ti contattiamo noi!",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Ou nous vous contacterons nous-même !",
+        "state": "final"
+      },
+      "ja": {
+        "value": "もしくは我々がご連絡差し上げますi!",
+        "state": "final"
+      }
     },
-    "id": "STRINGS.CHAT"
+    "id": "STRINGS.RECONTACT"
+  },
+  {
+    "id": "STRINGS.CBN",
+    "values": {
+      "en": {
+        "value": "PHONE",
+        "state": "new"
+      },
+      "it": {
+        "value": "PHONE",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CONTACT_US",
+    "values": {
+      "en": {
+        "value": "we'll contact you",
+        "state": "new"
+      },
+      "it": {
+        "value": "ti contattiamo noi",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.FROM_WEB",
+    "values": {
+      "en": {
+        "value": "FROM WEB",
+        "state": "new"
+      },
+      "it": {
+        "value": "DAL WEB",
+        "state": "new"
+      }
+    }
   }
 ]
