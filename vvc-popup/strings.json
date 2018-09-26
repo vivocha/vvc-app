@@ -305,5 +305,44 @@
       }
     },
     "id": "STRINGS.RECALL"
+  },
+  {
+    "id": "STRINGS.CBN",
+    "values": {
+      "en": {
+        "value": "PHONE",
+        "state": "new"
+      },
+      "it": {
+        "value": "PHONE",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CONTACT_US",
+    "values": {
+      "en": {
+        "value": "we'll contact you",
+        "state": "new"
+      },
+      "it": {
+        "value": "ti contattiamo noi",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.FROM_WEB",
+    "values": {
+      "en": {
+        "value": "FROM WEB",
+        "state": "new"
+      },
+      "it": {
+        "value": "DAL WEB",
+        "state": "new"
+      }
+    }
   }
 ]

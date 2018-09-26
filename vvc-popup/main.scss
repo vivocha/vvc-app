@@ -21,6 +21,143 @@ $lightBackgroundBorder: #CECECE;
 $darkBackground: #4D4D4D;
 $darkBackgroundBorder: #D8D8D8;
 
+@mixin media-manager(){
+  .vvc-media{
+    display: block;
+  }
+  .vvc-inner-links{
+    display: none;
+  }
+  .vvc-options{
+    display: none;
+  }
+
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-chat.vvc-media-voice.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-chat.vvc-media-video.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-voice.vvc-media-video.vvc-media-cbn.vvc-media-weblead{
+    .vvc-media{
+      display: none;
+      .vvc-content-message{
+        font-size: 13px;
+      }
+    }
+    .vvc-options{
+      display: block;
+    }
+    .vvc-popup-message{
+      padding-bottom: 0;
+    }
+    // options
+    .vvc-reveal-web{
+      display: block;
+      .vvc-options{
+        display: none;
+      }
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-content-message {
+        font-size: 18px;
+      }
+      .vvc-media {
+        display: block;
+        .vvc-media-cbn,
+        .vvc-media-weblead {
+          display: none !important;
+        }
+      }
+    }
+    .vvc-reveal-others{
+      display: block;
+      .vvc-options{
+        display: none;
+      }
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-content-message{
+        font-size: 18px;
+      }
+      .vvc-media {
+        display: block;
+        .vvc-media-chat,
+        .vvc-media-voice,
+        .vvc-media-video {
+          display: none !important;
+        }
+      }
+    }
+
+    @media screen and (min-height: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-popup-message2{
+        display: none;
+      }
+    }
+    @media screen and (min-width: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 0;
+      }
+    }
+  }
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn:not(.vvc-media-weblead){
+    // links
+    .vvc-content-message{
+      font-size: 13px;
+    }
+    .vvc-media{
+      display: block;
+      .vvc-media-cbn{
+        display: none;
+      }
+    }
+    .vvc-options{
+      display: none;
+    }
+    .vvc-inner-links{
+      display: block;
+      .weblead-link{ display: none}
+    }
+    @media screen and (min-height: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-popup-message2{
+        display: none;
+      }
+    }
+  }
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-weblead:not(.vvc-media-cbn){
+    // links
+    .vvc-content-message{
+      font-size: 13px;
+    }
+    .vvc-media{
+      display: block;
+      .vvc-media-weblead{
+        display: none;
+      }
+    }
+    .vvc-options{
+      display: none;
+    }
+    .vvc-inner-links{
+      display: block;
+      .cbn-link{ display: none}
+    }
+    @media screen and (min-height: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-popup-message2{
+        display: none;
+      }
+    }
+  }
+}
 @mixin popup($theme: 'light', $primaryColor: 'red', $artBoardUrl: '', $useCompanyLogo: true, $companyLogoUrl: '') {
 
   .vvc-popup-inner {
@@ -190,6 +327,23 @@ $darkBackgroundBorder: #D8D8D8;
         }
       }
 
+      .vvc-options{
+        display: none;
+        text-align: center;
+        .vvc-opts{
+          &:hover{ opacity: 0.9; cursor: pointer }
+          background: $primaryColor;
+          border-radius: 20px;
+          margin: 6px 10px;
+          padding: 10px 26px;
+          a {
+            color: white;
+            font-size: 10px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
       .vvc-inner-links{
         display: none;
         font-size: 13px;
@@ -255,6 +409,7 @@ $darkBackgroundBorder: #D8D8D8;
 
 }
 
+
 .vvc-popup {
   @keyframes reveal {
     from {opacity: 0;}
@@ -267,6 +422,8 @@ $darkBackgroundBorder: #D8D8D8;
   @include popup($theme, $primaryColor, $artBoardUrl, $useCompanyLogo, $companyLogoUrl);
 }
 
+@include media-manager();
+/*
 .vvc-media-chat.vvc-media-voice,
 .vvc-media-chat.vvc-media-video {
   &.vvc-media-weblead {
@@ -283,3 +440,4 @@ $darkBackgroundBorder: #D8D8D8;
     }
   }
 }
+*/
