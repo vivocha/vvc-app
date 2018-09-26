@@ -9,6 +9,20 @@
       node.classList.add('vvc-sidebar-opened');
     }
   }
+  function revealWebOpts(containerClass){
+    var node = document.querySelector(containerClass);
+    if (node.classList.contains('vvc-reveal-others')) {
+      node.classList.remove('vvc-reveal-others');
+    }
+    node.classList.add('vvc-reveal-web');
+  }
+  function revealOthers(containerClass){
+    var node = document.querySelector(containerClass);
+    if (node.classList.contains('vvc-reveal-web')) {
+      node.classList.remove('vvc-reveal-web');
+    }
+    node.classList.add('vvc-reveal-others');
+  }
 </script>
 <div class="vvc-media-info">
   <div class="vvc-sidetab vvc-container vvc-label-revealed vvc-widget-__ENGAGEMENT_ID__">
@@ -35,16 +49,25 @@
           <div class="vvc-media-rounded"><i class="vvc-web-lead"></i></div>
           <div class="vvc-media-label">__STRINGS.WEBLEAD__</div>
         </div>
-        <!--
         <div class="vvc-media-cbn vvc-media-item" onclick="__WIDGET__.engage('cbn')">
           <div class="vvc-media-rounded"><i class="vvc-call-me-back"></i></div>
           <div class="vvc-media-label">__STRINGS.CBN__</div>
         </div>
-        -->
       </div>
       <div class="vvc-inner-links">
         <div class="weblead-link">
           <a onclick="__WIDGET__.engage('weblead')">__STRINGS.RECONTACT__</a>
+        </div>
+        <div class="cbn-link">
+          <a onclick="__WIDGET__.engage('cbn')">__STRINGS.RECONTACT__</a>
+        </div>
+      </div>
+      <div class="vvc-options">
+        <div class="vvc-opts">
+          <a onclick="revealWebOpts('.vvc-widget-__ENGAGEMENT_ID__')">__STRINGS.FROM_WEB__</a>
+        </div>
+        <div class="vvc-opts">
+          <a onclick="revealOthers('.vvc-widget-__ENGAGEMENT_ID__')">__STRINGS.CONTACT_US__</a>
         </div>
       </div>
     </div>
