@@ -1,0 +1,83 @@
+[
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Halo Button",
+        "state": "new"
+      },
+      "it": {
+        "value": "Halo Button",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Engagement avatar customizable with badge, position and initial media",
+        "state": "new"
+      },
+      "it": {
+        "value": "Avatar personalizzabile con badge, posizione e media iniziale",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.HALO_IMG",
+    "values": {
+      "en": {
+        "value": "Avatar Image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine Avatar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Image avatar",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アバターイメージ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.HORIZONTAL",
+    "values": {
+      "en": {
+        "value": "Horizontal Position",
+        "state": "new"
+      },
+      "it": {
+        "value": "Posizionamento Orizzontale",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Positionnement horizontal",
+        "state": "final"
+      },
+      "ja": {
+        "value": "横配置",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.MEDIA_TO_USE",
+    "values": {
+      "en": {
+        "value": "Media to use to start the engagement with",
+        "state": "new"
+      },
+      "it": {
+        "value": "Media da usare per iniziare il contatto",
+        "state": "new"
+      }
+    }
+  }
+]
