@@ -39,7 +39,7 @@ import {
   WidgetShowQueuePanel,
   WidgetSetVideoTransit,
   WidgetSetError,
-  WidgetSetDialogUi, WidgetWebleadSent, WidgetUiReady, WidgetHideQueueForChat, WidgetSetCbnMode, WidgetSetCbnState
+  WidgetSetDialogUi, WidgetWebleadSent, WidgetUiReady, WidgetHideQueueForChat, WidgetSetCbnMode, WidgetSetCbnState, WidgetUpgradeCbnToChat
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
 
@@ -226,5 +226,8 @@ export class VvcUiService {
   }
   toggleEmojiPanel() {
     this.store.dispatch(new WidgetToggleEmoji());
+  }
+  upgradeCbnToChat() {
+    this.store.dispatch(new WidgetUpgradeCbnToChat());
   }
 }

@@ -164,4 +164,7 @@ export class VvcInteractionService {
   updateLeftScrollOffset(o: LeftScrollOffset) {
     this.contactService.updateLeftScrollOffset(o);
   }
+  upgradeCbnToChat() {
+    this.contactService.upgradeCbnToChat();
+  }
 }

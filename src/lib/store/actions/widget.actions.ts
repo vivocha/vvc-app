@@ -40,6 +40,7 @@ export const WIDGET_SHOW_UPLOAD_PANEL     = '[Widget] Show Upload Panel';
 export const WIDGET_TOGGLE_EMOJI          = '[Widget] Toggle Emoji Panel';
 export const WIDGET_UI_READY              = '[Widget] Ui Ready';
 export const WIDGET_UPLOAD_COMPLETED      = '[Widget] Upload Completed';
+export const WIDGET_UPGRADE_CBN_TO_CHAT   = '[Widget] Upgrade Cbn to Chat';
 export const WIDGET_WEBLEAD_SENT          = '[Widget] Weblead Sent';
 
 
@@ -179,6 +180,9 @@ export class WidgetUploadCompleted implements Action {
 export class WidgetUiReady implements Action {
   readonly type = WIDGET_UI_READY;
 }
+export class WidgetUpgradeCbnToChat implements Action {
+  readonly type = WIDGET_UPGRADE_CBN_TO_CHAT;
+}
 export class WidgetWebleadSent implements Action {
   readonly type = WIDGET_WEBLEAD_SENT;
 }
@@ -222,5 +226,6 @@ export type WidgetActions
   | WidgetToggleEmoji
   | WidgetUploadCompleted
   | WidgetUiReady
+  | WidgetUpgradeCbnToChat
   | WidgetWebleadSent
   ;

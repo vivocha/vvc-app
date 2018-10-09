@@ -125,6 +125,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     case fromWidget.WIDGET_NEW_MESSAGE: {
       if (
           state.context.isMinimized ||
+          state.context.cbnMode ||
           !state.chat.isVisible ||
           (state.media.isVisible && !state.media.isMinimized) ||
           (state.context.isFullScreen && !state.chat.showOnFullScreen)
@@ -232,6 +233,10 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, {isUploading: false, uploadCompleted: true });
       const chat = Object.assign({}, state.chat, {uploadPanelOpened: false});
       return Object.assign({}, state, { context: context, chat: chat });
+    }
+    case fromWidget.WIDGET_UPGRADE_CBN_TO_CHAT: {
+      const context = Object.assign({}, state.context, {cbnMode: false});
+      return Object.assign({}, state, { context: context });
     }
     case fromWidget.WIDGET_WEBLEAD_SENT: {
       const context = Object.assign({}, state.context, {hasError: true, showQueuePanel: true, webleadSent: true});

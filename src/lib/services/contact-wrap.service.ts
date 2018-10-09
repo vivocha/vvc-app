@@ -437,7 +437,6 @@ export class VvcContactWrap {
       this.onClose(obj);
     });
     this.contact.on('datachannel', dc => {
-      console.log('DATACHANNEL CREATED', dc);
       if (dc && dc.id === 'callstatus') {
         this.zone.run( () => {
           this.registerCallStatusEvents(dc);
@@ -509,6 +508,7 @@ export class VvcContactWrap {
       // console.log('ON_REMOTE',caps);
     });
     this.contact.on('mediachange', async (media, changed) => {
+      // console.log('mediachange', media, changed);
       if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
         this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
       }
@@ -979,5 +979,8 @@ export class VvcContactWrap {
   }
   updateLeftScrollOffset(o: LeftScrollOffset) {
     this.messageService.updateLeftScroll(o);
+  }
+  upgradeCbnToChat() {
+    this.uiService.upgradeCbnToChat();
   }
 }
