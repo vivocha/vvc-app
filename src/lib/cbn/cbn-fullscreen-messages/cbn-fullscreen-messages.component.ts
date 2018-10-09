@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'vvc-cbn-fullscreen-messages',
@@ -8,5 +8,6 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 export class CbnFullscreenMessagesComponent {
 
   @Input() context;
+  @Output() upgrade = new EventEmitter();
 
 }

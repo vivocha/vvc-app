@@ -10,6 +10,7 @@ export class CbnComponent {
   @Input() context;
   @Output() minimized = new EventEmitter();
   @Output() close = new EventEmitter();
+  @Output() upgrade = new EventEmitter();
 
   isMinimized = false;
 

@@ -3,7 +3,8 @@
                   (minimize)="minimized.emit()"
                   (close)="close.emit()"></vvc-cbn-topbar>
 
-  <vvc-cbn-fullscreen-messages [context]="context"></vvc-cbn-fullscreen-messages>
+  <vvc-cbn-fullscreen-messages [context]="context"
+                               (upgrade)="upgrade.emit()"></vvc-cbn-fullscreen-messages>
 
   <div class="sep"></div>
 </div>
