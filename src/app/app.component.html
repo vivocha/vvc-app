@@ -108,8 +108,9 @@
 
       <vvc-cbn id="vvc-cbn"
                *ngIf="appState.cbnMode"
-               (minimized)="minimizeCbn($event)"
+               (minimized)="minimizeCbn(appState.isMobile)"
                (close)="closeCbn()"
+               (upgrade)="upgradeCbnToChat()"
                [context]="appState"></vvc-cbn>
     </div>
   </div>
@@ -118,9 +119,11 @@
                    [context]="appState"
                    (expand)="expandWidget(appState.isFullScreen)"></vvc-minimized>
     <vvc-cbn-minimized id="vvc-minimized-cbn"
+                       [ngClass]="{ 'mobile': appState.isMobile }"
                        *ngIf="appState.cbnMode"
                        [context]="appState"
-                       (expand)="expandWidget()"
+                       (expand)="maximizeCbn(appState.isMobile, appState.notRead)"
                        (close)="closeCbn()"></vvc-cbn-minimized>
+
   </div>
 </div>

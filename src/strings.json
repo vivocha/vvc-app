@@ -2847,5 +2847,19 @@
     },
     "description": "",
     "id": "STRINGS.CBN.SUCCESS_M"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "new messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "nuovi messaggi",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "STRINGS.CBN.NEW_MESSAGES_M"
   }
 ]

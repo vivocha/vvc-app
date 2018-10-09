@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {VvcInteractionService, Dimension} from '@vivocha/client-interaction-core';
+import {VvcInteractionService, Dimension, UiState} from '@vivocha/client-interaction-core';
 import {ChatAreaComponent} from '@vivocha/client-interaction-layout';
 import {Observable} from 'rxjs';
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   public messages: Array<any>;
 
-  public appState$: Observable<any>;
+  public appState$: Observable<UiState>;
 
   public closeModalVisible = false;
   public surveyVisible = false;
@@ -34,6 +34,16 @@ export class AppComponent implements OnInit {
       // right   : window['VVC_VAR_ASSETS']['initialRight'],
       // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
     },
+    minimizedCbnMobile: {
+      position: 'fixed',
+      width   : '100%',
+      height  : '45px',
+      left    : '0',
+      right   : '0',
+      bottom  : '0'
+      // right   : window['VVC_VAR_ASSETS']['initialRight'],
+      // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
+    },
     normal: {
       position: 'fixed',
       width   : window['VVC_VAR_ASSETS']['initialWidth'],
@@ -45,8 +55,6 @@ export class AppComponent implements OnInit {
     },
     custom: {position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0'}
   };
-
-  private isMinimized = false;
 
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
@@ -79,7 +87,6 @@ export class AppComponent implements OnInit {
     this.interactionService.closeApp();
   }
   closeCbn() {
-    console.log('closing cbn');
     this.interactionService.closeContact();
     this.closeApp();
   }
@@ -130,10 +137,6 @@ export class AppComponent implements OnInit {
   }
   expandWidget(isFullScreen) {
     this.interactionService.maximizeWidget(isFullScreen, isFullScreen ? this.dimensions.fullscreen : this.dimensions.normal);
-    /*
-    this.interactionService.minimize(false, isFullScreen);
-    this.interactionService.setDimensions(isFullScreen ? this.dimensions.fullscreen : this.dimensions.normal);
-    */
   }
   getCloseStep(context) {
     if (!context.contactStarted) {
@@ -197,9 +200,14 @@ export class AppComponent implements OnInit {
   hideChat() {
     this.interactionService.hideChat();
   }
-  minimizeCbn() {
-    // this.interactionService.setDimensions(minimized ? this.dimensions.minimizedCbn : this.dimensions.normal);
-    this.interactionService.minimizeWidget(this.dimensions.minimizedCbn);
+  maximizeCbn(isMobile: boolean, notRead: boolean) {
+    this.interactionService.maximizeWidget(false, isMobile ? this.dimensions.fullscreen : this.dimensions.normal);
+    if (notRead) {
+      this.upgradeCbnToChat();
+    }
+  }
+  minimizeCbn(isMobile: boolean) {
+    this.interactionService.minimizeWidget(isMobile ? this.dimensions.minimizedCbnMobile : this.dimensions.minimizedCbn);
   }
   minimizeWidget() {
     this.interactionService.minimizeWidget(this.dimensions.minimized);
@@ -236,7 +244,6 @@ export class AppComponent implements OnInit {
   }
   setFullScreen() {
     this.expandWidget(true);
-    // this.interactionService.setFullScreen();
   }
   showCloseDialog(context) {
     return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);
@@ -267,6 +274,9 @@ export class AppComponent implements OnInit {
   }
   updateLeftScrollOffset(scrollObject: { scrollLeft: number, messageId: string}) {
     this.interactionService.updateLeftScrollOffset(scrollObject);
+  }
+  upgradeCbnToChat() {
+    this.interactionService.upgradeCbnToChat();
   }
   videoToggle(show) {
     this.interactionService.toggleVideo(show);

@@ -601,6 +601,27 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
   }
 
 }
+@mixin media-bottom(){
+  text-align: center;
+  padding-top: 40px;
+  .chat-button{
+    cursor: pointer;
+    flex: none;
+    font-size: 12px;
+    font-weight: 300;
+    color: white;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 100px;
+    padding: 15px 30px;
+    span{
+      position: relative;
+      top: -4px;
+      padding-left: 2px;
+    }
+  }
+
+}
 @mixin media-toolbar(){
   flex: none;
   .media-tools{
@@ -842,25 +863,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       @include media-toolbar();
     }
     .media-bottom{
-      text-align: center;
-      padding-top: 40px;
-      .chat-button{
-        cursor: pointer;
-        flex: none;
-        font-size: 12px;
-        font-weight: 300;
-        color: white;
-        display: inline-block;
-        border: 1px solid white;
-        border-radius: 100px;
-        padding: 15px 30px;
-        span{
-          position: relative;
-          top: -4px;
-          padding-left: 2px;
-        }
-      }
-
+      @include media-bottom();
     }
   }
   .media-modal{
@@ -1024,7 +1027,11 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         font-size: 18px;
         line-height: 26px;
         margin-top: 26px;
+        .media-bottom {
+          @include media-bottom();
+        }
       }
+
     }
 
     .sep{
@@ -1961,6 +1968,11 @@ body, input, textarea{ font-family: $appFontFamily; }
       height: 45px;
       .cbn-top-title{
         line-height: 45px !important;
+      }
+    }
+    &.mobile {
+      .cbn-top-bar{
+        border-radius: 0;
       }
     }
   }
