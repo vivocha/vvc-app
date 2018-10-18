@@ -44,6 +44,78 @@
   {
     "values": {
       "en": {
+        "value": "General",
+        "state": "new"
+      },
+      "it": {
+        "value": "Generali",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TABS.General"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": "new"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TABS.Chat"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Early Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Early Chat",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Early Chat",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Early Chat",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TABS.EarlyChat"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Style",
+        "state": "new"
+      },
+      "it": {
+        "value": "Stile",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.TABS.style"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Chat",
         "state": "final"
       },
@@ -260,6 +332,286 @@
     },
     "description": "",
     "id": "META.GROUPS.TOPBAR"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Select an interaction app",
+        "state": "new"
+      },
+      "it": {
+        "value": "Seleziona un'app di interazione",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.appSelector"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Dimensions and positions",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensioni e posizionamento",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.DimensionAndPosition"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Files and emoji",
+        "state": "new"
+      },
+      "it": {
+        "value": "File ed emoji",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.FilesAndEmoji"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Colors",
+        "state": "new"
+      },
+      "it": {
+        "value": "Colori",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.Colors"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Top Bar",
+        "state": "new"
+      },
+      "it": {
+        "value": "Top Bar",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.Topbar"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Audio notification",
+        "state": "new"
+      },
+      "it": {
+        "value": "Notifiche sonore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.Audio"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Data Collection",
+        "state": "new"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.Collector"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Custom CSS",
+        "state": "new"
+      },
+      "it": {
+        "value": "CSS Custom",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.customCss"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Css selector",
+        "state": "new"
+      },
+      "it": {
+        "value": "Selettore css",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.cssSelector"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Upload Panel",
+        "state": "new"
+      },
+      "it": {
+        "value": "Pannello di upload",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.UPLOAD"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Media Management",
+        "state": "new"
+      },
+      "it": {
+        "value": "Gestione Media",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.MEDIA"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Recontact",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ricontatto",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.RECONTACT"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Text Area",
+        "state": "new"
+      },
+      "it": {
+        "value": "Area di testo",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.TEXTAREA"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Voice messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Voce",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.VOICE"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call me back messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggi call me back",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CBN"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Data Collection",
+        "state": "new"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.DC"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Continue Button",
+        "state": "new"
+      },
+      "it": {
+        "value": "Bottone continua",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.NEXT_BUTTON"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Link push messages",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggi ricezione link",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.LINK_PUSH"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Emoji Panel",
+        "state": "new"
+      },
+      "it": {
+        "value": "Pannello Emoji",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.EMOJI"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Call Status",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chiamata Rifiutata",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.CALL_REJECTED"
   },
   {
     "values": {
@@ -2829,19 +3181,19 @@
   {
     "values": {
       "en": {
-        "value": "Your request was recorded successfully.<br />You will be contacted shortly.",
+        "value": "You will be contacted shortly.",
         "state": "new"
       },
       "it": {
-        "value": "La tua richiesta è stata registrata con successo.<br /> A breve verrai contattato.",
+        "value": "A breve verrai contattato.",
         "state": "new"
       },
       "fr": {
-        "value": "Votre demande a bien été enregistrée.<br/>Nous vous rappellerons sous peu.",
+        "value": "Nous vous rappellerons sous peu.",
         "state": "new"
       },
       "ja": {
-        "value": "リクエストが正常に記録されました。<br />すぐに連絡させていただきます。",
+        "value": "すぐに連絡させていただきます。",
         "state": "new"
       }
     },
