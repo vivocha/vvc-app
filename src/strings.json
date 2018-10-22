@@ -616,6 +616,48 @@
   {
     "values": {
       "en": {
+        "value": "Chat Balloon",
+        "state": "new"
+      },
+      "it": {
+        "value": "Chat Balloon",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.GROUPS.Balloon"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Visitor",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visitatore",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SECTIONS.Visitor"
+  },
+  {
+    "values": {
+      "en": {
+        "value": "Agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Agente",
+        "state": "new"
+      }
+    },
+    "description": "",
+    "id": "META.SECTIONS.Agent"
+  },
+  {
+    "values": {
+      "en": {
         "value": "Initial width of the application (desktop version).",
         "state": "final"
       },
