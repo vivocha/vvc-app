@@ -60,7 +60,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init().subscribe(context => {
-      console.log('context ready', context);
       this.interactionService.setDimensions(context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal);
     });
     // this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));

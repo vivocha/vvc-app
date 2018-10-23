@@ -6,16 +6,1022 @@
         "value": "Default Interaction App",
         "state": "final"
       },
-      "it": {
-        "value": "Applicatione di interazione predefinita",
-        "state": "final"
-      },
       "fr": {
         "value": "Application d’interaction par défaut",
         "state": "final"
       },
+      "it": {
+        "value": "Applicatione di interazione predefinita",
+        "state": "final"
+      },
       "ja": {
         "value": "デフォルト対話アプリ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.appSelector",
+    "values": {
+      "en": {
+        "value": "Select an interaction app",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Seleziona un'app di interazione",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.Audio",
+    "values": {
+      "en": {
+        "value": "Audio notification",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Notifiche sonore",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.Balloon",
+    "values": {
+      "en": {
+        "value": "Chat Balloon",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chat Balloon",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.CALL_REJECTED",
+    "values": {
+      "en": {
+        "value": "Call Status",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chiamata Rifiutata",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.CBN",
+    "values": {
+      "en": {
+        "value": "Call me back messages",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Messaggi call me back",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.CHAT",
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.CLOSEMODAL",
+    "values": {
+      "en": {
+        "value": "Modal closure",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Fermeture fenêtre modale",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chiusura Modal",
+        "state": "final"
+      },
+      "ja": {
+        "value": "様式を閉じる",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.Collector",
+    "values": {
+      "en": {
+        "value": "Data Collection",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.Colors",
+    "values": {
+      "en": {
+        "value": "Colors",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Colori",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.cssSelector",
+    "values": {
+      "en": {
+        "value": "Css selector",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Selettore css",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.customCss",
+    "values": {
+      "en": {
+        "value": "Custom CSS",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "CSS Custom",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.DC",
+    "values": {
+      "en": {
+        "value": "Data Collection",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.DimensionAndPosition",
+    "values": {
+      "en": {
+        "value": "Dimensions and positions",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Dimensioni e posizionamento",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.EMOJI",
+    "values": {
+      "en": {
+        "value": "Emoji Panel",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Pannello Emoji",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.FilesAndEmoji",
+    "values": {
+      "en": {
+        "value": "Files and emoji",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "File ed emoji",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.INITIAL_DATA",
+    "values": {
+      "en": {
+        "value": "Initial Data",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Collecte des données",
+        "state": "final"
+      },
+      "it": {
+        "value": "Data Collection",
+        "state": "final"
+      },
+      "ja": {
+        "value": "データ収集",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.LINK_PUSH",
+    "values": {
+      "en": {
+        "value": "Link push messages",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Messaggi ricezione link",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.MEDIA",
+    "values": {
+      "en": {
+        "value": "Media Management",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Gestione Media",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.MEDIATOOLS",
+    "values": {
+      "en": {
+        "value": "Media Tools",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Instruments multimédia",
+        "state": "final"
+      },
+      "it": {
+        "value": "Strumenti multimediali",
+        "state": "final"
+      },
+      "ja": {
+        "value": "マルチメディアの変更",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.MESSAGES",
+    "values": {
+      "en": {
+        "value": "Messages",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Messages",
+        "state": "final"
+      },
+      "it": {
+        "value": "Messaggi",
+        "state": "final"
+      },
+      "ja": {
+        "value": "メッセージ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.NEXT_BUTTON",
+    "values": {
+      "en": {
+        "value": "Continue Button",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Bottone continua",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.NOCHAT",
+    "values": {
+      "en": {
+        "value": "No Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Pas de chat",
+        "state": "final"
+      },
+      "it": {
+        "value": "No chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャットできません",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.QUEUE",
+    "values": {
+      "en": {
+        "value": "Queue",
+        "state": "final"
+      },
+      "fr": {
+        "value": "File d’attente",
+        "state": "final"
+      },
+      "it": {
+        "value": "Coda",
+        "state": "final"
+      },
+      "ja": {
+        "value": "順番",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.RECONTACT",
+    "values": {
+      "en": {
+        "value": "Recontact",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Ricontatto",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.SURVEY",
+    "values": {
+      "en": {
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "it": {
+        "value": "Questionario",
+        "state": "final"
+      },
+      "ja": {
+        "value": "質問",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.TEXTAREA",
+    "values": {
+      "en": {
+        "value": "Text Area",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Area di testo",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.TOOLS",
+    "values": {
+      "en": {
+        "value": "Tools",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Outils",
+        "state": "final"
+      },
+      "it": {
+        "value": "Strumenti",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ツール",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.Topbar",
+    "values": {
+      "en": {
+        "value": "Top Bar",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Top Bar",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.TOPBAR",
+    "values": {
+      "en": {
+        "value": "Topbar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Barre de navigation supérieure",
+        "state": "final"
+      },
+      "it": {
+        "value": "Topbar",
+        "state": "final"
+      },
+      "ja": {
+        "value": "トップバー",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.UPLOAD",
+    "values": {
+      "en": {
+        "value": "Upload Panel",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Pannello di upload",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.GROUPS.VOICE",
+    "values": {
+      "en": {
+        "value": "Voice messages",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Voce",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.SECTIONS.Agent",
+    "values": {
+      "en": {
+        "value": "Agent",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Agente",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.SECTIONS.Visitor",
+    "values": {
+      "en": {
+        "value": "Visitor",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visitatore",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.TABS.Chat",
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.TABS.EarlyChat",
+    "values": {
+      "en": {
+        "value": "Early Chat",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Early Chat",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Early Chat",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "Early Chat",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.TABS.General",
+    "values": {
+      "en": {
+        "value": "General",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Generali",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.TABS.style",
+    "values": {
+      "en": {
+        "value": "Style",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Stile",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM",
+    "values": {
+      "en": {
+        "value": "Ask confirm on close",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chiedi conferma prima di chiudere il contatto",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.INITIAL_HEIGHT",
+    "values": {
+      "en": {
+        "value": "Initial height of the application (desktop version).",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Hauteur initiale de l’application (version bureau).",
+        "state": "final"
+      },
+      "it": {
+        "value": "Altezza iniziale dell'applicazione (versione desktop).",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.INITIAL_WIDTH",
+    "values": {
+      "en": {
+        "value": "Initial width of the application (desktop version).",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Largeur initiale de l’application (version bureau).",
+        "state": "final"
+      },
+      "it": {
+        "value": "Larghezza iniziale dell'applicazione (versione desktop).",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE",
+    "values": {
+      "en": {
+        "value": "Let the user see the transcript after close",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Permetti al visitatore di vedere l'area dei messaggi dopo la chiusura del contatto",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.AUTO_CHAT",
+    "values": {
+      "en": {
+        "value": "Allow the visitor to enter in chat before the agent (EarlyChat)",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Permetti al visitatore di entrare in chat prima dell'agente (EarlyChat)",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR",
+    "values": {
+      "en": {
+        "value": "Agent chat balloon text colour",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du texte de la bulle de conversation de l’agent",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore testo del balloon di chat dell'agente",
+        "state": "final"
+      },
+      "ja": {
+        "value": "エージェントのチャット吹き出しのテキストカラー",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
+    "values": {
+      "en": {
+        "value": "Default agent avatar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Avatar par défaut de l'agent",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Avatar predefinito per l'agente",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW",
+    "values": {
+      "en": {
+        "value": "Show arrow's balloon for the agent ",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de la bulle avec flèche pour l'agent",
+        "state": "final"
+      },
+      "it": {
+        "value": "Visualizza balloon con arrow per l'agente",
+        "state": "final"
+      },
+      "ja": {
+        "value": "エージェントの吹き出しを表示する",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR",
+    "values": {
+      "en": {
+        "value": "Show agent's avatar on chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar de l'agent dans la conversation",
+        "state": "final"
+      },
+      "it": {
+        "value": "Visualizza avatar dell'agente nella chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット内にエージェントのアバターを表示する",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR",
+    "values": {
+      "en": {
+        "value": "User chat balloon color",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore del balloon di chat dell'utente",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR",
+    "values": {
+      "en": {
+        "value": "Default user avatar",
+        "state": "final"
+      },
+      "it": {
+        "value": "Avatar predefinito per l'utente",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW",
+    "values": {
+      "en": {
+        "value": "Show arrow in the user balloon chat message",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer la flèche dans la bulle du message chat",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza freccia tra balloon ed avatar nel messaggio dell'utente",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR",
+    "values": {
+      "en": {
+        "value": "Show user avatar in chat message",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer l'avatar du visiteur dans le message chat",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza avatar dell'utente nel messaggio di chat",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.SHOW_AUTO_CHAT_CONNECTING",
+    "values": {
+      "en": {
+        "value": "Show connection to agent message (EarlyChat)",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza messaggio di connessione con l'agente (EarlyChat)",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_AUTO_CHAT",
+    "values": {
+      "en": {
+        "value": "Show wellcome message on EarlyChat",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza messaggio di benvenuto in EarlyChat",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE",
+    "values": {
+      "en": {
+        "value": "Display welcome message when the agent is connected to the chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.COLOR1",
+    "values": {
+      "en": {
+        "value": "Primary colour",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": "final"
+      },
+      "it": {
+        "value": "Primary color",
+        "state": "final"
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.COLOR2",
+    "values": {
+      "en": {
+        "value": "BOT app color",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur de la BOT app",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Colore applicazione BOT",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION",
+    "values": {
+      "en": {
+        "value": "Message received audio notification",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Notification audio d'un message reçu",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Notifica acustica ricezione messaggio",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT",
+    "values": {
+      "en": {
+        "value": "Hide upload button when connected with a BOT",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Nascondi il bottone di upload quando l'agente è un BOT",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON",
+    "values": {
+      "en": {
+        "value": "Allow the visitor to display emoji panel.",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur de visualiser la fenêtre d’envoi des Emoji.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "訪問者に絵文字パネルの使用を許可する",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON",
+    "values": {
+      "en": {
+        "value": "Allow the user to send file to the agent",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Permet à l’utilisateur d’envoyer un fichier à l’agent.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Permetti al visitatore di inviare un file all'operatore.",
+        "state": "final"
+      },
+      "ja": {
+        "value": "訪問者にオペレーターへのファイルの転送を許可する",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.TOPBAR.DEFAULT_AGENT_AVATAR",
+    "values": {
+      "en": {
+        "value": "Show avatar on the Top Bar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Affichage de l’avatar dans la barre du haut",
+        "state": "final"
+      },
+      "it": {
+        "value": "Visualizza avatar nella Top Bar",
+        "state": "final"
+      },
+      "ja": {
+        "value": "トップバー内にアバターを表示する",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO",
+    "values": {
+      "en": {
+        "value": "Show agent info in the Topbar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer les informations agents dans la barre du haut",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza informazioni agente nella Topbar",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.TOPBAR.SHOW_AVATAR",
+    "values": {
+      "en": {
+        "value": "Show avatar in the Topbar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer l'avatar dans la barre du hau",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza avatar nella Topbar",
         "state": "final"
       }
     }
@@ -27,12 +1033,12 @@
         "value": "Default",
         "state": "final"
       },
-      "it": {
-        "value": "Default",
-        "state": "final"
-      },
       "fr": {
         "value": "Par défaut",
+        "state": "final"
+      },
+      "it": {
+        "value": "Default",
         "state": "final"
       },
       "ja": {
@@ -42,1603 +1048,619 @@
     }
   },
   {
+    "id": "STRINGS.CALL_REJECTED",
     "values": {
       "en": {
-        "value": "General",
-        "state": "new"
-      },
-      "it": {
-        "value": "Generali",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.TABS.General"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Chat",
-        "state": "new"
-      },
-      "it": {
-        "value": "Chat",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Conversation",
-        "state": "new"
-      },
-      "ja": {
-        "value": "チャット",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.TABS.Chat"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Early Chat",
-        "state": "new"
-      },
-      "it": {
-        "value": "Early Chat",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Early Chat",
-        "state": "new"
-      },
-      "ja": {
-        "value": "Early Chat",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.TABS.EarlyChat"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Style",
-        "state": "new"
-      },
-      "it": {
-        "value": "Stile",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.TABS.style"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chat",
+        "value": "Call rejected",
         "state": "final"
       },
       "fr": {
-        "value": "Conversation",
+        "value": "Appel rejeté",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chiamata rifiutata",
         "state": "final"
       },
       "ja": {
-        "value": "チャット",
+        "value": "電話が途切れました",
         "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.CHAT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Modal closure",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chiusura Modal",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Fermeture fenêtre modale",
-        "state": "final"
-      },
-      "ja": {
-        "value": "様式を閉じる",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.CLOSEMODAL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Initial Data",
-        "state": "final"
-      },
-      "it": {
-        "value": "Data Collection",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Collecte des données",
-        "state": "final"
-      },
-      "ja": {
-        "value": "データ収集",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.INITIAL_DATA"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Media Tools",
-        "state": "final"
-      },
-      "it": {
-        "value": "Strumenti multimediali",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Instruments multimédia",
-        "state": "final"
-      },
-      "ja": {
-        "value": "マルチメディアの変更",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.MEDIATOOLS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Messages",
-        "state": "final"
-      },
-      "it": {
-        "value": "Messaggi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Messages",
-        "state": "final"
-      },
-      "ja": {
-        "value": "メッセージ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.MESSAGES"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "No Chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "No chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Pas de chat",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャットできません",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.NOCHAT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Queue",
-        "state": "final"
-      },
-      "it": {
-        "value": "Coda",
-        "state": "final"
-      },
-      "fr": {
-        "value": "File d’attente",
-        "state": "final"
-      },
-      "ja": {
-        "value": "順番",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.QUEUE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Questionnaire",
-        "state": "final"
-      },
-      "it": {
-        "value": "Questionario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Questionnaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "質問",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.SURVEY"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Tools",
-        "state": "final"
-      },
-      "it": {
-        "value": "Strumenti",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Outils",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ツール",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.TOOLS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Topbar",
-        "state": "final"
-      },
-      "it": {
-        "value": "Topbar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Barre de navigation supérieure",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.TOPBAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Select an interaction app",
-        "state": "new"
-      },
-      "it": {
-        "value": "Seleziona un'app di interazione",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.appSelector"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Dimensions and positions",
-        "state": "new"
-      },
-      "it": {
-        "value": "Dimensioni e posizionamento",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.DimensionAndPosition"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Files and emoji",
-        "state": "new"
-      },
-      "it": {
-        "value": "File ed emoji",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.FilesAndEmoji"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Colors",
-        "state": "new"
-      },
-      "it": {
-        "value": "Colori",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.Colors"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Top Bar",
-        "state": "new"
-      },
-      "it": {
-        "value": "Top Bar",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.Topbar"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Audio notification",
-        "state": "new"
-      },
-      "it": {
-        "value": "Notifiche sonore",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.Audio"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Data Collection",
-        "state": "new"
-      },
-      "it": {
-        "value": "Data Collection",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.Collector"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Custom CSS",
-        "state": "new"
-      },
-      "it": {
-        "value": "CSS Custom",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.customCss"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Css selector",
-        "state": "new"
-      },
-      "it": {
-        "value": "Selettore css",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.cssSelector"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Upload Panel",
-        "state": "new"
-      },
-      "it": {
-        "value": "Pannello di upload",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.UPLOAD"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Media Management",
-        "state": "new"
-      },
-      "it": {
-        "value": "Gestione Media",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.MEDIA"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Recontact",
-        "state": "new"
-      },
-      "it": {
-        "value": "Ricontatto",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.RECONTACT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Text Area",
-        "state": "new"
-      },
-      "it": {
-        "value": "Area di testo",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.TEXTAREA"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Voice messages",
-        "state": "new"
-      },
-      "it": {
-        "value": "Voce",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.VOICE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call me back messages",
-        "state": "new"
-      },
-      "it": {
-        "value": "Messaggi call me back",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.CBN"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Data Collection",
-        "state": "new"
-      },
-      "it": {
-        "value": "Data Collection",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.DC"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Continue Button",
-        "state": "new"
-      },
-      "it": {
-        "value": "Bottone continua",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.NEXT_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Link push messages",
-        "state": "new"
-      },
-      "it": {
-        "value": "Messaggi ricezione link",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.LINK_PUSH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Emoji Panel",
-        "state": "new"
-      },
-      "it": {
-        "value": "Pannello Emoji",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.EMOJI"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call Status",
-        "state": "new"
-      },
-      "it": {
-        "value": "Chiamata Rifiutata",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.CALL_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Chat Balloon",
-        "state": "new"
-      },
-      "it": {
-        "value": "Chat Balloon",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.GROUPS.Balloon"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Visitor",
-        "state": "new"
-      },
-      "it": {
-        "value": "Visitatore",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.SECTIONS.Visitor"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Agent",
-        "state": "new"
-      },
-      "it": {
-        "value": "Agente",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.SECTIONS.Agent"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Initial width of the application (desktop version).",
-        "state": "final"
-      },
-      "it": {
-        "value": "Larghezza iniziale dell'applicazione (versione desktop).",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Largeur initiale de l’application (version bureau).",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.APP.INITIAL_WIDTH"
-  },
-  {
-    "values": {
-      "en": {
-        "value":"Ask confirm on close",
-        "state":"new"
-      },
-      "it": {
-        "value":"Chiedi conferma prima di chiudere il contatto",
-        "state":"new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM"
-  },
-  {
-    "values": {
-      "en": {
-        "value":"Let the user see the transcript after close",
-        "state":"new"
-      },
-      "it": {
-        "value":"Permetti al visitatore di vedere l'area dei messaggi dopo la chiusura del contatto",
-        "state":"new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Initial height of the application (desktop version).",
-        "state": "final"
-      },
-      "it": {
-        "value": "Altezza iniziale dell'applicazione (versione desktop).",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Hauteur initiale de l’application (version bureau).",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.APP.INITIAL_HEIGHT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Primary colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Primary color",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur primaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "初期カラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.COLOR1"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "BOT app color",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore applicazione BOT",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur de la BOT app",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.COLOR2"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show avatar in the Topbar",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza avatar nella Topbar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Montrer l'avatar dans la barre du hau",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.TOPBAR.SHOW_AVATAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show avatar on the Top Bar",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza avatar nella Top Bar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de l’avatar dans la barre du haut",
-        "state": "final"
-      },
-      "ja": {
-        "value": "トップバー内にアバターを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.TOPBAR.DEFAULT_AGENT_AVATAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show agent info in the Topbar",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza informazioni agente nella Topbar",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Montrer les informations agents dans la barre du haut",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the visitor to display emoji panel.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Permetti al visitatore di visualizzare il pannello per l'invio delle Emoji.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Permet à l’utilisateur de visualiser la fenêtre d’envoi des Emoji.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "訪問者に絵文字パネルの使用を許可する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the user to send file to the agent",
-        "state": "final"
-      },
-      "it": {
-        "value": "Permetti al visitatore di inviare un file all'operatore.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Permet à l’utilisateur d’envoyer un fichier à l’agent.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "訪問者にオペレーターへのファイルの転送を許可する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Allow the visitor to enter in chat before the agent (EarlyChat)",
-        "state": "new"
-      },
-      "it": {
-        "value": "Permetti al visitatore di entrare in chat prima dell'agente (EarlyChat)",
-        "state": "new"
-      }
-    },
-    "id": "META.VARIABLES.CHAT.AUTO_CHAT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show connection to agent message (EarlyChat)",
-        "state": "new"
-      },
-      "it": {
-        "value": "Visualizza messaggio di connessione con l'agente (EarlyChat)",
-        "state": "new"
-      }
-    },
-    "id": "META.VARIABLES.CHAT.SHOW_AUTO_CHAT_CONNECTING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Hide upload button when connected with a BOT",
-        "state": "new"
-      },
-      "it": {
-        "value": "Nascondi il bottone di upload quando l'agente è un BOT",
-        "state": "new"
-      }
-    },
-    "id": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Display welcome message when the agent is connected to the chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE"
-  },
-  {
-    "id": "META.VARIABLES.CHAT.SHOW_WELCOME_AUTO_CHAT",
-    "description": "",
-    "values": {
-      "en": {
-        "value": "Show wellcome message on EarlyChat",
-        "state": "new"
-      },
-      "it": {
-        "value": "Visualizza messaggio di benvenuto in EarlyChat",
-        "state": "new"
       }
     }
   },
   {
+    "id": "STRINGS.CBN.BUSY",
     "values": {
       "en": {
-        "value": "Show user avatar in chat message",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza avatar dell'utente nel messaggio di chat",
-        "state": "final"
+        "value": "The telephone number is busy",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "Montrer l'avatar du visiteur dans le message chat",
+        "value": "Le numéro est occupé",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Il numero di telefono è occupato",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "電話番号が話し中です",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR"
+    }
   },
   {
+    "id": "STRINGS.CBN.BUSY_M",
     "values": {
       "en": {
-        "value": "Show arrow in the user balloon chat message",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza freccia tra balloon ed avatar nel messaggio dell'utente",
-        "state": "final"
+        "value": "The telephone number is busy",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "Montrer la flèche dans la bulle du message chat",
+        "value": "Le numéro est occupé",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Il numero di telefono è occupato",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "電話番号が話し中です",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW"
+    }
   },
   {
+    "id": "STRINGS.CBN.CANCEL",
     "values": {
       "en": {
-        "value": "User chat balloon color",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore del balloon di chat dell'utente",
-        "state": "final"
+        "value": "Call canceled before answering",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "",
-        "state": "new"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Default user avatar",
-        "state": "final"
+        "value": "Appel annulé avant d'être pris en charge",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Avatar predefinito per l'utente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "",
-        "state": "new"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show agent's avatar on chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza avatar dell'agente nella chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de l’avatar de l'agent dans la conversation",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャット内にエージェントのアバターを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Show arrow's balloon for the agent ",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza balloon con arrow per l'agente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Affichage de la bulle avec flèche pour l'agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "エージェントの吹き出しを表示する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Agent chat balloon text colour",
-        "state": "final"
-      },
-      "it": {
-        "value": "Colore testo del balloon di chat dell'agente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur du texte de la bulle de conversation de l’agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "エージェントのチャット吹き出しのテキストカラー",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Default agent avatar",
-        "state": "final"
-      },
-      "it": {
-        "value": "Avatar predefinito per l'agente",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Avatar par défaut de l'agent",
+        "value": "Chiamata chiusa prima della risposta",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "応答前に電話が切れました",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR"
+    }
   },
   {
+    "id": "STRINGS.CBN.CANCEL_M",
     "values": {
       "en": {
-        "value": "Message received audio notification",
-        "state": "final"
-      },
-      "it": {
-        "value": "Notifica acustica ricezione messaggio",
-        "state": "final"
+        "value": "Call canceled before answering",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "Notification audio d'un message reçu",
+        "value": "Appel annulé avant d'être pris en charge",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chiamata chiusa prima della risposta",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "応答前に電話が切れました",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION"
+    }
   },
   {
+    "id": "STRINGS.CBN.DIAL",
     "values": {
       "en": {
-        "value": "Sorry there are no available agents. Please try again later.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Siamo spiacenti non ci sono operatori disponibili. Ti preghiamo di riprovare più tardi.",
-        "state": "final"
+        "value": "Agent {{nickname}} is dialing the telephone number",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "Désolé, aucun agent n'est disponible. Veuillez réessayer ultérieurement.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "申し訳ありません。対応可能なオペレータがいません。しばらくしてから再試行してください。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.DISSUASION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "An error occurred. Please try again.",
-        "state": "final"
+        "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Si è verificato un errore. Riprova.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Une erreur est survenue. Veuillez réessayer.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "エラーが発生しました。やり直してください。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.CONTACT_FAILED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your request as been registered. We will contact you as soon as possible.",
-        "state": "new"
-      },
-      "it": {
-        "value": "Abbiamo preso in carico la tua richiesta.<br>Ti contatteremo il prima possibile.",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.WEBLEAD_SENT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "No available agents.<br>Please retry later.",
-        "state": "new"
-      },
-      "it": {
-        "value": "Al momento non ci sono agenti disponibili.<br>Ti preghiamo di riprovare più tardi.",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.NO_AGENTS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Vivocha Customer Care",
-        "state": "new"
-      },
-      "it": {
-        "value": "Vivocha Customer Care",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Vivocha Service client",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.TITLE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "connecting...",
-        "state": "final"
-      },
-      "it": {
-        "value": "connessione in corso...",
-        "state": "final"
-      },
-      "fr": {
-        "value": "connection en cours...",
+        "value": "L'agente {{nickname}} sta componendo il numero di telefono",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.SUBTITLE"
+    }
   },
   {
+    "id": "STRINGS.CBN.DIAL_M",
     "values": {
       "en": {
-        "value": "minimize",
-        "state": "final"
-      },
-      "it": {
-        "value": "minimizza",
-        "state": "final"
+        "value": "Agent {{nickname}} is dialing the telephone number",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "réduire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "縮小する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "expand",
-        "state": "final"
+        "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
+        "state": "needs-review"
       },
       "it": {
-        "value": "espandi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "étendre",
-        "state": "final"
-      },
-      "ja": {
-        "value": "広める",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Voice",
-        "state": "final"
-      },
-      "it": {
-        "value": "Voce",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Voix",
-        "state": "final"
-      },
-      "ja": {
-        "value": "音声",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.VOICE_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Hide chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "Nascondi chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Cacher le chat",
+        "value": "L'agente {{nickname}} sta componendo il numero di telefono",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON"
+    }
   },
   {
+    "id": "STRINGS.CBN.ERROR",
     "values": {
       "en": {
-        "value": "Video",
-        "state": "final"
-      },
-      "it": {
-        "value": "Video",
-        "state": "final"
+        "value": "Unfortunately it was not possible to fulfill your request.<br />Please try again later.",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "Vidéo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ビデオ",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Close",
-        "state": "final"
+        "value": "Malheureusement, nous ne pouvons pas donner suite à votre demande.<br/>Veuillez réessayer ultérieurement.",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Chiudi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Fermer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "閉じる",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Contact established",
-        "state": "final"
-      },
-      "it": {
-        "value": "Contatto in corso",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Contact établi",
+        "value": "Purtroppo non è stato possibile soddisfare la tua richiesta.<br /> Riprova più tardi.",
         "state": "needs-review"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "残念ながら、お客様のリクエストにお答えすることができませんでした。<br/>しばらくしてからもう一度お試しください。",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.TOPBAR.CONNECTED"
+    }
   },
   {
+    "id": "STRINGS.CBN.INLINE",
     "values": {
       "en": {
-        "value": "Just a moment,<br>we are connecting you with the first available agent.",
-        "state": "final"
+        "value": "On the line with {{nickname}}",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "En ligne avec {{nickname}}",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile.",
+        "value": "In linea con {{nickname}}",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "通話相手： {{nickname}}",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.INLINE_M",
+    "values": {
+      "en": {
+        "value": "On the line with {{nickname}}",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "En ligne avec {{nickname}}",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "In linea con {{nickname}}",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "通話相手： {{nickname}}",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.JOIN",
+    "values": {
+      "en": {
+        "value": "Our agent has taken the call",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Notre agent a pris en charge l'appel",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Un nostro agente ha preso in carico la chiamata",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "当社のエージェントが通話を引き継ぎました",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.JOIN_M",
+    "values": {
+      "en": {
+        "value": "Our agent has taken the call",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Notre agent a pris en charge l'appel",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Un nostro agente ha preso in carico la chiamata",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "当社のエージェントが通話を引き継ぎました",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.LEFT",
+    "values": {
+      "en": {
+        "value": "The call has been terminated",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "L'appel avec l'agent {{nickname}} est terminé",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "La chiamata con l'agente {{nickname}} è terminata",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "エージェント{{nickname}}との通話が終了しました",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.LEFT_M",
+    "values": {
+      "en": {
+        "value": "The call has been terminated",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "L'appel avec l'agent {{nickname}} est terminé",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "La chiamata con l'agente {{nickname}} è terminata",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "エージェント{{nickname}}との通話が終了しました",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.LINK_PUSH",
+    "values": {
+      "en": {
+        "value": "You have received a link",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Vous avez reçu un lien",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Hai ricevuto un link",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "リンクを受信しました",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.NEW_MESSAGES_M",
+    "values": {
+      "en": {
+        "value": "new messages",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "nuovi messaggi",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.NOANSWER",
+    "values": {
+      "en": {
+        "value": "No answer",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Pas de réponse",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Nessuna risposta",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "返答なし",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.NOANSWER_M",
+    "values": {
+      "en": {
+        "value": "No answer",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Pas de réponse",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Nessuna risposta",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "返答なし",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.NOTEXISTS",
+    "values": {
+      "en": {
+        "value": "Number does not exist",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Numéro inexistant",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Numero inesistente",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "番号が存在しません",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.NOTEXISTS_M",
+    "values": {
+      "en": {
+        "value": "Number does not exist",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Numéro inexistant",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Numero inesistente",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "番号が存在しません",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.RING",
+    "values": {
+      "en": {
+        "value": "The telephone is ringing",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Le téléphone est en train de sonner",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Il tuo telefono sta per squillare. <br> Tieni il tuo telefono a portata di mano.",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "電話が鳴っています",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.RING_M",
+    "values": {
+      "en": {
+        "value": "The telephone is ringing",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Le téléphone est en train de sonner",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Il telefono sta per squillare",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "電話が鳴っています",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.SUCCESS",
+    "values": {
+      "en": {
+        "value": "Your request was recorded successfully.<br />You will be contacted shortly.",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Votre demande a bien été enregistrée.<br/>Nous vous rappellerons sous peu.",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "La tua richiesta è stata registrata con successo.<br /> A breve verrai contattato.",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "リクエストが正常に記録されました。<br />すぐに連絡させていただきます。",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.SUCCESS_M",
+    "values": {
+      "en": {
+        "value": "You will be contacted shortly.",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Nous vous rappellerons sous peu.",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "A breve verrai contattato.",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "すぐに連絡させていただきます。",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.WRONG_NUMBER",
+    "values": {
+      "en": {
+        "value": "Wrong number",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Numéro erroné",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Numero sbagliato",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "番号が間違っています",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN.WRONG_NUMBER_M",
+    "values": {
+      "en": {
+        "value": "Wrong number",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Numéro erroné",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Numero sbagliato",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "番号が間違っています",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CHAT.AUTO_CHAT_FIRST_MESSAGE",
+    "values": {
+      "en": {
+        "value": "How can I help you?",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Come posso aiutarti?",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CHAT.ISWRITING",
+    "values": {
+      "en": {
+        "value": "{{agent}} is writing...",
         "state": "final"
       },
       "fr": {
-        "value": "Veuillez patienter,<br>nous vous mettons en relation avec le premier agent disponible.",
+        "value": "{{agent}} est en train d'écrire...",
+        "state": "final"
+      },
+      "it": {
+        "value": "{{agent}} sta scrivendo...",
         "state": "final"
       },
       "ja": {
-        "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
+        "value": "{{オペレーター}} 書き込み中",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.QUEUE.CONNECTING"
+    }
   },
   {
+    "id": "STRINGS.CHAT.WELCOME_MESSAGE",
     "values": {
       "en": {
         "value": "Hello, <b>{{nickname}}</b> here,<br> how can I help you?",
-        "state": "final"
-      },
-      "it": {
-        "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
         "state": "final"
       },
       "fr": {
         "value": "Bonjour, <b>{{nickname}}</b> ici,<br> Comment puis je vous aider?",
         "state": "needs-review"
       },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CHAT.WELCOME_MESSAGE"
-  },
-  {
-    "id": "STRINGS.CHAT.AUTO_CHAT_FIRST_MESSAGE",
-    "description": "",
-    "values": {
-      "en": {
-        "value": "How can I help you?",
-        "state": "new"
-      },
       "it": {
-        "value": "Come posso aiutarti?",
-        "state": "new"
+        "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
+        "state": "final"
       }
     }
   },
   {
-    "values": {
-      "en": {
-        "value": "In call with<br><b>{{nickname}}</b>",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sei in linea con<br><b>{{nickname}}</b>",
-        "state": "final"
-      },
-      "fr": {
-        "value": "En communication avec <br><b>{{nickname}}</b>",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.VOICE.WELCOME_MESSAGE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Incoming call from<br><b>{{nickname}}</b>",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel entrant de <br><b>{{nickname}}</b>",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.VOICE.INCOMING_MESSAGE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "We are connecting you<br>with <b>{{nickname}}</b>",
-        "state": "final"
-      },
-      "it": {
-        "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Nous vous connectons <br>avec <b>{{nickname}}</b>",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.VOICE.MEDIA_OFFERING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "open chat",
-        "state": "final"
-      },
-      "it": {
-        "value": "apri chat",
-        "state": "final"
-      },
-      "fr": {
-        "value": "ouvrir le chat ",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.VOICE.OPEN_CHAT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "new messages",
-        "state": "final"
-      },
-      "it": {
-        "value": "messaggi non letti",
-        "state": "final"
-      },
-      "fr": {
-        "value": "nouveau messages",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.VOICE.NOT_READ"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The contact has ended<br>Thanks.",
-        "state": "final"
-      },
-      "it": {
-        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Le contact est terminé<br>Merci.",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.VOICE.CONTACT_CLOSED"
-  },
-  {
+    "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE",
     "values": {
       "en": {
         "value": "Do you really want to quit?",
-        "state": "final"
-      },
-      "it": {
-        "value": "Vuoi interrompere il contatto?",
         "state": "final"
       },
       "fr": {
         "value": "Voulez-vous vraiment quitter l’application?",
         "state": "final"
       },
+      "it": {
+        "value": "Vuoi interrompere il contatto?",
+        "state": "final"
+      },
       "ja": {
         "value": "書き込みを中止しますか?",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE"
+    }
   },
   {
+    "id": "STRINGS.CLOSEMODAL.NO",
     "values": {
       "en": {
-        "value": "No",
-        "state": "final"
-      },
-      "it": {
         "value": "No",
         "state": "final"
       },
@@ -1646,673 +1668,684 @@
         "value": "Non",
         "state": "final"
       },
+      "it": {
+        "value": "No",
+        "state": "final"
+      },
       "ja": {
         "value": "いいえ",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CLOSEMODAL.NO"
+    }
   },
   {
+    "id": "STRINGS.CLOSEMODAL.YES",
     "values": {
       "en": {
         "value": "Yes",
-        "state": "final"
-      },
-      "it": {
-        "value": "Si",
         "state": "final"
       },
       "fr": {
         "value": "Oui",
         "state": "final"
       },
+      "it": {
+        "value": "Si",
+        "state": "final"
+      },
       "ja": {
         "value": "はい",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CLOSEMODAL.YES"
+    }
   },
   {
+    "id": "STRINGS.DC.ASK_FOR_COMPILE",
     "values": {
       "en": {
         "value": "The agent is asking to you to fill the from",
-        "state": "final"
-      },
-      "it": {
-        "value": "L'operatore ha richiesto la compilazione del modulo",
         "state": "final"
       },
       "fr": {
         "value": "L’agent demande la compilation du formulaire",
         "state": "final"
       },
+      "it": {
+        "value": "L'operatore ha richiesto la compilazione del modulo",
+        "state": "final"
+      },
       "ja": {
         "value": "オペレーターは書類の正しい入力を要求しています",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.ASK_FOR_COMPILE"
+    }
   },
   {
+    "id": "STRINGS.DC.COMPILE",
     "values": {
       "en": {
         "value": "Fill",
-        "state": "final"
-      },
-      "it": {
-        "value": "Compila",
         "state": "final"
       },
       "fr": {
         "value": "Compiler",
         "state": "final"
       },
+      "it": {
+        "value": "Compila",
+        "state": "final"
+      },
       "ja": {
         "value": "入力する",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.COMPILE"
+    }
   },
   {
+    "id": "STRINGS.DC.EMAIL_ERR",
     "values": {
       "en": {
         "value": "invalid email",
-        "state": "final"
-      },
-      "it": {
-        "value": "email non valida",
         "state": "final"
       },
       "fr": {
         "value": "Email non valide",
         "state": "final"
       },
+      "it": {
+        "value": "email non valida",
+        "state": "final"
+      },
       "ja": {
         "value": "メールアドレスが正しくありません。",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.EMAIL_ERR"
+    }
   },
   {
+    "id": "STRINGS.DC.INCOMING_HEAD",
     "values": {
       "en": {
         "value": "Information Request",
-        "state": "final"
-      },
-      "it": {
-        "value": "Richiesta di Informazioni",
         "state": "final"
       },
       "fr": {
         "value": "Demande d’informations",
         "state": "final"
       },
+      "it": {
+        "value": "Richiesta di Informazioni",
+        "state": "final"
+      },
       "ja": {
         "value": "詳しく知る",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.INCOMING_HEAD"
+    }
   },
   {
+    "id": "STRINGS.DC.NEXT_BUTTON",
     "values": {
       "en": {
         "value": "Next",
-        "state": "final"
-      },
-      "it": {
-        "value": "Avanti",
         "state": "final"
       },
       "fr": {
         "value": "Suivant",
         "state": "final"
       },
+      "it": {
+        "value": "Avanti",
+        "state": "final"
+      },
       "ja": {
         "value": "次へ",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.NEXT_BUTTON"
+    }
   },
   {
+    "id": "STRINGS.DC.REQUIRED_ERR",
     "values": {
       "en": {
         "value": "required field",
-        "state": "final"
-      },
-      "it": {
-        "value": "campo obbligatorio",
         "state": "final"
       },
       "fr": {
         "value": "Champ obligatoire",
         "state": "final"
       },
+      "it": {
+        "value": "campo obbligatorio",
+        "state": "final"
+      },
       "ja": {
         "value": "必須",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.REQUIRED_ERR"
+    }
   },
   {
+    "id": "STRINGS.DC.REQUIRED_LEGEND",
     "values": {
       "en": {
         "value": "* required fields",
-        "state": "final"
-      },
-      "it": {
-        "value": "* campi obbligatori",
         "state": "final"
       },
       "fr": {
         "value": "*champs obligatoires",
         "state": "final"
       },
+      "it": {
+        "value": "* campi obbligatori",
+        "state": "final"
+      },
       "ja": {
         "value": "* 必須項目です",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.REQUIRED_LEGEND"
+    }
   },
   {
+    "id": "STRINGS.DC.VIEW",
     "values": {
       "en": {
         "value": "View",
-        "state": "final"
-      },
-      "it": {
-        "value": "Visualizza",
         "state": "final"
       },
       "fr": {
         "value": "Visualiser",
         "state": "final"
       },
+      "it": {
+        "value": "Visualizza",
+        "state": "final"
+      },
       "ja": {
         "value": "表示する",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.DC.VIEW"
+    }
   },
   {
+    "id": "STRINGS.EMOJI.CLOSE_PANEL",
     "values": {
       "en": {
-        "value": "The agent left the contact",
-        "state": "final"
-      },
-      "it": {
-        "value": "L'operatore ha chiuso il contatto",
+        "value": "close",
         "state": "final"
       },
       "fr": {
-        "value": "L’agent a quitté le contact",
-        "state": "final"
-      },
-      "ja": {
-        "value": "オペレーターとの通信が途切れました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REMOTE_CLOSE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The contact has ended<br>Thanks.",
+        "value": "fermer",
         "state": "final"
       },
       "it": {
-        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "value": "chiudi",
+        "state": "final"
+      },
+      "ja": {
+        "value": "閉じる",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.LINK_PUSH",
+    "values": {
+      "en": {
+        "value": "The agent sent you a link: <b>{{link}}</b>",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "L'agente ti ha inviato un link: <b>{{link}}</b>",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.ACCEPT",
+    "values": {
+      "en": {
+        "value": "Accept",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Accepter",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Accetta",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "受領",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.CLOSE_CALL",
+    "values": {
+      "en": {
+        "value": "Close call",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chiudi chiamata",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.DECLINE",
+    "values": {
+      "en": {
+        "value": "Decline",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Refuser",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Rifiuta",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "拒否",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.MINIMIZE_VIDEO",
+    "values": {
+      "en": {
+        "value": "Collapse video",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Réduire la vidéo",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Riduci video",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "ビデオを抑える",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.MUTED",
+    "values": {
+      "en": {
+        "value": "Microphone disabled",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Microphone muet",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Microfono disabilitato",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "マイクが無効",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.TOOLTIPS.MAXIMIZE_VIDEO",
+    "values": {
+      "en": {
+        "value": "expand",
+        "state": "final"
+      },
+      "fr": {
+        "value": "étendre",
+        "state": "final"
+      },
+      "it": {
+        "value": "espandi",
+        "state": "final"
+      },
+      "ja": {
+        "value": "広める",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.TOOLTIPS.MINIMIZE_VIDEO",
+    "values": {
+      "en": {
+        "value": "Collapse video",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Réduire la vidéo",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Riduci video",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "ビデオを抑える",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.TOOLTOPS.HIDE_VIDEOS",
+    "values": {
+      "en": {
+        "value": "Hide small videos",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Nascondi gli altri video",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.TOOLTOPS.SHOW_VIDEOS",
+    "values": {
+      "en": {
+        "value": "Show small videos",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Mostra gli altri video",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING",
+    "values": {
+      "en": {
+        "value": "Switch remote video with sharing",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Cambia il video remoto con lo sharing",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_SHARING_REMOTE",
+    "values": {
+      "en": {
+        "value": "Switch sharing with remote video",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Cambia lo sharing con il video remoto",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.UNMUTED",
+    "values": {
+      "en": {
+        "value": "Microphone enabled",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Microphone activé",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Microfono abilitato",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "マイクが有効",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.VIDEO_DISABLED",
+    "values": {
+      "en": {
+        "value": "Video disabled",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Vidéo désactivée",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Video disabilitato",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "ビデオ使用不可",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.VIDEO_ENABLED",
+    "values": {
+      "en": {
+        "value": "Video enabled",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Vidéo activée",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Video abilitato",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "ビデオ使用可",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.LOCAL_CLOSE",
+    "values": {
+      "en": {
+        "value": "The contact has ended<br>Thanks.",
         "state": "final"
       },
       "fr": {
         "value": "Le contact est terminé<br>Merci.",
         "state": "final"
       },
+      "it": {
+        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "state": "final"
+      },
       "ja": {
         "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.LOCAL_CLOSE"
+    }
   },
   {
+    "id": "STRINGS.MESSAGES.REMOTE_CLOSE",
     "values": {
       "en": {
-        "value": "{{agent}} is writing...",
-        "state": "final"
-      },
-      "it": {
-        "value": "{{agent}} sta scrivendo...",
+        "value": "The agent left the contact",
         "state": "final"
       },
       "fr": {
-        "value": "{{agent}} est en train d'écrire...",
-        "state": "final"
-      },
-      "ja": {
-        "value": "{{オペレーター}} 書き込み中",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CHAT.ISWRITING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "close",
+        "value": "L’agent a quitté le contact",
         "state": "final"
       },
       "it": {
-        "value": "chiudi",
+        "value": "L'operatore ha chiuso il contatto",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの通信が途切れました",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.REQUEST_ACCEPT",
+    "values": {
+      "en": {
+        "value": "Yes",
         "state": "final"
       },
       "fr": {
-        "value": "fermer",
+        "value": "Oui",
+        "state": "final"
+      },
+      "it": {
+        "value": "Si",
         "state": "final"
       },
       "ja": {
-        "value": "閉じる",
+        "value": "はい",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.EMOJI.CLOSE_PANEL"
+    }
   },
   {
-    "values": {
-      "en": {
-        "value": "close",
-        "state": "final"
-      },
-      "it": {
-        "value": "chiudi",
-        "state": "final"
-      },
-      "fr": {
-        "value": "fermer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "閉じる",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.UPLOAD.CLOSE_PANEL"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "send file",
-        "state": "final"
-      },
-      "it": {
-        "value": "invia file",
-        "state": "final"
-      },
-      "fr": {
-        "value": "envoyer un fichier",
-        "state": "needs-review"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.UPLOAD.SEND_FILE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Select a file to upload",
-        "state": "final"
-      },
-      "it": {
-        "value": "seleziona il file da caricare",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Sélectionner le fichier à charger",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルを選択する",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.UPLOAD.SELECT_FILE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Write your message here",
-        "state": "final"
-      },
-      "it": {
-        "value": "Descrizione file",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Description du fichier",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ファイルの詳細",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.UPLOAD.FILE_DESCRIPTION"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Type here...",
-        "state": "final"
-      },
-      "it": {
-        "value": "Scrivi qui...",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Écrire ici...",
-        "state": "final"
-      },
-      "ja": {
-        "value": "ここに書き込んでください",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TEXTAREA.PLACEHOLDER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Questionnaire",
-        "state": "final"
-      },
-      "it": {
-        "value": "Questionario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Questionnaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "質問",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.TITLE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Information Request",
-        "state": "final"
-      },
-      "it": {
-        "value": "Richiesta di Informazioni",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Demande d’informations",
-        "state": "final"
-      },
-      "ja": {
-        "value": "詳しく知る",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.SUBTITLE"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your rating has been sent.<br>Thank you!",
-        "state": "final"
-      },
-      "it": {
-        "value": "La tua valutazione è stata inviata.<br>Grazie!",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Votre évaluation a bien été envoyée.<br>Merci !",
-        "state": "final"
-      },
-      "ja": {
-        "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.SURVEY.FEEDBACK"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "We will contact you soon.<br>Thanks!",
-        "state": "new"
-      },
-      "it": {
-        "value": "Abbiamo preso in carico la tua richiesta. <br> Verrai contattato al più presto.",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.RECONTACT.FEEDBACK"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Continue",
-        "state": "final"
-      },
-      "it": {
-        "value": "Continua",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Continuer",
-        "state": "final"
-      },
-      "ja": {
-        "value": "続ける",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.NEXT_BUTTON"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Call rejected",
-        "state": "final"
-      },
-      "it": {
-        "value": "Chiamata rifiutata",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Appel rejeté",
-        "state": "final"
-      },
-      "ja": {
-        "value": "電話が途切れました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CALL_REJECTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Default Topbar Title",
-        "state": "final"
-      },
-      "it": {
-        "value": "Titolo Default Topbar",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOPBAR.TITLE_DEFAULT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Default Topbar Subtitle",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sottotitolo Default Topbar",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.TOPBAR.SUBTITLE_DEFAULT"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "You have been transferred to another agent",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sei stato trasferito a un altro operatore",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Vous avez été transféré vers un autre agent",
-        "state": "final"
-      },
-      "ja": {
-        "value": "他のオペレーターと繋がりました",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.TRANSFERRED"
-  },
-  {
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING",
     "values": {
       "en": {
         "value": "Would you like to start a form sharing session?",
-        "state": "final"
-      },
-      "it": {
-        "value": "Vuoi accettare la richiesta di condivisione moduli?",
         "state": "final"
       },
       "fr": {
         "value": "Voulez-vous accepter la demande de partage de formulaire ?",
         "state": "final"
       },
+      "it": {
+        "value": "Vuoi accettare la richiesta di condivisione moduli?",
+        "state": "final"
+      },
       "ja": {
         "value": "ファイルの共有を承諾しますか?",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING"
+    }
   },
   {
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_ACCEPTED",
     "values": {
       "en": {
         "value": "Form sharing session accepted",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sessione di condivisione moduli accettata",
         "state": "final"
       },
       "fr": {
         "value": "Session de partage de formulaire acceptée",
         "state": "final"
       },
+      "it": {
+        "value": "Sessione di condivisione moduli accettata",
+        "state": "final"
+      },
       "ja": {
         "value": "ファイルの共有に成功しました",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_ACCEPTED"
+    }
   },
   {
+    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_REJECTED",
     "values": {
       "en": {
         "value": "Form sharing session rejected",
-        "state": "final"
-      },
-      "it": {
-        "value": "Hai rifiutato la sessione di condivisione moduli",
         "state": "final"
       },
       "fr": {
         "value": "Session de partage de formulaire rejetée",
         "state": "final"
       },
+      "it": {
+        "value": "Hai rifiutato la sessione di condivisione moduli",
+        "state": "final"
+      },
       "ja": {
         "value": "ファイルの共有を拒否しました。",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_REJECTED"
+    }
   },
   {
+    "id": "STRINGS.MESSAGES.REQUEST_REJECT",
     "values": {
       "en": {
-        "value": "Would you like to start a co-browsing session?",
+        "value": "No",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Non",
         "state": "final"
       },
       "it": {
-        "value": "Vuoi accettare la richiesta di navigazione assistita?",
+        "value": "No",
+        "state": "final"
+      },
+      "ja": {
+        "value": "いいえ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING",
+    "values": {
+      "en": {
+        "value": "Would you like to start a co-browsing session?",
         "state": "final"
       },
       "fr": {
         "value": "Voulez-vous commencer une session de navigation collaborative ?",
         "state": "final"
       },
+      "it": {
+        "value": "Vuoi accettare la richiesta di navigazione assistita?",
+        "state": "final"
+      },
       "ja": {
         "value": "アシスト付接続の要求を承諾しますか? ",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING"
+    }
   },
   {
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED",
+    "values": {
+      "en": {
+        "value": "Co-browsing session accepted",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Session de navigation collaborative acceptée",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sessione di navigazione assistita accettata",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アシスト付接続の要求を承諾しました。",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED",
     "values": {
       "en": {
         "value": "Co-browsing session rejected",
@@ -2322,938 +2355,619 @@
         "value": "Sessione di navigazione assistita rifiutata",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED"
+    }
   },
   {
+    "id": "STRINGS.MESSAGES.TRANSFERRED",
     "values": {
       "en": {
-        "value": "Co-browsing session accepted",
-        "state": "final"
-      },
-      "it": {
-        "value": "Sessione di navigazione assistita accettata",
+        "value": "You have been transferred to another agent",
         "state": "final"
       },
       "fr": {
-        "value": "Session de navigation collaborative acceptée",
-        "state": "final"
-      },
-      "ja": {
-        "value": "アシスト付接続の要求を承諾しました。",
-        "state": "final"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "No",
+        "value": "Vous avez été transféré vers un autre agent",
         "state": "final"
       },
       "it": {
-        "value": "No",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Non",
+        "value": "Sei stato trasferito a un altro operatore",
         "state": "final"
       },
       "ja": {
-        "value": "いいえ",
+        "value": "他のオペレーターと繋がりました",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_REJECT"
+    }
   },
   {
+    "id": "STRINGS.NEXT_BUTTON",
     "values": {
       "en": {
-        "value": "Yes",
-        "state": "final"
-      },
-      "it": {
-        "value": "Si",
+        "value": "Continue",
         "state": "final"
       },
       "fr": {
-        "value": "Oui",
+        "value": "Continuer",
+        "state": "final"
+      },
+      "it": {
+        "value": "Continua",
         "state": "final"
       },
       "ja": {
-        "value": "はい",
+        "value": "続ける",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MESSAGES.REQUEST_ACCEPT"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.CONNECTING",
     "values": {
       "en": {
-        "value": "The agent sent you a link: <b>{{link}}</b>",
-        "state": "new"
-      },
-      "it": {
-        "value": "L'agente ti ha inviato un link: <b>{{link}}</b>",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.LINK_PUSH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Microphone disabled",
-        "state": "new"
-      },
-      "it": {
-        "value": "Microfono disabilitato",
-        "state": "new"
+        "value": "Just a moment,<br>we are connecting you with the first available agent.",
+        "state": "final"
       },
       "fr": {
-        "value": "Microphone muet",
-        "state": "new"
-      },
-      "ja": {
-        "value": "マイクが無効",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.MUTED"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Microphone enabled",
-        "state": "new"
+        "value": "Veuillez patienter,<br>nous vous mettons en relation avec le premier agent disponible.",
+        "state": "final"
       },
       "it": {
-        "value": "Microfono abilitato",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Microphone activé",
-        "state": "new"
+        "value": "Attendi un istante,<br>ti stiamo connettendo con il primo operatore disponibile.",
+        "state": "final"
       },
       "ja": {
-        "value": "マイクが有効",
-        "state": "new"
+        "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.UNMUTED"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.CONTACT_FAILED",
     "values": {
       "en": {
-        "value": "Video enabled",
-        "state": "new"
-      },
-      "it": {
-        "value": "Video abilitato",
-        "state": "new"
+        "value": "An error occurred. Please try again.",
+        "state": "final"
       },
       "fr": {
-        "value": "Vidéo activée",
-        "state": "new"
+        "value": "Une erreur est survenue. Veuillez réessayer.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Si è verificato un errore. Riprova.",
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオ使用可",
-        "state": "new"
+        "value": "エラーが発生しました。やり直してください。",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.VIDEO_ENABLED"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.DISSUASION",
     "values": {
       "en": {
-        "value": "Video disabled",
-        "state": "new"
-      },
-      "it": {
-        "value": "Video disabilitato",
-        "state": "new"
+        "value": "Sorry there are no available agents. Please try again later.",
+        "state": "final"
       },
       "fr": {
-        "value": "Vidéo désactivée",
-        "state": "new"
+        "value": "Désolé, aucun agent n'est disponible. Veuillez réessayer ultérieurement.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Siamo spiacenti non ci sono operatori disponibili. Ti preghiamo di riprovare più tardi.",
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオ使用不可",
-        "state": "new"
+        "value": "申し訳ありません。対応可能なオペレータがいません。しばらくしてから再試行してください。",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.VIDEO_DISABLED"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.NO_AGENTS",
     "values": {
       "en": {
-        "value": "Close call",
-        "state": "new"
+        "value": "No available agents.<br>Please retry later.",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Chiudi chiamata",
-        "state": "new"
-      },
-      "fr": {
-        "value": "",
-        "state": "new"
-      },
-      "ja": {
-        "value": "",
-        "state": "new"
+        "value": "Al momento non ci sono agenti disponibili.<br>Ti preghiamo di riprovare più tardi.",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.CLOSE_CALL"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON",
     "values": {
       "en": {
-        "value": "Collapse video",
-        "state": "new"
-      },
-      "it": {
-        "value": "Riduci video",
-        "state": "new"
+        "value": "Close",
+        "state": "final"
       },
       "fr": {
-        "value": "Réduire la vidéo",
-        "state": "new"
+        "value": "Fermer",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chiudi",
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオを抑える",
-        "state": "new"
+        "value": "閉じる",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.MINIMIZE_VIDEO"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.CONNECTED",
     "values": {
       "en": {
-        "value": "Collapse video",
-        "state": "new"
-      },
-      "it": {
-        "value": "Riduci video",
-        "state": "new"
+        "value": "Contact established",
+        "state": "final"
       },
       "fr": {
-        "value": "Réduire la vidéo",
-        "state": "new"
+        "value": "Contact établi",
+        "state": "needs-review"
       },
-      "ja": {
-        "value": "ビデオを抑える",
-        "state": "new"
+      "it": {
+        "value": "Contatto in corso",
+        "state": "final"
       }
-    },
-    "id": "STRINGS.MEDIA.TOOLTIPS.MINIMIZE_VIDEO"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON",
+    "values": {
+      "en": {
+        "value": "Hide chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Cacher le chat",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Nascondi chat",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON",
     "values": {
       "en": {
         "value": "expand",
-        "state": "final"
-      },
-      "it": {
-        "value": "espandi",
         "state": "final"
       },
       "fr": {
         "value": "étendre",
         "state": "final"
       },
+      "it": {
+        "value": "espandi",
+        "state": "final"
+      },
       "ja": {
         "value": "広める",
         "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.TOOLTIPS.MAXIMIZE_VIDEO"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON",
     "values": {
       "en": {
-        "value": "Hide small videos",
-        "state": "new"
-      },
-      "it": {
-        "value": "Nascondi gli altri video",
-        "state": "new"
+        "value": "minimize",
+        "state": "final"
       },
       "fr": {
-        "value": "",
-        "state": "new"
+        "value": "réduire",
+        "state": "final"
+      },
+      "it": {
+        "value": "minimizza",
+        "state": "final"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "縮小する",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.TOOLTOPS.HIDE_VIDEOS"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.SUBTITLE",
     "values": {
       "en": {
-        "value": "Show small videos",
-        "state": "new"
-      },
-      "it": {
-        "value": "Mostra gli altri video",
-        "state": "new"
+        "value": "connecting...",
+        "state": "final"
       },
       "fr": {
-        "value": "",
-        "state": "new"
+        "value": "connection en cours...",
+        "state": "needs-review"
       },
-      "ja": {
-        "value": "",
-        "state": "new"
+      "it": {
+        "value": "connessione in corso...",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.TOOLTOPS.SHOW_VIDEOS"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.TITLE",
     "values": {
       "en": {
-        "value": "Switch remote video with sharing",
-        "state": "new"
-      },
-      "it": {
-        "value": "Cambia il video remoto con lo sharing",
-        "state": "new"
+        "value": "Vivocha Customer Care",
+        "state": "needs-review"
       },
       "fr": {
-        "value": "",
-        "state": "new"
+        "value": "Vivocha Service client",
+        "state": "needs-review"
       },
-      "ja": {
-        "value": "",
-        "state": "new"
+      "it": {
+        "value": "Vivocha Customer Care",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON",
     "values": {
       "en": {
-        "value": "Switch sharing with remote video",
-        "state": "new"
-      },
-      "it": {
-        "value": "Cambia lo sharing con il video remoto",
-        "state": "new"
+        "value": "Video",
+        "state": "final"
       },
       "fr": {
-        "value": "",
-        "state": "new"
+        "value": "Vidéo",
+        "state": "final"
+      },
+      "it": {
+        "value": "Video",
+        "state": "final"
       },
       "ja": {
-        "value": "",
-        "state": "new"
+        "value": "ビデオ",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_SHARING_REMOTE"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.TOPBAR.VOICE_BUTTON",
     "values": {
       "en": {
-        "value": "Decline",
-        "state": "new"
-      },
-      "it": {
-        "value": "Rifiuta",
-        "state": "new"
+        "value": "Voice",
+        "state": "final"
       },
       "fr": {
-        "value": "Refuser",
-        "state": "new"
+        "value": "Voix",
+        "state": "final"
+      },
+      "it": {
+        "value": "Voce",
+        "state": "final"
       },
       "ja": {
-        "value": "拒否",
-        "state": "new"
+        "value": "音声",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.DECLINE"
+    }
   },
   {
+    "id": "STRINGS.QUEUE.WEBLEAD_SENT",
     "values": {
       "en": {
-        "value": "Accept",
-        "state": "new"
+        "value": "Your request as been registered. We will contact you as soon as possible.",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Accetta",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Accepter",
-        "state": "new"
-      },
-      "ja": {
-        "value": "受領",
-        "state": "new"
+        "value": "Abbiamo preso in carico la tua richiesta.<br>Ti contatteremo il prima possibile.",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.MEDIA.ACCEPT"
+    }
   },
-
   {
+    "id": "STRINGS.RECONTACT.FEEDBACK",
     "values": {
       "en": {
-        "value": "The telephone number is busy",
-        "state": "new"
+        "value": "We will contact you soon.<br>Thanks!",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Il numero di telefono è occupato",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Le numéro est occupé",
-        "state": "new"
-      },
-      "ja": {
-        "value": "電話番号が話し中です",
-        "state": "new"
+        "value": "Abbiamo preso in carico la tua richiesta. <br> Verrai contattato al più presto.",
+        "state": "needs-review"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.BUSY"
+    }
   },
   {
+    "id": "STRINGS.SURVEY.FEEDBACK",
     "values": {
       "en": {
-        "value": "The telephone number is busy",
-        "state": "new"
-      },
-      "it": {
-        "value": "Il numero di telefono è occupato",
-        "state": "new"
+        "value": "Your rating has been sent.<br>Thank you!",
+        "state": "final"
       },
       "fr": {
-        "value": "Le numéro est occupé",
-        "state": "new"
+        "value": "Votre évaluation a bien été envoyée.<br>Merci !",
+        "state": "final"
+      },
+      "it": {
+        "value": "La tua valutazione è stata inviata.<br>Grazie!",
+        "state": "final"
       },
       "ja": {
-        "value": "電話番号が話し中です",
-        "state": "new"
+        "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.BUSY_M"
+    }
   },
   {
+    "id": "STRINGS.SURVEY.SUBTITLE",
     "values": {
       "en": {
-        "value": "Call canceled before answering",
-        "state": "new"
-      },
-      "it": {
-        "value": "Chiamata chiusa prima della risposta",
-        "state": "new"
+        "value": "Information Request",
+        "state": "final"
       },
       "fr": {
-        "value": "Appel annulé avant d'être pris en charge",
-        "state": "new"
+        "value": "Demande d’informations",
+        "state": "final"
+      },
+      "it": {
+        "value": "Richiesta di Informazioni",
+        "state": "final"
       },
       "ja": {
-        "value": "応答前に電話が切れました",
-        "state": "new"
+        "value": "詳しく知る",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.CANCEL"
+    }
   },
   {
+    "id": "STRINGS.SURVEY.TITLE",
     "values": {
       "en": {
-        "value": "Call canceled before answering",
-        "state": "new"
-      },
-      "it": {
-        "value": "Chiamata chiusa prima della risposta",
-        "state": "new"
+        "value": "Questionnaire",
+        "state": "final"
       },
       "fr": {
-        "value": "Appel annulé avant d'être pris en charge",
-        "state": "new"
+        "value": "Questionnaire",
+        "state": "final"
+      },
+      "it": {
+        "value": "Questionario",
+        "state": "final"
       },
       "ja": {
-        "value": "応答前に電話が切れました",
-        "state": "new"
+        "value": "質問",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.CANCEL_M"
+    }
   },
   {
+    "id": "STRINGS.TEXTAREA.PLACEHOLDER",
     "values": {
       "en": {
-        "value": "Agent {{nickname}} is dialing the telephone number",
-        "state": "new"
-      },
-      "it": {
-        "value": "L'agente {{nickname}} sta componendo il numero di telefono",
-        "state": "new"
+        "value": "Type here...",
+        "state": "final"
       },
       "fr": {
-        "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
-        "state": "new"
+        "value": "Écrire ici...",
+        "state": "final"
+      },
+      "it": {
+        "value": "Scrivi qui...",
+        "state": "final"
       },
       "ja": {
-        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
-        "state": "new"
+        "value": "ここに書き込んでください",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.DIAL"
+    }
   },
   {
+    "id": "STRINGS.TOPBAR.SUBTITLE_DEFAULT",
     "values": {
       "en": {
-        "value": "Agent {{nickname}} is dialing the telephone number",
-        "state": "new"
+        "value": "Default Topbar Subtitle",
+        "state": "final"
       },
       "it": {
-        "value": "L'agente {{nickname}} sta componendo il numero di telefono",
-        "state": "new"
-      },
-      "fr": {
-        "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
-        "state": "new"
-      },
-      "ja": {
-        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
-        "state": "new"
+        "value": "Sottotitolo Default Topbar",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.DIAL_M"
+    }
   },
   {
+    "id": "STRINGS.TOPBAR.TITLE_DEFAULT",
     "values": {
       "en": {
-        "value": "On the line with {{nickname}}",
-        "state": "new"
+        "value": "Default Topbar Title",
+        "state": "final"
       },
       "it": {
-        "value": "In linea con {{nickname}}",
-        "state": "new"
-      },
-      "fr": {
-        "value": "En ligne avec {{nickname}}",
-        "state": "new"
-      },
-      "ja": {
-        "value": "通話相手： {{nickname}}",
-        "state": "new"
+        "value": "Titolo Default Topbar",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.INLINE"
+    }
   },
   {
+    "id": "STRINGS.UPLOAD.CLOSE_PANEL",
     "values": {
       "en": {
-        "value": "On the line with {{nickname}}",
-        "state": "new"
-      },
-      "it": {
-        "value": "In linea con {{nickname}}",
-        "state": "new"
+        "value": "close",
+        "state": "final"
       },
       "fr": {
-        "value": "En ligne avec {{nickname}}",
-        "state": "new"
+        "value": "fermer",
+        "state": "final"
+      },
+      "it": {
+        "value": "chiudi",
+        "state": "final"
       },
       "ja": {
-        "value": "通話相手： {{nickname}}",
-        "state": "new"
+        "value": "閉じる",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.INLINE_M"
+    }
   },
   {
+    "id": "STRINGS.UPLOAD.FILE_DESCRIPTION",
     "values": {
       "en": {
-        "value": "Our agent has taken the call",
-        "state": "new"
-      },
-      "it": {
-        "value": "Un nostro agente ha preso in carico la chiamata",
-        "state": "new"
+        "value": "Write your message here",
+        "state": "final"
       },
       "fr": {
-        "value": "Notre agent a pris en charge l'appel",
-        "state": "new"
+        "value": "Description du fichier",
+        "state": "final"
+      },
+      "it": {
+        "value": "Descrizione file",
+        "state": "final"
       },
       "ja": {
-        "value": "当社のエージェントが通話を引き継ぎました",
-        "state": "new"
+        "value": "ファイルの詳細",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.JOIN"
+    }
   },
   {
+    "id": "STRINGS.UPLOAD.SELECT_FILE",
     "values": {
       "en": {
-        "value": "Our agent has taken the call",
-        "state": "new"
-      },
-      "it": {
-        "value": "Un nostro agente ha preso in carico la chiamata",
-        "state": "new"
+        "value": "Select a file to upload",
+        "state": "final"
       },
       "fr": {
-        "value": "Notre agent a pris en charge l'appel",
-        "state": "new"
+        "value": "Sélectionner le fichier à charger",
+        "state": "final"
+      },
+      "it": {
+        "value": "seleziona il file da caricare",
+        "state": "final"
       },
       "ja": {
-        "value": "当社のエージェントが通話を引き継ぎました",
-        "state": "new"
+        "value": "ファイルを選択する",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.JOIN_M"
+    }
   },
   {
+    "id": "STRINGS.UPLOAD.SEND_FILE",
     "values": {
       "en": {
-        "value": "The call has been terminated",
-        "state": "new"
-      },
-      "it": {
-        "value": "La chiamata con l'agente {{nickname}} è terminata",
-        "state": "new"
+        "value": "send file",
+        "state": "final"
       },
       "fr": {
-        "value": "L'appel avec l'agent {{nickname}} est terminé",
-        "state": "new"
+        "value": "envoyer un fichier",
+        "state": "needs-review"
       },
-      "ja": {
-        "value": "エージェント{{nickname}}との通話が終了しました",
-        "state": "new"
+      "it": {
+        "value": "invia file",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.LEFT"
+    }
   },
   {
+    "id": "STRINGS.VOICE.CONTACT_CLOSED",
     "values": {
       "en": {
-        "value": "The call has been terminated",
-        "state": "new"
-      },
-      "it": {
-        "value": "La chiamata con l'agente {{nickname}} è terminata",
-        "state": "new"
+        "value": "The contact has ended<br>Thanks.",
+        "state": "final"
       },
       "fr": {
-        "value": "L'appel avec l'agent {{nickname}} est terminé",
-        "state": "new"
+        "value": "Le contact est terminé<br>Merci.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Il contatto è terminato<br>Grazie per averci contattato.",
+        "state": "final"
       },
       "ja": {
-        "value": "エージェント{{nickname}}との通話が終了しました",
-        "state": "new"
+        "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.LEFT_M"
+    }
   },
   {
+    "id": "STRINGS.VOICE.INCOMING_MESSAGE",
     "values": {
       "en": {
-        "value": "No answer",
-        "state": "new"
-      },
-      "it": {
-        "value": "Nessuna risposta",
-        "state": "new"
+        "value": "Incoming call from<br><b>{{nickname}}</b>",
+        "state": "final"
       },
       "fr": {
-        "value": "Pas de réponse",
-        "state": "new"
+        "value": "Appel entrant de <br><b>{{nickname}}</b>",
+        "state": "needs-review"
       },
-      "ja": {
-        "value": "返答なし",
-        "state": "new"
+      "it": {
+        "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.NOANSWER"
+    }
   },
   {
+    "id": "STRINGS.VOICE.MEDIA_OFFERING",
     "values": {
       "en": {
-        "value": "No answer",
-        "state": "new"
-      },
-      "it": {
-        "value": "Nessuna risposta",
-        "state": "new"
+        "value": "We are connecting you<br>with <b>{{nickname}}</b>",
+        "state": "final"
       },
       "fr": {
-        "value": "Pas de réponse",
-        "state": "new"
-      },
-      "ja": {
-        "value": "返答なし",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.NOANSWER_M"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Number does not exist",
-        "state": "new"
+        "value": "Nous vous connectons <br>avec <b>{{nickname}}</b>",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Numero inesistente",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Numéro inexistant",
-        "state": "new"
-      },
-      "ja": {
-        "value": "番号が存在しません",
-        "state": "new"
+        "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.NOTEXISTS"
+    }
   },
   {
-    "values": {
-      "en": {
-        "value": "Number does not exist",
-        "state": "new"
-      },
-      "it": {
-        "value": "Numero inesistente",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Numéro inexistant",
-        "state": "new"
-      },
-      "ja": {
-        "value": "番号が存在しません",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.NOTEXISTS_M"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "You have received a link",
-        "state": "new"
-      },
-      "it": {
-        "value": "Hai ricevuto un link",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Vous avez reçu un lien",
-        "state": "new"
-      },
-      "ja": {
-        "value": "リンクを受信しました",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.LINK_PUSH"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The telephone is ringing",
-        "state": "new"
-      },
-      "it": {
-        "value": "Il telefono sta squillando",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Le téléphone est en train de sonner",
-        "state": "new"
-      },
-      "ja": {
-        "value": "電話が鳴っています",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.RING"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "The telephone is ringing",
-        "state": "new"
-      },
-      "it": {
-        "value": "Il telefono sta squillando",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Le téléphone est en train de sonner",
-        "state": "new"
-      },
-      "ja": {
-        "value": "電話が鳴っています",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.RING_M"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Wrong number",
-        "state": "new"
-      },
-      "it": {
-        "value": "Numero sbagliato",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Numéro erroné",
-        "state": "new"
-      },
-      "ja": {
-        "value": "番号が間違っています",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.WRONG_NUMBER"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Wrong number",
-        "state": "new"
-      },
-      "it": {
-        "value": "Numero sbagliato",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Numéro erroné",
-        "state": "new"
-      },
-      "ja": {
-        "value": "番号が間違っています",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.WRONG_NUMBER_M"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Unfortunately it was not possible to fulfill your request.<br />Please try again later.",
-        "state": "new"
-      },
-      "it": {
-        "value": "Purtroppo non è stato possibile soddisfare la tua richiesta.<br /> Riprova più tardi.",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Malheureusement, nous ne pouvons pas donner suite à votre demande.<br/>Veuillez réessayer ultérieurement.",
-        "state": "new"
-      },
-      "ja": {
-        "value": "残念ながら、お客様のリクエストにお答えすることができませんでした。<br/>しばらくしてからもう一度お試しください。",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.ERROR"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Your request was recorded successfully.<br />You will be contacted shortly.",
-        "state": "new"
-      },
-      "it": {
-        "value": "La tua richiesta è stata registrata con successo.<br /> A breve verrai contattato.",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Votre demande a bien été enregistrée.<br/>Nous vous rappellerons sous peu.",
-        "state": "new"
-      },
-      "ja": {
-        "value": "リクエストが正常に記録されました。<br />すぐに連絡させていただきます。",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.SUCCESS"
-  },
-  {
-    "values": {
-      "en": {
-        "value": "You will be contacted shortly.",
-        "state": "new"
-      },
-      "it": {
-        "value": "A breve verrai contattato.",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Nous vous rappellerons sous peu.",
-        "state": "new"
-      },
-      "ja": {
-        "value": "すぐに連絡させていただきます。",
-        "state": "new"
-      }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.SUCCESS_M"
-  },
-  {
+    "id": "STRINGS.VOICE.NOT_READ",
     "values": {
       "en": {
         "value": "new messages",
-        "state": "new"
+        "state": "final"
+      },
+      "fr": {
+        "value": "nouveau messages",
+        "state": "needs-review"
       },
       "it": {
-        "value": "nuovi messaggi",
-        "state": "new"
+        "value": "messaggi non letti",
+        "state": "final"
       }
-    },
-    "description": "",
-    "id": "STRINGS.CBN.NEW_MESSAGES_M"
+    }
+  },
+  {
+    "id": "STRINGS.VOICE.OPEN_CHAT",
+    "values": {
+      "en": {
+        "value": "open chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "ouvrir le chat ",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "apri chat",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.VOICE.WELCOME_MESSAGE",
+    "values": {
+      "en": {
+        "value": "In call with<br><b>{{nickname}}</b>",
+        "state": "final"
+      },
+      "fr": {
+        "value": "En communication avec <br><b>{{nickname}}</b>",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Sei in linea con<br><b>{{nickname}}</b>",
+        "state": "final"
+      }
+    }
   }
 ]
