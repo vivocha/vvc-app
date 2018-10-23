@@ -1,85 +1,127 @@
 [
   {
-    "id": "NAME",
-    "values": {
-      "en": {
-        "value": "Halo",
-        "state": "new"
-      },
-      "it": {
-        "value": "Halo",
-        "state": "new"
-      },
-      "fr": {
-        "value": "Halo",
-        "state": "final"
-      },
-      "ja": {
-        "value": "Halo",
-        "state": "final"
-      }
-    }
-  },
-  {
     "id": "DESCRIPTION",
     "values": {
       "en": {
         "value": "Engagement via an avatar located in the lower right corner of the screen",
         "state": "final"
       },
-      "it": {
-        "value": "Ingaggio tramite un avatar posizionato nell'angolo in basso a destra dello schermo",
-        "state": "final"
-      },
       "fr": {
         "value": "Engagement à travers un avatar positionné dans l’angle inférieur droit de l’écran.",
+        "state": "final"
+      },
+      "de": {
+        "value": "Zutritt durch einen Avatar, der sich in der unteren rechten Ecke des Bildschirms befindet",
+        "state": "final"
+      },
+      "it": {
+        "value": "Ingaggio tramite un avatar posizionato nell'angolo in basso a destra dello schermo",
         "state": "final"
       },
       "ja": {
         "value": "画面の右下にあるアバターを使用して登録する",
         "state": "final"
-      }
-    }
-  },
-  {
-    "id": "VARIABLES.PRIMARY",
-    "values": {
-      "en": {
-        "value": "Primary colour",
-        "state": "final"
       },
-      "it": {
-        "value": "Colore primario",
-        "state": "final"
-      },
-      "fr": {
-        "value": "Couleur primaire",
-        "state": "final"
-      },
-      "ja": {
-        "value": "初期カラー",
+      "es": {
+        "value": "Reclutamiento a través de un avatar colocado en la esquina inferior derecha de la pantalla",
         "state": "final"
       }
     }
   },
   {
-    "id": "VARIABLES.HALO_IMG",
+    "id": "NAME",
     "values": {
       "en": {
-        "value": "Avatar Image",
-        "state": "final"
-      },
-      "it": {
-        "value": "Immagine Avatar",
+        "value": "Halo",
         "state": "final"
       },
       "fr": {
-        "value": "Image avatar",
+        "value": "Halo",
+        "state": "final"
+      },
+      "de": {
+        "value": "Halo",
+        "state": "final"
+      },
+      "it": {
+        "value": "Halo",
         "state": "final"
       },
       "ja": {
-        "value": "アバターイメージ",
+        "value": "Halo",
         "state": "final"
+      },
+      "es": {
+        "value": "Halo",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN",
+    "values": {
+      "en": {
+        "value": "PHONE",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "PHONE",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CHAT",
+    "values": {
+      "en": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Conversation",
+        "state": "final"
+      },
+      "de": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "final"
+      },
+      "es": {
+        "value": "Chat",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CONTACT_US",
+    "values": {
+      "en": {
+        "value": "we'll contact you",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "ti contattiamo noi",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.FROM_WEB",
+    "values": {
+      "en": {
+        "value": "FROM WEB",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "DAL WEB",
+        "state": "needs-review"
       }
     }
   },
@@ -90,58 +132,45 @@
         "value": "How would you prefer to contact us?",
         "state": "final"
       },
-      "it": {
-        "value": "Come preferisci contattarci?",
-        "state": "final"
-      },
       "fr": {
         "value": "Comment préférez-vous être contacté(e) ?",
+        "state": "final"
+      },
+      "de": {
+        "value": "Wie möchtest du uns am liebsten kontaktieren?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Come preferisci contattarci?",
         "state": "final"
       },
       "ja": {
         "value": "どのような方法でお問い合わせしますか?",
         "state": "final"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.CHAT",
-    "values": {
-      "en": {
-        "value": "CHAT",
-        "state": "final"
       },
-      "it": {
-        "value": "CHAT",
-        "state": "final"
-      },
-      "fr": {
-        "value": "CHAT",
-        "state": "final"
-      },
-      "ja": {
-        "value": "チャット",
+      "es": {
+        "value": "¿Cómo prefieres contactar con nosotros?",
         "state": "final"
       }
     }
   },
   {
-    "id": "STRINGS.VOICE",
+    "id": "STRINGS.RECONTACT",
     "values": {
       "en": {
-        "value": "VOICE",
+        "value": "Or we'll contact you!",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Ou nous vous contacterons nous-même !",
         "state": "final"
       },
       "it": {
-        "value": "VOCE",
-        "state": "final"
-      },
-      "fr": {
-        "value": "VOIX",
+        "value": "Oppure ti contattiamo noi!",
         "state": "final"
       },
       "ja": {
-        "value": "音声",
+        "value": "もしくは我々がご連絡差し上げますi!",
         "state": "final"
       }
     }
@@ -153,12 +182,12 @@
         "value": "VIDEO",
         "state": "final"
       },
-      "it": {
-        "value": "VIDEO",
-        "state": "final"
-      },
       "fr": {
         "value": "VIDÉO",
+        "state": "final"
+      },
+      "it": {
+        "value": "VIDEO",
         "state": "final"
       },
       "ja": {
@@ -168,75 +197,94 @@
     }
   },
   {
+    "id": "STRINGS.VOICE",
+    "values": {
+      "en": {
+        "value": "VOICE",
+        "state": "final"
+      },
+      "fr": {
+        "value": "VOIX",
+        "state": "final"
+      },
+      "it": {
+        "value": "VOCE",
+        "state": "final"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "STRINGS.WEBLEAD",
     "values": {
       "en": {
         "value": "EMAIL",
-        "state": "new"
-      },
-      "it": {
-        "value": "EMAIL",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "values": {
-      "en": {
-        "value": "Or we'll contact you!",
         "state": "needs-review"
       },
       "it": {
-        "value": "Oppure ti contattiamo noi!",
+        "value": "EMAIL",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.HALO_IMG",
+    "values": {
+      "en": {
+        "value": "Avatar Image",
         "state": "final"
       },
       "fr": {
-        "value": "Ou nous vous contacterons nous-même !",
+        "value": "Image avatar",
+        "state": "final"
+      },
+      "de": {
+        "value": "Avatar-Bild",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine Avatar",
         "state": "final"
       },
       "ja": {
-        "value": "もしくは我々がご連絡差し上げますi!",
+        "value": "アバターイメージ",
+        "state": "final"
+      },
+      "es": {
+        "value": "Imagen avatar",
         "state": "final"
       }
-    },
-    "id": "STRINGS.RECONTACT"
-  },
-  {
-    "id": "STRINGS.CBN",
-    "values": {
-      "en": {
-        "value": "PHONE",
-        "state": "new"
-      },
-      "it": {
-        "value": "PHONE",
-        "state": "new"
-      }
     }
   },
   {
-    "id": "STRINGS.CONTACT_US",
+    "id": "VARIABLES.PRIMARY",
     "values": {
       "en": {
-        "value": "we'll contact you",
-        "state": "new"
+        "value": "Primary colour",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": "final"
+      },
+      "de": {
+        "value": "Primärfarbe",
+        "state": "final"
       },
       "it": {
-        "value": "ti contattiamo noi",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.FROM_WEB",
-    "values": {
-      "en": {
-        "value": "FROM WEB",
-        "state": "new"
+        "value": "Colore primario",
+        "state": "final"
       },
-      "it": {
-        "value": "DAL WEB",
-        "state": "new"
+      "ja": {
+        "value": "初期カラー",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color principal",
+        "state": "final"
       }
     }
   }

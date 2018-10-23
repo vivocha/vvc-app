@@ -4,18 +4,26 @@
     "values": {
       "en": {
         "value": "Engagement Button",
-        "state": "new"
-      },
-      "it": {
-        "value": "Bottone di ingaggio",
-        "state": "new"
+        "state": "final"
       },
       "fr": {
         "value": "Bouton d’engagement",
         "state": "final"
       },
+      "de": {
+        "value": "Button für die Teilnahme",
+        "state": "final"
+      },
+      "it": {
+        "value": "Bottone di ingaggio",
+        "state": "final"
+      },
       "ja": {
         "value": "登録ボタン",
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón de reclutamiento",
         "state": "final"
       }
     }
@@ -27,16 +35,24 @@
         "value": "Button",
         "state": "final"
       },
-      "it": {
-        "value": "Bottone",
-        "state": "final"
-      },
       "fr": {
         "value": "Bouton",
         "state": "final"
       },
+      "de": {
+        "value": "Button",
+        "state": "final"
+      },
+      "it": {
+        "value": "Bottone",
+        "state": "final"
+      },
       "ja": {
         "value": "ボタン",
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón",
         "state": "final"
       }
     }
@@ -48,16 +64,24 @@
         "value": "Chat with us",
         "state": "final"
       },
-      "it": {
-        "value": "Entra in chat",
-        "state": "final"
-      },
       "fr": {
         "value": "Rejoindre la conversation",
         "state": "final"
       },
+      "de": {
+        "value": "Chat betreten",
+        "state": "final"
+      },
+      "it": {
+        "value": "Entra in chat",
+        "state": "final"
+      },
       "ja": {
         "value": "チャットに入る",
+        "state": "final"
+      },
+      "es": {
+        "value": "Entrar en el chat",
         "state": "final"
       }
     }
@@ -69,16 +93,24 @@
         "value": "Button colour",
         "state": "final"
       },
-      "it": {
-        "value": "Colore del bottone",
-        "state": "final"
-      },
       "fr": {
         "value": "Couleur du bouton",
         "state": "final"
       },
+      "de": {
+        "value": "Farbe des Buttons",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore del bottone",
+        "state": "final"
+      },
       "ja": {
         "value": "ボタンの色",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color del botón",
         "state": "final"
       }
     }
@@ -90,16 +122,24 @@
         "value": "Insert a colour for the button background",
         "state": "final"
       },
-      "it": {
-        "value": "Colore di sfondo del bottone",
-        "state": "final"
-      },
       "fr": {
         "value": "Couleur d’arrière plan du bouton",
         "state": "final"
       },
+      "de": {
+        "value": "Farbe des Hintergrunds des Buttons",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore di sfondo del bottone",
+        "state": "final"
+      },
       "ja": {
         "value": "ボタンの背景色",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color de fondo del botón",
         "state": "final"
       }
     }
