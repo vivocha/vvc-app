@@ -2,12 +2,16 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Standard Interaktions-App",
+        "state": "final"
+      },
       "en": {
         "value": "Default Interaction App",
         "state": "final"
       },
-      "de": {
-        "value": "Standard Interaktions-App",
+      "es": {
+        "value": "Aplicación de interacción predeterminada",
         "state": "final"
       },
       "fr": {
@@ -20,10 +24,6 @@
       },
       "ja": {
         "value": "デフォルト対話アプリ",
-        "state": "final"
-      },
-      "es": {
-        "value": "Aplicación de interacción predeterminada",
         "state": "final"
       }
     }
@@ -96,11 +96,15 @@
   {
     "id": "META.GROUPS.CHAT",
     "values": {
+      "de": {
+        "value": "Chat",
+        "state": "final"
+      },
       "en": {
         "value": "Chat",
         "state": "final"
       },
-      "de": {
+      "es": {
         "value": "Chat",
         "state": "final"
       },
@@ -111,22 +115,22 @@
       "ja": {
         "value": "チャット",
         "state": "final"
-      },
-      "es": {
-        "value": "Chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.CLOSEMODAL",
     "values": {
+      "de": {
+        "value": "Modaler Abschluss",
+        "state": "final"
+      },
       "en": {
         "value": "Modal closure",
         "state": "final"
       },
-      "de": {
-        "value": "Modaler Abschluss",
+      "es": {
+        "value": "Cierre modal",
         "state": "final"
       },
       "it": {
@@ -135,10 +139,6 @@
       },
       "ja": {
         "value": "様式を閉じる",
-        "state": "final"
-      },
-      "es": {
-        "value": "Cierre modal",
         "state": "final"
       }
     }
@@ -250,12 +250,16 @@
   {
     "id": "META.GROUPS.INITIAL_DATA",
     "values": {
+      "de": {
+        "value": "Anfangsdaten",
+        "state": "final"
+      },
       "en": {
         "value": "Initial Data",
         "state": "final"
       },
-      "de": {
-        "value": "Anfangsdaten",
+      "es": {
+        "value": "Datos iniciales",
         "state": "final"
       },
       "fr": {
@@ -268,10 +272,6 @@
       },
       "ja": {
         "value": "データ収集",
-        "state": "final"
-      },
-      "es": {
-        "value": "Datos iniciales",
         "state": "final"
       }
     }
@@ -305,12 +305,16 @@
   {
     "id": "META.GROUPS.MEDIATOOLS",
     "values": {
+      "de": {
+        "value": "Media-Tools",
+        "state": "final"
+      },
       "en": {
         "value": "Media Tools",
         "state": "final"
       },
-      "de": {
-        "value": "Media-Tools",
+      "es": {
+        "value": "Herramientas de medios",
         "state": "final"
       },
       "fr": {
@@ -324,22 +328,22 @@
       "ja": {
         "value": "マルチメディアの変更",
         "state": "final"
-      },
-      "es": {
-        "value": "Herramientas de medios",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.MESSAGES",
     "values": {
+      "de": {
+        "value": "Mitteilungen",
+        "state": "final"
+      },
       "en": {
         "value": "Messages",
         "state": "final"
       },
-      "de": {
-        "value": "Mitteilungen",
+      "es": {
+        "value": "Mensajes",
         "state": "final"
       },
       "fr": {
@@ -352,10 +356,6 @@
       },
       "ja": {
         "value": "メッセージ",
-        "state": "final"
-      },
-      "es": {
-        "value": "Mensajes",
         "state": "final"
       }
     }
@@ -376,12 +376,16 @@
   {
     "id": "META.GROUPS.NOCHAT",
     "values": {
+      "de": {
+        "value": "Kein Chat",
+        "state": "final"
+      },
       "en": {
         "value": "No Chat",
         "state": "final"
       },
-      "de": {
-        "value": "Kein Chat",
+      "es": {
+        "value": "Sin chat",
         "state": "final"
       },
       "fr": {
@@ -395,22 +399,22 @@
       "ja": {
         "value": "チャットできません",
         "state": "final"
-      },
-      "es": {
-        "value": "Sin chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.QUEUE",
     "values": {
+      "de": {
+        "value": "Warteschleife",
+        "state": "final"
+      },
       "en": {
         "value": "Queue",
         "state": "final"
       },
-      "de": {
-        "value": "Warteschleife",
+      "es": {
+        "value": "Cola",
         "state": "final"
       },
       "fr": {
@@ -423,10 +427,6 @@
       },
       "ja": {
         "value": "順番",
-        "state": "final"
-      },
-      "es": {
-        "value": "Cola",
         "state": "final"
       }
     }
@@ -447,12 +447,16 @@
   {
     "id": "META.GROUPS.SURVEY",
     "values": {
+      "de": {
+        "value": "Fragebogen",
+        "state": "final"
+      },
       "en": {
         "value": "Questionnaire",
         "state": "final"
       },
-      "de": {
-        "value": "Fragebogen",
+      "es": {
+        "value": "Cuestionario",
         "state": "final"
       },
       "fr": {
@@ -465,10 +469,6 @@
       },
       "ja": {
         "value": "質問",
-        "state": "final"
-      },
-      "es": {
-        "value": "Cuestionario",
         "state": "final"
       }
     }
@@ -489,12 +489,16 @@
   {
     "id": "META.GROUPS.TOOLS",
     "values": {
+      "de": {
+        "value": "Tools",
+        "state": "final"
+      },
       "en": {
         "value": "Tools",
         "state": "final"
       },
-      "de": {
-        "value": "Tools",
+      "es": {
+        "value": "Herramientas",
         "state": "final"
       },
       "fr": {
@@ -508,22 +512,22 @@
       "ja": {
         "value": "ツール",
         "state": "final"
-      },
-      "es": {
-        "value": "Herramientas",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.Topbar",
     "values": {
+      "de": {
+        "value": "Kopfleiste",
+        "state": "final"
+      },
       "en": {
         "value": "Topbar",
         "state": "final"
       },
-      "de": {
-        "value": "Kopfleiste",
+      "es": {
+        "value": "Barra superior",
         "state": "final"
       },
       "fr": {
@@ -536,10 +540,6 @@
       },
       "ja": {
         "value": "トップバー",
-        "state": "final"
-      },
-      "es": {
-        "value": "Barra superior",
         "state": "final"
       }
     }
@@ -547,12 +547,16 @@
   {
     "id": "META.GROUPS.TOPBAR",
     "values": {
+      "de": {
+        "value": "Kopfleiste",
+        "state": "final"
+      },
       "en": {
         "value": "Topbar",
         "state": "final"
       },
-      "de": {
-        "value": "Kopfleiste",
+      "es": {
+        "value": "Barra superior",
         "state": "final"
       },
       "fr": {
@@ -565,10 +569,6 @@
       },
       "ja": {
         "value": "トップバー",
-        "state": "final"
-      },
-      "es": {
-        "value": "Barra superior",
         "state": "final"
       }
     }
@@ -628,11 +628,15 @@
   {
     "id": "META.TABS.Chat",
     "values": {
+      "de": {
+        "value": "Chat",
+        "state": "final"
+      },
       "en": {
         "value": "Chat",
         "state": "final"
       },
-      "de": {
+      "es": {
         "value": "Chat",
         "state": "final"
       },
@@ -646,10 +650,6 @@
       },
       "ja": {
         "value": "チャット",
-        "state": "final"
-      },
-      "es": {
-        "value": "Chat",
         "state": "final"
       }
     }
@@ -704,16 +704,20 @@
   {
     "id": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM",
     "values": {
+      "de": {
+        "value": "Um Bestätigung des Beenden bitten",
+        "state": "final"
+      },
       "en": {
         "value": "Ask for confirmation on close",
         "state": "final"
       },
-      "fr": {
-        "value": "Demander une confirmation à la fermeture",
+      "es": {
+        "value": "Pide confirmación al cerrar",
         "state": "final"
       },
-      "de": {
-        "value": "Um Bestätigung des Beenden bitten",
+      "fr": {
+        "value": "Demander une confirmation à la fermeture",
         "state": "final"
       },
       "it": {
@@ -723,22 +727,22 @@
       "ja": {
         "value": "終了時に確認",
         "state": "final"
-      },
-      "es": {
-        "value": "Pide confirmación al cerrar",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.APP.INITIAL_HEIGHT",
     "values": {
+      "de": {
+        "value": "Anfängliche Höhe der Applikation (Desktop-Version).",
+        "state": "final"
+      },
       "en": {
         "value": "Initial height of the application (desktop version).",
         "state": "final"
       },
-      "de": {
-        "value": "Anfängliche Höhe der Applikation (Desktop-Version).",
+      "es": {
+        "value": "Alto inicial de la aplicación (versión de escritorio).",
         "state": "final"
       },
       "fr": {
@@ -752,22 +756,22 @@
       "ja": {
         "value": "アプリの初期高さサイズ (デスクトップヴァージョン).",
         "state": "final"
-      },
-      "es": {
-        "value": "Alto inicial de la aplicación (versión de escritorio).",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.APP.INITIAL_WIDTH",
     "values": {
+      "de": {
+        "value": "Anfängliche Breite der Applikation (Desktop-Version).",
+        "state": "final"
+      },
       "en": {
         "value": "Initial width of the application (desktop version).",
         "state": "final"
       },
-      "de": {
-        "value": "Anfängliche Breite der Applikation (Desktop-Version).",
+      "es": {
+        "value": "Ancho inicial de la aplicación (versión de escritorio).",
         "state": "final"
       },
       "fr": {
@@ -781,26 +785,26 @@
       "ja": {
         "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
         "state": "final"
-      },
-      "es": {
-        "value": "Ancho inicial de la aplicación (versión de escritorio).",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE",
     "values": {
+      "de": {
+        "value": "Zeige dem User nach dem Beenden das Protokoll an",
+        "state": "final"
+      },
       "en": {
         "value": "Let the user see the transcript after close",
         "state": "final"
       },
-      "fr": {
-        "value": "Laisser l'utilisateur voir la transcription après la fermeture",
+      "es": {
+        "value": "Deja que el usuario vea la transcripción después del cierre",
         "state": "final"
       },
-      "de": {
-        "value": "Zeige dem User nach dem Beenden das Protokoll an",
+      "fr": {
+        "value": "Laisser l'utilisateur voir la transcription après la fermeture",
         "state": "final"
       },
       "it": {
@@ -810,26 +814,26 @@
       "ja": {
         "value": "終了後、ユーザーに写しを表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Deja que el usuario vea la transcripción después del cierre",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.AUTO_CHAT",
     "values": {
+      "de": {
+        "value": "Erlaube dem Besucher das Betreten des Chats vor dem Agent",
+        "state": "final"
+      },
       "en": {
         "value": "Allow the visitor to enter the chat before the agent",
         "state": "final"
       },
-      "fr": {
-        "value": "Autoriser le visiteur à entrer dans le chat avant l'agent",
+      "es": {
+        "value": "Permite que el usuario entra en el chat antes que el agente",
         "state": "final"
       },
-      "de": {
-        "value": "Erlaube dem Besucher das Betreten des Chats vor dem Agent",
+      "fr": {
+        "value": "Autoriser le visiteur à entrer dans le chat avant l'agent",
         "state": "final"
       },
       "it": {
@@ -839,22 +843,22 @@
       "ja": {
         "value": "訪問者がエージェントより先にチャットに入ることを許可",
         "state": "final"
-      },
-      "es": {
-        "value": "Permite que el usuario entra en el chat antes que el agente",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR",
     "values": {
+      "de": {
+        "value": "Textfarbe des Chat-Ballons des Agents",
+        "state": "final"
+      },
       "en": {
         "value": "Agent chat balloon text colour",
         "state": "final"
       },
-      "de": {
-        "value": "Textfarbe des Chat-Ballons des Agents",
+      "es": {
+        "value": "Color de texto del bocadillo del agente en el chat",
         "state": "final"
       },
       "fr": {
@@ -868,22 +872,22 @@
       "ja": {
         "value": "エージェントのチャット吹き出しのテキストカラー",
         "state": "final"
-      },
-      "es": {
-        "value": "Color de texto del bocadillo del agente en el chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
     "values": {
+      "de": {
+        "value": "Agent-Standard-Avatar",
+        "state": "final"
+      },
       "en": {
         "value": "Default agent avatar",
         "state": "final"
       },
-      "de": {
-        "value": "Agent-Standard-Avatar",
+      "es": {
+        "value": "Avatar del agente predeterminado",
         "state": "final"
       },
       "fr": {
@@ -897,22 +901,22 @@
       "ja": {
         "value": "デフォルトのエージェントアバター",
         "state": "final"
-      },
-      "es": {
-        "value": "Avatar del agente predeterminado",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW",
     "values": {
+      "de": {
+        "value": "Pfeil-Balloon für den Agent anzeigen  ",
+        "state": "final"
+      },
       "en": {
         "value": "Show arrow's balloon for the agent ",
         "state": "final"
       },
-      "de": {
-        "value": "Pfeil-Balloon für den Agent anzeigen  ",
+      "es": {
+        "value": "Mostrar el bocadillo de la flecha para el agente",
         "state": "final"
       },
       "fr": {
@@ -926,22 +930,22 @@
       "ja": {
         "value": "エージェントの吹き出しを表示する",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar el bocadillo de la flecha para el agente",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR",
     "values": {
+      "de": {
+        "value": "Avatar des Agenten im Chat anzeigen",
+        "state": "final"
+      },
       "en": {
         "value": "Show agent's avatar on chat",
         "state": "final"
       },
-      "de": {
-        "value": "Avatar des Agenten im Chat anzeigen",
+      "es": {
+        "value": "Mostrar el avatar del agente en el chat",
         "state": "final"
       },
       "fr": {
@@ -955,26 +959,26 @@
       "ja": {
         "value": "チャット内にエージェントのアバターを表示する",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar el avatar del agente en el chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR",
     "values": {
+      "de": {
+        "value": "Farbe des User-Chat-Balloons",
+        "state": "final"
+      },
       "en": {
         "value": "User chat balloon color",
         "state": "final"
       },
-      "fr": {
-        "value": "Couleur de la bulle de chat utilisateur",
+      "es": {
+        "value": "Usar color en el bocadillo del chat",
         "state": "final"
       },
-      "de": {
-        "value": "Farbe des User-Chat-Balloons",
+      "fr": {
+        "value": "Couleur de la bulle de chat utilisateur",
         "state": "final"
       },
       "it": {
@@ -984,26 +988,26 @@
       "ja": {
         "value": "ユーザーのチャットバルーンの色",
         "state": "final"
-      },
-      "es": {
-        "value": "Usar color en el bocadillo del chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR",
     "values": {
+      "de": {
+        "value": "User-Standard- Avatar",
+        "state": "final"
+      },
       "en": {
         "value": "Default user avatar",
         "state": "final"
       },
-      "fr": {
-        "value": "Avatar de l'utilisateur par défaut",
+      "es": {
+        "value": "Avatar de usuario predeterminado",
         "state": "final"
       },
-      "de": {
-        "value": "User-Standard- Avatar",
+      "fr": {
+        "value": "Avatar de l'utilisateur par défaut",
         "state": "final"
       },
       "it": {
@@ -1013,22 +1017,22 @@
       "ja": {
         "value": "デフォルトのユーザーアバター",
         "state": "final"
-      },
-      "es": {
-        "value": "Avatar de usuario predeterminado",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW",
     "values": {
+      "de": {
+        "value": "Pfeil in der Balloon-Chat-Nachricht des Benutzers anzeigen",
+        "state": "final"
+      },
       "en": {
         "value": "Show arrow in the user balloon chat message",
         "state": "final"
       },
-      "de": {
-        "value": "Pfeil in der Balloon-Chat-Nachricht des Benutzers anzeigen",
+      "es": {
+        "value": "Mostrar una flecha en el bocadillo del mensaje del usuario en el chat",
         "state": "final"
       },
       "fr": {
@@ -1042,22 +1046,22 @@
       "ja": {
         "value": "ユーザーのバルーン チャットメッセージに矢印を表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar una flecha en el bocadillo del mensaje del usuario en el chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR",
     "values": {
+      "de": {
+        "value": "Zeige User-Avatar in der Chat-Mitteilung an",
+        "state": "final"
+      },
       "en": {
         "value": "Show user avatar in chat message",
         "state": "final"
       },
-      "de": {
-        "value": "Zeige User-Avatar in der Chat-Mitteilung an",
+      "es": {
+        "value": "Mostrar el avatar del usuario en el mensaje del chat",
         "state": "final"
       },
       "fr": {
@@ -1071,26 +1075,26 @@
       "ja": {
         "value": "チャットメッセージにユーザーアバターを表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar el avatar del usuario en el mensaje del chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.SHOW_AUTO_CHAT_CONNECTING",
     "values": {
+      "de": {
+        "value": "Verbindung zur Agenten-Mitteilung anzeigen (EarlyChat)",
+        "state": "final"
+      },
       "en": {
         "value": "Show connection to agent message (EarlyChat)",
         "state": "final"
       },
-      "fr": {
-        "value": "Afficher la connexion au message de l'agent (EarlyChat)",
+      "es": {
+        "value": "Mostrar conexión al mensaje del agente (EarlyChat)",
         "state": "final"
       },
-      "de": {
-        "value": "Verbindung zur Agenten-Mitteilung anzeigen (EarlyChat)",
+      "fr": {
+        "value": "Afficher la connexion au message de l'agent (EarlyChat)",
         "state": "final"
       },
       "it": {
@@ -1100,26 +1104,26 @@
       "ja": {
         "value": "エージェントメッセージに接続を表示（EarlyChat）",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar conexión al mensaje del agente (EarlyChat)",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.SHOW_WELCOME_AUTO_CHAT",
     "values": {
+      "de": {
+        "value": "Willkommens-Mitteilung im EarlyChat anzeigen",
+        "state": "final"
+      },
       "en": {
         "value": "Show welcome message on EarlyChat",
         "state": "final"
       },
-      "fr": {
-        "value": "Afficher le message de bienvenue sur EarlyChat",
+      "es": {
+        "value": "Mostrar mensaje de bienvenida en EarlyChat",
         "state": "final"
       },
-      "de": {
-        "value": "Willkommens-Mitteilung im EarlyChat anzeigen",
+      "fr": {
+        "value": "Afficher le message de bienvenue sur EarlyChat",
         "state": "final"
       },
       "it": {
@@ -1129,22 +1133,22 @@
       "ja": {
         "value": "EarlyChatでウェルカムメッセージを表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar mensaje de bienvenida en EarlyChat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE",
     "values": {
+      "de": {
+        "value": "Willkommens-Meldung anzeigen, wenn der Agent mit dem Chat verbunden ist ",
+        "state": "final"
+      },
       "en": {
         "value": "Display welcome message when the agent is connected to the chat",
         "state": "final"
       },
-      "de": {
-        "value": "Willkommens-Meldung anzeigen, wenn der Agent mit dem Chat verbunden ist ",
+      "es": {
+        "value": "Mostrar un mensaje de bienvenida cuando el agente esté conectado en el chat",
         "state": "final"
       },
       "fr": {
@@ -1158,22 +1162,22 @@
       "ja": {
         "value": "エージェントがチャットに接続された時にウェルカムメッセージを表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar un mensaje de bienvenida cuando el agente esté conectado en el chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.COLOR1",
     "values": {
+      "de": {
+        "value": "Primärfarbe",
+        "state": "final"
+      },
       "en": {
         "value": "Primary colour",
         "state": "final"
       },
-      "de": {
-        "value": "Primärfarbe",
+      "es": {
+        "value": "Color principal",
         "state": "final"
       },
       "fr": {
@@ -1187,22 +1191,22 @@
       "ja": {
         "value": "初期カラー",
         "state": "final"
-      },
-      "es": {
-        "value": "Color principal",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.COLOR2",
     "values": {
+      "de": {
+        "value": "BOT App-Farbe",
+        "state": "final"
+      },
       "en": {
         "value": "BOT app color",
         "state": "final"
       },
-      "de": {
-        "value": "BOT App-Farbe",
+      "es": {
+        "value": "Color de la aplicación BOT",
         "state": "final"
       },
       "fr": {
@@ -1216,22 +1220,22 @@
       "ja": {
         "value": "ボットアプリの色",
         "state": "final"
-      },
-      "es": {
-        "value": "Color de la aplicación BOT",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION",
     "values": {
+      "de": {
+        "value": "Nachricht erhalten Audio-Benachrichtigung",
+        "state": "final"
+      },
       "en": {
         "value": "Message received audio notification",
         "state": "final"
       },
-      "de": {
-        "value": "Nachricht erhalten Audio-Benachrichtigung",
+      "es": {
+        "value": "Notificación de audio de mensaje recibido",
         "state": "final"
       },
       "fr": {
@@ -1245,26 +1249,26 @@
       "ja": {
         "value": "メッセージ受信音声通知",
         "state": "final"
-      },
-      "es": {
-        "value": "Notificación de audio de mensaje recibido",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT",
     "values": {
+      "de": {
+        "value": "Upload-Taste ausblenden, wenn Verbindung mit einem BOT besteht",
+        "state": "final"
+      },
       "en": {
         "value": "Hide upload button when connected with a BOT",
         "state": "final"
       },
-      "fr": {
-        "value": "Cacher le bouton de téléchargement lorsque connecté avec un BOT",
+      "es": {
+        "value": "Oculta el botón de subida cuando estés conectado con un BOT",
         "state": "final"
       },
-      "de": {
-        "value": "Upload-Taste ausblenden, wenn Verbindung mit einem BOT besteht",
+      "fr": {
+        "value": "Cacher le bouton de téléchargement lorsque connecté avec un BOT",
         "state": "final"
       },
       "it": {
@@ -1274,22 +1278,22 @@
       "ja": {
         "value": "ボットと接続されている時にはアップロードボタンを隠す",
         "state": "final"
-      },
-      "es": {
-        "value": "Oculta el botón de subida cuando estés conectado con un BOT",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON",
     "values": {
+      "de": {
+        "value": "Ermögliche dem Besucher die Anzeige des Emoji-Panels",
+        "state": "final"
+      },
       "en": {
         "value": "Allow the visitor to display emoji panel.",
         "state": "final"
       },
-      "de": {
-        "value": "Ermögliche dem Besucher die Anzeige des Emoji-Panels",
+      "es": {
+        "value": "Permitir que el visitante vea el panel de emojis.",
         "state": "final"
       },
       "fr": {
@@ -1303,22 +1307,22 @@
       "ja": {
         "value": "訪問者に絵文字パネルの使用を許可する",
         "state": "final"
-      },
-      "es": {
-        "value": "Permitir que el visitante vea el panel de emojis.",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON",
     "values": {
+      "de": {
+        "value": "Erlaube dem User das Senden der Datei an den Agent",
+        "state": "final"
+      },
       "en": {
         "value": "Allow the user to send file to the agent",
         "state": "final"
       },
-      "de": {
-        "value": "Erlaube dem User das Senden der Datei an den Agent",
+      "es": {
+        "value": "Permitir que el usuario envíe archivos al agente.",
         "state": "final"
       },
       "fr": {
@@ -1332,22 +1336,22 @@
       "ja": {
         "value": "訪問者にオペレーターへのファイルの転送を許可する",
         "state": "final"
-      },
-      "es": {
-        "value": "Permitir que el usuario envíe archivos al agente.",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.TOPBAR.DEFAULT_AGENT_AVATAR",
     "values": {
+      "de": {
+        "value": "Zeige Avatar in der Kopfleiste an",
+        "state": "final"
+      },
       "en": {
         "value": "Show avatar on the Top Bar",
         "state": "final"
       },
-      "de": {
-        "value": "Zeige Avatar in der Kopfleiste an",
+      "es": {
+        "value": "Mostrar el avatar en la barra superior",
         "state": "final"
       },
       "fr": {
@@ -1361,22 +1365,22 @@
       "ja": {
         "value": "トップバー内にアバターを表示する",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar el avatar en la barra superior",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO",
     "values": {
+      "de": {
+        "value": "Zeige Agent-Info in der Kopfleiste an",
+        "state": "final"
+      },
       "en": {
         "value": "Show agent info in the Topbar",
         "state": "final"
       },
-      "de": {
-        "value": "Zeige Agent-Info in der Kopfleiste an",
+      "es": {
+        "value": "Mostrar la información del agente en la barra superior.",
         "state": "final"
       },
       "fr": {
@@ -1390,22 +1394,22 @@
       "ja": {
         "value": "トップバーにエージェント情報を表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar la información del agente en la barra superior.",
-        "state": "final"
       }
     }
   },
   {
     "id": "META.VARIABLES.TOPBAR.SHOW_AVATAR",
     "values": {
+      "de": {
+        "value": "Avatar in der Kopfleiste anzeigen",
+        "state": "final"
+      },
       "en": {
         "value": "Show avatar in the Topbar",
         "state": "final"
       },
-      "de": {
-        "value": "Avatar in der Kopfleiste anzeigen",
+      "es": {
+        "value": "Mostrar el avatar en la barra superior",
         "state": "final"
       },
       "fr": {
@@ -1419,22 +1423,22 @@
       "ja": {
         "value": "トップバーにアバターを表示",
         "state": "final"
-      },
-      "es": {
-        "value": "Mostrar el avatar en la barra superior",
-        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Standard",
+        "state": "final"
+      },
       "en": {
         "value": "Default",
         "state": "final"
       },
-      "de": {
-        "value": "Standard",
+      "es": {
+        "value": "Predeterminado",
         "state": "final"
       },
       "fr": {
@@ -1448,22 +1452,22 @@
       "ja": {
         "value": "デフォルト",
         "state": "final"
-      },
-      "es": {
-        "value": "Predeterminado",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CALL_REJECTED",
     "values": {
+      "de": {
+        "value": "Anruf abgelehnt",
+        "state": "final"
+      },
       "en": {
         "value": "Call rejected",
         "state": "final"
       },
-      "de": {
-        "value": "Anruf abgelehnt",
+      "es": {
+        "value": "Llamada rechazada",
         "state": "final"
       },
       "fr": {
@@ -1476,10 +1480,6 @@
       },
       "ja": {
         "value": "電話が途切れました",
-        "state": "final"
-      },
-      "es": {
-        "value": "Llamada rechazada",
         "state": "final"
       }
     }
@@ -2004,16 +2004,20 @@
   {
     "id": "STRINGS.CHAT.AUTO_CHAT_FIRST_MESSAGE",
     "values": {
+      "de": {
+        "value": "Wie kann ich dir behilflich sein?",
+        "state": "final"
+      },
       "en": {
         "value": "How can I help you?",
         "state": "final"
       },
-      "fr": {
-        "value": "Puis je vous aider?",
+      "es": {
+        "value": "¿Cómo puedo ayudarte?",
         "state": "final"
       },
-      "de": {
-        "value": "Wie kann ich dir behilflich sein?",
+      "fr": {
+        "value": "Puis je vous aider?",
         "state": "final"
       },
       "it": {
@@ -2023,22 +2027,22 @@
       "ja": {
         "value": "どうされましたか？",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Cómo puedo ayudarte?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CHAT.ISWRITING",
     "values": {
+      "de": {
+        "value": "{{Agent}} schreibt…",
+        "state": "final"
+      },
       "en": {
         "value": "{{agent}} is writing...",
         "state": "final"
       },
-      "de": {
-        "value": "{{Agent}} schreibt…",
+      "es": {
+        "value": "{{agent}} está escribiendo...",
         "state": "final"
       },
       "fr": {
@@ -2052,22 +2056,22 @@
       "ja": {
         "value": "{{オペレーター}} 書き込み中",
         "state": "final"
-      },
-      "es": {
-        "value": "{{agent}} está escribiendo...",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CHAT.WELCOME_MESSAGE",
     "values": {
+      "de": {
+        "value": "Hallo! <b>{{nickname}}</b> Wir sind jetzt verbunden.<br> Wie kann ich dir behilflich sein?",
+        "state": "final"
+      },
       "en": {
         "value": "Hello, <b>{{nickname}}</b> here,<br> how can I help you?",
         "state": "final"
       },
-      "de": {
-        "value": "Hallo! <b>{{nickname}}</b> Wir sind jetzt verbunden.<br> Wie kann ich dir behilflich sein?",
+      "es": {
+        "value": "Hola <b><{{nickname}}</b>,<br> ¿cómo puedo ayudarte?",
         "state": "final"
       },
       "fr": {
@@ -2081,22 +2085,22 @@
       "ja": {
         "value": "こんにちは、<b>{{nickname}}</b> さん、<br>どうされましたか？",
         "state": "final"
-      },
-      "es": {
-        "value": "Hola <b><{{nickname}}</b>,<br> ¿cómo puedo ayudarte?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CLOSEMODAL.CLOSE_MESSAGE",
     "values": {
+      "de": {
+        "value": "Willst du wirklich aufhören? ",
+        "state": "final"
+      },
       "en": {
         "value": "Do you really want to quit?",
         "state": "final"
       },
-      "de": {
-        "value": "Willst du wirklich aufhören? ",
+      "es": {
+        "value": "¿Realmente quieres salir?",
         "state": "final"
       },
       "fr": {
@@ -2110,22 +2114,22 @@
       "ja": {
         "value": "書き込みを中止しますか?",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Realmente quieres salir?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CLOSEMODAL.NO",
     "values": {
+      "de": {
+        "value": "Nein",
+        "state": "final"
+      },
       "en": {
         "value": "No",
         "state": "final"
       },
-      "de": {
-        "value": "Nein",
+      "es": {
+        "value": "No",
         "state": "final"
       },
       "fr": {
@@ -2139,22 +2143,22 @@
       "ja": {
         "value": "いいえ",
         "state": "final"
-      },
-      "es": {
-        "value": "No",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CLOSEMODAL.YES",
     "values": {
+      "de": {
+        "value": "Ja",
+        "state": "final"
+      },
       "en": {
         "value": "Yes",
         "state": "final"
       },
-      "de": {
-        "value": "Ja",
+      "es": {
+        "value": "Sí",
         "state": "final"
       },
       "fr": {
@@ -2168,22 +2172,22 @@
       "ja": {
         "value": "はい",
         "state": "final"
-      },
-      "es": {
-        "value": "Sí",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.ASK_FOR_COMPILE",
     "values": {
+      "de": {
+        "value": "Der Agent bittet dich, das Formular auszufüllen",
+        "state": "final"
+      },
       "en": {
         "value": "The agent is asking to you to fill the from",
         "state": "final"
       },
-      "de": {
-        "value": "Der Agent bittet dich, das Formular auszufüllen",
+      "es": {
+        "value": "El agente te está pidiendo que rellenes el formulario",
         "state": "final"
       },
       "fr": {
@@ -2197,22 +2201,22 @@
       "ja": {
         "value": "オペレーターは書類の正しい入力を要求しています",
         "state": "final"
-      },
-      "es": {
-        "value": "El agente te está pidiendo que rellenes el formulario",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.COMPILE",
     "values": {
+      "de": {
+        "value": "Ausfüllen",
+        "state": "final"
+      },
       "en": {
         "value": "Fill",
         "state": "final"
       },
-      "de": {
-        "value": "Ausfüllen",
+      "es": {
+        "value": "Rellenar",
         "state": "final"
       },
       "fr": {
@@ -2226,22 +2230,22 @@
       "ja": {
         "value": "入力する",
         "state": "final"
-      },
-      "es": {
-        "value": "Rellenar",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.EMAIL_ERR",
     "values": {
+      "de": {
+        "value": "Ungültige E-Mail",
+        "state": "final"
+      },
       "en": {
         "value": "invalid email",
         "state": "final"
       },
-      "de": {
-        "value": "Ungültige E-Mail",
+      "es": {
+        "value": "correo electrónico inválido",
         "state": "final"
       },
       "fr": {
@@ -2255,22 +2259,22 @@
       "ja": {
         "value": "メールアドレスが正しくありません。",
         "state": "final"
-      },
-      "es": {
-        "value": "correo electrónico inválido",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.INCOMING_HEAD",
     "values": {
+      "de": {
+        "value": "Informationsanfrage",
+        "state": "final"
+      },
       "en": {
         "value": "Information Request",
         "state": "final"
       },
-      "de": {
-        "value": "Informationsanfrage",
+      "es": {
+        "value": "Solicitud de información",
         "state": "final"
       },
       "fr": {
@@ -2284,22 +2288,22 @@
       "ja": {
         "value": "詳しく知る",
         "state": "final"
-      },
-      "es": {
-        "value": "Solicitud de información",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.NEXT_BUTTON",
     "values": {
+      "de": {
+        "value": "Weiter",
+        "state": "final"
+      },
       "en": {
         "value": "Next",
         "state": "final"
       },
-      "de": {
-        "value": "Weiter",
+      "es": {
+        "value": "Siguiente",
         "state": "final"
       },
       "fr": {
@@ -2313,22 +2317,22 @@
       "ja": {
         "value": "次へ",
         "state": "final"
-      },
-      "es": {
-        "value": "Siguiente",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.REQUIRED_ERR",
     "values": {
+      "de": {
+        "value": "Benötigtes Feld",
+        "state": "final"
+      },
       "en": {
         "value": "required field",
         "state": "final"
       },
-      "de": {
-        "value": "Benötigtes Feld",
+      "es": {
+        "value": "campo obligatorio",
         "state": "final"
       },
       "fr": {
@@ -2342,22 +2346,22 @@
       "ja": {
         "value": "必須",
         "state": "final"
-      },
-      "es": {
-        "value": "campo obligatorio",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.REQUIRED_LEGEND",
     "values": {
+      "de": {
+        "value": "* Benötigte Felder",
+        "state": "final"
+      },
       "en": {
         "value": "* required fields",
         "state": "final"
       },
-      "de": {
-        "value": "* Benötigte Felder",
+      "es": {
+        "value": "*campos obligatorios",
         "state": "final"
       },
       "fr": {
@@ -2371,22 +2375,22 @@
       "ja": {
         "value": "* 必須項目です",
         "state": "final"
-      },
-      "es": {
-        "value": "*campos obligatorios",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.DC.VIEW",
     "values": {
+      "de": {
+        "value": "Anzeigen",
+        "state": "final"
+      },
       "en": {
         "value": "View",
         "state": "final"
       },
-      "de": {
-        "value": "Anzeigen",
+      "es": {
+        "value": "Ver",
         "state": "final"
       },
       "fr": {
@@ -2400,22 +2404,22 @@
       "ja": {
         "value": "表示する",
         "state": "final"
-      },
-      "es": {
-        "value": "Ver",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.EMOJI.CLOSE_PANEL",
     "values": {
+      "de": {
+        "value": "schließen",
+        "state": "final"
+      },
       "en": {
         "value": "close",
         "state": "final"
       },
-      "de": {
-        "value": "schließen",
+      "es": {
+        "value": "cerrar",
         "state": "final"
       },
       "fr": {
@@ -2429,26 +2433,26 @@
       "ja": {
         "value": "閉じる",
         "state": "final"
-      },
-      "es": {
-        "value": "cerrar",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.LINK_PUSH",
     "values": {
+      "de": {
+        "value": "Der Agent hat dir einen Link gesendet: <b>{{link}}</b>",
+        "state": "final"
+      },
       "en": {
         "value": "The agent sent you a link: <b>{{link}}</b>",
         "state": "final"
       },
-      "fr": {
-        "value": "L'agent vous a envoyé un lien: <b>{{link}}</b>",
+      "es": {
+        "value": "El agente te ha enviado un enlace: <b>{{link}}</b>",
         "state": "final"
       },
-      "de": {
-        "value": "Der Agent hat dir einen Link gesendet: <b>{{link}}</b>",
+      "fr": {
+        "value": "L'agent vous a envoyé un lien: <b>{{link}}</b>",
         "state": "final"
       },
       "it": {
@@ -2457,10 +2461,6 @@
       },
       "ja": {
         "value": "エージェントから次のリンクが送信されました：<b>{{link}}</b>",
-        "state": "final"
-      },
-      "es": {
-        "value": "El agente te ha enviado un enlace: <b>{{link}}</b>",
         "state": "final"
       }
     }
@@ -2722,12 +2722,16 @@
   {
     "id": "STRINGS.MESSAGES.LOCAL_CLOSE",
     "values": {
+      "de": {
+        "value": "Der Kontakt wurde beendet<br>Danke.",
+        "state": "final"
+      },
       "en": {
         "value": "The contact has ended<br>Thanks.",
         "state": "final"
       },
-      "de": {
-        "value": "Der Kontakt wurde beendet<br>Danke.",
+      "es": {
+        "value": "El contacto ha terminado<br>Gracias.",
         "state": "final"
       },
       "fr": {
@@ -2741,22 +2745,22 @@
       "ja": {
         "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
         "state": "final"
-      },
-      "es": {
-        "value": "El contacto ha terminado<br>Gracias.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REMOTE_CLOSE",
     "values": {
+      "de": {
+        "value": "Der Agent hat den Kontakt beendet",
+        "state": "final"
+      },
       "en": {
         "value": "The agent left the contact",
         "state": "final"
       },
-      "de": {
-        "value": "Der Agent hat den Kontakt beendet",
+      "es": {
+        "value": "El agente ha dejado el contacto",
         "state": "final"
       },
       "fr": {
@@ -2770,22 +2774,22 @@
       "ja": {
         "value": "オペレーターとの通信が途切れました",
         "state": "final"
-      },
-      "es": {
-        "value": "El agente ha dejado el contacto",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_ACCEPT",
     "values": {
+      "de": {
+        "value": "Ja",
+        "state": "final"
+      },
       "en": {
         "value": "Yes.",
         "state": "final"
       },
-      "de": {
-        "value": "Ja",
+      "es": {
+        "value": "Sí",
         "state": "final"
       },
       "fr": {
@@ -2799,26 +2803,26 @@
       "ja": {
         "value": "はい",
         "state": "final"
-      },
-      "es": {
-        "value": "Sí",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING",
     "values": {
+      "de": {
+        "value": "Möchtest du eine Form-Sharing-Session starten?",
+        "state": "final"
+      },
       "en": {
         "value": "Would you like to start a form sharing session?",
         "state": "final"
       },
-      "fr": {
-        "value": "Voulez-vous démarrer une session de partage de formulaires?",
+      "es": {
+        "value": "¿Te gustaría empezar una sesión de intercambio de formularios?",
         "state": "final"
       },
-      "de": {
-        "value": "Möchtest du eine Form-Sharing-Session starten?",
+      "fr": {
+        "value": "Voulez-vous démarrer une session de partage de formulaires?",
         "state": "final"
       },
       "it": {
@@ -2828,26 +2832,26 @@
       "ja": {
         "value": "フォーム共有セッションの開始をご希望ですか？",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Te gustaría empezar una sesión de intercambio de formularios?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_ACCEPTED",
     "values": {
+      "de": {
+        "value": "Form-Sharing-Session akzeptiert",
+        "state": "final"
+      },
       "en": {
         "value": "Form sharing session accepted",
         "state": "final"
       },
-      "fr": {
-        "value": "Session de partage de formulaires acceptée",
+      "es": {
+        "value": "Sesión de intercambio de formularios aceptada",
         "state": "final"
       },
-      "de": {
-        "value": "Form-Sharing-Session akzeptiert",
+      "fr": {
+        "value": "Session de partage de formulaires acceptée",
         "state": "final"
       },
       "it": {
@@ -2857,26 +2861,26 @@
       "ja": {
         "value": "フォーム共有セッション 承諾",
         "state": "final"
-      },
-      "es": {
-        "value": "Sesión de intercambio de formularios aceptada",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_FORMSHARING_REJECTED",
     "values": {
+      "de": {
+        "value": "Form-Sharing-Session abgelehnt",
+        "state": "final"
+      },
       "en": {
         "value": "Form sharing session rejected",
         "state": "final"
       },
-      "fr": {
-        "value": "Session de partage de formulaires rejetée",
+      "es": {
+        "value": "Sesión de intercambio de formularios rechazada",
         "state": "final"
       },
-      "de": {
-        "value": "Form-Sharing-Session abgelehnt",
+      "fr": {
+        "value": "Session de partage de formulaires rejetée",
         "state": "final"
       },
       "it": {
@@ -2886,22 +2890,22 @@
       "ja": {
         "value": "フォーム共有セッション 拒否",
         "state": "final"
-      },
-      "es": {
-        "value": "Sesión de intercambio de formularios rechazada",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_REJECT",
     "values": {
+      "de": {
+        "value": "Nein",
+        "state": "final"
+      },
       "en": {
         "value": "No.",
         "state": "final"
       },
-      "de": {
-        "value": "Nein",
+      "es": {
+        "value": "No",
         "state": "final"
       },
       "fr": {
@@ -2915,26 +2919,26 @@
       "ja": {
         "value": "いいえ",
         "state": "final"
-      },
-      "es": {
-        "value": "No",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING",
     "values": {
+      "de": {
+        "value": "Möchtest du eine Co-Browsing-Session starten?",
+        "state": "final"
+      },
       "en": {
         "value": "Would you like to start a co-browsing session?",
         "state": "final"
       },
-      "fr": {
-        "value": "Voulez-vous démarrer une session de co-navigation?",
+      "es": {
+        "value": "¿Te gustaría iniciar una sesión de navegación conjunta?",
         "state": "final"
       },
-      "de": {
-        "value": "Möchtest du eine Co-Browsing-Session starten?",
+      "fr": {
+        "value": "Voulez-vous démarrer une session de co-navigation?",
         "state": "final"
       },
       "it": {
@@ -2944,26 +2948,26 @@
       "ja": {
         "value": "ブラウザ画面共有セッションの開始をご希望ですか？",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Te gustaría iniciar una sesión de navegación conjunta?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_ACCEPTED",
     "values": {
+      "de": {
+        "value": "Co-Browsing-Session akzeptiert",
+        "state": "final"
+      },
       "en": {
         "value": "Co-browsing session accepted",
         "state": "final"
       },
-      "fr": {
-        "value": "Session de co-navigation acceptée",
+      "es": {
+        "value": "Sesión de navegación conjunta aceptada",
         "state": "final"
       },
-      "de": {
-        "value": "Co-Browsing-Session akzeptiert",
+      "fr": {
+        "value": "Session de co-navigation acceptée",
         "state": "final"
       },
       "it": {
@@ -2973,26 +2977,26 @@
       "ja": {
         "value": "ブラウザ画面共有セッション 承諾",
         "state": "final"
-      },
-      "es": {
-        "value": "Sesión de navegación conjunta aceptada",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.REQUEST_SEAMLESS_COBROWSING_REJECTED",
     "values": {
+      "de": {
+        "value": "Co-Browsing-Session abgelehnt",
+        "state": "final"
+      },
       "en": {
         "value": "Co-browsing session rejected",
         "state": "final"
       },
-      "fr": {
-        "value": "Session de co-navigation rejetée",
+      "es": {
+        "value": "Sesión de navegación conjunta rechazada",
         "state": "final"
       },
-      "de": {
-        "value": "Co-Browsing-Session abgelehnt",
+      "fr": {
+        "value": "Session de co-navigation rejetée",
         "state": "final"
       },
       "it": {
@@ -3002,22 +3006,22 @@
       "ja": {
         "value": "ブラウザ画面共有セッション 拒否",
         "state": "final"
-      },
-      "es": {
-        "value": "Sesión de navegación conjunta rechazada",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGES.TRANSFERRED",
     "values": {
+      "de": {
+        "value": "Du wurdest an einen anderen Agent weitergeleitet",
+        "state": "final"
+      },
       "en": {
         "value": "You have been transferred to another agent",
         "state": "final"
       },
-      "de": {
-        "value": "Du wurdest an einen anderen Agent weitergeleitet",
+      "es": {
+        "value": "Has sido transferido a otro agente",
         "state": "final"
       },
       "fr": {
@@ -3031,22 +3035,22 @@
       "ja": {
         "value": "他のオペレーターと繋がりました",
         "state": "final"
-      },
-      "es": {
-        "value": "Has sido transferido a otro agente",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.NEXT_BUTTON",
     "values": {
+      "de": {
+        "value": "Fortfahren",
+        "state": "final"
+      },
       "en": {
         "value": "Continue",
         "state": "final"
       },
-      "de": {
-        "value": "Fortfahren",
+      "es": {
+        "value": "Continuar",
         "state": "final"
       },
       "fr": {
@@ -3060,22 +3064,22 @@
       "ja": {
         "value": "続ける",
         "state": "final"
-      },
-      "es": {
-        "value": "Continuar",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.CONNECTING",
     "values": {
+      "de": {
+        "value": "Bitte warte einen Moment.<br>Wir verbinden dich mit dem nächsten verfügbaren Agent.",
+        "state": "final"
+      },
       "en": {
         "value": "Just a moment,<br>we are connecting you with the first available agent.",
         "state": "final"
       },
-      "de": {
-        "value": "Bitte warte einen Moment.<br>Wir verbinden dich mit dem nächsten verfügbaren Agent.",
+      "es": {
+        "value": "Un momento <br>estamos conectándote con el primer agente disponible.",
         "state": "final"
       },
       "fr": {
@@ -3089,22 +3093,22 @@
       "ja": {
         "value": "少々お待ちください,<br>ご利用いただけるオペレーターに接続しています",
         "state": "final"
-      },
-      "es": {
-        "value": "Un momento <br>estamos conectándote con el primer agente disponible.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.CONTACT_FAILED",
     "values": {
+      "de": {
+        "value": "Ein Fehler ist aufgetreten. Bitte versuche es noch einmal.",
+        "state": "final"
+      },
       "en": {
         "value": "An error occurred. Please try again.",
         "state": "final"
       },
-      "de": {
-        "value": "Ein Fehler ist aufgetreten. Bitte versuche es noch einmal.",
+      "es": {
+        "value": "Se ha producido un error. Inténtalo de nuevo.",
         "state": "final"
       },
       "fr": {
@@ -3118,22 +3122,22 @@
       "ja": {
         "value": "エラーが発生しました。やり直してください。",
         "state": "final"
-      },
-      "es": {
-        "value": "Se ha producido un error. Inténtalo de nuevo.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.DISSUASION",
     "values": {
+      "de": {
+        "value": "Leider gibt es keine verfügbaren Agents. Bitte versuche es später noch einmal.",
+        "state": "final"
+      },
       "en": {
         "value": "Sorry, there are no available agents. Please try again later.",
         "state": "final"
       },
-      "de": {
-        "value": "Leider gibt es keine verfügbaren Agents. Bitte versuche es später noch einmal.",
+      "es": {
+        "value": "Lo sentimos, no hay agentes disponibles. Inténtalo de nuevo más tarde.",
         "state": "final"
       },
       "fr": {
@@ -3147,26 +3151,26 @@
       "ja": {
         "value": "申し訳ありません。対応可能なオペレータがいません。しばらくしてから再試行してください。",
         "state": "final"
-      },
-      "es": {
-        "value": "Lo sentimos, no hay agentes disponibles. Inténtalo de nuevo más tarde.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.NO_AGENTS",
     "values": {
+      "de": {
+        "value": "Leider sind keine Agents verfügbar.<br>Bitte versuche es später noch einmal.",
+        "state": "final"
+      },
       "en": {
         "value": "No available agents.<br>Please try again later.",
         "state": "final"
       },
-      "fr": {
-        "value": "Aucun agent n'est disponible. Veuillez réessayer plus tard.",
+      "es": {
+        "value": "No hay agentes disponibles.<br>Inténtalo más tarde.",
         "state": "final"
       },
-      "de": {
-        "value": "Leider sind keine Agents verfügbar.<br>Bitte versuche es später noch einmal.",
+      "fr": {
+        "value": "Aucun agent n'est disponible. Veuillez réessayer plus tard.",
         "state": "final"
       },
       "it": {
@@ -3176,22 +3180,22 @@
       "ja": {
         "value": "ご対応可能なエージェントがおりません。<br>後ほど再度お試しください。",
         "state": "final"
-      },
-      "es": {
-        "value": "No hay agentes disponibles.<br>Inténtalo más tarde.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.CLOSE_BUTTON",
     "values": {
+      "de": {
+        "value": "Schließen",
+        "state": "final"
+      },
       "en": {
         "value": "Close",
         "state": "final"
       },
-      "de": {
-        "value": "Schließen",
+      "es": {
+        "value": "Cerrar",
         "state": "final"
       },
       "fr": {
@@ -3205,22 +3209,22 @@
       "ja": {
         "value": "閉じる",
         "state": "final"
-      },
-      "es": {
-        "value": "Cerrar",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.CONNECTED",
     "values": {
+      "de": {
+        "value": "Kontakt hergestellt",
+        "state": "final"
+      },
       "en": {
         "value": "Contact established",
         "state": "final"
       },
-      "de": {
-        "value": "Kontakt hergestellt",
+      "es": {
+        "value": "Contacto establecido",
         "state": "final"
       },
       "fr": {
@@ -3234,22 +3238,22 @@
       "ja": {
         "value": "接続済み",
         "state": "final"
-      },
-      "es": {
-        "value": "Contacto establecido",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.HIDE_CHAT_BUTTON",
     "values": {
+      "de": {
+        "value": "Chat ausblenden",
+        "state": "final"
+      },
       "en": {
         "value": "Hide chat",
         "state": "final"
       },
-      "de": {
-        "value": "Chat ausblenden",
+      "es": {
+        "value": "Ocultar chat",
         "state": "final"
       },
       "fr": {
@@ -3263,22 +3267,22 @@
       "ja": {
         "value": "チャットを隠す",
         "state": "final"
-      },
-      "es": {
-        "value": "Ocultar chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.MAXIMIZE_BUTTON",
     "values": {
+      "de": {
+        "value": "vergrößern",
+        "state": "final"
+      },
       "en": {
         "value": "expand",
         "state": "final"
       },
-      "de": {
-        "value": "vergrößern",
+      "es": {
+        "value": "expandir",
         "state": "final"
       },
       "fr": {
@@ -3292,22 +3296,22 @@
       "ja": {
         "value": "広める",
         "state": "final"
-      },
-      "es": {
-        "value": "expandir",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.MINIMIZE_BUTTON",
     "values": {
+      "de": {
+        "value": "verkleinern",
+        "state": "final"
+      },
       "en": {
         "value": "minimize",
         "state": "final"
       },
-      "de": {
-        "value": "verkleinern",
+      "es": {
+        "value": "minimizar",
         "state": "final"
       },
       "fr": {
@@ -3321,22 +3325,22 @@
       "ja": {
         "value": "縮小する",
         "state": "final"
-      },
-      "es": {
-        "value": "minimizar",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.SUBTITLE",
     "values": {
+      "de": {
+        "value": "verbinden…",
+        "state": "final"
+      },
       "en": {
         "value": "connecting...",
         "state": "final"
       },
-      "de": {
-        "value": "verbinden…",
+      "es": {
+        "value": "conectando...",
         "state": "final"
       },
       "fr": {
@@ -3350,22 +3354,22 @@
       "ja": {
         "value": "接続しています...",
         "state": "final"
-      },
-      "es": {
-        "value": "conectando...",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.TITLE",
     "values": {
+      "de": {
+        "value": "Vivocha Customer Care",
+        "state": "final"
+      },
       "en": {
         "value": "Vivocha Customer Care",
         "state": "final"
       },
-      "de": {
-        "value": "Vivocha Customer Care",
+      "es": {
+        "value": "Atención al cliente de Vivocha",
         "state": "final"
       },
       "fr": {
@@ -3379,22 +3383,22 @@
       "ja": {
         "value": "Vivocha カスタマーケア",
         "state": "final"
-      },
-      "es": {
-        "value": "Atención al cliente de Vivocha",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.VIDEO_BUTTON",
     "values": {
+      "de": {
+        "value": "Video",
+        "state": "final"
+      },
       "en": {
         "value": "Video",
         "state": "final"
       },
-      "de": {
-        "value": "Video",
+      "es": {
+        "value": "Vídeo",
         "state": "final"
       },
       "fr": {
@@ -3408,22 +3412,22 @@
       "ja": {
         "value": "ビデオ",
         "state": "final"
-      },
-      "es": {
-        "value": "Vídeo",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.TOPBAR.VOICE_BUTTON",
     "values": {
+      "de": {
+        "value": "Voice",
+        "state": "final"
+      },
       "en": {
         "value": "Voice",
         "state": "final"
       },
-      "de": {
-        "value": "Voice",
+      "es": {
+        "value": "Voz",
         "state": "final"
       },
       "fr": {
@@ -3437,26 +3441,26 @@
       "ja": {
         "value": "音声",
         "state": "final"
-      },
-      "es": {
-        "value": "Voz",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.QUEUE.WEBLEAD_SENT",
     "values": {
+      "de": {
+        "value": "Your request as been registered. We will contact you as soon as possible.  Deine Anfrage ist eingegangen. Wir werden uns so schnell wie möglich mit dir in Verbindung setzen.",
+        "state": "final"
+      },
       "en": {
         "value": "Your request as been registered. We will contact you as soon as possible.",
         "state": "final"
       },
-      "fr": {
-        "value": "Votre demande a été enregistrée. Nous vous contacterons dès que possible.",
+      "es": {
+        "value": "Tu solicitud ha sido registrada. Nos pondremos en contacto contigo lo más pronto posible.",
         "state": "final"
       },
-      "de": {
-        "value": "Your request as been registered. We will contact you as soon as possible.  Deine Anfrage ist eingegangen. Wir werden uns so schnell wie möglich mit dir in Verbindung setzen.",
+      "fr": {
+        "value": "Votre demande a été enregistrée. Nous vous contacterons dès que possible.",
         "state": "final"
       },
       "it": {
@@ -3466,26 +3470,26 @@
       "ja": {
         "value": "リクエストが登録されました。できるだけ早くご連絡いたします。",
         "state": "final"
-      },
-      "es": {
-        "value": "Tu solicitud ha sido registrada. Nos pondremos en contacto contigo lo más pronto posible.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.RECONTACT.FEEDBACK",
     "values": {
+      "de": {
+        "value": "Wir werden dich in Kürze kontaktieren.<br>Danke!",
+        "state": "final"
+      },
       "en": {
         "value": "We will contact you soon.<br>Thanks!",
         "state": "final"
       },
-      "fr": {
-        "value": "Nous allons vous contacter bientôt.<br>Merci!",
+      "es": {
+        "value": "Nos pondremos en contacto contigo pronto.<br>¡Gracias!",
         "state": "final"
       },
-      "de": {
-        "value": "Wir werden dich in Kürze kontaktieren.<br>Danke!",
+      "fr": {
+        "value": "Nous allons vous contacter bientôt.<br>Merci!",
         "state": "final"
       },
       "it": {
@@ -3495,22 +3499,22 @@
       "ja": {
         "value": "ありがとうございます！<br>早急にご連絡いたします。",
         "state": "final"
-      },
-      "es": {
-        "value": "Nos pondremos en contacto contigo pronto.<br>¡Gracias!",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.SURVEY.FEEDBACK",
     "values": {
+      "de": {
+        "value": "Deine Bewertung wurde gesendett.<br>Danke!",
+        "state": "final"
+      },
       "en": {
         "value": "Your rating has been sent.<br>Thank you!",
         "state": "final"
       },
-      "de": {
-        "value": "Deine Bewertung wurde gesendett.<br>Danke!",
+      "es": {
+        "value": "Tu evaluación se ha enviado.<br>¡Gracias!",
         "state": "final"
       },
       "fr": {
@@ -3524,22 +3528,22 @@
       "ja": {
         "value": "あなたの評価が正常に送信されました<br>ありがとうございます!",
         "state": "final"
-      },
-      "es": {
-        "value": "Tu evaluación se ha enviado.<br>¡Gracias!",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.SURVEY.SUBTITLE",
     "values": {
+      "de": {
+        "value": "Informationsanfrage",
+        "state": "final"
+      },
       "en": {
         "value": "Information Request",
         "state": "final"
       },
-      "de": {
-        "value": "Informationsanfrage",
+      "es": {
+        "value": "Solicitud de información",
         "state": "final"
       },
       "fr": {
@@ -3553,22 +3557,22 @@
       "ja": {
         "value": "詳しく知る",
         "state": "final"
-      },
-      "es": {
-        "value": "Solicitud de información",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.SURVEY.TITLE",
     "values": {
+      "de": {
+        "value": "Fragebogen",
+        "state": "final"
+      },
       "en": {
         "value": "Questionnaire",
         "state": "final"
       },
-      "de": {
-        "value": "Fragebogen",
+      "es": {
+        "value": "Cuestionario",
         "state": "final"
       },
       "fr": {
@@ -3582,22 +3586,22 @@
       "ja": {
         "value": "質問",
         "state": "final"
-      },
-      "es": {
-        "value": "Cuestionario",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.TEXTAREA.PLACEHOLDER",
     "values": {
+      "de": {
+        "value": "Hier eingeben…",
+        "state": "final"
+      },
       "en": {
         "value": "Type here...",
         "state": "final"
       },
-      "de": {
-        "value": "Hier eingeben…",
+      "es": {
+        "value": "Escribe aquí...",
         "state": "final"
       },
       "fr": {
@@ -3611,26 +3615,26 @@
       "ja": {
         "value": "ここに書き込んでください",
         "state": "final"
-      },
-      "es": {
-        "value": "Escribe aquí...",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.TOPBAR.SUBTITLE_DEFAULT",
     "values": {
+      "de": {
+        "value": "Standard-Untertitel der Kopfzeile",
+        "state": "final"
+      },
       "en": {
         "value": "Default Topbar Subtitle",
         "state": "final"
       },
-      "fr": {
-        "value": "Sous-titre de la barre supérieure par défaut",
+      "es": {
+        "value": "Subtítulo de la barra superior predeterminado",
         "state": "final"
       },
-      "de": {
-        "value": "Standard-Untertitel der Kopfzeile",
+      "fr": {
+        "value": "Sous-titre de la barre supérieure par défaut",
         "state": "final"
       },
       "it": {
@@ -3640,26 +3644,26 @@
       "ja": {
         "value": "デフォルトのトップバー サブタイトル",
         "state": "final"
-      },
-      "es": {
-        "value": "Subtítulo de la barra superior predeterminado",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.TOPBAR.TITLE_DEFAULT",
     "values": {
+      "de": {
+        "value": "Standard-Titel der Kopfzeile",
+        "state": "final"
+      },
       "en": {
         "value": "Default Topbar Title",
         "state": "final"
       },
-      "fr": {
-        "value": "Titre de la barre supérieure par défaut",
+      "es": {
+        "value": "Título de la barra superior predeterminado",
         "state": "final"
       },
-      "de": {
-        "value": "Standard-Titel der Kopfzeile",
+      "fr": {
+        "value": "Titre de la barre supérieure par défaut",
         "state": "final"
       },
       "it": {
@@ -3669,22 +3673,22 @@
       "ja": {
         "value": "デフォルトのトップバー タイトル",
         "state": "final"
-      },
-      "es": {
-        "value": "Título de la barra superior predeterminado",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.UPLOAD.CLOSE_PANEL",
     "values": {
+      "de": {
+        "value": "schließen",
+        "state": "final"
+      },
       "en": {
         "value": "close",
         "state": "final"
       },
-      "de": {
-        "value": "schließen",
+      "es": {
+        "value": "cerrar",
         "state": "final"
       },
       "fr": {
@@ -3698,22 +3702,22 @@
       "ja": {
         "value": "閉じる",
         "state": "final"
-      },
-      "es": {
-        "value": "cerrar",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.UPLOAD.FILE_DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Schreibe deine Mitteilung hier",
+        "state": "final"
+      },
       "en": {
         "value": "Write your message here",
         "state": "final"
       },
-      "de": {
-        "value": "Schreibe deine Mitteilung hier",
+      "es": {
+        "value": "Escribe tu mensaje aquí",
         "state": "final"
       },
       "fr": {
@@ -3727,22 +3731,22 @@
       "ja": {
         "value": "ファイルの詳細",
         "state": "final"
-      },
-      "es": {
-        "value": "Escribe tu mensaje aquí",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.UPLOAD.SELECT_FILE",
     "values": {
+      "de": {
+        "value": "Wähle eine Datei zum Hochladen",
+        "state": "final"
+      },
       "en": {
         "value": "Select a file to upload",
         "state": "final"
       },
-      "de": {
-        "value": "Wähle eine Datei zum Hochladen",
+      "es": {
+        "value": "Seleccionar un archivo para subir",
         "state": "final"
       },
       "fr": {
@@ -3756,22 +3760,22 @@
       "ja": {
         "value": "ファイルを選択する",
         "state": "final"
-      },
-      "es": {
-        "value": "Seleccionar un archivo para subir",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.UPLOAD.SEND_FILE",
     "values": {
+      "de": {
+        "value": "Datei senden",
+        "state": "final"
+      },
       "en": {
         "value": "send file",
         "state": "final"
       },
-      "de": {
-        "value": "Datei senden",
+      "es": {
+        "value": "enviar archivo",
         "state": "final"
       },
       "fr": {
@@ -3785,22 +3789,22 @@
       "ja": {
         "value": "ファイルを送信",
         "state": "final"
-      },
-      "es": {
-        "value": "enviar archivo",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE.CONTACT_CLOSED",
     "values": {
+      "de": {
+        "value": "Der Kontakt wurde beendet.<br>Danke.",
+        "state": "final"
+      },
       "en": {
         "value": "The contact has ended<br>Thanks.",
         "state": "final"
       },
-      "de": {
-        "value": "Der Kontakt wurde beendet.<br>Danke.",
+      "es": {
+        "value": "El contacto ha terminado<br>Gracias.",
         "state": "final"
       },
       "fr": {
@@ -3814,22 +3818,22 @@
       "ja": {
         "value": "オペレーターとの会話が終了しました<br>ご利用ありがとうございました",
         "state": "final"
-      },
-      "es": {
-        "value": "El contacto ha terminado<br>Gracias.",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE.INCOMING_MESSAGE",
     "values": {
+      "de": {
+        "value": "Eingehender Anruf von<br><b>{{Nickname}}</b>",
+        "state": "final"
+      },
       "en": {
         "value": "Incoming call from<br><b>{{nickname}}</b>",
         "state": "final"
       },
-      "de": {
-        "value": "Eingehender Anruf von<br><b>{{Nickname}}</b>",
+      "es": {
+        "value": "Llamada entrante de <br><b>{{nickname}}</b>",
         "state": "final"
       },
       "fr": {
@@ -3843,22 +3847,22 @@
       "ja": {
         "value": "<br><b>{{nickname}}</b>からのコール受信",
         "state": "final"
-      },
-      "es": {
-        "value": "Llamada entrante de <br><b>{{nickname}}</b>",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE.MEDIA_OFFERING",
     "values": {
+      "de": {
+        "value": "Wir verbinden dich<br>mit <b>{{Nickname}}</b>",
+        "state": "final"
+      },
       "en": {
         "value": "We are connecting you<br>with <b>{{nickname}}</b>",
         "state": "final"
       },
-      "de": {
-        "value": "Wir verbinden dich<br>mit <b>{{Nickname}}</b>",
+      "es": {
+        "value": "Estamos conectándote <br>con <b>{{nickname}}</b>",
         "state": "final"
       },
       "fr": {
@@ -3872,22 +3876,22 @@
       "ja": {
         "value": "<br><b>{{nickname}}</b>と接続しています",
         "state": "final"
-      },
-      "es": {
-        "value": "Estamos conectándote <br>con <b>{{nickname}}</b>",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE.NOT_READ",
     "values": {
+      "de": {
+        "value": "Neue Mitteilungen",
+        "state": "final"
+      },
       "en": {
         "value": "new messages",
         "state": "final"
       },
-      "de": {
-        "value": "Neue Mitteilungen",
+      "es": {
+        "value": "nuevos mensajes",
         "state": "final"
       },
       "fr": {
@@ -3901,22 +3905,22 @@
       "ja": {
         "value": "新しいメッセージ",
         "state": "final"
-      },
-      "es": {
-        "value": "nuevos mensajes",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE.OPEN_CHAT",
     "values": {
+      "de": {
+        "value": "Chat öffnen",
+        "state": "final"
+      },
       "en": {
         "value": "open chat",
         "state": "final"
       },
-      "de": {
-        "value": "Chat öffnen",
+      "es": {
+        "value": "abrir chat",
         "state": "final"
       },
       "fr": {
@@ -3930,22 +3934,22 @@
       "ja": {
         "value": "チャットを開く",
         "state": "final"
-      },
-      "es": {
-        "value": "abrir chat",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE.WELCOME_MESSAGE",
     "values": {
+      "de": {
+        "value": "Verbunden mit<br><b>{{Nickname}}</b>",
+        "state": "final"
+      },
       "en": {
         "value": "In call with<br><b>{{nickname}}</b>",
         "state": "final"
       },
-      "de": {
-        "value": "Verbunden mit<br><b>{{Nickname}}</b>",
+      "es": {
+        "value": "En una llamada con<br><b>{{nickname}}</b>",
         "state": "final"
       },
       "fr": {
@@ -3958,10 +3962,6 @@
       },
       "ja": {
         "value": "<br><b>{{nickname}}</b>とのコール中",
-        "state": "final"
-      },
-      "es": {
-        "value": "En una llamada con<br><b>{{nickname}}</b>",
         "state": "final"
       }
     }
