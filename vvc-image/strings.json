@@ -2,16 +2,20 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Bild des Vivocha-Auftritts",
+        "state": "final"
+      },
       "en": {
         "value": "Vivocha Engage Image",
         "state": "final"
       },
-      "fr": {
-        "value": "Image d'engagement Vivocha",
+      "es": {
+        "value": "Imagen de reclutamiento Vivocha",
         "state": "final"
       },
-      "de": {
-        "value": "Bild des Vivocha-Auftritts",
+      "fr": {
+        "value": "Image d'engagement Vivocha",
         "state": "final"
       },
       "it": {
@@ -21,26 +25,26 @@
       "ja": {
         "value": "Vivocha エンゲージメント画像",
         "state": "final"
-      },
-      "es": {
-        "value": "Imagen de reclutamiento Vivocha",
-        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Bild",
+        "state": "final"
+      },
       "en": {
         "value": "Image",
         "state": "final"
       },
-      "fr": {
-        "value": "Image",
+      "es": {
+        "value": "Imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Bild",
+      "fr": {
+        "value": "Image",
         "state": "final"
       },
       "it": {
@@ -50,26 +54,26 @@
       "ja": {
         "value": "画像",
         "state": "final"
-      },
-      "es": {
-        "value": "Imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_BG",
     "values": {
+      "de": {
+        "value": "Hintergrundfarbe des Bildes",
+        "state": "final"
+      },
       "en": {
         "value": "Image background color",
         "state": "final"
       },
-      "fr": {
-        "value": "Couleur d'arrière-plan de l'image",
+      "es": {
+        "value": "Color de fondo de la imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Hintergrundfarbe des Bildes",
+      "fr": {
+        "value": "Couleur d'arrière-plan de l'image",
         "state": "final"
       },
       "it": {
@@ -79,26 +83,26 @@
       "ja": {
         "value": "画像の背景色",
         "state": "final"
-      },
-      "es": {
-        "value": "Color de fondo de la imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_BG_PH",
     "values": {
+      "de": {
+        "value": "Farbe für den Bildhintergrund eingeben",
+        "state": "final"
+      },
       "en": {
         "value": "Insert a background color for the image background",
         "state": "final"
       },
-      "fr": {
-        "value": "Entrez une couleur d'arrière-plan de l'image",
+      "es": {
+        "value": "Introduce un color de fondo para la imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Farbe für den Bildhintergrund eingeben",
+      "fr": {
+        "value": "Entrez une couleur d'arrière-plan de l'image",
         "state": "final"
       },
       "it": {
@@ -108,26 +112,26 @@
       "ja": {
         "value": "画像の背景色を入力",
         "state": "final"
-      },
-      "es": {
-        "value": "Introduce un color de fondo para la imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_HEIGHT",
     "values": {
+      "de": {
+        "value": "Bildhöhe",
+        "state": "final"
+      },
       "en": {
         "value": "Image height",
         "state": "final"
       },
-      "fr": {
-        "value": "Hauteur de l'image",
+      "es": {
+        "value": "Alto de la imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Bildhöhe",
+      "fr": {
+        "value": "Hauteur de l'image",
         "state": "final"
       },
       "it": {
@@ -137,26 +141,26 @@
       "ja": {
         "value": "画像の高さ",
         "state": "final"
-      },
-      "es": {
-        "value": "Alto de la imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_HEIGHT_PH",
     "values": {
+      "de": {
+        "value": "Bildhöhe eingeben",
+        "state": "final"
+      },
       "en": {
         "value": "Insert the image height",
         "state": "final"
       },
-      "fr": {
-        "value": "Entrez la hauteur de l'image",
+      "es": {
+        "value": "Introduce el alto de la imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Bildhöhe eingeben",
+      "fr": {
+        "value": "Entrez la hauteur de l'image",
         "state": "final"
       },
       "it": {
@@ -166,26 +170,26 @@
       "ja": {
         "value": "画像の高さを入力",
         "state": "final"
-      },
-      "es": {
-        "value": "Introduce el alto de la imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_URL",
     "values": {
+      "de": {
+        "value": "Bild",
+        "state": "final"
+      },
       "en": {
         "value": "Image",
         "state": "final"
       },
-      "fr": {
-        "value": "Image",
+      "es": {
+        "value": "Imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Bild",
+      "fr": {
+        "value": "Image",
         "state": "final"
       },
       "it": {
@@ -195,26 +199,26 @@
       "ja": {
         "value": "画像",
         "state": "final"
-      },
-      "es": {
-        "value": "Imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_WIDTH",
     "values": {
+      "de": {
+        "value": "Bildbreite",
+        "state": "final"
+      },
       "en": {
         "value": "Image width",
         "state": "final"
       },
-      "fr": {
-        "value": "Largeur de l'image",
+      "es": {
+        "value": "Ancho de la imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Bildbreite",
+      "fr": {
+        "value": "Largeur de l'image",
         "state": "final"
       },
       "it": {
@@ -224,26 +228,26 @@
       "ja": {
         "value": "画像の幅",
         "state": "final"
-      },
-      "es": {
-        "value": "Ancho de la imagen",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.IMAGE_WIDTH_PH",
     "values": {
+      "de": {
+        "value": "Bildbreite eingeben",
+        "state": "final"
+      },
       "en": {
         "value": "Insert the image width",
         "state": "final"
       },
-      "fr": {
-        "value": "Entrez la largeur de l'image",
+      "es": {
+        "value": "Introduce el ancho de la imagen",
         "state": "final"
       },
-      "de": {
-        "value": "Bildbreite eingeben",
+      "fr": {
+        "value": "Entrez la largeur de l'image",
         "state": "final"
       },
       "it": {
@@ -252,10 +256,6 @@
       },
       "ja": {
         "value": "画像の幅を入力",
-        "state": "final"
-      },
-      "es": {
-        "value": "Introduce el ancho de la imagen",
         "state": "final"
       }
     }

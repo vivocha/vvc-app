@@ -2,16 +2,20 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Ausblendendes Seitenetikett mit Medienauswahl für den Auftritt",
+        "state": "final"
+      },
       "en": {
         "value": "Engage the visitor by showing a side multimedia label",
         "state": "final"
       },
-      "fr": {
-        "value": "Étiquette latérale déroulante avec sélection du média pour l’engagement",
+      "es": {
+        "value": "Etiqueta lateral oculta con selección de los medios de reclutamiento",
         "state": "final"
       },
-      "de": {
-        "value": "Ausblendendes Seitenetikett mit Medienauswahl für den Auftritt",
+      "fr": {
+        "value": "Étiquette latérale déroulante avec sélection du média pour l’engagement",
         "state": "final"
       },
       "it": {
@@ -21,26 +25,26 @@
       "ja": {
         "value": "登録の ためメディアによってサイドタグが取り除かれました",
         "state": "final"
-      },
-      "es": {
-        "value": "Etiqueta lateral oculta con selección de los medios de reclutamiento",
-        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Side-Tab",
+        "state": "final"
+      },
       "en": {
         "value": "Sidetab",
         "state": "final"
       },
-      "fr": {
-        "value": "Barre latérale",
+      "es": {
+        "value": "Pestaña lateral",
         "state": "final"
       },
-      "de": {
-        "value": "Side-Tab",
+      "fr": {
+        "value": "Barre latérale",
         "state": "final"
       },
       "it": {
@@ -50,26 +54,26 @@
       "ja": {
         "value": "サイドタブ",
         "state": "final"
-      },
-      "es": {
-        "value": "Pestaña lateral",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN",
     "values": {
+      "de": {
+        "value": "TELEFON",
+        "state": "final"
+      },
       "en": {
         "value": "PHONE",
         "state": "final"
       },
-      "fr": {
-        "value": "TÉLÉPHONE",
+      "es": {
+        "value": "TELÉFONO",
         "state": "final"
       },
-      "de": {
-        "value": "TELEFON",
+      "fr": {
+        "value": "TÉLÉPHONE",
         "state": "final"
       },
       "it": {
@@ -79,25 +83,25 @@
       "ja": {
         "value": "電話",
         "state": "final"
-      },
-      "es": {
-        "value": "TELÉFONO",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CHAT",
     "values": {
+      "de": {
+        "value": "CHAT",
+        "state": "final"
+      },
       "en": {
         "value": "CHAT",
         "state": "final"
       },
-      "fr": {
+      "es": {
         "value": "CHAT",
         "state": "final"
       },
-      "de": {
+      "fr": {
         "value": "CHAT",
         "state": "final"
       },
@@ -107,10 +111,6 @@
       },
       "ja": {
         "value": "チャット",
-        "state": "final"
-      },
-      "es": {
-        "value": "CHAT",
         "state": "final"
       }
     }
@@ -144,16 +144,20 @@
   {
     "id": "STRINGS.HOW_CAN_HELP",
     "values": {
+      "de": {
+        "value": "Wie möchtest du uns kontaktieren?",
+        "state": "final"
+      },
       "en": {
         "value": "How would you prefer to contact us?",
         "state": "final"
       },
-      "fr": {
-        "value": "Comment préférez-vous être contacté(e) ?",
+      "es": {
+        "value": "¿Cómo prefieres ponerte en contacto con nosotros?",
         "state": "final"
       },
-      "de": {
-        "value": "Wie möchtest du uns kontaktieren?",
+      "fr": {
+        "value": "Comment préférez-vous être contacté(e) ?",
         "state": "final"
       },
       "it": {
@@ -163,26 +167,26 @@
       "ja": {
         "value": "どの方法でお問い合わせしたいですか?",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Cómo prefieres ponerte en contacto con nosotros?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.NEED_HELP",
     "values": {
+      "de": {
+        "value": "Hilfe?",
+        "state": "final"
+      },
       "en": {
         "value": "Help?",
         "state": "final"
       },
-      "fr": {
-        "value": "Aide ?",
+      "es": {
+        "value": "¿Ayuda?",
         "state": "final"
       },
-      "de": {
-        "value": "Hilfe?",
+      "fr": {
+        "value": "Aide ?",
         "state": "final"
       },
       "it": {
@@ -192,26 +196,26 @@
       "ja": {
         "value": "ヘルプ?",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Ayuda?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.RECONTACT",
     "values": {
+      "de": {
+        "value": "oder wir kontaktieren dich",
+        "state": "final"
+      },
       "en": {
         "value": "or we'll contact you",
         "state": "final"
       },
-      "fr": {
-        "value": "ou nous vous contacterons",
+      "es": {
+        "value": "O nos ponemos nosotros en contacto contigo",
         "state": "final"
       },
-      "de": {
-        "value": "oder wir kontaktieren dich",
+      "fr": {
+        "value": "ou nous vous contacterons",
         "state": "final"
       },
       "it": {
@@ -221,26 +225,26 @@
       "ja": {
         "value": "または弊社よりご連絡いたします",
         "state": "final"
-      },
-      "es": {
-        "value": "O nos ponemos nosotros en contacto contigo",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VIDEO",
     "values": {
+      "de": {
+        "value": "VIDEOANRUF",
+        "state": "final"
+      },
       "en": {
         "value": "VIDEO",
         "state": "final"
       },
-      "fr": {
-        "value": "VIDÉO",
+      "es": {
+        "value": "VÍDEO",
         "state": "final"
       },
-      "de": {
-        "value": "VIDEOANRUF",
+      "fr": {
+        "value": "VIDÉO",
         "state": "final"
       },
       "it": {
@@ -250,26 +254,26 @@
       "ja": {
         "value": "ビデオ",
         "state": "final"
-      },
-      "es": {
-        "value": "VÍDEO",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE",
     "values": {
+      "de": {
+        "value": "SPRACHANRUF",
+        "state": "final"
+      },
       "en": {
         "value": "VOICE",
         "state": "final"
       },
-      "fr": {
-        "value": "VOIX",
+      "es": {
+        "value": "VOZ",
         "state": "final"
       },
-      "de": {
-        "value": "SPRACHANRUF",
+      "fr": {
+        "value": "VOIX",
         "state": "final"
       },
       "it": {
@@ -279,26 +283,26 @@
       "ja": {
         "value": "音声",
         "state": "final"
-      },
-      "es": {
-        "value": "VOZ",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.WEBLEAD",
     "values": {
+      "de": {
+        "value": "E-MAIL",
+        "state": "final"
+      },
       "en": {
         "value": "EMAIL",
         "state": "final"
       },
-      "fr": {
-        "value": "EMAIL",
+      "es": {
+        "value": "CORREO ELECTRÓNICO",
         "state": "final"
       },
-      "de": {
-        "value": "E-MAIL",
+      "fr": {
+        "value": "EMAIL",
         "state": "final"
       },
       "it": {
@@ -308,26 +312,26 @@
       "ja": {
         "value": "Eメール",
         "state": "final"
-      },
-      "es": {
-        "value": "CORREO ELECTRÓNICO",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.HORIZONTAL",
     "values": {
+      "de": {
+        "value": "Horizontale Positionierung",
+        "state": "final"
+      },
       "en": {
         "value": "Horizontal Position",
         "state": "final"
       },
-      "fr": {
-        "value": "Positionnement horizontal",
+      "es": {
+        "value": "Posicionamiento horizontal",
         "state": "final"
       },
-      "de": {
-        "value": "Horizontale Positionierung",
+      "fr": {
+        "value": "Positionnement horizontal",
         "state": "final"
       },
       "it": {
@@ -337,26 +341,26 @@
       "ja": {
         "value": "横配置",
         "state": "final"
-      },
-      "es": {
-        "value": "Posicionamiento horizontal",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.PRIMARY",
     "values": {
+      "de": {
+        "value": "Primärfarbe",
+        "state": "final"
+      },
       "en": {
         "value": "Primary colour",
         "state": "final"
       },
-      "fr": {
-        "value": "Couleur primaire",
+      "es": {
+        "value": "Color principal",
         "state": "final"
       },
-      "de": {
-        "value": "Primärfarbe",
+      "fr": {
+        "value": "Couleur primaire",
         "state": "final"
       },
       "it": {
@@ -366,26 +370,26 @@
       "ja": {
         "value": "初期カラー",
         "state": "final"
-      },
-      "es": {
-        "value": "Color principal",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.VERTICAL",
     "values": {
+      "de": {
+        "value": "Vertikale Positionierung",
+        "state": "final"
+      },
       "en": {
         "value": "Vertical Position",
         "state": "final"
       },
-      "fr": {
-        "value": "Positionnement vertical",
+      "es": {
+        "value": "Posicionamiento vertical",
         "state": "final"
       },
-      "de": {
-        "value": "Vertikale Positionierung",
+      "fr": {
+        "value": "Positionnement vertical",
         "state": "final"
       },
       "it": {
@@ -394,10 +398,6 @@
       },
       "ja": {
         "value": "縦配置",
-        "state": "final"
-      },
-      "es": {
-        "value": "Posicionamiento vertical",
         "state": "final"
       }
     }

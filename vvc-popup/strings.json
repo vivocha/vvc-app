@@ -2,16 +2,20 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Popup des Auftritts mit Medienauswahl",
+        "state": "final"
+      },
       "en": {
         "value": "Engage the visitor by showing a multimedia popup",
         "state": "final"
       },
-      "fr": {
-        "value": "Popup d’engagement avec sélection de médias",
+      "es": {
+        "value": "Ventana emergente de reclutamiento con elección de los medios",
         "state": "final"
       },
-      "de": {
-        "value": "Popup des Auftritts mit Medienauswahl",
+      "fr": {
+        "value": "Popup d’engagement avec sélection de médias",
         "state": "final"
       },
       "it": {
@@ -21,26 +25,26 @@
       "ja": {
         "value": "マスメディア選択の登録 ポップアップ",
         "state": "final"
-      },
-      "es": {
-        "value": "Ventana emergente de reclutamiento con elección de los medios",
-        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Popup",
+        "state": "final"
+      },
       "en": {
         "value": "Popup",
         "state": "final"
       },
-      "fr": {
-        "value": "Fenêtre popup",
+      "es": {
+        "value": "Ventana emergente",
         "state": "final"
       },
-      "de": {
-        "value": "Popup",
+      "fr": {
+        "value": "Fenêtre popup",
         "state": "final"
       },
       "it": {
@@ -49,10 +53,6 @@
       },
       "ja": {
         "value": "ポップアップ",
-        "state": "final"
-      },
-      "es": {
-        "value": "Ventana emergente",
         "state": "final"
       }
     }
@@ -73,15 +73,19 @@
   {
     "id": "STRINGS.CHAT",
     "values": {
+      "de": {
+        "value": "CHAT",
+        "state": "final"
+      },
       "en": {
         "value": "CHAT",
         "state": "final"
       },
-      "fr": {
+      "es": {
         "value": "CHAT",
         "state": "final"
       },
-      "de": {
+      "fr": {
         "value": "CHAT",
         "state": "final"
       },
@@ -91,10 +95,6 @@
       },
       "ja": {
         "value": "チャット",
-        "state": "final"
-      },
-      "es": {
-        "value": "CHAT",
         "state": "final"
       }
     }
@@ -128,16 +128,20 @@
   {
     "id": "STRINGS.MESSAGE1",
     "values": {
+      "de": {
+        "value": "Unsere Mitarbeiter stehen dir gerne zur Verfügung. Kontaktiere uns! ",
+        "state": "final"
+      },
       "en": {
         "value": "Our agents are available to help you. Don't hesitate to contact us!",
         "state": "final"
       },
-      "fr": {
-        "value": "Nos opérateurs sont à votre disposition. Contactez-nous ! ",
+      "es": {
+        "value": "Nuestros operarios están a tu disposición. ¡Contacta con nosotros!",
         "state": "final"
       },
-      "de": {
-        "value": "Unsere Mitarbeiter stehen dir gerne zur Verfügung. Kontaktiere uns! ",
+      "fr": {
+        "value": "Nos opérateurs sont à votre disposition. Contactez-nous ! ",
         "state": "final"
       },
       "it": {
@@ -147,26 +151,26 @@
       "ja": {
         "value": "オペレーターまでお気軽にお問い合わせください！",
         "state": "final"
-      },
-      "es": {
-        "value": "Nuestros operarios están a tu disposición. ¡Contacta con nosotros!",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MESSAGE2",
     "values": {
+      "de": {
+        "value": "Wie möchtest du uns kontaktieren?",
+        "state": "final"
+      },
       "en": {
         "value": "How would you prefer to contact us?",
         "state": "final"
       },
-      "fr": {
-        "value": "Comment voulez-vous être contacté(e) ?",
+      "es": {
+        "value": "¿Cómo deseas contactar con nosotros?",
         "state": "final"
       },
-      "de": {
-        "value": "Wie möchtest du uns kontaktieren?",
+      "fr": {
+        "value": "Comment voulez-vous être contacté(e) ?",
         "state": "final"
       },
       "it": {
@@ -176,26 +180,26 @@
       "ja": {
         "value": "お問い合わせ方法をお選びください",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Cómo deseas contactar con nosotros?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.RECALL",
     "values": {
+      "de": {
+        "value": "Oder wir kontaktieren dich!",
+        "state": "final"
+      },
       "en": {
         "value": "Or we'll contact you!",
         "state": "final"
       },
-      "fr": {
-        "value": "Ou nous vous contacterons nous-même !",
+      "es": {
+        "value": "¡O nosotros nos ponemos en contacto contigo!",
         "state": "final"
       },
-      "de": {
-        "value": "Oder wir kontaktieren dich!",
+      "fr": {
+        "value": "Ou nous vous contacterons nous-même !",
         "state": "final"
       },
       "it": {
@@ -205,26 +209,26 @@
       "ja": {
         "value": "もしくは弊社よりご連絡いたします！",
         "state": "final"
-      },
-      "es": {
-        "value": "¡O nosotros nos ponemos en contacto contigo!",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.TITLE",
     "values": {
+      "de": {
+        "value": "Benötigst du Hilfe?",
+        "state": "final"
+      },
       "en": {
         "value": "Need help?",
         "state": "final"
       },
-      "fr": {
-        "value": "Avez-vous besoin d’aide ?",
+      "es": {
+        "value": "¿Necesitas ayuda?",
         "state": "final"
       },
-      "de": {
-        "value": "Benötigst du Hilfe?",
+      "fr": {
+        "value": "Avez-vous besoin d’aide ?",
         "state": "final"
       },
       "it": {
@@ -234,26 +238,26 @@
       "ja": {
         "value": "ヘルプが必要ですか？",
         "state": "final"
-      },
-      "es": {
-        "value": "¿Necesitas ayuda?",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VIDEO",
     "values": {
+      "de": {
+        "value": "VIDEOANRUF",
+        "state": "final"
+      },
       "en": {
         "value": "VIDEO",
         "state": "final"
       },
-      "fr": {
-        "value": "VIDÉO",
+      "es": {
+        "value": "VÍDEO",
         "state": "final"
       },
-      "de": {
-        "value": "VIDEOANRUF",
+      "fr": {
+        "value": "VIDÉO",
         "state": "final"
       },
       "it": {
@@ -263,26 +267,26 @@
       "ja": {
         "value": "ビデオ",
         "state": "final"
-      },
-      "es": {
-        "value": "VÍDEO",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.VOICE",
     "values": {
+      "de": {
+        "value": "SPRACHANRUF",
+        "state": "final"
+      },
       "en": {
         "value": "VOICE",
         "state": "final"
       },
-      "fr": {
-        "value": "VOIX",
+      "es": {
+        "value": "VOZ",
         "state": "final"
       },
-      "de": {
-        "value": "SPRACHANRUF",
+      "fr": {
+        "value": "VOIX",
         "state": "final"
       },
       "it": {
@@ -292,26 +296,26 @@
       "ja": {
         "value": "音声",
         "state": "final"
-      },
-      "es": {
-        "value": "VOZ",
-        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.WEBLEAD",
     "values": {
+      "de": {
+        "value": "E-MAIL",
+        "state": "final"
+      },
       "en": {
         "value": "EMAIL",
         "state": "final"
       },
-      "fr": {
-        "value": "EMAIL",
+      "es": {
+        "value": "CORREO ELECTRÓNICO",
         "state": "final"
       },
-      "de": {
-        "value": "E-MAIL",
+      "fr": {
+        "value": "EMAIL",
         "state": "final"
       },
       "it": {
@@ -321,26 +325,26 @@
       "ja": {
         "value": "EMAIL",
         "state": "final"
-      },
-      "es": {
-        "value": "CORREO ELECTRÓNICO",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.ARTBOARD",
     "values": {
+      "de": {
+        "value": "Hauptbild",
+        "state": "final"
+      },
       "en": {
         "value": "Main image",
         "state": "final"
       },
-      "fr": {
-        "value": "Image principale",
+      "es": {
+        "value": "Imagen principal",
         "state": "final"
       },
-      "de": {
-        "value": "Hauptbild",
+      "fr": {
+        "value": "Image principale",
         "state": "final"
       },
       "it": {
@@ -350,26 +354,26 @@
       "ja": {
         "value": "メインイメージ",
         "state": "final"
-      },
-      "es": {
-        "value": "Imagen principal",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.COMPANY_LOGO",
     "values": {
+      "de": {
+        "value": "Firmenlogo",
+        "state": "final"
+      },
       "en": {
         "value": "Company logo",
         "state": "final"
       },
-      "fr": {
-        "value": "Logo de la société",
+      "es": {
+        "value": "Logo empresarial",
         "state": "final"
       },
-      "de": {
-        "value": "Firmenlogo",
+      "fr": {
+        "value": "Logo de la société",
         "state": "final"
       },
       "it": {
@@ -379,26 +383,26 @@
       "ja": {
         "value": "会社ロゴ",
         "state": "final"
-      },
-      "es": {
-        "value": "Logo empresarial",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.PRIMARY",
     "values": {
+      "de": {
+        "value": "Primärfarbe",
+        "state": "final"
+      },
       "en": {
         "value": "Primary colour",
         "state": "final"
       },
-      "fr": {
-        "value": "Couleur primaire",
+      "es": {
+        "value": "Color principal",
         "state": "final"
       },
-      "de": {
-        "value": "Primärfarbe",
+      "fr": {
+        "value": "Couleur primaire",
         "state": "final"
       },
       "it": {
@@ -408,25 +412,25 @@
       "ja": {
         "value": "初期カラー",
         "state": "final"
-      },
-      "es": {
-        "value": "Color principal",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.THEME",
     "values": {
+      "de": {
+        "value": "Variante",
+        "state": "final"
+      },
       "en": {
         "value": "Theme",
         "state": "final"
       },
-      "fr": {
+      "es": {
         "value": "Variante",
         "state": "final"
       },
-      "de": {
+      "fr": {
         "value": "Variante",
         "state": "final"
       },
@@ -437,26 +441,26 @@
       "ja": {
         "value": "変更可能な",
         "state": "final"
-      },
-      "es": {
-        "value": "Variante",
-        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.USE_COMPANY_LOGO",
     "values": {
+      "de": {
+        "value": "Firmenlogo eingeben",
+        "state": "final"
+      },
       "en": {
         "value": "Use the company logo",
         "state": "final"
       },
-      "fr": {
-        "value": "Insérer le logo de la société",
+      "es": {
+        "value": "Introduce el logo empresarial",
         "state": "final"
       },
-      "de": {
-        "value": "Firmenlogo eingeben",
+      "fr": {
+        "value": "Insérer le logo de la société",
         "state": "final"
       },
       "it": {
@@ -465,10 +469,6 @@
       },
       "ja": {
         "value": "会社ロゴを入力してください",
-        "state": "final"
-      },
-      "es": {
-        "value": "Introduce el logo empresarial",
         "state": "final"
       }
     }

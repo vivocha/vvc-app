@@ -2,16 +2,20 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Leeres Widget als Grundlage für die Erstellung anderer Widgets verwenden",
+        "state": "final"
+      },
       "en": {
         "value": "Minimal Empty Widget",
         "state": "final"
       },
-      "fr": {
-        "value": "Widget vide à utiliser comme base pour créer d'autres widgets",
+      "es": {
+        "value": "Widget vacío para utilizar como base para la creación de otros widgets",
         "state": "final"
       },
-      "de": {
-        "value": "Leeres Widget als Grundlage für die Erstellung anderer Widgets verwenden",
+      "fr": {
+        "value": "Widget vide à utiliser comme base pour créer d'autres widgets",
         "state": "final"
       },
       "it": {
@@ -21,26 +25,26 @@
       "ja": {
         "value": "他のウィジェット作成のベースとして使用する空のウィジェット",
         "state": "final"
-      },
-      "es": {
-        "value": "Widget vacío para utilizar como base para la creación de otros widgets",
-        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Leeres Widget",
+        "state": "final"
+      },
       "en": {
         "value": "Blank Widget",
         "state": "final"
       },
-      "fr": {
-        "value": "Widget vide",
+      "es": {
+        "value": "Widget vacío",
         "state": "final"
       },
-      "de": {
-        "value": "Leeres Widget",
+      "fr": {
+        "value": "Widget vide",
         "state": "final"
       },
       "it": {
@@ -49,10 +53,6 @@
       },
       "ja": {
         "value": "空のウィジェット",
-        "state": "final"
-      },
-      "es": {
-        "value": "Widget vacío",
         "state": "final"
       }
     }

@@ -1,27 +1,27 @@
 [
   {
-    "id": "NAME",
-    "values": {
-      "en": {
-        "value": "Halo Button",
-        "state": "new"
-      },
-      "it": {
-        "value": "Halo Button",
-        "state": "new"
-      }
-    }
-  },
-  {
     "id": "DESCRIPTION",
     "values": {
       "en": {
         "value": "Engagement avatar customizable with badge, position and initial media",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Avatar personalizzabile con badge, posizione e media iniziale",
-        "state": "new"
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Halo Button",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Halo Button",
+        "state": "needs-review"
       }
     }
   },
@@ -32,12 +32,12 @@
         "value": "Avatar Image",
         "state": "final"
       },
-      "it": {
-        "value": "Immagine Avatar",
-        "state": "final"
-      },
       "fr": {
         "value": "Image avatar",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine Avatar",
         "state": "final"
       },
       "ja": {
@@ -51,15 +51,15 @@
     "values": {
       "en": {
         "value": "Horizontal Position",
-        "state": "new"
-      },
-      "it": {
-        "value": "Posizionamento Orizzontale",
-        "state": "new"
+        "state": "needs-review"
       },
       "fr": {
         "value": "Positionnement horizontal",
         "state": "final"
+      },
+      "it": {
+        "value": "Posizionamento Orizzontale",
+        "state": "needs-review"
       },
       "ja": {
         "value": "横配置",
@@ -72,11 +72,11 @@
     "values": {
       "en": {
         "value": "Media to use to start the engagement with",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Media da usare per iniziare il contatto",
-        "state": "new"
+        "state": "needs-review"
       }
     }
   }
