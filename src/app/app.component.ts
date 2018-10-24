@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
     this.interactionService.closeApp();
   }
   closeCbn() {
-    this.interactionService.closeContact();
+    this.interactionService.closeContact(this.dimensions.normal);
     this.closeApp();
   }
   closeContact(context) {
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
         break;
       case 'close-and-survey':
         this.surveyVisible = true;
-        this.interactionService.closeContact();
+        this.interactionService.closeContact(this.dimensions.normal);
         this.interactionService.showSurvey();
         break;
       case 'show-close-modal':
@@ -113,10 +113,10 @@ export class AppComponent implements OnInit {
       case 'close-and-stay':
         this.dismissCloseModal();
         this.closeModalVisible = true;
-        this.interactionService.closeContact();
+        this.interactionService.closeContact(this.dimensions.normal);
         break;
       case 'close-and-remove':
-        this.interactionService.closeContact();
+        this.interactionService.closeContact(this.dimensions.normal);
         this.closeApp();
         break;
     }
@@ -249,7 +249,7 @@ export class AppComponent implements OnInit {
   }
   showCloseModal(closeOpt) {
     if (closeOpt.forceClose) {
-      this.interactionService.closeContact();
+      this.interactionService.closeContact(this.dimensions.normal);
       if (!closeOpt.stayInAppAfterClose && !closeOpt.hasSurvey) {
         this.closeApp();
       } else if (closeOpt.hasSurvey && !closeOpt.stayInAppAfterClose) {
