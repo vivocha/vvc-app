@@ -57,8 +57,11 @@ export class FormComponent implements OnInit {
         }
       }
       if (elem.validation) {
-        const validation = (typeof elem.validation === 'boolean') ? elem.validation.toString() : elem.valiation;
+        const validation = (typeof elem.validation === 'boolean') ? elem.validation.toString() : elem.validation;
         validators.push(Validators.pattern(validation));
+      }
+      if (elem.format === 'phonenum' && !elem.validation) {
+        validators.push(Validators.pattern('^\\s*\\+\\s*(?:\\d\\s*){7,}$'));
       }
       if (elem.format === 'email') {
         validators.push(Validators.email);
@@ -107,7 +110,7 @@ export class FormComponent implements OnInit {
     if (['text', 'email', 'date', 'time'].indexOf(elem.format) !== -1) {
       return elem.format;
     } else if (elem.format === 'phonenum') {
-      return 'tel';
+      return 'text';
     } else if (elem.format === 'link') {
       return 'url';
     } else if (elem.format === 'date-time') {
