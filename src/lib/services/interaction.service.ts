@@ -7,6 +7,7 @@ import {ContextState, Dimension, LeftScrollOffset, UiState} from '../store/model
 import {VvcContactWrap} from './contact-wrap.service';
 import {Observable} from 'rxjs';
 import {filter} from 'rxjs/operators';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Injectable()
@@ -20,7 +21,8 @@ export class VvcInteractionService {
   constructor(
     private store: Store<AppState>,
     private contextService: VvcContextService,
-    private contactService: VvcContactWrap
+    private contactService: VvcContactWrap,
+    private translateService: TranslateService
   ) {
 
   }
@@ -40,6 +42,9 @@ export class VvcInteractionService {
   }
   askForVoiceUpgrade() {
     this.contactService.askForUpgrade('Voice');
+  }
+  changeLang(lang) {
+    this.translateService.use(lang);
   }
   closeApp() {
     this.contactService.closeApp();
@@ -68,7 +73,7 @@ export class VvcInteractionService {
       if (context.loaded) {
         this.vivocha = this.contextService.getVivocha();
         this.context = context;
-
+        this.registerChangeLangService();
         this.contactService.initializeContact(this.vivocha, this.context);
       }
     });
@@ -94,6 +99,11 @@ export class VvcInteractionService {
   }
   processQuickReply(reply) {
     this.contactService.processQuickReply(reply);
+  }
+  private registerChangeLangService() {
+    this.vivocha.bus.registerService('vvcApp', {
+      changeLang: (lang) => this.changeLang(lang)
+    });
   }
   registerCustomAction(action): Observable<any> {
     return this.contactService.registerCustomAction(action);

@@ -256,6 +256,7 @@ export const getUiStateRedux = (
   const hasMultimedia           = widgetState.media.media;
   const hasAudio                = hasMultimedia &&
                                   widgetState.media.media.Voice &&
+                                  widgetState.media.media.Voice.via !== 'pstn' &&
                                   (widgetState.media.media.Voice.rx || widgetState.media.media.Voice.tx);
   const hasVideo                = hasMultimedia && widgetState.media.media.Video;
   const hasLocalVideo           = hasVideo && widgetState.media.media.Video.tx;
@@ -363,7 +364,7 @@ export const getUiStateRedux = (
       inVideoTransit: widgetState.protocol.inVideoTransit,
       isAutoChat: widgetState.chat && widgetState.chat.isAutoChat,
       isLoading: !widgetState.context.isUiLoaded,
-      isInQueue: widgetState.context.showQueuePanel && dataCollectionState.completed,
+      isInQueue: widgetState.context.showQueuePanel && (dataCollectionState.completed || widgetState.context.contactCreationFailed),
       isChatVisible: isChatVisible && !widgetState.context.cbnMode,
       isChatBoxVisible: isChatBoxVisible,
       isClosed: isClosed,

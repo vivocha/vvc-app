@@ -105,6 +105,8 @@ export class VvcMessageService {
       template: message.template.type,
       elements: message.template.elements,
       buttons: message.template.buttons,
+      body: message.body,
+      original: message.template,
       scrollLeft: 0,
       time: this.getChatTimestamp()
     };

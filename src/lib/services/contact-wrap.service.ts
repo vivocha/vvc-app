@@ -135,12 +135,6 @@ export class VvcContactWrap {
     }
   }
   cbnStatusChanged(id, info) {
-    console.log('CBN STATUS CHANGED', id, info);
-    /*
-    if (!this.contact.isMobile) {
-      this.setDimension('cbnNormal');
-    }
-    */
     this.uiService.setCbnState(id);
   }
   checkForTranscript() {
@@ -226,11 +220,11 @@ export class VvcContactWrap {
       this.vivocha.createContact(opts).then( (contact) => {
         this.vivocha.pageRequest('interactionCreated', contact).then( () => {
           this.zone.run( () => {
-            console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
+            // console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
             this.contact = contact;
             this.uiService.setUiReady();
-            console.log('contact type', contact.contact.type, contact.contact);
-            if (contact.contact.type === 'inbound') {
+            // console.log('contact type', contact.contact.type, contact.contact);
+            if (contact.contact.type === 'cbn') {
               this.uiService.setCbnMode();
             }
             if (contact.contact.initial_offer.Sharing) {
@@ -713,9 +707,7 @@ export class VvcContactWrap {
   }
   registerCallStatusEvents(dataChannel) {
     for (const i in this.cbnChannelStatus) {
-      console.log('adding cbnstatus', this.cbnChannelStatus[i]);
       dataChannel.on(this.cbnChannelStatus[i], (info) => {
-        console.log('event on ', this.cbnChannelStatus[i], info);
         this.zone.run( () => {
           this.cbnStatusChanged(this.cbnChannelStatus[i], info);
         });
@@ -776,6 +768,10 @@ export class VvcContactWrap {
       }, (err) => {
         console.log('Failed to resume contact', err);
         this.vivocha.pageRequest('interactionFailed', err.message);
+        this.uiService.setCreationFailed();
+        setTimeout( () => {
+          this.closeApp();
+        }, 2000);
       });
     });
   }

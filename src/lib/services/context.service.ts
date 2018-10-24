@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {WindowRef} from './window.service';
 import {VvcUiService} from './ui.service';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {TranslateService} from '@ngx-translate/core';
 
 import {AppState} from '../store/reducers/main.reducer';
@@ -25,18 +25,18 @@ export class VvcContextService {
     private uiService: VvcUiService,
     private wref: WindowRef,
     private ts: TranslateService,
-    private zone: NgZone){
+    private zone: NgZone) {
 
     this.window = wref.nativeWindow;
     this.parseIframeUrl();
     this.checkForVivocha();
   }
-  async checkForVivocha(){
+  async checkForVivocha() {
     if (this.window.vivocha && this.window.vivocha.ready) {
       await this.window.vivocha.ready(this.busId);
       const context = await this.window.vivocha.pageRequest('getContext');
       const extraDataCollection = await this.window.vivocha.pageRequest('getInteractionModeDataCollectionId', context.mediaPreset);
-      if (extraDataCollection){
+      if (extraDataCollection) {
         if (!context.dataCollectionIds) context.dataCollectionIds = [];
         context.dataCollectionIds.push(extraDataCollection);
       }
@@ -50,7 +50,7 @@ export class VvcContextService {
       setTimeout( () => this.checkForVivocha(), 200);
     }
   }
-  dispatchContext(context){
+  dispatchContext(context) {
     this.ts.use(context.language);
     this.ts.getTranslation(context.language).toPromise().then(
       result => {
@@ -61,16 +61,15 @@ export class VvcContextService {
             busId: this.busId,
             acct: this.acct,
             world: this.world,
-            //variables: context.campaign.channels.web.interaction.variables,
             variables: this.window.VVC_VAR_ASSETS || {},
             ...context
           });
       });
   }
-  getVivocha(){
+  getVivocha() {
     return this.vivocha;
   }
-  parseIframeUrl(){
+  parseIframeUrl() {
     const hash = this.window.location.hash;
     if (hash.indexOf(';') !== -1) {
       const hashParts = this.window.location.hash.substr(2).split(';');
@@ -79,7 +78,7 @@ export class VvcContextService {
       this.world = hashParts[2];
     }
   }
-  ready():Observable<ContextState>{
-    return this.store.select(getContextState);
+  ready(): Observable<ContextState> {
+    return this.store.pipe(select(getContextState));
   }
 }
