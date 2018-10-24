@@ -17,6 +17,7 @@
       "nameId": "META.VARIABLES.APP.INITIAL_WIDTH",
       "defaultValue": "370px",
       "type": "unit",
+      "hidden": true,
       "categoryIds": [
         "General_DimensionAndPosition"
       ]
@@ -26,6 +27,7 @@
       "nameId": "META.VARIABLES.APP.INITIAL_HEIGHT",
       "defaultValue": "600px",
       "type": "unit",
+      "hidden": true,
       "categoryIds": [
         "General_DimensionAndPosition"
       ]
