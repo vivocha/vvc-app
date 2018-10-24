@@ -17,6 +17,7 @@ export class VvcInteractionService {
   private context: ContextState;
 
   agentRequestCallback;
+  firstDimensions: Dimension;
 
   constructor(
     private store: Store<AppState>,
@@ -49,8 +50,8 @@ export class VvcInteractionService {
   closeApp() {
     this.contactService.closeApp();
   }
-  closeContact() {
-    this.contactService.closeContact();
+  closeContact(dim?: Dimension) {
+    this.contactService.closeContact(dim);
   }
   closeUploadPanel() {
     this.contactService.closeUploadPanel();
@@ -130,6 +131,10 @@ export class VvcInteractionService {
     this.contactService.sendText(text);
   }
   setDimensions(dim) {
+    if (!this.firstDimensions) {
+      this.firstDimensions = dim;
+      this.contactService.useDimensionsForDowngrades(dim);
+    }
     this.contactService.setDimension(dim);
   }
   setFullScreen() {

@@ -23,6 +23,7 @@ export class VvcContactWrap {
   agent;
   agentRequestCallback;
   dissuasionTimer;
+  downgradeDimensions: Dimension;
   transferTimer;
   hasReceivedMsgs = false;
   isClosed = false;
@@ -177,12 +178,12 @@ export class VvcContactWrap {
   closeApp() {
     this.vivocha.pageRequest('interactionClosed', 'destroy');
   }
-  closeContact() {
+  closeContact(dim?: Dimension) {
     this.leave().then((reason) => {
       this.zone.run(() => {
         this.uiService.setClosedByVisitor();
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
-        this.vivocha.setNormalScreen();
+        (this.context.variables.customSize && dim) ? this.setDimension(dim) : this.vivocha.setNormalScreen();
         this.isClosed = true;
         this.vivocha.pageRequest('interactionClosed', reason);
       });
@@ -525,7 +526,7 @@ export class VvcContactWrap {
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
         if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
-          this.vivocha.setNormalScreen();
+          this.downgradeDimensions ? this.setDimension(this.downgradeDimensions) : this.vivocha.setNormalScreen();
           this.uiService.setHangUpState();
         }
       });
@@ -638,7 +639,8 @@ export class VvcContactWrap {
     this.leave('remote').then(() => {
       this.zone.run( () => {
         this.uiService.setClosedByAgent();
-        this.vivocha.setNormalScreen();
+        // this.vivocha.setNormalScreen();
+        this.downgradeDimensions ? this.setDimension(this.downgradeDimensions) : this.vivocha.setNormalScreen();
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
         this.isClosed = true;
         this.vivocha.pageRequest('interactionClosed', 'closed');
@@ -653,7 +655,8 @@ export class VvcContactWrap {
       this.leave('remote').then(() => {
         this.zone.run(() => {
           this.uiService.setClosedByAgent();
-          this.vivocha.setNormalScreen();
+          // this.vivocha.setNormalScreen();
+          this.downgradeDimensions ? this.setDimension(this.downgradeDimensions) : this.vivocha.setNormalScreen();
           this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
           this.isClosed = true;
           this.vivocha.pageRequest('interactionClosed', 'closed');
@@ -978,5 +981,8 @@ export class VvcContactWrap {
   }
   upgradeCbnToChat() {
     this.uiService.upgradeCbnToChat();
+  }
+  useDimensionsForDowngrades(dim: Dimension) {
+    this.downgradeDimensions = dim;
   }
 }

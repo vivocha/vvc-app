@@ -331,8 +331,8 @@ export const getUiStateRedux = (
                                   !widgetState.protocol.isOffering &&
                                   !widgetState.protocol.incomingOffer &&
                                   !isMediaConnecting &&
-                                  (!isMediaConnected || isMediaConnected && widgetState.media.isMinimized) ||
-                                  widgetState.context.isFullScreen;
+                                  ((!isMediaConnected || isMediaConnected && widgetState.media.isMinimized) ||
+                                  widgetState.context.isFullScreen);
   const isChatBoxVisible        = isChatVisible &&
                                   (
                                     !isClosed ||
@@ -381,7 +381,7 @@ export const getUiStateRedux = (
       isFullScreen: widgetState.context.isFullScreen && !isClosed,
       isSendAreaVisible: isChatBoxVisible,
       isUploading: widgetState.context.isUploading,
-      isWriting:  widgetState.chat && widgetState.chat.isWriting,
+      isWriting:  widgetState.chat && widgetState.chat.isWriting && !isClosed,
       notRead: (widgetState.chat) ? widgetState.chat.notRead : 0,
       offeringMedia: widgetState.protocol.offeringMedia,
       selectedDataCollection: dataCollectionState.selectedItem,
