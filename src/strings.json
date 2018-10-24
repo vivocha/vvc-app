@@ -1166,6 +1166,19 @@
     }
   },
   {
+    "id": "META.VARIABLES.COLLECTOR_AVATAR",
+    "values": {
+      "en": {
+        "value": "Dialog collector avatar image",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Immagine dialog collector",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.COLOR1",
     "values": {
       "de": {
