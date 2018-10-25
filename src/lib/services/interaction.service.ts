@@ -103,7 +103,12 @@ export class VvcInteractionService {
   }
   private registerChangeLangService() {
     this.vivocha.bus.registerService('vvcApp', {
-      changeLang: (lang) => this.changeLang(lang)
+      changeLang: (lang) => this.changeLang(lang),
+      closeContact: () => this.closeContact(this.firstDimensions),
+      closeAndRemove: () => {
+        this.closeContact(this.firstDimensions);
+        this.closeApp();
+      }
     });
   }
   registerCustomAction(action): Observable<any> {
