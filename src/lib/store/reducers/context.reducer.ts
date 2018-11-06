@@ -5,8 +5,8 @@ const initialState: ContextState = {
   loaded: false
 };
 
-export function reducer(state: ContextState = initialState, action: fromContext.ContextActions){
-  switch (action.type){
+export function reducer(state: ContextState = initialState, action: fromContext.ContextActions) {
+  switch (action.type) {
     case fromContext.LOAD_CONTEXT_SUCCESS: {
       return Object.assign({}, state, action.payload);
     }

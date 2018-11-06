@@ -12,27 +12,27 @@ export const DC_SHOW_PANEL   = '[Data Collection] Show Panel';
 
 export class DataCollectionInitialized implements Action {
   readonly type = DC_INITIALIZED;
-  constructor(public payload: { dataCollectionIds?: string[], surveyId?: string}){}
+  constructor(public payload: { dataCollectionIds?: string[], surveyId?: string}) {}
 }
 export class DataCollectionAdded implements Action {
   readonly type = DC_ADDED;
-  constructor(public payload: DataCollection){}
+  constructor(public payload: DataCollection) {}
 }
 
 export class DataCollectionEnd implements Action {
   readonly type = DC_END;
-  constructor(public payload: DataCollectionCompleted){}
+  constructor(public payload: DataCollectionCompleted) {}
 }
 export class DataCollectionSelected implements Action {
   readonly type = DC_SELECTED;
-  constructor(public payload: { dc: DataCollection, type: string }){}
+  constructor(public payload: { dc: DataCollection, type: string }) {}
 }
 export class DataCollectionResolved implements Action {
   readonly type = DC_RESOLVED;
 }
 export class DataCollectionShowPanel implements Action {
   readonly type = DC_SHOW_PANEL;
-  constructor(public payload: boolean){}
+  constructor(public payload: boolean) {}
 }
 
 export type DataCollectionActions

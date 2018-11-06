@@ -9,12 +9,12 @@ import {getMessageRedux} from '../reducers/messages.reducer';
 import {UiState, MessagesState, DataCollectionState, DataCollectionCompleted} from '../models.interface';
 import {getCompletedDC} from '../reducers/dataCollection.reducer';
 
-export const getMessages:MemoizedSelector<Object,MessagesState> = createSelector(
+export const getMessages: MemoizedSelector<Object, MessagesState> = createSelector(
   getMessagesState,
   getMessageRedux
 );
 
-export const getUiState:MemoizedSelector<Object,UiState> = createSelector(
+export const getUiState: MemoizedSelector<Object, UiState> = createSelector(
   getWidgetState,
   getMessages,
   getDataCollectionState,

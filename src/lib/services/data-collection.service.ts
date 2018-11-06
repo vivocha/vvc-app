@@ -12,6 +12,7 @@ import {
   DataCollectionSelected, DataCollectionShowPanel
 } from '../store/actions/dataCollection.actions';
 import {VvcMessageService} from './messages.service';
+import {AdvancedDataCollection} from '@vivocha/public-entities/dist';
 
 
 @Injectable()
@@ -22,13 +23,29 @@ export class VvcDataCollectionService {
   contactOptions: any = { data : [] };
   selectedIdx = 0;
   collectorRef;
-  dcType: 'dc' | 'recontact' | 'survey' = 'dc';
+  dcType: 'dc' | 'recontact' | 'survey'  | 'sync' = 'dc';
   dcRefs = [];
   constructor(
     private store: Store<AppState>,
     private uiService: VvcUiService,
     private messageService: VvcMessageService) {
 
+  }
+  getSyncForm(): AdvancedDataCollection {
+    return {
+      id: 'sync',
+      labelId: 'STRINGS.SYNC.TITLE',
+      type: 'form',
+      fields: [
+        {
+          id: 'sync-code',
+          labelId: 'STRINGS.SYNC.ADD_CODE',
+          format: 'text',
+          type: 'string',
+          required: true
+        }
+      ]
+    };
   }
   setCollectorAgent() {
     this.collectorAgent = {
@@ -52,12 +69,17 @@ export class VvcDataCollectionService {
     return this.store.select(getDataCollectionCompleted);
   }
   async processDataCollections() {
-    if (!this.hasDataCollection()) {
-      this.store.dispatch(new DataCollectionEnd({ type: 'dc' }));
+    if (this.isSyncContact()) {
+      this.processSyncRef();
     } else {
-      // this.uiService.setUiReady();
-      this.dcRefs = await this.vivocha.pageRequest('mergeDataCollections', this.context.dataCollectionIds);
-      this.processDcByIdx(0);
+      if (!this.hasDataCollection()) {
+        this.store.dispatch(new DataCollectionEnd({type: 'dc'}));
+      } else {
+        // this.uiService.setUiReady();
+        this.dcRefs = await this.vivocha.pageRequest('mergeDataCollections', this.context.dataCollectionIds);
+        console.log('DC-REFS', this.dcRefs);
+        this.processDcByIdx(0);
+      }
     }
   }
 
@@ -97,6 +119,14 @@ export class VvcDataCollectionService {
   processRecontact() {
     this.store.dispatch(new DataCollectionEnd({type: 'recontact', contactCreateOptions: this.contactOptions}));
   }
+  processSyncRef() {
+    const dcRef = this.getSyncForm();
+    this.dcType = 'sync';
+    this.store.dispatch(new DataCollectionAdded(dcRef));
+    this.uiService.setUiReady();
+    this.store.dispatch(new DataCollectionSelected({ dc: dcRef, type: this.dcType }));
+    this.store.dispatch(new DataCollectionShowPanel(true));
+  }
   hasDataCollection() {
     return (this.context.dataCollectionIds && this.context.dataCollectionIds.length > 0);
   }
@@ -115,7 +145,10 @@ export class VvcDataCollectionService {
     }
     return visibleFields;
   }
-
+  isSyncContact() {
+    // return !!this.context.isSync;
+    return false;
+  }
   async sendMessageViaCollector(isTemplate, message, payload?) {
     if (this.collectorRef) {
       let resp;

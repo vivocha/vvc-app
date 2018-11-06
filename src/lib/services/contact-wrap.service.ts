@@ -10,6 +10,7 @@ import {CbnStatus, DataCollectionCompleted, Dimension, LeftScrollOffset} from '.
 import {AgentState} from '../store/models.interface';
 import {ClientContactCreationOptions} from '@vivocha/public-entities/dist/contact';
 import {Observable, Subject} from 'rxjs';
+import {NewEvent} from '../store/actions/events.actions';
 
 
 @Injectable()
@@ -23,7 +24,6 @@ export class VvcContactWrap {
   agent;
   agentRequestCallback;
   dissuasionTimer;
-  downgradeDimensions: Dimension;
   transferTimer;
   hasReceivedMsgs = false;
   isClosed = false;
@@ -339,6 +339,13 @@ export class VvcContactWrap {
           // console.log('DATA', data);
           const hideQueue = data.lastCompletedType && data.lastCompletedType === 'dialog';
           switch (data.type) {
+            /*
+            case 'sync':
+              console.log('sync contact', data.contactCreateOptions);
+              this.dcService.setResolved();
+              this.createContact({});
+              break;
+            */
             case 'dc':
               this.dcService.setResolved();
               if (this.isAutoChat()) {
@@ -428,7 +435,6 @@ export class VvcContactWrap {
       });
     });
     this.contact.on('close', obj => {
-      // console.log('CLOSE', obj);
       this.onClose(obj);
     });
     this.contact.on('datachannel', dc => {
@@ -526,7 +532,7 @@ export class VvcContactWrap {
         this.protocolService.setMediaChange(media);
         this.uiService.setMediaState(media);
         if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
-          this.downgradeDimensions ? this.setDimension(this.downgradeDimensions) : this.vivocha.setNormalScreen();
+          this.store.dispatch(new NewEvent({ type: 'removedMediaScreen' }));
           this.uiService.setHangUpState();
         }
       });
@@ -639,8 +645,8 @@ export class VvcContactWrap {
     this.leave('remote').then(() => {
       this.zone.run( () => {
         this.uiService.setClosedByAgent();
-        // this.vivocha.setNormalScreen();
-        this.downgradeDimensions ? this.setDimension(this.downgradeDimensions) : this.vivocha.setNormalScreen();
+        this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
+
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
         this.isClosed = true;
         this.vivocha.pageRequest('interactionClosed', 'closed');
@@ -655,8 +661,9 @@ export class VvcContactWrap {
       this.leave('remote').then(() => {
         this.zone.run(() => {
           this.uiService.setClosedByAgent();
-          // this.vivocha.setNormalScreen();
-          this.downgradeDimensions ? this.setDimension(this.downgradeDimensions) : this.vivocha.setNormalScreen();
+
+          this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
+
           this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
           this.isClosed = true;
           this.vivocha.pageRequest('interactionClosed', 'closed');
@@ -981,8 +988,5 @@ export class VvcContactWrap {
   }
   upgradeCbnToChat() {
     this.uiService.upgradeCbnToChat();
-  }
-  useDimensionsForDowngrades(dim: Dimension) {
-    this.downgradeDimensions = dim;
   }
 }

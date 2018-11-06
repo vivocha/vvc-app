@@ -37,7 +37,9 @@ export class VvcContextService {
       const context = await this.window.vivocha.pageRequest('getContext');
       const extraDataCollection = await this.window.vivocha.pageRequest('getInteractionModeDataCollectionId', context.mediaPreset);
       if (extraDataCollection) {
-        if (!context.dataCollectionIds) context.dataCollectionIds = [];
+        if (!context.dataCollectionIds) {
+          context.dataCollectionIds = [];
+        }
         context.dataCollectionIds.push(extraDataCollection);
       }
       this.zone.run( () => {
@@ -55,14 +57,14 @@ export class VvcContextService {
     this.ts.getTranslation(context.language).toPromise().then(
       result => {
           this.uiService.initializeContext({
+            ...context,
             loaded: true,
             translationLoaded: true,
             isMobile: this.isMobile,
             busId: this.busId,
             acct: this.acct,
             world: this.world,
-            variables: this.window.VVC_VAR_ASSETS || {},
-            ...context
+            variables: this.window.VVC_VAR_ASSETS || {}
           });
       });
   }

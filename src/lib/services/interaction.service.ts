@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {getUiState} from '../store/selectors/widget.selectors';
-import {AppState} from '../store/reducers/main.reducer';
+import {AppState, getEventsState} from '../store/reducers/main.reducer';
 import {VvcContextService} from './context.service';
-import {ContextState, Dimension, LeftScrollOffset, UiState} from '../store/models.interface';
+import {ContextState, Dimension, EventsState, LeftScrollOffset, UiState} from '../store/models.interface';
 import {VvcContactWrap} from './contact-wrap.service';
 import {Observable} from 'rxjs';
 import {filter} from 'rxjs/operators';
@@ -17,7 +17,6 @@ export class VvcInteractionService {
   private context: ContextState;
 
   agentRequestCallback;
-  firstDimensions: Dimension;
 
   constructor(
     private store: Store<AppState>,
@@ -59,8 +58,11 @@ export class VvcInteractionService {
   dismissCloseModal() {
     this.contactService.showCloseModal(false);
   }
+  events(): Observable<EventsState> {
+    return this.store.pipe(select(getEventsState));
+  }
   getState(): Observable<UiState> {
-    return this.store.select(getUiState);
+    return this.store.pipe(select(getUiState));
   }
   hangUp(dim: Dimension) {
     this.contactService.hangUp(dim);
@@ -104,9 +106,9 @@ export class VvcInteractionService {
   private registerChangeLangService() {
     this.vivocha.bus.registerService('vvcApp', {
       changeLang: (lang) => this.changeLang(lang),
-      closeContact: () => this.closeContact(this.firstDimensions),
-      closeAndRemove: () => {
-        this.closeContact(this.firstDimensions);
+      closeContact: (dim?: Dimension) => this.closeContact(dim),
+      closeAndRemove: (dim?: Dimension) => {
+        this.closeContact(dim);
         this.closeApp();
       }
     });
@@ -136,10 +138,6 @@ export class VvcInteractionService {
     this.contactService.sendText(text);
   }
   setDimensions(dim) {
-    if (!this.firstDimensions) {
-      this.firstDimensions = dim;
-      this.contactService.useDimensionsForDowngrades(dim);
-    }
     this.contactService.setDimension(dim);
   }
   setFullScreen() {

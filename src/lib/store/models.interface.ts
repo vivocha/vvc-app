@@ -17,6 +17,11 @@ export interface Dimension {
   left?: string;
 }
 
+export interface EventsState {
+  type: string;
+  data?: any;
+}
+
 export interface  ContextState {
   loaded: boolean;
   cbnMode?: boolean;
@@ -83,7 +88,7 @@ export interface DataCollectionDictionary {
   [key: string]: DataCollection;
 }
 export interface DataCollectionCompleted {
-  type: 'dc' | 'survey' | 'recontact';
+  type: 'dc' | 'survey' | 'recontact' | 'sync';
   contactCreateOptions?: ClientContactCreationOptions;
   dataCollection?: ContactDataCollectionForm;
   lastCompletedType?: 'form' | 'dialog';
