@@ -56,12 +56,12 @@ export class AppComponent implements OnInit {
     custom: {position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0'}
   };
 
+  public closeDimensions: Dimension;
   constructor(private interactionService: VvcInteractionService) {}
   ngOnInit() {
     this.appState$ = this.interactionService.getState();
-    this.interactionService.init().subscribe(context => {
-      this.interactionService.setDimensions(context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal);
-    });
+    this.interactionService.init().subscribe(context => this.setInitialDimensions(context));
+    this.interactionService.events().subscribe( evt => this.listenForEvents(evt));
     // this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
   }
   acceptAgentRequest(requestId) {
@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
     this.interactionService.closeApp();
   }
   closeCbn() {
-    this.interactionService.closeContact(this.dimensions.normal);
+    this.interactionService.closeContact(this.closeDimensions);
     this.closeApp();
   }
   closeContact(context) {
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
         break;
       case 'close-and-survey':
         this.surveyVisible = true;
-        this.interactionService.closeContact(this.dimensions.normal);
+        this.interactionService.closeContact(this.closeDimensions);
         this.interactionService.showSurvey();
         break;
       case 'show-close-modal':
@@ -113,10 +113,10 @@ export class AppComponent implements OnInit {
       case 'close-and-stay':
         this.dismissCloseModal();
         this.closeModalVisible = true;
-        this.interactionService.closeContact(this.dimensions.normal);
+        this.interactionService.closeContact(this.closeDimensions);
         break;
       case 'close-and-remove':
-        this.interactionService.closeContact(this.dimensions.normal);
+        this.interactionService.closeContact(this.closeDimensions);
         this.closeApp();
         break;
     }
@@ -191,13 +191,23 @@ export class AppComponent implements OnInit {
     }
   }
   hangUpCall() {
-    this.interactionService.hangUp(this.dimensions.normal);
+    this.interactionService.hangUp(this.closeDimensions);
   }
   hasToStayInApp(context) {
     return (context.isClosed && context.variables.stayInAppAfterClose);
   }
   hideChat() {
     this.interactionService.hideChat();
+  }
+  listenForEvents(evt) {
+    if (evt) {
+      switch (evt.type) {
+        case 'closedByAgent':
+        case 'removedMediaScreen':
+          this.interactionService.setDimensions(this.closeDimensions);
+          break;
+      }
+    }
   }
   maximizeCbn(isMobile: boolean, notRead: boolean) {
     this.interactionService.maximizeWidget(false, isMobile ? this.dimensions.fullscreen : this.dimensions.normal);
@@ -244,12 +254,16 @@ export class AppComponent implements OnInit {
   setFullScreen() {
     this.expandWidget(true);
   }
+  setInitialDimensions(context) {
+    this.closeDimensions = context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal;
+    this.interactionService.setDimensions(this.closeDimensions);
+  }
   showCloseDialog(context) {
     return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);
   }
   showCloseModal(closeOpt) {
     if (closeOpt.forceClose) {
-      this.interactionService.closeContact(this.dimensions.normal);
+      this.interactionService.closeContact(this.closeDimensions);
       if (!closeOpt.stayInAppAfterClose && !closeOpt.hasSurvey) {
         this.closeApp();
       } else if (closeOpt.hasSurvey && !closeOpt.stayInAppAfterClose) {
