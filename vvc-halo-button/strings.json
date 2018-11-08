@@ -2,34 +2,74 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Avatar personalisierbar mit Badge, Position und Anfangs-Medium",
+        "state": "final"
+      },
       "en": {
-        "value": "Engagement avatar customizable with badge, position and initial media",
-        "state": "needs-review"
+        "value": "Engagement avatar customisable with badge, position and initial media",
+        "state": "final"
+      },
+      "es": {
+        "value": "Avatar de participación personalizable con insignia, posición y medios de comunicación iniciales",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Avatar personnalisable avec badge, position et média initial",
+        "state": "final"
       },
       "it": {
         "value": "Avatar personalizzabile con badge, posizione e media iniziale",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "バッジや位置、最初のメディアでカスタマイズ可能なアバター",
+        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Halo Taste",
+        "state": "final"
+      },
       "en": {
         "value": "Halo Button",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón Halo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton Halo",
+        "state": "final"
       },
       "it": {
         "value": "Halo Button",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "Haloボタン",
+        "state": "final"
       }
     }
   },
   {
     "id": "VARIABLES.HALO_IMG",
     "values": {
+      "de": {
+        "value": "Bild Avatar",
+        "state": "final"
+      },
       "en": {
         "value": "Avatar Image",
+        "state": "final"
+      },
+      "es": {
+        "value": "Imagen de avatar",
         "state": "final"
       },
       "fr": {
@@ -49,9 +89,17 @@
   {
     "id": "VARIABLES.HORIZONTAL",
     "values": {
+      "de": {
+        "value": "Horizontale Positionierung",
+        "state": "final"
+      },
       "en": {
         "value": "Horizontal Position",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Posición horizontal",
+        "state": "final"
       },
       "fr": {
         "value": "Positionnement horizontal",
@@ -70,13 +118,29 @@
   {
     "id": "VARIABLES.MEDIA_TO_USE",
     "values": {
+      "de": {
+        "value": "Medium für den ersten Kontakt",
+        "state": "final"
+      },
       "en": {
-        "value": "Media to use to start the engagement with",
-        "state": "needs-review"
+        "value": "Media to use to begin the engagement ",
+        "state": "final"
+      },
+      "es": {
+        "value": "Medios de comunicación para utilizar y empezar la participación",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Média à utiliser pour commencer le contact",
+        "state": "final"
       },
       "it": {
         "value": "Media da usare per iniziare il contatto",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "問い合わせ開始に使用するメディア",
+        "state": "final"
       }
     }
   }
