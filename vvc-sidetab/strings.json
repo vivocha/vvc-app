@@ -7,7 +7,7 @@
         "state": "final"
       },
       "en": {
-        "value": "Engage the visitor by showing a side multimedia label",
+        "value": "Engage the visitor by showing a multimedia side label",
         "state": "final"
       },
       "es": {
@@ -118,26 +118,58 @@
   {
     "id": "STRINGS.CONTACT_US",
     "values": {
+      "de": {
+        "value": "Wir kontaktieren dich",
+        "state": "final"
+      },
       "en": {
-        "value": "we'll contact you",
-        "state": "needs-review"
+        "value": "we’ll contact you",
+        "state": "final"
+      },
+      "es": {
+        "value": "Nos pondremos en contacto contigo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Nous vous recontacterons",
+        "state": "final"
       },
       "it": {
         "value": "ti contattiamo noi",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "弊社よりご連絡いたします",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.FROM_WEB",
     "values": {
+      "de": {
+        "value": "AUS DEM WEB",
+        "state": "final"
+      },
       "en": {
-        "value": "FROM WEB",
-        "state": "needs-review"
+        "value": "FROM THE WEB",
+        "state": "final"
+      },
+      "es": {
+        "value": "DESDE LA WEB",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Par Internet",
+        "state": "final"
       },
       "it": {
         "value": "DAL WEB",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "ウェブから",
+        "state": "final"
       }
     }
   },
