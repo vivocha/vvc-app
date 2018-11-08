@@ -60,13 +60,29 @@
   {
     "id": "STRINGS.CBN",
     "values": {
+      "de": {
+        "value": "TELEFON",
+        "state": "final"
+      },
       "en": {
         "value": "PHONE",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "TELÉFONO",
+        "state": "final"
+      },
+      "fr": {
+        "value": "TÉLÉPHONE",
+        "state": "final"
       },
       "it": {
         "value": "PHONE",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "電話",
+        "state": "final"
       }
     }
   },
@@ -102,26 +118,58 @@
   {
     "id": "STRINGS.CONTACT_US",
     "values": {
+      "de": {
+        "value": "wir kontaktieren dich",
+        "state": "final"
+      },
       "en": {
         "value": "we'll contact you",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Nos pondremos en contacto contigo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Nous vous recontacterons",
+        "state": "final"
       },
       "it": {
         "value": "ti contattiamo noi",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "こちらからご連絡いたします",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.FROM_WEB",
     "values": {
+      "de": {
+        "value": "AUS DEM WEB",
+        "state": "final"
+      },
       "en": {
-        "value": "FROM WEB",
-        "state": "needs-review"
+        "value": "FROM THE WEB",
+        "state": "final"
+      },
+      "es": {
+        "value": "DESDE LA WEB",
+        "state": "final"
+      },
+      "fr": {
+        "value": "par Internet",
+        "state": "final"
       },
       "it": {
         "value": "DAL WEB",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "ウェブから",
+        "state": "final"
       }
     }
   },
@@ -157,9 +205,17 @@
   {
     "id": "STRINGS.RECONTACT",
     "values": {
+      "de": {
+        "value": "Oder wir kontaktieren dich!",
+        "state": "final"
+      },
       "en": {
         "value": "Or we'll contact you!",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "¡O nos pondremos en contacto contigo!",
+        "state": "final"
       },
       "fr": {
         "value": "Ou nous vous contacterons nous-même !",
@@ -178,8 +234,16 @@
   {
     "id": "STRINGS.VIDEO",
     "values": {
+      "de": {
+        "value": "VIDEO",
+        "state": "final"
+      },
       "en": {
         "value": "VIDEO",
+        "state": "final"
+      },
+      "es": {
+        "value": "VÍDEO",
         "state": "final"
       },
       "fr": {
@@ -199,8 +263,16 @@
   {
     "id": "STRINGS.VOICE",
     "values": {
+      "de": {
+        "value": "STIMME",
+        "state": "final"
+      },
       "en": {
         "value": "VOICE",
+        "state": "final"
+      },
+      "es": {
+        "value": "VOZ",
         "state": "final"
       },
       "fr": {
@@ -220,13 +292,29 @@
   {
     "id": "STRINGS.WEBLEAD",
     "values": {
+      "de": {
+        "value": "E-MAIL",
+        "state": "final"
+      },
       "en": {
         "value": "EMAIL",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "CORREO ELECTRÓNICO",
+        "state": "final"
+      },
+      "fr": {
+        "value": "E-MAIL",
+        "state": "final"
       },
       "it": {
         "value": "EMAIL",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "Eメール",
+        "state": "final"
       }
     }
   },
