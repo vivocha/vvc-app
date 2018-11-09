@@ -31,65 +31,145 @@
   {
     "id": "META.GROUPS.appSelector",
     "values": {
+      "de": {
+        "value": "Suche eine Interaktions-App aus",
+        "state": "final"
+      },
       "en": {
         "value": "Select an interaction app",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Seleccionar una aplicación de interacción",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Sélectionner une application d'interaction",
+        "state": "final"
       },
       "it": {
         "value": "Seleziona un'app di interazione",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "対話用のアプリをお選びください",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.Audio",
     "values": {
+      "de": {
+        "value": "Akustische Nachrichten",
+        "state": "final"
+      },
       "en": {
         "value": "Audio notification",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Audio de notificación",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Notifications sonores",
+        "state": "final"
       },
       "it": {
         "value": "Notifiche sonore",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "音でお知らせ",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.Balloon",
     "values": {
+      "de": {
+        "value": "Chatblase",
+        "state": "final"
+      },
       "en": {
         "value": "Chat Balloon",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Globo del chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bulle Chat",
+        "state": "final"
       },
       "it": {
         "value": "Chat Balloon",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "チャット吹き出し",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.CALL_REJECTED",
     "values": {
+      "de": {
+        "value": "Anruf abgelehnt",
+        "state": "final"
+      },
       "en": {
         "value": "Call Status",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Estado de la llamada",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Appel refusé",
+        "state": "final"
       },
       "it": {
         "value": "Chiamata Rifiutata",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "通話拒否",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.CBN",
     "values": {
+      "de": {
+        "value": "Nachrichten ruf mich zurück",
+        "state": "final"
+      },
       "en": {
         "value": "Call me back messages",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Mensajes de «llámame»",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Messages call me back",
+        "state": "final"
       },
       "it": {
         "value": "Messaggi call me back",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "折り返し依頼メッセージ",
+        "state": "final"
       }
     }
   },
@@ -105,6 +185,10 @@
         "state": "final"
       },
       "es": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "fr": {
         "value": "Chat",
         "state": "final"
       },
@@ -133,6 +217,10 @@
         "value": "Cierre modal",
         "state": "final"
       },
+      "fr": {
+        "value": "Fermeture Modal",
+        "state": "final"
+      },
       "it": {
         "value": "Chiusura Modal",
         "state": "final"
@@ -146,104 +234,232 @@
   {
     "id": "META.GROUPS.Collector",
     "values": {
+      "de": {
+        "value": "Datenerfassung",
+        "state": "final"
+      },
       "en": {
         "value": "Data Collection",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Colección de datos",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Recueil de données",
+        "state": "final"
       },
       "it": {
         "value": "Data Collection",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "データ収集",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.Colors",
     "values": {
+      "de": {
+        "value": "Farben",
+        "state": "final"
+      },
       "en": {
-        "value": "Colors",
-        "state": "needs-review"
+        "value": "Colours",
+        "state": "final"
+      },
+      "es": {
+        "value": "Colores",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleurs",
+        "state": "final"
       },
       "it": {
         "value": "Colori",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "色",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.cssSelector",
     "values": {
+      "de": {
+        "value": "CSS Selektoren",
+        "state": "final"
+      },
       "en": {
-        "value": "Css selector",
-        "state": "needs-review"
+        "value": "CSS selector",
+        "state": "final"
+      },
+      "es": {
+        "value": "Selector CSS",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Slecteur CSS",
+        "state": "final"
       },
       "it": {
-        "value": "Selettore css",
+        "value": "Selettore CSS",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "CSSセレクター",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.customCss",
     "values": {
+      "de": {
+        "value": "CSS Standard",
+        "state": "final"
+      },
       "en": {
         "value": "Custom CSS",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "CSS personalizado",
+        "state": "final"
+      },
+      "fr": {
+        "value": "CSS Custom",
+        "state": "final"
       },
       "it": {
         "value": "CSS Custom",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "CSSカスタム",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.DC",
     "values": {
+      "de": {
+        "value": "Datenerfassung",
+        "state": "final"
+      },
       "en": {
         "value": "Data Collection",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Colección de datos",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Recueil de données",
+        "state": "final"
       },
       "it": {
         "value": "Data Collection",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "データ収集",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.DimensionAndPosition",
     "values": {
+      "de": {
+        "value": "Größe und Position",
+        "state": "final"
+      },
       "en": {
         "value": "Dimensions and positions",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Dimensiones y posiciones",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Dimensions et positionnement",
+        "state": "final"
       },
       "it": {
         "value": "Dimensioni e posizionamento",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "サイズと位置",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.EMOJI",
     "values": {
+      "de": {
+        "value": "Emoji Panel",
+        "state": "final"
+      },
       "en": {
         "value": "Emoji Panel",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Panel de emoji",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Panneau Emoji",
+        "state": "final"
       },
       "it": {
         "value": "Pannello Emoji",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "絵文字パネル",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.FilesAndEmoji",
     "values": {
+      "de": {
+        "value": "Datei und Emoji",
+        "state": "final"
+      },
       "en": {
         "value": "Files and emoji",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Archivos y emoji",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Fichier et emoji",
+        "state": "final"
       },
       "it": {
         "value": "File ed emoji",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "ファイルと絵文字",
+        "state": "final"
       }
     }
   },
@@ -279,26 +495,58 @@
   {
     "id": "META.GROUPS.LINK_PUSH",
     "values": {
+      "de": {
+        "value": "Nachrichten empfangener Link",
+        "state": "final"
+      },
       "en": {
         "value": "Link push messages",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Enlazar mensajes push",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Messages reception lien",
+        "state": "final"
       },
       "it": {
         "value": "Messaggi ricezione link",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "メッセージ受信リンク",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.MEDIA",
     "values": {
+      "de": {
+        "value": "Medienverwaltung",
+        "state": "final"
+      },
       "en": {
         "value": "Media Management",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Gestión de medios de comunicación",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Gestion Média",
+        "state": "final"
       },
       "it": {
         "value": "Gestione Media",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "メディア管理",
+        "state": "final"
       }
     }
   },
@@ -363,13 +611,29 @@
   {
     "id": "META.GROUPS.NEXT_BUTTON",
     "values": {
+      "de": {
+        "value": "Taste weiter",
+        "state": "final"
+      },
       "en": {
         "value": "Continue Button",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón de continuar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton suivant",
+        "state": "final"
       },
       "it": {
         "value": "Bottone continua",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "継続ボタン",
+        "state": "final"
       }
     }
   },
@@ -434,12 +698,28 @@
   {
     "id": "META.GROUPS.RECONTACT",
     "values": {
+      "de": {
+        "value": "Erneute Kontaktaufnahme",
+        "state": "needs-review"
+      },
       "en": {
         "value": "Recontact",
         "state": "needs-review"
       },
+      "es": {
+        "value": "Volver a contactar",
+        "state": "needs-review"
+      },
+      "fr": {
+        "value": "Recontacter",
+        "state": "needs-review"
+      },
       "it": {
         "value": "Ricontatto",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "再問い合わせ",
         "state": "needs-review"
       }
     }
@@ -476,13 +756,29 @@
   {
     "id": "META.GROUPS.TEXTAREA",
     "values": {
+      "de": {
+        "value": "Textbereich",
+        "state": "final"
+      },
       "en": {
         "value": "Text Area",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Área del texto",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Zone de texte",
+        "state": "final"
       },
       "it": {
         "value": "Area di testo",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "テストエリア",
+        "state": "final"
       }
     }
   },
@@ -576,52 +872,116 @@
   {
     "id": "META.GROUPS.UPLOAD",
     "values": {
+      "de": {
+        "value": "Leiste zum Hochladen",
+        "state": "final"
+      },
       "en": {
         "value": "Upload Panel",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Panel de subida",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Panneau de téléchargement",
+        "state": "final"
       },
       "it": {
         "value": "Pannello di upload",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "アップロードパネル",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.GROUPS.VOICE",
     "values": {
+      "de": {
+        "value": "Stimme",
+        "state": "final"
+      },
       "en": {
         "value": "Voice messages",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Mensajes de voz",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voix",
+        "state": "final"
       },
       "it": {
         "value": "Voce",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.SECTIONS.Agent",
     "values": {
+      "de": {
+        "value": "Agent",
+        "state": "final"
+      },
       "en": {
         "value": "Agent",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Agente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Agent",
+        "state": "final"
       },
       "it": {
         "value": "Agente",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "エージェント",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.SECTIONS.Visitor",
     "values": {
+      "de": {
+        "value": "Besucher",
+        "state": "final"
+      },
       "en": {
         "value": "Visitor",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Visitante",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Visiteur",
+        "state": "final"
       },
       "it": {
         "value": "Visitatore",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "訪問者",
+        "state": "final"
       }
     }
   },
@@ -657,9 +1017,17 @@
   {
     "id": "META.TABS.EarlyChat",
     "values": {
+      "de": {
+        "value": "Früher Chat",
+        "state": "final"
+      },
       "en": {
         "value": "Early Chat",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Chat temprano",
+        "state": "final"
       },
       "fr": {
         "value": "Early Chat",
@@ -670,34 +1038,66 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "Early Chat",
-        "state": "needs-review"
+        "value": "初期のチャット",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.TABS.General",
     "values": {
+      "de": {
+        "value": "Generelles",
+        "state": "final"
+      },
       "en": {
         "value": "General",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "General",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Générales",
+        "state": "final"
       },
       "it": {
         "value": "Generali",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "一般",
+        "state": "final"
       }
     }
   },
   {
     "id": "META.TABS.style",
     "values": {
+      "de": {
+        "value": "Stil",
+        "state": "final"
+      },
       "en": {
         "value": "Style",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Estilo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Style",
+        "state": "final"
       },
       "it": {
         "value": "Stile",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "スタイル",
+        "state": "final"
       }
     }
   },
@@ -705,7 +1105,7 @@
     "id": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM",
     "values": {
       "de": {
-        "value": "Um Bestätigung des Beenden bitten",
+        "value": "Bestätigung erforderlich, bevor der Kontakt beendet wird",
         "state": "final"
       },
       "en": {
@@ -970,7 +1370,7 @@
         "state": "final"
       },
       "en": {
-        "value": "User chat balloon color",
+        "value": "User chat balloon colour",
         "state": "final"
       },
       "es": {
@@ -1215,7 +1615,7 @@
         "state": "final"
       },
       "en": {
-        "value": "BOT app color",
+        "value": "BOT app colour",
         "state": "final"
       },
       "es": {
@@ -1244,7 +1644,7 @@
         "state": "final"
       },
       "en": {
-        "value": "Message received audio notification",
+        "value": "Audio notification message received",
         "state": "final"
       },
       "es": {
@@ -1500,9 +1900,17 @@
   {
     "id": "STRINGS.CBN.BUSY",
     "values": {
+      "de": {
+        "value": "Die Telefonnummer ist besetzt",
+        "state": "final"
+      },
       "en": {
         "value": "The telephone number is busy",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "El número de teléfono está ocupado",
+        "state": "final"
       },
       "fr": {
         "value": "Le numéro est occupé",
@@ -1513,17 +1921,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "電話番号が話し中です",
-        "state": "needs-review"
+        "value": "この電話番号は話し中です",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.BUSY_M",
     "values": {
+      "de": {
+        "value": "Die Telefonnummer ist besetzt",
+        "state": "final"
+      },
       "en": {
         "value": "The telephone number is busy",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "El número de teléfono está ocupado",
+        "state": "final"
       },
       "fr": {
         "value": "Le numéro est occupé",
@@ -1534,17 +1950,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "電話番号が話し中です",
-        "state": "needs-review"
+        "value": "この電話番号は話し中です",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.CANCEL",
     "values": {
+      "de": {
+        "value": "Anruf abgebrochen bevor geantwortet wurde",
+        "state": "final"
+      },
       "en": {
-        "value": "Call canceled before answering",
-        "state": "needs-review"
+        "value": "Call cancelled before answering",
+        "state": "final"
+      },
+      "es": {
+        "value": "La llamada se ha cancelado antes de responder",
+        "state": "final"
       },
       "fr": {
         "value": "Appel annulé avant d'être pris en charge",
@@ -1555,17 +1979,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "応答前に電話が切れました",
-        "state": "needs-review"
+        "value": "応答前に電話が切れました　",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.CANCEL_M",
     "values": {
+      "de": {
+        "value": "Anruf abgebrochen bevor geantwortet wurde",
+        "state": "final"
+      },
       "en": {
-        "value": "Call canceled before answering",
-        "state": "needs-review"
+        "value": "Call cancelled before answering",
+        "state": "final"
+      },
+      "es": {
+        "value": "La llamada se ha cancelado antes de responder",
+        "state": "final"
       },
       "fr": {
         "value": "Appel annulé avant d'être pris en charge",
@@ -1577,16 +2009,24 @@
       },
       "ja": {
         "value": "応答前に電話が切れました",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.DIAL",
     "values": {
+      "de": {
+        "value": "Der Agent {{nickname}} wählt gerade die Telefonnummer",
+        "state": "final"
+      },
       "en": {
         "value": "Agent {{nickname}} is dialing the telephone number",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "El agente {{nickname}} está marcando el número de teléfono",
+        "state": "final"
       },
       "fr": {
         "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
@@ -1597,17 +2037,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
-        "state": "needs-review"
+        "value": "エージェント{{nickname}}がこの電話番号をダイヤルしています",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.DIAL_M",
     "values": {
+      "de": {
+        "value": "Der Agent {{nickname}} wählt gerade die Telefonnummer",
+        "state": "final"
+      },
       "en": {
         "value": "Agent {{nickname}} is dialing the telephone number",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "El agente {{nickname}} está marcando el número de teléfono",
+        "state": "final"
       },
       "fr": {
         "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
@@ -1618,17 +2066,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "エージェント{{nickname}}が電話番号をダイヤルしています",
-        "state": "needs-review"
+        "value": "エージェント{{nickname}}がこの電話番号をダイヤルしています",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.ERROR",
     "values": {
+      "de": {
+        "value": "Wir konnten dir leider nicht weiterhelfen.<br /> Versuche es bitte später nochmal.",
+        "state": "final"
+      },
       "en": {
         "value": "Unfortunately it was not possible to fulfill your request.<br />Please try again later.",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Por desgracia no se ha podido realizar su petición.<br/>Inténtelo de nuevo más adelante.",
+        "state": "final"
       },
       "fr": {
         "value": "Malheureusement, nous ne pouvons pas donner suite à votre demande.<br/>Veuillez réessayer ultérieurement.",
@@ -1639,17 +2095,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "残念ながら、お客様のリクエストにお答えすることができませんでした。<br/>しばらくしてからもう一度お試しください。",
-        "state": "needs-review"
+        "value": "申し訳ございません。お客様のリクエストにお答えすることができませんでした。<br/>しばらくしてからもう一度お試しください。",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.INLINE",
     "values": {
+      "de": {
+        "value": "Verbunden mit {{nickname}}",
+        "state": "final"
+      },
       "en": {
         "value": "On the line with {{nickname}}",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "En línea con {{nickname}}",
+        "state": "final"
       },
       "fr": {
         "value": "En ligne avec {{nickname}}",
@@ -1660,17 +2124,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "通話相手： {{nickname}}",
-        "state": "needs-review"
+        "value": "{{nickname}}と通話中です",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.INLINE_M",
     "values": {
+      "de": {
+        "value": "Verbunden mit {{nickname}}",
+        "state": "final"
+      },
       "en": {
         "value": "On the line with {{nickname}}",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "En línea con {{nickname}}",
+        "state": "final"
       },
       "fr": {
         "value": "En ligne avec {{nickname}}",
@@ -1681,17 +2153,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "通話相手： {{nickname}}",
-        "state": "needs-review"
+        "value": "{{nickname}}と通話中です",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.JOIN",
     "values": {
+      "de": {
+        "value": "Einer unser Agenten hat den Anruf angenommen",
+        "state": "final"
+      },
       "en": {
         "value": "Our agent has taken the call",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Nuestro agente ha cogido la llamada",
+        "state": "final"
       },
       "fr": {
         "value": "Notre agent a pris en charge l'appel",
@@ -1702,17 +2182,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "当社のエージェントが通話を引き継ぎました",
-        "state": "needs-review"
+        "value": "当社のエージェントがこの通話を引き継ぎました",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.JOIN_M",
     "values": {
+      "de": {
+        "value": "Einer unser Agenten hat den Anruf angenommen",
+        "state": "final"
+      },
       "en": {
         "value": "Our agent has taken the call",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Nuestro agente ha cogido la llamada",
+        "state": "final"
       },
       "fr": {
         "value": "Notre agent a pris en charge l'appel",
@@ -1723,17 +2211,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "当社のエージェントが通話を引き継ぎました",
-        "state": "needs-review"
+        "value": "当社のエージェントがこの通話を引き継ぎました",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.LEFT",
     "values": {
+      "de": {
+        "value": "Das Gespräch mit dem Agenten {{nickname}} ist beendet",
+        "state": "final"
+      },
       "en": {
         "value": "The call has been terminated",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "La llamada se ha terminado",
+        "state": "final"
       },
       "fr": {
         "value": "L'appel avec l'agent {{nickname}} est terminé",
@@ -1744,17 +2240,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "エージェント{{nickname}}との通話が終了しました",
-        "state": "needs-review"
+        "value": "エージェント{{nickname}}との通話が終了しました　",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.LEFT_M",
     "values": {
+      "de": {
+        "value": "Das Gespräch mit dem Agenten {{nickname}} ist beendet",
+        "state": "final"
+      },
       "en": {
         "value": "The call has been terminated",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "La llamada se ha terminado",
+        "state": "final"
       },
       "fr": {
         "value": "L'appel avec l'agent {{nickname}} est terminé",
@@ -1765,17 +2269,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "エージェント{{nickname}}との通話が終了しました",
-        "state": "needs-review"
+        "value": "エージェント{{nickname}}との通話が終了しました　",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.LINK_PUSH",
     "values": {
+      "de": {
+        "value": "Du hast einen Link erhalten",
+        "state": "final"
+      },
       "en": {
         "value": "You have received a link",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Ha recibido un enlace",
+        "state": "final"
       },
       "fr": {
         "value": "Vous avez reçu un lien",
@@ -1786,30 +2298,54 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "リンクを受信しました",
-        "state": "needs-review"
+        "value": "リンクを受信しました　",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.NEW_MESSAGES_M",
     "values": {
+      "de": {
+        "value": "Neue Nachrichten",
+        "state": "final"
+      },
       "en": {
         "value": "new messages",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "nuevos mensajes",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Nouveaux messages",
+        "state": "final"
       },
       "it": {
         "value": "nuovi messaggi",
         "state": "needs-review"
+      },
+      "ja": {
+        "value": "新しいメッセージ",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.NOANSWER",
     "values": {
+      "de": {
+        "value": "Keine Antwort",
+        "state": "final"
+      },
       "en": {
         "value": "No answer",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Sin respuesta",
+        "state": "final"
       },
       "fr": {
         "value": "Pas de réponse",
@@ -1820,17 +2356,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "返答なし",
-        "state": "needs-review"
+        "value": "応答なし",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.NOANSWER_M",
     "values": {
+      "de": {
+        "value": "Keine Antwort",
+        "state": "final"
+      },
       "en": {
         "value": "No answer",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Sin respuesta",
+        "state": "final"
       },
       "fr": {
         "value": "Pas de réponse",
@@ -1841,17 +2385,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "返答なし",
-        "state": "needs-review"
+        "value": "応答なし",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.NOTEXISTS",
     "values": {
+      "de": {
+        "value": "Die Nummer existiert nicht",
+        "state": "final"
+      },
       "en": {
         "value": "Number does not exist",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "No existe el número",
+        "state": "final"
       },
       "fr": {
         "value": "Numéro inexistant",
@@ -1862,17 +2414,25 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "番号が存在しません",
-        "state": "needs-review"
+        "value": "この番号は存在しません",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.NOTEXISTS_M",
     "values": {
+      "de": {
+        "value": "Die Nummer existiert nicht",
+        "state": "final"
+      },
       "en": {
         "value": "Number does not exist",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "No existe el número",
+        "state": "final"
       },
       "fr": {
         "value": "Numéro inexistant",
@@ -1883,16 +2443,24 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "番号が存在しません",
-        "state": "needs-review"
+        "value": "この番号は存在しません",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.RING",
     "values": {
+      "de": {
+        "value": "Dein Telefon klingelt gleich. <br> Halte dein Telefon bereit",
+        "state": "needs-review"
+      },
       "en": {
-        "value": "The telephone is ringing",
+        "value": "The telephone is ringing. <br> Keep your phone at your fingertips.",
+        "state": "needs-review"
+      },
+      "es": {
+        "value": "El teléfono está sonando",
         "state": "needs-review"
       },
       "fr": {
@@ -1900,11 +2468,11 @@
         "state": "needs-review"
       },
       "it": {
-        "value": "Il tuo telefono sta per squillare. <br> Tieni il tuo telefono a portata di mano.",
-        "state": "needs-review"
+        "value": "Il tuo telefono sta per squillare. <br> Tienilo a portata di mano!",
+        "state": "final"
       },
       "ja": {
-        "value": "電話が鳴っています",
+        "value": "間もなく電話が鳴ります。<br>電話を手元に置いておいてください。",
         "state": "needs-review"
       }
     }
@@ -1912,9 +2480,17 @@
   {
     "id": "STRINGS.CBN.RING_M",
     "values": {
+      "de": {
+        "value": "Das Telefon klingelt gleich",
+        "state": "final"
+      },
       "en": {
         "value": "The telephone is ringing",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "El teléfono está sonando",
+        "state": "final"
       },
       "fr": {
         "value": "Le téléphone est en train de sonner",
@@ -1925,92 +2501,124 @@
         "state": "needs-review"
       },
       "ja": {
-        "value": "電話が鳴っています",
-        "state": "needs-review"
+        "value": "間もなく電話が鳴ります",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.SUCCESS",
     "values": {
+      "de": {
+        "value": "Deine Anfrage wurde registriert.<br /> Du wirst in Kürze kontaktiert.",
+        "state": "final"
+      },
       "en": {
         "value": "Your request was recorded successfully.<br />You will be contacted shortly.",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Su solicitud se ha registrado con éxito.<br/>Nos pondremos en contacto pronto.",
+        "state": "final"
       },
       "fr": {
         "value": "Votre demande a bien été enregistrée.<br/>Nous vous rappellerons sous peu.",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "La tua richiesta è stata registrata con successo.<br /> A breve verrai contattato.",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "リクエストが正常に記録されました。<br />すぐに連絡させていただきます。",
-        "state": "needs-review"
+        "value": "リクエストが正常に記録されました。<br />早急にご連絡いたします。",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.SUCCESS_M",
     "values": {
+      "de": {
+        "value": "Du wirst in Kürze kontaktiert.",
+        "state": "final"
+      },
       "en": {
         "value": "You will be contacted shortly.",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Nos pondremos en contacto pronto.",
+        "state": "final"
       },
       "fr": {
         "value": "Nous vous rappellerons sous peu.",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "A breve verrai contattato.",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "すぐに連絡させていただきます。",
-        "state": "needs-review"
+        "value": "早急にご連絡いたします。",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.WRONG_NUMBER",
     "values": {
+      "de": {
+        "value": "Falsche Nummer",
+        "state": "final"
+      },
       "en": {
         "value": "Wrong number",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Número incorrecto",
+        "state": "final"
       },
       "fr": {
         "value": "Numéro erroné",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Numero sbagliato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "番号が間違っています",
-        "state": "needs-review"
+        "value": "番号が間違っています　",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CBN.WRONG_NUMBER_M",
     "values": {
+      "de": {
+        "value": "Falsche Nummer",
+        "state": "final"
+      },
       "en": {
         "value": "Wrong number",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Número incorrecto",
+        "state": "final"
       },
       "fr": {
         "value": "Numéro erroné",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Numero sbagliato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "番号が間違っています",
-        "state": "needs-review"
+        "value": "番号が間違っています　",
+        "state": "final"
       }
     }
   },
@@ -2481,105 +3089,161 @@
   {
     "id": "STRINGS.MEDIA.ACCEPT",
     "values": {
+      "de": {
+        "value": "Akzeptieren",
+        "state": "final"
+      },
       "en": {
         "value": "Accept",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Aceptar",
+        "state": "final"
       },
       "fr": {
         "value": "Accepter",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Accetta",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "受領",
-        "state": "needs-review"
+        "value": "了承",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.CLOSE_CALL",
     "values": {
+      "de": {
+        "value": "Anruf beenden",
+        "state": "final"
+      },
       "en": {
         "value": "Close call",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Cerrar llamada",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Terminer appel",
+        "state": "final"
       },
       "it": {
         "value": "Chiudi chiamata",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "通話を終了",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.DECLINE",
     "values": {
+      "de": {
+        "value": "Ablehnen",
+        "state": "final"
+      },
       "en": {
         "value": "Decline",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Declinar",
+        "state": "final"
       },
       "fr": {
         "value": "Refuser",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Rifiuta",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "拒否",
-        "state": "needs-review"
+        "value": "拒否　",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.MINIMIZE_VIDEO",
     "values": {
+      "de": {
+        "value": "Video verkleinern",
+        "state": "final"
+      },
       "en": {
-        "value": "Collapse video",
-        "state": "needs-review"
+        "value": "Reduce video",
+        "state": "final"
+      },
+      "es": {
+        "value": "Minimizar vídeo",
+        "state": "final"
       },
       "fr": {
         "value": "Réduire la vidéo",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Riduci video",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオを抑える",
-        "state": "needs-review"
+        "value": "動画を縮小",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.MUTED",
     "values": {
+      "de": {
+        "value": "Mikrofon ausgeschaltet",
+        "state": "final"
+      },
       "en": {
         "value": "Microphone disabled",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Micrófono desactivado",
+        "state": "final"
       },
       "fr": {
         "value": "Microphone muet",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Microfono disabilitato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "マイクが無効",
-        "state": "needs-review"
+        "value": "マイクをミュート",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.TOOLTIPS.MAXIMIZE_VIDEO",
     "values": {
+      "de": {
+        "value": "Erweitern",
+        "state": "final"
+      },
       "en": {
         "value": "expand",
+        "state": "final"
+      },
+      "es": {
+        "value": "expandir",
         "state": "final"
       },
       "fr": {
@@ -2599,136 +3263,232 @@
   {
     "id": "STRINGS.MEDIA.TOOLTIPS.MINIMIZE_VIDEO",
     "values": {
+      "de": {
+        "value": "Video verkleinern",
+        "state": "final"
+      },
       "en": {
-        "value": "Collapse video",
-        "state": "needs-review"
+        "value": "Reduce video",
+        "state": "final"
+      },
+      "es": {
+        "value": "Minimizar vídeo",
+        "state": "final"
       },
       "fr": {
         "value": "Réduire la vidéo",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Riduci video",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオを抑える",
-        "state": "needs-review"
+        "value": "動画を縮小",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.TOOLTOPS.HIDE_VIDEOS",
     "values": {
+      "de": {
+        "value": "Die anderen Videos ausblenden",
+        "state": "final"
+      },
       "en": {
         "value": "Hide small videos",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Ocultar vídeos pequeños",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Cacher les autres vidéos",
+        "state": "final"
       },
       "it": {
         "value": "Nascondi gli altri video",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "他の動画を非表示",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.TOOLTOPS.SHOW_VIDEOS",
     "values": {
+      "de": {
+        "value": "Die anderen Videos anzeigen",
+        "state": "final"
+      },
       "en": {
         "value": "Show small videos",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Mostrar vídeos pequeños",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Montrer les autres vidéos",
+        "state": "final"
       },
       "it": {
         "value": "Mostra gli altri video",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "他の動画を表示",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING",
     "values": {
+      "de": {
+        "value": "Video von Remote auf Sharing ändern",
+        "state": "final"
+      },
       "en": {
         "value": "Switch remote video with sharing",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Cambiar el vídeo remoto al compartir",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Changer la video à distance avec le partage",
+        "state": "final"
       },
       "it": {
         "value": "Cambia il video remoto con lo sharing",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "共有でリモート動画を変更",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.TOOLTOPS.SWITCH_SHARING_REMOTE",
     "values": {
+      "de": {
+        "value": "Video von Sharing auf Remote ändern",
+        "state": "final"
+      },
       "en": {
         "value": "Switch sharing with remote video",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Cambiar compartir con el vídeo remoto",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Changer le partage avec la vidéo à distance",
+        "state": "final"
       },
       "it": {
         "value": "Cambia lo sharing con il video remoto",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "ja": {
+        "value": "リモート動画で共有を変更",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.UNMUTED",
     "values": {
+      "de": {
+        "value": "Mikrofon eingeschaltet",
+        "state": "final"
+      },
       "en": {
         "value": "Microphone enabled",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Micrófono activado",
+        "state": "final"
       },
       "fr": {
         "value": "Microphone activé",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Microfono abilitato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "マイクが有効",
-        "state": "needs-review"
+        "value": "マイクのミュートを解除",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.VIDEO_DISABLED",
     "values": {
+      "de": {
+        "value": "Video ausgeschaltet",
+        "state": "final"
+      },
       "en": {
         "value": "Video disabled",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Vídeo desactivado",
+        "state": "final"
       },
       "fr": {
         "value": "Vidéo désactivée",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Video disabilitato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオ使用不可",
-        "state": "needs-review"
+        "value": "ビデオ無効",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.MEDIA.VIDEO_ENABLED",
     "values": {
+      "de": {
+        "value": "Video eingeschaltet",
+        "state": "final"
+      },
       "en": {
         "value": "Video enabled",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Vídeo desactivado",
+        "state": "final"
       },
       "fr": {
         "value": "Vidéo activée",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Video abilitato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
-        "value": "ビデオ使用可",
-        "state": "needs-review"
+        "value": "ビデオ有効",
+        "state": "final"
       }
     }
   },
@@ -3465,7 +4225,7 @@
         "state": "final"
       },
       "en": {
-        "value": "Your request as been registered. We will contact you as soon as possible.",
+        "value": "Your request has been registered. We will contact you as soon as possible.",
         "state": "final"
       },
       "es": {
@@ -3519,7 +4279,7 @@
     "id": "STRINGS.SURVEY.FEEDBACK",
     "values": {
       "de": {
-        "value": "Deine Bewertung wurde gesendett.<br>Danke!",
+        "value": "Deine Bewertung wurde gesendet.<br>Danke!",
         "state": "final"
       },
       "en": {
