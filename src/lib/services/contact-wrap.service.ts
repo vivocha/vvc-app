@@ -429,6 +429,7 @@ export class VvcContactWrap {
         };
         if (isAgent) {
           this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
+          this.uiService.setIsWriting(false);
         } else {
           this.messageService.addChatMessage(msg, null, this.visitorNick);
         }
