@@ -155,7 +155,7 @@ export class VvcContactWrap {
             break;
           case 'attachment':
             const meta = msg.meta;
-            meta.url = (meta.originalUrl) ? meta.originalUrl : msg.url;
+            meta.url = (msg.url) ? msg.url : meta.originalUrl;
             const attachment = {
               body: meta.desc || meta.originalName,
               type: 'chat',
@@ -419,7 +419,7 @@ export class VvcContactWrap {
     this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
       this.zone.run( () => {
         // const attachment = {url, meta, fromId, fromNick, isAgent};
-        meta.url = (meta.originalUrl) ? meta.originalUrl : url;
+        meta.url = (url) ? url : meta.originalUrl;
         const msg = {
           body: meta.desc || meta.originalName,
           type: 'chat',
