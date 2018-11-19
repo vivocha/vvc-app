@@ -18,39 +18,45 @@ export class ChatAreaComponent {
   isWritingTimer;
   isWritingTimeout = 20000;
 
-  appendText(value){
+  appendText(value) {
     this.box.nativeElement.value += value;
     this.box.nativeElement.focus();
   }
-  canShowUpload(){
+  canShowUpload() {
     return (this.context &&
-            this.context.variables.showUploadButton &&
+            this.context.canUploadFile &&
             !this.context.isAutoChat &&
             !(this.context.variables.hideUploadWithBot && this.context.agent.is_bot));
   }
-  clearIsWriting(){
+  clearIsWriting() {
     clearTimeout(this.isWritingTimer);
     this.isWritingTimer = null;
   }
-  isWriting(){
-    if (!this.isWritingTimer){
+  isWriting() {
+    if (!this.isWritingTimer) {
       this.isVisitorWriting.emit();
       this.isWritingTimer = setTimeout( () => {
         this.clearIsWriting();
       }, this.isWritingTimeout);
     }
   }
-  showUpload(){
-    if (this.readonly) return;
-    this.showUploadPanel.emit()
+  showUpload() {
+    if (this.readonly) {
+      return;
+    }
+    this.showUploadPanel.emit();
   }
-  toggleEmoji(){
-    if (this.readonly) return;
-    this.toggleEmojiPanel.emit()
+  toggleEmoji() {
+    if (this.readonly) {
+      return;
+    }
+    this.toggleEmojiPanel.emit();
   }
-  sendText(value){
-    if (this.readonly) return;
-    if (value !== "") {
+  sendText(value) {
+    if (this.readonly) {
+      return;
+    }
+    if (value !== '') {
       this.onSendText.emit(value);
       this.clearIsWriting();
     }
