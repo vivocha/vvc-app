@@ -39,6 +39,8 @@ export const WIDGET_SHOW_QUEUE_PANEL      = '[Widget] Show Queue Panel';
 export const WIDGET_SHOW_UPLOAD_PANEL     = '[Widget] Show Upload Panel';
 export const WIDGET_TOGGLE_EMOJI          = '[Widget] Toggle Emoji Panel';
 export const WIDGET_UI_READY              = '[Widget] Ui Ready';
+export const WIDGET_UPDATE_REMOTE_CAPS    = '[Widget] Update Remote Capabilities';
+export const WIDGET_UPDATE_LOCAL_CAPS     = '[Widget] Update Local Capabilities';
 export const WIDGET_UPLOAD_COMPLETED      = '[Widget] Upload Completed';
 export const WIDGET_UPGRADE_CBN_TO_CHAT   = '[Widget] Upgrade Cbn to Chat';
 export const WIDGET_WEBLEAD_SENT          = '[Widget] Weblead Sent';
@@ -180,6 +182,14 @@ export class WidgetUploadCompleted implements Action {
 export class WidgetUiReady implements Action {
   readonly type = WIDGET_UI_READY;
 }
+export class WidgetUpdateRemoteCaps implements Action {
+  readonly type = WIDGET_UPDATE_REMOTE_CAPS;
+  constructor(public payload: any) {}
+}
+export class WidgetUpdateLocalCaps implements Action {
+  readonly type = WIDGET_UPDATE_LOCAL_CAPS;
+  constructor(public payload: any) {}
+}
 export class WidgetUpgradeCbnToChat implements Action {
   readonly type = WIDGET_UPGRADE_CBN_TO_CHAT;
 }
@@ -224,6 +234,8 @@ export type WidgetActions
   | WidgetShowQueuePanel
   | WidgetShowUploadPanel
   | WidgetToggleEmoji
+  | WidgetUpdateLocalCaps
+  | WidgetUpdateRemoteCaps
   | WidgetUploadCompleted
   | WidgetUiReady
   | WidgetUpgradeCbnToChat

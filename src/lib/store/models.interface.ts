@@ -54,6 +54,8 @@ export interface ProtocolState {
   isOffering?: boolean;
   offeringMedia?: string;
   contactStarted: boolean;
+  remoteCaps?: any;
+  localCaps?: any;
 }
 export interface AgentState {
   id: string;
@@ -166,6 +168,7 @@ export interface UiState {
   canRemoveApp: boolean;
   canStartAudio: boolean;
   canStartVideo: boolean;
+  canUploadFile?: boolean;
   cbnMode?: boolean;
   cbnState?: CbnStatus;
   connectedWithAgent: boolean;

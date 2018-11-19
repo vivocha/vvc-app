@@ -11,10 +11,10 @@ export class VvcProtocolService {
   currentChannels = [];
   constructor(
     private store: Store<AppState>
-  ){
+  ) {
 
   }
-  confirmNeeded(offer){
+  confirmNeeded(offer) {
     const resp = { askForConfirmation : false, offer: {}, media: '' };
 
     for (const i in offer) {
@@ -49,20 +49,22 @@ export class VvcProtocolService {
     return resp;
 
   }
-  getChannels(mediaChange){
+  getChannels(mediaChange) {
     const c = [];
     Object.keys(mediaChange).forEach( k => {
-      if (mediaChange[k].tx || mediaChange[k].rx) c.push(k);
+      if (mediaChange[k].tx || mediaChange[k].rx) {
+        c.push(k);
+      }
     });
     return c;
   }
-  isAlreadyConnectedWith(media){
+  isAlreadyConnectedWith(media) {
     return (
       this.lastMediaChange[media] &&
       this.lastMediaChange[media].tx &&
       this.lastMediaChange[media].rx);
   }
-  mergeOffer(diffOffer){
+  mergeOffer(diffOffer) {
     for (const m in diffOffer) {
       if (m === 'Video' && diffOffer[m].tx === 'optional') {
         diffOffer[m].tx = 'off';
@@ -72,7 +74,10 @@ export class VvcProtocolService {
     }
     return diffOffer;
   }
-  setMediaChange(media){
+  setMediaChange(media) {
     this.lastMediaChange = media;
+  }
+  updateCapabilities(caps) {
+
   }
 }

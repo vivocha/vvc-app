@@ -39,7 +39,15 @@ import {
   WidgetShowQueuePanel,
   WidgetSetVideoTransit,
   WidgetSetError,
-  WidgetSetDialogUi, WidgetWebleadSent, WidgetUiReady, WidgetHideQueueForChat, WidgetSetCbnMode, WidgetSetCbnState, WidgetUpgradeCbnToChat
+  WidgetSetDialogUi,
+  WidgetWebleadSent,
+  WidgetUiReady,
+  WidgetHideQueueForChat,
+  WidgetSetCbnMode,
+  WidgetSetCbnState,
+  WidgetUpgradeCbnToChat,
+  WidgetUpdateRemoteCaps,
+  WidgetUpdateLocalCaps
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
 
@@ -51,6 +59,12 @@ export class VvcUiService {
     this.store.select(getWidgetState).subscribe( state => {
       this.currentState = state;
     });
+  }
+  setLocalCaps(caps) {
+    this.store.dispatch(new WidgetUpdateLocalCaps(caps));
+  }
+  setRemoteCaps(caps) {
+    this.store.dispatch(new WidgetUpdateRemoteCaps(caps));
   }
   setCbnMode() {
     this.store.dispatch(new WidgetSetCbnMode(true));

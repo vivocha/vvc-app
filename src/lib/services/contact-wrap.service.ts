@@ -507,7 +507,7 @@ export class VvcContactWrap {
       // console.log('ON_LOCAL',caps);
     });
     this.contact.on('capabilities', caps => {
-      // console.log('ON_REMOTE',caps);
+      this.uiService.setRemoteCaps(caps);
     });
     this.contact.on('mediachange', async (media, changed) => {
       // console.log('mediachange', media, changed);
@@ -549,6 +549,11 @@ export class VvcContactWrap {
         this.setTransferTimer();
       });
     });
+
+    this.contact.getLocalCapabilities().then( (caps) => {
+      this.uiService.setLocalCaps(caps);
+    });
+
     Object.keys(this.customActions).forEach( a => {
       this.contact.on(a, (message, callback) => {
         this.zone.run( () => {
@@ -673,7 +678,9 @@ export class VvcContactWrap {
     }
   }
   onLocalJoin(join) {
-    // console.log('local join', join);
+    this.contact.getRemoteCapabilities().then( caps => {
+      this.uiService.setRemoteCaps(caps);
+    });
   }
   onMediaOffer(offer, cb) {
     this.uiService.setMediaOffer(offer);

@@ -229,6 +229,14 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, { isUiLoaded: true});
       return Object.assign({}, state, { context: context} );
     }
+    case fromWidget.WIDGET_UPDATE_LOCAL_CAPS: {
+      const protocol = Object.assign({}, state.protocol, {localCaps: action.payload });
+      return Object.assign({}, state, { protocol: protocol });
+    }
+    case fromWidget.WIDGET_UPDATE_REMOTE_CAPS: {
+      const protocol = Object.assign({}, state.protocol, {remoteCaps: action.payload });
+      return Object.assign({}, state, { protocol: protocol });
+    }
     case fromWidget.WIDGET_UPLOAD_COMPLETED: {
       const context = Object.assign({}, state.context, {isUploading: false, uploadCompleted: true });
       const chat = Object.assign({}, state.chat, {uploadPanelOpened: false});
@@ -306,6 +314,16 @@ export const getUiStateRedux = (
                                   widgetState.context.showQueuePanel ||
                                   !widgetState.context.isUiLoaded ||
                                   (dataCollectionState.selectedItem && !dataCollectionState.completed);
+  const canLocalAudio           = widgetState.protocol.localCaps &&
+                                  widgetState.protocol.localCaps.Media &&
+                                  widgetState.protocol.localCaps.Media.Voice &&
+                                  widgetState.protocol.localCaps.Media.Voice.Engine &&
+                                  widgetState.protocol.localCaps.Media.Voice.Engine.WebRTC;
+  const canLocalVideo           = widgetState.protocol.localCaps &&
+                                  widgetState.protocol.localCaps.Media &&
+                                  widgetState.protocol.localCaps.Media.Video &&
+                                  widgetState.protocol.localCaps.Media.Video.Engine &&
+                                  widgetState.protocol.localCaps.Media.Video.Engine.WebRTC;
   const canStartAudio           = widgetState.protocol.canStartAudio &&
                                   !hasAudio &&
                                   !isAudioConnecting &&
@@ -342,6 +360,13 @@ export const getUiStateRedux = (
                                       dataCollectionState.lastCompleted.type !== 'survey'
                                     )
                                   );
+  const canUploadFile           = widgetState.chat && widgetState.chat.canUploadFiles &&
+                                  (
+                                    widgetState.protocol.remoteCaps &&
+                                    widgetState.protocol.remoteCaps.Media &&
+                                    widgetState.protocol.remoteCaps.Media.Sharing &&
+                                    widgetState.protocol.remoteCaps.Media.Sharing.FileTransfer
+                                  );
     return {
       agent: widgetState.agent,
       messages: [...messagesState.list],
@@ -349,8 +374,9 @@ export const getUiStateRedux = (
       canMaximize: isVideoConnected || screenRxStream,
       canMinimize: true,
       canRemoveApp: canRemoveApp,
-      canStartAudio: canStartAudio,
-      canStartVideo: canStartVideo,
+      canStartAudio: canLocalAudio && canStartAudio,
+      canStartVideo: canLocalVideo && canStartVideo,
+      canUploadFile: canUploadFile,
       cbnMode: widgetState.context.cbnMode && !widgetState.context.showQueuePanel,
       cbnState: widgetState.context.cbnState,
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
