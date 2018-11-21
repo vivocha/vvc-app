@@ -458,12 +458,13 @@ export class VvcContactWrap {
         if (msg.type !== 'text') {
           return;
         }
+        const agent = (msg.agent) ? this.agent : false;
         if (msg.quick_replies) {
-          this.messageService.addQuickRepliesMessage(msg, this.agent);
+          this.messageService.addQuickRepliesMessage(msg, agent);
         } else if (msg.template) {
-          this.messageService.addTemplateMessage(msg, this.agent);
+          this.messageService.addTemplateMessage(msg, agent);
         } else {
-          this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
+          this.messageService.addChatMessage(msg, agent, this.visitorNick);
         }
         if (msg.agent) {
           this.uiService.setIsWriting(false);
