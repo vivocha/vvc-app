@@ -3435,6 +3435,19 @@
     }
   },
   {
+    "id": "STRINGS.MEDIA.VIDEO_CONTINUE",
+    "values": {
+      "en": {
+        "value": "continue",
+        "state": "new"
+      },
+      "it": {
+        "value": "continua",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "STRINGS.MEDIA.VIDEO_DISABLED",
     "values": {
       "de": {
@@ -3489,6 +3502,19 @@
       "ja": {
         "value": "ビデオ有効",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MEDIA.VIDEO_STOPPED",
+    "values": {
+      "en": {
+        "value": "The browser is preventing to reproduce the video stream, please click on continue to keep reproducing",
+        "state": "new"
+      },
+      "it": {
+        "value": "Il browser sta bloccando la riproduzione del video, clicca su continua per riattivare lo stream",
+        "state": "new"
       }
     }
   },

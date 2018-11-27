@@ -135,6 +135,9 @@ export class AppComponent implements OnInit {
   }
   exitFromFullScreen() {
     this.interactionService.setNormalScreen();
+    if (this.isMobile) {
+      this.interactionService.setDimensions(this.dimensions.fullscreen);
+    }
   }
   expandWidget(isFullScreen) {
     this.interactionService.maximizeWidget(isFullScreen, (isFullScreen || this.isMobile) ? this.dimensions.fullscreen : this.dimensions.normal);

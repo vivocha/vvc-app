@@ -796,9 +796,30 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           right: 10px;
         }
       }
+      .video-paused{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+        text-align: center;
+        background-color: rgba(0,0,0,0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+        .btn {
+          padding: 18px 30px;
+          button {
+            width: 100%;
+            @include btn-label();
+          }
+        }
+      }
       .size-tools{
         position: absolute;
-        display: none;
         z-index: 1;
         top: 4px;
         left: 4px;
@@ -810,29 +831,40 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
           padding: 5px;
           cursor: pointer;
           position: relative;
-          .tooltip{
-            visibility: hidden;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            top: 120%;
-            left: 20%;
-            opacity: 0;
-            transition: opacity 0.3s;
-            white-space: nowrap;
-            font-size: 12px;
+          .tooltip {
+            display: none;
           }
-          &:hover{
+        }
+
+        &.desktop {
+          display: none;
+          .buttons {
             .tooltip{
-              visibility: visible;
-              opacity: 1;
+              display: inline-block;
+              visibility: hidden;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 5px;
+              position: absolute;
+              z-index: 1;
+              top: 120%;
+              left: 20%;
+              opacity: 0;
+              transition: opacity 0.3s;
+              white-space: nowrap;
+              font-size: 12px;
+            }
+            &:hover{
+              .tooltip{
+                visibility: visible;
+                opacity: 1;
+              }
             }
           }
         }
+
 
       }
       &:hover{
