@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'vvc-media-container',
@@ -11,8 +11,16 @@ export class MediaContainerComponent {
   @Output() onMaximize = new EventEmitter();
   @Output() normalScreen = new EventEmitter();
 
+  @ViewChild('bigVideo') bigVideo: ElementRef;
+  @ViewChild('localVideo') localVideo: ElementRef;
+  @ViewChild('remoteVideo') remoteVideo: ElementRef;
+
+
   hideSmallVideo = false;
   switchVideo = false;
+  showVideoIsPaused = false;
+  userAction = false;
+  videoPausedElement: HTMLVideoElement;
 
   canHideSmallVideo() {
     return !this.hideSmallVideo && (this.isVideoVisible('local') || this.isVideoVisible('remote'));
@@ -62,6 +70,22 @@ export class MediaContainerComponent {
   minMaxVideo() {
     (this.context.isFullScreen) ? this.normalScreen.emit() : this.onMaximize.emit();
   }
+  playVideo() {
+    this.userAction = true;
+    this.showVideoIsPaused = false;
+    this.bigVideo.nativeElement.muted = true;
+
+    if (this.bigVideo && this.bigVideo.nativeElement && this.bigVideo.nativeElement.paused) {
+      this.bigVideo.nativeElement.play();
+    }
+    if (this.localVideo && this.localVideo.nativeElement && this.localVideo.nativeElement.paused) {
+      this.localVideo.nativeElement.play();
+      this.bigVideo.nativeElement.muted = false;
+    }
+    if (this.remoteVideo && this.remoteVideo.nativeElement && this.remoteVideo.nativeElement.paused) {
+      this.remoteVideo.nativeElement.play();
+    }
+  }
   showLocalVideo() {
     return !this.hideSmallVideo && this.isVideoVisible('local');
   }
@@ -73,5 +97,8 @@ export class MediaContainerComponent {
   }
   switchBigVideo() {
     this.switchVideo = !this.switchVideo;
+  }
+  videoOnPause(videoId, err) {
+    this.showVideoIsPaused = true;
   }
 }

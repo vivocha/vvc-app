@@ -1,5 +1,11 @@
 <div class="media-containers">
-  <div class="size-tools">
+  <div class="video-paused" *ngIf="showVideoIsPaused">
+    {{ 'STRINGS.MEDIA.VIDEO_STOPPED' | translate }}
+    <div class="btn">
+      <button (click)="playVideo()">{{'STRINGS.MEDIA.VIDEO_CONTINUE' | translate }}</button>
+    </div>
+  </div>
+  <div class="size-tools" [ngClass]="{ 'desktop' : !context.isMobile }">
     <span class="buttons"
           *ngIf="context.isFullScreen"
           (click)="normalScreen.emit()">
@@ -40,19 +46,25 @@
   <div class="big-video"
        (dblclick)="minMaxVideo()"
        *ngIf="isVideoVisible('big')">
-    <video autoplay
+    <video autoplay playsinline
+           #bigVideo
+           (pause)="videoOnPause('big-video', $event)"
            [srcObject]="getSrcForVideo('big')"></video>
   </div>
   <div class="small-video local" *ngIf="showLocalVideo()">
-    <video autoplay
+    <video autoplay playsinline
            muted
+           #localVideo
+           (pause)="videoOnPause('local-video', $event)"
            [srcObject]="getSrcForVideo('local')"></video>
   </div>
   <div class="small-video remote"
        *ngIf="showRemoteVideo()"
        (click)="switchBigVideo()">
-    <video autoplay
+    <video autoplay playsinline
            muted
+           #remoteVideo
+           (pause)="videoOnPause('remote-video', $event)"
            [srcObject]="getSrcForVideo('remote')"></video>
   </div>
 </div>
