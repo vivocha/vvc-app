@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
   public closeModalVisible = false;
   public surveyVisible = false;
 
+  private isMobile;
+
   private dimensions: Dimensions = {
     fullscreen: { position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0' },
     minimized: {position: 'fixed', width: '80px', height: '80px', right: '0', bottom: '0'},
@@ -135,7 +137,7 @@ export class AppComponent implements OnInit {
     this.interactionService.setNormalScreen();
   }
   expandWidget(isFullScreen) {
-    this.interactionService.maximizeWidget(isFullScreen, isFullScreen ? this.dimensions.fullscreen : this.dimensions.normal);
+    this.interactionService.maximizeWidget(isFullScreen, (isFullScreen || this.isMobile) ? this.dimensions.fullscreen : this.dimensions.normal);
   }
   getCloseStep(context) {
     if (!context.contactStarted) {
@@ -255,6 +257,7 @@ export class AppComponent implements OnInit {
     this.expandWidget(true);
   }
   setInitialDimensions(context) {
+    this.isMobile = context.isMobile;
     this.closeDimensions = context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal;
     this.interactionService.setDimensions(this.closeDimensions);
   }
