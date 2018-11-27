@@ -317,13 +317,13 @@ export const getUiStateRedux = (
   const canLocalAudio           = widgetState.protocol.localCaps &&
                                   widgetState.protocol.localCaps.Media &&
                                   widgetState.protocol.localCaps.Media.Voice &&
-                                  widgetState.protocol.localCaps.Media.Voice.Engine &&
-                                  widgetState.protocol.localCaps.Media.Voice.Engine.WebRTC;
+                                  widgetState.protocol.localCaps.Media.Voice.Engines &&
+                                  widgetState.protocol.localCaps.Media.Voice.Engines.WebRTC;
   const canLocalVideo           = widgetState.protocol.localCaps &&
                                   widgetState.protocol.localCaps.Media &&
                                   widgetState.protocol.localCaps.Media.Video &&
-                                  widgetState.protocol.localCaps.Media.Video.Engine &&
-                                  widgetState.protocol.localCaps.Media.Video.Engine.WebRTC;
+                                  widgetState.protocol.localCaps.Media.Video.Engines &&
+                                  widgetState.protocol.localCaps.Media.Video.Engines.WebRTC;
   const canStartAudio           = widgetState.protocol.canStartAudio &&
                                   !hasAudio &&
                                   !isAudioConnecting &&
