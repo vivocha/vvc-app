@@ -20,7 +20,6 @@ export class MediaContainerComponent {
   switchVideo = false;
   showVideoIsPaused = false;
   userAction = false;
-  videoPausedElement: HTMLVideoElement;
 
   canHideSmallVideo() {
     return !this.hideSmallVideo && (this.isVideoVisible('local') || this.isVideoVisible('remote'));
@@ -98,7 +97,7 @@ export class MediaContainerComponent {
   switchBigVideo() {
     this.switchVideo = !this.switchVideo;
   }
-  videoOnPause(videoId, err) {
+  videoOnPause(videoId, evt) {
     this.showVideoIsPaused = true;
   }
 }
