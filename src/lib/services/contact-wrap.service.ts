@@ -33,6 +33,7 @@ export class VvcContactWrap {
   incomingOffer;
   incomingMedia;
   interactionStart;
+  joinedByAgent = false;
 
   autoChat = false;
   autoChatInitialData;
@@ -458,22 +459,7 @@ export class VvcContactWrap {
         if (msg.type !== 'text') {
           return;
         }
-        const agent = (msg.agent) ? this.agent : false;
-        if (msg.quick_replies) {
-          this.messageService.addQuickRepliesMessage(msg, agent);
-        } else if (msg.template) {
-          this.messageService.addTemplateMessage(msg, agent);
-        } else {
-          this.messageService.addChatMessage(msg, agent, this.visitorNick);
-        }
-        if (msg.agent) {
-          this.uiService.setIsWriting(false);
-        }
-        this.uiService.newMessageReceived();
-        if (this.context.variables.playAudioNotification) {
-          this.playAudioNotification();
-        }
-        this.hasReceivedMsgs = true;
+        this.onRawMessage(msg);
       });
 
     });
@@ -623,9 +609,10 @@ export class VvcContactWrap {
   noAgents() {
     return false;
   }
-  onAgentJoin(join) {
+  async onAgentJoin(join) {
+    this.joinedByAgent = true;
     this.cancelTransferTimeout();
-    this.contact.getMedia().then( (media) => {
+    return this.contact.getMedia().then( (media) => {
       this.zone.run( () => {
         const agent: AgentState  = {
           id: join.user,
@@ -696,6 +683,37 @@ export class VvcContactWrap {
       this.mergeOffer(newOffer, cb);
 
     }
+  }
+  async onRawMessage(msg) {
+    if (!this.joinedByAgent && msg.agent) {
+      this.cancelDissuasionTimeout();
+      const agentInfo = this.contact.contact.agentInfo;
+      const joinedAgent: any = {
+        user: msg.from_id,
+        nick: msg.from_nick,
+        is_bot: msg.is_bot,
+      };
+      if (agentInfo.avatar && agentInfo.id === msg.from_id) {
+        joinedAgent.avatar = agentInfo.avatar;
+      }
+      await this.onAgentJoin(joinedAgent);
+    }
+    const agent = (msg.agent) ? this.agent : false;
+    if (msg.quick_replies) {
+      this.messageService.addQuickRepliesMessage(msg, agent);
+    } else if (msg.template) {
+      this.messageService.addTemplateMessage(msg, agent);
+    } else {
+      this.messageService.addChatMessage(msg, agent, this.visitorNick);
+    }
+    if (msg.agent) {
+      this.uiService.setIsWriting(false);
+    }
+    this.uiService.newMessageReceived();
+    if (this.context.variables.playAudioNotification) {
+      this.playAudioNotification();
+    }
+    this.hasReceivedMsgs = true;
   }
   openAttachment(url: string, click?: boolean, target?: string) {
     const msg = { type: 'web_url', url, click, target };
