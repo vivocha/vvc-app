@@ -35,6 +35,9 @@ export class VvcContactWrap {
   interactionStart;
   joinedByAgent = false;
 
+  interactionCreated = false;
+  interactionEvtQueue = [];
+
   autoChat = false;
   autoChatInitialData;
   messageArchive = [];
@@ -220,10 +223,14 @@ export class VvcContactWrap {
         });
       }, timeout);
       this.vivocha.createContact(opts).then( (contact) => {
+        this.zone.run(() => {
+          this.contact = contact;
+          this.mapContact();
+        });
         this.vivocha.pageRequest('interactionCreated', contact).then( () => {
+          this.interactionReady();
           this.zone.run( () => {
             // console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
-            this.contact = contact;
             this.uiService.setUiReady();
             // console.log('contact type', contact.contact.type, contact.contact);
             if (contact.contact.type === 'cbn') {
@@ -240,7 +247,6 @@ export class VvcContactWrap {
               this.uiService.initializeProtocol(this.context, {
                 initialOffer: contact.contact.initial_offer
               });
-              this.mapContact();
               if (this.autoChat) {
                 this.messageArchive.map( m => this.contact.sendText(m));
                 this.autoChat = false;
@@ -371,6 +377,22 @@ export class VvcContactWrap {
       this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
     }
   }
+  interactionReady() {
+    this.interactionCreated = true;
+    if (this.interactionEvtQueue.length > 0) {
+      for (const e of this.interactionEvtQueue) {
+        switch (e.type) {
+          case 'joined':
+            this.onJoined(e.data);
+            break;
+          case 'rawmessage':
+            this.processRawMessage(e.data);
+            break;
+        }
+      }
+      this.interactionEvtQueue = [];
+    }
+  }
   isAutoChat() {
     return this.context.mediaPreset === 'chat' && this.context.variables.autoChat;
   }
@@ -447,21 +469,18 @@ export class VvcContactWrap {
       }
     });
     this.contact.on('joined', (c) => {
-      if (c.user) {
-        this.cancelDissuasionTimeout();
-        this.onAgentJoin(c);
+      if (this.interactionCreated) {
+        this.onJoined(c);
       } else {
-        this.onLocalJoin(c);
+        this.interactionEvtQueue.push({ type: 'joined', data: c});
       }
     });
     this.contact.on('rawmessage', (msg) => {
-      this.zone.run( () => {
-        if (msg.type !== 'text') {
-          return;
-        }
-        this.onRawMessage(msg);
-      });
-
+      if (this.interactionCreated) {
+        this.processRawMessage(msg);
+      } else {
+        this.interactionEvtQueue.push({ type: 'rawmessage', data: msg});
+      }
     });
     this.contact.on('link', (url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) => {
       this.openAttachment(url);
@@ -647,6 +666,14 @@ export class VvcContactWrap {
       });
     });
   }
+  onJoined(data) {
+    if (data.user) {
+      this.cancelDissuasionTimeout();
+      this.onAgentJoin(data);
+    } else {
+      this.onLocalJoin(data);
+    }
+  }
   onLeft(obj) {
     if (
         (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) ||
@@ -742,6 +769,14 @@ export class VvcContactWrap {
     }
     this.messageService.addLocalMessage(reply.action.title);
   }
+  processRawMessage(msg) {
+    this.zone.run( () => {
+      if (msg.type !== 'text') {
+        return;
+      }
+      this.onRawMessage(msg);
+    });
+  }
   registerCallStatusEvents(dataChannel) {
     for (const i in this.cbnChannelStatus) {
       dataChannel.on(this.cbnChannelStatus[i], (info) => {
@@ -768,14 +803,19 @@ export class VvcContactWrap {
   resumeContact(context: any) {
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
       this.vivocha.resumeContact(contactData).then((contact) => {
-        this.vivocha.pageRequest('interactionCreated', contact);
         this.zone.run(() => {
           this.contact = contact;
+          this.mapContact();
+        });
+        this.vivocha.pageRequest('interactionCreated', contact);
+
+        this.interactionReady();
+
+        this.zone.run(() => {
           this.uiService.setUiReady();
           this.uiService.initializeProtocol(context, {
             initialOffer: contact.initial_offer
           });
-          this.mapContact();
           this.contact.getMedia().then((media) => {
             this.zone.run( () => {
               const agentInfo = this.contact.contact.agentInfo;
