@@ -75,22 +75,22 @@
     "typescript": "~2.7.2"
   },
   "dependencies": {
-    "@angular/common": "^6.0.9",
-    "@angular/core": "^6.0.9",
-    "@angular/forms": "^6.0.9",
-    "@angular/platform-browser": "^6.0.9",
-    "@angular/platform-browser-dynamic": "^6.0.9",
+    "@angular/common": "7.0.0",
+    "@angular/core": "7.0.0",
+    "@angular/forms": "7.0.0",
+    "@angular/platform-browser": "7.0.0",
+    "@angular/platform-browser-dynamic": "7.0.0",
     "@ngrx/store": "^6.0.1",
     "@ngrx/store-devtools": "^6.0.1",
     "@ngx-translate/core": "^10.0.2",
-    "@ngx-translate/http-loader": "^3.0.1",
-    "@vivocha/client-interaction-core": "^6.4.14",
+    "@ngx-translate/http-loader": "3.0.1",
+    "@vivocha/client-interaction-core": "^6.4.15",
     "@vivocha/client-interaction-layout": "^6.4.10",
-    "@vivocha/public-entities": "^6.4.16",
-    "autolinker": "^1.6.2",
+    "@vivocha/public-entities": "6.4.21",
+    "autolinker": "1.6.2",
     "classlist.js": "^1.1.20150312",
-    "core-js": "^2.5.7",
-    "rxjs": "~6.2.2",
-    "zone.js": "^0.8.26"
+    "core-js": "2.5.4",
+    "rxjs": "6.3.3",
+    "zone.js": "0.8.26"
   }
 }
