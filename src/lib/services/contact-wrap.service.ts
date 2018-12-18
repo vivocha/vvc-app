@@ -433,6 +433,11 @@ export class VvcContactWrap {
       }
     });
   }
+  debug(evtId: string, data?: any, opts?: any) {
+    if (this.context.variables.enableDebug) {
+      console.log('___' + evtId + '___', data, opts);
+    }
+  }
   mapContact() {
     this.contact.on('agentrequest', (message, cb) => {
       this.zone.run( () => {
@@ -470,15 +475,19 @@ export class VvcContactWrap {
     });
     this.contact.on('joined', (c) => {
       if (this.interactionCreated) {
+        this.debug('joined', c);
         this.onJoined(c);
       } else {
+        this.debug('joined', c, 'queued');
         this.interactionEvtQueue.push({ type: 'joined', data: c});
       }
     });
     this.contact.on('rawmessage', (msg) => {
       if (this.interactionCreated) {
+        this.debug('rawmessage', msg);
         this.processRawMessage(msg);
       } else {
+        this.debug('rawmessage', msg, 'queued');
         this.interactionEvtQueue.push({ type: 'rawmessage', data: msg});
       }
     });
@@ -725,6 +734,9 @@ export class VvcContactWrap {
       }
       await this.onAgentJoin(joinedAgent);
     }
+    if (msg.type !== 'text') {
+      return;
+    }
     const agent = (msg.agent) ? this.agent : false;
     if (msg.quick_replies) {
       this.messageService.addQuickRepliesMessage(msg, agent);
@@ -771,9 +783,6 @@ export class VvcContactWrap {
   }
   processRawMessage(msg) {
     this.zone.run( () => {
-      if (msg.type !== 'text') {
-        return;
-      }
       this.onRawMessage(msg);
     });
   }
