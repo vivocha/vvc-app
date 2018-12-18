@@ -13,6 +13,16 @@
       ]
     },
     {
+      "id": "enableDebug",
+      "nameId": "META.VARIABLES.APP.ENABLE_DEBUG",
+      "defaultValue": false,
+      "type": "boolean",
+      "hidden": true,
+      "categoryIds": [
+        "General"
+      ]
+    },
+    {
       "id": "initialWidth",
       "nameId": "META.VARIABLES.APP.INITIAL_WIDTH",
       "defaultValue": "370px",
