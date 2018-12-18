@@ -85,7 +85,7 @@
     "@ngrx/store-devtools": "^6.0.1",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "3.0.1",
-    "@vivocha/client-interaction-core": "^6.4.16",
+    "@vivocha/client-interaction-core": "^6.4.17",
     "@vivocha/client-interaction-layout": "^6.4.10",
     "@vivocha/public-entities": "6.4.21",
     "autolinker": "1.6.2",
