@@ -222,10 +222,12 @@ export class VvcContactWrap {
           this.setRecallOrLeave('timeout', 'dissuasion');
         });
       }, timeout);
-      this.vivocha.createContact(opts).then( (contact) => {
+      this.vivocha.createContact(opts, this.mapContact()).then( (contact) => {
         this.zone.run(() => {
           this.contact = contact;
-          this.mapContact();
+          this.contact.getLocalCapabilities().then( (caps) => {
+            this.uiService.setLocalCaps(caps);
+          });
         });
         this.vivocha.pageRequest('interactionCreated', contact).then( () => {
           this.interactionReady();
@@ -439,144 +441,144 @@ export class VvcContactWrap {
     }
   }
   mapContact() {
-    this.contact.on('agentrequest', (message, cb) => {
-      this.zone.run( () => {
-        this.onAgentRequest(message, cb);
-      });
-    });
-    this.contact.on('attachment', (url, meta, fromId, fromNick, isAgent) => {
-      this.zone.run( () => {
-        // const attachment = {url, meta, fromId, fromNick, isAgent};
-        meta.url = (url) ? url : meta.originalUrl;
-        const msg = {
-          body: meta.desc || meta.originalName,
-          type: 'chat',
-          meta: meta,
-          from_nick: fromNick,
-          from_id: fromId
-        };
-        if (isAgent) {
-          this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
-          this.uiService.setIsWriting(false);
-        } else {
-          this.messageService.addChatMessage(msg, null, this.visitorNick);
+    const contactHandlers = {
+      'agentrequest': (message, cb) => {
+        this.zone.run(() => {
+          this.onAgentRequest(message, cb);
+        });
+      },
+      'attachment': (url, meta, fromId, fromNick, isAgent) => {
+        this.zone.run(() => {
+          // const attachment = {url, meta, fromId, fromNick, isAgent};
+          meta.url = (url) ? url : meta.originalUrl;
+          const msg = {
+            body: meta.desc || meta.originalName,
+            type: 'chat',
+            meta: meta,
+            from_nick: fromNick,
+            from_id: fromId
+          };
+          if (isAgent) {
+            this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
+            this.uiService.setIsWriting(false);
+          } else {
+            this.messageService.addChatMessage(msg, null, this.visitorNick);
+          }
+        });
+      },
+      'close': obj => {
+        this.onClose(obj);
+      },
+      'datachannel': dc => {
+        if (dc && dc.id === 'callstatus') {
+          this.zone.run(() => {
+            this.registerCallStatusEvents(dc);
+          });
         }
-      });
-    });
-    this.contact.on('close', obj => {
-      this.onClose(obj);
-    });
-    this.contact.on('datachannel', dc => {
-      if (dc && dc.id === 'callstatus') {
-        this.zone.run( () => {
-          this.registerCallStatusEvents(dc);
+      },
+      'joined': (c) => {
+        if (this.interactionCreated) {
+          this.debug('joined', c);
+          this.onJoined(c);
+        } else {
+          this.debug('joined', c, 'queued');
+          this.interactionEvtQueue.push({type: 'joined', data: c});
+        }
+      },
+      'rawmessage': (msg) => {
+        if (this.interactionCreated) {
+          this.debug('rawmessage', msg);
+          this.processRawMessage(msg);
+        } else {
+          this.debug('rawmessage', msg, 'queued');
+          this.interactionEvtQueue.push({type: 'rawmessage', data: msg});
+        }
+      },
+      'link': (url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) => {
+        this.openAttachment(url);
+        this.zone.run(() => {
+          this.messageService.addLinkMessage(url, from_id, from_nick, desc, agent);
+        });
+      },
+      'iswriting': (from_id, from_nick, agent) => {
+        this.zone.run(() => {
+          if (agent) {
+            this.setIsWriting();
+          }
+        });
+      },
+      'localtext': (text) => {
+        this.zone.run(() => {
+          if (this.agent && this.agent.is_bot) {
+            this.setIsWriting();
+          }
+          if (!this.isOfflineMessage(text)) {
+            this.messageService.addLocalMessage(text);
+          }
+        });
+      },
+      'left': obj => {
+        // console.log('LEFT', obj);
+        this.onLeft(obj);
+      },
+      'localcapabilities': caps => {
+        // console.log('ON_LOCAL',caps);
+      },
+      'capabilities': caps => {
+        this.uiService.setRemoteCaps(caps);
+      },
+      'mediachange': async (media, changed) => {
+        // console.log('mediachange', media, changed);
+        if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
+          this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
+        }
+        if (this.vivocha.dot(media, 'Video.data.tx_stream.id')) {
+          this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'));
+        }
+        if (this.vivocha.dot(media, 'Voice.data.rx_stream.id')) {
+          this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'));
+        }
+        if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
+          this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'));
+        }
+        if (this.vivocha.dot(media, 'Screen.data.rx_stream.id')) {
+          this.vivocha.dot(media, 'Screen.data.rx_stream.media', await this.contact.getMediaStream('screen', 'rx'));
+        }
+        if (this.vivocha.dot(media, 'Screen.data.tx_stream.id')) {
+          this.vivocha.dot(media, 'Screen.data.tx_stream.media', await this.contact.getMediaStream('screen', 'tx'));
+        }
+        this.zone.run(() => {
+          this.protocolService.setMediaChange(media);
+          this.uiService.setMediaState(media);
+          if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
+            this.store.dispatch(new NewEvent({type: 'removedMediaScreen'}));
+            this.uiService.setHangUpState();
+          }
+        });
+      },
+      'mediaoffer': (offer, cb) => {
+        this.zone.run(() => {
+          this.onMediaOffer(offer, cb);
+        });
+      },
+      'transferred': () => {
+        this.zone.run(() => {
+          this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
+          this.setTransferTimer();
         });
       }
-    });
-    this.contact.on('joined', (c) => {
-      if (this.interactionCreated) {
-        this.debug('joined', c);
-        this.onJoined(c);
-      } else {
-        this.debug('joined', c, 'queued');
-        this.interactionEvtQueue.push({ type: 'joined', data: c});
-      }
-    });
-    this.contact.on('rawmessage', (msg) => {
-      if (this.interactionCreated) {
-        this.debug('rawmessage', msg);
-        this.processRawMessage(msg);
-      } else {
-        this.debug('rawmessage', msg, 'queued');
-        this.interactionEvtQueue.push({ type: 'rawmessage', data: msg});
-      }
-    });
-    this.contact.on('link', (url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) => {
-      this.openAttachment(url);
-      this.zone.run(() => {
-        this.messageService.addLinkMessage(url, from_id, from_nick, desc, agent);
-      });
-    });
-    this.contact.on('iswriting', (from_id, from_nick, agent) => {
-      this.zone.run( () => {
-        if (agent) {
-          this.setIsWriting();
-        }
-      });
-    });
-    this.contact.on('localtext', (text) => {
-      this.zone.run( () => {
-        if (this.agent && this.agent.is_bot) {
-          this.setIsWriting();
-        }
-        if (!this.isOfflineMessage(text)) {
-          this.messageService.addLocalMessage(text);
-        }
-      });
-    });
-    this.contact.on('left', obj => {
-      // console.log('LEFT', obj);
-      this.onLeft(obj);
-    });
-    this.contact.on('localcapabilities', caps => {
-      // console.log('ON_LOCAL',caps);
-    });
-    this.contact.on('capabilities', caps => {
-      this.uiService.setRemoteCaps(caps);
-    });
-    this.contact.on('mediachange', async (media, changed) => {
-      // console.log('mediachange', media, changed);
-      if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
-        this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
-      }
-      if (this.vivocha.dot(media, 'Video.data.tx_stream.id')) {
-        this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'));
-      }
-      if (this.vivocha.dot(media, 'Voice.data.rx_stream.id')) {
-        this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'));
-      }
-      if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
-        this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'));
-      }
-      if (this.vivocha.dot(media, 'Screen.data.rx_stream.id')) {
-        this.vivocha.dot(media, 'Screen.data.rx_stream.media', await this.contact.getMediaStream('screen', 'rx'));
-      }
-      if (this.vivocha.dot(media, 'Screen.data.tx_stream.id')) {
-        this.vivocha.dot(media, 'Screen.data.tx_stream.media', await this.contact.getMediaStream('screen', 'tx'));
-      }
-      this.zone.run( () => {
-        this.protocolService.setMediaChange(media);
-        this.uiService.setMediaState(media);
-        if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
-          this.store.dispatch(new NewEvent({ type: 'removedMediaScreen' }));
-          this.uiService.setHangUpState();
-        }
-      });
-    });
-    this.contact.on('mediaoffer', (offer, cb) => {
-      this.zone.run( () => {
-        this.onMediaOffer(offer, cb);
-      });
-    });
-    this.contact.on('transferred', () => {
-      this.zone.run( () => {
-        this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
-        this.setTransferTimer();
-      });
-    });
-
-    this.contact.getLocalCapabilities().then( (caps) => {
-      this.uiService.setLocalCaps(caps);
-    });
+    };
 
     Object.keys(this.customActions).forEach( a => {
-      this.contact.on(a, (message, callback) => {
+      contactHandlers[a] = (message, callback) => {
         this.zone.run( () => {
           this.customActions[a]['callback'] = callback;
           this.customActions[a].stream.next(message);
         });
-      });
+      };
     });
+
+    return contactHandlers;
   }
   maximizeWidget(isFullScreen: boolean, dim: Dimension){
     (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
@@ -811,10 +813,12 @@ export class VvcContactWrap {
   }
   resumeContact(context: any) {
     this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
-      this.vivocha.resumeContact(contactData).then((contact) => {
+      this.vivocha.resumeContact(contactData, this.mapContact()).then((contact) => {
         this.zone.run(() => {
           this.contact = contact;
-          this.mapContact();
+          this.contact.getLocalCapabilities().then( (caps) => {
+            this.uiService.setLocalCaps(caps);
+          });
         });
         this.vivocha.pageRequest('interactionCreated', contact);
 
