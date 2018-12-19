@@ -441,141 +441,189 @@ export class VvcContactWrap {
     }
   }
   mapContact() {
-    const contactHandlers = {
-      'agentrequest': (message, cb) => {
-        this.zone.run(() => {
-          this.onAgentRequest(message, cb);
-        });
-      },
-      'attachment': (url, meta, fromId, fromNick, isAgent) => {
-        this.zone.run(() => {
-          // const attachment = {url, meta, fromId, fromNick, isAgent};
-          meta.url = (url) ? url : meta.originalUrl;
-          const msg = {
-            body: meta.desc || meta.originalName,
-            type: 'chat',
-            meta: meta,
-            from_nick: fromNick,
-            from_id: fromId
-          };
-          if (isAgent) {
-            this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
-            this.uiService.setIsWriting(false);
-          } else {
-            this.messageService.addChatMessage(msg, null, this.visitorNick);
-          }
-        });
-      },
-      'close': obj => {
-        this.onClose(obj);
-      },
-      'datachannel': dc => {
-        if (dc && dc.id === 'callstatus') {
+    const contactHandlers = [
+      {
+        event: 'agentrequest',
+        handler: (message, cb) => {
           this.zone.run(() => {
-            this.registerCallStatusEvents(dc);
+            this.onAgentRequest(message, cb);
           });
         }
       },
-      'joined': (c) => {
-        if (this.interactionCreated) {
-          this.debug('joined', c);
-          this.onJoined(c);
-        } else {
-          this.debug('joined', c, 'queued');
-          this.interactionEvtQueue.push({type: 'joined', data: c});
+      {
+        event: 'attachment',
+        handler: (url, meta, fromId, fromNick, isAgent) => {
+          this.zone.run(() => {
+            // const attachment = {url, meta, fromId, fromNick, isAgent};
+            meta.url = (url) ? url : meta.originalUrl;
+            const msg = {
+              body: meta.desc || meta.originalName,
+              type: 'chat',
+              meta: meta,
+              from_nick: fromNick,
+              from_id: fromId
+            };
+            if (isAgent) {
+              this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
+              this.uiService.setIsWriting(false);
+            } else {
+              this.messageService.addChatMessage(msg, null, this.visitorNick);
+            }
+          });
         }
       },
-      'rawmessage': (msg) => {
-        if (this.interactionCreated) {
-          this.debug('rawmessage', msg);
-          this.processRawMessage(msg);
-        } else {
-          this.debug('rawmessage', msg, 'queued');
-          this.interactionEvtQueue.push({type: 'rawmessage', data: msg});
+      {
+        event: 'close',
+        handler: obj => {
+          this.onClose(obj);
         }
       },
-      'link': (url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) => {
-        this.openAttachment(url);
-        this.zone.run(() => {
-          this.messageService.addLinkMessage(url, from_id, from_nick, desc, agent);
-        });
-      },
-      'iswriting': (from_id, from_nick, agent) => {
-        this.zone.run(() => {
-          if (agent) {
-            this.setIsWriting();
+      {
+        event: 'datachannel',
+        handler: dc => {
+          if (dc && dc.id === 'callstatus') {
+            this.zone.run(() => {
+              this.registerCallStatusEvents(dc);
+            });
           }
-        });
+        }
       },
-      'localtext': (text) => {
-        this.zone.run(() => {
-          if (this.agent && this.agent.is_bot) {
-            this.setIsWriting();
+      {
+        event: 'joined',
+        handler: (c) => {
+          if (this.interactionCreated) {
+            this.debug('joined', c);
+            this.onJoined(c);
+          } else {
+            this.debug('joined', c, 'queued');
+            this.interactionEvtQueue.push({type: 'joined', data: c});
           }
-          if (!this.isOfflineMessage(text)) {
-            this.messageService.addLocalMessage(text);
+        }
+      },
+      {
+        event: 'rawmessage',
+        handler: (msg) => {
+          if (this.interactionCreated) {
+            this.debug('rawmessage', msg);
+            this.processRawMessage(msg);
+          } else {
+            this.debug('rawmessage', msg, 'queued');
+            this.interactionEvtQueue.push({type: 'rawmessage', data: msg});
           }
-        });
+        }
       },
-      'left': obj => {
-        // console.log('LEFT', obj);
-        this.onLeft(obj);
+      {
+        event: 'link',
+        handler: (url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) => {
+          this.openAttachment(url);
+          this.zone.run(() => {
+            this.messageService.addLinkMessage(url, from_id, from_nick, desc, agent);
+          });
+        }
       },
-      'localcapabilities': caps => {
-        // console.log('ON_LOCAL',caps);
+      {
+        event: 'iswriting',
+        handler: (from_id, from_nick, agent) => {
+          this.zone.run(() => {
+            if (agent) {
+              this.setIsWriting();
+            }
+          });
+        }
       },
-      'capabilities': caps => {
-        this.uiService.setRemoteCaps(caps);
+      {
+        event: 'localtext',
+        handler: (text) => {
+          this.zone.run(() => {
+            if (this.agent && this.agent.is_bot) {
+              this.setIsWriting();
+            }
+            if (!this.isOfflineMessage(text)) {
+              this.messageService.addLocalMessage(text);
+            }
+          });
+        }
       },
-      'mediachange': async (media, changed) => {
-        // console.log('mediachange', media, changed);
-        if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
-          this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
+      {
+        event: 'left',
+        handler: obj => {
+          // console.log('LEFT', obj);
+          this.onLeft(obj);
         }
-        if (this.vivocha.dot(media, 'Video.data.tx_stream.id')) {
-          this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'));
+      },
+      {
+        event: 'localcapabilities',
+        handler: caps => {
+          // console.log('ON_LOCAL',caps);
         }
-        if (this.vivocha.dot(media, 'Voice.data.rx_stream.id')) {
-          this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'));
+      },
+      {
+        event: 'capabilities',
+        handler: caps => {
+          this.uiService.setRemoteCaps(caps);
         }
-        if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
-          this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'));
-        }
-        if (this.vivocha.dot(media, 'Screen.data.rx_stream.id')) {
-          this.vivocha.dot(media, 'Screen.data.rx_stream.media', await this.contact.getMediaStream('screen', 'rx'));
-        }
-        if (this.vivocha.dot(media, 'Screen.data.tx_stream.id')) {
-          this.vivocha.dot(media, 'Screen.data.tx_stream.media', await this.contact.getMediaStream('screen', 'tx'));
-        }
-        this.zone.run(() => {
-          this.protocolService.setMediaChange(media);
-          this.uiService.setMediaState(media);
-          if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
-            this.store.dispatch(new NewEvent({type: 'removedMediaScreen'}));
-            this.uiService.setHangUpState();
+      },
+      {
+        event: 'mediachange',
+        handler: async (media, changed) => {
+          // console.log('mediachange', media, changed);
+          if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
+            this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
           }
-        });
+          if (this.vivocha.dot(media, 'Video.data.tx_stream.id')) {
+            this.vivocha.dot(media, 'Video.data.tx_stream.media', await this.contact.getMediaStream('video', 'tx'));
+          }
+          if (this.vivocha.dot(media, 'Voice.data.rx_stream.id')) {
+            this.vivocha.dot(media, 'Voice.data.rx_stream.media', await this.contact.getMediaStream('audio', 'rx'));
+          }
+          if (this.vivocha.dot(media, 'Voice.data.tx_stream.id')) {
+            this.vivocha.dot(media, 'Voice.data.tx_stream.media', await this.contact.getMediaStream('audio', 'tx'));
+          }
+          if (this.vivocha.dot(media, 'Screen.data.rx_stream.id')) {
+            this.vivocha.dot(media, 'Screen.data.rx_stream.media', await this.contact.getMediaStream('screen', 'rx'));
+          }
+          if (this.vivocha.dot(media, 'Screen.data.tx_stream.id')) {
+            this.vivocha.dot(media, 'Screen.data.tx_stream.media', await this.contact.getMediaStream('screen', 'tx'));
+          }
+          this.zone.run(() => {
+            this.protocolService.setMediaChange(media);
+            this.uiService.setMediaState(media);
+            if (changed && changed.removed && changed.removed.media && changed.removed.media.Screen) {
+              this.store.dispatch(new NewEvent({type: 'removedMediaScreen'}));
+              this.uiService.setHangUpState();
+            }
+          });
+        }
       },
-      'mediaoffer': (offer, cb) => {
-        this.zone.run(() => {
-          this.onMediaOffer(offer, cb);
-        });
+      {
+        event: 'mediaoffer',
+        handler: (offer, cb) => {
+          this.zone.run(() => {
+            this.onMediaOffer(offer, cb);
+          });
+        }
       },
-      'transferred': () => {
-        this.zone.run(() => {
-          this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
-          this.setTransferTimer();
-        });
+      {
+        event: 'transferred',
+        handler: () => {
+          this.zone.run(() => {
+            this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
+            this.setTransferTimer();
+          });
+        }
       }
-    };
+    ];
 
-    Object.keys(this.customActions).forEach( a => {
-      contactHandlers[a] = (message, callback) => {
-        this.zone.run( () => {
-          this.customActions[a]['callback'] = callback;
-          this.customActions[a].stream.next(message);
-        });
-      };
+    Object.keys(this.customActions).forEach( event => {
+      contactHandlers.push({
+        event,
+        handler: (message, callback) => {
+          this.zone.run( () => {
+            this.customActions[event]['callback'] = callback;
+            this.customActions[event].stream.next(message);
+          });
+        }
+      });
     });
 
     return contactHandlers;
@@ -725,7 +773,7 @@ export class VvcContactWrap {
   async onRawMessage(msg) {
     if (!this.joinedByAgent && msg.agent) {
       this.cancelDissuasionTimeout();
-      const agentInfo = this.contact.contact.agentInfo;
+      const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
       const joinedAgent: any = {
         user: msg.from_id,
         nick: msg.from_nick,
