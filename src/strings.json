@@ -1189,6 +1189,19 @@
     }
   },
   {
+    "id": "META.VARIABLES.APP.PERSISTENCE_MODE",
+    "values": {
+      "en": {
+        "value": "Persistence mode",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Modalità di persistenza",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE",
     "values": {
       "de": {

@@ -3,6 +3,20 @@
   "type": "interaction",
   "variables": [
     {
+      "id": "persistenceMode",
+      "nameId": "META.VARIABLES.APP.PERSISTENCE_MODE",
+      "defaultValue": "first",
+      "options": [
+        "first",
+        "last",
+        "always"
+      ],
+      "categoryIds": [
+        "General"
+      ],
+      "type": "enum"
+    },
+    {
       "id": "customSize",
       "nameId": "META.VARIABLES.APP.CUSTOM_SIZE",
       "defaultValue": true,
