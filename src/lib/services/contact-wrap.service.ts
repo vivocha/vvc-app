@@ -534,6 +534,7 @@ export class VvcContactWrap {
         handler: (from_id, from_nick, agent) => {
           this.zone.run(() => {
             if (agent) {
+              this.track('agent is writing');
               this.setIsWriting();
             }
           });
@@ -938,7 +939,7 @@ export class VvcContactWrap {
   }
   sendIsWriting() {
     if (!this.autoChat && this.contact) {
-      this.track('send is writing');
+      this.track('visitor is writing');
       this.contact.sendIsWriting();
     }
   }
