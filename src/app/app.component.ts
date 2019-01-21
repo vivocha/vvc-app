@@ -93,6 +93,7 @@ export class AppComponent implements OnInit {
   }
   closeContact(context) {
     const step = this.getCloseStep(context);
+    this.interactionService.track('close-contact', step);
     // console.log('CLOSE CONTACT', step, context.variables, context);
 
     switch (step) {
