@@ -474,6 +474,9 @@ export class VvcContactWrap {
             if (isAgent) {
               this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
               this.uiService.setIsWriting(false);
+              if (this.context.variables.playAudioNotification) {
+                this.playAudioNotification();
+              }
             } else {
               this.messageService.addChatMessage(msg, null, this.visitorNick);
             }
