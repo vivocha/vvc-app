@@ -104,7 +104,7 @@ export class VvcInteractionService {
     this.contactService.openAttachment(url, click);
   }
   processQuickReply(reply) {
-    this.track('process quick reply', reply);
+    this.track('process quick reply');
 
     this.contactService.processQuickReply(reply);
   }
@@ -134,15 +134,15 @@ export class VvcInteractionService {
     this.contactService.sendIsWriting();
   }
   sendPostBack(action) {
-    this.track('send post back', action);
+    this.track('visitor send post back');
     this.contactService.sendPostBack(action);
   }
   sendRequest(requestId, requestData) {
-    this.track('send request', requestId);
+    this.track('visitor send request');
     return this.contactService.sendRequest(requestId, requestData);
   }
   sendText(text) {
-    this.track('send text', text);
+    this.track('visitor send text');
     this.contactService.sendText(text);
   }
   setDimensions(dim) {
