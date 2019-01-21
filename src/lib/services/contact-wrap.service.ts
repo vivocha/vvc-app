@@ -187,6 +187,7 @@ export class VvcContactWrap {
     this.leave().then((reason) => {
       this.zone.run(() => {
         this.uiService.setClosedByVisitor();
+        this.track('closed by visitor');
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
         (this.context.variables.customSize && dim) ? this.setDimension(dim) : this.vivocha.setNormalScreen();
         this.isClosed = true;
@@ -614,6 +615,7 @@ export class VvcContactWrap {
         event: 'transferred',
         handler: () => {
           this.zone.run(() => {
+            this.track('transferred');
             this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
             this.setTransferTimer();
           });
@@ -724,6 +726,7 @@ export class VvcContactWrap {
     this.leave('remote').then(() => {
       this.zone.run( () => {
         this.uiService.setClosedByAgent();
+        this.track('closed by agent');
         this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
 
         this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
@@ -748,7 +751,7 @@ export class VvcContactWrap {
       this.leave('remote').then(() => {
         this.zone.run(() => {
           this.uiService.setClosedByAgent();
-
+          this.track('closed by agent');
           this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
 
           this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
@@ -935,6 +938,7 @@ export class VvcContactWrap {
   }
   sendIsWriting() {
     if (!this.autoChat && this.contact) {
+      this.track('send is writing');
       this.contact.sendIsWriting();
     }
   }
@@ -1088,6 +1092,7 @@ export class VvcContactWrap {
     this.uiService.setTopBarTitle(title);
   }
   showCloseModal(show: boolean) {
+    this.track('show close modal', show);
     this.uiService.setCloseModal(show);
   }
   showUploadPanel() {

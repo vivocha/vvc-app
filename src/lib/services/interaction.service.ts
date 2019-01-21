@@ -47,15 +47,18 @@ export class VvcInteractionService {
     this.translateService.use(lang);
   }
   closeApp() {
+    this.track('interaction service close app');
     this.contactService.closeApp();
   }
   closeContact(dim?: Dimension) {
+    this.track('interaction service close contact');
     this.contactService.closeContact(dim);
   }
   closeUploadPanel() {
     this.contactService.closeUploadPanel();
   }
   dismissCloseModal() {
+    this.track('dismiss close modal');
     this.contactService.showCloseModal(false);
   }
   events(): Observable<EventsState> {
@@ -101,6 +104,8 @@ export class VvcInteractionService {
     this.contactService.openAttachment(url, click);
   }
   processQuickReply(reply) {
+    this.track('process quick reply', reply);
+
     this.contactService.processQuickReply(reply);
   }
   private registerChangeLangService() {
@@ -129,12 +134,15 @@ export class VvcInteractionService {
     this.contactService.sendIsWriting();
   }
   sendPostBack(action) {
+    this.track('send post back', action);
     this.contactService.sendPostBack(action);
   }
   sendRequest(requestId, requestData) {
+    this.track('send request', requestId);
     return this.contactService.sendRequest(requestId, requestData);
   }
   sendText(text) {
+    this.track('send text', text);
     this.contactService.sendText(text);
   }
   setDimensions(dim) {
@@ -178,6 +186,9 @@ export class VvcInteractionService {
   }
   toggleVideo(show) {
     this.contactService.toggleVideo(show);
+  }
+  track(id: string, obj?: any) {
+    this.contactService.track(id, obj);
   }
   updateLeftScrollOffset(o: LeftScrollOffset) {
     this.contactService.updateLeftScrollOffset(o);
