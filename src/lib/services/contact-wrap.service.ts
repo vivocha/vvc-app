@@ -893,33 +893,40 @@ export class VvcContactWrap {
         this.interactionReady();
 
         this.zone.run(() => {
-          this.uiService.setUiReady();
           this.uiService.initializeProtocol(context, {
             initialOffer: contact.initial_offer
           });
           this.contact.getMedia().then((media) => {
             this.zone.run( () => {
               const agentInfo = this.contact.contact.agentInfo;
-              const agent: AgentState = {
-                id: agentInfo.id,
-                nick: agentInfo.nick,
-                is_bot: !!agentInfo.bot,
-                is_agent: !agentInfo.bot,
-              };
-              if (agentInfo.avatar) {
-                agent.avatar = agentInfo.avatar;
-              }
-              // console.log('LOCAL JOIN', agent, this.contact);
-              this.agent = agent;
-              this.uiService.setAgent(agent);
-              if (this.context.variables.showAgentInfoOnTopBar) {
-                this.uiService.setTopBarWithAgentInfo(agent);
+              // console.log('LOCAL JOIN', agentInfo, this.contact);
+              if (agentInfo) {
+                this.uiService.setUiReady();
+                const agent: AgentState = {
+                  id: agentInfo.id,
+                  nick: agentInfo.nick,
+                  is_bot: !!agentInfo.bot,
+                  is_agent: !agentInfo.bot,
+                };
+                if (agentInfo.avatar) {
+                  agent.avatar = agentInfo.avatar;
+                }
+                this.agent = agent;
+                this.uiService.setAgent(agent);
+                if (this.context.variables.showAgentInfoOnTopBar) {
+                  this.uiService.setTopBarWithAgentInfo(agent);
+                } else {
+                  this.uiService.setTopBar({title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
+                }
+                this.protocolService.setMediaChange(media);
+                this.uiService.initializeMedia(media);
+                this.checkForTranscript();
               } else {
-                this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
+                this.dcService.setResolved();
+                this.uiService.setUiReady();
+                this.uiService.showQueuePanel();
+                this.track('queue screen - resume');
               }
-              this.protocolService.setMediaChange(media);
-              this.uiService.initializeMedia(media);
-              this.checkForTranscript();
             });
           });
         });
