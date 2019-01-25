@@ -127,11 +127,11 @@
         "state": "final"
       },
       "es": {
-        "value": "Nos pondremos en contacto conTIGO",
+        "value": "Te contactaremos",
         "state": "final"
       },
       "fr": {
-        "value": "Nous vous recontacterons",
+        "value": "Nous rappelons",
         "state": "final"
       },
       "it": {
@@ -139,7 +139,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "弊社よりご連絡いたします",
+        "value": "弊社がご連絡",
         "state": "final"
       }
     }
@@ -185,7 +185,7 @@
         "state": "final"
       },
       "es": {
-        "value": "Nuestros operarios están a tu disposición. ¡Contacta con nosotros!",
+        "value": "¡Nuestros operarios están para ti!",
         "state": "final"
       },
       "fr": {
@@ -197,7 +197,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "オペレーターまでお気軽にお問い合わせください！",
+        "value": "オペレーターへお気軽にお問合せください！",
         "state": "final"
       }
     }
@@ -264,7 +264,7 @@
     "id": "STRINGS.TITLE",
     "values": {
       "de": {
-        "value": "Benötigst du Hilfe?",
+        "value": "Hilfe nötig?",
         "state": "final"
       },
       "en": {
@@ -276,7 +276,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Avez-vous besoin d’aide ?",
+        "value": "De l'aide?",
         "state": "final"
       },
       "it": {
@@ -284,7 +284,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "ヘルプが必要ですか？",
+        "value": "ヘルプ？",
         "state": "final"
       }
     }

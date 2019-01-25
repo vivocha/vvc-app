@@ -123,23 +123,23 @@
         "state": "final"
       },
       "en": {
-        "value": "we’ll contact you",
+        "value": "We’ll contact you",
         "state": "final"
       },
       "es": {
-        "value": "Nos pondremos en contacto contigo",
+        "value": "Te contactaremos",
         "state": "final"
       },
       "fr": {
-        "value": "Nous vous recontacterons",
+        "value": "Nous rappelons",
         "state": "final"
       },
       "it": {
-        "value": "ti contattiamo noi",
+        "value": "Ti contattiamo noi",
         "state": "final"
       },
       "ja": {
-        "value": "弊社よりご連絡いたします",
+        "value": "弊社がご連絡",
         "state": "final"
       }
     }
@@ -185,11 +185,11 @@
         "state": "final"
       },
       "es": {
-        "value": "¿Cómo prefieres ponerte en contacto con nosotros?",
+        "value": "¿Cómo quieres contactarnos?",
         "state": "final"
       },
       "fr": {
-        "value": "Comment préférez-vous être contacté(e) ?",
+        "value": "Comment vous contacter ?",
         "state": "final"
       },
       "it": {
@@ -243,7 +243,7 @@
         "state": "final"
       },
       "es": {
-        "value": "O nos ponemos nosotros en contacto contigo",
+        "value": "O te contactaremos",
         "state": "final"
       },
       "fr": {
@@ -255,7 +255,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "または弊社よりご連絡いたします",
+        "value": "又は弊社が連絡",
         "state": "final"
       }
     }
@@ -330,7 +330,7 @@
         "state": "final"
       },
       "es": {
-        "value": "CORREO ELECTRÓNICO",
+        "value": "EMAIL",
         "state": "final"
       },
       "fr": {
@@ -338,7 +338,7 @@
         "state": "final"
       },
       "it": {
-        "value": "EMAIL",
+        "value": "E-MAIL",
         "state": "final"
       },
       "ja": {
