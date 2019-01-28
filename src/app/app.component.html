@@ -14,6 +14,7 @@
                            *ngIf="appState.isFullScreen"
                            (displayChat)="addChatToFullScreen($event)"
                            (videoToggle)="videoToggle($event)"
+                           (cameraChange)="toggleCamera()"
                            (muteToggle)="muteToggle($event)"
                            (hangUp)="hangUpCall()"
                            (onAccept)="acceptOffer()"
@@ -50,6 +51,7 @@
                  (onMaximize)="setFullScreen()"
                  (displayChat)="minimizeMedia()"
                  (videoToggle)="videoToggle($event)"
+                 (cameraChange)="toggleCamera()"
                  (muteToggle)="muteToggle($event)"
                  (hangUp)="hangUpCall()"></vvc-media>
 

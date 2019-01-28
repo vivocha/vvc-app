@@ -3303,6 +3303,19 @@
     }
   },
   {
+    "id": "STRINGS.MEDIA.TOOLTIPS.TOGGLE_CAMERA",
+    "values": {
+      "en": {
+        "value": "Switch camera",
+        "state": "new"
+      },
+      "it": {
+        "value": "Cambia camera",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "STRINGS.MEDIA.TOOLTOPS.HIDE_VIDEOS",
     "values": {
       "de": {

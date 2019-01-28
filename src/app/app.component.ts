@@ -289,6 +289,9 @@ export class AppComponent implements OnInit {
   submitDataCollection(dc) {
     this.interactionService.submitDataCollection(dc);
   }
+  toggleCamera() {
+    this.interactionService.toggleCamera();
+  }
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
   }
