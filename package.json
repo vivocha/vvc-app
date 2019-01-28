@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction-core",
-  "version": "6.4.23",
+  "version": "6.4.24",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "clean": "[ ! -d ./dist ] || rm -rf dist/*",
