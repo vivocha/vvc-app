@@ -10,6 +10,7 @@ export class MediaContainerComponent {
   @Input() context;
   @Output() onMaximize = new EventEmitter();
   @Output() normalScreen = new EventEmitter();
+  @Output() cameraChange = new EventEmitter();
 
   @ViewChild('bigVideo') bigVideo: ElementRef;
   @ViewChild('localVideo') localVideo: ElementRef;
@@ -44,6 +45,9 @@ export class MediaContainerComponent {
           return this.context.videoRxStream;
         }
     }
+  }
+  hasMultipleVideoDevice() {
+    return !!this.context.hasMultipleVideoDevice;
   }
   isVideoVisible(type: 'big' | 'local' | 'remote') {
     switch (type) {
@@ -90,6 +94,9 @@ export class MediaContainerComponent {
   }
   showRemoteVideo() {
     return !this.hideSmallVideo && this.isVideoVisible('remote');
+  }
+  toggleCamera() {
+    this.cameraChange.emit();
   }
   toggleSmallVideo() {
     this.hideSmallVideo = !this.hideSmallVideo;

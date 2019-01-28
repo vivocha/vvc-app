@@ -13,7 +13,7 @@ export class FullScreenVideoComponent {
   @Output() displayChat = new EventEmitter();
   @Output() hangUp = new EventEmitter();
   @Output() normalScreen = new EventEmitter();
-
+  @Output() cameraChange = new EventEmitter();
   @Output() onAccept = new EventEmitter();
   @Output() onReject = new EventEmitter();
 

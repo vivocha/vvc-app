@@ -12,6 +12,7 @@
 <vvc-media-container
     class="media-video-wrapper full-screen"
     (normalScreen)="normalScreen.emit()"
+    (cameraChange)="cameraChange.emit()"
     [context]="context"></vvc-media-container>
 
 <div class="media-controls-wrapper" *ngIf="isMediaToolbarVisible()">

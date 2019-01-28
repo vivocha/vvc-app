@@ -30,6 +30,7 @@
     <vvc-media-container
         class="media-video-wrapper"
         (onMaximize)="onMaximize.emit()"
+        (cameraChange)="cameraChange.emit()"
         [context]="context"></vvc-media-container>
     <vvc-media-toolbar
         class="media-tools fit"

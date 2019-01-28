@@ -14,6 +14,7 @@ export class MediaComponent {
   @Output() displayChat = new EventEmitter();
   @Output() muteToggle = new EventEmitter();
   @Output() videoToggle = new EventEmitter();
+  @Output() cameraChange = new EventEmitter();
   @Output() hangUp = new EventEmitter();
 
 

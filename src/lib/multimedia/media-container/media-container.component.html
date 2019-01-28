@@ -37,6 +37,12 @@
       <span class="tooltip" *ngIf="switchVideo">{{ 'STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING' | translate }}</span>
       <span class="tooltip" *ngIf="!switchVideo">{{ 'STRINGS.MEDIA.TOOLTOPS.SWITCH_SHARING_REMOTE' | translate }}</span>
     </span>
+    <span class="buttons"
+          *ngIf="hasMultipleVideoDevice()"
+          (click)="toggleCamera()">
+      <svg height="18" viewBox="0 0 20 18" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-2 -3)"><path d="m0 0h24v24h-24z" fill-rule="nonzero" opacity="0"/><path d="m16.83 5h3.17c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-16c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2h3.17l1.83-2h6zm-.83 8c0 2.209139-1.790861 4-4 4-.8124333 0-1.5682955-.2422095-2.19931625-.6583581l-1.20532289 1.5995175c.96730056.6677735 2.14030054 1.0588406 3.40463914 1.0588406 3.3137085 0 6-2.6862915 6-6h2l-3-4-3 4zm-10 0h-2l3 4 3-4h-2c0-2.209139 1.790861-4 4-4 .7718298 0 1.4926018.21860439 2.1037785.59727567l1.2070959-1.60187029c-.9489218-.62903706-2.0871132-.99540538-3.3108744-.99540538-3.3137085 0-6 2.6862915-6 6z" fill="#fff"/></g></svg>
+      <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTIPS.TOGGLE_CAMERA' | translate }}</span>
+    </span>
 
   </div>
   <audio autoplay
