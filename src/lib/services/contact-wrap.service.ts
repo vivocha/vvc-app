@@ -569,7 +569,7 @@ export class VvcContactWrap {
       {
         event: 'localcapabilities',
         handler: caps => {
-          // console.log('ON_LOCAL',caps);
+          // console.log('ON_LOCAL', caps);
         }
       },
       {
@@ -1120,6 +1120,9 @@ export class VvcContactWrap {
   }
   submitSurvey(survey) {
     this.dcService.submitSurvey(survey);
+  }
+  toggleCamera() {
+    this.contact.switchToNextCamera();
   }
   toggleEmojiPanel() {
     this.uiService.toggleEmojiPanel();

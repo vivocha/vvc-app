@@ -181,6 +181,9 @@ export class VvcInteractionService {
   submitSurvey(dc) {
     this.contactService.submitSurvey(dc);
   }
+  toggleCamera() {
+    this.contactService.toggleCamera();
+  }
   toggleEmojiPanel() {
     this.contactService.toggleEmojiPanel();
   }

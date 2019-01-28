@@ -77,7 +77,8 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       return Object.assign({}, state, {media: multimedia});
     }
     case fromWidget.WIDGET_INIT_PROTOCOL: {
-      return Object.assign({}, state, {protocol: action.payload});
+      const protocol = Object.assign({}, state.protocol, action.payload);
+      return Object.assign({}, state, {protocol: protocol });
     }
     case fromWidget.WIDGET_IS_UPLOADING: {
       const context = Object.assign({}, state.context, {isUploading: true, uploadCompleted: false });
@@ -324,6 +325,7 @@ export const getUiStateRedux = (
                                   widgetState.protocol.localCaps.Media.Video &&
                                   widgetState.protocol.localCaps.Media.Video.Engines &&
                                   widgetState.protocol.localCaps.Media.Video.Engines.WebRTC;
+  const canSwitchCamera         = canLocalVideo && widgetState.protocol.localCaps.WebRTC.VideoMultipleDevices;
   const canStartAudio           = widgetState.protocol.canStartAudio &&
                                   !hasAudio &&
                                   !isAudioConnecting &&
@@ -384,6 +386,7 @@ export const getUiStateRedux = (
       contactCreationFailed: widgetState.context.contactCreationFailed,
       contactStarted: widgetState.protocol.contactStarted,
       hasError: widgetState.context.hasError,
+      hasMultipleVideoDevice: canSwitchCamera,
       hasSurvey: !!widgetState.context.surveyId,
       incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,

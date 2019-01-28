@@ -176,6 +176,7 @@ export interface UiState {
   contactCreationFailed: boolean;
   contactStarted: boolean;
   hasError: boolean;
+  hasMultipleVideoDevice: boolean;
   hasSurvey: boolean;
   isAutoChat?: boolean;
   incomingMedia?: string;
