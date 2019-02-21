@@ -268,6 +268,7 @@ export class VvcContactWrap {
               this.uiService.setWebleadSent();
               this.vivocha.pageRequest('interactionClosed', 'closed');
             }
+            this.checkForTranscript();
           });
         });
       }, (err) => {
