@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <title>Vivocha Interaction App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link href="main.css" rel="stylesheet">
+  <script type="text/javascript">
+    var beepmp3 = "./assets/static/beep.mp3";
+    var VVC_VAR_ASSETS = __VARIABLES__;
+  </script>
+</head>
+<body>
+<vvc-root></vvc-root>
+<script type="text/javascript">
+  // app - 6.4.32
+  // core - 6.4.26
+  // layout - 6.4.11
+
+  (function(){
+    function push(scripts) {
+      if (scripts.length > 0) {
+        var src = scripts.shift();
+        var head = document.getElementsByTagName('head')[0];
+        var t = document.createElement("script");
+        t.type="text/javascript";
+        t.src=src;
+        t.onload = function(e){ push(scripts); }
+        head.appendChild(t);
+      } else {
+        return;
+      }
+    }
+    var s = [
+      "assets/runtime.js",
+      "assets/polyfills.js",
+      "assets/vendor.js",
+      "assets/main.js"
+    ];
+    if (!!window.MSInputMethodContext && !!document.documentMode) {
+      console.warn("Internet Explorer is not supported");
+    }
+    var scripts = s;
+    var busId, acct, host;
+    try {
+      if (location.hash.indexOf(';') !== -1) {
+        var hashParts = location.hash.substr(2).split(';');
+        busId = hashParts[1];
+        acct = hashParts[1];
+        host = hashParts[2];
+      }
+      if (busId && acct && host) {
+        var vvc = "https://"+host+"/a/"+acct+"/js/vivocha_interaction.js";
+        scripts.unshift(vvc);
+        push(scripts);
+      } else {
+        throw new Error('cannot find vivocha configuration ' + busId + '-' + acct + '-' + host);
+      }
+    } catch(e) {
+      console.error(e);
+    }
+  })();
+</script>
+</body>
+</html>
