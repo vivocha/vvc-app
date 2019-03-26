@@ -4,11 +4,15 @@
     "values": {
       "en": {
         "value": "Vivocha Link Engage",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Enlace de participación de Vivocha",
+        "state": "final"
       },
       "it": {
         "value": "Link di ingaggio Vivocha",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -17,11 +21,15 @@
     "values": {
       "en": {
         "value": "Link",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "Enlace",
+        "state": "final"
       },
       "it": {
         "value": "Link",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -30,11 +38,15 @@
     "values": {
       "en": {
         "value": "chat with us",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "entrar al chat",
+        "state": "final"
       },
       "it": {
         "value": "entra in chat",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -43,11 +55,15 @@
     "values": {
       "en": {
         "value": "text color",
-        "state": "needs-review"
+        "state": "final"
+      },
+      "es": {
+        "value": "color del texto",
+        "state": "final"
       },
       "it": {
         "value": "colore testo",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   }
