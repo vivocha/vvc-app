@@ -703,7 +703,7 @@
         "state": "final"
       },
       "en": {
-        "value": "Recontact",
+        "value": "Re-contact",
         "state": "final"
       },
       "es": {
@@ -711,7 +711,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Recontacter",
+        "value": "Contacter à nouveau",
         "state": "final"
       },
       "it": {
@@ -720,7 +720,7 @@
       },
       "ja": {
         "value": "再問い合わせ",
-        "state": "final"
+        "state": "needs-review"
       }
     }
   },
@@ -1001,7 +1001,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Conversation",
+        "value": "Chat",
         "state": "final"
       },
       "it": {
@@ -1191,6 +1191,10 @@
   {
     "id": "META.VARIABLES.APP.PERSISTENCE_MODE",
     "values": {
+      "de": {
+        "value": "Persistenzmodus",
+        "state": "final"
+      },
       "en": {
         "value": "Persistence mode",
         "state": "final"
@@ -1199,8 +1203,16 @@
         "value": "Modo de persistencia",
         "state": "final"
       },
+      "fr": {
+        "value": "Fonctionnalité de persistance",
+        "state": "final"
+      },
       "it": {
         "value": "Modalità di persistenza",
+        "state": "final"
+      },
+      "ja": {
+        "value": "持続モード",
         "state": "final"
       }
     }
@@ -1424,7 +1436,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Avatar de l'utilisateur par défaut",
+        "value": "Avatar par défaut de l'utilisateur",
         "state": "final"
       },
       "it": {
@@ -1453,7 +1465,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Montrer la flèche dans la bulle du message chat",
+        "value": "Afficher la flèche entre la bulle et l'avatar dans le message de l'utilisateur",
         "state": "final"
       },
       "it": {
@@ -1482,7 +1494,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Montrer l'avatar du visiteur dans le message chat",
+        "value": "Afficher l'avatar de l'utilisateur dans le message du chat",
         "state": "final"
       },
       "it": {
@@ -1569,7 +1581,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
+        "value": "Afficher le message de bienvenue quand l'agent se connecte au chat",
         "state": "final"
       },
       "it": {
@@ -1585,12 +1597,20 @@
   {
     "id": "META.VARIABLES.COLLECTOR_AVATAR",
     "values": {
+      "de": {
+        "value": "Bild des Dialog Collector",
+        "state": "final"
+      },
       "en": {
-        "value": "Dialog collector avatar image",
+        "value": "Dialogue collector image",
         "state": "final"
       },
       "es": {
         "value": "Imagen del recopilador de diálogos",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Image dialog collector",
         "state": "final"
       },
       "it": {
@@ -1644,7 +1664,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Couleur de la BOT app",
+        "value": "Couleur application BOT",
         "state": "final"
       },
       "it": {
@@ -1673,7 +1693,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Notification audio d'un message reçu",
+        "value": "Notification audio lors de la réception d'un message",
         "state": "final"
       },
       "it": {
@@ -1789,7 +1809,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Affichage de l’avatar dans la barre du haut",
+        "value": "Afficher l’avatar dans la barre du haut",
         "state": "final"
       },
       "it": {
@@ -1818,7 +1838,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Montrer les informations agents dans la barre du haut",
+        "value": "Afficher les informations agents dans la barre du haut",
         "state": "final"
       },
       "it": {
@@ -1847,7 +1867,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Montrer l'avatar dans la barre du hau",
+        "value": "Afficher l'avatar dans la barre du haut",
         "state": "final"
       },
       "it": {
@@ -1934,7 +1954,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Le numéro est occupé",
+        "value": "Le numéro de téléphone est occupé",
         "state": "final"
       },
       "it": {
@@ -1963,7 +1983,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Le numéro est occupé",
+        "value": "Le numéro de téléphone est occupé",
         "state": "final"
       },
       "it": {
@@ -1992,7 +2012,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Appel annulé avant d'être pris en charge",
+        "value": "Appel annulé avant la réponse",
         "state": "final"
       },
       "it": {
@@ -2021,7 +2041,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Appel annulé avant d'être pris en charge",
+        "value": "Appel annulé avant la réponse",
         "state": "final"
       },
       "it": {
@@ -2473,19 +2493,19 @@
     "id": "STRINGS.CBN.RING",
     "values": {
       "de": {
-        "value": "Dein Telefon klingelt gleich. <br> Halte dein Telefon bereit",
+        "value": "Gleich wird dein Handy läuten. <br> Halte es bereit!",
         "state": "final"
       },
       "en": {
-        "value": "The telephone is ringing. <br> Keep your phone at your fingertips.",
+        "value": "The telephone is ringing. <br> Stay within reach of your phone.",
         "state": "final"
       },
       "es": {
-        "value": "El teléfono está sonando",
+        "value": "El teléfono va a sonar. <br> ¡Tenlo a mano!",
         "state": "final"
       },
       "fr": {
-        "value": "Le téléphone est en train de sonner",
+        "value": "Le téléphone va sonner. <br> Gardez le à portée de main!",
         "state": "final"
       },
       "it": {
@@ -2494,7 +2514,7 @@
       },
       "ja": {
         "value": "間もなく電話が鳴ります。<br>電話を手元に置いておいてください。",
-        "state": "final"
+        "state": "needs-review"
       }
     }
   },
@@ -2514,7 +2534,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Le téléphone est en train de sonner",
+        "value": "Le téléphone va sonner",
         "state": "final"
       },
       "it": {
@@ -2717,7 +2737,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "Bonjour, <b>{{nickname}}</b> ici,<br> Comment puis je vous aider?",
+        "value": "Bonjour, je suis <b>{{nickname}}</b>,<br> Comment puis je vous aider ?",
         "state": "final"
       },
       "it": {
@@ -3313,12 +3333,20 @@
   {
     "id": "STRINGS.MEDIA.TOOLTIPS.TOGGLE_CAMERA",
     "values": {
+      "de": {
+        "value": "Kamera ändern",
+        "state": "final"
+      },
       "en": {
         "value": "Switch camera",
         "state": "final"
       },
       "es": {
         "value": "Cambiar cámara",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Changer la caméra",
         "state": "final"
       },
       "it": {
@@ -3475,12 +3503,20 @@
   {
     "id": "STRINGS.MEDIA.VIDEO_CONTINUE",
     "values": {
+      "de": {
+        "value": "Weiter",
+        "state": "final"
+      },
       "en": {
         "value": "continue",
         "state": "final"
       },
       "es": {
         "value": "continuar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Continuer",
         "state": "final"
       },
       "it": {
@@ -3550,12 +3586,20 @@
   {
     "id": "STRINGS.MEDIA.VIDEO_STOPPED",
     "values": {
+      "de": {
+        "value": "Der Browser blockiert die Videowiedergabe, klicke auf Weiter, um den Stream erneut zu aktivieren",
+        "state": "final"
+      },
       "en": {
-        "value": "The browser is preventing to reproduce the video stream, please click on continue to keep reproducing",
+        "value": "The browser is blocking video playback, click continue to re-activate the stream",
         "state": "final"
       },
       "es": {
         "value": "El navegador está bloqueando la reproducción del vídeo, haz clic en continuar para volver a reproducirlo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Le navigateur bloque la reproduction de la vidéo, cliquer sur continuer pour réactiver le stream",
         "state": "final"
       },
       "it": {
@@ -4189,7 +4233,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "connection en cours...",
+        "value": "connexion en cours...",
         "state": "final"
       },
       "it": {
@@ -4624,7 +4668,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "envoyer un fichier",
+        "value": "Envoyer le fichier",
         "state": "final"
       },
       "it": {
@@ -4740,7 +4784,7 @@
         "state": "final"
       },
       "fr": {
-        "value": "nouveau messages",
+        "value": "nouveaux messages",
         "state": "final"
       },
       "it": {
