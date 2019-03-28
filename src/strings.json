@@ -2514,7 +2514,7 @@
       },
       "ja": {
         "value": "間もなく電話が鳴ります。<br>電話を手元に置いておいてください。",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
