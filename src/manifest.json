@@ -22,7 +22,7 @@
     },
     {
       "id": "restorePositionAfterDrag",
-      "nameId": "META.VARIABLES.APP.RESTORE_POSITION_ON_MAXIMIZE",
+      "nameId": "META.VARIABLES.APP.RESTORE_POSITION_AFTER_DRAG",
       "defaultValue": true,
       "type": "boolean",
       "categoryIds": [

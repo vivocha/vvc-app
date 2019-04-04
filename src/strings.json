@@ -406,6 +406,19 @@
     }
   },
   {
+    "id": "META.GROUPS.Drag",
+    "values": {
+      "en": {
+        "value": "Drag and drop",
+        "state": "final"
+      },
+      "it": {
+        "value": "Drag and drop",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "META.GROUPS.EMOJI",
     "values": {
       "de": {
@@ -1131,6 +1144,45 @@
     }
   },
   {
+    "id": "META.VARIABLES.APP.DRAG_ENABLED",
+    "values": {
+      "en": {
+        "value": "Drag and drop enabled",
+        "state": "final"
+      },
+      "it": {
+        "value": "Drag and drop abilitato",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.DRAG_LIMIT",
+    "values": {
+      "en": {
+        "value": "Can't drag the app outside of the viewport",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Impedisci di trascinare l'app fuori dallo schermo",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.DRAGGABLE_SELECTOR",
+    "values": {
+      "en": {
+        "value": "CSS selector that enables drag and drop",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Selettore CSS sul quale è attivo il drag and drop",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.APP.INITIAL_HEIGHT",
     "values": {
       "de": {
@@ -1198,6 +1250,19 @@
       "it": {
         "value": "Modalità di persistenza",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.RESTORE_POSITION_AFTER_DRAG",
+    "values": {
+      "en": {
+        "value": "The application remains in the position in which it was dragged",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "L'applicazione rimane nella posizione in cui è stata trascinata",
+        "state": "needs-review"
       }
     }
   },
@@ -3307,11 +3372,11 @@
     "values": {
       "en": {
         "value": "Switch camera",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Cambia camera",
-        "state": "new"
+        "state": "needs-review"
       }
     }
   },
@@ -3465,11 +3530,11 @@
     "values": {
       "en": {
         "value": "continue",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "continua",
-        "state": "new"
+        "state": "needs-review"
       }
     }
   },
@@ -3536,11 +3601,11 @@
     "values": {
       "en": {
         "value": "The browser is preventing to reproduce the video stream, please click on continue to keep reproducing",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Il browser sta bloccando la riproduzione del video, clicca su continua per riattivare lo stream",
-        "state": "new"
+        "state": "needs-review"
       }
     }
   },
