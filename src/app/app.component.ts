@@ -210,6 +210,7 @@ export class AppComponent implements OnInit {
       switch (evt.type) {
         case 'closedByAgent':
         case 'removedMediaScreen':
+        case 'incomingOffer':
           this.interactionService.setDimensions(this.closeDimensions);
           break;
       }
@@ -264,6 +265,9 @@ export class AppComponent implements OnInit {
     this.isMobile = context.isMobile;
     this.closeDimensions = context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal;
     this.interactionService.setDimensions(this.closeDimensions);
+    if (context.mediaPreset === 'sync') {
+      this.interactionService.setDimensions(this.dimensions.minimized);
+    }
   }
   showCloseDialog(context) {
     return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);

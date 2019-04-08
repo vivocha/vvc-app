@@ -29,7 +29,7 @@
     {
       "id": "enableDebug",
       "nameId": "META.VARIABLES.APP.ENABLE_DEBUG",
-      "defaultValue": true,
+      "defaultValue": false,
       "type": "boolean",
       "hidden": true,
       "categoryIds": [
