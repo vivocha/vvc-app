@@ -3,6 +3,42 @@
   "type": "interaction",
   "variables": [
     {
+      "id": "dragEnabled",
+      "nameId": "META.VARIABLES.APP.DRAG_ENABLED",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "dragLimit",
+      "nameId": "META.VARIABLES.APP.DRAG_LIMIT",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "restorePositionAfterDrag",
+      "nameId": "META.VARIABLES.APP.RESTORE_POSITION_AFTER_DRAG",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "draggableSelector",
+      "nameId": "META.VARIABLES.APP.DRAGGABLE_SELECTOR",
+      "defaultValue": "#vvc-top-bar",
+      "type": "string",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
       "id": "persistenceMode",
       "nameId": "META.VARIABLES.APP.PERSISTENCE_MODE",
       "defaultValue": "first",
