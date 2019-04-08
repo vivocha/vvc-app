@@ -122,8 +122,6 @@ export class VvcInteractionService {
         repeat()
       );
 
-      console.log('drag listeners setup okay');
-
       drag$.subscribe(
         async (evt) => {
           const windowSizePx = await vivocha.pageRequest('getWindowSize');
@@ -166,10 +164,9 @@ export class VvcInteractionService {
         },
         // TODO this methods are never called
         err => {
-          console.error('drag$', err);
+          console.error('drag error:', err);
         },
         async () => {
-          console.log('drag$ complete');
           this.store.dispatch(new NewEvent({
             type: 'dragComplete',
             data: await vivocha.pageRequest('getBoundingClientRect')
@@ -177,7 +174,7 @@ export class VvcInteractionService {
         }
       );
     } else {
-      console.log('drag not enabled. dragEnabledVar:', dragEnabledVar, 'draggableSelectorVar:', draggableSelectorVar, 'node:', node, 'isMobile:', context.isMobile);
+      // console.log('drag not enabled. dragEnabledVar:', dragEnabledVar, 'draggableSelectorVar:', draggableSelectorVar, 'node:', node, 'isMobile:', context.isMobile);
     }
   }
   minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any) {
