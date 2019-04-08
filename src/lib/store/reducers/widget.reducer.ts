@@ -18,7 +18,7 @@ const initialState = {
 export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState {
   switch (action.type) {
     case fromWidget.WIDGET_CLOSED_BY_AGENT: {
-      const context = Object.assign({}, state.context, { closedByAgent: true, showClosePanel: false });
+      const context = Object.assign({}, state.context, { closedByAgent: true, showClosePanel: false, isMinimized: false });
       return Object.assign({}, state, { context: context });
     }
     case fromWidget.WIDGET_CLOSED_BY_VISITOR: {
@@ -100,7 +100,9 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     case fromWidget.WIDGET_INCOMING_MEDIA: {
       const protocol = Object.assign({}, state.protocol, {incomingMedia: action.payload, incomingOffer: true});
       const multimedia = Object.assign({}, state.media, { isVisible: true });
-      return Object.assign({}, state, {protocol: protocol, media: multimedia });
+      const context = Object.assign({}, state.context, { isMinimized: false });
+
+      return Object.assign({}, state, {protocol: protocol, media: multimedia, context: context });
     }
     case fromWidget.WIDGET_MEDIA_OFFER: {
       const protocol = Object.assign({}, state.protocol, {offer: action.payload});

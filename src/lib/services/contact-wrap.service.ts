@@ -920,7 +920,11 @@ export class VvcContactWrap {
                   this.uiService.setTopBar({title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT'});
                 }
                 this.protocolService.setMediaChange(media);
-                this.uiService.initializeMedia(media);
+                if (Object.keys(media).length > 1) {
+                  this.uiService.initializeMedia(media);
+                } else {
+                  this.uiService.setMinimizedState();
+                }
                 this.checkForTranscript();
               } else {
                 this.dcService.setResolved();
@@ -931,6 +935,7 @@ export class VvcContactWrap {
             });
           });
         });
+
       }, (err) => {
         console.log('Failed to resume contact', err);
         this.vivocha.pageRequest('interactionFailed', err.message);

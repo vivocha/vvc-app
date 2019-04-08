@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 
-import { WidgetState } from '../store/models.interface';
+import {UiState, WidgetState} from '../store/models.interface';
 import {AppState, getWidgetState} from '../store/reducers/main.reducer';
 import {LoadContextSuccess} from '../store/actions/context.actions';
 import {
@@ -50,13 +50,15 @@ import {
   WidgetUpdateLocalCaps
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
+import {NewEvent} from '../store/actions/events.actions';
+import {getUiState} from '../store/selectors/widget.selectors';
 
 @Injectable()
 export class VvcUiService {
 
-  currentState: WidgetState;
+  currentState: UiState;
   constructor(private store: Store<AppState>) {
-    this.store.select(getWidgetState).subscribe( state => {
+    this.store.pipe(select(getUiState)).subscribe( state => {
       this.currentState = state;
     });
   }
@@ -163,6 +165,7 @@ export class VvcUiService {
   }
   setIncomingMedia(media) {
     this.store.dispatch(new WidgetIncomingMedia(media));
+    this.store.dispatch(new NewEvent({type: 'incomingOffer'}));
   }
   setInTransit(transit) {
     this.store.dispatch(new WidgetSetVideoTransit(transit));
