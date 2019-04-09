@@ -1254,7 +1254,7 @@
     }
   },
   {
-    "id": "META.VARIABLES.APP.RESTORE_POSITION_AFTER_DRAG",
+    "id": "META.VARIABLES.APP.REMEMBER_POSITION_AFTER_MINIMIZE",
     "values": {
       "en": {
         "value": "The application remains in the position in which it was dragged",

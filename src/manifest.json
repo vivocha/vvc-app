@@ -5,7 +5,7 @@
     {
       "id": "dragEnabled",
       "nameId": "META.VARIABLES.APP.DRAG_ENABLED",
-      "defaultValue": true,
+      "defaultValue": false,
       "type": "boolean",
       "categoryIds": [
         "General_Drag"
@@ -21,9 +21,9 @@
       ]
     },
     {
-      "id": "restorePositionAfterDrag",
-      "nameId": "META.VARIABLES.APP.RESTORE_POSITION_AFTER_DRAG",
-      "defaultValue": true,
+      "id": "rememberPositionAfterMinimize",
+      "nameId": "META.VARIABLES.APP.REMEMBER_POSITION_AFTER_MINIMIZE",
+      "defaultValue": false,
       "type": "boolean",
       "categoryIds": [
         "General_Drag"
