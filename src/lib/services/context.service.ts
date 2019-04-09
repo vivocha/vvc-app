@@ -71,6 +71,9 @@ export class VvcContextService {
   getVivocha() {
     return this.vivocha;
   }
+  getContext() {
+    return this.context;
+  }
   parseIframeUrl() {
     const hash = this.window.location.hash;
     if (hash.indexOf(';') !== -1) {

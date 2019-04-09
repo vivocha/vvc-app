@@ -1,17 +1,28 @@
-import {Injectable} from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {getUiState} from '../store/selectors/widget.selectors';
-import {AppState, getEventsState} from '../store/reducers/main.reducer';
-import {VvcContextService} from './context.service';
-import {ContextState, Dimension, EventsState, LeftScrollOffset, UiState} from '../store/models.interface';
-import {VvcContactWrap} from './contact-wrap.service';
-import {Observable} from 'rxjs';
-import {filter} from 'rxjs/operators';
-import {TranslateService} from '@ngx-translate/core';
-
+import { Injectable } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { getUiState } from '../store/selectors/widget.selectors';
+import { AppState, getEventsState } from '../store/reducers/main.reducer';
+import { VvcContextService } from './context.service';
+import { ContextState, Dimension, EventsState, LeftScrollOffset, UiState } from '../store/models.interface';
+import { VvcContactWrap } from './contact-wrap.service';
+import { filter } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable, fromEvent } from 'rxjs';
+import { skipUntil, takeUntil, repeat } from 'rxjs/operators';
+import { NewEvent } from '../store/actions/events.actions';
 
 @Injectable()
 export class VvcInteractionService {
+
+  /**
+   * It will contain the Interaction App position if it's dragged
+   */
+  dragged: any | boolean = false;
+
+  /**
+   * Local reference that indicates that the #setFullScreen method was called
+   */
+  isFullScreen: boolean = false;
 
   private vivocha;
   private context: ContextState;
@@ -24,7 +35,6 @@ export class VvcInteractionService {
     private contactService: VvcContactWrap,
     private translateService: TranslateService
   ) {
-
   }
 
   /**** PUBLIC METHOD ****/
@@ -67,6 +77,10 @@ export class VvcInteractionService {
   getState(): Observable<UiState> {
     return this.store.pipe(select(getUiState));
   }
+  getVariables() {
+    const context: any = this.contextService.getContext();
+    return context.variables || {};
+  }
   hangUp(dim: Dimension) {
     this.contactService.hangUp(dim);
   }
@@ -75,27 +89,116 @@ export class VvcInteractionService {
   }
   init() {
     const contextReady = this.contextService.ready();
-    contextReady.subscribe( (context: ContextState) => {
+    contextReady.subscribe((context: ContextState) => {
       if (context.loaded) {
         this.vivocha = this.contextService.getVivocha();
         this.context = context;
         this.registerChangeLangService();
         this.contactService.initializeContact(this.vivocha, this.context);
+        this.listenForDrag();
       }
     });
     return contextReady.pipe(filter(context => context.loaded));
+  }
+  listenForDrag() {
+
+    this.dragged = false;
+    const context: any = this.contextService.getContext();
+    const variables: any = context.variables || {};
+    const vivocha: any = this.contextService.getVivocha();
+    const dragEnabledVar: boolean = variables['dragEnabled'];
+    const draggableSelectorVar: string = variables['draggableSelector'];
+    const node: HTMLElement = document.querySelector(draggableSelectorVar);
+    const canUseDrag: boolean = dragEnabledVar && !!node && !context.isMobile;
+
+    if (canUseDrag) {
+      const mouseDown$: Observable<MouseEvent> = fromEvent(node, 'mousedown') as Observable<MouseEvent>;
+      const mouseMove$: Observable<MouseEvent> = fromEvent(document, 'mousemove') as Observable<MouseEvent>;
+      const mouseUp$: Observable<MouseEvent> = fromEvent(document, 'mouseup') as Observable<MouseEvent>;
+
+      const drag$ = mouseMove$.pipe(
+        skipUntil(mouseDown$),
+        takeUntil(mouseUp$),
+        repeat()
+      );
+
+      drag$.subscribe(
+        async (evt) => {
+          const windowSizePx = await vivocha.pageRequest('getWindowSize');
+          const windowSize = {
+            width: parseInt(windowSizePx.width.replace('px', ''), 10),
+            height: parseInt(windowSizePx.height.replace('px', ''), 10)
+          };
+          const boundingClientRect = await vivocha.pageRequest('getBoundingClientRect');
+
+          let moveX = evt['movementX'];
+          let moveY = evt['movementY'];
+
+          if (variables['dragLimit']) {
+            const offset = {
+              left: variables['dragOffsetLeft'] || 0,
+              right: variables['dragOffsetRight'] || 0,
+              top: variables['dragOffsetTop'] || 0,
+              bottom: variables['dragOffsetBottom'] || 0
+            };
+            const max = {
+              left: -boundingClientRect.left - offset.left,
+              right: windowSize.width - boundingClientRect.right + offset.right,
+              top: -boundingClientRect.top - offset.top,
+              bottom: windowSize.height - boundingClientRect.bottom + offset.bottom
+            };
+
+            if (moveX >= 0 && moveX > max.right) moveX = max.right;
+            if (moveX < 0 && moveX < max.left) moveX = max.left;
+            if (moveY >= 0 && moveY > max.bottom) moveY = max.bottom;
+            if (moveY < 0 && moveY < max.top) moveY = max.top;
+          }
+
+          await vivocha.pageRequest('move', {
+            top: moveY,
+            left: moveX
+          });
+
+          // this.dragged = await vivocha.pageRequest('getBoundingClientRect');
+          this.dragged = await vivocha.pageRequest('getPosition');
+        },
+        // TODO this methods are never called
+        err => {
+          console.error('drag error:', err);
+        },
+        async () => {
+          this.store.dispatch(new NewEvent({
+            type: 'dragComplete',
+            data: await vivocha.pageRequest('getBoundingClientRect')
+          }));
+        }
+      );
+    } else {
+      // console.log('drag not enabled. dragEnabledVar:', dragEnabledVar, 'draggableSelectorVar:', draggableSelectorVar, 'node:', node, 'isMobile:', context.isMobile);
+    }
   }
   minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any) {
     this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+    if (!isFullScreen) {
+      const variables = this.getVariables();
+      if (variables['restorePositionAfterDrag'] && this.dragged) {
+        dim.position = 'fixed';
+        dim.top = this.dragged.top;
+        dim.left = this.dragged.left;
+        dim.bottom = this.dragged.bottom;
+        dim.right = this.dragged.right;
+      }
+    }
     this.contactService.maximizeWidget(isFullScreen, dim);
+    if (!isFullScreen) setTimeout(() => this.listenForDrag(), 1000);
   }
   minimizeMedia() {
     this.contactService.minimizeMedia();
   }
   minimizeWidget(dim: Dimension) {
-     this.contactService.minimizeWidget(dim);
+    this.contactService.minimizeWidget(dim);
   }
   muteToggle(muted) {
     this.contactService.muteToggle(muted);
@@ -152,7 +255,16 @@ export class VvcInteractionService {
     this.contactService.setFullScreen();
   }
   setNormalScreen() {
-    this.contactService.setNormalScreen();
+    const variables = this.getVariables();
+    let dim: any = {};
+    if (variables['restorePositionAfterDrag'] && this.dragged) {
+      dim.position = 'fixed';
+      dim.top = this.dragged.top;
+      dim.left = this.dragged.left;
+      dim.bottom = this.dragged.bottom;
+      dim.right = this.dragged.right;
+    }
+    this.contactService.setNormalScreen(dim);
   }
   setTopBar(avatarUrl: string, title: string, subtitle: string) {
     this.contactService.setTopBar(avatarUrl, title, subtitle);
