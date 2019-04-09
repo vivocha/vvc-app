@@ -54,6 +54,8 @@
        *ngIf="isVideoVisible('big')">
     <video autoplay playsinline
            #bigVideo
+           (play)="playVideo()"
+           (playing)="logVideoEvent('big-video', $event)"
            (pause)="videoOnPause('big-video', $event)"
            [srcObject]="getSrcForVideo('big')"></video>
   </div>
@@ -61,6 +63,8 @@
     <video autoplay playsinline
            muted
            #localVideo
+           (play)="logVideoEvent('local-video', $event)"
+           (playing)="logVideoEvent('local-video', $event)"
            (pause)="videoOnPause('local-video', $event)"
            [srcObject]="getSrcForVideo('local')"></video>
   </div>
@@ -70,6 +74,8 @@
     <video autoplay playsinline
            muted
            #remoteVideo
+           (play)="logVideoEvent('remote-video', $event)"
+           (playing)="logVideoEvent('remote-video', $event)"
            (pause)="videoOnPause('remote-video', $event)"
            [srcObject]="getSrcForVideo('remote')"></video>
   </div>

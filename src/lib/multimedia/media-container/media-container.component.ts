@@ -105,6 +105,10 @@ export class MediaContainerComponent {
     this.switchVideo = !this.switchVideo;
   }
   videoOnPause(videoId, evt) {
+    // console.log('videoOnPause', videoId, evt);
     this.showVideoIsPaused = true;
+  }
+  logVideoEvent(videoId, evt) {
+    // console.log('logVideoEvent', videoId, evt);
   }
 }
