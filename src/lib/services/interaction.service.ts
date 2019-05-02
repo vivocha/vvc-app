@@ -11,6 +11,8 @@ import { Observable, fromEvent } from 'rxjs';
 import { skipUntil, takeUntil, repeat } from 'rxjs/operators';
 import { NewEvent } from '../store/actions/events.actions';
 
+declare var vivocha: any;
+
 @Injectable()
 export class VvcInteractionService {
 
@@ -25,6 +27,7 @@ export class VvcInteractionService {
   isFullScreen: boolean = false;
 
   private vivocha;
+  private logger = console; // Default
   private context: ContextState;
 
   agentRequestCallback;
@@ -96,6 +99,8 @@ export class VvcInteractionService {
         this.registerChangeLangService();
         this.contactService.initializeContact(this.vivocha, this.context);
         this.listenForDrag();
+        this.logger = this.vivocha.getLogger('vvc-interaction');
+        this.logger.log('interactionService init');
       }
     });
     return contextReady.pipe(filter(context => context.loaded));
@@ -121,6 +126,8 @@ export class VvcInteractionService {
         takeUntil(mouseUp$),
         repeat()
       );
+
+      this.logger.log('enabled app drag');
 
       drag$.subscribe(
         async (evt) => {
@@ -164,7 +171,7 @@ export class VvcInteractionService {
         },
         // TODO this methods are never called
         err => {
-          console.error('drag error:', err);
+          this.logger.error('drag error:', err);
         },
         async () => {
           this.store.dispatch(new NewEvent({
@@ -174,7 +181,7 @@ export class VvcInteractionService {
         }
       );
     } else {
-      // console.log('drag not enabled. dragEnabledVar:', dragEnabledVar, 'draggableSelectorVar:', draggableSelectorVar, 'node:', node, 'isMobile:', context.isMobile);
+      this.logger.log('drag not enabled. dragEnabledVar:', dragEnabledVar, 'draggableSelectorVar:', draggableSelectorVar, 'node:', node, 'isMobile:', context.isMobile);
     }
   }
   minimize(minimize: boolean, isFullScreen?: boolean, positionObject?: any, sizeObject?: any) {
