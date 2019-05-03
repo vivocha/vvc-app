@@ -27,7 +27,7 @@ export class VvcInteractionService {
   isFullScreen: boolean = false;
 
   private vivocha;
-  private logger = console; // Default
+  private logger = console;
   private context: ContextState;
 
   agentRequestCallback;
@@ -100,7 +100,7 @@ export class VvcInteractionService {
         this.contactService.initializeContact(this.vivocha, this.context);
         this.listenForDrag();
         this.logger = this.vivocha.getLogger('vvc-interaction');
-        this.logger.log('interactionService init');
+        this.logger.log('interactionService.init');
       }
     });
     return contextReady.pipe(filter(context => context.loaded));

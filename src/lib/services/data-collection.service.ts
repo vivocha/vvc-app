@@ -19,6 +19,7 @@ import {AdvancedDataCollection} from '@vivocha/public-entities/dist';
 export class VvcDataCollectionService {
   private context;
   private vivocha;
+  private logger = console;
   collectorAgent;
   contactOptions: any = { data : [] };
   selectedIdx = 0;
@@ -59,6 +60,8 @@ export class VvcDataCollectionService {
   setInitialContext(context, vivocha) {
     this.context = context;
     this.vivocha = vivocha;
+    this.logger = this.vivocha.getLogger('vvc-interaction');
+    this.logger.log('dataCollectionService.setInitialContext', context);
     this.setCollectorAgent();
     this.store.dispatch(new DataCollectionInitialized({
       dataCollectionIds: this.context.dataCollectionIds || [],
@@ -77,7 +80,7 @@ export class VvcDataCollectionService {
       } else {
         // this.uiService.setUiReady();
         this.dcRefs = await this.vivocha.pageRequest('mergeDataCollections', this.context.dataCollectionIds);
-        console.log('DC-REFS', this.dcRefs);
+        this.logger.log('DC-REFS', this.dcRefs);
         this.processDcByIdx(0);
       }
     }
@@ -85,7 +88,7 @@ export class VvcDataCollectionService {
 
   async processDcById(id, type) {
     const dcRef = await this.vivocha.pageRequest('prepareDataCollectionById', id);
-    // console.log('processing dc', id, type, dcRef);
+    this.logger.log('processing dc', id, type, dcRef);
     this.processDcByRef(dcRef, type);
   }
   async processDcByIdx(idx) {
@@ -235,7 +238,7 @@ export class VvcDataCollectionService {
       dcDefinition : dc,
       dcData: data
     };
-    // console.log('submitting hidden dc', dataCollection);
+    this.logger.log('submitting hidden dc', dataCollection);
     this.submitDataCollection(dataCollection);
   }
   submitSurvey(survey) {

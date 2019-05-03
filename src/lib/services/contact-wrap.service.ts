@@ -19,6 +19,7 @@ export class VvcContactWrap {
   private vivocha;
   private contact;
   private context;
+  private logger = console;
 
   lastSystemMessageId;
   agent;
@@ -216,7 +217,7 @@ export class VvcContactWrap {
     if (conf && conf.nick) {
       this.visitorNick = conf.nick;
     }
-    // console.log('CREATING CONTACTS WITH OPTIONS', conf);
+    this.logger.log('CREATING CONTACTS WITH OPTIONS', conf);
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
       // console.log('pre-routing callback-----', opts);
       this.interactionStart = +new Date();
@@ -272,7 +273,7 @@ export class VvcContactWrap {
           });
         });
       }, (err) => {
-        console.log('Failed to create contact', err, opts);
+        this.logger.error('Failed to create contact', err, opts);
         this.zone.run(() => {
           this.cancelDissuasionTimeout();
           this.setRecallOrLeave(err.message === 'Precondition Failed' ? 'noAgents' : 'error', 'error');
@@ -342,6 +343,8 @@ export class VvcContactWrap {
   }
   initializeContact(vivocha, context) {
     this.vivocha = vivocha;
+    this.logger = this.vivocha.getLogger('vvc-interaction');
+    this.logger.log('contactWrapService.initializeContact');
     this.context = context;
     this.dcService.setInitialContext(context, vivocha);
     if (this.isInPersistence()) {

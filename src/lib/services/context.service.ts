@@ -19,6 +19,7 @@ export class VvcContextService {
   private window;
   private vivocha;
   private context: any;
+  private logger = console;
 
   constructor(
     private store: Store<AppState>,
@@ -44,6 +45,8 @@ export class VvcContextService {
       }
       this.zone.run( () => {
         this.vivocha = this.window.vivocha;
+        this.logger = this.vivocha.getLogger('vvc-interaction');
+        this.logger.log('contextService init');
         this.isMobile = this.window.vivocha.isMobile();
         this.context = context;
         this.dispatchContext(context);
