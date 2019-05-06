@@ -73,7 +73,6 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
         isVisible: hasVoice || hasVideo,
         isMinimized: hasChat,
       };
-      // console.log('INITIALIZING MEDIA', state.context, state.protocol);
       return Object.assign({}, state, {media: multimedia});
     }
     case fromWidget.WIDGET_INIT_PROTOCOL: {

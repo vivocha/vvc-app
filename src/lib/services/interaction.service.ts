@@ -95,12 +95,12 @@ export class VvcInteractionService {
     contextReady.subscribe((context: ContextState) => {
       if (context.loaded) {
         this.vivocha = this.contextService.getVivocha();
+        this.logger = this.vivocha.getLogger('vvc-interaction');
+        this.logger.log('interactionService.init');
         this.context = context;
         this.registerChangeLangService();
         this.contactService.initializeContact(this.vivocha, this.context);
         this.listenForDrag();
-        this.logger = this.vivocha.getLogger('vvc-interaction');
-        this.logger.log('interactionService.init');
       }
     });
     return contextReady.pipe(filter(context => context.loaded));

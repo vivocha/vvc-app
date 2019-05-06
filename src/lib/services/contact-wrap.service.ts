@@ -219,9 +219,9 @@ export class VvcContactWrap {
     }
     this.logger.log('CREATING CONTACTS WITH OPTIONS', conf);
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
-      // console.log('pre-routing callback-----', opts);
+      this.logger.log('pre-routing callback-----', opts);
       this.interactionStart = +new Date();
-      // console.log('TRANSFER ROUTING', this.context.routing);
+      this.logger.log('TRANSFER ROUTING', this.context.routing);
       const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
       this.dissuasionTimer = setTimeout(() => {
         this.leave('dissuasion').then(() => {
@@ -240,10 +240,10 @@ export class VvcContactWrap {
         this.vivocha.pageRequest('interactionCreated', contact).then(() => {
           this.interactionReady();
           this.zone.run(() => {
-            // console.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
+            this.logger.log('contact created', JSON.stringify(contact.contact.initial_offer, null, 2));
             this.uiService.setUiReady();
             this.track('blue screen');
-            // console.log('contact type', contact.contact.type, contact.contact);
+            this.logger.log('contact type', contact.contact.type, contact.contact);
             if (contact.contact.type === 'cbn') {
               this.uiService.setCbnMode();
             }
@@ -319,7 +319,7 @@ export class VvcContactWrap {
         mediaOffer['Video'].rx = 'off';
       }
       this.zone.run(() => {
-        // console.log('MEDIAOFFER', mediaOffer);
+        this.logger.log('MEDIAOFFER', mediaOffer);
         if (!mediaOffer['Screen'] || mediaOffer['Screen'].rx === 'off') {
           // this.vivocha.setNormalScreen();
           this.setDimension(dim);
@@ -359,7 +359,7 @@ export class VvcContactWrap {
     } else {
       this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionCompleted) => {
         if (data) {
-          // console.log('DATA', data);
+          this.logger.log('onDataCollectionCompleted', data);
           const hideQueue = data.lastCompletedType && data.lastCompletedType === 'dialog';
           switch (data.type) {
             /*
@@ -566,14 +566,14 @@ export class VvcContactWrap {
       {
         event: 'left',
         handler: obj => {
-          // console.log('LEFT', obj);
+          this.logger.log('LEFT', obj);
           this.onLeft(obj);
         }
       },
       {
         event: 'localcapabilities',
         handler: caps => {
-          // console.log('ON_LOCAL', caps);
+          this.logger.log('localcapabilities', caps);
         }
       },
       {
@@ -585,7 +585,7 @@ export class VvcContactWrap {
       {
         event: 'mediachange',
         handler: async (media, changed) => {
-          // console.log('mediachange', media, changed);
+          this.logger.log('mediachange', media, changed);
           if (this.vivocha.dot(media, 'Video.data.rx_stream.id')) {
             this.vivocha.dot(media, 'Video.data.rx_stream.media', await this.contact.getMediaStream('video', 'rx'));
           }
@@ -903,7 +903,7 @@ export class VvcContactWrap {
           this.contact.getMedia().then((media) => {
             this.zone.run(() => {
               const agentInfo = this.contact.contact.agentInfo;
-              // console.log('LOCAL JOIN', agentInfo, this.contact);
+              this.logger.log('LOCAL JOIN', agentInfo, this.contact);
               if (agentInfo) {
                 this.uiService.setUiReady();
                 const agent: AgentState = {
@@ -940,7 +940,6 @@ export class VvcContactWrap {
         });
 
       }, (err) => {
-        console.log('Failed to resume contact', err);
         this.vivocha.pageRequest('interactionFailed', err.message);
         this.uiService.setCreationFailed();
         this.track('resume failed');
@@ -1154,7 +1153,6 @@ export class VvcContactWrap {
       this.zone.run(() => {
         this.uiService.setInTransit(true);
       });
-      // console.log('TOGGLE VIDEO', show, JSON.stringify(mediaOffer, null, 2));
       this.contact.offerMedia(mediaOffer).then(() => {
         this.zone.run(() => {
           this.uiService.setInTransit(false);
@@ -1166,7 +1164,6 @@ export class VvcContactWrap {
     if (this.vivocha && this.context.variables.enableDebug) {
       const v = JSON.stringify(obj) || '-';
       this.vivocha.track(id, v);
-      console.log('track', id, v);
     }
   }
   updateLeftScrollOffset(o: LeftScrollOffset) {
