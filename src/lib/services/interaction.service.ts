@@ -11,8 +11,6 @@ import { Observable, fromEvent } from 'rxjs';
 import { skipUntil, takeUntil, repeat } from 'rxjs/operators';
 import { NewEvent } from '../store/actions/events.actions';
 
-declare var vivocha: any;
-
 @Injectable()
 export class VvcInteractionService {
 
