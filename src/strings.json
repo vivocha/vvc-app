@@ -2733,27 +2733,27 @@
     "id": "STRINGS.CHAT.ISWRITING",
     "values": {
       "de": {
-        "value": "{{Agent}} schreibt…",
+        "value": "{{nickname}} schreibt…",
         "state": "final"
       },
       "en": {
-        "value": "{{agent}} is writing...",
+        "value": "{{nickname}} is writing...",
         "state": "final"
       },
       "es": {
-        "value": "{{agent}} está escribiendo...",
+        "value": "{{nickname}} está escribiendo...",
         "state": "final"
       },
       "fr": {
-        "value": "{{agent}} est en train d'écrire...",
+        "value": "{{nickname}} est en train d'écrire...",
         "state": "final"
       },
       "it": {
-        "value": "{{agent}} sta scrivendo...",
+        "value": "{{nickname}} sta scrivendo...",
         "state": "final"
       },
       "ja": {
-        "value": "{{オペレーター}} 書き込み中",
+        "value": "{{nickname}} 書き込み中",
         "state": "final"
       }
     }
