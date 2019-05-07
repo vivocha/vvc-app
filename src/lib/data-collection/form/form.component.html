@@ -9,7 +9,7 @@
         <label *ngIf="elem.format !== 'message'">{{ (elem.labelId | translate) || elem.id }}<span *ngIf="elem.required" class="required"> *</span></label>
 
         <!-- message -->
-        <div  class="message" *ngIf="getInputElement(elem) === 'message'" [innerHTML]="elem.message | translate"></div>
+        <div  class="message" *ngIf="getInputElement(elem) === 'message'" [innerHTML]="elem.message | translate | vvcSanitize:'html' "></div>
 
         <!-- text -->
         <input *ngIf="!readMode && getInputElement(elem) === 'input'"

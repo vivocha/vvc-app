@@ -1,7 +1,7 @@
 <!-- closed state -->
 <div class="media-connected-view animated fadeInUp" *ngIf="context.isClosed">
   <div class="media-content" >
-    <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.CONTACT_CLOSED' | translate"></div>
+    <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.CONTACT_CLOSED' | translate | vvcSanitize:'html' "></div>
   </div>
 </div>
 
@@ -22,7 +22,7 @@
 <div class="media-connected-view animated fadeInUp" *ngIf="!context.isClosed && context.isMediaConnected && !context.incomingOffer">
 
   <div class="media-content" >
-    <div class="media-title" *ngIf="!(context.videoRxStream || context.videoTxStream)" [innerHtml]=" 'STRINGS.VOICE.WELCOME_MESSAGE' | translate:{ nickname: context.agent.nick }"></div>
+    <div class="media-title" *ngIf="!(context.videoRxStream || context.videoTxStream)" [innerHtml]=" 'STRINGS.VOICE.WELCOME_MESSAGE' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></div>
     <div class="media-avatar" *ngIf="context.agent.avatar && !(context.videoRxStream || context.videoTxStream)">
       <img [src]="context.agent.avatar">
     </div>

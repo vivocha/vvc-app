@@ -27,13 +27,13 @@
 </div>
 <div class="cbn-message-wrapper" *ngIf="context.isClosed">
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.LEFT' | translate:{ nickname: context.agent.nick }">
+       [innerHTML]=" 'STRINGS.CBN.LEFT' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' ">
   </div>
 </div>
 
 <div class="cbn-message-wrapper" *ngIf="!context.isClosed">
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.SUCCESS' | translate:{ nickname: context.agent.nick }"
+       [innerHTML]=" 'STRINGS.CBN.SUCCESS' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "
        *ngIf="!context.cbnState">
     <!--
     You will be contacted shortly.<br>
@@ -43,7 +43,7 @@
     -->
   </div>
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.RING' | translate:{ nickname: context.agent.nick }"
+       [innerHTML]=" 'STRINGS.CBN.RING' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "
        *ngIf="context.cbnState === 'dialing'">
     <!--
     Your phone is ringing...<br><br>
@@ -52,19 +52,19 @@
     -->
   </div>
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.BUSY' | translate:{ nickname: context.agent.nick }"
+       [innerHTML]=" 'STRINGS.CBN.BUSY' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "
        *ngIf="context.cbnState === 'busy'">
   </div>
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.NOANSWER' | translate:{ nickname: context.agent.nick }"
+       [innerHTML]=" 'STRINGS.CBN.NOANSWER' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "
        *ngIf="context.cbnState === 'no-answer'">
   </div>
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.WRONG_NUMBER' | translate:{ nickname: context.agent.nick }"
+       [innerHTML]=" 'STRINGS.CBN.WRONG_NUMBER' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "
        *ngIf="context.cbnState === 'failed'">
   </div>
   <div class="status-message"
-       [innerHTML]=" 'STRINGS.CBN.INLINE' | translate:{ nickname: context.agent.nick }"
+       [innerHTML]=" 'STRINGS.CBN.INLINE' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "
        *ngIf="context.cbnState === 'answer'">
   </div>
 

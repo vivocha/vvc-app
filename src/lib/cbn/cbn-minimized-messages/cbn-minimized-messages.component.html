@@ -1,26 +1,26 @@
 <div *ngIf="context.isClosed">
-  <span [innerHTML]=" 'STRINGS.CBN.LEFT_M' | translate:{ nickname: context.agent.nick }"></span>
+  <span [innerHTML]=" 'STRINGS.CBN.LEFT_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
 </div>
 <div *ngIf="!context.isClosed && context.notRead === 0">
 
   <div *ngIf="!context.cbnState">
-    <span [innerHTML]=" 'STRINGS.CBN.SUCCESS_M' | translate:{ nickname: context.agent.nick }"></span>
+    <span [innerHTML]=" 'STRINGS.CBN.SUCCESS_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
   </div>
   <div *ngIf="context.cbnState === 'dialing'">
     <svg class="animated2 infinite shake2" height="19" viewBox="0 0 24 19" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m23.71 14.67c-3.05-2.89-7.17-4.67-11.71-4.67s-8.66 1.78-11.71 4.67c-.18.18-.29.43-.29.71s.11.53.29.71l2.48 2.48c.18.18.43.29.71.29.27 0 .52-.11.7-.28.79-.74 1.69-1.36 2.66-1.85.33-.16.56-.5.56-.9v-3.1c1.45-.48 3-.73 4.6-.73s3.15.25 4.6.72v3.1c0 .39.23.74.56.9.98.49 1.87 1.12 2.66 1.85.18.18.43.28.7.28.28 0 .53-.11.71-.29l2.48-2.48c.18-.18.29-.43.29-.71 0-.27-.11-.52-.29-.7zm-3.96-11.82-3.56 3.55 1.41 1.41s3.45-3.52 3.56-3.55zm-6.75-2.85h-2v5h2zm-6.6 7.81 1.41-1.41-3.55-3.56-1.42 1.42c.11.03 3.56 3.55 3.56 3.55z" fill="#ffffff" fill-rule="evenodd" transform=""/></svg>
-    <span style="padding-left: 10px" [innerHTML]=" 'STRINGS.CBN.RING_M' | translate:{ nickname: context.agent.nick }"></span>
+    <span style="padding-left: 10px" [innerHTML]=" 'STRINGS.CBN.RING_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
   </div>
   <div *ngIf="context.cbnState === 'busy'">
-    <span [innerHTML]=" 'STRINGS.CBN.BUSY_M' | translate:{ nickname: context.agent.nick }"></span>
+    <span [innerHTML]=" 'STRINGS.CBN.BUSY_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
   </div>
   <div *ngIf="context.cbnState === 'no-answer'">
-    <span [innerHTML]=" 'STRINGS.CBN.NOANSWER_M' | translate:{ nickname: context.agent.nick }"></span>
+    <span [innerHTML]=" 'STRINGS.CBN.NOANSWER_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
   </div>
   <div *ngIf="context.cbnState === 'failed'">
-    <span [innerHTML]=" 'STRINGS.CBN.WRONG_NUMBER_M' | translate:{ nickname: context.agent.nick }"></span>
+    <span [innerHTML]=" 'STRINGS.CBN.WRONG_NUMBER_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
   </div>
   <div *ngIf="context.cbnState === 'answer'">
-    <span [innerHTML]=" 'STRINGS.CBN.INLINE_M' | translate:{ nickname: context.agent.nick }"></span>
+    <span [innerHTML]=" 'STRINGS.CBN.INLINE_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
   </div>
 
 </div>
@@ -28,5 +28,5 @@
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="18" viewBox="0 0 20 20" width="34"><defs><path id="a" d="m20 2h-16c-1.1 0-1.99.9-1.99 2l-.01 18 4-4h14c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm-14 7h12v2h-12zm8 5h-8v-2h8zm4-6h-12v-2h12z"/><mask id="b" fill="#fff"><use fill="none" xlink:href="#a"/></mask></defs><g fill="none" fill-rule="evenodd" transform="translate(-2 -2)"><path d="m0 0h24v24h-24z"/><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/><g fill="#fff" fill-rule="evenodd" mask="url(#b)"><path d="m0 0h24v24h-24z"/></g></g>
     <circle fill="#D7293B" cx="21" cy="5" r="5"></circle>
   </svg>
-  <span style="padding-left: 10px" [innerHTML]=" 'STRINGS.CBN.NEW_MESSAGES_M' | translate:{ nickname: context.agent.nick }"></span>
+  <span style="padding-left: 10px" [innerHTML]=" 'STRINGS.CBN.NEW_MESSAGES_M' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></span>
 </div>

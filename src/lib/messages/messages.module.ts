@@ -7,9 +7,10 @@ import { SystemMessageComponent } from './system-message/system-message.componen
 import { TemplateGenericComponent } from './template-generic/template-generic.component';
 import { QuickRepliesComponent } from './quick-replies/quick-replies.component';
 import { TemplateListComponent } from './template-list/template-list.component';
-import {RequestMessageComponent} from './request-message/request-message.component';
+import { RequestMessageComponent } from './request-message/request-message.component';
 import { LinkMessageComponent } from './link-message/link-message.component';
-import {VvcLinkPipe} from './vvc-link.pipe';
+import { VvcLinkPipe } from './vvc-link.pipe';
+import { VvcCommonModule } from './../common/vvc-common.module';
 
 const components = [
   ChatMessageComponent,
@@ -25,7 +26,8 @@ const components = [
 @NgModule({
   imports: [
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    VvcCommonModule
   ],
   exports: [...components],
   declarations: [...components]
