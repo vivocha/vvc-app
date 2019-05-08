@@ -49,6 +49,9 @@ export class VvcContactWrap {
   cbnChannelStatus: CbnStatus[] = ['dialing', 'ringing', 'busy', 'no-answer', 'unassigned', 'failed', 'cancel', 'answer'];
 
   dimensions = {};
+
+  watchPositionId = null;
+
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -233,6 +236,7 @@ export class VvcContactWrap {
         this.zone.run(() => {
           this.contact = contact;
           this.track('contact created');
+          this.mapContactActions();
           this.contact.getLocalCapabilities().then((caps) => {
             this.uiService.setLocalCaps(caps);
           });
@@ -454,6 +458,67 @@ export class VvcContactWrap {
     if (this.context.variables.enableDebug) {
       console.log('___' + evtId + '___', data, opts);
     }
+  }
+  handleGeoAction(data: any) {
+    if (navigator.geolocation) {
+      this.zone.run(() => {
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.AGENT_ASKING_POSITION');
+      });
+      navigator.geolocation.getCurrentPosition((pos) => {
+        this.logger.log('user position', pos);
+        this.contact.sendAction('Geo', [{
+          latitude: pos.coords.latitude,
+          longitude: pos.coords.longitude
+        }]);
+      }, (error) => {
+        this.logger.error('position error', error);
+        if (error.code === 1) {
+          this.zone.run(() => {
+            this.messageService.sendSystemMessage('STRINGS.MESSAGES.USER_DENIED_POSITION_PERMISSION');
+          });
+        }
+      });
+    } else {
+      this.logger.warn('navigator.geolocation not available');
+    }
+  }
+  handleAutoGeoAction(data: any) {
+    if (navigator.geolocation) {
+      if (data && data[0] === 0 && this.watchPositionId) {
+        this.logger.log('clear watch userPosition');
+        navigator.geolocation.clearWatch(this.watchPositionId);
+      } else if (data && data[0] === -1) {
+        this.logger.log('watch user position');
+        this.zone.run(() => {
+          this.messageService.sendSystemMessage('STRINGS.MESSAGES.AGENT_ASKING_WATCH_POSITION');
+        });
+        this.watchPositionId = navigator.geolocation.watchPosition((pos) => {
+          this.logger.log('user position', pos);
+          this.contact.sendAction('Geo', [{
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude
+          }]);
+        }, (error) => {
+          this.logger.error('position error', error);
+          if (error.code === 1) {
+            this.zone.run(() => {
+              this.messageService.sendSystemMessage('STRINGS.MESSAGES.USER_DENIED_WATCH_POSITION_PERMISSION');
+            });
+          }
+        });
+      }
+    } else {
+      this.logger.warn('navigator.geolocation not available');
+    }
+  }
+  mapContactActions() {
+    this.contact.on('action', (name, data) => {
+      if (name === 'Geo') {
+        this.handleGeoAction(data);
+      } else {
+        this.handleAutoGeoAction(data);
+      }
+    });
   }
   mapContact() {
     const contactHandlers = [
@@ -888,6 +953,7 @@ export class VvcContactWrap {
         this.track('resumed contact');
         this.zone.run(() => {
           this.contact = contact;
+          this.mapContactActions();
           this.contact.getLocalCapabilities().then((caps) => {
             this.uiService.setLocalCaps(caps);
           });
