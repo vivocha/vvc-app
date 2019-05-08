@@ -3610,6 +3610,32 @@
     }
   },
   {
+    "id": "STRINGS.MESSAGES.AGENT_ASKING_POSITION",
+    "values": {
+      "en": {
+        "value": "The agent is asking your position",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "L'agente ha richiesto la tua posizione",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.AGENT_ASKING_WATCH_POSITION",
+    "values": {
+      "en": {
+        "value": "The agent is asking to watch your position",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "L'agente ha richiesto la condivisione della tua posizione",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "STRINGS.MESSAGES.LOCAL_CLOSE",
     "values": {
       "de": {
@@ -3924,6 +3950,32 @@
       },
       "ja": {
         "value": "他のオペレーターと繋がりました",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.USER_DENIED_POSITION_PERMISSION",
+    "values": {
+      "en": {
+        "value": "You denied the permission to access to your position. If you want to change this you have to do manually in your browser's settings",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Hai negato il permesso di accedere alla tua posizione. Per cambiare questa impostazione devi accedere alle impostazioni del browser",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.USER_DENIED_WATCH_POSITION_PERMISSION",
+    "values": {
+      "en": {
+        "value": "You denied the permission to watch your position. If you want to change this you have to do manually in your browser's settings",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Hai negato la condivisione della tua posizione. Per cambiare questa impostazione devi accedere alle impostazioni del browser",
         "state": "final"
       }
     }
