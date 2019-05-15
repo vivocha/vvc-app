@@ -37,7 +37,8 @@ export class UploadPanelComponent {
     }
   }
   onUploading(evt, formRef){
-    if (evt.srcElement.files[0]) {
+    const el = evt.srcElement || evt.target;
+    if (el.files && el.files[0]) {
       this.fileFormRef = evt.target.files[0];
       const fr = new FileReader();
       fr.onload = (e) => {
