@@ -12,7 +12,6 @@ import { ClientContactCreationOptions } from '@vivocha/public-entities/dist/cont
 import { Observable, Subject } from 'rxjs';
 import { NewEvent } from '../store/actions/events.actions';
 
-
 @Injectable()
 export class VvcContactWrap {
 
@@ -785,6 +784,8 @@ export class VvcContactWrap {
         };
         if (join.avatar) {
           agent.avatar = join.avatar;
+        } else if(this.context.variables.agentAvatarDefault) {
+          agent.avatar = this.context.variables.agentAvatarDefault;
         }
         this.agent = agent;
         this.vivocha.pageRequest('interactionAnswered', agent);
@@ -980,6 +981,8 @@ export class VvcContactWrap {
                 };
                 if (agentInfo.avatar) {
                   agent.avatar = agentInfo.avatar;
+                } else if(this.context.variables.agentAvatarDefault) {
+                  agent.avatar = this.context.variables.agentAvatarDefault;
                 }
                 this.agent = agent;
                 this.uiService.setAgent(agent);
