@@ -46,7 +46,7 @@
 
   </div>
   <audio autoplay
-         *ngIf="context.voiceRxStream"
+         *ngIf="context.voiceRxStream && !context.videoRxStream"
          [srcObject]="context.voiceRxStream"></audio>
 
   <div class="big-video"
@@ -57,26 +57,28 @@
            (play)="playVideo()"
            (playing)="logVideoEvent('big-video', $event)"
            (pause)="videoOnPause('big-video', $event)"
+           (volumechange)="logVideoEvent('big-video', $event)"
            [srcObject]="getSrcForVideo('big')"></video>
   </div>
   <div class="small-video local" *ngIf="showLocalVideo()">
     <video autoplay playsinline
-           muted
            #localVideo
            (play)="logVideoEvent('local-video', $event)"
            (playing)="logVideoEvent('local-video', $event)"
            (pause)="videoOnPause('local-video', $event)"
+           (volumechange)="logVideoEvent('local-video', $event)"
+           [muted]="true"
            [srcObject]="getSrcForVideo('local')"></video>
   </div>
   <div class="small-video remote"
        *ngIf="showRemoteVideo()"
        (click)="switchBigVideo()">
     <video autoplay playsinline
-           muted
            #remoteVideo
            (play)="logVideoEvent('remote-video', $event)"
            (playing)="logVideoEvent('remote-video', $event)"
            (pause)="videoOnPause('remote-video', $event)"
+           (volumechange)="logVideoEvent('remote-video', $event)"
            [srcObject]="getSrcForVideo('remote')"></video>
   </div>
 </div>

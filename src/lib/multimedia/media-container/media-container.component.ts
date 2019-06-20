@@ -83,10 +83,13 @@ export class MediaContainerComponent {
     }
     if (this.localVideo && this.localVideo.nativeElement && this.localVideo.nativeElement.paused) {
       this.localVideo.nativeElement.play();
-      this.bigVideo.nativeElement.muted = false;
     }
     if (this.remoteVideo && this.remoteVideo.nativeElement && this.remoteVideo.nativeElement.paused) {
       this.remoteVideo.nativeElement.play();
+    }
+
+    if (this.bigVideo.nativeElement.srcObject !== this.context.videoTxStream) {
+      this.bigVideo.nativeElement.muted = false;
     }
   }
   showLocalVideo() {
