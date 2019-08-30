@@ -51,6 +51,8 @@ export class VvcContactWrap {
 
   watchPositionId = null;
 
+  recontactDone: boolean = false;
+
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -219,11 +221,10 @@ export class VvcContactWrap {
     if (conf && conf.nick) {
       this.visitorNick = conf.nick;
     }
-    this.logger.log('CREATING CONTACTS WITH OPTIONS', conf);
+    this.logger.log('creating contact with options:', conf);
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
-      this.logger.log('pre-routing callback-----', opts);
+      this.logger.log('pre-routing callback. opts:', opts);
       this.interactionStart = +new Date();
-      this.logger.log('TRANSFER ROUTING', this.context.routing);
       const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
       this.dissuasionTimer = setTimeout(() => {
         this.leave('dissuasion').then(() => {
@@ -361,8 +362,8 @@ export class VvcContactWrap {
       }
     } else {
       this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionCompleted) => {
+        this.logger.log('onDataCollectionCompleted. data:', data);
         if (data) {
-          this.logger.log('onDataCollectionCompleted', data);
           const hideQueue = data.lastCompletedType && data.lastCompletedType === 'dialog';
           switch (data.type) {
             /*
@@ -381,10 +382,18 @@ export class VvcContactWrap {
               }
               break;
             case 'recontact':
-              this.dcService.setResolved();
-              const infoToMerge: any = data.contactCreateOptions || {};
-              // infoToMerge.recallFromId = this.contact.id;
-              this.createContact(infoToMerge, hideQueue);
+              if(!this.recontactDone) {
+                this.logger.log('creating recontact. context: ', this.context);
+                this.dcService.setResolved();
+                const infoToMerge: any = data.contactCreateOptions || {};
+                // infoToMerge.recallFromId = this.contact.id;
+                this.createContact(infoToMerge, hideQueue);
+                this.recontactDone = true;
+              } else {
+                // if we are here something went wrong. TODO fix widget finished state automa bad state
+                this.logger.log('recontact already set');
+                this.uiService.setCreationFailed();
+              }
               break;
             case 'survey':
               this.contact.storeSurvey(data.dataCollection);
