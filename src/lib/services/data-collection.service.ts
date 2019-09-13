@@ -114,7 +114,8 @@ export class VvcDataCollectionService {
       this.uiService.setUiReady();
       this.store.dispatch(new DataCollectionSelected({ dc: dcRef, type: this.dcType}));
       this.store.dispatch(new DataCollectionShowPanel(false));
-      this.collectorRef = await this.vivocha.pageRequest('createCollector', dcRef);
+      const dc = await this.vivocha.pageRequest('prepareDataCollection', dcRef);
+      this.collectorRef = this.vivocha.createCollector(this.context, dc);
       this.uiService.setDialogUi();
       this.sendMessageViaCollector(false, '');
     }
