@@ -19,6 +19,7 @@ export class VvcContextService {
   private window;
   private vivocha;
   private context: any;
+  private interactionMode: any;
   private logger = console;
 
   constructor(
@@ -36,7 +37,8 @@ export class VvcContextService {
     if (this.window.vivocha && this.window.vivocha.ready) {
       await this.window.vivocha.ready(this.busId);
       const context = await this.window.vivocha.pageRequest('getContext');
-      const extraDataCollection = await this.window.vivocha.pageRequest('getInteractionModeDataCollectionId', context.mediaPreset);
+      const interactionMode = await this.window.vivocha.pageRequest('getInteractionMode', context.mediaPreset);
+      const extraDataCollection = interactionMode ? interactionMode.dataCollectionId : undefined;
       if (extraDataCollection) {
         if (!context.dataCollectionIds) {
           context.dataCollectionIds = [];
@@ -49,6 +51,7 @@ export class VvcContextService {
         this.logger.log('contextService init');
         this.isMobile = this.window.vivocha.isMobile();
         this.context = context;
+        this.context.interactionMode = interactionMode;
         this.dispatchContext(context);
       });
     } else {

@@ -294,6 +294,7 @@ export class VvcContactWrap {
       entryPointId: this.context.entryPointId,
       engagementId: this.context.engagementId,
       mediaPreset: this.context.mediaPreset,
+      webleadHash: this.context.interactionMode.webleadHash,
       lang: this.context.language,
       vvcu: this.context.page.vvcu,
       vvct: this.context.page.vvct,
