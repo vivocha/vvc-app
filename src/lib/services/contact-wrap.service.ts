@@ -1002,7 +1002,8 @@ export class VvcContactWrap {
                   this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
                 }
                 this.protocolService.setMediaChange(media);
-                if (Object.keys(media).length > 1) {
+                // TODO remove is_bot check once the restore media is able to detect the capabilitites from bot
+                if (Object.keys(media).length > 1 || (this.agent && this.agent.is_bot)) {
                   this.uiService.initializeMedia(media);
                 } else {
                   this.uiService.setMinimizedState();
