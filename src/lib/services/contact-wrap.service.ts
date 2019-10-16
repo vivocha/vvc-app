@@ -294,7 +294,6 @@ export class VvcContactWrap {
       entryPointId: this.context.entryPointId,
       engagementId: this.context.engagementId,
       mediaPreset: this.context.mediaPreset,
-      webleadHash: this.context.interactionMode.webleadHash,
       lang: this.context.language,
       vvcu: this.context.page.vvcu,
       vvct: this.context.page.vvct,
@@ -306,6 +305,9 @@ export class VvcContactWrap {
     }
     if (this.context.page.first_title) {
       initialOpts.first_title = this.context.page.first_title;
+    }
+    if (this.context.interactionMode && this.context.interactionMode.webleadHash) {
+      initialOpts.webleadHash = this.context.interactionMode.webleadHash;
     }
     if (dataToMerge) {
       return Object.assign({}, initialOpts, dataToMerge);
