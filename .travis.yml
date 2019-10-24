@@ -27,5 +27,5 @@ deploy:
   on:
     branch: master
 after_script:
-- git remote add -f app https://github.com/vivocha/vvc-app.git
+- git remote add -f app git@github.com/vivocha/vvc-app.git
 - git subtree push --prefix interaction/app/default app master
