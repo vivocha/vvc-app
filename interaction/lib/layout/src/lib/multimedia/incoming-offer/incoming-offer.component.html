@@ -1,0 +1,23 @@
+<div class="media-content" >
+  <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.INCOMING_MESSAGE' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></div>
+  <div class="media-avatar" *ngIf="context.agent.avatar">
+    <img [src]="context.agent.avatar">
+  </div>
+  <div class="media-tools fit incoming">
+    <div class="button-wrapper">
+      <div class="round-button hangup" (click)="rejectIncomingOffer()">
+        <svg height="8" viewBox="0 0 22 8" width="22" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-1 -8)"><path d="m0 0h24.000001v24.000001h-24.000001zm0 0h24.000001v24.000001h-24.000001z"/><path d="m7.83689909 10.3913551v2.7170978c0 .3458124-.19583633.6360478-.48643218.7842532-.94127785.4631416-1.8257 1.0806639-2.61536263 1.8525666-.34745156.3396372-.91600865.3396372-1.26346021 0l-2.21105536-2.1613277c-.34745156-.3396373-.34745156-.8954073 0-1.2350445 5.93194567-5.79853359 15.54687789-5.79853359 21.47882349 0 .3474516.3396372.3474516.8954072 0 1.2350445l-2.204738 2.1551525c-.3474516.3396372-.9160087.3396372-1.2634602 0-.7833454-.7657275-1.6740848-1.389425-2.6153627-1.8525667-.2969131-.1420301-.4927494-.4446159-.4927494-.7780779v-2.7170978c-2.7038049-.85218066-5.6287153-.85835588-8.32620281 0z" class="fill" fill-rule="nonzero"/></g></svg>
+      </div>
+      <div class="button-label">{{ 'STRINGS.MEDIA.DECLINE' | translate }}</div>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="round-button"
+           (click)="acceptOffer()">
+        <svg *ngIf="context.incomingMedia === 'Video'" height="12" viewBox="0 0 18 12" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-3 -6)"><path d="m0 0h24v24h-24z"/><path d="m17 10.5v-3.5c0-.55-.45-1-1-1h-12c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11z" class="fill" fill-rule="nonzero"/></g></svg>
+        <svg *ngIf="context.incomingMedia === 'Voice'" height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="m17.38 10.79-2.2-2.2c-.28-.28-.36-.67-.25-1.02.37-1.12.57-2.32.57-3.57 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 9.39-7.61 17-17 17-.55 0-1-.45-1-1v-3.49c0-.55.45-1 1-1 1.24 0 2.45-.2 3.57-.57.35-.12.75-.03 1.02.24l2.2 2.2c2.83-1.45 5.15-3.76 6.59-6.59z" class="fill" transform="translate(-3 -3)"/></svg>
+      </div>
+      <div class="button-label">{{ 'STRINGS.MEDIA.ACCEPT' | translate }}</div>
+    </div>
+  </div>
+</div>

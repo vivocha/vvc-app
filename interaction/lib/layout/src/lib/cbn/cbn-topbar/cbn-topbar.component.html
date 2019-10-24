@@ -1,0 +1,17 @@
+<div class="cbn-top-bar" [ngClass]="{ 'closed': context.isClosed && showMessages }">
+  <div class="cbn-top-header" (click)="maximize.emit()">
+    <div class="cbn-top-title" *ngIf="showMessages">
+      <vvc-cbn-minimized-messages [context]="context"></vvc-cbn-minimized-messages>
+    </div>
+  </div>
+  <div class="cbn-top-controls" *ngIf="!showMessages">
+      <span (click)="minimize.emit()">
+        <i class="icon icon-vvc-reduce"></i>
+      </span>
+  </div>
+  <div class="cbn-top-controls">
+      <span (click)="close.emit()">
+      <i class="icon icon-vvc-close"></i>
+    </span>
+  </div>
+</div>

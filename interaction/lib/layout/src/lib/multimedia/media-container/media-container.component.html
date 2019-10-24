@@ -1,0 +1,84 @@
+<div class="media-containers">
+  <div class="video-paused" *ngIf="showVideoIsPaused">
+    {{ 'STRINGS.MEDIA.VIDEO_STOPPED' | translate }}
+    <div class="btn">
+      <button (click)="playVideo()">{{'STRINGS.MEDIA.VIDEO_CONTINUE' | translate }}</button>
+    </div>
+  </div>
+  <div class="size-tools" [ngClass]="{ 'desktop' : !context.isMobile }">
+    <span class="buttons"
+          *ngIf="context.isFullScreen"
+          (click)="normalScreen.emit()">
+      <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-4 -4)"><path d="m0 0h24v24h-24z"></path><path d="m8.66666667 8.66666667v-4.66666667h1.73333333v6.4h-6.4v-1.73333333zm6.66666663 0h4.6666667v1.73333333h-6.4v-6.4h1.7333333zm-6.66666663 6.66666663h-4.66666667v-1.7333333h6.4v6.4h-1.73333333zm6.66666663 0v4.6666667h-1.7333333v-6.4h6.4v1.7333333z" fill="#fff"></path></g></svg>
+      <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTIPS.MINIMIZE_VIDEO' | translate }}</span>
+    </span>
+    <span class="buttons"
+          *ngIf="!context.isFullScreen"
+          (click)="onMaximize.emit()">
+      <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-4 -4)"><path d="m0 0h24v24h-24z"></path><path d="m5.6 5.6v4.8h-1.6v-6.4h6v1.6zm12.8 0h-4.8v-1.6h6.4v6.4h-1.6zm-12.8 12.8h4.4v1.6h-6v-6.4h1.6zm12.8 0v-4.8h1.6v6.4h-6v-1.6z" fill="#fff"></path></g></svg>
+      <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTIPS.MAXIMIZE_VIDEO' | translate }}</span>
+    </span>
+    <span class="buttons"
+          *ngIf="canHideSmallVideo()"
+          (click)="toggleSmallVideo()">
+      <svg height="16" viewBox="0 0 20 16" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-2 -4)"><path d="m0 0h24v24h-24z"></path><path d="m20 4h-16c-1.1 0-1.99.9-1.99 2l-.01 12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm0 14h-16v-9h16zm0-11h-16v1h16z" fill="#fff"></path></g></svg>
+      <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTOPS.HIDE_VIDEOS' | translate }}</span>
+    </span>
+    <span class="buttons"
+          *ngIf="canShowSmallVideo()"
+          (click)="toggleSmallVideo()">
+      <svg height="16" viewBox="0 0 20 16" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-2 -4)"><path d="m0 0h24v24h-24z"></path><path d="m20 4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-16c-1.1 0-2-.9-2-2l.01-12c0-1.1.89-2 1.99-2zm-11 13h-4v-4h4zm10 0h-4v-4h4zm1 1v-9h-16v9zm0-11h-16v1h16z" fill="#fff"></path></g></svg>
+      <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTOPS.SHOW_VIDEOS' | translate }}</span>
+    </span>
+    <span class="buttons"
+          *ngIf="isVideoVisible('remote')"
+          (click)="switchBigVideo()">
+      <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-4 -4)"><path d="m0 0h24v24h-24z"></path><path d="m18.4885389 20-3.4951324-3.5-1.9972185 2v-5.5h5.4923509l-1.9972185 2 3.5019027 3.5652797zm-12.99062501-16 3.50190271 3.5 1.9972185-2v5.5h-5.4923509l1.99721852-2-3.50190272-3.5z" fill="#fff"></path></g></svg>
+      <span class="tooltip" *ngIf="switchVideo">{{ 'STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING' | translate }}</span>
+      <span class="tooltip" *ngIf="!switchVideo">{{ 'STRINGS.MEDIA.TOOLTOPS.SWITCH_SHARING_REMOTE' | translate }}</span>
+    </span>
+    <span class="buttons"
+          *ngIf="hasMultipleVideoDevice()"
+          (click)="toggleCamera()">
+      <svg height="18" viewBox="0 0 20 18" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-2 -3)"><path d="m0 0h24v24h-24z" fill-rule="nonzero" opacity="0"/><path d="m16.83 5h3.17c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-16c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2h3.17l1.83-2h6zm-.83 8c0 2.209139-1.790861 4-4 4-.8124333 0-1.5682955-.2422095-2.19931625-.6583581l-1.20532289 1.5995175c.96730056.6677735 2.14030054 1.0588406 3.40463914 1.0588406 3.3137085 0 6-2.6862915 6-6h2l-3-4-3 4zm-10 0h-2l3 4 3-4h-2c0-2.209139 1.790861-4 4-4 .7718298 0 1.4926018.21860439 2.1037785.59727567l1.2070959-1.60187029c-.9489218-.62903706-2.0871132-.99540538-3.3108744-.99540538-3.3137085 0-6 2.6862915-6 6z" fill="#fff"/></g></svg>
+      <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTIPS.TOGGLE_CAMERA' | translate }}</span>
+    </span>
+
+  </div>
+  <audio autoplay
+         *ngIf="context.voiceRxStream && !context.videoRxStream"
+         [srcObject]="context.voiceRxStream"></audio>
+
+  <div class="big-video"
+       (dblclick)="minMaxVideo()"
+       *ngIf="isVideoVisible('big')">
+    <video autoplay playsinline
+           #bigVideo
+           (play)="playVideo()"
+           (playing)="logVideoEvent('big-video', $event)"
+           (pause)="videoOnPause('big-video', $event)"
+           (volumechange)="logVideoEvent('big-video', $event)"
+           [srcObject]="getSrcForVideo('big')"></video>
+  </div>
+  <div class="small-video local" *ngIf="showLocalVideo()">
+    <video autoplay playsinline
+           #localVideo
+           (play)="logVideoEvent('local-video', $event)"
+           (playing)="logVideoEvent('local-video', $event)"
+           (pause)="videoOnPause('local-video', $event)"
+           (volumechange)="logVideoEvent('local-video', $event)"
+           [muted]="true"
+           [srcObject]="getSrcForVideo('local')"></video>
+  </div>
+  <div class="small-video remote"
+       *ngIf="showRemoteVideo()"
+       (click)="switchBigVideo()">
+    <video autoplay playsinline
+           #remoteVideo
+           (play)="logVideoEvent('remote-video', $event)"
+           (playing)="logVideoEvent('remote-video', $event)"
+           (pause)="videoOnPause('remote-video', $event)"
+           (volumechange)="logVideoEvent('remote-video', $event)"
+           [srcObject]="getSrcForVideo('remote')"></video>
+  </div>
+</div>

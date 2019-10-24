@@ -1,0 +1,15 @@
+<div class="media-content" >
+  <div class="media-title" [innerHtml]=" 'STRINGS.VOICE.MEDIA_OFFERING' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></div>
+  <div class="media-avatar" *ngIf="context.agent.avatar">
+    <img [src]="context.agent.avatar">
+  </div>
+  <div class="media-loading">
+    <div class="inner-loading-panel">
+      <div class="loading-container">
+        <div class="progress-bar">
+          <div class="loaded"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
