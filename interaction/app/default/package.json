@@ -3,6 +3,7 @@
   "version": "6.4.43",
   "description": "Vivocha Interaction Application",
   "scripts": {
+    "prepare": "npm run build:prod",
     "clean": "[ ! -d ./dist/assets ] || rm -rf dist/assets/* && [ ! -d ./dist/ie ] || rm -rf dist/ie/*",
     "clean:all": "npm run clean && rm -rf node_modules",
     "cpmain": "cp ./src/main.scss ./dist/main.scss && cp ./src/manifest.json ./dist/manifest.json && cp ./src/strings.json ./dist/strings.json",
@@ -50,7 +51,6 @@
     "@angular/compiler-cli": "^8.2.12",
     "ng-packagr": "^5.7.0",
     "typescript": "~3.5.0",
-
     "@angular-devkit/build-ng-packagr": "^0.803.14",
     "@angular/language-service": "8.2.12",
     "@types/jasmine": "3.4.4",
@@ -86,13 +86,13 @@
     "@ngrx/store-devtools": "^8.4.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "@vivocha/public-entities": "^7.0.10",
-    "autolinker": "^3.11.1",
-    "rxjs": "^6.5.3",
     "@vivocha/client-interaction-core": "^6.4.36",
     "@vivocha/client-interaction-layout": "^6.4.20",
+    "@vivocha/public-entities": "^7.0.10",
+    "autolinker": "^1.6.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "3.3.3",
+    "rxjs": "^6.5.3",
     "zone.js": "0.10.2"
   }
 }
