@@ -1,0 +1,346 @@
+{
+  "id": "vvc-app",
+  "type": "interaction",
+  "variables": [
+    {
+      "id": "dragEnabled",
+      "nameId": "META.VARIABLES.APP.DRAG_ENABLED",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "dragLimit",
+      "nameId": "META.VARIABLES.APP.DRAG_LIMIT",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "rememberPositionAfterMinimize",
+      "nameId": "META.VARIABLES.APP.REMEMBER_POSITION_AFTER_MINIMIZE",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "draggableSelector",
+      "nameId": "META.VARIABLES.APP.DRAGGABLE_SELECTOR",
+      "defaultValue": "#vvc-top-bar",
+      "type": "string",
+      "categoryIds": [
+        "General_Drag"
+      ]
+    },
+    {
+      "id": "persistenceMode",
+      "nameId": "META.VARIABLES.APP.PERSISTENCE_MODE",
+      "defaultValue": "first",
+      "options": [
+        "first",
+        "last",
+        "always"
+      ],
+      "categoryIds": [
+        "General"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "customSize",
+      "nameId": "META.VARIABLES.APP.CUSTOM_SIZE",
+      "defaultValue": true,
+      "type": "boolean",
+      "hidden": true,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "enableDebug",
+      "nameId": "META.VARIABLES.APP.ENABLE_DEBUG",
+      "defaultValue": false,
+      "type": "boolean",
+      "hidden": true,
+      "categoryIds": [
+        "General"
+      ]
+    },
+    {
+      "id": "initialWidth",
+      "nameId": "META.VARIABLES.APP.INITIAL_WIDTH",
+      "defaultValue": "370px",
+      "type": "unit",
+      "hidden": true,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "initialHeight",
+      "nameId": "META.VARIABLES.APP.INITIAL_HEIGHT",
+      "defaultValue": "600px",
+      "type": "unit",
+      "hidden": true,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "initialBottom",
+      "nameId": "META.VARIABLES.APP.INITIAL_BOTTOM",
+      "defaultValue": "-5px",
+      "type": "unit",
+      "hidden": true,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "initialRight",
+      "nameId": "META.VARIABLES.APP.INITIAL_RIGHT",
+      "defaultValue": "-5px",
+      "type": "unit",
+      "hidden": true,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "askCloseConfirm",
+      "nameId": "META.VARIABLES.APP.ASK_CLOSE_CONFIRM",
+      "type": "boolean",
+      "defaultValue": true,
+      "categoryIds": [
+        "Chat_Topbar"
+      ]
+    },
+    {
+      "id": "stayInAppAfterClose",
+      "nameId": "META.VARIABLES.APP.STAY_IN_APP_AFTER_CLOSE",
+      "type": "boolean",
+      "defaultValue": true,
+      "categoryIds": [
+        "Chat_Topbar"
+      ]
+    },
+    {
+      "id": "hideUploadWithBot",
+      "nameId": "META.VARIABLES.SEND_AREA.HIDE_UPLOAD_BOT",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "General_FilesAndEmoji"
+      ]
+    },
+    {
+      "id": "showAvatar",
+      "nameId": "META.VARIABLES.TOPBAR.SHOW_AVATAR",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Topbar"
+      ]
+    },
+    {
+      "id": "defaultTopBarAvatar",
+      "nameId": "META.VARIABLES.TOPBAR.DEFAULT_AVATAR",
+      "defaultValue": "./assets/static/acct-img.png",
+      "type": "file",
+      "hidden": true,
+      "categoryIds": [
+        "Chat_Topbar"
+      ]
+    },
+    {
+      "id": "showAgentInfoOnTopBar",
+      "nameId": "META.VARIABLES.TOPBAR.SHOW_AGENT_INFO",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Topbar"
+      ]
+    },
+    {
+      "id": "showEmojiButton",
+      "nameId": "META.VARIABLES.SEND_AREA.SHOW_EMOJI_BUTTON",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "General_FilesAndEmoji"
+      ]
+    },
+    {
+      "id": "showUploadButton",
+      "nameId": "META.VARIABLES.SEND_AREA.SHOW_UPLOAD_BUTTON",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "General_FilesAndEmoji"
+      ]
+    },
+    {
+      "id": "autoChat",
+      "nameId": "META.VARIABLES.CHAT.AUTO_CHAT",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "EarlyChat"
+      ]
+    },
+    {
+      "id": "showWelcomeOnAutoChat",
+      "nameId": "META.VARIABLES.CHAT.SHOW_WELCOME_AUTO_CHAT",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "EarlyChat"
+      ]
+    },
+    {
+      "id": "showConnectingOnAutoChat",
+      "nameId": "META.VARIABLES.CHAT.SHOW_AUTO_CHAT_CONNECTING",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "EarlyChat"
+      ]
+    },
+    {
+      "id": "showWelcomeMessage",
+      "nameId": "META.VARIABLES.CHAT.SHOW_WELCOME_MESSAGE",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat"
+      ]
+    },
+    {
+      "id": "showVisitorAvatar",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Visitor"
+      ]
+    },
+    {
+      "id": "showVisitorBalloonArrow",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_ARROW",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Visitor"
+      ]
+    },
+    {
+      "id": "visitorBalloonColor",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR",
+      "defaultValue": "#E6E6E6",
+      "type": "color",
+      "hidden": true,
+      "categoryIds": [
+        "Chat_Balloon_Visitor"
+      ]
+    },
+    {
+      "id": "visitorAvatarDefault",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.DEFAULT_AVATAR",
+      "defaultValue": "./assets/static/visitor_default.png",
+      "type": "file",
+      "categoryIds": [
+        "Chat_Balloon_Visitor"
+      ]
+    },
+    {
+      "id": "showAgentAvatar",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
+      "id": "showAgentBalloonArrow",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
+      "id": "agentBalloonColor",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.COLOR",
+      "defaultValue": "#0351A1",
+      "type": "color",
+      "hidden": true,
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
+      "id": "agentAvatarDefault",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
+      "defaultValue": "./assets/static/agent_default.png",
+      "type": "file",
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
+      "id": "showAvatarOnIsWriting",
+      "nameId": "META.VARIABLES.CHAT.SHOW_AVATAR_ON_IS_WRITING",
+      "defaultValue": true,
+      "type": "boolean",
+      "hidden": true,
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
+      "id": "playAudioNotification",
+      "nameId": "META.VARIABLES.PLAY_AUDIO_NOTIFICATION",
+      "defaultValue": true,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Audio"
+      ]
+    },
+    {
+      "id": "color1",
+      "nameId": "META.VARIABLES.COLOR1",
+      "defaultValue": "#0351A1",
+      "type": "color",
+      "categoryIds": [
+        "General_Colors"
+      ]
+    },
+    {
+      "id": "color2",
+      "nameId": "META.VARIABLES.COLOR2",
+      "defaultValue": "#13AF6C",
+      "type": "color",
+      "hidden": true,
+      "categoryIds": [
+        "General_Colors"
+      ]
+    },
+    {
+      "id": "collectorDefaultAvatar",
+      "nameId": "META.VARIABLES.COLLECTOR_AVATAR",
+      "defaultValue": "./assets/static/collector_avatar.png",
+      "type": "file",
+      "categoryIds": [
+        "Chat_Collector"
+      ]
+    }
+  ]
+}
