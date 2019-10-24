@@ -1,0 +1,13 @@
+{
+  "command": {
+    "publish": {
+      "message": "chore(ci): publish"
+    }
+  },
+  "packages": [
+    "engagement",
+    "interaction/app/*",
+    "interaction/lib/*"
+  ],
+  "version": "independent"
+}
