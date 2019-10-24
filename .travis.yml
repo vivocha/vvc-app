@@ -14,6 +14,7 @@ cache:
 env:
   global:
   - secure: WyMvwa03+SInh814yBjTlCY//XgZIqkhH3Tne4/GrvH4h0h8audicz2zJqAYwKqPD8gBvtcio0Sx6MQZH5WHthpmT0VMG4SnasR2dKzxqcnOYehHrLjUN+3D0/LsSYbEJzJJkFWuffUKnUmKjHMBAYxWR7l72dyI9ZaqNKXL2s2YXuqGTbGdtOyh+VkcpQWHUKRqHyFZdXpaHWPc90aN02a/uBRA0NkF/oqRZAv2QijX+LcqN9Fd/48xLskzylVhctbofhf2ft4mkR0xJuLrd/wQyNJ/cvGefpv2AwIQ+zvyfBfSc4RcQymJyEW0nkizuIej+vBBosq1gZUaO9VDVsr7wsd/qIBznn48tJ9/L2IoqUz3IWwC0UA/fQNLJyxw5s/EdeyaAIm8tlc/a5X/irMhTI50VRzj0syKL/dahsEZfX9NqVydAWZ+/oxsonbrSfTV1UZL68bFzrfvzT5lZZXLN9QKB87DDPkFjpKyoiFobSXsWJTrrm2pr1qqXZlCrd5gD50FBEWQHeL+OW1GVfhbLR5aDwRdlSrLvER9JFIvg4az3j1sRGbyNMxR73fKalY8m+bdcBM0o4wGJzxh4GBTBOyi6P+LAh0UdCIVhfkACesZFL1xGufwXDtsn7GvjPC2Ow8DE7xHkpsOXZuS0N/E0ocLW27lfApBeOhBRWo=
+  - secure: rLXqVwEbVafQy4zhhArPhFURvB/Pz+uQb09OMoaJE7xyq9qWmQTG6vzo2QClRiScEG+D4yE9v7HIGKXNEvSQKANB+N5Z/VucADWMK3wlnOOCucfdXJw+12o+apYxmkRlDIGqfqZLlsf+Rm7kKu+rlm7nVfutPpKAdol/1AaTWKbG+MSaB8GGyATwIgQMn3z9PAPdRxfCpZyoRmUr7Yb1SKRb2W59J73Xm9L20S/E1GmH3S78/a9E8psjGggcAJpTANiZ7mI7tx69rwlHPGeG9XHXNYvX62hq4E8D+ttwFf8wvIlLfk+KrR+bM5/m5Js1bdx40kF9stPXJhlifcGtldaOg3uyZaLsiprKGC4G3JHMyV//ltdGPPBhYKWM6Ibw0Nv6QeKxfZfGPnGJo/Pz80ZXv5DixqZCALhZ0sbI+ANE+OdEgiedVBHIlm+isc40kQFFaPdDnXDpQ/pg0PEGy6g0I3gMhlLmpUYH64rLPHcz9p3BPw5pXJnLJfMbLyjK6fS+nqFxLj6mpJbk4KC2NznsxdOCZR9f6iX2aRXQIwj0UWEsMP1reuR05Geu6Ix9Irmja/c8KmLhC9U1ttTpvkKPFUj21b4Sg8UBF02oJLUhpWzihYAF2x/Uxx+SHG35GbkxzneGoe6AcNor3yQGovZ5FWimfrmfULl2mOJCS4I=
   - GITHUB_EMAIL: dev@vivocha.com
   - GITHUB_USER: Travis CI
 before_install:
@@ -27,5 +28,5 @@ deploy:
   on:
     branch: master
 after_script:
-- git remote add -f app git@github.com/vivocha/vvc-app.git
+- git remote add -f app https://${GH_TOKEN}github.com/vivocha/vvc-app.git
 - git subtree push --prefix interaction/app/default app master
