@@ -23,12 +23,12 @@
     "dist"
   ],
   "peerDependencies": {
-    "@angular/common": "^6.0.9",
-    "@angular/core": "^6.0.9",
-    "@angular/forms": "^6.0.9",
-    "@angular/platform-browser": "^6.0.9",
-    "@angular/platform-browser-dynamic": "^6.0.9",
-    "@ngx-translate/core": "^10.0.2",
+    "@angular/common": "^8.2.12",
+    "@angular/core": "^8.2.12",
+    "@angular/forms": "^8.2.12",
+    "@angular/platform-browser": "^8.2.12",
+    "@angular/platform-browser-dynamic": "^8.2.12",
+    "@ngx-translate/core": "^11.0.1",
     "@vivocha/public-entities": "^7.0.10",
     "autolinker": "^1.6.2"
   },
