@@ -23,14 +23,14 @@
     "dist"
   ],
   "peerDependencies": {
-    "@angular/common": "^6.0.9",
-    "@angular/core": "^6.0.9",
-    "@ngrx/store": "^6.0.1",
-    "@ngrx/store-devtools": "^6.0.1",
-    "@ngx-translate/core": "^10.0.2",
-    "@ngx-translate/http-loader": "^3.0.1",
+    "@angular/common": "^8.2.12",
+    "@angular/core": "^8.2.12",
+    "@ngrx/store": "^8.4.0",
+    "@ngrx/store-devtools": "^8.4.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@vivocha/public-entities": "^7.0.10",
-    "rxjs": "^6.2.1"
+    "rxjs": "^6.5.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.14",
