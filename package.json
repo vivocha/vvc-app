@@ -11,6 +11,11 @@
     "build:layout": "npm --prefix interaction/lib/layout run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.2.0",
     "commitizen": "^4.0.3",
