@@ -7,7 +7,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Out
 })
 export class ChatAreaComponent {
 
-  @ViewChild('box') box: ElementRef;
+  @ViewChild('box', {static: true}) box: ElementRef;
   @Input() context;
   @Input() readonly;
   @Output() onSendText = new EventEmitter();

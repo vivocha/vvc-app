@@ -8,7 +8,7 @@ import {VvcAutoScrollDirective} from '../vvc-auto-scroll.directive';
 })
 export class ChatComponent {
 
-  @ViewChild(VvcAutoScrollDirective) vvcAutoScroll: VvcAutoScrollDirective;
+  @ViewChild(VvcAutoScrollDirective, {static: true}) vvcAutoScroll: VvcAutoScrollDirective;
 
   _context;
   msgCounter;

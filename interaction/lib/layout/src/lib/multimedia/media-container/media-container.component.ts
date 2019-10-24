@@ -12,9 +12,9 @@ export class MediaContainerComponent {
   @Output() normalScreen = new EventEmitter();
   @Output() cameraChange = new EventEmitter();
 
-  @ViewChild('bigVideo') bigVideo: ElementRef;
-  @ViewChild('localVideo') localVideo: ElementRef;
-  @ViewChild('remoteVideo') remoteVideo: ElementRef;
+  @ViewChild('bigVideo', {static: true}) bigVideo: ElementRef;
+  @ViewChild('localVideo', {static: true}) localVideo: ElementRef;
+  @ViewChild('remoteVideo', {static: true}) remoteVideo: ElementRef;
 
 
   hideSmallVideo = false;

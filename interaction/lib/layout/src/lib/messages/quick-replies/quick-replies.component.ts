@@ -13,7 +13,7 @@ export class QuickRepliesComponent implements OnInit, OnDestroy {
   @Input() message;
   @Output() action = new EventEmitter();
   @Output() scrollUpdate = new EventEmitter();
-  @ViewChild('qrContainer') container: ElementRef;
+  @ViewChild('qrContainer', {static: true}) container: ElementRef;
   hasReplied = false;
 
   scrollOffset = 0;

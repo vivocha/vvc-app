@@ -19,7 +19,7 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
   @Input() message;
   @Output() action = new EventEmitter();
   @Output() scrollUpdate = new EventEmitter();
-  @ViewChild('carousel') container: ElementRef;
+  @ViewChild('carousel', {static: true}) container: ElementRef;
 
   scrollOffset = 0;
   transition = 'none';

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as Autolinker from 'autolinker';
+import Autolinker from 'autolinker';
 
 @Pipe({ name: 'vvcLink' })
 export class VvcLinkPipe implements PipeTransform {
