@@ -1,0 +1,20 @@
+{
+  "id": "vvc-image",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "buttonBgImage",
+      "nameId": "VARIABLES.IMAGE_URL",
+      "defaultValue": "./assets/engage.png",
+      "type": "file"
+    },
+    {
+      "id": "buttonBgColor",
+      "nameId": "VARIABLES.IMAGE_BG",
+      "placeholderId": "VARIABLES.IMAGE_BG_PH",
+      "required": true,
+      "defaultValue": "#ffffff",
+      "type": "color"
+    }
+  ]
+}

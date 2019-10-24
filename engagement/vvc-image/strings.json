@@ -1,0 +1,263 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "de": {
+        "value": "Bild des Vivocha-Auftritts",
+        "state": "final"
+      },
+      "en": {
+        "value": "Vivocha Engage Image",
+        "state": "final"
+      },
+      "es": {
+        "value": "Imagen de reclutamiento Vivocha",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Image d'engagement Vivocha",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine di ingaggio Vivocha",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Vivocha エンゲージメント画像",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "de": {
+        "value": "Bild",
+        "state": "final"
+      },
+      "en": {
+        "value": "Image",
+        "state": "final"
+      },
+      "es": {
+        "value": "Imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_BG",
+    "values": {
+      "de": {
+        "value": "Hintergrundfarbe des Bildes",
+        "state": "final"
+      },
+      "en": {
+        "value": "Image background color",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color de fondo de la imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur d'arrière-plan de l'image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore di sfondo dell'immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像の背景色",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_BG_PH",
+    "values": {
+      "de": {
+        "value": "Farbe für den Bildhintergrund eingeben",
+        "state": "final"
+      },
+      "en": {
+        "value": "Insert a background color for the image background",
+        "state": "final"
+      },
+      "es": {
+        "value": "Introduce un color de fondo para la imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Entrez une couleur d'arrière-plan de l'image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Inserire un colore di background per l'immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像の背景色を入力",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_HEIGHT",
+    "values": {
+      "de": {
+        "value": "Bildhöhe",
+        "state": "final"
+      },
+      "en": {
+        "value": "Image height",
+        "state": "final"
+      },
+      "es": {
+        "value": "Alto de la imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Hauteur de l'image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Altezza immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像の高さ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_HEIGHT_PH",
+    "values": {
+      "de": {
+        "value": "Bildhöhe eingeben",
+        "state": "final"
+      },
+      "en": {
+        "value": "Insert the image height",
+        "state": "final"
+      },
+      "es": {
+        "value": "Introduce el alto de la imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Entrez la hauteur de l'image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Inserire l'altezza dell'immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像の高さを入力",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_URL",
+    "values": {
+      "de": {
+        "value": "Bild",
+        "state": "final"
+      },
+      "en": {
+        "value": "Image",
+        "state": "final"
+      },
+      "es": {
+        "value": "Imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_WIDTH",
+    "values": {
+      "de": {
+        "value": "Bildbreite",
+        "state": "final"
+      },
+      "en": {
+        "value": "Image width",
+        "state": "final"
+      },
+      "es": {
+        "value": "Ancho de la imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Largeur de l'image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Larghezza immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像の幅",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.IMAGE_WIDTH_PH",
+    "values": {
+      "de": {
+        "value": "Bildbreite eingeben",
+        "state": "final"
+      },
+      "en": {
+        "value": "Insert the image width",
+        "state": "final"
+      },
+      "es": {
+        "value": "Introduce el ancho de la imagen",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Entrez la largeur de l'image",
+        "state": "final"
+      },
+      "it": {
+        "value": "Inserire la larghezza dell'immagine",
+        "state": "final"
+      },
+      "ja": {
+        "value": "画像の幅を入力",
+        "state": "final"
+      }
+    }
+  }
+]

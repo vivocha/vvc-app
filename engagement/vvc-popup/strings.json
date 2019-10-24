@@ -1,0 +1,524 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "de": {
+        "value": "Popup des Auftritts mit Medienauswahl",
+        "state": "final"
+      },
+      "en": {
+        "value": "Engage the visitor by showing a multimedia popup",
+        "state": "final"
+      },
+      "es": {
+        "value": "Ventana emergente de reclutamiento con elección de los medios",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Popup d’engagement avec sélection de médias",
+        "state": "final"
+      },
+      "it": {
+        "value": "Popup di ingaggio con scelta dei media",
+        "state": "final"
+      },
+      "ja": {
+        "value": "マスメディア選択の登録 ポップアップ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "de": {
+        "value": "Popup",
+        "state": "final"
+      },
+      "en": {
+        "value": "Popup",
+        "state": "final"
+      },
+      "es": {
+        "value": "Ventana emergente",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Fenêtre popup",
+        "state": "final"
+      },
+      "it": {
+        "value": "Popup",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ポップアップ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CBN",
+    "values": {
+      "de": {
+        "value": "TELEFON",
+        "state": "final"
+      },
+      "en": {
+        "value": "PHONE",
+        "state": "final"
+      },
+      "es": {
+        "value": "TELÉFONO",
+        "state": "final"
+      },
+      "fr": {
+        "value": "TÉLÉPHONE",
+        "state": "final"
+      },
+      "it": {
+        "value": "PHONE",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "電話",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CHAT",
+    "values": {
+      "de": {
+        "value": "CHAT",
+        "state": "final"
+      },
+      "en": {
+        "value": "CHAT",
+        "state": "final"
+      },
+      "es": {
+        "value": "CHAT",
+        "state": "final"
+      },
+      "fr": {
+        "value": "CHAT",
+        "state": "final"
+      },
+      "it": {
+        "value": "CHAT",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CONTACT_US",
+    "values": {
+      "de": {
+        "value": "Wir kontaktieren dich",
+        "state": "final"
+      },
+      "en": {
+        "value": "we'll contact you",
+        "state": "final"
+      },
+      "es": {
+        "value": "Te contactaremos",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Nous rappelons",
+        "state": "final"
+      },
+      "it": {
+        "value": "ti contattiamo noi",
+        "state": "final"
+      },
+      "ja": {
+        "value": "弊社がご連絡",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.FROM_WEB",
+    "values": {
+      "de": {
+        "value": "AUS DEM WEB",
+        "state": "final"
+      },
+      "en": {
+        "value": "FROM THE WEB",
+        "state": "final"
+      },
+      "es": {
+        "value": "DESDE LA WEB",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Par Internet",
+        "state": "final"
+      },
+      "it": {
+        "value": "DAL WEB",
+        "state": "needs-review"
+      },
+      "ja": {
+        "value": "ウェブから",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGE1",
+    "values": {
+      "de": {
+        "value": "Unsere Mitarbeiter stehen dir gerne zur Verfügung. Kontaktiere uns! ",
+        "state": "final"
+      },
+      "en": {
+        "value": "Our agents are available to help you. Don't hesitate to contact us!",
+        "state": "final"
+      },
+      "es": {
+        "value": "¡Nuestros operarios están para ti!",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Nos opérateurs sont à votre disposition. Contactez-nous ! ",
+        "state": "final"
+      },
+      "it": {
+        "value": "I nostri operatori sono a tua disposizione. Contattaci!",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターへお気軽にお問合せください！",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGE2",
+    "values": {
+      "de": {
+        "value": "Wie möchtest du uns kontaktieren?",
+        "state": "final"
+      },
+      "en": {
+        "value": "How would you prefer to contact us?",
+        "state": "final"
+      },
+      "es": {
+        "value": "¿Cómo deseas contactar con nosotros?",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Comment voulez-vous être contacté(e) ?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Come desideri contattacti?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "お問い合わせ方法をお選びください",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.RECALL",
+    "values": {
+      "de": {
+        "value": "Oder wir kontaktieren dich!",
+        "state": "final"
+      },
+      "en": {
+        "value": "Or we'll contact you!",
+        "state": "final"
+      },
+      "es": {
+        "value": "¡O nosotros nos ponemos en contacto contigo!",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Ou nous vous contacterons nous-même !",
+        "state": "final"
+      },
+      "it": {
+        "value": "Oppure ti contattiamo noi!",
+        "state": "final"
+      },
+      "ja": {
+        "value": "もしくは弊社よりご連絡いたします！",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TITLE",
+    "values": {
+      "de": {
+        "value": "Hilfe nötig?",
+        "state": "final"
+      },
+      "en": {
+        "value": "Need help?",
+        "state": "final"
+      },
+      "es": {
+        "value": "¿Necesitas ayuda?",
+        "state": "final"
+      },
+      "fr": {
+        "value": "De l'aide?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Serve aiuto?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ヘルプ？",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.VIDEO",
+    "values": {
+      "de": {
+        "value": "VIDEOANRUF",
+        "state": "final"
+      },
+      "en": {
+        "value": "VIDEO",
+        "state": "final"
+      },
+      "es": {
+        "value": "VÍDEO",
+        "state": "final"
+      },
+      "fr": {
+        "value": "VIDÉO",
+        "state": "final"
+      },
+      "it": {
+        "value": "VIDEO",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.VOICE",
+    "values": {
+      "de": {
+        "value": "SPRACHANRUF",
+        "state": "final"
+      },
+      "en": {
+        "value": "VOICE",
+        "state": "final"
+      },
+      "es": {
+        "value": "VOZ",
+        "state": "final"
+      },
+      "fr": {
+        "value": "VOIX",
+        "state": "final"
+      },
+      "it": {
+        "value": "VOCE",
+        "state": "final"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.WEBLEAD",
+    "values": {
+      "de": {
+        "value": "E-MAIL",
+        "state": "final"
+      },
+      "en": {
+        "value": "EMAIL",
+        "state": "final"
+      },
+      "es": {
+        "value": "CORREO ELECTRÓNICO",
+        "state": "final"
+      },
+      "fr": {
+        "value": "EMAIL",
+        "state": "final"
+      },
+      "it": {
+        "value": "EMAIL",
+        "state": "final"
+      },
+      "ja": {
+        "value": "EMAIL",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.ARTBOARD",
+    "values": {
+      "de": {
+        "value": "Hauptbild",
+        "state": "final"
+      },
+      "en": {
+        "value": "Main image",
+        "state": "final"
+      },
+      "es": {
+        "value": "Imagen principal",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Image principale",
+        "state": "final"
+      },
+      "it": {
+        "value": "Immagine principale",
+        "state": "final"
+      },
+      "ja": {
+        "value": "メインイメージ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.COMPANY_LOGO",
+    "values": {
+      "de": {
+        "value": "Firmenlogo",
+        "state": "final"
+      },
+      "en": {
+        "value": "Company logo",
+        "state": "final"
+      },
+      "es": {
+        "value": "Logo empresarial",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Logo de la société",
+        "state": "final"
+      },
+      "it": {
+        "value": "Logo aziendale",
+        "state": "final"
+      },
+      "ja": {
+        "value": "会社ロゴ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.PRIMARY",
+    "values": {
+      "de": {
+        "value": "Primärfarbe",
+        "state": "final"
+      },
+      "en": {
+        "value": "Primary colour",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color principal",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur primaire",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore primario",
+        "state": "final"
+      },
+      "ja": {
+        "value": "初期カラー",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.THEME",
+    "values": {
+      "de": {
+        "value": "Variante",
+        "state": "final"
+      },
+      "en": {
+        "value": "Theme",
+        "state": "final"
+      },
+      "es": {
+        "value": "Variante",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Variante",
+        "state": "final"
+      },
+      "it": {
+        "value": "Variante",
+        "state": "final"
+      },
+      "ja": {
+        "value": "変更可能な",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.USE_COMPANY_LOGO",
+    "values": {
+      "de": {
+        "value": "Firmenlogo eingeben",
+        "state": "final"
+      },
+      "en": {
+        "value": "Use the company logo",
+        "state": "final"
+      },
+      "es": {
+        "value": "Introduce el logo empresarial",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Insérer le logo de la société",
+        "state": "final"
+      },
+      "it": {
+        "value": "Inserire il logo aziendale",
+        "state": "final"
+      },
+      "ja": {
+        "value": "会社ロゴを入力してください",
+        "state": "final"
+      }
+    }
+  }
+]

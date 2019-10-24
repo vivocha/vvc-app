@@ -1,0 +1,336 @@
+/** FONTS **/
+@import url("https://cdn.vivocha.com/lib/font-google/css/open-sans.css");
+/** ICONS **/
+@at-root {
+  @font-face {
+    font-family: 'vvc-widget-ico';
+    src: url('assets/fonts/vvc-widget-ico.eot?4jwt95');
+    src: url('assets/fonts/vvc-widget-ico.eot?4jwt95#iefix') format('embedded-opentype'),
+    url('assets/fonts/vvc-widget-ico.ttf?4jwt95') format('truetype'),
+    url('assets/fonts/vvc-widget-ico.woff?4jwt95') format('woff'),
+    url('assets/fonts/vvc-widget-ico.svg?4jwt95#vvc-widget-ico') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+@import "assets/vivicon.scss";
+@mixin media-manager(){
+  .vvc-media{
+    display: block;
+  }
+  .vvc-inner-links{
+    display: none;
+  }
+  .vvc-options{
+    display: none;
+  }
+
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-chat.vvc-media-voice.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-chat.vvc-media-video.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-voice.vvc-media-video.vvc-media-cbn.vvc-media-weblead {
+      .vvc-media-content {
+        height: 128px !important;
+      }
+      .vvc-media {
+        display: none;
+        .vvc-content-message {
+          font-size: 13px;
+        }
+      }
+      .vvc-options {
+        display: block;
+      }
+      .vvc-popup-message {
+        padding-bottom: 0;
+      }
+      // options
+      .vvc-reveal-web {
+        display: block;
+        .vvc-media-content {
+          height: 82px !important;
+          .vvc-message {
+            padding-bottom: 8px;
+          }
+        }
+
+        .vvc-options {
+          display: none;
+        }
+        .vvc-popup-message {
+          padding-bottom: 10px;
+        }
+        .vvc-content-message {
+          font-size: 18px;
+        }
+        .vvc-media {
+          display: block;
+          .vvc-media-cbn,
+          .vvc-media-weblead {
+            display: none !important;
+          }
+        }
+      }
+      .vvc-reveal-others {
+        display: block;
+        .vvc-media-content {
+          height: 82px !important;
+          .vvc-message {
+            padding-bottom: 8px;
+          }
+        }
+        .vvc-options {
+          display: none;
+        }
+        .vvc-popup-message {
+          padding-bottom: 10px;
+        }
+        .vvc-content-message {
+          font-size: 18px;
+        }
+        .vvc-media {
+          display: block;
+          .vvc-media-chat,
+          .vvc-media-voice,
+          .vvc-media-video {
+            display: none !important;
+          }
+        }
+      }
+
+      @media screen and (min-height: 560px) {
+        .vvc-popup-message {
+          padding-bottom: 10px;
+        }
+        .vvc-popup-message2 {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 560px) {
+        .vvc-popup-message {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn:not(.vvc-media-weblead),
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-weblead:not(.vvc-media-cbn) {
+    // links
+    .vvc-media-content{
+      height: 110px !important;
+    }
+    .vvc-content-message {
+      font-size: 13px;
+    }
+    .vvc-media {
+      display: block;
+      padding-top: 4px;
+    }
+    .vvc-options {
+      display: none;
+    }
+    .vvc-inner-links {
+      display: block;
+    }
+  }
+
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn:not(.vvc-media-weblead) {
+      .vvc-media {
+        .vvc-media-cbn {
+          display: none !important;
+        }
+      }
+      .vvc-inner-links {
+        .weblead-link {
+          display: none
+        }
+      }
+
+    }
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-weblead:not(.vvc-media-cbn) {
+    .vvc-media {
+      .vvc-media-weblead {
+        display: none !important;
+      }
+    }
+    .vvc-inner-links {
+      .cbn-link {
+        display: none
+      }
+    }
+
+  }
+
+}
+/** COLORS **/
+$lightBackground: #F2F2F2;
+
+.vvc-halo {
+  font-family: "Open Sans";
+  z-index: 2147483647;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  &.vvc-container{
+    .vvc-media-content {
+      display: none;
+      opacity: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      position: relative;
+      margin-right: 72px;
+      height: 86px;
+      padding-left: 15px;
+      padding-right: 15px;
+      box-sizing: border-box;
+      background-color: $lightBackground;
+      border: 1px solid white;
+      box-shadow: 0 0 8px #262626;
+      vertical-align: top;
+      .vvc-message {
+        color: hsla(0, 0%, 0%, 0.74);
+        font-size: 10px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 4px 0;
+      }
+      .vvc-media {
+        text-align: center;
+        padding-top: 4px;
+        .vvc-media-item {
+          cursor: pointer;
+          margin: 0 8px;
+          display: inline-block;
+          .vvc-media-rounded {
+            margin: 0 auto;
+            background-color: $primaryColor;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            i {
+              color: white;
+              position: relative;
+              top: 6px;
+            }
+            .vvc-web-lead{
+              font-size: 14px;
+            }
+          }
+          .vvc-media-label {
+            padding-top: 5px;
+            font-size: 10px;
+            font-weight: bold;
+            color: hsla(0, 0%, 0%, 0.54);
+          }
+        }
+      }
+      .vvc-options{
+        display: none;
+        text-align: center;
+        .vvc-opts{
+          &:hover{ opacity: 0.9; cursor: pointer }
+          background: $primaryColor;
+          border-radius: 20px;
+          margin: 6px 10px;
+          padding: 10px 26px;
+          a {
+            color: white;
+            font-size: 10px;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .vvc-inner-links{
+        display: none;
+        font-size: 13px;
+        text-align: center;
+        padding-top: 8px;
+        a { color: #262626; text-decoration: underline; cursor: pointer }
+      }
+    }
+    .vvc-halo-avatar {
+      cursor: pointer;
+      box-sizing: border-box;
+      vertical-align: middle;
+      border: 1px solid #D8D8D8;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background-image: url($haloImg);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 60px 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #262626;
+      animation: reveal;
+      animation-duration: 0.4s;
+      animation-delay: 2s;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  @keyframes reveal {
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
+  }
+  @keyframes flipIn {
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
+  }
+  @keyframes flipOut {
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
+  }
+  @keyframes opened {
+    from { display: none; opacity: 0}
+    to { display: inline-block;  opacity: 1}
+  }
+  @keyframes closed {
+    from { display: inline-block; opacity: 1 }
+    to { display: none; opacity: 0 }
+  }
+
+  &.vvc-halo-opened {
+    .vvc-media-content {
+      display: inline-block;
+      opacity: 1;
+      animation: opened;
+      animation-duration: 0.5s;
+    }
+    &:before {
+      width: 1px;
+      height: 1px;
+      display: block;
+      content: "";
+      border: 8px solid transparent;
+      position: absolute;
+      right: 53px;
+      border-left: 12px solid $lightBackground;
+      bottom: 20px;
+      opacity: 1;
+      animation: opened;
+      animation-duration: 0.5s;
+    }
+  }
+  &.vvc-halo-closed {
+    .vvc-media-content {
+      display: none;
+      opacity: 0;
+      animation: closed;
+      animation-duration: 0.5s;
+    }
+    .vvc-halo-avatar {
+      transform: rotateY(0);
+      animation: flipOut;
+      animation-duration: 0.4s;
+    }
+  }
+
+}
+
+@include media-manager();

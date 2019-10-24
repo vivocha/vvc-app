@@ -1,0 +1,14 @@
+{
+  "id": "vvc-button",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "buttonBgColor",
+      "nameId": "VARIABLES.BUTTON_BG",
+      "placeholderId": "SETTINGS.BUTTON_BG_PH",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    }
+  ]
+}

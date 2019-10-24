@@ -1,0 +1,443 @@
+/** FONTS **/
+@import url("https://cdn.vivocha.com/lib/font-google/css/open-sans.css");
+/** ICONS **/
+@at-root {
+  @font-face {
+    font-family: 'vvc-widget-ico';
+    src: url('assets/fonts/vvc-widget-ico.eot?4jwt95');
+    src: url('assets/fonts/vvc-widget-ico.eot?4jwt95#iefix') format('embedded-opentype'),
+    url('assets/fonts/vvc-widget-ico.ttf?4jwt95') format('truetype'),
+    url('assets/fonts/vvc-widget-ico.woff?4jwt95') format('woff'),
+    url('assets/fonts/vvc-widget-ico.svg?4jwt95#vvc-widget-ico') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+@import "assets/vivicon.scss";
+
+/** COLORS **/
+$lightBackground: #F2F2F2;
+$lightBackgroundBorder: #CECECE;
+$darkBackground: #4D4D4D;
+$darkBackgroundBorder: #D8D8D8;
+
+@mixin media-manager(){
+  .vvc-media{
+    display: block;
+  }
+  .vvc-inner-links{
+    display: none;
+  }
+  .vvc-options{
+    display: none;
+  }
+
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-chat.vvc-media-voice.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-chat.vvc-media-video.vvc-media-cbn.vvc-media-weblead,
+  .vvc-media-voice.vvc-media-video.vvc-media-cbn.vvc-media-weblead{
+    .vvc-media{
+      display: none;
+      .vvc-content-message{
+        font-size: 13px;
+      }
+    }
+    .vvc-options{
+      display: block;
+    }
+    .vvc-popup-message{
+      padding-bottom: 0;
+    }
+    // options
+    .vvc-reveal-web{
+      display: block;
+      .vvc-options{
+        display: none;
+      }
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-content-message {
+        font-size: 18px;
+      }
+      .vvc-media {
+        display: block;
+        .vvc-media-cbn,
+        .vvc-media-weblead {
+          display: none !important;
+        }
+      }
+    }
+    .vvc-reveal-others{
+      display: block;
+      .vvc-options{
+        display: none;
+      }
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-content-message{
+        font-size: 18px;
+      }
+      .vvc-media {
+        display: block;
+        .vvc-media-chat,
+        .vvc-media-voice,
+        .vvc-media-video {
+          display: none !important;
+        }
+      }
+    }
+
+    @media screen and (min-height: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-popup-message2{
+        display: none;
+      }
+    }
+    @media screen and (min-width: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 0;
+      }
+    }
+  }
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-cbn:not(.vvc-media-weblead){
+    // links
+    .vvc-content-message{
+      font-size: 13px;
+    }
+    .vvc-media{
+      display: block;
+      .vvc-media-cbn{
+        display: none;
+      }
+    }
+    .vvc-options{
+      display: none;
+    }
+    .vvc-inner-links{
+      display: block;
+      .weblead-link{ display: none}
+    }
+    @media screen and (min-height: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-popup-message2{
+        display: none;
+      }
+    }
+  }
+  .vvc-media-chat.vvc-media-voice.vvc-media-video.vvc-media-weblead:not(.vvc-media-cbn){
+    // links
+    .vvc-content-message{
+      font-size: 13px;
+    }
+    .vvc-media{
+      display: block;
+      .vvc-media-weblead{
+        display: none;
+      }
+    }
+    .vvc-options{
+      display: none;
+    }
+    .vvc-inner-links{
+      display: block;
+      .cbn-link{ display: none}
+    }
+    @media screen and (min-height: 560px) {
+      .vvc-popup-message{
+        padding-bottom: 10px;
+      }
+      .vvc-popup-message2{
+        display: none;
+      }
+    }
+  }
+}
+@mixin popup($theme: 'light', $primaryColor: 'red', $artBoardUrl: '', $useCompanyLogo: true, $companyLogoUrl: '') {
+
+  .vvc-popup-inner {
+    z-index: 2147483647;
+    font-family: "Open Sans";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .vvc-company-logo {
+      display: none;
+    }
+    @if ($useCompanyLogo == true and $companyLogoUrl != '') {
+      .vvc-company-logo {
+        display: block;
+        background-image: url($companyLogoUrl);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 50px 50px;
+      }
+    }
+    @if ($theme == 'light') {
+      background-color: rgba(0, 0, 0, 0.5);
+      .vvc-popup-container {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        background-color: $lightBackground;
+        .vvc-company-logo {
+          border: 1px solid $lightBackgroundBorder;
+        }
+        .vvc-popup-title, .vvc-popup-message2 {
+          color: hsla(0, 0%, 0%, 0.74);
+        }
+        .vvc-popup-message, .vvc-popup-media-label, .vvc-popup-close {
+          color: hsla(0, 0%, 0%, 0.54);
+        }
+        .vvc-popup-media-rounded i {
+          color: $lightBackground;
+        }
+      }
+    }
+    @if ($theme == 'dark') {
+      background-color: rgba(256, 256, 256, 0.8);
+      .vvc-popup-container {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+        background-color: $darkBackground;
+        .vvc-company-logo {
+          border: 1px solid $darkBackgroundBorder;
+        }
+        .vvc-popup-title, .vvc-popup-message2 {
+          color: hsla(360, 100%, 100%, 1);
+        }
+        .vvc-popup-message, .vvc-popup-media-label, .vvc-popup-close {
+          color: hsla(360, 100%, 100%, 0.74);
+        }
+        .vvc-popup-media-rounded i {
+          color: $lightBackground;
+        }
+      }
+    }
+
+    .vvc-popup-container {
+      // MOBILE FIRST, SMALLEST VERSION
+      position: relative;
+      border-radius: 8px;
+      width: 256px;
+      height: 282px;
+
+      .vvc-artboard {
+        width: 256px;
+        height: 256px;
+        display: none;
+        @if ($artBoardUrl != '') {
+          background-image: url($artBoardUrl);
+          background-repeat: no-repeat;
+          background-position: 0 0;
+        }
+      }
+
+      .vvc-popup-close {
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+
+      .vvc-popup-content {
+        position: relative;
+        .vvc-company-logo {
+          position: absolute;
+          top: -28px;
+          left: 50%;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-left: -25px;
+        }
+
+        .vvc-popup-title {
+          padding: 26px 0 10px 0;
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        .vvc-divider {
+          content: '';
+          border: 1px solid $primaryColor;
+          margin: 14px 10px;
+          position: relative;
+          &:before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            background-color: $primaryColor;
+            border-radius: 50%;
+            top: -4px;
+            left: 50%;
+            margin-left: -4px;
+          }
+        }
+        .vvc-popup-message {
+          text-align: center;
+          font-size: 16px;
+          font-weight: 300;
+          padding: 2px 5px 10px 5px;
+        }
+        .vvc-popup-message2 {
+          padding: 9px;
+          text-align: center;
+          font-size: 12px;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+        .vvc-media {
+          text-align: center;
+          .vvc-media-item {
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+            .vvc-popup-media-rounded {
+              margin: 0 auto;
+              background-color: $primaryColor;
+
+              width: 38px;
+              height: 38px;
+              border-radius: 50%;
+              i {
+                position: relative;
+                top: 10px;
+              }
+            }
+            .vvc-popup-media-label {
+              padding-top: 5px;
+              font-size: 10px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .vvc-options{
+        display: none;
+        text-align: center;
+        .vvc-opts{
+          &:hover{ opacity: 0.9; cursor: pointer }
+          background: $primaryColor;
+          border-radius: 20px;
+          margin: 6px 10px;
+          padding: 10px 26px;
+          a {
+            color: white;
+            font-size: 10px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .vvc-inner-links{
+        display: none;
+        font-size: 13px;
+        text-align: center;
+        padding-top: 10px;
+        a { color: #262626; text-decoration: underline; cursor: pointer }
+      }
+    }
+  }
+
+  @media screen and (min-height: 560px) {
+    .vvc-popup-inner {
+      .vvc-popup-container {
+        // MEDIUM MOBILE, VERTICAL LAYOUT
+        height: 512px;
+
+        .vvc-artboard {
+          border-radius: 8px 8px 0 0;
+          display: block
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 560px) {
+    .vvc-popup-inner {
+      .vvc-popup-container {
+        // BIG SCREEN, HORIZONTAL LAYOUT
+        width: 512px;
+        height: 256px;
+
+        .vvc-popup-content {
+          width: 256px;
+          float: right;
+
+          .vvc-company-logo {
+            position: relative;
+            top: 5px;
+          }
+
+          .vvc-popup-title {
+            padding: 8px 0 0 0;
+            @if ($companyLogoUrl == '' or $useCompanyLogo == false){
+              padding: 40px 0 0 0;
+            }
+          }
+          .vvc-popup-message2 {
+            display: none;
+          }
+          .vvc-popup-media {
+            padding-top: 15px;
+          }
+
+        }
+
+        .vvc-artboard {
+          display: inline-block;
+          border-radius: 8px 0 0 8px
+        }
+
+      }
+    }
+  }
+
+}
+
+
+.vvc-popup {
+  @keyframes reveal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  animation-name: reveal;
+  animation-duration: .5s;
+
+  @include popup($theme, $primaryColor, $artBoardUrl, $useCompanyLogo, $companyLogoUrl);
+}
+
+@include media-manager();
+/*
+.vvc-media-chat.vvc-media-voice,
+.vvc-media-chat.vvc-media-video {
+  &.vvc-media-weblead {
+    .vvc-media {
+      .vvc-media-weblead {
+        display: none !important;
+      }
+    }
+    .vvc-popup-message2{
+      display: none !important;
+    }
+    .vvc-inner-links {
+      display: block;
+    }
+  }
+}
+*/

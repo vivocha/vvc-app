@@ -1,0 +1,22 @@
+.vvc-image {
+  border: 0;
+  width: 170px;
+  height: 85px;
+  background-image: url($buttonBgImage);
+  background-color: $buttonBgColor;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+  cursor: pointer;
+
+  &:hover{
+    background-color: darken($buttonBgColor, 20%);
+
+  }
+  &:active{
+    padding-top: 9px;
+    padding-bottom: 7px;
+    background-color: lighten($buttonBgColor, 0%);
+  }
+}

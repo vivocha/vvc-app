@@ -1,0 +1,147 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "de": {
+        "value": "Button für die Teilnahme",
+        "state": "final"
+      },
+      "en": {
+        "value": "Engagement Button",
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón de reclutamiento",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton d’engagement",
+        "state": "final"
+      },
+      "it": {
+        "value": "Bottone di ingaggio",
+        "state": "final"
+      },
+      "ja": {
+        "value": "登録ボタン",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "de": {
+        "value": "Button",
+        "state": "final"
+      },
+      "en": {
+        "value": "Button",
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton",
+        "state": "final"
+      },
+      "it": {
+        "value": "Bottone",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ボタン",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.BUTTON_TEXT",
+    "values": {
+      "de": {
+        "value": "Chat betreten",
+        "state": "final"
+      },
+      "en": {
+        "value": "Chat with us",
+        "state": "final"
+      },
+      "es": {
+        "value": "Entrar en el chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Rejoindre la conversation",
+        "state": "final"
+      },
+      "it": {
+        "value": "Entra in chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャットに入る",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.BUTTON_BG",
+    "values": {
+      "de": {
+        "value": "Farbe des Buttons",
+        "state": "final"
+      },
+      "en": {
+        "value": "Button colour",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color del botón",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur du bouton",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore del bottone",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ボタンの色",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.BUTTON_BG_PH",
+    "values": {
+      "de": {
+        "value": "Farbe des Hintergrunds des Buttons",
+        "state": "final"
+      },
+      "en": {
+        "value": "Insert a colour for the button background",
+        "state": "final"
+      },
+      "es": {
+        "value": "Color de fondo del botón",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Couleur d’arrière plan du bouton",
+        "state": "final"
+      },
+      "it": {
+        "value": "Colore di sfondo del bottone",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ボタンの背景色",
+        "state": "final"
+      }
+    }
+  }
+]

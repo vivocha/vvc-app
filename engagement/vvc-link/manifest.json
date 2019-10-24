@@ -1,0 +1,13 @@
+{
+  "id": "vvc-link",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "linkColor",
+      "nameId": "VARIABLES.LINK_COLOR",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    }
+  ]
+}

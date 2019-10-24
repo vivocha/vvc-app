@@ -1,0 +1,42 @@
+{
+  "id": "vvc-halo-button",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "haloImg",
+      "nameId": "VARIABLES.HALO_IMG",
+      "defaultValue": "./assets/logo.png",
+      "type": "file"
+    },
+    {
+      "id": "useBadge",
+      "nameId": "VARIABLES.USE_BADGE",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "media",
+      "nameId": "VARIABLES.MEDIA_TO_USE",
+      "required": true,
+      "defaultValue": "chat",
+      "options": [
+        "chat",
+        "voice",
+        "video",
+        "cbn",
+        "weblead"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "horizontalOffset",
+      "nameId": "VARIABLES.HORIZONTAL",
+      "defaultValue": "right",
+      "options": [
+        "right",
+        "left"
+      ],
+      "type": "enum"
+    }
+  ]
+}

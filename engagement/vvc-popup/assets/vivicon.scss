@@ -1,0 +1,124 @@
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'vvc-widget-ico' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vvc-call-me-back:before {
+  content: "\e922";
+}
+.vvc-web-lead:before {
+  content: "\e923";
+}
+.vvc-arrow-left:before {
+  content: "\e900";
+}
+.vvc-chat:before {
+  content: "\e901";
+}
+.vvc-check:before {
+  content: "\e902";
+}
+.vvc-clipboard:before {
+  content: "\e903";
+}
+.vvc-clock:before {
+  content: "\e904";
+}
+.vvc-close:before {
+  content: "\e905";
+}
+.vvc-doc:before {
+  content: "\e906";
+}
+.vvc-down:before {
+  content: "\e907";
+}
+.vvc-expand:before {
+  content: "\e908";
+}
+.vvc-hangup:before {
+  content: "\e909";
+}
+.vvc-headphones:before {
+  content: "\e90a";
+}
+.vvc-lock:before {
+  content: "\e90b";
+}
+.vvc-minimize:before {
+  content: "\e90c";
+}
+.vvc-mute:before {
+  content: "\e90d";
+}
+.vvc-pencil:before {
+  content: "\e90e";
+}
+.vvc-phone:before {
+  content: "\e90f";
+}
+.vvc-pic:before {
+  content: "\e910";
+}
+.vvc-reduce:before {
+  content: "\e911";
+}
+.vvc-refresh:before {
+  content: "\e912";
+}
+.vvc-remove:before {
+  content: "\e913";
+}
+.vvc-sign-out:before {
+  content: "\e914";
+}
+.vvc-smile:before {
+  content: "\e915";
+}
+.vvc-unmute:before {
+  content: "\e916";
+}
+.vvc-up:before {
+  content: "\e917";
+}
+.vvc-video:before {
+  content: "\e918";
+}
+.vvc-video-off:before {
+  content: "\e919";
+}
+.vvc-calendar:before {
+  content: "\e91a";
+}
+.vvc-star-empty:before {
+  content: "\e91b";
+}
+.vvc-star:before {
+  content: "\e91c";
+}
+.vvc-writing:before {
+  content: "\e91d";
+}
+.vvc-not-send:before {
+  content: "\e91e";
+}
+.vvc-download:before {
+  content: "\e91f";
+}
+.vvc-file:before {
+  content: "\e920";
+}
+.vvc-see:before {
+  content: "\e921";
+}

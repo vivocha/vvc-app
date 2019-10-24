@@ -1,0 +1,43 @@
+{
+  "id": "vvc-popup",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "primaryColor",
+      "nameId": "VARIABLES.PRIMARY",
+      "placeholderId": "SETTINGS.PRIMARY_PH",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    },
+    {
+      "id": "theme",
+      "nameId": "VARIABLES.THEME",
+      "required": true,
+      "defaultValue": "light",
+      "options": [
+        "light",
+        "dark"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "useCompanyLogo",
+      "nameId": "VARIABLES.USE_COMPANY_LOGO",
+      "defaultValue": true,
+      "type": "boolean"
+    },
+    {
+      "id": "companyLogoUrl",
+      "nameId": "VARIABLES.COMPANY_LOGO",
+      "defaultValue": "./assets/company.png",
+      "type": "file"
+    },
+    {
+      "id": "artBoardUrl",
+      "nameId": "VARIABLES.ARTBOARD",
+      "defaultValue": "./assets/artboard.png",
+      "type": "file"
+    }
+  ]
+}
