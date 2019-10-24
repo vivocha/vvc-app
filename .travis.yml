@@ -26,3 +26,6 @@ deploy:
   script: lerna publish from-package -y
   on:
     branch: master
+after_success:
+- git remote add -f app https://github.com/vivocha/vvc-app.git
+- git subtree push --prefix interaction/app/default app master
