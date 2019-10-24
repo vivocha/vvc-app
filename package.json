@@ -8,8 +8,7 @@
     "commit": "./node_modules/.bin/git-cz",
     "build:app": "npm --prefix interaction/app/default run build",
     "build:core": "npm --prefix interaction/lib/core run build",
-    "build:layout": "npm --prefix interaction/lib/layout run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:layout": "npm --prefix interaction/lib/layout run build"
   },
   "config": {
     "commitizen": {
