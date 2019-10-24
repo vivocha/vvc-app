@@ -3,41 +3,26 @@
   "version": "6.4.36",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
+    "prepare": "npm run build",
     "clean": "[ ! -d ./dist ] || rm -rf dist/*",
     "clean:all": "npm run clean && rm -rf node_modules",
-    "prebuild": "npm run clean",
-    "build": "ng-packagr -p ng-package.json",
     "precommit": "npm run build",
-    "version": "which jsonref > /dev/null || npm i jsonref-cli && jsonref -f ./package.json /version",
-    "fixdeps": "[ ! -f ./dist/package.json ] || ./fixdeps.js",
-    "build:all": "npm run clean:all && npm install && npm run build && npm run fixdeps"
+    "build": "ng-packagr -p ng-package.json",
+    "build:all": "npm run clean:all && npm install && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/vivocha/client-interaction-core"
-  },
-  "author": "Vivocha Dev Team <dev@vivocha.com> (http://www.vivocha.com/)",
-  "homepage": "https://bitbucket.org/vivocha/client-interaction-core#readme",
+  "main": "dist/bundles/vivocha-client-interaction-core.umd.js",
+  "module": "dist/fesm5/vivocha-client-interaction-core.js",
+  "es2015": "dist/fesm2015/vivocha-client-interaction-core.js",
+  "esm5": "dist/esm5/vivocha-client-interaction-core.js",
+  "esm2015": "dist/esm2015/vivocha-client-interaction-core.js",
+  "fesm5": "dist/fesm5/vivocha-client-interaction-core.js",
+  "fesm2015": "dist/fesm2015/vivocha-client-interaction-core.js",
+  "typings": "dist/vivocha-client-interaction-core.d.ts",
+  "metadata": "dist/vivocha-client-interaction-core.metadata.json",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
-    "@angular/common": "^6.0.9",
-    "@angular/core": "^6.0.9",
-    "@ngrx/store": "^6.0.1",
-    "@ngrx/store-devtools": "^6.0.1",
-    "@ngx-translate/core": "^10.0.2",
-    "@ngx-translate/http-loader": "^3.0.1",
-    "@vivocha/public-entities": "^6.4.16",
-    "rxjs": "^6.2.1"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^0.6.8",
-    "@angular/cli": "^6.0.8",
-    "@angular/compiler": "^6.0.9",
-    "@angular/compiler-cli": "^6.0.9",
-    "jsonref-cli": "^1.0.0",
-    "ng-packagr": "^3.0.3",
-    "typescript": "^2.8.0"
-  },
-  "dependencies": {
     "@angular/common": "^6.0.9",
     "@angular/core": "^6.0.9",
     "@ngrx/store": "^6.0.1",
@@ -46,5 +31,13 @@
     "@ngx-translate/http-loader": "^3.0.1",
     "@vivocha/public-entities": "^7.0.10",
     "rxjs": "^6.2.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.803.14",
+    "@angular/cli": "^8.3.14",
+    "@angular/compiler": "^8.2.12",
+    "@angular/compiler-cli": "^8.2.12",
+    "ng-packagr": "^5.7.0",
+    "typescript": "~3.5.0"
   }
 }
