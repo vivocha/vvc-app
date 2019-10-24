@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction",
-  "version": "6.4.43",
+  "version": "7.0.0",
   "description": "Vivocha Interaction Application",
   "scripts": {
     "prepare": "npm run build:prod",
@@ -46,12 +46,10 @@
   "homepage": "https://bitbucket.org/vivocha/client-interaction#readme",
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.14",
+    "@angular-devkit/build-ng-packagr": "^0.803.14",
     "@angular/cli": "^8.3.14",
     "@angular/compiler": "^8.2.12",
     "@angular/compiler-cli": "^8.2.12",
-    "ng-packagr": "^5.7.0",
-    "typescript": "~3.5.0",
-    "@angular-devkit/build-ng-packagr": "^0.803.14",
     "@angular/language-service": "8.2.12",
     "@types/jasmine": "3.4.4",
     "@types/jasminewd2": "2.0.8",
@@ -69,12 +67,14 @@
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.2",
     "mkdirp": "^0.5.1",
+    "ng-packagr": "^5.7.0",
     "npm-run-all": "^4.1.5",
     "protractor": "~5.4.2",
     "ts-node": "8.4.1",
     "tsickle": ">=0.37.0",
     "tslib": "^1.10.0",
-    "tslint": "5.20.0"
+    "tslint": "5.20.0",
+    "typescript": "~3.5.0"
   },
   "dependencies": {
     "@angular/common": "^8.2.12",
@@ -86,8 +86,8 @@
     "@ngrx/store-devtools": "^8.4.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "@vivocha/client-interaction-core": "^6.4.36",
-    "@vivocha/client-interaction-layout": "^6.4.20",
+    "@vivocha/client-interaction-core": "^7.0.0",
+    "@vivocha/client-interaction-layout": "^7.0.0",
     "@vivocha/public-entities": "^7.0.10",
     "autolinker": "^1.6.2",
     "classlist.js": "^1.1.20150312",
