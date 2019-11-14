@@ -21,8 +21,8 @@ before_install:
 - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
 before_script:
 - lerna bootstrap --hoist --include-filtered-dependencies
-- ls -l interaction/core/dist
-- ls -l interaction/layout/dist
+- ls -l interaction/lib/core/dist/
+- ls -l interaction/lib/layout/dist/
 deploy:
 - provider: script
   skip_cleanup: true
