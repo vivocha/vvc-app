@@ -24,7 +24,7 @@
 
       <vvc-top-bar [context]="appState"
                    *ngIf="!appState.cbnMode"
-                   (onMinimize)="minimizeWidget(true)"
+                   (onMinimize)="minimizeWidget()"
                    (onMaximize)="setFullScreen()"
                    (onClose)="closeContact(appState)"
                    (onSurvey)="showSurvey()"

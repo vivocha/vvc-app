@@ -17,11 +17,16 @@
     (function(){
       function push(scripts) {
         if (scripts.length > 0) {
-          var src = scripts.shift();
+          var script = scripts.shift();
           var head = document.getElementsByTagName('head')[0];
           var t = document.createElement("script");
           t.type="text/javascript";
-          t.src=src;
+          t.src=script.src;
+          if (script.attrs) {
+            for(var attr in script.attrs) {
+              t.setAttribute(attr, script.attrs[attr]);
+            }
+          }
           t.onload = function(e){ push(scripts); }
           head.appendChild(t);
         } else {
@@ -29,16 +34,16 @@
         }
       }
       var s = [
-        "assets/runtime.js",
-        "assets/polyfills.js",
-        "assets/vendor.js",
-        "assets/main.js"
+        { src: "assets/runtime-es2015.js", attrs: { type: "module" } },
+        { src: "assets/polyfills-es2015.js", attrs: { type: "module" } },
+        { src: "assets/vendor-es2015.js", attrs: { type: "module" } },
+        { src: "assets/main-es2015.js", attrs: { type: "module" } }
       ];
       var s_ie = [
-        "assets/ie/runtime.js",
-        "assets/ie/polyfills.js",
-        "assets/ie/vendor.js",
-        "assets/ie/main.js"
+        { src: "assets/ie/runtime.js", attrs: { defer: "" } },
+        { src: "assets/ie/polyfills.js", attrs: { defer: "" } },
+        { src: "assets/ie/vendor.js", attrs: { defer: "" } },
+        { src: "assets/ie/main.js", attrs: { defer: "" } }
       ];
       var scripts = !(!!window.MSInputMethodContext && !!document.documentMode) ? s : s_ie;
       var busId, acct, host;
@@ -50,8 +55,7 @@
           host = hashParts[2];
         }
         if (busId && acct && host) {
-          var vvc = "https://"+host+"/a/"+acct+"/js/vivocha_interaction.js";
-          scripts.unshift(vvc);
+          scripts.unshift({ src: "https://"+host+"/a/"+acct+"/js/vivocha_interaction.js" });
           push(scripts);
         } else {
           throw new Error('cannot find vivocha configuration ' + busId + '-' + acct + '-' + host);
