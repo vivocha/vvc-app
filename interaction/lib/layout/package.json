@@ -19,27 +19,24 @@
   "fesm2015": "dist/fesm2015/vivocha-client-interaction-layout.js",
   "typings": "dist/vivocha-client-interaction-layout.d.ts",
   "metadata": "dist/vivocha-client-interaction-layout.metadata.json",
-  "files": [
-    "dist"
-  ],
-  "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
+  "dependencies": {
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
     "@ngx-translate/core": "^11.0.1",
     "@vivocha/public-entities": "^7.0.11",
     "autolinker": "^1.6.2",
-    "rxjs": "^6.5.3",
+    "rxjs": "~6.4.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.19",
-    "@angular/cli": "^8.3.19",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "^8.2.14",
+    "@angular-devkit/build-angular": "~0.803.19",
+    "@angular/cli": "~8.3.19",
+    "@angular/compiler-cli": "~8.2.14",
     "ng-packagr": "^5.7.1",
-    "typescript": "~3.5.0"
+    "typescript": "~3.5.3"
   }
 }

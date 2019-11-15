@@ -4,6 +4,10 @@
   "whitelistedNonPeerDependencies": ["."],
   "deleteDestPath": false,
   "lib": {
-    "entryFile": "src/public_api.ts"
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@ngx-translate/core": "core$1",
+      "autolinker": "Autolinker"
+    }
   }
 }
