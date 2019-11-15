@@ -4,6 +4,13 @@
   "whitelistedNonPeerDependencies": ["."],
   "deleteDestPath": false,
   "lib": {
-    "entryFile": "src/public_api.ts"
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@ngrx/store": "store",
+      "@ngx-translate/core": "core$1",
+      "@vivocha/public-entities/dist/wrappers/data_collection": "data_collection",
+      "@ngx-translate/http-loader": "httpLoader",
+      "@ngrx/store-devtools": "storeDevtools"
+    }
   }
 }

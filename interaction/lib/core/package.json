@@ -19,29 +19,26 @@
   "fesm2015": "dist/fesm2015/vivocha-client-interaction-core.js",
   "typings": "dist/vivocha-client-interaction-core.d.ts",
   "metadata": "dist/vivocha-client-interaction-core.metadata.json",
-  "files": [
-    "dist"
-  ],
-  "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
+  "dependencies": {
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
     "@ngrx/store": "^8.5.1",
     "@ngrx/store-devtools": "^8.5.1",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@vivocha/public-entities": "^7.0.11",
-    "rxjs": "^6.5.3",
+    "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.19",
-    "@angular/cli": "^8.3.19",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "^8.2.14",
-    "codelyzer": "^5.2.0",
+    "@angular/cli": "~8.3.19",
+    "@angular/compiler-cli": "~8.2.14",
+    "codelyzer": "^5.0.0",
     "ng-packagr": "^5.7.1",
-    "tslint": "^5.0.0",
-    "typescript": "~3.5.0"
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
   }
 }
