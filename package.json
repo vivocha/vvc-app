@@ -9,9 +9,9 @@
     "build:core": "npm --prefix interaction/lib/core run build",
     "build:layout": "npm --prefix interaction/lib/layout run build",
     "clean:all": "npm run clean:core && npm run clean:layout && npm run clean:app",
-    "clean:app": "npm --prefix interaction/app/default run clean:all",
-    "clean:core": "npm --prefix interaction/lib/core run clean:all",
-    "clean:layout": "npm --prefix interaction/lib/layout run clean:all",
+    "clean:app": "npm --prefix interaction/app/default run clean",
+    "clean:core": "npm --prefix interaction/lib/core run clean",
+    "clean:layout": "npm --prefix interaction/lib/layout run clean",
     "commit": "./node_modules/.bin/git-cz"
   },
   "config": {
@@ -24,5 +24,8 @@
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "lerna": "^3.18.3"
+  },
+  "dependencies": {
+    "@angular/cli": "~8.3.19"
   }
 }
