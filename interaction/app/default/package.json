@@ -1,6 +1,7 @@
 {
   "name": "@vivocha/client-interaction",
   "version": "7.0.1",
+  "private": true,
   "description": "Vivocha Interaction Application",
   "scripts": {
     "prepare": "npm run build:prod",
