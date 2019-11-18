@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const packageJson = require('./package.json');
 // const args = process.argv.slice(2);
 
 try {
@@ -25,6 +26,12 @@ try {
   const updatedMainHtml = mainHtml + buildinfo;
   fs.writeFileSync(mainHtmlPath, updatedMainHtml);
   console.log('bannerize: updated main.html');
+
+  delete packageJson['scripts'];
+  delete packageJson['devDependencies'];
+  delete packageJson['dependencies'];
+  fs.writeFileSync('dist/package.json', JSON.stringify(packageJson, undefined, 2));
+  console.log('bannerize: updated package.json');
 } catch (e) {
   console.warn('bannerize: main.html not updated', e);
 }
