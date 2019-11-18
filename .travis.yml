@@ -26,7 +26,7 @@ before_script:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: lerna publish from-package -y
+  script: lerna publish from-package -y --contents dist
   on:
     branch: master
 after_script:
