@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.3...@vivocha/client-interaction-core@7.0.4) (2019-11-18)
+
+**Note:** Version bump only for package @vivocha/client-interaction-core
+
+
+
+
+
 ## [7.0.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.2...@vivocha/client-interaction-core@7.0.3) (2019-11-18)
 
 **Note:** Version bump only for package @vivocha/client-interaction-core
