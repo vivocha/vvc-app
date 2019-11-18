@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.2](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.1...@vivocha/client-interaction@7.0.2) (2019-11-18)
+
+
+### Bug Fixes
+
+* **interaction.app:** add package.json for npm distribution ([5922df7](https://github.com/vivocha/vvc-app/commit/5922df78fea8936bfe950b35bf98f84dd32338b4))
+* **interaction.app:** use babel to transpile es6 modules for IE11 ([a816800](https://github.com/vivocha/vvc-app/commit/a816800e4a1c19a527969247c2a8fb75ee07a834))
+
+
+
+
+
 ## [7.0.1](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.0...@vivocha/client-interaction@7.0.1) (2019-11-15)
 
 
