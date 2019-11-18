@@ -17,9 +17,9 @@ else
   git subtree split --prefix=interaction/app/default -b $TMP_BRANCH
   # Create the tag on this branch
   git checkout $TMP_BRANCH
-  git tag -a $TMP_TAG -m "tag v$VER"
+  git tag -a $TMP_TAG -m "$VER"
   # Push the tag on the app repository
-  git push app $TMP_TAG:$VER
+  git push app $TMP_TAG:v$VER
   # Clean the Master repository
   # Clean the branch
   git checkout master
