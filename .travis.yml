@@ -32,4 +32,4 @@ deploy:
 after_script:
 - git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
 - git subtree push --prefix interaction/app/default app master
-- git push app --tags
+- ./pushtags.sh
