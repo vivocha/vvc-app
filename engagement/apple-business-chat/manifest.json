@@ -1,0 +1,112 @@
+{
+  "id": "apple-business-chat",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "abcId",
+      "nameId": "VARIABLES.ABC_ID",
+      "placeholderId": "SETTINGS.ABC_ID_PH",
+      "required": true,
+      "defaultValue": "[ADD YOUR ABC ID HERE]",
+      "type": "string"
+    },
+    {
+      "id": "phone",
+      "nameId": "VARIABLES.PHONE",
+      "placeholderId": "SETTINGS.PHONE",
+      "required": true,
+      "defaultValue": "[ADD PHONE OR REMOVE]",
+      "type": "string"
+    },
+    {
+      "id": "intentId",
+      "nameId": "VARIABLES.intentId",
+      "placeholderId": "SETTINGS.intentId",
+      "required": true,
+      "defaultValue": "offers",
+      "type": "string"
+    },
+    {
+      "id": "groupId",
+      "nameId": "VARIABLES.groupId",
+      "placeholderId": "SETTINGS.groupId",
+      "required": true,
+      "defaultValue": "sales",
+      "type": "string"
+    },
+    {
+      "id": "bannerScale",
+      "nameId": "VARIABLES.bannerScale",
+      "placeholderId": "SETTINGS.bannerScale",
+      "required": true,
+      "defaultValue": "1",
+      "type": "string"
+    },
+    {
+      "id": "orientation",
+      "nameId": "VARIABLES.orientation",
+      "placeholderId": "SETTINGS.orientation",
+      "required": true,
+      "defaultValue": "vertical",
+      "type": "string"
+    },
+    {
+      "id": "bannerBgColor",
+      "nameId": "VARIABLES.bannerBgColor",
+      "placeholderId": "SETTINGS.bannerBgColor",
+      "required": true,
+      "defaultValue": "#1B3F68",
+      "type": "color"
+    },
+    {
+      "id": "bannerTextColor",
+      "nameId": "VARIABLES.bannerTextColor",
+      "placeholderId": "SETTINGS.bannerTextColor",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "bannerIconBg",
+      "nameId": "VARIABLES.bannerIconBg",
+      "placeholderId": "SETTINGS.bannerIconBg",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "bannerIconColor",
+      "nameId": "VARIABLES.bannerIconColor",
+      "placeholderId": "SETTINGS.bannerIconColor",
+      "required": true,
+      "defaultValue": "#156C73",
+      "type": "color"
+    }
+  ],
+  "stringIds": [
+    "NAME",
+    "DESCRIPTION",
+    "VARIABLES.ABC_ID",
+    "SETTINGS.ABC_ID_PH",
+    "STRINGS.CTA",
+    "STRINGS.CONTEXT"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "62afdf3f7bdd3f0bb2857e123c72c9b0a474eb982c7a9223c632102aa86a792e",
+      "id": "vvc_training/widgets/apple-business-chat/main.html/62afdf3",
+      "size": 1011,
+      "type": "text/html"
+    },
+    {
+      "path": "main.scss",
+      "hash": "11c0409345398aa2cd79543810812a40804beb95dd96a9f260b18000d8c820d7",
+      "id": "vvc_training/widgets/apple-business-chat/main.scss/11c0409",
+      "size": 102,
+      "type": "text/x-scss"
+    }
+  ],
+  "htmlId": "vvc_training/widgets/apple-business-chat/main.html/62afdf3",
+  "scssId": "vvc_training/widgets/apple-business-chat/main.scss/11c0409"
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Apple Business Chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Apple Business Chat",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Apple Business Chat button",
+        "state": "new"
+      },
+      "it": {
+        "value": "bottone per Apple Business Chat",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.ABC_ID",
+    "values": {
+      "en": {
+        "value": "Apple Business Chat Id",
+        "state": "new"
+      },
+      "it": {
+        "value": "Apple Business Chat Id",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "SETTINGS.ABC_ID_PH",
+    "values": {
+      "en": {
+        "value": "Your Apple Business Chat id",
+        "state": "new"
+      },
+      "it": {
+        "value": "il tuo id Apple Business Chat",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CTA",
+    "values": {
+      "en": {
+        "value": "Got questions?",
+        "state": "new"
+      },
+      "it": {
+        "value": "Qualche domanda?",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CONTEXT",
+    "values": {
+      "en": {
+        "value": "Chat with a financial advisor now.",
+        "state": "new"
+      },
+      "it": {
+        "value": "Parla ora con noi",
+        "state": "new"
+      }
+    }
+  }
+]
