@@ -65,6 +65,19 @@
     }
   },
   {
+    "id": "STRINGS.BODY",
+    "values": {
+      "en": {
+        "value": "Chat Message",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio di chat",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "STRINGS.CONTEXT",
     "values": {
       "en": {
