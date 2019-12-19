@@ -1,12 +1,11 @@
-import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'vvc-media-container',
   templateUrl: './media-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MediaContainerComponent {
-
+export class MediaContainerComponent implements AfterViewInit {
   @Input() context;
   @Output() onMaximize = new EventEmitter();
   @Output() normalScreen = new EventEmitter();
@@ -16,56 +15,59 @@ export class MediaContainerComponent {
   @ViewChild('localVideo', {static: true}) localVideo: ElementRef;
   @ViewChild('remoteVideo', {static: true}) remoteVideo: ElementRef;
 
+  hideSmallVideo: boolean = false;
+  switchVideo: boolean = false;
+  showVideoIsPaused: boolean = false;
+  userAction: boolean = false;
+  ngAfterViewInited: boolean = false;
 
-  hideSmallVideo = false;
-  switchVideo = false;
-  showVideoIsPaused = false;
-  userAction = false;
-
+  ngAfterViewInit() {
+    this.ngAfterViewInited = true;
+  }
   canHideSmallVideo() {
-    return !this.hideSmallVideo && (this.isVideoVisible('local') || this.isVideoVisible('remote'));
+    return !this.hideSmallVideo && (this.isLocalVideoVisible || this.isRemoteVideoVisible);
   }
   canShowSmallVideo() {
-    return this.hideSmallVideo && (this.isVideoVisible('local') || this.isVideoVisible('remote'));
+    return this.hideSmallVideo && (this.isLocalVideoVisible || this.isRemoteVideoVisible);
   }
-  getSrcForVideo(type: 'big' | 'local' | 'remote') {
-    switch (type) {
-      case 'big':
-        if (this.switchVideo) {
-          return this.context.videoRxStream || this.context.screenRxStream || this.context.videoTxStream;
-        } else {
-          return this.context.screenRxStream || this.context.videoRxStream || this.context.videoTxStream;
-        }
-      case 'local':
-        return this.context.videoTxStream;
-      case 'remote':
-        if (this.switchVideo) {
-          return this.context.screenRxStream || this.context.videoRxStream;
-        } else {
-          return this.context.videoRxStream;
-        }
+  get bigVideoSrc() {
+    if (this.ngAfterViewInited) {
+      if (this.switchVideo) {
+        return this.context.videoRxStream || this.context.screenRxStream || this.context.videoTxStream;
+      } else {
+        return this.context.screenRxStream || this.context.videoRxStream || this.context.videoTxStream;
+      }
+    }
+  }
+  get localVideoSrc() {
+    if (this.ngAfterViewInited) {
+      return this.context.videoTxStream;
+    }
+  }
+  get remoteVideoSrc() {
+    if (this.ngAfterViewInited) {
+      if (this.switchVideo) {
+        return this.context.screenRxStream || this.context.videoRxStream;
+      } else {
+        return this.context.videoRxStream;
+      }
     }
   }
   hasMultipleVideoDevice() {
     return !!this.context.hasMultipleVideoDevice;
   }
-  isVideoVisible(type: 'big' | 'local' | 'remote') {
-    switch (type) {
-      case 'big':
-        return (
-          this.context.screenRxStream ||
-          this.context.videoRxStream  ||
-          (!this.context.screenRxStream && !this.context.videoRxStream && this.context.videoTxStream)
-        );
-      case 'local':
-        return (
-          this.context.videoTxStream && (this.context.screenRxStream || this.context.videoRxStream)
-        );
-      case 'remote':
-        return (
-          this.context.screenRxStream && this.context.videoRxStream
-        );
-    }
+  get isBigVideoVisible() {
+    return this.context && (
+      this.context.screenRxStream ||
+      this.context.videoRxStream  ||
+      (!this.context.screenRxStream && !this.context.videoRxStream && this.context.videoTxStream)
+    );
+  }
+  get isLocalVideoVisible() {
+    return this.context && this.context.videoTxStream && (this.context.screenRxStream || this.context.videoRxStream);
+  }
+  get isRemoteVideoVisible() {
+    return this.context && this.context.screenRxStream && this.context.videoRxStream;
   }
   isFlipped() {
     return !this.context.screenRxStream && !this.context.videoRxStream && this.context.videoTxStream;
@@ -74,29 +76,32 @@ export class MediaContainerComponent {
     (this.context.isFullScreen) ? this.normalScreen.emit() : this.onMaximize.emit();
   }
   playVideo() {
-    this.userAction = true;
-    this.showVideoIsPaused = false;
-    this.bigVideo.nativeElement.muted = true;
-
-    if (this.bigVideo && this.bigVideo.nativeElement && this.bigVideo.nativeElement.paused) {
-      this.bigVideo.nativeElement.play();
-    }
-    if (this.localVideo && this.localVideo.nativeElement && this.localVideo.nativeElement.paused) {
-      this.localVideo.nativeElement.play();
-    }
-    if (this.remoteVideo && this.remoteVideo.nativeElement && this.remoteVideo.nativeElement.paused) {
-      this.remoteVideo.nativeElement.play();
-    }
-
-    if (this.bigVideo.nativeElement.srcObject !== this.context.videoTxStream) {
-      this.bigVideo.nativeElement.muted = false;
+    if (this.ngAfterViewInited) {
+      this.userAction = true;
+      this.showVideoIsPaused = false;
+      if (this.bigVideo && this.bigVideo.nativeElement) {
+        if (this.bigVideo.nativeElement.srcObject !== this.context.videoTxStream) {
+          this.bigVideo.nativeElement.muted = false;
+        } else {
+          this.bigVideo.nativeElement.muted = true;
+        }
+        if (this.bigVideo.nativeElement.paused) {
+          this.bigVideo.nativeElement.play();
+        }
+      }
+      if (this.localVideo && this.localVideo.nativeElement && this.localVideo.nativeElement.paused) {
+        this.localVideo.nativeElement.play();
+      }
+      if (this.remoteVideo && this.remoteVideo.nativeElement && this.remoteVideo.nativeElement.paused) {
+        this.remoteVideo.nativeElement.play();
+      }
     }
   }
-  showLocalVideo() {
-    return !this.hideSmallVideo && this.isVideoVisible('local');
+  get showLocalVideo() {
+    return !this.hideSmallVideo && this.isLocalVideoVisible;
   }
-  showRemoteVideo() {
-    return !this.hideSmallVideo && this.isVideoVisible('remote');
+  get showRemoteVideo() {
+    return !this.hideSmallVideo && this.isRemoteVideoVisible;
   }
   toggleCamera() {
     this.cameraChange.emit();

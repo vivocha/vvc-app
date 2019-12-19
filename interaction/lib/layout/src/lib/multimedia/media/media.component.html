@@ -21,7 +21,7 @@
 <!-- connected state -->
 <div class="media-connected-view animated fadeInUp" *ngIf="!context.isClosed && context.isMediaConnected && !context.incomingOffer">
 
-  <div class="media-content" >
+  <div class="media-content" *ngIf="context">
     <div class="media-title" *ngIf="!(context.videoRxStream || context.videoTxStream)" [innerHtml]=" 'STRINGS.VOICE.WELCOME_MESSAGE' | translate:{ nickname: context.agent.nick } | vvcSanitize:'html' "></div>
     <div class="media-avatar" *ngIf="context.agent.avatar && !(context.videoRxStream || context.videoTxStream)">
       <img [src]="context.agent.avatar">

@@ -31,7 +31,7 @@
       <span class="tooltip">{{ 'STRINGS.MEDIA.TOOLTOPS.SHOW_VIDEOS' | translate }}</span>
     </span>
     <span class="buttons"
-          *ngIf="isVideoVisible('remote')"
+          *ngIf="isRemoteVideoVisible"
           (click)="switchBigVideo()">
       <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-4 -4)"><path d="m0 0h24v24h-24z"></path><path d="m18.4885389 20-3.4951324-3.5-1.9972185 2v-5.5h5.4923509l-1.9972185 2 3.5019027 3.5652797zm-12.99062501-16 3.50190271 3.5 1.9972185-2v5.5h-5.4923509l1.99721852-2-3.50190272-3.5z" fill="#fff"></path></g></svg>
       <span class="tooltip" *ngIf="switchVideo">{{ 'STRINGS.MEDIA.TOOLTOPS.SWITCH_REMOTE_SHARING' | translate }}</span>
@@ -50,17 +50,18 @@
          [srcObject]="context.voiceRxStream"></audio>
 
   <div class="big-video"
-       (dblclick)="minMaxVideo()"
-       *ngIf="isVideoVisible('big')">
+       *ngIf="isBigVideoVisible"
+       (dblclick)="minMaxVideo()">
     <video autoplay playsinline
            #bigVideo
            (play)="playVideo()"
            (playing)="logVideoEvent('big-video', $event)"
            (pause)="videoOnPause('big-video', $event)"
            (volumechange)="logVideoEvent('big-video', $event)"
-           [srcObject]="getSrcForVideo('big')"></video>
+           [srcObject]="bigVideoSrc"></video>
   </div>
-  <div class="small-video local" *ngIf="showLocalVideo()">
+  <div class="small-video local"
+       *ngIf="showLocalVideo">
     <video autoplay playsinline
            #localVideo
            (play)="logVideoEvent('local-video', $event)"
@@ -68,10 +69,10 @@
            (pause)="videoOnPause('local-video', $event)"
            (volumechange)="logVideoEvent('local-video', $event)"
            [muted]="true"
-           [srcObject]="getSrcForVideo('local')"></video>
+           [srcObject]="localVideoSrc"></video>
   </div>
   <div class="small-video remote"
-       *ngIf="showRemoteVideo()"
+       *ngIf="showRemoteVideo"
        (click)="switchBigVideo()">
     <video autoplay playsinline
            #remoteVideo
@@ -79,6 +80,6 @@
            (playing)="logVideoEvent('remote-video', $event)"
            (pause)="videoOnPause('remote-video', $event)"
            (volumechange)="logVideoEvent('remote-video', $event)"
-           [srcObject]="getSrcForVideo('remote')"></video>
+           [srcObject]="remoteVideoSrc"></video>
   </div>
 </div>
