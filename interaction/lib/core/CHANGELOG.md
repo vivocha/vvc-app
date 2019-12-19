@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.4...@vivocha/client-interaction-core@7.0.5) (2019-12-19)
+
+
+### Bug Fixes
+
+* **interaction.core:** fix createTranslateLoader regexp ([12f2b39](https://github.com/vivocha/widgets/commit/12f2b39421ef62c1e4557752353a2f1bc6bada7e))
+
+
+
+
+
 ## [7.0.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.3...@vivocha/client-interaction-core@7.0.4) (2019-11-18)
 
 **Note:** Version bump only for package @vivocha/client-interaction-core
