@@ -25,45 +25,76 @@ export class AppComponent implements OnInit {
   private isMobile;
 
   private dimensions: Dimensions = {
-    fullscreen: { position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0' },
-    minimized: {position: 'fixed', width: '80px', height: '80px', right: '0', bottom: '0'},
+    fullscreen: {
+      position: 'fixed',
+      width: '100%',
+      height: '100%',
+      top: '0',
+      right: '0',
+      bottom: '0',
+      left: '0'
+    },
+    minimized: {
+      position: 'fixed',
+      width: '80px',
+      height: '80px',
+      right: '0',
+      bottom: '0'
+    },
     minimizedCbn: {
       position: 'fixed',
-      width   : window['VVC_VAR_ASSETS']['initialWidth'],
-      height  : '45px',
-      right   : '40px',
-      bottom  : '0px'
+      width: window['VVC_VAR_ASSETS']['initialWidth'],
+      height: '45px',
+      right: '40px',
+      bottom: '0px'
       // right   : window['VVC_VAR_ASSETS']['initialRight'],
       // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
     },
     minimizedCbnMobile: {
       position: 'fixed',
-      width   : '100%',
-      height  : '45px',
-      left    : '0',
-      right   : '0',
-      bottom  : '0'
+      width: '100%',
+      height: '45px',
+      left: '0',
+      right: '0',
+      bottom: '0'
       // right   : window['VVC_VAR_ASSETS']['initialRight'],
       // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
     },
     normal: {
       position: 'fixed',
-      width   : window['VVC_VAR_ASSETS']['initialWidth'],
-      height  : window['VVC_VAR_ASSETS']['initialHeight'],
-      right   : '40px',
-      bottom  : '-10px'
+      width: window['VVC_VAR_ASSETS']['initialWidth'],
+      height: window['VVC_VAR_ASSETS']['initialHeight'],
+      right: '40px',
+      bottom: '-10px'
       // right   : window['VVC_VAR_ASSETS']['initialRight'],
       // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
     },
-    custom: {position: 'fixed', width: '100%', height: '100%', top: '0', right: '0', bottom: '0', left: '0'}
+    custom: {
+      position: 'fixed',
+      width: '100%',
+      height: '100%',
+      top: '0',
+      right: '0',
+      bottom: '0',
+      left: '0'
+    },
+    embedded: {
+      position: 'relative',
+      width: '100%',
+      height: '100%'
+    }
   };
 
   public closeDimensions: Dimension;
+
+  public selector: string | null = null;
+
   constructor(private interactionService: VvcInteractionService) {}
+
   ngOnInit() {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init().subscribe(context => this.setInitialDimensions(context));
-    this.interactionService.events().subscribe( evt => this.listenForEvents(evt));
+    this.interactionService.events().subscribe(evt => this.listenForEvents(evt));
     // this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
   }
   acceptAgentRequest(requestId) {
@@ -263,14 +294,19 @@ export class AppComponent implements OnInit {
   }
   setInitialDimensions(context) {
     this.isMobile = context.isMobile;
-    this.closeDimensions = context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal;
+    this.selector = (context.campaign.channels.web.interaction || {}).selector || null;
+    if (this.selector) {
+      this.closeDimensions = this.dimensions.embedded;
+    } else {
+      this.closeDimensions = context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal;
+    }
     this.interactionService.setDimensions(this.closeDimensions);
     if (context.mediaPreset === 'sync') {
       this.interactionService.setDimensions(this.dimensions.minimized);
     }
   }
   showCloseDialog(context) {
-    return (context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible);
+    return context && !context.isCLosed && context.variables && context.variables.askCloseConfirm && !this.closeModalVisible;
   }
   showCloseModal(closeOpt) {
     if (closeOpt.forceClose) {
