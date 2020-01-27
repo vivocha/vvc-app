@@ -2015,6 +2015,19 @@ body, input, textarea{ font-family: $appFontFamily; }
   }
 
 }
+
+.embedded {
+  #vvc-fullscreen-container {
+    #vvc-normal-container {
+      width: auto;
+      position: relative;
+    }
+    #vvc-top-bar {
+      width: 100% !important;
+    }
+  }
+}
+
 /**
   ANIMATION
  */
