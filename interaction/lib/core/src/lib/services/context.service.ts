@@ -48,7 +48,7 @@ export class VvcContextService {
       this.zone.run( () => {
         this.vivocha = this.window.vivocha;
         this.logger = this.vivocha.getLogger('vvc-interaction');
-        this.logger.log('contextService init');
+        this.logger.log('contextService init', context);
         this.isMobile = this.window.vivocha.isMobile();
         this.context = context;
         this.context.interactionMode = interactionMode;
