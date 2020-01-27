@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.5...@vivocha/client-interaction-layout@7.0.6) (2020-01-27)
+
+
+### Bug Fixes
+
+* **layout:** fix select glitch on safari ([0eff674](https://github.com/vivocha/widgets/commit/0eff67487efc3f699c904a026528fd9135d67d49))
+
+
+
+
+
 ## [7.0.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.4...@vivocha/client-interaction-layout@7.0.5) (2019-12-19)
 
 
