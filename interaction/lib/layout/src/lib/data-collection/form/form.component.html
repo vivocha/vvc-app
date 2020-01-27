@@ -25,6 +25,7 @@
         <!-- dropdown -->
         <select *ngIf="!readMode && getInputElement(elem) === 'select'"
                 [formControlName]="elem.id">
+          <option value="" selected></option>
           <option *ngFor="let key of optionsKeys(elem.options)" [value]="key">{{elem.options[key] | translate}}</option>
         </select>
 
