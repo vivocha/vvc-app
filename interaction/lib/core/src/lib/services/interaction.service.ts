@@ -188,7 +188,7 @@ export class VvcInteractionService {
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
     if (!isFullScreen) {
       const variables = this.getVariables();
-      if (variables['restorePositionAfterDrag'] && this.dragged) {
+      if (variables['rememberPositionAfterMinimize'] && this.dragged) {
         dim.position = 'fixed';
         dim.top = this.dragged.top;
         dim.left = this.dragged.left;
