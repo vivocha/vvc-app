@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.6...@vivocha/client-interaction@7.0.7) (2020-01-28)
+
+
+### Bug Fixes
+
+* **interaction.app:** fix app embedded css ([351c3ec](https://github.com/vivocha/vvc-app/commit/351c3ecf75744571d188f83ffedad693b496f58e))
+* **interaction.app:** init app inside a custom selector ([8c6519e](https://github.com/vivocha/vvc-app/commit/8c6519ea0d7df0d095b5d3b8ecbf26656285cbd1))
+
+
+
+
+
 ## [7.0.6](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.5...@vivocha/client-interaction@7.0.6) (2020-01-27)
 
 **Note:** Version bump only for package @vivocha/client-interaction

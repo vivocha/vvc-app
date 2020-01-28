@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.5...@vivocha/client-interaction-core@7.0.6) (2020-01-28)
+
+
+### Bug Fixes
+
+* **interaction.app:** init app inside a custom selector ([8c6519e](https://github.com/vivocha/widgets/commit/8c6519ea0d7df0d095b5d3b8ecbf26656285cbd1))
+* **interaction.core:** fix remember position after app drag ([23cc9f1](https://github.com/vivocha/widgets/commit/23cc9f1ef95dd1f18a208730c53985f0e2f02d33))
+* **interaction.core:** handle context.canMinimize ([c495f6a](https://github.com/vivocha/widgets/commit/c495f6a61e3f9b9ed252623334ed037e2096c091))
+
+
+
+
+
 ## [7.0.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.4...@vivocha/client-interaction-core@7.0.5) (2019-12-19)
 
 
