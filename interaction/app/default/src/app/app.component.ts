@@ -13,7 +13,7 @@ interface Dimensions {
 })
 export class AppComponent implements OnInit {
 
-  @ViewChild(ChatAreaComponent, {static: true}) chat: ChatAreaComponent;
+  @ViewChild(ChatAreaComponent, {static: false}) chat: ChatAreaComponent;
 
   public messages: Array<any>;
 
