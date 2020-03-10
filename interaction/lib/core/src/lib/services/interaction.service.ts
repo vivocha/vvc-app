@@ -94,7 +94,7 @@ export class VvcInteractionService {
       if (context.loaded) {
         this.vivocha = this.contextService.getVivocha();
         this.logger = this.vivocha.getLogger('vvc-interaction');
-        this.logger.log('interactionService.init');
+        this.logger.log('interactionService.init', context);
         this.context = context;
         this.registerChangeLangService();
         this.contactService.initializeContact(this.vivocha, this.context);
@@ -188,7 +188,7 @@ export class VvcInteractionService {
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
     if (!isFullScreen) {
       const variables = this.getVariables();
-      if (variables['restorePositionAfterDrag'] && this.dragged) {
+      if (variables['rememberPositionAfterMinimize'] && this.dragged) {
         dim.position = 'fixed';
         dim.top = this.dragged.top;
         dim.left = this.dragged.left;

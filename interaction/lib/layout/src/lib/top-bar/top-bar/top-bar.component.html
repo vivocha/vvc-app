@@ -10,7 +10,7 @@
     </span>
   </div>
   <div class="vvc-top-controls" *ngIf="!hasMenu() && !context.canRemoveApp && !context.incomingOffer">
-    <span (click)="onMinimize.emit()">
+    <span *ngIf="context.canMinimize" (click)="onMinimize.emit()">
       <i class="icon icon-vvc-reduce"></i>
     </span>
     <span (click)="closeContact()">

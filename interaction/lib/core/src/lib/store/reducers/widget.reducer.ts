@@ -370,12 +370,15 @@ export const getUiStateRedux = (
                                     widgetState.protocol.remoteCaps.Media.Sharing &&
                                     widgetState.protocol.remoteCaps.Media.Sharing.FileTransfer
                                   );
+
+  const canMinimize = widgetState.context.campaign ? !(widgetState.context.campaign.channels.web.interaction || {}).selector : true;
+
     return {
       agent: widgetState.agent,
       messages: [...messagesState.list],
       variables: widgetState.context.variables || {},
       canMaximize: isVideoConnected || screenRxStream,
-      canMinimize: true,
+      canMinimize: canMinimize,
       canRemoveApp: canRemoveApp,
       canStartAudio: canLocalAudio && canStartAudio,
       canStartVideo: canLocalVideo && canStartVideo,

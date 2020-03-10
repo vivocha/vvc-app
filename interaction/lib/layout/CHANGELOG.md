@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.7](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.6...@vivocha/client-interaction-layout@7.0.7) (2020-01-28)
+
+
+### Bug Fixes
+
+* **interaction.layout:** show minimize btn according to context.canMinimize ([30f37fa](https://github.com/vivocha/widgets/commit/30f37fadbb2bbb5b249b6fb091611ca41f0761d6))
+
+
+
+
+
 ## [7.0.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.5...@vivocha/client-interaction-layout@7.0.6) (2020-01-27)
 
 

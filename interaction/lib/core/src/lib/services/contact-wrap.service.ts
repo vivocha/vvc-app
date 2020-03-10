@@ -351,7 +351,7 @@ export class VvcContactWrap {
   initializeContact(vivocha, context) {
     this.vivocha = vivocha;
     this.logger = this.vivocha.getLogger('vvc-interaction');
-    this.logger.log('contactWrapService.initializeContact');
+    this.logger.log('contactWrapService.initializeContact', context);
     this.context = context;
     this.dcService.setInitialContext(context, vivocha);
     if (this.isInPersistence()) {

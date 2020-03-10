@@ -1,4 +1,4 @@
-<div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.connectedWithAgent }">
+<div *ngIf="appState$ | async as appState" [ngClass]="{ 'connected-with-agent': appState.connectedWithAgent, 'embedded': selector }">
   <div id="vvc-fullscreen-container"
        *ngIf="!appState.isMinimized"
       [ngClass]="{ 'mobile': appState.isMobile, 'fullscreen': appState.isFullScreen, 'hide-chat': !appState.showChatOnFullScreen }">
