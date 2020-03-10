@@ -1,0 +1,29 @@
+<script>
+  function vvcCloneForm(){
+    var old_element = document.getElementById("__VARIABLES.idForm__");
+    var new_element = old_element.cloneNode(true);
+    old_element.parentNode.replaceChild(new_element, old_element);
+  }
+  function vvcEngage() {
+    var info = document.querySelector('.vvc-widget-__ENGAGEMENT_ID__ .vvc-media-info');
+    console.log(info.classList);
+    if (info.classList.contains('vvc-media-weblead')){
+      __WIDGET__.engage('weblead')
+    } else if (info.classList.contains('vvc-media-amazon')) {
+      __WIDGET__.engage('amazon')
+    }
+  }
+  if (__VARIABLES.cloneForm__){
+    vvcCloneForm();
+  }
+  document.getElementById("__VARIABLES.idForm__").addEventListener('submit', function(evt) {
+    evt.preventDefault();
+    var num = document.getElementById("__VARIABLES.idTelField__").value;
+    if (__VARIABLES.submitTelCheckFunc__(num)) {
+      vvcEngage();
+    }
+  });
+</script>
+<div style="width:1px;height:1px;opacity:0.0" class="vvc-widget-__ENGAGEMENT_ID__">
+  <div class="vvc-media-info"></div>
+</div>

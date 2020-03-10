@@ -1,0 +1,72 @@
+{
+  "id": "vvc-amazon-cbn",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "buttonBgColor",
+      "nameId": "VARIABLES.BUTTON_BG",
+      "placeholderId": "SETTINGS.BUTTON_BG_PH",
+      "required": true,
+      "defaultValue": "#F47929",
+      "type": "color"
+    },
+    {
+      "id": "idForm",
+      "nameId": "VARIABLES.ID_FORM",
+      "required": true,
+      "defaultValue": "leadForm",
+      "type": "string"
+    },
+    {
+      "id": "idTelField",
+      "nameId": "VARIABLES.ID_TEL_FIELD",
+      "required": true,
+      "defaultValue": "telefono",
+      "type": "string"
+    },
+    {
+      "id": "cloneForm",
+      "nameId": "VARIABLES.CLONE_FORM",
+      "required": true,
+      "defaultValue": false,
+      "type": "boolean"
+    },
+    {
+      "id": "submitTelCheckFunc",
+      "nameId": "VARIABLES.SUBMIT_TEL_CHECK_FUNC",
+      "required": true,
+      "defaultValue": "LandingPage.formSubmitManager.isValidTelephone",
+      "type": "string"
+    }
+  ],
+  "stringIds": [
+    "DESCRIPTION",
+    "NAME"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "2d6a61654df117307f0a9d611b6dc0f1eece97399d9dec74a3a18b5ebc757000",
+      "id": "marchitos/widgets/vvc-amazon-cbn/main.html/2d6a616",
+      "type": "text/html",
+      "size": 1037
+    },
+    {
+      "path": "main.scss",
+      "hash": "f17ab00a7ae0efe1d76241f2609730f569234f391bfc7223dcbd742c2c28f6a3",
+      "id": "marchitos/widgets/vvc-amazon-cbn/main.scss/f17ab00",
+      "size": 418,
+      "type": "text/x-scss"
+    },
+    {
+      "path": "thumbnail.png",
+      "hash": "69aa65534956948d2099135693e359483523290831151be9f91ef5a2fbef8723",
+      "id": "marchitos/widgets/vvc-amazon-cbn/thumbnail.png/69aa655",
+      "size": 2868,
+      "type": "image/png"
+    }
+  ],
+  "htmlId": "marchitos/widgets/vvc-amazon-cbn/main.html/2d6a616",
+  "scssId": "marchitos/widgets/vvc-amazon-cbn/main.scss/f17ab00",
+  "thumbnailId": "marchitos/widgets/vvc-amazon-cbn/thumbnail.png/69aa655"
+}

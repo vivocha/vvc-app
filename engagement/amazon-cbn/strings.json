@@ -1,0 +1,28 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Amazon Call Me Later",
+        "state": "final"
+      },
+      "it": {
+        "value": "Amazon Call Me Later",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Amazon Connect",
+        "state": "final"
+      },
+      "it": {
+        "value": "Amazon Connect",
+        "state": "final"
+      }
+    }
+  }
+]
