@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "@vivocha/client-interaction": {
+    "client-interaction": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -123,7 +123,7 @@
         }
       }
     },
-    "@vivocha/client-interaction-ie": {
+    "client-interaction-ie": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -245,5 +245,5 @@
       }
     }
   },
-  "defaultProject": "@vivocha/client-interaction"
+  "defaultProject": "client-interaction"
 }
