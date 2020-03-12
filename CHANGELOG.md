@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.8](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.7...@vivocha/client-interaction@7.0.8) (2020-03-12)
+
+
+### Bug Fixes
+
+* **interaction.app:** fix broken emoji panel ([6d89919](https://github.com/vivocha/vvc-app/commit/6d89919e221fd0c8e17a0ffe1e1cd0744d86fd1d))
+
+
+
+
+
 ## [7.0.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.6...@vivocha/client-interaction@7.0.7) (2020-01-28)
 
 
