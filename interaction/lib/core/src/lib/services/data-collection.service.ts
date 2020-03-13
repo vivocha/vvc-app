@@ -140,7 +140,7 @@ export class VvcDataCollectionService {
   hasVisibleFields(dc) {
     let visibleFields = false;
     if (dc.fields) {
-      dc.fields.forEach( elem => {
+      dc.fields.filter( f => f.type !== 'meta').forEach( elem => {
         const hasDefault = (typeof elem.defaultConstant !== 'undefined') && elem.defaultConstant != null;
         if ((['visitor', 'both'].indexOf(elem.hidden) === -1 && (!hasDefault || (hasDefault && elem.editIfDefault)))) {
           visibleFields = true;
@@ -232,7 +232,7 @@ export class VvcDataCollectionService {
     if (dc.fields) {
       dc.fields.forEach( elem => {
         const hasDefault = (typeof elem.defaultConstant !== 'undefined') && elem.defaultConstant != null;
-        data[elem.id] = hasDefault ? elem.defaultConstant.toString() : elem.defaultConstant;
+        data[elem.id] = (hasDefault && elem.type !== 'boolean') ? elem.defaultConstant.toString() : elem.defaultConstant;
       });
     }
     const dataCollection = {
