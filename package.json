@@ -4,14 +4,14 @@
   "private": true,
   "description": "Vivocha Widgets Repository",
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist --include-filtered-dependencies",
+    "bootstrap": "lerna bootstrap --hoist --include-dependencies",
     "build:app": "npm --prefix interaction/app/default run build",
     "build:core": "npm --prefix interaction/lib/core run build",
     "build:layout": "npm --prefix interaction/lib/layout run build",
-    "clean:all": "npm run clean:core && npm run clean:layout && npm run clean:app",
-    "clean:app": "npm --prefix interaction/app/default run clean",
-    "clean:core": "npm --prefix interaction/lib/core run clean",
-    "clean:layout": "npm --prefix interaction/lib/layout run clean",
+    "clean": "npm run clean:artifacts && npm run clean:packages && npm run clean:root",
+    "clean:artifacts": "lerna run clean --parallel",
+    "clean:packages": "lerna clean -y",
+    "clean:root": "npx rimraf node_modules",
     "commit": "./node_modules/.bin/git-cz"
   },
   "config": {
