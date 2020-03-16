@@ -145,6 +145,17 @@ export class VvcDataCollectionService {
         if ((['visitor', 'both'].indexOf(elem.hidden) === -1 && (!hasDefault || (hasDefault && elem.editIfDefault)))) {
           visibleFields = true;
         }
+        if (
+          (['visitor', 'both'].indexOf(elem.hidden) === -1)
+          && hasDefault
+          && elem.format === 'checkbox'
+          && elem.validation
+        ){
+          if (elem.defaultConstant !== elem.validation) {
+            elem.editIfDefault = true;
+            visibleFields = true;
+          }
+        }
       });
     }
     return visibleFields;
