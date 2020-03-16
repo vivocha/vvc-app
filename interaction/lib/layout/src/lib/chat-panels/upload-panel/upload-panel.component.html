@@ -50,4 +50,8 @@
               (click)="close.emit();">{{ 'STRINGS.UPLOAD.CLOSE_PANEL' | translate }}</button>
     </div>
   </div>
+
+  <audio autoplay
+         *ngIf="context.voiceRxStream"
+         [srcObject]="context.voiceRxStream"></audio>
 </div>
