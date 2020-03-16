@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.10](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.9...@vivocha/client-interaction-layout@7.0.10) (2020-03-16)
+
+
+### Bug Fixes
+
+* **lib:** fix no audio when upload file is visible ([2e12574](https://github.com/vivocha/widgets/commit/2e125743eccc73ca4cdcaf5472bf0ad74d23c59d))
+
+
+
+
+
 ## [7.0.9](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.8...@vivocha/client-interaction-layout@7.0.9) (2020-03-13)
 
 

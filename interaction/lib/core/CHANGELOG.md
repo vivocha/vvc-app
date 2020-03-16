@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.9](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.8...@vivocha/client-interaction-core@7.0.9) (2020-03-16)
+
+
+### Bug Fixes
+
+* **lib:** checkbox visibility ([abf01db](https://github.com/vivocha/widgets/commit/abf01db8c2fb39c18f76b0ad566b17cf1b4766e4))
+
+
+
+
+
 ## [7.0.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.0.7...@vivocha/client-interaction-core@7.0.8) (2020-03-13)
 
 
