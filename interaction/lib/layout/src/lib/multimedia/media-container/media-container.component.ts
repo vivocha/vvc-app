@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild, ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'vvc-media-container',
@@ -21,8 +21,12 @@ export class MediaContainerComponent implements AfterViewInit {
   userAction: boolean = false;
   ngAfterViewInited: boolean = false;
 
+  constructor(private cd: ChangeDetectorRef) {}
+
   ngAfterViewInit() {
     this.ngAfterViewInited = true;
+    this.cd.detectChanges();
+
   }
   canHideSmallVideo() {
     return !this.hideSmallVideo && (this.isLocalVideoVisible || this.isRemoteVideoVisible);
