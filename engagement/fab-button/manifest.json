@@ -1,0 +1,59 @@
+{
+  "id": "vvc-fab-button",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "color",
+      "nameId": "VARIABLES.COLOR",
+      "required": true,
+      "defaultValue": "red",
+      "options": [
+        "red",
+        "pink",
+        "purple",
+        "blue",
+        "indigo",
+        "cyan",
+        "teal",
+        "green",
+        "lime",
+        "yellow darken-1",
+        "amber",
+        "orange",
+        "brown",
+        "grey"
+      ],
+      "type": "enum"
+    }
+  ],
+  "stringIds": [
+    "DESCRIPTION",
+    "NAME"
+  ],
+  "assets": [
+    {
+      "path": "main.html",
+      "hash": "70695321252df74ef3fa61f742386a66382061c76b37b015887e216760d51c1a",
+      "id": "marchitos/widgets/vvc-fab-button/main.html/7069532",
+      "type": "text/html",
+      "size": 2021
+    },
+    {
+      "path": "main.scss",
+      "hash": "e512aad081e86a650dfd27ba5fb12f7b9f66859c40885452499c538843c12a4f",
+      "id": "marchitos/widgets/vvc-fab-button/main.scss/e512aad",
+      "size": 197,
+      "type": "text/x-scss"
+    },
+    {
+      "path": "thumbnail.png",
+      "hash": "69aa65534956948d2099135693e359483523290831151be9f91ef5a2fbef8723",
+      "id": "marchitos/widgets/vvc-fab-button/thumbnail.png/69aa655",
+      "size": 2868,
+      "type": "image/png"
+    }
+  ],
+  "htmlId": "marchitos/widgets/vvc-fab-button/main.html/7069532",
+  "scssId": "marchitos/widgets/vvc-fab-button/main.scss/e512aad",
+  "thumbnailId": "marchitos/widgets/vvc-fab-button/thumbnail.png/69aa655"
+}

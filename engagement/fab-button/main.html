@@ -1,0 +1,30 @@
+<script id="materialize" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<div class="opacity fixed-action-btn vvc-widget-__ENGAGEMENT_ID__">
+  <a id="menu" class="btn-floating btn-large __VARIABLES.color__">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li title="sync" class="vvc-media-sync vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('sync')"><i class="material-icons">phonelink</i></a></li>
+    <li title="inbound" class="vvc-media-inbound vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('inbound')"><i class="material-icons">phonelink_ring</i></a></li>
+    <li title="cbn" class="vvc-media-cbn vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('cbn')"><i class="material-icons">phone_in_talk</i></a></li>
+    <li title="weblead" class="vvc-media-weblead vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('weblead')"><i class="material-icons">mail</i></a></li>
+    <li title="video" class="vvc-media-video vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('video')"><i class="material-icons">video_call</i></a></li>
+    <li title="voice" class="vvc-media-voice vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('voice')"><i class="material-icons">phone</i></a></li>
+    <li title="chat" class="vvc-media-chat vvc-media-item"><a class="btn-floating __VARIABLES.color__" onclick="vvcEngage('chat')"><i class="material-icons">chat</i></a></li>
+  </ul>
+</div>
+
+<script>
+  var menu;
+  document.getElementById('materialize').addEventListener('load', function(){
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    menu = M.FloatingActionButton.init(elems)[0];
+    var el = document.getElementsByClassName('opacity')[0];
+    el.classList.remove('opacity');
+  });
+  function vvcEngage(preset){
+    __WIDGET__.engage(preset);
+    menu.close();
+  }
+</script>

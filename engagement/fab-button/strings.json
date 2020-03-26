@@ -1,0 +1,28 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Engagement Fab Button",
+        "state": "final"
+      },
+      "it": {
+        "value": "Bottone con animazione",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Fab Button",
+        "state": "final"
+      },
+      "it": {
+        "value": "Fab Button",
+        "state": "final"
+      }
+    }
+  }
+]
