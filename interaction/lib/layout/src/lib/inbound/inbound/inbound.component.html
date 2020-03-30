@@ -1,0 +1,10 @@
+<div id="inbound-call" *ngIf="context && context.inboundState">
+
+  <vvc-inbound-topbar [context]="context"
+                      (close)="close.emit()"></vvc-inbound-topbar>
+
+  <vvc-inbound-fullscreen-messages [context]="context"></vvc-inbound-fullscreen-messages>
+
+  <div class="sep"></div>
+
+</div>

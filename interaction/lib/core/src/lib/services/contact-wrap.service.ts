@@ -250,14 +250,24 @@ export class VvcContactWrap {
             this.logger.log('contact type', contact.contact.type, contact.contact);
             if (contact.contact.type === 'cbn') {
               this.uiService.setCbnMode();
+            } else if (contact.contact.type === 'inbound'){
+              this.uiService.setInboundMode({
+                dnis: contact.contact.dnis,
+                extCode: contact.contact.extCode
+              });
             }
             if (contact.contact.initial_offer.Sharing) {
               if (!this.autoChat) {
                 if (contact.contact.initial_offer.Chat && hideQueue) {
                   this.uiService.hideQueueForChat();
                 } else {
-                  this.uiService.showQueuePanel();
-                  this.track('queue screen');
+                  if (contact.contact.type !== 'inbound') {
+                    this.uiService.showQueuePanel();
+                    this.track('queue screen');
+                  }
+                  else {
+                    this.cancelDissuasionTimeout();
+                  }
                 }
               }
               this.uiService.initializeProtocol(this.context, {

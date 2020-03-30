@@ -167,8 +167,16 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, {cbnMode: action.payload});
       return Object.assign({}, state, {context: context});
     }
+    case fromWidget.WIDGET_SET_INBOUND_MODE: {
+      const context = Object.assign({}, state.context, {inboundMode: action.payload});
+      return Object.assign({}, state, {context: context});
+    }
     case fromWidget.WIDGET_SET_CBN_STATE: {
       const context = Object.assign({}, state.context, {cbnState: action.payload});
+      return Object.assign({}, state, {context: context});
+    }
+    case fromWidget.WIDGET_SET_INBOUND_STATE: {
+      const context = Object.assign({}, state.context, {inboundState: action.payload, inboundMode: true });
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_DIALOG_UI: {
@@ -338,7 +346,7 @@ export const getUiStateRedux = (
                                   widgetState.agent.is_agent &&
                                   !hasLocalVideo &&
                                   !isVideoConnecting;
-  const hideTopBarInfo          = ((widgetState.context.showQueuePanel) || widgetState.context.cbnMode ||
+  const hideTopBarInfo          = ((widgetState.context.showQueuePanel) || widgetState.context.cbnMode || widgetState.context.inboundMode ||
                                   (isMediaVisible && !widgetState.media.isMinimized && !widgetState.context.isFullScreen)) ||
                                   widgetState.protocol.isOffering ||
                                   widgetState.protocol.incomingOffer;
@@ -392,13 +400,15 @@ export const getUiStateRedux = (
       hasError: widgetState.context.hasError,
       hasMultipleVideoDevice: canSwitchCamera,
       hasSurvey: !!widgetState.context.surveyId,
+      inboundMode: widgetState.context.inboundMode && !widgetState.context.showQueuePanel,
+      inboundState: widgetState.context.inboundState,
       incomingOffer: widgetState.protocol.incomingOffer,
       incomingMedia: widgetState.protocol.incomingMedia,
       inVideoTransit: widgetState.protocol.inVideoTransit,
       isAutoChat: widgetState.chat && widgetState.chat.isAutoChat,
       isLoading: !widgetState.context.isUiLoaded,
       isInQueue: widgetState.context.showQueuePanel && (dataCollectionState.completed || widgetState.context.contactCreationFailed),
-      isChatVisible: isChatVisible && !widgetState.context.cbnMode,
+      isChatVisible: isChatVisible && !widgetState.context.cbnMode && !widgetState.context.inboundMode,
       isChatBoxVisible: isChatBoxVisible,
       isClosed: isClosed,
       isClosedByAgent: widgetState.context.closedByAgent,

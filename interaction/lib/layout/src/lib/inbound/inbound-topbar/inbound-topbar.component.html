@@ -1,0 +1,10 @@
+<div class="inbound-top-bar" [ngClass]="{ 'closed': context.isClosed  }">
+  <div class="inbound-top-header">
+    <div class="inbound-top-title"></div>
+  </div>
+  <div class="inbound-top-controls">
+      <span (click)="close.emit()">
+        <i class="icon icon-vvc-close"></i>
+      </span>
+  </div>
+</div>

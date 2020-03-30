@@ -1,6 +1,7 @@
 /*
  * Public API Surface of client-interaction-layout
  */
+export {InboundModule} from './lib/inbound/inbound.module';
 export {CbnModule} from './lib/cbn/cbn.module';
 export {ChatModule} from './lib/chat/chat.module';
 export {ChatPanelsModule} from './lib/chat-panels/chat-panels.module';

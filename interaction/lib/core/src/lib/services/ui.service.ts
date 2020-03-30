@@ -45,6 +45,8 @@ import {
   WidgetHideQueueForChat,
   WidgetSetCbnMode,
   WidgetSetCbnState,
+  WidgetSetInboundMode,
+  WidgetSetInboundState,
   WidgetUpgradeCbnToChat,
   WidgetUpdateRemoteCaps,
   WidgetUpdateLocalCaps
@@ -70,6 +72,10 @@ export class VvcUiService {
   }
   setCbnMode() {
     this.store.dispatch(new WidgetSetCbnMode(true));
+  }
+  setInboundMode(inboundObj: { dnis: string, extCode: string}) {
+    //this.store.dispatch(new WidgetSetInboundMode(true));
+    this.store.dispatch(new WidgetSetInboundState(inboundObj));
   }
   hideChat() {
     this.store.dispatch(new WidgetSetMinimizedMedia(false));

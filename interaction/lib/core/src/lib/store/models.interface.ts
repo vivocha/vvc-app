@@ -6,7 +6,10 @@ import {
 } from '@vivocha/public-entities/dist';
 
 export type CbnStatus = 'dialing' | 'ringing' | 'busy' | 'no-answer' | 'unassigned' | 'failed' | 'cancel' | 'answer';
-
+export interface InboundStatus {
+  dnis: string;
+  extCode?: string;
+}
 export interface Dimension {
   position: 'fixed' | 'absolute' | 'relative';
   width: string;
@@ -179,6 +182,8 @@ export interface UiState {
   hasMultipleVideoDevice: boolean;
   hasSurvey: boolean;
   isAutoChat?: boolean;
+  inboundMode?: boolean;
+  inboundState?: InboundStatus;
   incomingMedia?: string;
   incomingOffer?: boolean;
   inVideoTransit: boolean;
