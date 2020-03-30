@@ -12,7 +12,8 @@ import {
   DataCollectionModule,
   MultimediaModule,
   QueueModule,
-  CbnModule
+  CbnModule,
+  InboundModule
 } from '@vivocha/client-interaction-layout';
 
 const layoutModules = [
@@ -26,7 +27,8 @@ const layoutModules = [
   ClosePanelModule,
   LoadingPanelModule,
   MinimizedModule,
-  CbnModule
+  CbnModule,
+  InboundModule
 ];
 
 @NgModule({
