@@ -35,10 +35,12 @@
       <div class="number-to-call">
         <span>{{context.inboundState.dnis}}</span>
       </div>
-      <div class="status-message"
-           [innerHTML]=" 'STRINGS.INBOUND.INSERT_EXT_CODE' | translate | vvcSanitize:'html'"></div>
-      <div class="number-to-call">
-        <span>{{context.inboundState.extCode}}</span>
+      <div *ngIf="context.inboundState.extCode">
+        <div class="status-message"
+             [innerHTML]=" 'STRINGS.INBOUND.INSERT_EXT_CODE' | translate | vvcSanitize:'html'"></div>
+        <div class="number-to-call">
+          <span>{{context.inboundState.extCode}}</span>
+        </div>
       </div>
     </div>
 
