@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.1.0...@vivocha/client-interaction-layout@7.1.1) (2020-03-30)
+
+
+### Bug Fixes
+
+* **inbound:** hide messages for extCode when extCode is not present ([edf0e3c](https://github.com/vivocha/widgets/commit/edf0e3c26b077316537fc4c28dc32cfb2aff720c))
+
+
+
+
+
 # [7.1.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.11...@vivocha/client-interaction-layout@7.1.0) (2020-03-30)
 
 
