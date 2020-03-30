@@ -4,26 +4,11 @@
   "variables": [
     {
       "id": "color",
-      "nameId": "VARIABLES.COLOR",
+      "nameId": "VARIABLES.BUTTON_BG",
+      "placeholderId": "SETTINGS.BUTTON_BG_PH",
       "required": true,
-      "defaultValue": "red",
-      "options": [
-        "red",
-        "pink",
-        "purple",
-        "blue",
-        "indigo",
-        "cyan",
-        "teal",
-        "green",
-        "lime",
-        "yellow darken-1",
-        "amber",
-        "orange",
-        "brown",
-        "grey"
-      ],
-      "type": "enum"
+      "defaultValue": "#F47929",
+      "type": "color"
     }
   ],
   "stringIds": [
@@ -33,17 +18,17 @@
   "assets": [
     {
       "path": "main.html",
-      "hash": "70695321252df74ef3fa61f742386a66382061c76b37b015887e216760d51c1a",
-      "id": "marchitos/widgets/vvc-fab-button/main.html/7069532",
+      "hash": "7cd37d0a8aef5aa71aa47e1c995d96ee24b252fc0e1d5444bb30d56027b098d3",
+      "id": "marchitos/widgets/vvc-fab-button/main.html/7cd37d0",
       "type": "text/html",
-      "size": 2021
+      "size": 1972
     },
     {
       "path": "main.scss",
-      "hash": "e512aad081e86a650dfd27ba5fb12f7b9f66859c40885452499c538843c12a4f",
-      "id": "marchitos/widgets/vvc-fab-button/main.scss/e512aad",
-      "size": 197,
-      "type": "text/x-scss"
+      "hash": "918cc2b85da3828a3d288a9fddc8e44b5ca1b03cd141b48ba19dedb26f9a9140",
+      "id": "marchitos/widgets/vvc-fab-button/main.scss/918cc2b",
+      "type": "text/x-scss",
+      "size": 1426
     },
     {
       "path": "thumbnail.png",
@@ -53,7 +38,7 @@
       "type": "image/png"
     }
   ],
-  "htmlId": "marchitos/widgets/vvc-fab-button/main.html/7069532",
-  "scssId": "marchitos/widgets/vvc-fab-button/main.scss/e512aad",
+  "htmlId": "marchitos/widgets/vvc-fab-button/main.html/7cd37d0",
+  "scssId": "marchitos/widgets/vvc-fab-button/main.scss/918cc2b",
   "thumbnailId": "marchitos/widgets/vvc-fab-button/thumbnail.png/69aa655"
 }
