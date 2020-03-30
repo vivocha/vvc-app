@@ -10,35 +10,5 @@
       "defaultValue": "#F47929",
       "type": "color"
     }
-  ],
-  "stringIds": [
-    "DESCRIPTION",
-    "NAME"
-  ],
-  "assets": [
-    {
-      "path": "main.html",
-      "hash": "80bdb7a235759ed5d6d75e91f22bfc9a5556f0f903cda930a5507fe123a7bcf2",
-      "id": "marchitos/widgets/vvc-fab-button/main.html/80bdb7a",
-      "type": "text/html",
-      "size": 2458
-    },
-    {
-      "path": "main.scss",
-      "hash": "2ac8fdd1f2c3ef1dad02b15ef55833c62da7f18ee897acfb0bc7a6200a3f6d3a",
-      "id": "marchitos/widgets/vvc-fab-button/main.scss/2ac8fdd",
-      "type": "text/x-scss",
-      "size": 2041
-    },
-    {
-      "path": "thumbnail.png",
-      "hash": "69aa65534956948d2099135693e359483523290831151be9f91ef5a2fbef8723",
-      "id": "marchitos/widgets/vvc-fab-button/thumbnail.png/69aa655",
-      "size": 2868,
-      "type": "image/png"
-    }
-  ],
-  "htmlId": "marchitos/widgets/vvc-fab-button/main.html/80bdb7a",
-  "scssId": "marchitos/widgets/vvc-fab-button/main.scss/2ac8fdd",
-  "thumbnailId": "marchitos/widgets/vvc-fab-button/thumbnail.png/69aa655"
+  ]
 }
