@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.1.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.11...@vivocha/client-interaction-layout@7.1.0) (2020-03-30)
+
+
+### Bug Fixes
+
+* **engagement:** add fab-button manifest ([d995c2a](https://github.com/vivocha/widgets/commit/d995c2a043cbc80896652af2e8d9c3d9ef65f44d))
+* **fab-button:** layout fixes ([267329f](https://github.com/vivocha/widgets/commit/267329f7b839439ffc3e721c443640c126385395))
+
+
+### Features
+
+* **inbound:** first working version of number allocation ([aab1af6](https://github.com/vivocha/widgets/commit/aab1af6b7d3878813382ed9bca1fc9623f9807a0))
+
+
+
+
+
 ## [7.0.11](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.0.10...@vivocha/client-interaction-layout@7.0.11) (2020-03-19)
 
 

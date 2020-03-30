@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.1.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.12...@vivocha/client-interaction@7.1.0) (2020-03-30)
+
+
+### Features
+
+* **inbound:** first working version of number allocation ([aab1af6](https://github.com/vivocha/vvc-app/commit/aab1af6b7d3878813382ed9bca1fc9623f9807a0))
+
+
+
+
+
 ## [7.0.12](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.0.11...@vivocha/client-interaction@7.0.12) (2020-03-19)
 
 **Note:** Version bump only for package @vivocha/client-interaction
