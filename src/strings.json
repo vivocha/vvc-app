@@ -2701,6 +2701,45 @@
     }
   },
   {
+    "id": "STRINGS.INBOUND.CLICK_TO_CALL",
+    "values": {
+      "it": {
+        "value": "Chiamaci <b>cliccando</b> il numero <b>sottostante</b>",
+        "state": "new"
+      },
+      "en": {
+        "value": "Call us by clicking the following number",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.INBOUND.COMPOSE_TO_CALL",
+    "values": {
+      "it": {
+        "value": "Chiamaci formulando sul tuo telefono il numero",
+        "state": "new"
+      },
+      "en": {
+        "value": "Call us by composing the following number on your phone",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.INBOUND.INSERT_EXT_CODE",
+    "values": {
+      "it": {
+        "value": "e successivamente digitando il codice",
+        "state": "new"
+      },
+      "en": {
+        "value": "and insert the code",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "STRINGS.CHAT.AUTO_CHAT_FIRST_MESSAGE",
     "values": {
       "de": {
