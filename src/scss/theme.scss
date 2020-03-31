@@ -1146,6 +1146,26 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
             fill: $color1;
           }
         }
+        &.closed{
+          svg {
+            path {
+              fill: #ff0000;
+            }
+          }
+        }
+        &.circle {
+          width: 62px;
+          height: 62px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          margin-top: 100px;
+
+          svg {
+            display: block;
+            margin: auto;
+            height: 100%;
+          }
+        }
       }
     }
 
