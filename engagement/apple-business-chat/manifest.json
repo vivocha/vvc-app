@@ -82,32 +82,5 @@
       "defaultValue": "#BA3F70",
       "type": "color"
     }
-  ],
-  "stringIds": [
-    "NAME",
-    "DESCRIPTION",
-    "VARIABLES.ABC_ID",
-    "SETTINGS.ABC_ID_PH",
-    "STRINGS.CTA",
-    "STRINGS.BODY",
-    "STRINGS.CONTEXT"
-  ],
-  "assets": [
-    {
-      "path": "main.html",
-      "hash": "255e4dc8b0a924d537d26c4b6ab3d7b34c560085ee54d9ae646bae83cbe0ab7d",
-      "id": "vvc_training/widgets/apple-business-chat/main.html/255e4dc",
-      "size": 1274,
-      "type": "text/html"
-    },
-    {
-      "path": "main.scss",
-      "hash": "11c0409345398aa2cd79543810812a40804beb95dd96a9f260b18000d8c820d7",
-      "id": "vvc_training/widgets/apple-business-chat/main.scss/11c0409",
-      "size": 102,
-      "type": "text/x-scss"
-    }
-  ],
-  "htmlId": "vvc_training/widgets/apple-business-chat/main.html/255e4dc",
-  "scssId": "vvc_training/widgets/apple-business-chat/main.scss/11c0409"
+  ]
 }
