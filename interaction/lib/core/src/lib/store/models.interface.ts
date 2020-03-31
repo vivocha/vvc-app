@@ -6,9 +6,11 @@ import {
 } from '@vivocha/public-entities/dist';
 
 export type CbnStatus = 'dialing' | 'ringing' | 'busy' | 'no-answer' | 'unassigned' | 'failed' | 'cancel' | 'answer';
+export type InboundStateList = 'compose' | 'answer';
 export interface InboundStatus {
   dnis: string;
   extCode?: string;
+  state: InboundStateList;
 }
 export interface Dimension {
   position: 'fixed' | 'absolute' | 'relative';

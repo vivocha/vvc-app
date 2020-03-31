@@ -167,16 +167,17 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, {cbnMode: action.payload});
       return Object.assign({}, state, {context: context});
     }
-    case fromWidget.WIDGET_SET_INBOUND_MODE: {
-      const context = Object.assign({}, state.context, {inboundMode: action.payload});
-      return Object.assign({}, state, {context: context});
-    }
     case fromWidget.WIDGET_SET_CBN_STATE: {
       const context = Object.assign({}, state.context, {cbnState: action.payload});
       return Object.assign({}, state, {context: context});
     }
-    case fromWidget.WIDGET_SET_INBOUND_STATE: {
+    case fromWidget.WIDGET_SET_INBOUND_MODE: {
       const context = Object.assign({}, state.context, {inboundState: action.payload, inboundMode: true });
+      return Object.assign({}, state, {context: context});
+    }
+    case fromWidget.WIDGET_SET_INBOUND_STATE: {
+      const inboundState = Object.assign({}, state.context.inboundState, {state: action.payload});
+      const context = Object.assign({}, state.context, {inboundState: inboundState });
       return Object.assign({}, state, {context: context});
     }
     case fromWidget.WIDGET_SET_DIALOG_UI: {

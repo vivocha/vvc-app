@@ -135,11 +135,11 @@ export class WidgetSetCbnMode implements Action {
 }
 export class WidgetSetInboundMode implements Action {
   readonly type = WIDGET_SET_INBOUND_MODE;
-  constructor(public payload: boolean) {}
+  constructor(public payload: InboundStatus) {}
 }
 export class WidgetSetInboundState implements Action {
   readonly type = WIDGET_SET_INBOUND_STATE;
-  constructor(public payload: InboundStatus) {}
+  constructor(public payload: string) {}
 }
 export class WidgetSetCbnState implements Action {
   readonly type = WIDGET_SET_CBN_STATE;

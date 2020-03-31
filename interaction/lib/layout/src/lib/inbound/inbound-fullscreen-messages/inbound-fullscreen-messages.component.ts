@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 
 @Component({
   selector: 'vvc-inbound-fullscreen-messages',
@@ -8,6 +8,7 @@ import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 export class InboundFullscreenMessagesComponent implements OnInit {
 
   @Input() context;
+  @Output() upgrade = new EventEmitter();
 
   numtel;
   ngOnInit(): void {

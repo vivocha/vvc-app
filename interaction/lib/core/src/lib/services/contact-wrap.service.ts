@@ -6,7 +6,13 @@ import { VvcProtocolService } from './protocol.service';
 import { VvcMessageService } from './messages.service';
 import { objectToDataCollection } from '@vivocha/public-entities/dist/wrappers/data_collection';
 import { VvcUiService } from './ui.service';
-import { CbnStatus, DataCollectionCompleted, Dimension, LeftScrollOffset } from '../store/models.interface';
+import {
+  CbnStatus,
+  DataCollectionCompleted,
+  Dimension,
+  InboundStateList,
+  LeftScrollOffset
+} from '../store/models.interface';
 import { AgentState } from '../store/models.interface';
 import { ClientContactCreationOptions } from '@vivocha/public-entities/dist/contact';
 import { Observable, Subject } from 'rxjs';
@@ -46,6 +52,7 @@ export class VvcContactWrap {
   visitorNick;
 
   cbnChannelStatus: CbnStatus[] = ['dialing', 'ringing', 'busy', 'no-answer', 'unassigned', 'failed', 'cancel', 'answer'];
+  inboundChannelStatus: InboundStateList[] = ['compose', 'answer'];
 
   dimensions = {};
 
@@ -147,6 +154,9 @@ export class VvcContactWrap {
   }
   cbnStatusChanged(id, info) {
     this.uiService.setCbnState(id);
+  }
+  inboundStatusChanged(id, info) {
+    this.uiService.setInboundState(id);
   }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
@@ -253,7 +263,8 @@ export class VvcContactWrap {
             } else if (contact.contact.type === 'inbound'){
               this.uiService.setInboundMode({
                 dnis: contact.contact.dnis,
-                extCode: contact.contact.extCode
+                extCode: contact.contact.extCode,
+                state: 'compose'
               });
             }
             if (contact.contact.initial_offer.Sharing) {
@@ -950,6 +961,13 @@ export class VvcContactWrap {
       dataChannel.on(this.cbnChannelStatus[i], (info) => {
         this.zone.run(() => {
           this.cbnStatusChanged(this.cbnChannelStatus[i], info);
+        });
+      });
+    }
+    for (const i in this.inboundChannelStatus) {
+      dataChannel.on(this.inboundChannelStatus[i], (info) => {
+        this.zone.run(() => {
+          this.inboundStatusChanged(this.inboundChannelStatus[i], info);
         });
       });
     }

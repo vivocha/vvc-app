@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 
-import {UiState, WidgetState} from '../store/models.interface';
+import {UiState, WidgetState, InboundStateList} from '../store/models.interface';
 import {AppState, getWidgetState} from '../store/reducers/main.reducer';
 import {LoadContextSuccess} from '../store/actions/context.actions';
 import {
@@ -73,9 +73,11 @@ export class VvcUiService {
   setCbnMode() {
     this.store.dispatch(new WidgetSetCbnMode(true));
   }
-  setInboundMode(inboundObj: { dnis: string, extCode: string}) {
-    //this.store.dispatch(new WidgetSetInboundMode(true));
-    this.store.dispatch(new WidgetSetInboundState(inboundObj));
+  setInboundMode(inboundObj: { dnis: string, extCode: string, state: InboundStateList}) {
+    this.store.dispatch(new WidgetSetInboundMode(inboundObj));
+  }
+  setInboundState(newstate: InboundStateList){
+    this.store.dispatch(new WidgetSetInboundState(newstate));
   }
   hideChat() {
     this.store.dispatch(new WidgetSetMinimizedMedia(false));
