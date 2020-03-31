@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.1.1...@vivocha/client-interaction-layout@7.1.2) (2020-03-31)
+
+
+### Bug Fixes
+
+* **inbound:** fix inbound state management ([f5f633f](https://github.com/vivocha/widgets/commit/f5f633f3e175e7706077aada44ceb22d1e5365d4))
+
+
+
+
+
 ## [7.1.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.1.0...@vivocha/client-interaction-layout@7.1.1) (2020-03-30)
 
 
