@@ -203,6 +203,19 @@
     }
   },
   {
+    "id": "STRINGS.INBOUND",
+    "values": {
+      "en": {
+        "value": "CALL US",
+        "state": "final"
+      },
+      "it": {
+        "value": "CHIAMACI",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "STRINGS.NEED_HELP",
     "values": {
       "de": {
