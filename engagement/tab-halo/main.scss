@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap');
+
+@mixin baseAnimation($animation) {
+  animation: $animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+@keyframes vvc-th-tab-reveal {
+  from {right: -300px;}
+  to {right: -154px;}
+}
+@keyframes vvc-th-tab-open {
+  from { right: -154px }
+  to { right: 36px }
+}
+@keyframes vvc-th-tab-close {
+  from { right: 36px;}
+  to { right: -154px}
+}
+.vvc-th {
+  font-family: 'Hind', sans-serif;
+  z-index: 2147483647;
+  .vvc-th-tab {
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 50%;
+    margin-top: -185px;
+    &.vvc-th-tab-revealed{
+      @include baseAnimation(vvc-th-tab-reveal);
+      right: -154px;
+    }
+    &.vvc-th-tab-opened{
+      @include baseAnimation(vvc-th-tab-open);
+      right: 36px;
+    }
+    &.vvc-th-tab-closed{
+      @include baseAnimation(vvc-th-tab-close);
+      right: -154px;
+    }
+    bottom: auto;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+
+    display: block;
+    width: 176px;
+
+    .vvc-th-tab-label {
+      cursor: pointer;
+      background: $tabLabelBg;
+      color: $tabLabelColor;
+      font-size: 14px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-weight: bold;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        margin-right: 6px;
+        path {
+          fill: $tabLabelColor;
+        }
+      }
+    }
+    .vvc-th-tab-content {
+      background: $tabContainerBg;
+      height: 190px;
+
+      .vvc-th-tab-inner {
+        transform: rotate(90deg);
+        text-align: center;
+        width: 184px;
+        position: relative;
+        top: 28px;
+        .vvc-th-tab-message {
+          color: $tabContainerColor;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 1.2;
+          text-transform: uppercase;
+          width: 186px;
+          padding-bottom: 10px;
+        }
+        .vvc-th-tab-opt {
+          &:hover {
+            opacity: 0.95;
+          }
+          cursor: pointer;
+          height: 40px;
+          margin: 6px 16px;
+          border-radius: 2px;
+          background: $tabOptBg;
+          color: $tabOptColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 10px;
+          font-weight: bold;
+          text-transform: uppercase;
+
+          svg {
+            margin-right: 8px;
+            path {
+              fill: $tabOptColor;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .vvc-th-halo {
+    display: none;
+    position: fixed;
+    bottom: 105px;
+    right: 8px;
+    .vvc-th-halo-content {
+      display: none;
+      &.vvc-th-halo-opened {
+        display: block;
+      }
+      &.vvc-th-halo-closed {
+        display: none;
+      }
+      width: 208px;
+      height: 136px;
+      border-radius: 31px;
+      box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+      background-color: $haloContainerBg;
+      margin-bottom: 12px;
+
+      .vvc-th-halo-inner {
+        text-align: center;
+        padding: 8px 0;
+        .vvc-th-halo-opt {
+          margin: 8px;
+          width: 192px;
+          height: 48px;
+          border-radius: 24px;
+          background-color: $haloOptBg;
+          color: $haloOptColor;
+          &:hover {
+            opacity: 0.95;
+          }
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 10px;
+          font-weight: bold;
+          text-transform: uppercase;
+
+          svg {
+            margin-right: 8px;
+            path {
+              fill: $haloOptColor;
+            }
+          }
+        }
+      }
+    }
+    .vvc-th-halo-label {
+      float: right;
+      cursor: pointer;
+      border-radius: 26px;
+      background: $haloLabelBg;
+      color: $haloLabelColor;
+      font-size: 10px;
+      line-height: normal;
+      text-transform: uppercase;
+      font-weight: bold;
+      width: 114px;
+      height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        margin-right: 6px;
+        path {
+          fill: $haloLabelColor;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 385px) {
+  .vvc-th {
+
+    .vvc-th-tab {
+      display: none;
+    }
+    .vvc-th-halo {
+      display: block;
+    }
+
+  }
+}

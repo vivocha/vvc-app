@@ -1,0 +1,178 @@
+{
+  "id": "vvc-tab-halo",
+  "type": "engagement",
+  "variables": [
+    {
+      "id": "tabLabelBg",
+      "nameId": "VARIABLES.tabLabelBg",
+      "placeholderId": "SETTINGS.tabLabelBg_PH",
+      "required": true,
+      "defaultValue": "#000000",
+      "type": "color"
+    },
+    {
+      "id": "tabLabelColor",
+      "nameId": "VARIABLES.tabLabelColor",
+      "placeholderId": "SETTINGS.tabLabelColor_PH",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "tabLabelIcon",
+      "nameId": "VARIABLES.tabLabelIcon",
+      "required": true,
+      "defaultValue": "signal",
+      "options": [
+        "signal",
+        "chat",
+        "weblead",
+        "inbound",
+        "cbn",
+        "voice",
+        "video"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "tabContainerBg",
+      "nameId": "VARIABLES.tabContainerBg",
+      "placeholderId": "SETTINGS.tabContainerBg_PH",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "tabContainerColor",
+      "nameId": "VARIABLES.tabContainerColor",
+      "placeholderId": "SETTINGS.tabContainerColor_PH",
+      "required": true,
+      "defaultValue": "#000000",
+      "type": "color"
+    },
+    {
+      "id": "tabOptBg",
+      "nameId": "VARIABLES.tabOptBg",
+      "placeholderId": "SETTINGS.tabOptBg_PH",
+      "required": true,
+      "defaultValue": "#1c942f",
+      "type": "color"
+    },
+    {
+      "id": "tabOptColor",
+      "nameId": "VARIABLES.tabOptColor",
+      "placeholderId": "SETTINGS.tabOptColor_PH",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "haloLabelBg",
+      "nameId": "VARIABLES.haloLabelBg",
+      "placeholderId": "SETTINGS.haloLabelBg_PH",
+      "required": true,
+      "defaultValue": "#1c942f",
+      "type": "color"
+    },
+    {
+      "id": "haloLabelColor",
+      "nameId": "VARIABLES.haloLabelColor",
+      "placeholderId": "SETTINGS.haloLabelColor_PH",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "haloLabelIcon",
+      "nameId": "VARIABLES.haloLabelIcon",
+      "required": true,
+      "defaultValue": "signal",
+      "options": [
+        "signal",
+        "chat",
+        "weblead",
+        "inbound",
+        "cbn",
+        "voice",
+        "video"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "haloContainerBg",
+      "nameId": "VARIABLES.haloContainerBg",
+      "placeholderId": "SETTINGS.haloContainerBg_PH",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "haloContainerColor",
+      "nameId": "VARIABLES.haloContainerColor",
+      "placeholderId": "SETTINGS.haloContainerColor_PH",
+      "required": true,
+      "defaultValue": "#000000",
+      "type": "color"
+    },
+    {
+      "id": "haloOptBg",
+      "nameId": "VARIABLES.haloOptBg",
+      "placeholderId": "SETTINGS.haloOptBg_PH",
+      "required": true,
+      "defaultValue": "#1c942f",
+      "type": "color"
+    },
+    {
+      "id": "haloOptColor",
+      "nameId": "VARIABLES.haloOptColor",
+      "placeholderId": "SETTINGS.haloOptColor_PH",
+      "required": true,
+      "defaultValue": "#FFFFFF",
+      "type": "color"
+    },
+    {
+      "id": "opt1Media",
+      "nameId": "VARIABLES.opt1Media",
+      "required": true,
+      "defaultValue": "chat",
+      "type": "string"
+    },
+    {
+      "id": "opt1Icon",
+      "nameId": "VARIABLES.opt1Icon",
+      "required": true,
+      "defaultValue": "chat",
+      "options": [
+        "chat",
+        "weblead",
+        "inbound",
+        "cbn",
+        "voice",
+        "video"
+      ],
+      "type": "enum"
+    },
+    {
+      "id": "opt2Media",
+      "nameId": "VARIABLES.opt2Media",
+      "required": true,
+      "defaultValue": "inbound",
+      "type": "string"
+    },
+    {
+      "id": "opt2Icon",
+      "nameId": "VARIABLES.opt2Icon",
+      "required": true,
+      "defaultValue": "inbound",
+      "options": [
+        "chat",
+        "weblead",
+        "inbound",
+        "cbn",
+        "voice",
+        "video"
+      ],
+      "type": "enum"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+<script>
+  function vvcThGetAvailableOpts(){
+    var node = document.getElementsByClassName('vvc-widget-__ENGAGEMENT_ID__')[0];
+    var info = node.parentElement;
+    var opts = [];
+    if (info.classList.contains('vvc-media-__VARIABLES.opt1Media__')) opts.push('__VARIABLES.opt1Media__');
+    if (info.classList.contains('vvc-media-__VARIABLES.opt2Media__')) opts.push('__VARIABLES.opt2Media__');
+    return opts;
+  }
+  function vvcThTabToggle(elem) {
+    var node = elem.parentNode;
+    var opts = vvcThGetAvailableOpts();
+    if (opts.length === 1){
+      __WIDGET__.engage(opts[0]);
+    } else {
+      if (node.classList.contains('vvc-th-tab-opened')) {
+        node.classList.remove('vvc-th-tab-opened');
+        node.classList.add('vvc-th-tab-closed');
+      } else {
+        node.classList.remove('vvc-th-tab-closed');
+        node.classList.add('vvc-th-tab-opened');
+      }
+    }
+  }
+  function vvcThHaloToggle(elem){
+    var node = elem.parentNode.querySelector('.vvc-th-halo-content');
+    var opts = vvcThGetAvailableOpts();
+    if (opts.length === 1){
+      __WIDGET__.engage(opts[0]);
+    } else {
+      if (node.classList.contains('vvc-th-halo-opened')) {
+        node.classList.remove('vvc-th-halo-opened');
+        node.classList.add('vvc-th-halo-closed');
+      } else {
+        node.classList.remove('vvc-th-halo-closed');
+        node.classList.add('vvc-th-halo-opened');
+      }
+    }
+  }
+</script>
+
+<div class="vvc-media-info">
+  <div class="vvc-th vvc-widget-__ENGAGEMENT_ID__">
+
+    <div class="vvc-th-tab vvc-th-tab-revealed">
+      <div class="vvc-th-tab-label" onclick="vvcThTabToggle(this)">
+        <span class="icon" id="tabLabelIcon"></span>
+        <div class="th-label">__STRINGS.NEED_HELP__</div>
+      </div>
+      <div class="vvc-th-tab-content">
+        <div class="vvc-th-tab-inner">
+          <div class="vvc-th-tab-message">__STRINGS.NEED_HELP_INFO__</div>
+          <div class="vvc-th-tab-opt vvc-media-item vvc-media-__VARIABLES.opt1Media__">
+            <span class="icon" id="tabOpt1Icon"></span>
+            <a onclick="__WIDGET__.engage('__VARIABLES.opt1Media__')">__STRINGS.ENGAGE_OPT1__</a>
+          </div>
+          <div class="vvc-th-tab-opt vvc-media-item vvc-media-__VARIABLES.opt2Media__">
+            <span class="icon" id="tabOpt2Icon"></span>
+            <a onclick="__WIDGET__.engage('__VARIABLES.opt2Media__')">__STRINGS.ENGAGE_OPT2__</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vvc-th-halo">
+      <div class="vvc-th-halo-content">
+        <div class="vvc-th-halo-inner">
+          <div class="vvc-th-halo-opt vvc-media-item vvc-media-__VARIABLES.opt1Media__">
+            <span class="icon" id="haloOpt1Icon"></span>
+            <a onclick="__WIDGET__.engage('__VARIABLES.opt1Media__')">__STRINGS.ENGAGE_OPT1__</a>
+          </div>
+          <div class="vvc-th-halo-opt vvc-media-item vvc-media-__VARIABLES.opt2Media__">
+            <span class="icon" id="haloOpt2Icon"></span>
+            <a onclick="__WIDGET__.engage('__VARIABLES.opt2Media__')">__STRINGS.ENGAGE_OPT2__</a>
+          </div>
+        </div>
+      </div>
+      <div class="vvc-th-halo-label" onclick="vvcThHaloToggle(this)">
+        <span class="icon" id="haloLabelIcon"></span>
+        <div class="th-label">__STRINGS.NEED_HELP__</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function vvcThSetSvg(svgName, elemId){
+    var elem = document.getElementById(elemId);
+    switch(svgName){
+      case 'signal':
+        elem.innerHTML = '<svg height="16" viewBox="0 0 20 16" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m12.0005051 16.0002525c1.1157267 0 2.020202.895374 2.020202 1.9998738 0 1.1044997-.9044753 1.9998737-2.020202 1.9998737-1.1157268 0-2.02020207-.895374-2.02020207-1.9998737 0-1.1044998.90447527-1.9998738 2.02020207-1.9998738zm-5.71363641-3.6572691c3.08858461-3.05739303 8.05522171-3.12244394 11.22372351-.1951527l.2040543.1951527-2.1580808 2.0573701c-.9430289-.9338167-2.2222185-1.4584529-3.5560606-1.4584529-1.2449194 0-2.44223031.4570164-3.36305616 1.2771795l-.1930045.1812734zm5.71313131-8.3429834c3.6214488 0 7.0996674 1.37512178 9.722309 3.83324957l.277691.26750168-2.4242424 2.39984845c-2.0090054-1.98939059-4.7341657-3.10706914-7.5757576-3.10706914-2.7279282 0-5.3485531 1.03005255-7.33127777 2.87254224l-.24447981.2345269-2.42424242-2.39984845c2.65207106-2.62565251 6.24921376-4.10075125 10-4.10075125z" transform="translate(-2 -4)"/></svg>';
+        break;
+      case 'chat':
+        elem.innerHTML = '<svg height="19" viewBox="0 0 20 19" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m10 0c5.5228475 0 10 4.02943725 10 9 0 4.9705627-4.4771525 9-10 9-1.79449633 0-3.47859392-.4254058-4.93458175-1.1702776l-5.06541825 2.1702776 1.67121035-5.0171624c-1.05585735-1.4266856-1.67121035-3.1400861-1.67121035-4.9828376 0-4.97056275 4.4771525-9 10-9zm2 10h-7v2h7zm3-4h-10v2h10z"/></svg>';
+        break;
+      case 'inbound':
+        elem.innerHTML = '<svg height="18" viewBox="0 0 12 18" width="12" xmlns="http://www.w3.org/2000/svg"><path d="m15.1666667 3c1.5648068 0 2.8333333 1.26852654 2.8333333 2.83333333v12.33333337c0 1.5648068-1.2685265 2.8333333-2.8333333 2.8333333h-6.33333337c-1.56480679 0-2.83333333-1.2685265-2.83333333-2.8333333v-12.33333337c0-1.56480679 1.26852654-2.83333333 2.83333333-2.83333333zm-1.6666667 15h-3c-.2761424 0-.5.2238576-.5.5 0 .2454599.1768752.4496084.4101244.4919443l.0898756.0080557h3c.2761424 0 .5-.2238576.5-.5 0-.2454599-.1768752-.4496084-.4101244-.4919443zm-5.5-10v9h8v-9zm0-1h8v-1.16666667c0-.46023729-.373096-.83333333-.8333333-.83333333h-6.33333337c-.46023729 0-.83333333.37309604-.83333333.83333333z" transform="translate(-6 -3)"/></svg>';
+        break;
+      case 'weblead':
+        elem.innerHTML = '<svg height="16" viewBox="0 0 20 16" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-2 -4)"><path d="m20 4h-16c-1.1 0-1.99.9-1.99 2l-.01 12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm-8 10-2-1-5 3v-2l3.571-2.143-4.571-2.857v-2l8 5 8-5v2l-4.572 2.857 3.572 2.143v2l-5-3-1.996.998z" fill-rule="nonzero"/></g></svg>';
+        break;
+      case 'cbn':
+        elem.innerHTML = '<svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-3 -3)"><path d="m17.4 12-4.5-4.5 4.5-4.5v2.7h3.6v3.6h-3.6zm.9 4.05c-1.125 0-2.205-.18-3.213-.513-.315-.099-.666-.027-.918.216l-1.98 1.98c-2.547-1.296-4.635-3.375-5.931-5.931l1.98-1.989c.252-.234.324-.585.225-.9-.333-1.008-.513-2.088-.513-3.213 0-.495-.405-.9-.9-.9h-3.15c-.495 0-.9.405-.9.9 0 8.451 6.849 15.3 15.3 15.3.495 0 .9-.405.9-.9v-3.15c0-.4596429-.3492092-.8416837-.7954209-.8939158z" fill-rule="nonzero"/></g></svg>';
+        break;
+      case 'voice':
+        elem.innerHTML = '<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-4 -4)"><path d="m7.21777778 10.9244444c1.28 2.5155556 3.34222222 4.5688889 5.85777782 5.8577778l1.9555555-1.9555555c.24-.24.5955556-.32.9066667-.2133334.9955555.3288889 2.0711111.5066667 3.1733333.5066667.4888889 0 .8888889.4.8888889.8888889v3.1022222c0 .4888889-.4.8888889-.8888889.8888889-8.3466667 0-15.1111111-6.7644444-15.1111111-15.11111111 0-.48888889.4-.88888889.88888889-.88888889h3.11111111c.48888889 0 .88888889.4.88888889.88888889 0 1.11111111.17777778 2.17777778.50666667 3.17333333.09777777.31111111.02666666.65777778-.22222223.90666667z" fill-rule="nonzero"/></g></svg>';
+        break;
+      case 'video':
+        elem.innerHTML = '<svg height="12" viewBox="0 0 18 12" width="18" xmlns="http://www.w3.org/2000/svg"><path d="m14 4.5v-3.5c0-.55-.45-1-1-1h-12c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11z"/></svg>';
+        break;
+    }
+  }
+  vvcThSetSvg('__VARIABLES.tabLabelIcon__', 'tabLabelIcon');
+  vvcThSetSvg('__VARIABLES.haloLabelIcon__', 'haloLabelIcon');
+  vvcThSetSvg('__VARIABLES.opt1Icon__', 'tabOpt1Icon');
+  vvcThSetSvg('__VARIABLES.opt1Icon__', 'haloOpt1Icon');
+  vvcThSetSvg('__VARIABLES.opt2Icon__', 'tabOpt2Icon');
+  vvcThSetSvg('__VARIABLES.opt2Icon__', 'haloOpt2Icon');
+</script>

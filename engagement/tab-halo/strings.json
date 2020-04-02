@@ -1,0 +1,80 @@
+[
+  {
+    "id": "DESCRIPTION",
+    "values": {
+      "en": {
+        "value": "Sidetab for desktop, halo for mobile",
+        "state": "new"
+      },
+      "it": {
+        "value": "Sidetab su desktop, halo per mobile",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "NAME",
+    "values": {
+      "en": {
+        "value": "Tab Halo",
+        "state": "new"
+      },
+      "it": {
+        "value": "Tab Halo",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.NEED_HELP",
+    "values": {
+      "en": {
+        "value": "Verifica<br />Copertura",
+        "state": "new"
+      },
+      "it": {
+        "value": "Coverage<br />Verification",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.NEED_HELP_INFO",
+    "values": {
+      "en": {
+        "value": "Verifica la copertura o richiedi informazioni",
+        "state": "new"
+      },
+      "it": {
+        "value": "Verify coverage or get more info",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.ENGAGE_OPT1",
+    "values": {
+      "en": {
+        "value": "entra in chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "let's chat",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.ENGAGE_OPT2",
+    "values": {
+      "en": {
+        "value": "chiamaci al telefono",
+        "state": "new"
+      },
+      "it": {
+        "value": "call us by phone",
+        "state": "new"
+      }
+    }
+  }
+]
