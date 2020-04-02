@@ -26,6 +26,7 @@
       "options": [
         "signal",
         "chat",
+        "email",
         "weblead",
         "inbound",
         "cbn",
@@ -90,6 +91,7 @@
       "options": [
         "signal",
         "chat",
+        "email",
         "weblead",
         "inbound",
         "cbn",
@@ -143,8 +145,10 @@
       "required": true,
       "defaultValue": "chat",
       "options": [
+        "signal",
         "chat",
         "weblead",
+        "email",
         "inbound",
         "cbn",
         "voice",

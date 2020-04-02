@@ -73,6 +73,7 @@
         width: 184px;
         position: relative;
         top: 28px;
+        min-height: 134px;
         .vvc-th-tab-message {
           color: $tabContainerColor;
           font-size: 14px;
@@ -105,6 +106,9 @@
               fill: $tabOptColor;
             }
           }
+        }
+        .vvc-th-tab-opt + .vvc-th-tab-opt + .vvc-th-tab-opt {
+          display: none;
         }
       }
     }
@@ -157,6 +161,9 @@
               fill: $haloOptColor;
             }
           }
+        }
+        .vvc-th-halo-opt + .vvc-th-halo-opt + .vvc-th-halo-opt {
+          display: none;
         }
       }
     }
