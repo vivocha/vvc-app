@@ -173,6 +173,28 @@
         "video"
       ],
       "type": "enum"
+    },
+    {
+      "id": "opt3Media",
+      "nameId": "VARIABLES.opt3Media",
+      "required": true,
+      "defaultValue": "weblead",
+      "type": "string"
+    },
+    {
+      "id": "opt3Icon",
+      "nameId": "VARIABLES.opt3Icon",
+      "required": true,
+      "defaultValue": "weblead",
+      "options": [
+        "chat",
+        "weblead",
+        "inbound",
+        "cbn",
+        "voice",
+        "video"
+      ],
+      "type": "enum"
     }
   ]
 }

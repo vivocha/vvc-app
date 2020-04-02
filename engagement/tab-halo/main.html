@@ -5,6 +5,7 @@
     var opts = [];
     if (info.classList.contains('vvc-media-__VARIABLES.opt1Media__')) opts.push('__VARIABLES.opt1Media__');
     if (info.classList.contains('vvc-media-__VARIABLES.opt2Media__')) opts.push('__VARIABLES.opt2Media__');
+    if (info.classList.contains('vvc-media-__VARIABLES.opt3Media__')) opts.push('__VARIABLES.opt3Media__');
     return opts;
   }
   function vvcThTabToggle(elem) {
@@ -58,6 +59,10 @@
             <span class="icon" id="tabOpt2Icon"></span>
             <a onclick="__WIDGET__.engage('__VARIABLES.opt2Media__')">__STRINGS.ENGAGE_OPT2__</a>
           </div>
+          <div class="vvc-th-tab-opt vvc-media-item vvc-media-__VARIABLES.opt3Media__">
+            <span class="icon" id="tabOpt3Icon"></span>
+            <a onclick="__WIDGET__.engage('__VARIABLES.opt3Media__')">__STRINGS.ENGAGE_OPT3__</a>
+          </div>
         </div>
       </div>
     </div>
@@ -72,6 +77,10 @@
           <div class="vvc-th-halo-opt vvc-media-item vvc-media-__VARIABLES.opt2Media__">
             <span class="icon" id="haloOpt2Icon"></span>
             <a onclick="__WIDGET__.engage('__VARIABLES.opt2Media__')">__STRINGS.ENGAGE_OPT2__</a>
+          </div>
+          <div class="vvc-th-halo-opt vvc-media-item vvc-media-__VARIABLES.opt3Media__">
+            <span class="icon" id="haloOpt3Icon"></span>
+            <a onclick="__WIDGET__.engage('__VARIABLES.opt3Media__')">__STRINGS.ENGAGE_OPT3__</a>
           </div>
         </div>
       </div>
@@ -116,4 +125,6 @@
   vvcThSetSvg('__VARIABLES.opt1Icon__', 'haloOpt1Icon');
   vvcThSetSvg('__VARIABLES.opt2Icon__', 'tabOpt2Icon');
   vvcThSetSvg('__VARIABLES.opt2Icon__', 'haloOpt2Icon');
+  vvcThSetSvg('__VARIABLES.opt3Icon__', 'tabOpt3Icon');
+  vvcThSetSvg('__VARIABLES.opt3Icon__', 'haloOpt3Icon');
 </script>

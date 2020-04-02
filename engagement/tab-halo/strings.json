@@ -76,5 +76,18 @@
         "state": "new"
       }
     }
+  },
+  {
+    "id": "STRINGS.ENGAGE_OPT3",
+    "values": {
+      "en": {
+        "value": "weblead",
+        "state": "new"
+      },
+      "it": {
+        "value": "weblead",
+        "state": "new"
+      }
+    }
   }
 ]
