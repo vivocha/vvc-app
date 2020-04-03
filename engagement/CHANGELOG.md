@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.3.0...@vivocha/client-visitor-default-widgets@7.4.0) (2020-04-03)
+
+
+### Bug Fixes
+
+* **engagement.amazon-cbn:** clean manifest ([9a7c606](https://github.com/vivocha/widgets/commit/9a7c60609407d9a509841243ba4b8b591342b646))
+* **engagement.amazon-cbn:** replace preset name with cbn ([f3a1b63](https://github.com/vivocha/widgets/commit/f3a1b63732a300cc3616072fb135ef3c0c847f91))
+* **engagement.apple-business-chat:** clean manifest ([4896470](https://github.com/vivocha/widgets/commit/489647098630ce27cabb3b02fc69744a08ac2c00))
+* **engagement.sidetab:** add inbound ([d3effdf](https://github.com/vivocha/widgets/commit/d3effdf186acde5e73d41ee5fe2dbc5cee92eaa5))
+* **tab-halo:** fix weblead ([25190ad](https://github.com/vivocha/widgets/commit/25190adecce19a759feb1a3203c8d0f1493eea6c))
+* **tab-halo:** hide the third options ([0ebdfa4](https://github.com/vivocha/widgets/commit/0ebdfa4cc55cc9e617af7e72c4853e34a8c8571b))
+
+
+### Features
+
+* **tab-halo:** new tab halo widget ([b682d4f](https://github.com/vivocha/widgets/commit/b682d4f8c1060481e9a4a00bf88d2bfe898e2f2d))
+
+
+
+
+
 # [7.3.0](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.2.0...@vivocha/client-visitor-default-widgets@7.3.0) (2020-03-30)
 
 

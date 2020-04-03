@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.1...@vivocha/client-interaction-core@7.1.2) (2020-04-03)
+
+
+### Bug Fixes
+
+* **interaction:** show inbound formatted number ([1cbf023](https://github.com/vivocha/widgets/commit/1cbf02336f9c1ef142791aef825625376543b45b))
+
+
+
+
+
 ## [7.1.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.0...@vivocha/client-interaction-core@7.1.1) (2020-03-31)
 
 
