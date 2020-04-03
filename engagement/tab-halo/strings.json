@@ -29,11 +29,11 @@
     "id": "STRINGS.NEED_HELP",
     "values": {
       "en": {
-        "value": "Verifica<br />Copertura",
+        "value": "Coverage<br />Verification",
         "state": "new"
       },
       "it": {
-        "value": "Coverage<br />Verification",
+        "value": "Verifica<br />Copertura",
         "state": "new"
       }
     }
@@ -42,11 +42,11 @@
     "id": "STRINGS.NEED_HELP_INFO",
     "values": {
       "en": {
-        "value": "Verifica la copertura o richiedi informazioni",
+        "value": "Verify coverage or get more info",
         "state": "new"
       },
       "it": {
-        "value": "Verify coverage or get more info",
+        "value": "Verifica la copertura o richiedi informazioni",
         "state": "new"
       }
     }
@@ -55,11 +55,11 @@
     "id": "STRINGS.ENGAGE_OPT1",
     "values": {
       "en": {
-        "value": "entra in chat",
+        "value": "let's chat",
         "state": "new"
       },
       "it": {
-        "value": "let's chat",
+        "value": "entra in chat",
         "state": "new"
       }
     }
@@ -68,11 +68,11 @@
     "id": "STRINGS.ENGAGE_OPT2",
     "values": {
       "en": {
-        "value": "chiamaci al telefono",
+        "value": "call us by phone",
         "state": "new"
       },
       "it": {
-        "value": "call us by phone",
+        "value": "chiamaci al telefono",
         "state": "new"
       }
     }
