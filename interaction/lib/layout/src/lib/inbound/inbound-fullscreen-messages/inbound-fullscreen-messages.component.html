@@ -29,7 +29,7 @@
       <div class="status-message"
            [innerHTML]=" 'STRINGS.INBOUND.CLICK_TO_CALL' | translate | vvcSanitize:'html'"></div>
       <div class="number-to-call">
-        <a [href]="numtel">{{context.inboundState.dnis}}</a>
+        <a [href]="numtel">{{context.inboundState.formatted}}</a>
       </div>
     </div>
 
@@ -37,7 +37,7 @@
       <div class="status-message"
            [innerHTML]=" 'STRINGS.INBOUND.COMPOSE_TO_CALL' | translate | vvcSanitize:'html'"></div>
       <div class="number-to-call">
-        <span>{{context.inboundState.dnis}}</span>
+        <span>{{context.inboundState.formatted}}</span>
       </div>
       <div *ngIf="context.inboundState.extCode">
         <div class="status-message"

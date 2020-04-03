@@ -17,6 +17,7 @@ import { AgentState } from '../store/models.interface';
 import { ClientContactCreationOptions } from '@vivocha/public-entities/dist/contact';
 import { Observable, Subject } from 'rxjs';
 import { NewEvent } from '../store/actions/events.actions';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 @Injectable()
 export class VvcContactWrap {
@@ -261,7 +262,9 @@ export class VvcContactWrap {
             if (contact.contact.type === 'cbn') {
               this.uiService.setCbnMode();
             } else if (contact.contact.type === 'inbound'){
+              const phone = parsePhoneNumberFromString(contact.contact.dnis);
               this.uiService.setInboundMode({
+                formatted: phone.formatNational(),
                 dnis: contact.contact.dnis,
                 extCode: contact.contact.extCode,
                 state: 'compose'

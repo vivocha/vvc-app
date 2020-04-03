@@ -73,7 +73,7 @@ export class VvcUiService {
   setCbnMode() {
     this.store.dispatch(new WidgetSetCbnMode(true));
   }
-  setInboundMode(inboundObj: { dnis: string, extCode: string, state: InboundStateList}) {
+  setInboundMode(inboundObj: { dnis: string, formatted: string, extCode: string, state: InboundStateList}) {
     this.store.dispatch(new WidgetSetInboundMode(inboundObj));
   }
   setInboundState(newstate: InboundStateList){

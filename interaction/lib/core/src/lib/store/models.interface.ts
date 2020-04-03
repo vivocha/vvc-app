@@ -8,6 +8,7 @@ import {
 export type CbnStatus = 'dialing' | 'ringing' | 'busy' | 'no-answer' | 'unassigned' | 'failed' | 'cancel' | 'answer';
 export type InboundStateList = 'compose' | 'answer';
 export interface InboundStatus {
+  formatted: string;
   dnis: string;
   extCode?: string;
   state: InboundStateList;
