@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.2...@vivocha/client-interaction-core@7.1.3) (2020-04-03)
+
+
+### Bug Fixes
+
+* **cbn:** parsing phone number with language code ([8bf3aee](https://github.com/vivocha/widgets/commit/8bf3aee1ec7a31421242f3fb3caa39c4c67a0aba))
+
+
+
+
+
 ## [7.1.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.1...@vivocha/client-interaction-core@7.1.2) (2020-04-03)
 
 
