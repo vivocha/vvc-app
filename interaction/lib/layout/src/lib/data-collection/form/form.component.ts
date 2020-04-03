@@ -2,6 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy}
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import {DataCollectionField, MessageMetaField} from '@vivocha/public-entities/dist/data_collection';
+import {phoneNumberValidator} from '../custom-validators/phone-validator';
 
 @Component({
   selector: 'vvc-form',
@@ -17,6 +18,7 @@ export class FormComponent implements OnInit {
   form: FormGroup;
   hasRequired = false;
   @Input() dc;
+  @Input() country;
   @Input() readMode = false;
   @Output() submit = new EventEmitter();
 
@@ -61,7 +63,12 @@ export class FormComponent implements OnInit {
         validators.push(Validators.pattern(validation));
       }
       if (elem.format === 'phonenum' && !elem.validation) {
-        validators.push(Validators.pattern('^\\s*\\+\\s*(?:\\d\\s*){7,}$'));
+        if (this.country) {
+          validators.push(phoneNumberValidator(this.country));
+        }
+        else {
+          validators.push(Validators.pattern('^\\s*\\+\\s*(?:\\d\\s*){7,}$'));
+        }
       }
       if (elem.format === 'email') {
         validators.push(Validators.email);

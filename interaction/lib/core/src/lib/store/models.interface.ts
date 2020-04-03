@@ -29,6 +29,7 @@ export interface EventsState {
 }
 
 export interface  ContextState {
+  language?: string;
   loaded: boolean;
   cbnMode?: boolean;
   cbnState?: CbnStatus;
@@ -209,6 +210,7 @@ export interface UiState {
   isSendAreaVisible: boolean;
   isUploading: boolean;
   isWriting: boolean;
+  language: string;
   notRead: number;
   offeringMedia: string;
   selectedDataCollection: any;

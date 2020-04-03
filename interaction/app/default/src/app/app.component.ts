@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init().subscribe(context => this.setInitialDimensions(context));
     this.interactionService.events().subscribe(evt => this.listenForEvents(evt));
-    this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
+    //this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
   }
   acceptAgentRequest(requestId) {
     this.interactionService.acceptAgentRequest(requestId);

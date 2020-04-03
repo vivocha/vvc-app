@@ -426,6 +426,7 @@ export const getUiStateRedux = (
       isSendAreaVisible: isChatBoxVisible,
       isUploading: widgetState.context.isUploading,
       isWriting:  widgetState.chat && widgetState.chat.isWriting && !isClosed,
+      language: widgetState.context.language,
       notRead: (widgetState.chat) ? widgetState.chat.notRead : 0,
       offeringMedia: widgetState.protocol.offeringMedia,
       selectedDataCollection: dataCollectionState.selectedItem,
