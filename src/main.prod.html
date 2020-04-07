@@ -4,9 +4,11 @@
   <title>Vivocha Interaction App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link href="main.css" rel="stylesheet">
   <script type="text/javascript">
+    var l = document.createElement('link');
+    l.setAttribute('rel', 'stylesheet');
+    l.setAttribute('href', 'main.css' + location.search);
+    document.head.appendChild(l);
     var beepmp3 = "./assets/static/beep.mp3";
     var VVC_VAR_ASSETS = __VARIABLES__;
   </script>
