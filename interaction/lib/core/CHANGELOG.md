@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.3...@vivocha/client-interaction-core@7.1.4) (2020-04-07)
+
+
+### Bug Fixes
+
+* **interaction.core:** add location.search to strings request ([fe7d485](https://github.com/vivocha/widgets/commit/fe7d48531c92cbf8d5861ab3ca25dbbe6e1fb47d))
+
+
+
+
+
 ## [7.1.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.2...@vivocha/client-interaction-core@7.1.3) (2020-04-03)
 
 

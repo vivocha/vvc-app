@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-visitor-default-widgets",
-  "version": "7.4.0",
+  "version": "7.4.1",
   "private": true,
   "description": "Vivocha Widgets Sources",
   "scripts": {
