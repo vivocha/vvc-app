@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.1](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.0...@vivocha/client-visitor-default-widgets@7.4.1) (2020-04-07)
+
+
+### Bug Fixes
+
+* **engagement.tab-halo:** add position fixed to apply z-index ([ea440b8](https://github.com/vivocha/widgets/commit/ea440b8b144b3b7d5e260fcf73c38663dedff05c))
+* **engagement.tab-halo:** switch translations between en and it ([5b6f5e3](https://github.com/vivocha/widgets/commit/5b6f5e3fbc33283cea75dc80a6d8fa528d4e20e3))
+
+
+
+
+
 # [7.4.0](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.3.0...@vivocha/client-visitor-default-widgets@7.4.0) (2020-04-03)
 
 

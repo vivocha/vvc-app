@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.1.5](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.1.4...@vivocha/client-interaction@7.1.5) (2020-04-07)
+
+
+### Bug Fixes
+
+* **interaction.app:** add location.search to main.css request ([98465c5](https://github.com/vivocha/vvc-app/commit/98465c50113b82b5189211423f22d21e2bcf7fed))
+
+
+
+
+
 ## [7.1.4](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.1.3...@vivocha/client-interaction@7.1.4) (2020-04-03)
 
 

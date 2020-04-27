@@ -20,7 +20,7 @@ export function createTranslateLoader(http: HttpClient) {
   const reg = /(.*\/api\/v[0-9]+\/public\/campaigns\/\w+\/\w+\/interaction\/)\w+(\/[^\/]+\/[^\/]+)\/main\.html/;
   const res = location.pathname.match(reg);
   const url = location.origin + res[1];
-  return new TranslateHttpLoader(http, url, res[2] + '/strings.json');
+  return new TranslateHttpLoader(http, url, res[2] + '/strings.json' + location.search);
 }
 
 @NgModule({
