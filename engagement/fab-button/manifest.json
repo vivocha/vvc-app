@@ -9,6 +9,12 @@
       "required": true,
       "defaultValue": "#F47929",
       "type": "color"
+    },
+    {
+      "id": "fabImg",
+      "nameId": "VARIABLES.FAB_IMG",
+      "defaultValue": "./assets/logo.png",
+      "type": "file"
     }
   ]
 }

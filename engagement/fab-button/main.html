@@ -2,17 +2,36 @@
 <script id="materialize" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 -->
 <div id="vvcMenu" class="vvc-widget opacity fixed-action-btn vvc-widget-__ENGAGEMENT_ID__">
-  <a class="btn-floating btn-large vvc-color">
-    <i class="large material-icons">mode_edit</i>
-  </a>
+  <a class="btn-floating btn-large vvc-color"></a>
   <ul>
-    <li title="sync" class="vvc-media-sync vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('sync')"><i class="material-icons">phonelink</i></a></li>
-    <li title="inbound" class="vvc-media-inbound vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('inbound')"><i class="material-icons">phonelink_ring</i></a></li>
-    <li title="cbn" class="vvc-media-cbn vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('cbn')"><i class="material-icons">phone_in_talk</i></a></li>
-    <li title="weblead" class="vvc-media-weblead vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('weblead')"><i class="material-icons">mail</i></a></li>
-    <li title="video" class="vvc-media-video vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('video')"><i class="material-icons">video_call</i></a></li>
-    <li title="voice" class="vvc-media-voice vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('voice')"><i class="material-icons">phone</i></a></li>
-    <li title="chat" class="vvc-media-chat vvc-media-item"><a class="btn-floating vvc-color" onclick="vvcEngage('chat')"><i class="material-icons">chat</i></a></li>
+    <li title="sync" class="vvc-media-sync vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.SYNC__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('sync')"><i class="material-icons">phonelink</i></a>
+    </li>
+    <li title="inbound" class="vvc-media-inbound vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.INBOUND__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('inbound')"><i class="material-icons">phonelink_ring</i></a>
+    </li>
+    <li title="cbn" class="vvc-media-cbn vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.CBN__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('cbn')"><i class="material-icons">phone_in_talk</i></a>
+    </li>
+    <li title="weblead" class="vvc-media-weblead vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.WEBLEAD__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('weblead')"><i class="material-icons">mail</i></a>
+    </li>
+    <li title="video" class="vvc-media-video vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.VIDEO__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('video')"><i class="material-icons">video_call</i></a>
+    </li>
+    <li title="voice" class="vvc-media-voice vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.VOICE__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('voice')"><i class="material-icons">phone</i></a>
+    </li>
+    <li title="chat" class="vvc-media-chat vvc-media-item">
+      <div class="vvc-tooltip"><span class="vvc-tooltip-inner">__STRINGS.TOOLTIP.CHAT__</span></div>
+      <a class="btn-floating vvc-color" onclick="vvcEngage('chat')"><i class="material-icons">chat</i></a>
+    </li>
   </ul>
 </div>
 

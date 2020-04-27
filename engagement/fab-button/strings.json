@@ -24,5 +24,96 @@
         "state": "final"
       }
     }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.SYNC",
+    "values": {
+      "en": {
+        "value": "sync",
+        "state": "final"
+      },
+      "it": {
+        "value": "sync",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.INBOUND",
+    "values": {
+      "en": {
+        "value": "inbound",
+        "state": "final"
+      },
+      "it": {
+        "value": "inbound",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.CBN",
+    "values": {
+      "en": {
+        "value": "cbn",
+        "state": "final"
+      },
+      "it": {
+        "value": "cbn",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.WEBLEAD",
+    "values": {
+      "en": {
+        "value": "weblead",
+        "state": "final"
+      },
+      "it": {
+        "value": "weblead",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.VIDEO",
+    "values": {
+      "en": {
+        "value": "video",
+        "state": "final"
+      },
+      "it": {
+        "value": "video",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.VOICE",
+    "values": {
+      "en": {
+        "value": "voice",
+        "state": "final"
+      },
+      "it": {
+        "value": "voice",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.CHAT",
+    "values": {
+      "en": {
+        "value": "chat",
+        "state": "final"
+      },
+      "it": {
+        "value": "chat",
+        "state": "final"
+      }
+    }
   }
 ]
