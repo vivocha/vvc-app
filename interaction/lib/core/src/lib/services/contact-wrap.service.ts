@@ -1,23 +1,16 @@
 import { Injectable, NgZone } from '@angular/core';
-import { AppState } from '../store/reducers/main.reducer';
 import { Store } from '@ngrx/store';
-import { VvcDataCollectionService } from './data-collection.service';
-import { VvcProtocolService } from './protocol.service';
-import { VvcMessageService } from './messages.service';
-import { objectToDataCollection } from '@vivocha/public-entities/dist/wrappers/data_collection';
-import { VvcUiService } from './ui.service';
-import {
-  CbnStatus,
-  DataCollectionCompleted,
-  Dimension,
-  InboundStateList,
-  LeftScrollOffset
-} from '../store/models.interface';
-import { AgentState } from '../store/models.interface';
 import { ClientContactCreationOptions } from '@vivocha/public-entities/dist/contact';
+import { objectToDataCollection } from '@vivocha/public-entities/dist/wrappers/data_collection';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Observable, Subject } from 'rxjs';
 import { NewEvent } from '../store/actions/events.actions';
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { AgentState, CbnStatus, DataCollectionCompleted, Dimension, InboundStateList, LeftScrollOffset } from '../store/models.interface';
+import { AppState } from '../store/reducers/main.reducer';
+import { VvcDataCollectionService } from './data-collection.service';
+import { VvcMessageService } from './messages.service';
+import { VvcProtocolService } from './protocol.service';
+import { VvcUiService } from './ui.service';
 
 @Injectable()
 export class VvcContactWrap {
@@ -261,7 +254,7 @@ export class VvcContactWrap {
             this.logger.log('contact type', contact.contact.type, contact.contact);
             if (contact.contact.type === 'cbn') {
               this.uiService.setCbnMode();
-            } else if (contact.contact.type === 'inbound'){
+            } else if (contact.contact.type === 'inbound') {
               const phone = parsePhoneNumberFromString(contact.contact.dnis);
               this.uiService.setInboundMode({
                 formatted: phone.formatNational(),
@@ -409,7 +402,7 @@ export class VvcContactWrap {
               }
               break;
             case 'recontact':
-              if(!this.recontactDone) {
+              if (!this.recontactDone) {
                 this.logger.log('creating recontact. context: ', this.context);
                 this.dcService.setResolved();
                 const infoToMerge: any = data.contactCreateOptions || {};
@@ -820,7 +813,7 @@ export class VvcContactWrap {
         };
         if (join.avatar) {
           agent.avatar = join.avatar;
-        } else if(this.context.variables.agentAvatarDefault) {
+        } else if (this.context.variables.agentAvatarDefault) {
           agent.avatar = this.context.variables.agentAvatarDefault;
         }
         this.agent = agent;
@@ -857,7 +850,9 @@ export class VvcContactWrap {
     }
   }
   onLeft(obj) {
-    if (
+    if (obj.channels && obj.channels.user !== undefined && obj.channels.user === 0 && obj.autoLeave === false) {
+      this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+    } else if (
       (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) ||
       (obj.reason && obj.reason === 'disconnect')
     ) {
@@ -1024,7 +1019,7 @@ export class VvcContactWrap {
                 };
                 if (agentInfo.avatar) {
                   agent.avatar = agentInfo.avatar;
-                } else if(this.context.variables.agentAvatarDefault) {
+                } else if (this.context.variables.agentAvatarDefault) {
                   agent.avatar = this.context.variables.agentAvatarDefault;
                 }
                 this.agent = agent;
