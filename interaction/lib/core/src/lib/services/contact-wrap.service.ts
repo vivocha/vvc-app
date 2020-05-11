@@ -761,7 +761,7 @@ export class VvcContactWrap {
     this.setDimension(dim);
   }
   markRead(msgId: string) {
-    this.contact.sendRead(msgId);
+    if (this.contact.sendRead) this.contact.sendRead(msgId);
   }
   mergeOffer(diffOffer, cb) {
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {
