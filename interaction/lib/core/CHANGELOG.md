@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.4...@vivocha/client-interaction-core@7.2.0) (2020-05-11)
+
+
+### Bug Fixes
+
+* **lib:** check if sendRead exists for retro compatibility ([3c8ba60](https://github.com/vivocha/widgets/commit/3c8ba602b279dbdd0acf3e119eff4e68383d89fd))
+
+
+### Features
+
+* **acks:** add ack and read icons ([28f550c](https://github.com/vivocha/widgets/commit/28f550c45b9a6dde54d80c19cd5acb6ec311c874))
+* **lib:** initial support for contact continuation after agent left ([21176d2](https://github.com/vivocha/widgets/commit/21176d2af67b853dc61af4fac5f2ca21f03a9615))
+
+
+
+
+
 ## [7.1.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.3...@vivocha/client-interaction-core@7.1.4) (2020-04-07)
 
 

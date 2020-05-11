@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.2](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.1...@vivocha/client-visitor-default-widgets@7.4.2) (2020-05-11)
+
+
+### Bug Fixes
+
+* **engagement:** fab button fixes ([b695c76](https://github.com/vivocha/widgets/commit/b695c769efd0e89a03f0f99fac082b952d045aff))
+
+
+
+
+
 ## [7.4.1](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.0...@vivocha/client-visitor-default-widgets@7.4.1) (2020-04-07)
 
 
