@@ -240,6 +240,15 @@
       ]
     },
     {
+      "id": "showReadMarks",
+      "nameId": "META.VARIABLES.CHAT.ACKS.SHOW",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Visitor"
+      ]
+    },
+    {
       "id": "visitorBalloonColor",
       "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR",
       "defaultValue": "#E6E6E6",
