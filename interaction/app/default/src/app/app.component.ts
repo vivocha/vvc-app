@@ -255,6 +255,9 @@ export class AppComponent implements OnInit {
       }
     }
   }
+  markRead(msgId: string){
+    this.interactionService.markRead(msgId);
+  }
   maximizeCbn(isMobile: boolean, notRead: boolean) {
     this.interactionService.maximizeWidget(false, isMobile ? this.dimensions.fullscreen : this.dimensions.normal);
     if (notRead) {
@@ -342,6 +345,9 @@ export class AppComponent implements OnInit {
   }
   toggleEmojiPanel() {
     this.interactionService.toggleEmojiPanel();
+  }
+  trackByMethod(index: number, elem: any){
+    return elem.id;
   }
   updateLeftScrollOffset(scrollObject: { scrollLeft: number, messageId: string}) {
     this.interactionService.updateLeftScrollOffset(scrollObject);

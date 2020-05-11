@@ -160,6 +160,9 @@ export interface ChatMessage extends BaseMessage {
   agent?: any;
   meta?: any;
   visitorNick?: string;
+
+  ack?: string;
+  read?: string;
 }
 export type Message = SystemMessage | ChatMessage | BaseMessage;
 export interface MessagesState {

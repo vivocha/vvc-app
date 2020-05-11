@@ -40,7 +40,8 @@ export class VvcContactWrap {
 
   autoChat = false;
   autoChatInitialData;
-  messageArchive = [];
+  messageArchive = {};
+  messageArchiveIds = [];
 
   customActions = {};
   visitorNick;
@@ -281,7 +282,14 @@ export class VvcContactWrap {
                 initialOffer: contact.contact.initial_offer
               });
               if (this.autoChat) {
-                this.messageArchive.map(m => this.contact.sendText(m));
+                this.messageArchiveIds.map(mId => {
+                  this.contact.sendText(this.messageArchive[mId].text, null, (err, msgId) => {
+                    if (!err) {
+                      this.messageService.updateChatMessage(mId, 'id', msgId);
+                    }//this.messageArchive[mId].ref = msgId;
+                  });
+
+                });
                 this.autoChat = false;
               }
             } else {
@@ -449,9 +457,9 @@ export class VvcContactWrap {
     return false;
   }
   isOfflineMessage(text) {
-    const m = this.messageArchive.filter(msg => msg === text)[0];
+    const m = this.messageArchiveIds.filter(msgId => this.messageArchive[msgId].text === text)[0];
     if (m) {
-      this.messageArchive = [...this.messageArchive.filter(msg => msg !== text)];
+      this.messageArchive = [...this.messageArchiveIds.filter(msgId => this.messageArchive[msgId].text !== text)];
       return true;
     }
     return false;
@@ -651,7 +659,7 @@ export class VvcContactWrap {
               this.setIsWriting();
             }
             if (!this.isOfflineMessage(text)) {
-              this.messageService.addLocalMessage(text);
+              //this.messageService.addLocalMessage(text);
             }
           });
         }
@@ -661,6 +669,13 @@ export class VvcContactWrap {
         handler: obj => {
           this.logger.log('LEFT', obj);
           this.onLeft(obj);
+        }
+      },
+      {
+        event: 'cleared',
+        handler: obj => {
+          this.logger.log('CLEARED', obj);
+          this.onCleared(obj);
         }
       },
       {
@@ -745,6 +760,9 @@ export class VvcContactWrap {
     (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
     this.setDimension(dim);
   }
+  markRead(msgId: string) {
+    this.contact.sendRead(msgId);
+  }
   mergeOffer(diffOffer, cb) {
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {
       this.zone.run(() => {
@@ -828,6 +846,14 @@ export class VvcContactWrap {
     this.agentRequestCallback = cb;
     this.lastSystemMessageId = this.messageService.sendRequestMessage(message);
   }
+  onAck(message) {
+    console.log('ON ACK', message);
+    this.messageService.updateChatMessage(message.ref, 'ack', message.ts);
+  }
+  onRead(message) {
+    console.log('ON READ', message);
+    this.messageService.updateChatMessage(message.ref, 'read', message.ts);
+  }
   onClose(obj) {
     this.leave('remote').then(() => {
       this.zone.run(() => {
@@ -869,6 +895,19 @@ export class VvcContactWrap {
       });
     }
   }
+  onCleared(obj){
+    this.leave('remote').then(() => {
+      this.zone.run(() => {
+        this.uiService.setClosedByAgent();
+        this.track('cleared');
+        this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
+
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+        this.isClosed = true;
+        this.vivocha.pageRequest('interactionClosed', 'closed');
+      });
+    });
+  }
   onLocalJoin(join) {
     this.contact.getRemoteCapabilities().then(caps => {
       this.uiService.setRemoteCaps(caps);
@@ -889,6 +928,7 @@ export class VvcContactWrap {
     }
   }
   async onRawMessage(msg) {
+    console.log('RAWMESSAGE', msg);
     if (!this.joinedByAgent && msg.agent) {
       this.cancelDissuasionTimeout();
       const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
@@ -901,6 +941,12 @@ export class VvcContactWrap {
         joinedAgent.avatar = agentInfo.avatar;
       }
       await this.onAgentJoin(joinedAgent);
+    }
+    if (msg.type === 'ack') {
+      this.onAck(msg);
+    }
+    if (msg.type === 'read') {
+      this.onRead(msg);
     }
     if (msg.type !== 'text') {
       return;
@@ -1097,9 +1143,10 @@ export class VvcContactWrap {
   }
   sendText(text) {
     if (this.autoChat) {
-      this.messageArchive.push(text);
-      this.messageService.addChatMessage({ body: text, ts: +new Date().getTime() });
-      if (this.messageArchive.length === 1) {
+      const id = this.messageService.addChatMessage({ body: text, ts: +new Date().getTime() });
+      this.messageArchiveIds.push(id);
+      this.messageArchive[id] = { id: id, text: text };
+      if (this.messageArchiveIds.length === 1) {
         if (this.context.variables.showConnectingOnAutoChat) {
           this.messageService.sendSystemMessage('STRINGS.QUEUE.CONNECTING');
         }
@@ -1107,7 +1154,11 @@ export class VvcContactWrap {
       }
     } else {
       if (this.contact && !this.isClosed) {
-        this.contact.sendText(text);
+
+        this.contact.sendText(text, null, (err, msgId) => {
+          //if (!err) this.hackList[msgId] = 'delivering';
+          if (!err) this.messageService.addLocalMessage(text, msgId);
+        });
       } else {
         this.messageService.addChatMessage({ body: text, ts: +new Date().getTime() });
         this.dcService.sendMessageViaCollector(false, text);

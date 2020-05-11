@@ -205,6 +205,9 @@ export class VvcInteractionService {
   minimizeWidget(dim: Dimension) {
     this.contactService.minimizeWidget(dim);
   }
+  markRead(msgId: string){
+    this.contactService.markRead(msgId);
+  }
   muteToggle(muted) {
     this.contactService.muteToggle(muted);
   }

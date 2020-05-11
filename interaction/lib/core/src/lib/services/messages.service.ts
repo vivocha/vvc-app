@@ -15,12 +15,13 @@ export class VvcMessageService {
   addChatMessage(message, agent?, visitorNick?) {
     const id = new Date().getTime().toString();
     const msg: ChatMessage = {
-      id: id,
+      id: message._id || id,
       text: message.body,
       type: 'chat',
       isAgent: agent,
       time: this.getChatTimestamp(message.ts)
     };
+    console.log('ADDING CHAT MESSAGE', msg, message);
     if (agent) {
       msg.agent = agent;
     }
@@ -29,6 +30,12 @@ export class VvcMessageService {
     }
     if (visitorNick) {
       msg.visitorNick = visitorNick;
+    }
+    if (message.delivered) {
+      msg.ack = message.delivered;
+    }
+    if (message.read) {
+      msg.read = message.read;
     }
     this.store.dispatch(new NewMessage(msg));
     return id;
@@ -53,17 +60,18 @@ export class VvcMessageService {
       this.addChatMessage(message, agent);
     }
   }
-  addLocalMessage(text) {
+  addLocalMessage(text, msgId?) {
     const id = new Date().getTime().toString();
     const msg: ChatMessage = {
-      id: id,
+      id: msgId || id,
       text: text,
       type: 'chat',
       isAgent: false,
       time: this.getChatTimestamp()
     };
     this.store.dispatch(new NewMessage(msg));
-    return id;
+    console.log('ADDING LOCAL MESSAGE', msg);
+    return msg.id;
   }
   addLinkMessage(url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) {
     const id = new Date().getTime().toString();
@@ -158,5 +166,8 @@ export class VvcMessageService {
   }
   updateLeftScroll(o: LeftScrollOffset) {
     this.store.dispatch(new UpdateMessage( {id: o.messageId, patch: { scrollLeft: o.scrollLeft }}));
+  }
+  updateChatMessage(messageId, prop, value) {
+    this.store.dispatch(new UpdateMessage({ id: messageId, patch: { [prop]: value }}));
   }
 }

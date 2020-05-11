@@ -71,11 +71,12 @@
         </div>
 
         <div class="vvc-messages">
-          <div *ngFor="let m of appState.messages">
+          <div *ngFor="let m of appState.messages; trackBy: trackByMethod">
             <vvc-system-message [message]="m" *ngIf="m.type === 'system'"></vvc-system-message>
             <vvc-link-message [message]="m" *ngIf="m.type === 'link'"
                               (linkClicked)="openAttachment($event, true)"></vvc-link-message>
             <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"
+                              (read)="markRead($event)"
                               (showDoc)="openAttachment($event, true)"></vvc-chat-message>
             <vvc-request-message [message]="m" *ngIf="m.type === 'request'"
                                  (accept)="acceptAgentRequest($event)"
