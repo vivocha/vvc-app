@@ -1528,6 +1528,19 @@
     }
   },
   {
+    "id": "META.VARIABLES.CHAT.ACKS.SHOW",
+    "values": {
+      "en": {
+        "value": "Show message acknowledges (read marks)",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza i segni di spunta di ricezione",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR",
     "values": {
       "de": {

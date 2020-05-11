@@ -1325,7 +1325,7 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin chat-visitor-message($background: $visitorBalloonColor, $color: #333333, $radius: 6px, $borderColor: #E6E6E6, $showAvatar: $showVisitorAvatar, $showArrow: $showVisitorBalloonArrow){
+@mixin chat-visitor-message($background: $visitorBalloonColor, $color: #333333, $radius: 6px, $borderColor: #E6E6E6, $showAvatar: $showVisitorAvatar, $showArrow: $showVisitorBalloonArrow, $showAcks: $showReadMarks){
   .chat-message{
     &.visitor{
       .message-avatar{
@@ -1383,6 +1383,15 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       .time{
         text-align: right;
         padding-right: 8px;
+
+        .msg-acks {
+          position: relative;
+          top: 4px;
+          display: none;
+          @if ($showAcks == true) {
+            display: inline;
+          }
+        }
       }
     }
   }
