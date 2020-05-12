@@ -848,12 +848,12 @@ export class VvcContactWrap {
   }
   onAck(message) {
     console.log('ON ACK', message);
-    this.messageService.updateChatMessage(message.ref, 'ack', message.ts);
+    this.messageService.updateChatMessage(message.ref, 'ack', message.ts, { ts: this.messageService.getChatTimestamp(message.ts) });
   }
   onRead(message) {
     console.log('ON READ', message);
     if (this.context.variables.showAcks && this.context.variables.showRead) {
-      this.messageService.updateChatMessage(message.ref, 'read', message.ts);
+      this.messageService.updateChatMessage(message.ref, 'read', message.ts, { ts: this.messageService.getChatTimestamp(message.ts), nick: this.agent.nick });
     }
   }
   onClose(obj) {

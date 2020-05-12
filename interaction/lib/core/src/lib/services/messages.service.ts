@@ -167,7 +167,11 @@ export class VvcMessageService {
   updateLeftScroll(o: LeftScrollOffset) {
     this.store.dispatch(new UpdateMessage( {id: o.messageId, patch: { scrollLeft: o.scrollLeft }}));
   }
-  updateChatMessage(messageId, prop, value) {
-    this.store.dispatch(new UpdateMessage({ id: messageId, patch: { [prop]: value }}));
+  updateChatMessage(messageId, prop, value, tooltipData?) {
+    const msg = { id: messageId, patch: { [prop]: value }}
+    if (tooltipData){
+      msg.patch['tooltipData'] = tooltipData;
+    }
+    this.store.dispatch(new UpdateMessage(msg));
   }
 }

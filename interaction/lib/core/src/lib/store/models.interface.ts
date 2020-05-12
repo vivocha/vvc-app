@@ -163,6 +163,7 @@ export interface ChatMessage extends BaseMessage {
 
   ack?: string;
   read?: string;
+  tooltipData?: any;
 }
 export type Message = SystemMessage | ChatMessage | BaseMessage;
 export interface MessagesState {
