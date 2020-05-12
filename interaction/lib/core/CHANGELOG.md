@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.2.0...@vivocha/client-interaction-core@7.3.0) (2020-05-12)
+
+
+### Features
+
+* **acks:** variable to show acks and read messages ([9b74dfe](https://github.com/vivocha/widgets/commit/9b74dfed02796b7051058c9d7e7bcb2b002743b8))
+* **lib:** tooltips on acks ([a3ab2c7](https://github.com/vivocha/widgets/commit/a3ab2c77a0200a8806de5547f3d86fa1d6bc3872))
+
+
+
+
+
 # [7.2.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.1.4...@vivocha/client-interaction-core@7.2.0) (2020-05-11)
 
 

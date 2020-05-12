@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.3.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.2.0...@vivocha/client-interaction-layout@7.3.0) (2020-05-12)
+
+
+### Features
+
+* **lib:** tooltips on acks ([a3ab2c7](https://github.com/vivocha/widgets/commit/a3ab2c77a0200a8806de5547f3d86fa1d6bc3872))
+
+
+
+
+
 # [7.2.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.1.4...@vivocha/client-interaction-layout@7.2.0) (2020-05-11)
 
 
