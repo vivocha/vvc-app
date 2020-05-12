@@ -4626,6 +4626,45 @@
     }
   },
   {
+    "id": "STRINGS.TOOLTIP.MSG_SENT",
+    "values": {
+      "en": {
+        "value": "Message sent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio Inviato",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.MSG_RECEIVED",
+    "values": {
+      "en": {
+        "value": "Message received at {{ts}}",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio ricevuto alle {{ts}}",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.MSG_READ",
+    "values": {
+      "en": {
+        "value": "Message read at {{ts}} from {{nick}}",
+        "state": "new"
+      },
+      "it": {
+        "value": "Messaggio letto alle {{ts}} dall'agente {{nick}}",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "STRINGS.TOPBAR.SUBTITLE_DEFAULT",
     "values": {
       "de": {
