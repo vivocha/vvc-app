@@ -1038,6 +1038,10 @@ export class VvcContactWrap {
       this.track('resuming getData');
       this.vivocha.resumeContact(contactData, this.mapContact()).then((contact) => {
         this.track('resumed contact');
+        this.interactionStart = +new Date(contact.contact.ts);
+        if (contact.contact.agentInfo || (contact.contact.transcript && contact.contact.transcript.find(m => m.agent))) {
+          this.hasReceivedMsgs = true;
+        }
         this.zone.run(() => {
           this.contact = contact;
           this.mapContactActions();
