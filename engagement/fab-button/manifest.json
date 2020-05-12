@@ -15,6 +15,48 @@
       "nameId": "VARIABLES.FAB_IMG",
       "defaultValue": "./assets/logo.png",
       "type": "file"
+    },
+    {
+      "id": "chatIcon",
+      "nameId": "VARIABLES.CHAT_ICON",
+      "defaultValue": "chat",
+      "type": "string"
+    },
+    {
+      "id": "cbnIcon",
+      "nameId": "VARIABLES.CBN_ICON",
+      "defaultValue": "phone_in_talk",
+      "type": "string"
+    },
+    {
+      "id": "inboundIcon",
+      "nameId": "VARIABLES.INBOUND_ICON",
+      "defaultValue": "phonelink_ring",
+      "type": "string"
+    },
+    {
+      "id": "syncIcon",
+      "nameId": "VARIABLES.SYNC_ICON",
+      "defaultValue": "phonelink",
+      "type": "string"
+    },
+    {
+      "id": "videoIcon",
+      "nameId": "VARIABLES.VIDEO_ICON",
+      "defaultValue": "video_call",
+      "type": "string"
+    },
+    {
+      "id": "voiceIcon",
+      "nameId": "VARIABLES.VOICE_ICON",
+      "defaultValue": "phone",
+      "type": "string"
+    },
+    {
+      "id": "webleadIcon",
+      "nameId": "VARIABLES.WEBLEAD_ICON",
+      "defaultValue": "mail",
+      "type": "string"
     }
   ]
 }
