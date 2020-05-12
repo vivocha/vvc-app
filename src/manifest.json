@@ -240,7 +240,16 @@
       ]
     },
     {
-      "id": "showReadMarks",
+      "id": "showRead",
+      "nameId": "META.VARIABLES.CHAT.READ_ACK.SHOW",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Visitor"
+      ]
+    },
+    {
+      "id": "showAcks",
       "nameId": "META.VARIABLES.CHAT.ACKS.SHOW",
       "defaultValue": false,
       "type": "boolean",
