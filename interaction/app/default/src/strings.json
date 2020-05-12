@@ -1528,10 +1528,23 @@
     }
   },
   {
+    "id": "META.VARIABLES.CHAT.READ_ACK.SHOW",
+    "values": {
+      "en": {
+        "value": "Show message read acknowledge",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza quando l'agente riceve il messaggio (spunta verde)",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.CHAT.ACKS.SHOW",
     "values": {
       "en": {
-        "value": "Show message acknowledges (read marks)",
+        "value": "Show message acknowledges",
         "state": "new"
       },
       "it": {

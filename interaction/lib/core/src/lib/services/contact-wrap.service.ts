@@ -852,7 +852,9 @@ export class VvcContactWrap {
   }
   onRead(message) {
     console.log('ON READ', message);
-    this.messageService.updateChatMessage(message.ref, 'read', message.ts);
+    if (this.context.variables.showAcks && this.context.variables.showRead) {
+      this.messageService.updateChatMessage(message.ref, 'read', message.ts);
+    }
   }
   onClose(obj) {
     this.leave('remote').then(() => {
