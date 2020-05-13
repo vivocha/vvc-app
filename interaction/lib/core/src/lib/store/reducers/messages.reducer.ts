@@ -9,7 +9,8 @@ export function reducer(state: MessagesState = initialState, action: fromMessage
   switch (action.type) {
     case fromMessages.UPDATE_MESSAGE: {
       const newMessages = state.list.map( el => {
-        if (el.id === action.payload.id) {
+        const skipAckCheck = (action.payload.patch.ackIsLate1 || action.payload.patch.ackIsLate2) && el['ack'];
+        if (el.id === action.payload.id && !skipAckCheck) {
           return Object.assign({}, el, action.payload.patch);
         }
         return el;
@@ -47,6 +48,9 @@ export const getMessageRedux = (state: MessagesState): MessagesState => {
     }
     if (nextElem) {
       if (
+        elem['failed'] ||
+        elem['ackIsLate1'] ||
+        elem['ackIsLate2'] ||
         elem.type !== nextElem.type ||
         elem.isAgent !== nextElem.isAgent ||
         (prevElem && elem.agent && prevElem.agent && elem.agent.id !== prevElem.agent.id )

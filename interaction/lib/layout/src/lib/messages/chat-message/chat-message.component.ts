@@ -11,6 +11,7 @@ export class ChatMessageComponent implements OnInit {
   @Input() message;
   @Output() showDoc = new EventEmitter();
   @Output() read = new EventEmitter();
+  @Output() resend = new EventEmitter();
 
   @HostListener('click', ['$event'])
   onClick(event) {
@@ -80,6 +81,10 @@ export class ChatMessageComponent implements OnInit {
 
   openDocument(url){
     this.showDoc.emit(url);
+  }
+
+  sendFailed(){
+    this.resend.emit(this.message);
   }
 
   sanitizeThis(url){

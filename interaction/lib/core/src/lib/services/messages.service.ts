@@ -60,7 +60,7 @@ export class VvcMessageService {
       this.addChatMessage(message, agent);
     }
   }
-  addLocalMessage(text, msgId?) {
+  addLocalMessage(text, msgId?, failed?: boolean) {
     const id = new Date().getTime().toString();
     const msg: ChatMessage = {
       id: msgId || id,
@@ -69,6 +69,9 @@ export class VvcMessageService {
       isAgent: false,
       time: this.getChatTimestamp()
     };
+    if (failed){
+      msg.failed = true;
+    }
     this.store.dispatch(new NewMessage(msg));
     console.log('ADDING LOCAL MESSAGE', msg);
     return msg.id;

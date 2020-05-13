@@ -162,7 +162,10 @@ export interface ChatMessage extends BaseMessage {
   visitorNick?: string;
 
   ack?: string;
+  ackIsLate1?: boolean;
+  ackIsLate2?: boolean;
   read?: string;
+  failed?: boolean;
   tooltipData?: any;
 }
 export type Message = SystemMessage | ChatMessage | BaseMessage;

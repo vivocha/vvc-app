@@ -1160,16 +1160,29 @@ export class VvcContactWrap {
       }
     } else {
       if (this.contact && !this.isClosed) {
-
-        this.contact.sendText(text, null, (err, msgId) => {
-          //if (!err) this.hackList[msgId] = 'delivering';
-          if (!err) this.messageService.addLocalMessage(text, msgId);
+        const res = this.contact.sendText(text, null, (err, msgId) => {
+          setTimeout( () => {
+            if (!err) {
+              this.messageService.addLocalMessage(text, msgId);
+              this.setAckCheck(msgId, 'ackIsLate1', 3000);
+              this.setAckCheck(msgId, 'ackIsLate2', 6000);
+            }
+          }, 0);
         });
+        if (!res) {
+          this.messageService.addLocalMessage(text, null, true);
+        }
+
       } else {
         this.messageService.addChatMessage({ body: text, ts: +new Date().getTime() });
         this.dcService.sendMessageViaCollector(false, text);
       }
     }
+  }
+  setAckCheck(msgId, ackType, delay) {
+    setTimeout( () => {
+      this.messageService.updateChatMessage(msgId, ackType, true);
+    }, delay);
   }
   setAnsweredState(agent) {
     this.messageService.removeMessage(this.lastSystemMessageId);

@@ -291,6 +291,9 @@ export class AppComponent implements OnInit {
   rejectOffer() {
     this.interactionService.rejectOffer();
   }
+  sendFailed(message){
+    this.interactionService.sendText(message.text);
+  }
   sendIsWriting() {
     this.interactionService.sendIsWriting();
   }
