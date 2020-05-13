@@ -1384,6 +1384,11 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         text-align: right;
         padding-right: 8px;
 
+        .msg-warnings {
+          position: relative;
+          top: 2px;
+          display: inline;
+        }
         .msg-acks {
           position: relative;
           top: 4px;
