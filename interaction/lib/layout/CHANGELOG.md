@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.3.0...@vivocha/client-interaction-layout@7.4.0) (2020-05-13)
+
+
+### Features
+
+* **acks:** add acks warnings and resend on failed ([ad03f47](https://github.com/vivocha/widgets/commit/ad03f474e6c95fb4f982988b49d5cdd8c92931f8))
+
+
+
+
+
 # [7.3.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.2.0...@vivocha/client-interaction-layout@7.3.0) (2020-05-12)
 
 

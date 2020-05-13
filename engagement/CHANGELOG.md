@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.3](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.2...@vivocha/client-visitor-default-widgets@7.4.3) (2020-05-13)
+
+
+### Bug Fixes
+
+* **engagement:** add configuration for media button icons ([7940429](https://github.com/vivocha/widgets/commit/7940429bdc6b5fafadbf0aacbc1deae8312e8ebc))
+* **engagement:** add preset as variable ([4b3920b](https://github.com/vivocha/widgets/commit/4b3920b2222861230357dd4be08a37ea56b59824))
+
+
+
+
+
 ## [7.4.2](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.1...@vivocha/client-visitor-default-widgets@7.4.2) (2020-05-11)
 
 
