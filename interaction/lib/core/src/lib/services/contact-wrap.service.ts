@@ -19,6 +19,7 @@ export class VvcContactWrap {
   private contact;
   private context;
   private logger = console;
+  private _ids = {};
 
   lastSystemMessageId;
   agent;
@@ -493,7 +494,7 @@ export class VvcContactWrap {
   }
   debug(evtId: string, data?: any, opts?: any) {
     if (this.context.variables.enableDebug) {
-      console.log('___' + evtId + '___', data, opts);
+      this.logger.log('___' + evtId + '___', data, opts);
     }
   }
   handleGeoAction(data: any) {
@@ -848,11 +849,11 @@ export class VvcContactWrap {
     this.lastSystemMessageId = this.messageService.sendRequestMessage(message);
   }
   onAck(message) {
-    console.log('ON ACK', message);
+    this.logger.log('ON ACK', message);
     this.messageService.updateChatMessage(message.ref, 'ack', message.ts, { ts: this.messageService.getChatTimestamp(message.ts) });
   }
   onRead(message) {
-    console.log('ON READ', message);
+    this.logger.log('ON READ', message);
     if (this.context.variables.showAcks && this.context.variables.showRead) {
       this.messageService.updateChatMessage(message.ref, 'read', message.ts, { ts: this.messageService.getChatTimestamp(message.ts), nick: this.agent.nick });
     }
@@ -931,7 +932,6 @@ export class VvcContactWrap {
     }
   }
   async onRawMessage(msg) {
-    console.log('RAWMESSAGE', msg);
     if (!this.joinedByAgent && msg.agent) {
       this.cancelDissuasionTimeout();
       const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
@@ -954,6 +954,11 @@ export class VvcContactWrap {
     if (msg.type !== 'text') {
       return;
     }
+    if (msg._id && this._ids[msg._id]) {
+      this.logger.log('duplicate message', msg._id);
+      return;
+    }
+    this._ids[msg._id]=msg._id;
     const agent = (msg.agent) ? this.agent : false;
     if (msg.quick_replies) {
       this.messageService.addQuickRepliesMessage(msg, agent);

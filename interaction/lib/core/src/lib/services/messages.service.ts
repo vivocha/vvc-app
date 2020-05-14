@@ -21,7 +21,6 @@ export class VvcMessageService {
       isAgent: agent,
       time: this.getChatTimestamp(message.ts)
     };
-    console.log('ADDING CHAT MESSAGE', msg, message);
     if (agent) {
       msg.agent = agent;
     }
@@ -73,7 +72,7 @@ export class VvcMessageService {
       msg.failed = true;
     }
     this.store.dispatch(new NewMessage(msg));
-    console.log('ADDING LOCAL MESSAGE', msg);
+
     return msg.id;
   }
   addLinkMessage(url: string, from_id: string, from_nick: string, desc?: string, agent?: boolean) {
