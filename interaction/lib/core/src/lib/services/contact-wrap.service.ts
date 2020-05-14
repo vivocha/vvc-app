@@ -569,31 +569,6 @@ export class VvcContactWrap {
         }
       },
       {
-        event: 'attachment',
-        handler: (url, meta, fromId, fromNick, isAgent) => {
-          this.zone.run(() => {
-            // const attachment = {url, meta, fromId, fromNick, isAgent};
-            meta.url = (url) ? url : meta.originalUrl;
-            const msg = {
-              body: meta.desc || meta.originalName,
-              type: 'chat',
-              meta: meta,
-              from_nick: fromNick,
-              from_id: fromId
-            };
-            if (isAgent) {
-              this.messageService.addChatMessage(msg, this.agent, this.visitorNick);
-              this.uiService.setIsWriting(false);
-              if (this.context.variables.playAudioNotification) {
-                this.playAudioNotification();
-              }
-            } else {
-              this.messageService.addChatMessage(msg, null, this.visitorNick);
-            }
-          });
-        }
-      },
-      {
         event: 'close',
         handler: obj => {
           this.onClose(obj);
@@ -855,7 +830,7 @@ export class VvcContactWrap {
   onRead(message) {
     this.logger.log('ON READ', message);
     if (this.context.variables.showAcks && this.context.variables.showRead) {
-      this.messageService.updateChatMessage(message.ref, 'read', message.ts, { ts: this.messageService.getChatTimestamp(message.ts), nick: this.agent.nick });
+      this.messageService.updateChatMessage(message.ref || message._id, 'read', message.ts, { ts: this.messageService.getChatTimestamp(message.ts), nick: this.agent.nick });
     }
   }
   onClose(obj) {
@@ -951,6 +926,9 @@ export class VvcContactWrap {
     if (msg.type === 'read') {
       this.onRead(msg);
     }
+    if (msg.type === 'attachment'){
+      this.onAttachment(msg);
+    }
     if (msg.type !== 'text') {
       return;
     }
@@ -975,6 +953,28 @@ export class VvcContactWrap {
       this.playAudioNotification();
     }
     this.hasReceivedMsgs = true;
+  }
+  onAttachment(msg){
+    const meta = msg.meta;
+    meta.url = (msg.url) ? msg.url : meta.originalUrl;
+    const message = {
+      _id: msg._id,
+      body: meta.desc || meta.originalName,
+      type: 'chat',
+      meta: meta,
+      from_nick: msg.from_nick,
+      from_id: msg.from_id,
+      ts: msg.ts
+    };
+    if (msg.agent) {
+      this.messageService.addChatMessage(message, this.agent, this.visitorNick);
+      this.uiService.setIsWriting(false);
+      if (this.context.variables.playAudioNotification) {
+        this.playAudioNotification();
+      }
+    } else {
+      this.messageService.addChatMessage(msg, null, this.visitorNick);
+    }
   }
   openAttachment(url: string, click?: boolean, target?: string) {
     const msg = { type: 'web_url', url, click, target };
