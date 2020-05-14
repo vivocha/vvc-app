@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.4.1...@vivocha/client-interaction-core@7.5.0) (2020-05-14)
+
+
+### Features
+
+* **inbound:** variable to show international prefix ([bf4ee48](https://github.com/vivocha/widgets/commit/bf4ee485dc4a74d02bb40cb946e6083f27379da2))
+
+
+
+
+
 ## [7.4.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.4.0...@vivocha/client-interaction-core@7.4.1) (2020-05-14)
 
 
