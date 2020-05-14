@@ -19,7 +19,8 @@ export class VvcMessageService {
       text: message.body,
       type: 'chat',
       isAgent: agent,
-      time: this.getChatTimestamp(message.ts)
+      time: this.getChatTimestamp(message.ts),
+      ts: message.ts || new Date()
     };
     if (agent) {
       msg.agent = agent;
@@ -66,7 +67,8 @@ export class VvcMessageService {
       text: text,
       type: 'chat',
       isAgent: false,
-      time: this.getChatTimestamp()
+      time: this.getChatTimestamp(),
+      ts: new Date()
     };
     if (failed){
       msg.failed = true;
@@ -84,7 +86,8 @@ export class VvcMessageService {
       from_id: from_id,
       from_nick: from_nick,
       type: 'link',
-      time: this.getChatTimestamp()
+      time: this.getChatTimestamp(),
+      ts: new Date()
     };
     this.store.dispatch(new NewMessage(msg));
     return id;
@@ -99,7 +102,8 @@ export class VvcMessageService {
       quick_replies: message.quick_replies,
       quick_replies_orientation: message.quick_replies_orientation,
       scrollLeft: 0,
-      time: this.getChatTimestamp()
+      time: this.getChatTimestamp(),
+      ts: message.ts || new Date()
     };
     if (agent) {
       quick.agent = agent;
@@ -118,7 +122,8 @@ export class VvcMessageService {
       body: message.body,
       original: message.template,
       scrollLeft: 0,
-      time: this.getChatTimestamp()
+      time: this.getChatTimestamp(),
+      ts: message.ts || new Date()
     };
     if (agent) {
       template.agent = agent;
@@ -145,7 +150,8 @@ export class VvcMessageService {
     const m: RequestMessage = {
       id: id,
       type: 'request',
-      text: message.toUpperCase()
+      text: message.toUpperCase(),
+      ts: message.ts || new Date()
     };
     this.store.dispatch(new NewMessage(m));
     return id;
@@ -155,7 +161,8 @@ export class VvcMessageService {
     const message: SystemMessage = {
       id: id,
       type: 'system',
-      text: messageNameId
+      text: messageNameId,
+      ts: new Date()
     };
     if (context) {
       message.context = context;

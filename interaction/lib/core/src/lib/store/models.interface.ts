@@ -133,6 +133,7 @@ export interface BaseMessage {
   id: string;
   text: string;
   type: string;
+  ts: Date;
   agent?: any;
   isAgent?: boolean;
   isLast?: string;

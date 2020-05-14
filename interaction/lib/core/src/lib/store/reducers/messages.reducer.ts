@@ -28,7 +28,10 @@ export function reducer(state: MessagesState = initialState, action: fromMessage
 }
 
 export const getMessageRedux = (state: MessagesState): MessagesState => {
-  const messages = state.list.map( (elem, idx) => {
+  const sorted = state.list.slice().sort((a,b) => {
+    return new Date(a.ts).getTime() - new Date(b.ts).getTime();
+  });
+  const messages = sorted.map( (elem, idx) => {
     let isLast = false;
     let isFirst = false;
     const nextElem = state.list[idx + 1];
