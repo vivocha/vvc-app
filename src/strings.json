@@ -999,6 +999,19 @@
     }
   },
   {
+    "id": "META.TABS.Inbound",
+    "values": {
+      "en": {
+        "value": "Inbound",
+        "state": "new"
+      },
+      "it": {
+        "value": "Inbound",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.TABS.Chat",
     "values": {
       "de": {
@@ -1666,6 +1679,19 @@
       "ja": {
         "value": "エージェントがチャットに接続された時にウェルカムメッセージを表示",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.INBOUND.SHOW_INTERNATIONAL_NUMBER",
+    "values": {
+      "en": {
+        "value": "Display inbound number with international prefix",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza il numero da chimare col prefisso internazionale",
+        "state": "new"
       }
     }
   },
