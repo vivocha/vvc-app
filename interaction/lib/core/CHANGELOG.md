@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.0...@vivocha/client-interaction-core@7.5.1) (2020-05-14)
+
+
+### Bug Fixes
+
+* **lib:** avoid displaying duplicated messages ([82ee966](https://github.com/vivocha/widgets/commit/82ee9664de5c509eff76d6fe54133ed285881b7c))
+
+
+
+
+
 # [7.5.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.4.1...@vivocha/client-interaction-core@7.5.0) (2020-05-14)
 
 
