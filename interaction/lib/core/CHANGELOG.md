@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.4.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.4.0...@vivocha/client-interaction-core@7.4.1) (2020-05-14)
+
+
+### Bug Fixes
+
+* **core:** detection change on send message and welcome in persistence ([2560dcf](https://github.com/vivocha/widgets/commit/2560dcfac6a7de07fcb24a2189c601f0241ca20a))
+
+
+
+
+
 # [7.4.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.3.0...@vivocha/client-interaction-core@7.4.0) (2020-05-13)
 
 
