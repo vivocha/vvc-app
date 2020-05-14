@@ -11,7 +11,12 @@ export class InboundFullscreenMessagesComponent implements OnInit {
   @Output() upgrade = new EventEmitter();
 
   numtel;
+  formattedNum;
   ngOnInit(): void {
+    if (this.context && this.context.inboundState){
+      this.formattedNum = (this.context.variables.showInternationalNumber) ? this.context.inboundState.international : this.context.inboundState.formatted;
+    }
+
     this.numtel = (
       this.context &&
       this.context.inboundState &&

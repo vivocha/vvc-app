@@ -259,6 +259,7 @@ export class VvcContactWrap {
               const phone = parsePhoneNumberFromString(contact.contact.dnis);
               this.uiService.setInboundMode({
                 formatted: phone.formatNational(),
+                international: phone.formatInternational(),
                 dnis: contact.contact.dnis,
                 extCode: contact.contact.extCode,
                 state: 'compose'
