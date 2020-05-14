@@ -1161,13 +1161,13 @@ export class VvcContactWrap {
     } else {
       if (this.contact && !this.isClosed) {
         const res = this.contact.sendText(text, null, (err, msgId) => {
-          setTimeout( () => {
+          this.zone.run(() => {
             if (!err) {
               this.messageService.addLocalMessage(text, msgId);
               this.setAckCheck(msgId, 'ackIsLate1', 3000);
               this.setAckCheck(msgId, 'ackIsLate2', 6000);
             }
-          }, 0);
+          });
         });
         if (!res) {
           this.messageService.addLocalMessage(text, null, true);
@@ -1192,7 +1192,7 @@ export class VvcContactWrap {
     } else {
       this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
     }
-    if (this.context.variables.showWelcomeMessage && !this.isInPersistence()) {
+    if (this.context.variables.showWelcomeMessage) {
       this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick });
     }
     this.track('answered state');
