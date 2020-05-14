@@ -359,6 +359,15 @@
       "categoryIds": [
         "Chat_Collector"
       ]
+    },
+    {
+      "id": "showInternationalNumber",
+      "nameId": "META.VARIABLES.INBOUND.SHOW_INTERNATIONAL_NUMBER",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Inbound"
+      ]
     }
   ]
 }
