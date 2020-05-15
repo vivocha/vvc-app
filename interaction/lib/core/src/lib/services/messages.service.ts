@@ -156,17 +156,18 @@ export class VvcMessageService {
     this.store.dispatch(new NewMessage(m));
     return id;
   }
-  sendSystemMessage(messageNameId: string, context?: any) {
+  sendSystemMessage(messageNameId: string, context?: any, ts?: Date) {
     const id = new Date().getTime().toString();
     const message: SystemMessage = {
       id: id,
       type: 'system',
       text: messageNameId,
-      ts: new Date()
+      ts: ts || new Date()
     };
     if (context) {
       message.context = context;
     }
+    console.log('SYSTEM MESSAGE', message, message.ts, ts);
     this.store.dispatch(new NewMessage(message));
     return id;
   }

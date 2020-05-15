@@ -157,7 +157,11 @@ export class VvcContactWrap {
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
     if (this.context.variables.showWelcomeMessage && this.isInPersistence()) {
-      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: this.agent.nick });
+      let d = new Date();
+      if (transcript[0] && transcript[0].ts){
+        d = new Date(d.getTime() - 1000);
+      }
+      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: this.agent.nick }, d);
     }
     for (const m in transcript) {
       const msg = transcript[m];
@@ -1199,7 +1203,12 @@ export class VvcContactWrap {
       this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
     }
     if (this.context.variables.showWelcomeMessage) {
-      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick });
+      const t = this.contact.contact.transcript || [];
+      let d = new Date();
+      if (t[0] && t[0].ts){
+        d = new Date(d.getTime() - 1000);
+      }
+      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick }, d);
     }
     this.track('answered state');
   }
