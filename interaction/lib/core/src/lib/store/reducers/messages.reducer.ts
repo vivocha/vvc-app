@@ -11,6 +11,9 @@ export function reducer(state: MessagesState = initialState, action: fromMessage
       const newMessages = state.list.map( el => {
         const skipAckCheck = (action.payload.patch.ackIsLate1 || action.payload.patch.ackIsLate2) && el['ack'];
         if (el.id === action.payload.id && !skipAckCheck) {
+          if (action.payload.patch.read && !el['ack']){
+            action.payload.patch.ack = action.payload.patch.read;
+          }
           return Object.assign({}, el, action.payload.patch);
         }
         return el;
