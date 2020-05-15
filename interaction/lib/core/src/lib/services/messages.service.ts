@@ -167,7 +167,6 @@ export class VvcMessageService {
     if (context) {
       message.context = context;
     }
-    console.log('SYSTEM MESSAGE', message, message.ts, ts);
     this.store.dispatch(new NewMessage(message));
     return id;
   }
