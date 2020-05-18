@@ -95,7 +95,7 @@ export class VvcMessageService {
   addQuickRepliesMessage(message, agent?) {
     const id = new Date().getTime().toString();
     const quick: any = {
-      id: id,
+      id: message._id || id,
       code: 'message',
       type: 'quick-replies',
       body: message.body,
@@ -114,7 +114,7 @@ export class VvcMessageService {
   addTemplateMessage(message, agent?) {
     const id = new Date().getTime().toString();
     const template: any = {
-      id: id,
+      id: message._id || id,
       type: 'template',
       template: message.template.type,
       elements: message.template.elements,

@@ -83,6 +83,7 @@
                                  (accept)="acceptAgentRequest($event)"
                                  (reject)="rejectAgentRequest($event)"></vvc-request-message>
             <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
+                               (read)="markRead($event)"
                                (scrollUpdate)="updateLeftScrollOffset($event)"
                                (action)="processQuickReply($event)"></vvc-quick-replies>
             <vvc-template-generic [message]="m" *ngIf="m.type === 'template' && m.template === 'generic'"
