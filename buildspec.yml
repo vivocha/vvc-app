@@ -30,11 +30,11 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - git checkout ${CODEBUILD_RESOLVED_SOURCE_VERSION}
-      - git --no-pager status
-      - git --no-pager diff
-      - git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
-      - git subtree push --prefix=interaction/app/default app master
+      #- git checkout ${CODEBUILD_RESOLVED_SOURCE_VERSION}
+      #- git --no-pager status
+      #- git --no-pager diff
+      #- git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
+      #- git subtree push --prefix=interaction/app/default app master
       #- ./pushtags.sh
 cache:
   paths:
