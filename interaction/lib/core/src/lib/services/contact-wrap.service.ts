@@ -35,6 +35,7 @@ export class VvcContactWrap {
   incomingMedia;
   interactionStart;
   joinedByAgent = false;
+  welcomeSent = false;
 
   interactionCreated = false;
   interactionEvtQueue = [];
@@ -156,13 +157,6 @@ export class VvcContactWrap {
   }
   checkForTranscript() {
     const transcript = this.contact.contact.transcript;
-    if (this.context.variables.showWelcomeMessage && this.isInPersistence()) {
-      let d = new Date();
-      if (transcript[0] && transcript[0].ts){
-        d = new Date(d.getTime() - 1000);
-      }
-      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: this.agent.nick }, d);
-    }
     for (const m in transcript) {
       const msg = transcript[m];
       switch (msg.type) {
@@ -829,6 +823,7 @@ export class VvcContactWrap {
   }
   onAck(message) {
     this.logger.log('ON ACK', message);
+    if (!message.ts) message.ts = new Date();
     this.messageService.updateChatMessage(message.ref, 'ack', message.ts, { ts: this.messageService.getChatTimestamp(message.ts) });
   }
   onRead(message) {
@@ -1000,12 +995,13 @@ export class VvcContactWrap {
     if (reply.action.payload !== undefined) {
       vvcQuickReply.payload = reply.action.payload;
     }
+    const localTs = new Date();
     if (this.contact && !this.isClosed) {
       this.contact.send(vvcQuickReply);
     } else {
       this.dcService.sendMessageViaCollector(false, vvcQuickReply.body, vvcQuickReply.payload);
     }
-    this.messageService.addLocalMessage(reply.action.title);
+    this.messageService.addLocalMessage(reply.action.title, reply.msgId, false, localTs);
   }
   processRawMessage(msg) {
     this.zone.run(() => {
@@ -1099,6 +1095,7 @@ export class VvcContactWrap {
                   this.uiService.setMinimizedState();
                 }
                 this.checkForTranscript();
+                this.sendWelcomeMessage();
               } else {
                 this.dcService.setResolved();
                 this.uiService.setUiReady();
@@ -1170,10 +1167,11 @@ export class VvcContactWrap {
       }
     } else {
       if (this.contact && !this.isClosed) {
+        const localTs = new Date();
         const res = this.contact.sendText(text, null, (err, msgId) => {
           this.zone.run(() => {
             if (!err) {
-              this.messageService.addLocalMessage(text, msgId);
+              this.messageService.addLocalMessage(text, msgId, false, localTs);
               this.setAckCheck(msgId, 'ackIsLate1', 3000);
               this.setAckCheck(msgId, 'ackIsLate2', 6000);
             }
@@ -1189,6 +1187,30 @@ export class VvcContactWrap {
       }
     }
   }
+  sendWelcomeMessage() {
+    if (this.welcomeSent) {
+      console.log('welcome already sent');
+      return;
+    }
+    this.welcomeSent = true;
+    if (this.context.variables.showWelcomeMessage) {
+      const t = this.contact.contact.transcript || [];
+
+      let d = new Date(new Date().getTime() - 1000);
+      if (t[0] && t[0].ts){
+        d = new Date(t[0].ts);
+        d = new Date(d.getTime() - 1000);
+      }
+      let nick = this.agent.nick
+      if (!nick) {
+        const m = t.filter( m => m.agent === true)[0];
+        if (m && m.from_nick) nick = m.from_nick;
+        else nick = this.agent.id;
+      }
+      this.uiService.setAgent({ ...this.agent, nick: nick});
+      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: nick }, d);
+    }
+  }
   setAckCheck(msgId, ackType, delay) {
     setTimeout( () => {
       this.messageService.updateChatMessage(msgId, ackType, true);
@@ -1196,20 +1218,14 @@ export class VvcContactWrap {
   }
   setAnsweredState(agent) {
     this.messageService.removeMessage(this.lastSystemMessageId);
+    this.agent = agent;
     this.uiService.setAgent(agent);
     if (this.context.variables.showAgentInfoOnTopBar) {
       this.uiService.setTopBarWithAgentInfo(agent);
     } else {
       this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
     }
-    if (this.context.variables.showWelcomeMessage) {
-      const t = this.contact.contact.transcript || [];
-      let d = new Date();
-      if (t[0] && t[0].ts){
-        d = new Date(d.getTime() - 1000);
-      }
-      this.messageService.sendSystemMessage('STRINGS.CHAT.WELCOME_MESSAGE', { nickname: agent.nick }, d);
-    }
+    this.sendWelcomeMessage();
     this.track('answered state');
   }
   setDimension(dim) {

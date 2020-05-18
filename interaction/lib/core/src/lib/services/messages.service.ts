@@ -60,7 +60,7 @@ export class VvcMessageService {
       this.addChatMessage(message, agent);
     }
   }
-  addLocalMessage(text, msgId?, failed?: boolean) {
+  addLocalMessage(text, msgId?, failed?: boolean, ts?: Date) {
     const id = new Date().getTime().toString();
     const msg: ChatMessage = {
       id: msgId || id,
@@ -68,7 +68,7 @@ export class VvcMessageService {
       type: 'chat',
       isAgent: false,
       time: this.getChatTimestamp(),
-      ts: new Date()
+      ts: ts || new Date()
     };
     if (failed){
       msg.failed = true;
