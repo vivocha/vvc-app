@@ -994,11 +994,23 @@ export class VvcContactWrap {
     }
     const localTs = new Date();
     if (this.contact && !this.isClosed) {
-      this.contact.send(vvcQuickReply);
+      const res = this.contact.send(vvcQuickReply, (err, msgId) => {
+        this.zone.run(() => {
+          if (!err) {
+            this.messageService.addLocalMessage(reply.action.title, msgId, false, localTs);
+            this.setAckCheck(msgId, 'ackIsLate1', 3000);
+            this.setAckCheck(msgId, 'ackIsLate2', 6000);
+          }
+        });
+      });
+      if (!res) {
+        this.messageService.addLocalMessage(reply.action.title, null, true);
+      }
     } else {
       this.dcService.sendMessageViaCollector(false, vvcQuickReply.body, vvcQuickReply.payload);
+      this.messageService.addLocalMessage(reply.action.title, reply.msgId, false, localTs);
     }
-    this.messageService.addLocalMessage(reply.action.title, reply.msgId, false, localTs);
+
   }
   processRawMessage(msg) {
     this.zone.run(() => {
