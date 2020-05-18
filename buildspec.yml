@@ -1,0 +1,41 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    NPM_TOKEN: /CodeBuild/vivocha-monorepo:NPM_TOKEN
+    GH_TOKEN: /CodeBuild/vivocha-monorepo:GH_TOKEN
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12.x
+      docker: 18
+    commands:
+      - export PATH=$PATH:./node_modules/.bin
+      - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      - npm set unsafe-perm true
+  pre_build:
+    commands:
+      - echo Install started on `date`
+      - npm i
+      - echo Install completed on `date`
+      - echo Bootstrap started on `date`
+      - lerna bootstrap --hoist --include-filtered-dependencies
+      - ls -l interaction/lib/core/dist/
+      - ls -l interaction/lib/layout/dist/
+      - echo Bootstrap completed on `date`
+  build:
+    commands:
+      - echo Build started on `date`
+      - lerna publish from-package -y --contents dist
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
+      - git subtree push --prefix interaction/app/default app master
+      - ./pushtags.sh
+cache:
+  paths:
+    - interaction/app/default/node_modules
+    - interaction/lib/core/node_modules
+    - interaction/lib/layout/node_modules
+    - node_modules
