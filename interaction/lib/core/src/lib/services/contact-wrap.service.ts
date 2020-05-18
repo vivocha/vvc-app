@@ -628,13 +628,10 @@ export class VvcContactWrap {
       },
       {
         event: 'localtext',
-        handler: (text) => {
+        handler: (_text) => {
           this.zone.run(() => {
             if (this.agent && this.agent.is_bot) {
               this.setIsWriting();
-            }
-            if (!this.isOfflineMessage(text)) {
-              //this.messageService.addLocalMessage(text);
             }
           });
         }
@@ -1195,15 +1192,19 @@ export class VvcContactWrap {
     this.welcomeSent = true;
     if (this.context.variables.showWelcomeMessage) {
       const t = this.contact.contact.transcript || [];
-
-      let d = new Date(new Date().getTime() - 1000);
-      if (t[0] && t[0].ts){
-        d = new Date(t[0].ts);
-        d = new Date(d.getTime() - 1000);
+      let d;
+      if (!this.context.variables.autoChat) {
+        d = new Date(new Date().getTime() - 1000);
+        if (t[0] && t[0].ts) {
+          d = new Date(t[0].ts);
+          d = new Date(d.getTime() - 1000);
+        }
+      } else {
+        d = new Date();
       }
       let nick = this.agent.nick
       if (!nick) {
-        const m = t.filter( m => m.agent === true)[0];
+        const m = t.filter(m => m.agent === true)[0];
         if (m && m.from_nick) nick = m.from_nick;
         else nick = this.agent.id;
       }
