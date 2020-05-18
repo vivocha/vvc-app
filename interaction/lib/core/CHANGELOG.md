@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.3...@vivocha/client-interaction-core@7.5.4) (2020-05-18)
+
+
+### Bug Fixes
+
+* **earlychat:** fix error that prevent the send message ([6da17c9](https://github.com/vivocha/widgets/commit/6da17c95229986201bc3d6cdbdf8ce0383d810ee))
+
+
+
+
+
 ## [7.5.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.2...@vivocha/client-interaction-core@7.5.3) (2020-05-18)
 
 
