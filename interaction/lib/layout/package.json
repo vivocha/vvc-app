@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction-layout",
-  "version": "7.5.0",
+  "version": "7.5.1",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "prepare": "npm run build",

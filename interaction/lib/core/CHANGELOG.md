@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.4...@vivocha/client-interaction-core@7.5.5) (2020-05-18)
+
+
+### Bug Fixes
+
+* **ack:** fix ack on quick reply ([911dfdc](https://github.com/vivocha/widgets/commit/911dfdc589dd676e53188fa05f19cde52ff923d7))
+* **read:** send read for quick reply ([0b59b82](https://github.com/vivocha/widgets/commit/0b59b824d92630f348737a0f98bb70e88edf3dba))
+
+
+
+
+
 ## [7.5.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.3...@vivocha/client-interaction-core@7.5.4) (2020-05-18)
 
 
