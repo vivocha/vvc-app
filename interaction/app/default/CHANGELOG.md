@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.6](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.5...@vivocha/client-interaction@7.5.6) (2020-05-19)
+
+
+### Bug Fixes
+
+* **read:** send read ack for templates ([80c2fa6](https://github.com/vivocha/vvc-app/commit/80c2fa6a29b3b02695ee04c20562ad1f7caf9512))
+
+
+
+
+
 ## [7.5.5](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.4...@vivocha/client-interaction@7.5.5) (2020-05-18)
 
 
