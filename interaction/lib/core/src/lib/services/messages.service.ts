@@ -109,7 +109,7 @@ export class VvcMessageService {
       quick.agent = agent;
     }
     this.store.dispatch(new NewMessage(quick));
-    return id;
+    return quick.id;
   }
   addTemplateMessage(message, agent?) {
     const id = new Date().getTime().toString();
@@ -129,7 +129,7 @@ export class VvcMessageService {
       template.agent = agent;
     }
     this.store.dispatch(new NewMessage(template));
-    return id;
+    return template.id;
   }
   getChatTimestamp(tsString?: string) {
     let t;

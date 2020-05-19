@@ -88,9 +88,11 @@
                                (action)="processQuickReply($event)"></vvc-quick-replies>
             <vvc-template-generic [message]="m" *ngIf="m.type === 'template' && m.template === 'generic'"
                                   (scrollUpdate)="updateLeftScrollOffset($event)"
+                                  (read)="markRead($event)"
                                   (action)="processAction($event)"></vvc-template-generic>
             <vvc-template-list [message]="m" *ngIf="m.type === 'template' && m.template === 'list'"
-                                  (action)="processAction($event)"></vvc-template-list>
+                               (action)="processAction($event)"
+                               (read)="markRead($event)"></vvc-template-list>
 
           </div>
         </div>
