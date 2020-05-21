@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.6...@vivocha/client-interaction@7.5.7) (2020-05-21)
+
+
+### Bug Fixes
+
+* **inbound:** fix upgrade to chat from inbound ([c95020d](https://github.com/vivocha/vvc-app/commit/c95020d0835ff49364f6c30638f937653eecf944))
+
+
+
+
+
 ## [7.5.6](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.5...@vivocha/client-interaction@7.5.6) (2020-05-19)
 
 
