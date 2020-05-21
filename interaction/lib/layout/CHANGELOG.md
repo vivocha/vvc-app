@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.2...@vivocha/client-interaction-layout@7.5.3) (2020-05-21)
+
+
+### Bug Fixes
+
+* **inbound:** fix upgrade to chat from inbound ([c95020d](https://github.com/vivocha/widgets/commit/c95020d0835ff49364f6c30638f937653eecf944))
+
+
+
+
+
 ## [7.5.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.1...@vivocha/client-interaction-layout@7.5.2) (2020-05-19)
 
 
