@@ -49,7 +49,7 @@ import {
   WidgetSetInboundState,
   WidgetUpgradeCbnToChat,
   WidgetUpdateRemoteCaps,
-  WidgetUpdateLocalCaps
+  WidgetUpdateLocalCaps, WidgetUpgradeInboundToChat
 } from '../store/actions/widget.actions';
 import {DataCollectionSelected} from '../store/actions/dataCollection.actions';
 import {NewEvent} from '../store/actions/events.actions';
@@ -254,5 +254,8 @@ export class VvcUiService {
   }
   upgradeCbnToChat() {
     this.store.dispatch(new WidgetUpgradeCbnToChat());
+  }
+  upgradeInboundToChat() {
+    this.store.dispatch(new WidgetUpgradeInboundToChat());
   }
 }

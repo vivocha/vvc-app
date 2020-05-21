@@ -257,6 +257,10 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const context = Object.assign({}, state.context, {cbnMode: false});
       return Object.assign({}, state, { context: context });
     }
+    case fromWidget.WIDGET_UPGRADE_INBOUND_TO_CHAT: {
+      const context = Object.assign({}, state.context, {inboundMode: false});
+      return Object.assign({}, state, { context: context });
+    }
     case fromWidget.WIDGET_WEBLEAD_SENT: {
       const context = Object.assign({}, state.context, {hasError: true, showQueuePanel: true, webleadSent: true});
       return Object.assign({}, state, {context: context});

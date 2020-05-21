@@ -122,6 +122,7 @@
       <vvc-inbound id="vvc-inbound"
                    *ngIf="appState.inboundMode"
                    (close)="closeInbound()"
+                   (upgrade)="upgradeInboundToChat()"
                    [context]="appState"></vvc-inbound>
     </div>
   </div>

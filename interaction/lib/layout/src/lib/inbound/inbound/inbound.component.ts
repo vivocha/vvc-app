@@ -9,4 +9,6 @@ export class InboundComponent {
 
   @Input() context;
   @Output() close = new EventEmitter();
+  @Output() upgrade = new EventEmitter();
+
 }

@@ -319,4 +319,7 @@ export class VvcInteractionService {
   upgradeCbnToChat() {
     this.contactService.upgradeCbnToChat();
   }
+  upgradeInboundToChat() {
+    this.contactService.upgradeInboundToChat();
+  }
 }

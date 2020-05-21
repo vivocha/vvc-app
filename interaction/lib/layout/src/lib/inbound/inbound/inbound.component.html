@@ -3,7 +3,8 @@
   <vvc-inbound-topbar [context]="context"
                       (close)="close.emit()"></vvc-inbound-topbar>
 
-  <vvc-inbound-fullscreen-messages [context]="context"></vvc-inbound-fullscreen-messages>
+  <vvc-inbound-fullscreen-messages [context]="context"
+                                   (upgrade)="upgrade.emit()"></vvc-inbound-fullscreen-messages>
 
   <div class="sep"></div>
 

@@ -1394,4 +1394,7 @@ export class VvcContactWrap {
   upgradeCbnToChat() {
     this.uiService.upgradeCbnToChat();
   }
+  upgradeInboundToChat() {
+    this.uiService.upgradeInboundToChat();
+  }
 }

@@ -45,6 +45,7 @@ export const WIDGET_UPDATE_REMOTE_CAPS    = '[Widget] Update Remote Capabilities
 export const WIDGET_UPDATE_LOCAL_CAPS     = '[Widget] Update Local Capabilities';
 export const WIDGET_UPLOAD_COMPLETED      = '[Widget] Upload Completed';
 export const WIDGET_UPGRADE_CBN_TO_CHAT   = '[Widget] Upgrade Cbn to Chat';
+export const WIDGET_UPGRADE_INBOUND_TO_CHAT = '[Widget] Upgrade Inbound to Chat';
 export const WIDGET_WEBLEAD_SENT          = '[Widget] Weblead Sent';
 
 
@@ -203,6 +204,9 @@ export class WidgetUpdateLocalCaps implements Action {
 export class WidgetUpgradeCbnToChat implements Action {
   readonly type = WIDGET_UPGRADE_CBN_TO_CHAT;
 }
+export class WidgetUpgradeInboundToChat implements Action {
+  readonly type = WIDGET_UPGRADE_INBOUND_TO_CHAT;
+}
 export class WidgetWebleadSent implements Action {
   readonly type = WIDGET_WEBLEAD_SENT;
 }
@@ -251,5 +255,6 @@ export type WidgetActions
   | WidgetUploadCompleted
   | WidgetUiReady
   | WidgetUpgradeCbnToChat
+  | WidgetUpgradeInboundToChat
   | WidgetWebleadSent
   ;

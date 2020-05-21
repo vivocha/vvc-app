@@ -358,6 +358,9 @@ export class AppComponent implements OnInit {
   upgradeCbnToChat() {
     this.interactionService.upgradeCbnToChat();
   }
+  upgradeInboundToChat() {
+    this.interactionService.upgradeInboundToChat();
+  }
   videoToggle(show) {
     this.interactionService.toggleVideo(show);
   }
