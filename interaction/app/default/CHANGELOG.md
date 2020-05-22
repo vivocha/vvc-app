@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.8](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.7...@vivocha/client-interaction@7.5.8) (2020-05-22)
+
+
+### Bug Fixes
+
+* **acks:** warning acks now visible only if acks are shown by activating vars ([7c3786a](https://github.com/vivocha/vvc-app/commit/7c3786ae6b28c192d776d123a0207c9ca78392fe))
+
+
+
+
+
 ## [7.5.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.6...@vivocha/client-interaction@7.5.7) (2020-05-21)
 
 
