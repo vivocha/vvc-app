@@ -998,8 +998,10 @@ export class VvcContactWrap {
         this.zone.run(() => {
           if (!err) {
             this.messageService.addLocalMessage(reply.action.title, msgId, false, localTs);
-            this.setAckCheck(msgId, 'ackIsLate1', 3000);
-            this.setAckCheck(msgId, 'ackIsLate2', 6000);
+            if (this.context.variables.showAcks) {
+              this.setAckCheck(msgId, 'ackIsLate1', 3000);
+              this.setAckCheck(msgId, 'ackIsLate2', 6000);
+            }
           }
         });
       });
@@ -1181,8 +1183,10 @@ export class VvcContactWrap {
           this.zone.run(() => {
             if (!err) {
               this.messageService.addLocalMessage(text, msgId, false, localTs);
-              this.setAckCheck(msgId, 'ackIsLate1', 3000);
-              this.setAckCheck(msgId, 'ackIsLate2', 6000);
+              if (this.context.variables.showAcks) {
+                this.setAckCheck(msgId, 'ackIsLate1', 3000);
+                this.setAckCheck(msgId, 'ackIsLate2', 6000);
+              }
             }
           });
         });
