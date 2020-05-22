@@ -1391,7 +1391,10 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
         .msg-warnings {
           position: relative;
           top: 2px;
-          display: inline;
+          display: none;
+          @if ($showAcks == true) {
+            display: inline;
+          }
         }
         .msg-acks {
           position: relative;
