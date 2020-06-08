@@ -57,6 +57,8 @@ export class VvcContactWrap {
 
   recontactDone: boolean = false;
 
+  conversationIdle: boolean = false;
+
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -155,8 +157,25 @@ export class VvcContactWrap {
   inboundStatusChanged(id, info) {
     this.uiService.setInboundState(id);
   }
-  checkForTranscript() {
-    const transcript = this.contact.contact.transcript;
+  async checkForTranscript() {
+    let transcript = this.contact.contact.transcript;
+    this.printTranscript(transcript);
+
+    // TODO load asyncronously and only if needed
+    if (this.contact.contact.conv_id && this.contact.contact.cust_verified) { // has token, get conversation and previoous contacts
+      const conv_id = this.contact.contact.conv_id;
+      const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+      const conversation = await this.vivocha.pageRequest('getConversation', conv_id);
+
+      conversation.previousContacts.forEach(async pcontact => {
+        const cid = pcontact.id;
+        const transcript = await this.vivocha.fetch(`conversations/${conv_id}/transcript/${cid}?tok=${customerToken}`);
+        this.printTranscript(transcript);
+      });
+    }
+  }
+  // TODO move down following alphabetical order
+  printTranscript(transcript) {
     for (const m in transcript) {
       const msg = transcript[m];
       switch (msg.type) {
@@ -229,7 +248,7 @@ export class VvcContactWrap {
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
       this.logger.log('pre-routing callback. opts:', opts);
       this.interactionStart = +new Date();
-      const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
+      const timeout = (this.vivocha.dot(this.context, 'routing.dissuasionTimeout') || 60) * 1000;
       this.dissuasionTimer = setTimeout(() => {
         this.leave('dissuasion').then(() => {
           this.setRecallOrLeave('timeout', 'dissuasion');
@@ -388,6 +407,8 @@ export class VvcContactWrap {
           }
         });
       }
+    } else if (this.isInConversation()) {
+      this.resumeConversation(context);
     } else {
       this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionCompleted) => {
         this.logger.log('onDataCollectionCompleted. data:', data);
@@ -466,6 +487,9 @@ export class VvcContactWrap {
   }
   isRecallContact() {
     return false;
+  }
+  isInConversation() {
+    return !!this.context && !!this.context.conversationId;
   }
   isInPersistence() {
     return !!this.context && !!this.context.persistenceId;
@@ -729,6 +753,11 @@ export class VvcContactWrap {
     return contactHandlers;
   }
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+    if (this.conversationIdle) {
+      const contactOptions: { data: any[], nick?: string } = { data: [] };
+      this.conversationIdle = false;
+      this.createContact(contactOptions);
+    }
     (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
     this.setDimension(dim);
   }
@@ -1127,6 +1156,11 @@ export class VvcContactWrap {
         }, 2000);
       });
     });
+  }
+  resumeConversation(context: any) {
+    this.track('resuming conversation');
+    this.uiService.setMinimizedState();
+    this.conversationIdle = true;
   }
   sendAttachment(upload) {
     this.uiService.setUploading();
