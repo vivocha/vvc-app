@@ -160,14 +160,14 @@ export class VvcContactWrap {
   async checkForTranscript() {
     let transcript = this.contact.contact.transcript;
     this.printTranscript(transcript);
-
+    console.log('checkTranscript', this.contact.contact.conv_id, this.contact.contact.cust_verified);
     // TODO load asyncronously and only if needed
     if (this.contact.contact.conv_id && this.contact.contact.cust_verified) { // has token, get conversation and previoous contacts
       const conv_id = this.contact.contact.conv_id;
       const customerToken = await this.vivocha.pageRequest('getCustomerToken');
       const conversation = await this.vivocha.pageRequest('getConversation', conv_id);
 
-      conversation.previousContacts.forEach(async pcontact => {
+      conversation.previousContacts && conversation.previousContacts.forEach(async pcontact => {
         const cid = pcontact.id;
         const transcript = await this.vivocha.fetch(`conversations/${conv_id}/transcript/${cid}?tok=${customerToken}`);
         this.printTranscript(transcript);
@@ -756,6 +756,8 @@ export class VvcContactWrap {
     if (this.conversationIdle) {
       const contactOptions: { data: any[], nick?: string } = { data: [] };
       this.conversationIdle = false;
+      this.dcService.setResolved();
+      this.uiService.showQueuePanel();
       this.createContact(contactOptions);
     }
     (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
