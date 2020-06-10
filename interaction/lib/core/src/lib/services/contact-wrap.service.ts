@@ -160,7 +160,6 @@ export class VvcContactWrap {
   async checkForTranscript() {
     let transcript = this.contact.contact.transcript;
     this.printTranscript(transcript);
-    console.log('checkTranscript', this.contact.contact.conv_id, this.contact.contact.cust_verified);
     // TODO load asyncronously and only if needed
     if (this.contact.contact.conv_id && this.contact.contact.cust_verified) { // has token, get conversation and previoous contacts
       const conv_id = this.contact.contact.conv_id;
@@ -169,6 +168,7 @@ export class VvcContactWrap {
 
       conversation.previousContacts && conversation.previousContacts.forEach(async pcontact => {
         const cid = pcontact.id;
+        this.agent = pcontact.agentInfo;
         const transcript = await this.vivocha.fetch(`conversations/${conv_id}/transcript/${cid}?tok=${customerToken}`);
         this.printTranscript(transcript);
       });
