@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.9](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.8...@vivocha/client-interaction@7.5.9) (2020-06-10)
+
+
+### Bug Fixes
+
+* **conversation:** fix positioning and queue state on conversation ([a607bf9](https://github.com/vivocha/vvc-app/commit/a607bf9206e1cbbe0d089a3fd7f5b9d7596d9fde))
+
+
+
+
+
 ## [7.5.8](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.7...@vivocha/client-interaction@7.5.8) (2020-05-22)
 
 
