@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.0...@vivocha/client-interaction-core@7.6.1) (2020-06-10)
+
+
+### Bug Fixes
+
+* **core:** fix bug on associating the correct sender of previous contacts ([19c8aa8](https://github.com/vivocha/widgets/commit/19c8aa87fdc365f80c62c4b19291a5ee4bf6b3fe))
+
+
+
+
+
 # [7.6.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.8...@vivocha/client-interaction-core@7.6.0) (2020-06-10)
 
 
