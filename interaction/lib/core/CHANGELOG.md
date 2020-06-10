@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.6.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.8...@vivocha/client-interaction-core@7.6.0) (2020-06-10)
+
+
+### Bug Fixes
+
+* **conversation:** fix positioning and queue state on conversation ([a607bf9](https://github.com/vivocha/widgets/commit/a607bf9206e1cbbe0d089a3fd7f5b9d7596d9fde))
+
+
+### Features
+
+* **core:** very basic conversation ([dcf9a8e](https://github.com/vivocha/widgets/commit/dcf9a8ef87bd8e3afc885c877d91caaa6dffe437))
+
+
+
+
+
 ## [7.5.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.5.7...@vivocha/client-interaction-core@7.5.8) (2020-05-22)
 
 
