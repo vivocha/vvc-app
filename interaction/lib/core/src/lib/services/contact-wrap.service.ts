@@ -1080,84 +1080,96 @@ export class VvcContactWrap {
     this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
     this.uiService.setOfferRejected();
   }
-  resumeContact(context: any) {
-    this.track('resuming contact');
-    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+  async resumeContact(context: any) {
+    try {
+      this.track('resuming contact');
+      const contactData = await this.vivocha.dataRequest('getData', 'persistence.contact');
       this.track('resuming getData');
-      this.vivocha.resumeContact(contactData, this.mapContact()).then((contact) => {
-        this.track('resumed contact');
-        this.interactionStart = +new Date(contact.contact.ts);
-        if (contact.contact.agentInfo || (contact.contact.transcript && contact.contact.transcript.find(m => m.agent))) {
+      const contact = await this.vivocha.resumeContact(contactData, this.mapContact());
+      this.track('resumed contact');
+      //const conv_id = contact.contact.conv_id;
+      //const conversation = conv_id ? await this.vivocha.pageRequest('getConversation', conv_id) : undefined;
+      this.interactionStart = +new Date(contact.contact.ts);
+      let agentInfo;
+      if (contact.contact.agentInfo) {
+        this.hasReceivedMsgs = true;
+        agentInfo = this.contact.contact.agentInfo
+      } else if (contact.contact.transcript) {
+        var agentMsg = contact.contact.transcript.find(m => m.agent);
+        if (agentMsg) {
           this.hasReceivedMsgs = true;
+          agentInfo = {
+            id: agentMsg.from_id,
+            nick: agentMsg.nick,
+            bot: agentMsg.is_bot,
+            avatar: agentMsg.avatar
+          }
         }
-        this.zone.run(() => {
-          this.contact = contact;
-          this.mapContactActions();
-          this.contact.getLocalCapabilities().then((caps) => {
-            this.uiService.setLocalCaps(caps);
-          });
+      }
+      this.zone.run(() => {
+        this.contact = contact;
+        this.mapContactActions();
+        this.contact.getLocalCapabilities().then((caps) => {
+          this.uiService.setLocalCaps(caps);
         });
-        this.vivocha.pageRequest('interactionCreated', contact);
-
-        this.interactionReady();
-
-        this.zone.run(() => {
-          this.uiService.initializeProtocol(context, {
-            initialOffer: contact.initial_offer
-          });
-          this.contact.getMedia().then((media) => {
-            this.zone.run(() => {
-              const agentInfo = this.contact.contact.agentInfo;
-              this.logger.log('LOCAL JOIN', agentInfo, this.contact);
-              if (agentInfo) {
-                this.uiService.setUiReady();
-                const agent: AgentState = {
-                  id: agentInfo.id,
-                  nick: agentInfo.nick,
-                  is_bot: !!agentInfo.bot,
-                  is_agent: !agentInfo.bot,
-                };
-                if (agentInfo.avatar) {
-                  agent.avatar = agentInfo.avatar;
-                } else if (this.context.variables.agentAvatarDefault) {
-                  agent.avatar = this.context.variables.agentAvatarDefault;
-                }
-                this.agent = agent;
-                this.uiService.setAgent(agent);
-                if (this.context.variables.showAgentInfoOnTopBar) {
-                  this.uiService.setTopBarWithAgentInfo(agent);
-                } else {
-                  this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
-                }
-                this.protocolService.setMediaChange(media);
-                // TODO remove is_bot check once the restore media is able to detect the capabilitites from bot
-                if (Object.keys(media).length > 1 || (this.agent && this.agent.is_bot)) {
-                  this.uiService.initializeMedia(media);
-                } else {
-                  this.uiService.setMinimizedState();
-                }
-                this.checkForTranscript();
-                this.sendWelcomeMessage();
-              } else {
-                this.dcService.setResolved();
-                this.uiService.setUiReady();
-                this.uiService.showQueuePanel();
-                this.track('queue screen - resume');
-              }
-            });
-          });
-        });
-
-      }, (err) => {
-        this.vivocha.pageRequest('interactionFailed', err.message);
-        this.uiService.setCreationFailed();
-        this.track('resume failed');
-        setTimeout(() => {
-          this.closeApp();
-          this.track('iframe app removed');
-        }, 2000);
       });
-    });
+      this.vivocha.pageRequest('interactionCreated', contact);
+      this.interactionReady();
+
+      this.zone.run(async () => {
+        this.uiService.initializeProtocol(context, {
+          initialOffer: contact.initial_offer
+        });
+        const media = await this.contact.getMedia();
+        this.zone.run(() => {
+          this.logger.log('LOCAL JOIN', agentInfo, this.contact);
+          if (agentInfo) {
+            this.uiService.setUiReady();
+            const agent: AgentState = {
+              id: agentInfo.id,
+              nick: agentInfo.nick,
+              is_bot: !!agentInfo.bot,
+              is_agent: !agentInfo.bot,
+            };
+            if (agentInfo.avatar) {
+              agent.avatar = agentInfo.avatar;
+            } else if (this.context.variables.agentAvatarDefault) {
+              agent.avatar = this.context.variables.agentAvatarDefault;
+            }
+            this.agent = agent;
+            this.uiService.setAgent(agent);
+            if (this.context.variables.showAgentInfoOnTopBar) {
+              this.uiService.setTopBarWithAgentInfo(agent);
+            } else {
+              this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
+            }
+            this.protocolService.setMediaChange(media);
+            // TODO remove is_bot check once the restore media is able to detect the capabilitites from bot
+            if (Object.keys(media).length > 1 || (this.agent && this.agent.is_bot)) {
+              this.uiService.initializeMedia(media);
+            } else {
+              this.uiService.setMinimizedState();
+            }
+            this.checkForTranscript();
+            this.sendWelcomeMessage();
+          } else {
+            this.dcService.setResolved();
+            this.uiService.setUiReady();
+            this.uiService.showQueuePanel();
+            this.track('queue screen - resume');
+          }
+        });
+      });
+    } catch (err) {
+      console.error(err);
+      this.vivocha.pageRequest('interactionFailed', err.message);
+      this.uiService.setCreationFailed();
+      this.track('resume failed');
+      setTimeout(() => {
+        this.closeApp();
+        this.track('iframe app removed');
+      }, 2000);
+    }
   }
   resumeConversation(context: any) {
     this.track('resuming conversation');
