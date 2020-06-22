@@ -728,11 +728,17 @@ export class VvcContactWrap {
       },
       {
         event: 'transferred',
-        handler: () => {
+        handler: (info) => {
+          this.logger.log('transferred', info);
           this.zone.run(() => {
-            this.track('transferred');
-            this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
-            this.setTransferTimer();
+            if (info.rerouted) {
+              this.logger.log('rerouted', info);
+              this.track('rerouted');  
+            } else {
+              this.track('transferred');
+              this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
+              this.setTransferTimer();
+            }
           });
         }
       }
