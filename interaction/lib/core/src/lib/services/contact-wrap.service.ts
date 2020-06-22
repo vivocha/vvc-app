@@ -1093,7 +1093,7 @@ export class VvcContactWrap {
       let agentInfo;
       if (contact.contact.agentInfo) {
         this.hasReceivedMsgs = true;
-        agentInfo = this.contact.contact.agentInfo
+        agentInfo = contact.contact.agentInfo
       } else if (contact.contact.transcript) {
         var agentMsg = contact.contact.transcript.find(m => m.agent);
         if (agentMsg) {
@@ -1171,10 +1171,19 @@ export class VvcContactWrap {
       }, 2000);
     }
   }
-  resumeConversation(context: any) {
+  async resumeConversation(context: any) {
     this.track('resuming conversation');
     this.uiService.setMinimizedState();
     this.conversationIdle = true;
+
+    const conversation = await this.vivocha.pageRequest('getConversation', context.conversationId);
+    if (conversation && conversation.previousContacts && conversation.previousContacts.length) {
+      const lastContact = conversation.previousContacts[conversation.previousContacts.length - 1];
+      this.logger.log('resumeConversation lastContact', lastContact);
+      if (lastContact.unread && lastContact.unread.visitor) {
+        for (let i = 0; i < lastContact.unread.visitor; i++) this.uiService.newMessageReceived();
+      }
+    }    
   }
   sendAttachment(upload) {
     this.uiService.setUploading();
