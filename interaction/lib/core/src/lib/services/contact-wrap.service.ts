@@ -888,7 +888,19 @@ export class VvcContactWrap {
     }
   }
   onLeft(obj) {
-    if (obj.channels && obj.channels.user !== undefined && obj.channels.user === 0 && obj.autoLeave === false) {
+    this.logger.log('onLeft', obj);
+    if (this.isClosed) {
+      this.logger.log('onLeft already closed');
+    } else if (obj.vvcu) {
+      this.logger.log('onLeft left by vvcu (other window/channel)', obj);
+      this.zone.run(() => {
+        this.uiService.setClosedByVisitor();
+        this.track('closed by visitor');
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
+        this.isClosed = true;
+        this.vivocha.pageRequest('interactionClosed', obj.reason || 'closed');
+      });
+    } else if (obj.channels && obj.channels.user !== undefined && obj.channels.user === 0 && obj.autoLeave === false) {
       this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
     } else if (
       (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) ||
@@ -908,17 +920,22 @@ export class VvcContactWrap {
     }
   }
   onCleared(obj){
-    this.leave('remote').then(() => {
-      this.zone.run(() => {
-        this.uiService.setClosedByAgent();
-        this.track('cleared');
-        this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
-
-        this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
-        this.isClosed = true;
-        this.vivocha.pageRequest('interactionClosed', 'closed');
+    this.logger.log('onCleared', obj);
+    if (this.isClosed) {
+      this.logger.log('onCleared already closed');
+    } else {
+      this.leave('remote').then(() => {
+        this.zone.run(() => {
+          this.uiService.setClosedByAgent();
+          this.track('cleared');
+          this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
+  
+          this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+          this.isClosed = true;
+          this.vivocha.pageRequest('interactionClosed', 'closed');
+        });
       });
-    });
+    }
   }
   onLocalJoin(join) {
     this.contact.getRemoteCapabilities().then(caps => {
