@@ -8,6 +8,7 @@ import {
   WidgetClosedByAgent,
   WidgetClosedByVisitor,
   WidgetContactCreationFailed,
+  WidgetContactCreationNoAgents,
   WidgetInitContext,
   WidgetInitProtocol,
   WidgetSetAgent,
@@ -145,8 +146,12 @@ export class VvcUiService {
   setCloseModal(show: boolean) {
     this.store.dispatch(new WidgetShowClosePanel(show));
   }
-  setCreationFailed() {
-    this.store.dispatch(new WidgetContactCreationFailed());
+  setCreationFailed(event?) {
+    if (event === 'noAgents') {
+      this.store.dispatch(new WidgetContactCreationNoAgents());
+    } else {
+      this.store.dispatch(new WidgetContactCreationFailed());
+    }
   }
   setDataCollectionCompleted(opt, dcType: string) {
     // this.store.dispatch(new DataCollectionCompleted(opt))

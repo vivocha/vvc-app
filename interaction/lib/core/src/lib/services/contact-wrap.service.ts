@@ -1407,8 +1407,8 @@ export class VvcContactWrap {
           this.uiService.setDissuasion();
           this.track('dissuaded');
         } else {
-          this.uiService.setCreationFailed();
-          this.track('creation failed', reason);
+          this.uiService.setCreationFailed(event);
+          this.track('creation failed', {reason,event});
         }
       }
     });

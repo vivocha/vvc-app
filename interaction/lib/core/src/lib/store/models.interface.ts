@@ -135,6 +135,7 @@ export interface BaseMessage {
   type: string;
   ts: Date;
   agent?: any;
+  avatar?: string;
   isAgent?: boolean;
   isLast?: string;
   isFirst?: string;
@@ -189,6 +190,7 @@ export interface UiState {
   connectedWithAgent: boolean;
   connectedWithBot: boolean;
   contactCreationFailed: boolean;
+  contactCreationNoAgents: boolean;
   contactStarted: boolean;
   hasError: boolean;
   hasMultipleVideoDevice: boolean;

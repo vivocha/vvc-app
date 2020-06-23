@@ -34,6 +34,16 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       });
       return Object.assign({}, state, { context: context });
     }
+    case fromWidget.WIDGET_CONTACT_NO_AGENTS: {
+      const context = Object.assign({}, state.context, {
+        isUiLoaded: true,
+        contactCreationFailed: true,
+        contactCreationNoAgents: true,
+        hasError: true,
+        showQueuePanel: true
+      });
+      return Object.assign({}, state, { context: context });
+    }
     case fromWidget.WIDGET_HIDE_QUEUE_FOR_CHAT: {
       const chatState: ChatState = {
         isVisible: true,
@@ -406,6 +416,7 @@ export const getUiStateRedux = (
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
       contactCreationFailed: widgetState.context.contactCreationFailed,
+      contactCreationNoAgents: widgetState.context.contactCreationNoAgents,
       contactStarted: widgetState.protocol.contactStarted,
       hasError: widgetState.context.hasError,
       hasMultipleVideoDevice: canSwitchCamera,
