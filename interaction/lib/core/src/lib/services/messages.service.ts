@@ -37,6 +37,9 @@ export class VvcMessageService {
     if (message.read) {
       msg.read = message.read;
     }
+    if (message.from_avatar) {
+      msg.avatar = message.from_avatar;
+    }
     this.store.dispatch(new NewMessage(msg));
     return id;
   }
