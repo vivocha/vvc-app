@@ -1199,8 +1199,10 @@ export class VvcContactWrap {
     this.uiService.setMinimizedState();
     this.conversationIdle = true;
 
+    const customerToken = await this.vivocha.pageRequest('getCustomerToken');
     const conversation = await this.vivocha.pageRequest('getConversation', context.conversationId);
-    if (conversation && conversation.previousContacts && conversation.previousContacts.length) {
+
+    if (customerToken && conversation && conversation.previousContacts && conversation.previousContacts.length) {
       const lastContact = conversation.previousContacts[conversation.previousContacts.length - 1];
       this.logger.log('resumeConversation lastContact', lastContact);
       if (lastContact.unread && lastContact.unread.visitor) {
