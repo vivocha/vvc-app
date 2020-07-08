@@ -758,13 +758,22 @@ export class VvcContactWrap {
 
     return contactHandlers;
   }
-  maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+  async maximizeWidget(isFullScreen: boolean, dim: Dimension) {
     if (this.conversationIdle) {
-      const contactOptions: { data: any[], nick?: string } = { data: [] };
       this.conversationIdle = false;
-      this.dcService.setResolved();
-      this.uiService.showQueuePanel();
-      this.createContact(contactOptions);
+
+      const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+      const conversation = await this.vivocha.pageRequest('getConversation', this.context.conversationId);
+
+      if (customerToken && conversation && conversation.currentContact) {
+        await this.vivocha.dataRequest('setData', 'persistence.contact', conversation.currentContact);
+        this.resumeContact(this.context);
+      } else {
+        const contactOptions: { data: any[], nick?: string } = { data: [] };
+        this.dcService.setResolved();
+        this.uiService.showQueuePanel();
+        this.createContact(contactOptions);
+      }
     }
     (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
     this.setDimension(dim);
@@ -1208,7 +1217,7 @@ export class VvcContactWrap {
       if (lastContact.unread && lastContact.unread.visitor) {
         for (let i = 0; i < lastContact.unread.visitor; i++) this.uiService.newMessageReceived();
       }
-    }    
+    }
   }
   sendAttachment(upload) {
     this.uiService.setUploading();
