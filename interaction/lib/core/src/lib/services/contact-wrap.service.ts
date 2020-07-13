@@ -58,6 +58,8 @@ export class VvcContactWrap {
   recontactDone: boolean = false;
 
   conversationIdle: boolean = false;
+  conversationCheckTimer;
+  conversationCheckTimeout = 10000;
 
   constructor(
     private store: Store<AppState>,
@@ -156,6 +158,24 @@ export class VvcContactWrap {
   }
   inboundStatusChanged(id, info) {
     this.uiService.setInboundState(id);
+  }
+  async checkConversationState() {
+    const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+    if (customerToken) {
+      const conversation = await this.vivocha.pageRequest('getConversation', this.context.conversationId);
+
+      if (conversation && conversation.currentContact) {
+        const lastContact = conversation.currentContact;
+        if (lastContact.unread && lastContact.unread.visitor) {
+          for (let i = 0; i < lastContact.unread.visitor; i++) this.uiService.newMessageReceived();
+        }
+        this.conversationIdle = false;
+        await this.vivocha.dataRequest('setData', 'persistence.contact', conversation.currentContact);
+        this.resumeContact(this.context);
+      } else {
+        this.conversationCheckTimer = setTimeout(() => this.checkConversationState(), this.conversationCheckTimeout);
+      }
+    }
   }
   async checkForTranscript() {
     let transcript = this.contact.contact.transcript;
@@ -761,6 +781,7 @@ export class VvcContactWrap {
   async maximizeWidget(isFullScreen: boolean, dim: Dimension) {
     if (this.conversationIdle) {
       this.conversationIdle = false;
+      clearTimeout(this.conversationCheckTimer);
 
       const customerToken = await this.vivocha.pageRequest('getCustomerToken');
       const conversation = await this.vivocha.pageRequest('getConversation', this.context.conversationId);
@@ -1218,6 +1239,8 @@ export class VvcContactWrap {
         for (let i = 0; i < lastContact.unread.visitor; i++) this.uiService.newMessageReceived();
       }
     }
+
+    this.conversationCheckTimer = setTimeout(() => this.checkConversationState(), this.conversationCheckTimeout);
   }
   sendAttachment(upload) {
     this.uiService.setUploading();
