@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.1...@vivocha/client-interaction-core@7.6.2) (2020-09-03)
+
+
+### Bug Fixes
+
+* **lib:** check for conversation update or outbound every 10s ([b8bff6a](https://github.com/vivocha/widgets/commit/b8bff6a95713536ca6b9032223a7826f3ecdc4ff))
+* **lib:** check for currentContact before creating new on conversation idle state ([6c54f2c](https://github.com/vivocha/widgets/commit/6c54f2c10ad9b21eb9665e93107c721df4bfe050))
+* **lib:** disable transfer timeout and message on rerouted contact ([a98a465](https://github.com/vivocha/widgets/commit/a98a4656aae04924b707e8a943f29e5c4c020a81))
+* **lib:** manage from_avatar in message ([371e132](https://github.com/vivocha/widgets/commit/371e1326a2697cd7ce2734efdbbe02b190939844))
+* **lib:** manage left/clear events generated from a different window ([800cdcd](https://github.com/vivocha/widgets/commit/800cdcd30bd846cb529f98eed6ce83ccef1b508f))
+* **lib:** manage no agents from contact creation ([80b8101](https://github.com/vivocha/widgets/commit/80b81016724786f2176d7fbabd92e72e5cd5e527))
+* **lib:** retrieve agent info from previous message on resume ([2fa64aa](https://github.com/vivocha/widgets/commit/2fa64aa069d64244bf1d7a79e78d709d5653947a))
+* **lib:** show unread badge on conversation idle ([a23ac89](https://github.com/vivocha/widgets/commit/a23ac8934b5bdd0adbce86ea1720acc3c7c3aa17))
+* **lib:** show unread badge only with customerToken ([f2a8020](https://github.com/vivocha/widgets/commit/f2a8020b73a715d78cfcc5e05fd5a7a35ce74b08))
+
+
+
+
+
 ## [7.6.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.0...@vivocha/client-interaction-core@7.6.1) (2020-06-10)
 
 
