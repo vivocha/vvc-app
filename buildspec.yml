@@ -7,8 +7,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 12.x
-      docker: 18
+      nodejs: 12
     commands:
       - export PATH=$PATH:./node_modules/.bin
       - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
@@ -30,12 +29,11 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      #- git checkout ${CODEBUILD_RESOLVED_SOURCE_VERSION}
-      #- git --no-pager status
-      #- git --no-pager diff
-      #- git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
-      #- git subtree push --prefix=interaction/app/default app master
-      #- ./pushtags.sh
+      - git config --global user.email "dev@vivocha.com"
+      - git config --global user.name "CodeBuild"
+      - git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
+      - git subtree push --prefix=interaction/app/default app master
+      - ./pushtags.sh
 cache:
   paths:
     - interaction/app/default/node_modules
