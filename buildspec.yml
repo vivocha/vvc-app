@@ -10,6 +10,7 @@ phases:
       nodejs: 12
     commands:
       - export PATH=$PATH:./node_modules/.bin
+      - npm config set package-lock false
       - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
       - npm set unsafe-perm true
   pre_build:
@@ -31,7 +32,7 @@ phases:
       - echo Build completed on `date`
       - git config --global user.email "dev@vivocha.com"
       - git config --global user.name "CodeBuild"
-      - git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app.git
+      - if [ $(git remote -v | grep -e ^app | wc -l) -eq 0 ]; then git remote add -f app https://${GH_TOKEN}@github.com/vivocha/vvc-app; fi;
       - git subtree push --prefix=interaction/app/default app master
       - ./pushtags.sh
 cache:
