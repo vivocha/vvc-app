@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.3...@vivocha/client-interaction-layout@7.5.4) (2020-09-03)
+
+
+### Bug Fixes
+
+* **lib:** manage from_avatar in message ([371e132](https://github.com/vivocha/widgets/commit/371e1326a2697cd7ce2734efdbbe02b190939844))
+* **lib:** manage no agents from contact creation ([80b8101](https://github.com/vivocha/widgets/commit/80b81016724786f2176d7fbabd92e72e5cd5e527))
+
+
+
+
+
 ## [7.5.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.2...@vivocha/client-interaction-layout@7.5.3) (2020-05-21)
 
 

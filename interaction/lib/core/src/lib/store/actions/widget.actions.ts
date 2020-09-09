@@ -4,6 +4,7 @@ import {ProtocolState, AgentState, TopBarState, CbnStatus, InboundStatus} from '
 export const WIDGET_CLOSED_BY_AGENT       = '[Widget] Closed by Agent';
 export const WIDGET_CLOSED_BY_VISITOR     = '[Widget] Closed by Visitor';
 export const WIDGET_CONTACT_FAILED        = '[Widget] Contact Failed';
+export const WIDGET_CONTACT_NO_AGENTS     = '[Widget] Contact Failed No Agents';
 export const WIDGET_HIDE_QUEUE_FOR_CHAT   = '[Widget] Hide Queue For Chat';
 export const WIDGET_INCOMING_MEDIA        = '[Widget] Incoming Media';
 export const WIDGET_INIT_CHAT             = '[Widget] Init Chat';
@@ -57,6 +58,9 @@ export class WidgetClosedByVisitor implements Action {
 }
 export class WidgetContactCreationFailed implements Action {
   readonly type = WIDGET_CONTACT_FAILED;
+}
+export class WidgetContactCreationNoAgents implements Action {
+  readonly type = WIDGET_CONTACT_NO_AGENTS;
 }
 export class WidgetHideQueueForChat implements Action {
   readonly type = WIDGET_HIDE_QUEUE_FOR_CHAT;
@@ -214,6 +218,7 @@ export type WidgetActions
   = WidgetClosedByAgent
   | WidgetClosedByVisitor
   | WidgetContactCreationFailed
+  | WidgetContactCreationNoAgents
   | WidgetHideQueueForChat
   | WidgetIncomingMedia
   | WidgetInitChat

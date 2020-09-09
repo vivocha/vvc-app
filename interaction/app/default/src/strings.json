@@ -49,7 +49,7 @@
       },
       "it": {
         "value": "Seleziona un'app di interazione",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "対話用のアプリをお選びください",
@@ -78,7 +78,7 @@
       },
       "it": {
         "value": "Notifiche sonore",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "音でお知らせ",
@@ -107,7 +107,7 @@
       },
       "it": {
         "value": "Chat Balloon",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "チャット吹き出し",
@@ -136,7 +136,7 @@
       },
       "it": {
         "value": "Chiamata Rifiutata",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "通話拒否",
@@ -165,7 +165,7 @@
       },
       "it": {
         "value": "Messaggi call me back",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "折り返し依頼メッセージ",
@@ -252,7 +252,7 @@
       },
       "it": {
         "value": "Data Collection",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "データ収集",
@@ -281,7 +281,7 @@
       },
       "it": {
         "value": "Colori",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "色",
@@ -310,7 +310,7 @@
       },
       "it": {
         "value": "Selettore CSS",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "CSSセレクター",
@@ -322,7 +322,7 @@
     "id": "META.GROUPS.customCss",
     "values": {
       "de": {
-        "value": "CSS Standard",
+        "value": "CSS aangepaste",
         "state": "final"
       },
       "en": {
@@ -334,12 +334,12 @@
         "state": "final"
       },
       "fr": {
-        "value": "CSS Custom",
+        "value": "CSS custom",
         "state": "final"
       },
       "it": {
-        "value": "CSS Custom",
-        "state": "needs-review"
+        "value": "CSS personalizzato",
+        "state": "final"
       },
       "ja": {
         "value": "CSSカスタム",
@@ -367,8 +367,8 @@
         "state": "final"
       },
       "it": {
-        "value": "Data Collection",
-        "state": "needs-review"
+        "value": "Raccolta Dati",
+        "state": "final"
       },
       "ja": {
         "value": "データ収集",
@@ -380,15 +380,15 @@
     "id": "META.GROUPS.DimensionAndPosition",
     "values": {
       "de": {
-        "value": "Größe und Position",
+        "value": "Größe und position",
         "state": "final"
       },
       "en": {
-        "value": "Dimensions and positions",
+        "value": "Dimensions and position",
         "state": "final"
       },
       "es": {
-        "value": "Dimensiones y posiciones",
+        "value": "Dimensiones y posicionamiento",
         "state": "final"
       },
       "fr": {
@@ -397,7 +397,7 @@
       },
       "it": {
         "value": "Dimensioni e posizionamento",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "サイズと位置",
@@ -439,7 +439,7 @@
       },
       "it": {
         "value": "Pannello Emoji",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "絵文字パネル",
@@ -467,8 +467,8 @@
         "state": "final"
       },
       "it": {
-        "value": "File ed emoji",
-        "state": "needs-review"
+        "value": "Files ed emoji",
+        "state": "final"
       },
       "ja": {
         "value": "ファイルと絵文字",
@@ -526,7 +526,7 @@
       },
       "it": {
         "value": "Messaggi ricezione link",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "メッセージ受信リンク",
@@ -555,7 +555,7 @@
       },
       "it": {
         "value": "Gestione Media",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "メディア管理",
@@ -642,7 +642,7 @@
       },
       "it": {
         "value": "Bottone continua",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "継続ボタン",
@@ -713,27 +713,27 @@
     "values": {
       "de": {
         "value": "Erneute Kontaktaufnahme",
-        "state": "needs-review"
+        "state": "final"
       },
       "en": {
         "value": "Recontact",
-        "state": "needs-review"
+        "state": "final"
       },
       "es": {
         "value": "Volver a contactar",
-        "state": "needs-review"
+        "state": "final"
       },
       "fr": {
         "value": "Recontacter",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Ricontatto",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "再問い合わせ",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -787,7 +787,7 @@
       },
       "it": {
         "value": "Area di testo",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "テストエリア",
@@ -903,7 +903,7 @@
       },
       "it": {
         "value": "Pannello di upload",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "アップロードパネル",
@@ -932,7 +932,7 @@
       },
       "it": {
         "value": "Voce",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "音声",
@@ -961,7 +961,7 @@
       },
       "it": {
         "value": "Agente",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "エージェント",
@@ -990,24 +990,11 @@
       },
       "it": {
         "value": "Visitatore",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "訪問者",
         "state": "final"
-      }
-    }
-  },
-  {
-    "id": "META.TABS.Inbound",
-    "values": {
-      "en": {
-        "value": "Inbound",
-        "state": "new"
-      },
-      "it": {
-        "value": "Inbound",
-        "state": "new"
       }
     }
   },
@@ -1028,7 +1015,7 @@
       },
       "fr": {
         "value": "Conversation",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Chat",
@@ -1052,16 +1039,16 @@
         "state": "final"
       },
       "es": {
-        "value": "Chat temprano",
+        "value": "Early Chat",
         "state": "final"
       },
       "fr": {
         "value": "Early Chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Early Chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "初期のチャット",
@@ -1090,11 +1077,24 @@
       },
       "it": {
         "value": "Generali",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "一般",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.TABS.Inbound",
+    "values": {
+      "en": {
+        "value": "Inbound",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Inbound",
+        "state": "needs-review"
       }
     }
   },
@@ -1119,7 +1119,7 @@
       },
       "it": {
         "value": "Stile",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "スタイル",
@@ -1148,7 +1148,7 @@
       },
       "it": {
         "value": "Chiedi conferma prima di chiudere il contatto",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "終了時に確認",
@@ -1174,11 +1174,11 @@
     "values": {
       "en": {
         "value": "Can't drag the app outside of the viewport",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Impedisci di trascinare l'app fuori dallo schermo",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -1187,11 +1187,11 @@
     "values": {
       "en": {
         "value": "CSS selector that enables drag and drop",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Selettore CSS sul quale è attivo il drag and drop",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -1372,7 +1372,7 @@
     "values": {
       "en": {
         "value": "Persistence mode",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Modalità di persistenza",
@@ -1385,11 +1385,11 @@
     "values": {
       "en": {
         "value": "The application remains in the position in which it was dragged",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "L'applicazione rimane nella posizione in cui è stata trascinata",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -1414,11 +1414,24 @@
       },
       "it": {
         "value": "Permetti al visitatore di vedere l'area dei messaggi dopo la chiusura del contatto",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "終了後、ユーザーに写しを表示",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.ACKS.SHOW",
+    "values": {
+      "en": {
+        "value": "Show message acknowledges",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza i segni di spunta di ricezione",
+        "state": "needs-review"
       }
     }
   },
@@ -1443,7 +1456,7 @@
       },
       "it": {
         "value": "Permetti al visitatore di entrare in chat prima dell'agente",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "訪問者がエージェントより先にチャットに入ることを許可",
@@ -1497,7 +1510,7 @@
       },
       "fr": {
         "value": "Avatar par défaut de l'agent",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Avatar di default per l'agente",
@@ -1642,7 +1655,7 @@
       },
       "fr": {
         "value": "Montrer la flèche dans la bulle du message chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza freccia tra balloon ed avatar nel messaggio dell'utente",
@@ -1651,32 +1664,6 @@
       "ja": {
         "value": "ユーザーのバルーン チャットメッセージに矢印を表示",
         "state": "final"
-      }
-    }
-  },
-  {
-    "id": "META.VARIABLES.CHAT.READ_ACK.SHOW",
-    "values": {
-      "en": {
-        "value": "Show message read acknowledge",
-        "state": "new"
-      },
-      "it": {
-        "value": "Visualizza quando l'agente riceve il messaggio (spunta verde)",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "META.VARIABLES.CHAT.ACKS.SHOW",
-    "values": {
-      "en": {
-        "value": "Show message acknowledges",
-        "state": "new"
-      },
-      "it": {
-        "value": "Visualizza i segni di spunta di ricezione",
-        "state": "new"
       }
     }
   },
@@ -1697,7 +1684,7 @@
       },
       "fr": {
         "value": "Montrer l'avatar du visiteur dans le message chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza avatar dell'utente nel messaggio di chat",
@@ -1706,6 +1693,19 @@
       "ja": {
         "value": "チャットメッセージにユーザーアバターを表示",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.READ_ACK.SHOW",
+    "values": {
+      "en": {
+        "value": "Show message read acknowledge",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Visualizza quando l'agente riceve il messaggio (spunta verde)",
+        "state": "needs-review"
       }
     }
   },
@@ -1784,7 +1784,7 @@
       },
       "fr": {
         "value": "Afficher le message de bienvenu quand l'agent est connecté au chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza messaggio di benvenuto quando l'agente entra in chat",
@@ -1797,28 +1797,15 @@
     }
   },
   {
-    "id": "META.VARIABLES.INBOUND.SHOW_INTERNATIONAL_NUMBER",
-    "values": {
-      "en": {
-        "value": "Display inbound number with international prefix",
-        "state": "new"
-      },
-      "it": {
-        "value": "Visualizza il numero da chiamare col prefisso internazionale",
-        "state": "new"
-      }
-    }
-  },
-  {
     "id": "META.VARIABLES.COLLECTOR_AVATAR",
     "values": {
       "en": {
         "value": "Dialog collector avatar image",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Immagine dialog collector",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -1868,7 +1855,7 @@
       },
       "fr": {
         "value": "Couleur de la BOT app",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Colore applicazione BOT",
@@ -1876,6 +1863,19 @@
       },
       "ja": {
         "value": "ボットアプリの色",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.INBOUND.SHOW_INTERNATIONAL_NUMBER",
+    "values": {
+      "en": {
+        "value": "Display inbound number with international prefix",
+        "state": "final"
+      },
+      "it": {
+        "value": "Visualizza il numero da chiamare col prefisso internazionale",
         "state": "final"
       }
     }
@@ -1897,7 +1897,7 @@
       },
       "fr": {
         "value": "Notification audio d'un message reçu",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Notifica acustica ricezione messaggio",
@@ -1930,7 +1930,7 @@
       },
       "it": {
         "value": "Nascondi il bottone di upload quando l'agente è un BOT",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "ボットと接続されている時にはアップロードボタンを隠す",
@@ -2042,7 +2042,7 @@
       },
       "fr": {
         "value": "Montrer les informations agents dans la barre du haut",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza informazioni agente nella Topbar",
@@ -2071,7 +2071,7 @@
       },
       "fr": {
         "value": "Montrer l'avatar dans la barre du hau",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Visualizza avatar nella Topbar",
@@ -2158,11 +2158,11 @@
       },
       "fr": {
         "value": "Le numéro est occupé",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Il numero di telefono è occupato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "この電話番号は話し中です",
@@ -2187,11 +2187,11 @@
       },
       "fr": {
         "value": "Le numéro est occupé",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Il numero di telefono è occupato",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "この電話番号は話し中です",
@@ -2216,11 +2216,11 @@
       },
       "fr": {
         "value": "Appel annulé avant d'être pris en charge",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Chiamata chiusa prima della risposta",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "応答前に電話が切れました　",
@@ -2245,11 +2245,11 @@
       },
       "fr": {
         "value": "Appel annulé avant d'être pris en charge",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Chiamata chiusa prima della risposta",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "応答前に電話が切れました",
@@ -2274,11 +2274,11 @@
       },
       "fr": {
         "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "L'agente {{nickname}} sta componendo il numero di telefono",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "エージェント{{nickname}}がこの電話番号をダイヤルしています",
@@ -2303,11 +2303,11 @@
       },
       "fr": {
         "value": "L'agent {{nickname}} est en train de composer le numéro de téléphone",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "L'agente {{nickname}} sta componendo il numero di telefono",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "エージェント{{nickname}}がこの電話番号をダイヤルしています",
@@ -2332,11 +2332,11 @@
       },
       "fr": {
         "value": "Malheureusement, nous ne pouvons pas donner suite à votre demande.<br/>Veuillez réessayer ultérieurement.",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Purtroppo non è stato possibile soddisfare la tua richiesta.<br /> Riprova più tardi.",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "申し訳ございません。お客様のリクエストにお答えすることができませんでした。<br/>しばらくしてからもう一度お試しください。",
@@ -2361,11 +2361,11 @@
       },
       "fr": {
         "value": "En ligne avec {{nickname}}",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "In linea con {{nickname}}",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "{{nickname}}と通話中です",
@@ -2390,11 +2390,11 @@
       },
       "fr": {
         "value": "En ligne avec {{nickname}}",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "In linea con {{nickname}}",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "{{nickname}}と通話中です",
@@ -2419,11 +2419,11 @@
       },
       "fr": {
         "value": "Notre agent a pris en charge l'appel",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Un nostro agente ha preso in carico la chiamata",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "当社のエージェントがこの通話を引き継ぎました",
@@ -2448,11 +2448,11 @@
       },
       "fr": {
         "value": "Notre agent a pris en charge l'appel",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Un nostro agente ha preso in carico la chiamata",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "当社のエージェントがこの通話を引き継ぎました",
@@ -2477,11 +2477,11 @@
       },
       "fr": {
         "value": "L'appel avec l'agent {{nickname}} est terminé",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "La chiamata con l'agente {{nickname}} è terminata",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "エージェント{{nickname}}との通話が終了しました　",
@@ -2506,11 +2506,11 @@
       },
       "fr": {
         "value": "L'appel avec l'agent {{nickname}} est terminé",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "La chiamata con l'agente {{nickname}} è terminata",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "エージェント{{nickname}}との通話が終了しました　",
@@ -2535,11 +2535,11 @@
       },
       "fr": {
         "value": "Vous avez reçu un lien",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Hai ricevuto un link",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "リンクを受信しました　",
@@ -2568,7 +2568,7 @@
       },
       "it": {
         "value": "nuovi messaggi",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "新しいメッセージ",
@@ -2593,11 +2593,11 @@
       },
       "fr": {
         "value": "Pas de réponse",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Nessuna risposta",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "応答なし",
@@ -2622,11 +2622,11 @@
       },
       "fr": {
         "value": "Pas de réponse",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Nessuna risposta",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "応答なし",
@@ -2651,11 +2651,11 @@
       },
       "fr": {
         "value": "Numéro inexistant",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Numero inesistente",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "この番号は存在しません",
@@ -2680,11 +2680,11 @@
       },
       "fr": {
         "value": "Numéro inexistant",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Numero inesistente",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "この番号は存在しません",
@@ -2697,19 +2697,19 @@
     "values": {
       "de": {
         "value": "Dein Telefon klingelt gleich. <br> Halte dein Telefon bereit",
-        "state": "needs-review"
+        "state": "final"
       },
       "en": {
         "value": "The telephone is ringing. <br> Keep your phone at your fingertips.",
-        "state": "needs-review"
+        "state": "final"
       },
       "es": {
         "value": "El teléfono está sonando",
-        "state": "needs-review"
+        "state": "final"
       },
       "fr": {
         "value": "Le téléphone est en train de sonner",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Il tuo telefono sta per squillare. <br> Tienilo a portata di mano!",
@@ -2717,7 +2717,7 @@
       },
       "ja": {
         "value": "間もなく電話が鳴ります。<br>電話を手元に置いておいてください。",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -2738,11 +2738,11 @@
       },
       "fr": {
         "value": "Le téléphone est en train de sonner",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Il telefono sta per squillare",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "間もなく電話が鳴ります",
@@ -2867,45 +2867,6 @@
     }
   },
   {
-    "id": "STRINGS.INBOUND.CLICK_TO_CALL",
-    "values": {
-      "it": {
-        "value": "Chiamaci <b>cliccando</b> il numero <b>sottostante</b>",
-        "state": "new"
-      },
-      "en": {
-        "value": "Call us by clicking the following number",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.INBOUND.COMPOSE_TO_CALL",
-    "values": {
-      "it": {
-        "value": "Chiamaci formulando sul tuo telefono il numero",
-        "state": "new"
-      },
-      "en": {
-        "value": "Call us by composing the following number on your phone",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.INBOUND.INSERT_EXT_CODE",
-    "values": {
-      "it": {
-        "value": "e successivamente digitando il codice",
-        "state": "new"
-      },
-      "en": {
-        "value": "and insert the code",
-        "state": "new"
-      }
-    }
-  },
-  {
     "id": "STRINGS.CHAT.AUTO_CHAT_FIRST_MESSAGE",
     "values": {
       "de": {
@@ -2980,7 +2941,7 @@
       },
       "fr": {
         "value": "Bonjour, <b>{{nickname}}</b> ici,<br> Comment puis je vous aider?",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Ciao sono <b>{{nickname}}</b>,<br> come posso aiutarti?",
@@ -3341,6 +3302,45 @@
     }
   },
   {
+    "id": "STRINGS.INBOUND.CLICK_TO_CALL",
+    "values": {
+      "en": {
+        "value": "Call us by clicking the following number",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chiamaci <b>cliccando</b> il numero <b>sottostante</b>",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.INBOUND.COMPOSE_TO_CALL",
+    "values": {
+      "en": {
+        "value": "Call us by composing the following number on your phone",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "Chiamaci formulando sul tuo telefono il numero",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.INBOUND.INSERT_EXT_CODE",
+    "values": {
+      "en": {
+        "value": "and insert the code",
+        "state": "needs-review"
+      },
+      "it": {
+        "value": "e successivamente digitando il codice",
+        "state": "needs-review"
+      }
+    }
+  },
+  {
     "id": "STRINGS.LINK_PUSH",
     "values": {
       "de": {
@@ -3577,11 +3577,11 @@
     "values": {
       "en": {
         "value": "Switch camera",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Cambia camera",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -3735,11 +3735,11 @@
     "values": {
       "en": {
         "value": "continue",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "continua",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -3806,11 +3806,11 @@
     "values": {
       "en": {
         "value": "The browser is preventing to reproduce the video stream, please click on continue to keep reproducing",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Il browser sta bloccando la riproduzione del video, clicca su continua per riattivare lo stream",
-        "state": "needs-review"
+        "state": "final"
       }
     }
   },
@@ -3819,7 +3819,7 @@
     "values": {
       "en": {
         "value": "The agent is asking your position",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "L'agente ha richiesto la tua posizione",
@@ -3832,7 +3832,7 @@
     "values": {
       "en": {
         "value": "The agent is asking to watch your position",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "L'agente ha richiesto la condivisione della tua posizione",
@@ -4164,7 +4164,7 @@
     "values": {
       "en": {
         "value": "You denied the permission to access to your position. If you want to change this you have to do manually in your browser's settings",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Hai negato il permesso di accedere alla tua posizione. Per cambiare questa impostazione devi accedere alle impostazioni del browser",
@@ -4177,7 +4177,7 @@
     "values": {
       "en": {
         "value": "You denied the permission to watch your position. If you want to change this you have to do manually in your browser's settings",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Hai negato la condivisione della tua posizione. Per cambiare questa impostazione devi accedere alle impostazioni del browser",
@@ -4376,7 +4376,7 @@
       },
       "fr": {
         "value": "Contact établi",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Contatto in corso",
@@ -4405,7 +4405,7 @@
       },
       "fr": {
         "value": "Cacher le chat",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Nascondi chat",
@@ -4492,7 +4492,7 @@
       },
       "fr": {
         "value": "connection en cours...",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "connessione in corso...",
@@ -4521,7 +4521,7 @@
       },
       "fr": {
         "value": "Vivocha Service client",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Vivocha Customer Care",
@@ -4766,15 +4766,15 @@
     }
   },
   {
-    "id": "STRINGS.TOOLTIP.MSG_SENT",
+    "id": "STRINGS.TOOLTIP.MSG_READ",
     "values": {
       "en": {
-        "value": "Message sent",
-        "state": "new"
+        "value": "Message read at {{ts}} from {{nick}}",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Messaggio Inviato",
-        "state": "new"
+        "value": "Messaggio letto alle {{ts}} dall'agente {{nick}}",
+        "state": "needs-review"
       }
     }
   },
@@ -4783,24 +4783,24 @@
     "values": {
       "en": {
         "value": "Message received at {{ts}}",
-        "state": "new"
+        "state": "needs-review"
       },
       "it": {
         "value": "Messaggio ricevuto alle {{ts}}",
-        "state": "new"
+        "state": "needs-review"
       }
     }
   },
   {
-    "id": "STRINGS.TOOLTIP.MSG_READ",
+    "id": "STRINGS.TOOLTIP.MSG_SENT",
     "values": {
       "en": {
-        "value": "Message read at {{ts}} from {{nick}}",
-        "state": "new"
+        "value": "Message sent",
+        "state": "needs-review"
       },
       "it": {
-        "value": "Messaggio letto alle {{ts}} dall'agente {{nick}}",
-        "state": "new"
+        "value": "Messaggio Inviato",
+        "state": "needs-review"
       }
     }
   },
@@ -4966,7 +4966,7 @@
       },
       "fr": {
         "value": "envoyer un fichier",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "invia file",
@@ -5024,7 +5024,7 @@
       },
       "fr": {
         "value": "Appel entrant de <br><b>{{nickname}}</b>",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Chiamata in arrivo da<br><b>{{nickname}}</b>",
@@ -5053,7 +5053,7 @@
       },
       "fr": {
         "value": "Nous vous connectons <br>avec <b>{{nickname}}</b>",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Ti stiamo mettendo in<br>comunicazione con <b>{{nickname}}</b>",
@@ -5082,7 +5082,7 @@
       },
       "fr": {
         "value": "nouveau messages",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "messaggi non letti",
@@ -5111,7 +5111,7 @@
       },
       "fr": {
         "value": "ouvrir le chat ",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "apri chat",
@@ -5140,7 +5140,7 @@
       },
       "fr": {
         "value": "En communication avec <br><b>{{nickname}}</b>",
-        "state": "needs-review"
+        "state": "final"
       },
       "it": {
         "value": "Sei in linea con<br><b>{{nickname}}</b>",

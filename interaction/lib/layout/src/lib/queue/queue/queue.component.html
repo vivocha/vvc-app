@@ -15,6 +15,7 @@
   <div *ngIf="context.hasError">
     <div *ngIf="!context.contactCreationFailed && !context.webleadSent" class="queue-message animated fadeInUp" [innerHtml]=" 'STRINGS.QUEUE.DISSUASION' | translate "></div>
     <div *ngIf="!context.contactCreationFailed && context.webleadSent" class="queue-message animated fadeInUp" [innerHtml]=" 'STRINGS.QUEUE.WEBLEAD_SENT' | translate "></div>
-    <div *ngIf="context.contactCreationFailed" class="queue-message animated fadeInUp" [innerHtml]=" 'STRINGS.QUEUE.CONTACT_FAILED' | translate "></div>
+    <div *ngIf="context.contactCreationFailed && !context.contactCreationNoAgents" class="queue-message animated fadeInUp" [innerHtml]=" 'STRINGS.QUEUE.CONTACT_FAILED' | translate "></div>
+    <div *ngIf="context.contactCreationFailed && context.contactCreationNoAgents" class="queue-message animated fadeInUp" [innerHtml]=" 'STRINGS.QUEUE.NO_AGENTS' | translate "></div>
   </div>
 </div>

@@ -34,6 +34,16 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       });
       return Object.assign({}, state, { context: context });
     }
+    case fromWidget.WIDGET_CONTACT_NO_AGENTS: {
+      const context = Object.assign({}, state.context, {
+        isUiLoaded: true,
+        contactCreationFailed: true,
+        contactCreationNoAgents: true,
+        hasError: true,
+        showQueuePanel: true
+      });
+      return Object.assign({}, state, { context: context });
+    }
     case fromWidget.WIDGET_HIDE_QUEUE_FOR_CHAT: {
       const chatState: ChatState = {
         isVisible: true,
@@ -132,8 +142,13 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
           (state.media.isVisible && !state.media.isMinimized) ||
           (state.context.isFullScreen && !state.chat.showOnFullScreen)
       ) {
-        const chat = Object.assign({}, state.chat, {notRead: state.chat.notRead + 1});
-        return Object.assign({}, state, {chat: chat});
+        let tmpChat: ChatState = Object.assign({}, state.chat);
+        if (state.chat) {
+          tmpChat = Object.assign(tmpChat, {notRead: state.chat.notRead + 1});
+        } else {
+          tmpChat = Object.assign(tmpChat, {notRead: 1});
+        }
+        return Object.assign({}, state, {chat: tmpChat});
       } else {
         return state;
       }
@@ -401,6 +416,7 @@ export const getUiStateRedux = (
       connectedWithAgent: widgetState.agent && widgetState.agent.is_agent,
       connectedWithBot: widgetState.agent && widgetState.agent.is_bot,
       contactCreationFailed: widgetState.context.contactCreationFailed,
+      contactCreationNoAgents: widgetState.context.contactCreationNoAgents,
       contactStarted: widgetState.protocol.contactStarted,
       hasError: widgetState.context.hasError,
       hasMultipleVideoDevice: canSwitchCamera,

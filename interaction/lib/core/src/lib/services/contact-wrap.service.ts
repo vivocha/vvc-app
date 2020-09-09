@@ -57,6 +57,10 @@ export class VvcContactWrap {
 
   recontactDone: boolean = false;
 
+  conversationIdle: boolean = false;
+  conversationCheckTimer;
+  conversationCheckTimeout = 10000;
+
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -155,8 +159,43 @@ export class VvcContactWrap {
   inboundStatusChanged(id, info) {
     this.uiService.setInboundState(id);
   }
-  checkForTranscript() {
-    const transcript = this.contact.contact.transcript;
+  async checkConversationState() {
+    const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+    if (customerToken) {
+      const conversation = await this.vivocha.pageRequest('getConversation', this.context.conversationId);
+
+      if (conversation && conversation.currentContact) {
+        const lastContact = conversation.currentContact;
+        if (lastContact.unread && lastContact.unread.visitor) {
+          for (let i = 0; i < lastContact.unread.visitor; i++) this.uiService.newMessageReceived();
+        }
+        this.conversationIdle = false;
+        await this.vivocha.dataRequest('setData', 'persistence.contact', conversation.currentContact);
+        this.resumeContact(this.context);
+      } else {
+        this.conversationCheckTimer = setTimeout(() => this.checkConversationState(), this.conversationCheckTimeout);
+      }
+    }
+  }
+  async checkForTranscript() {
+    let transcript = this.contact.contact.transcript;
+    this.printTranscript(transcript);
+    // TODO load asyncronously and only if needed
+    if (this.contact.contact.conv_id && this.contact.contact.cust_verified) { // has token, get conversation and previoous contacts
+      const conv_id = this.contact.contact.conv_id;
+      const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+      const conversation = await this.vivocha.pageRequest('getConversation', conv_id);
+
+      conversation.previousContacts && conversation.previousContacts.forEach(async pcontact => {
+        const cid = pcontact.id;
+        this.agent = pcontact.agentInfo;
+        const transcript = await this.vivocha.fetch(`conversations/${conv_id}/transcript/${cid}?tok=${customerToken}`);
+        this.printTranscript(transcript);
+      });
+    }
+  }
+  // TODO move down following alphabetical order
+  printTranscript(transcript) {
     for (const m in transcript) {
       const msg = transcript[m];
       switch (msg.type) {
@@ -229,7 +268,7 @@ export class VvcContactWrap {
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
       this.logger.log('pre-routing callback. opts:', opts);
       this.interactionStart = +new Date();
-      const timeout = (this.context.routing.dissuasionTimeout || 60) * 1000;
+      const timeout = (this.vivocha.dot(this.context, 'routing.dissuasionTimeout') || 60) * 1000;
       this.dissuasionTimer = setTimeout(() => {
         this.leave('dissuasion').then(() => {
           this.setRecallOrLeave('timeout', 'dissuasion');
@@ -388,6 +427,8 @@ export class VvcContactWrap {
           }
         });
       }
+    } else if (this.isInConversation()) {
+      this.resumeConversation(context);
     } else {
       this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionCompleted) => {
         this.logger.log('onDataCollectionCompleted. data:', data);
@@ -466,6 +507,9 @@ export class VvcContactWrap {
   }
   isRecallContact() {
     return false;
+  }
+  isInConversation() {
+    return !!this.context && !!this.context.conversationId;
   }
   isInPersistence() {
     return !!this.context && !!this.context.persistenceId;
@@ -704,11 +748,17 @@ export class VvcContactWrap {
       },
       {
         event: 'transferred',
-        handler: () => {
+        handler: (info) => {
+          this.logger.log('transferred', info);
           this.zone.run(() => {
-            this.track('transferred');
-            this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
-            this.setTransferTimer();
+            if (info.rerouted) {
+              this.logger.log('rerouted', info);
+              this.track('rerouted');  
+            } else {
+              this.track('transferred');
+              this.messageService.sendSystemMessage('STRINGS.MESSAGES.TRANSFERRED');
+              this.setTransferTimer();
+            }
           });
         }
       }
@@ -728,7 +778,24 @@ export class VvcContactWrap {
 
     return contactHandlers;
   }
-  maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+  async maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+    if (this.conversationIdle) {
+      this.conversationIdle = false;
+      clearTimeout(this.conversationCheckTimer);
+
+      const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+      const conversation = await this.vivocha.pageRequest('getConversation', this.context.conversationId);
+
+      if (customerToken && conversation && conversation.currentContact) {
+        await this.vivocha.dataRequest('setData', 'persistence.contact', conversation.currentContact);
+        this.resumeContact(this.context);
+      } else {
+        const contactOptions: { data: any[], nick?: string } = { data: [] };
+        this.dcService.setResolved();
+        this.uiService.showQueuePanel();
+        this.createContact(contactOptions);
+      }
+    }
     (isFullScreen) ? this.uiService.setFullScreen() : this.uiService.setNormalState();
     this.setDimension(dim);
   }
@@ -851,7 +918,19 @@ export class VvcContactWrap {
     }
   }
   onLeft(obj) {
-    if (obj.channels && obj.channels.user !== undefined && obj.channels.user === 0 && obj.autoLeave === false) {
+    this.logger.log('onLeft', obj);
+    if (this.isClosed) {
+      this.logger.log('onLeft already closed');
+    } else if (obj.vvcu) {
+      this.logger.log('onLeft left by vvcu (other window/channel)', obj);
+      this.zone.run(() => {
+        this.uiService.setClosedByVisitor();
+        this.track('closed by visitor');
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.LOCAL_CLOSE');
+        this.isClosed = true;
+        this.vivocha.pageRequest('interactionClosed', obj.reason || 'closed');
+      });
+    } else if (obj.channels && obj.channels.user !== undefined && obj.channels.user === 0 && obj.autoLeave === false) {
       this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
     } else if (
       (obj.channels && (obj.channels.user !== undefined) && obj.channels.user === 0) ||
@@ -871,17 +950,22 @@ export class VvcContactWrap {
     }
   }
   onCleared(obj){
-    this.leave('remote').then(() => {
-      this.zone.run(() => {
-        this.uiService.setClosedByAgent();
-        this.track('cleared');
-        this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
-
-        this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
-        this.isClosed = true;
-        this.vivocha.pageRequest('interactionClosed', 'closed');
+    this.logger.log('onCleared', obj);
+    if (this.isClosed) {
+      this.logger.log('onCleared already closed');
+    } else {
+      this.leave('remote').then(() => {
+        this.zone.run(() => {
+          this.uiService.setClosedByAgent();
+          this.track('cleared');
+          this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
+  
+          this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+          this.isClosed = true;
+          this.vivocha.pageRequest('interactionClosed', 'closed');
+        });
       });
-    });
+    }
   }
   onLocalJoin(join) {
     this.contact.getRemoteCapabilities().then(caps => {
@@ -1049,84 +1133,114 @@ export class VvcContactWrap {
     this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
     this.uiService.setOfferRejected();
   }
-  resumeContact(context: any) {
-    this.track('resuming contact');
-    this.vivocha.dataRequest('getData', 'persistence.contact').then((contactData) => {
+  async resumeContact(context: any) {
+    try {
+      this.track('resuming contact');
+      const contactData = await this.vivocha.dataRequest('getData', 'persistence.contact');
       this.track('resuming getData');
-      this.vivocha.resumeContact(contactData, this.mapContact()).then((contact) => {
-        this.track('resumed contact');
-        this.interactionStart = +new Date(contact.contact.ts);
-        if (contact.contact.agentInfo || (contact.contact.transcript && contact.contact.transcript.find(m => m.agent))) {
+      const contact = await this.vivocha.resumeContact(contactData, this.mapContact());
+      this.track('resumed contact');
+      //const conv_id = contact.contact.conv_id;
+      //const conversation = conv_id ? await this.vivocha.pageRequest('getConversation', conv_id) : undefined;
+      this.interactionStart = +new Date(contact.contact.ts);
+      let agentInfo;
+      if (contact.contact.agentInfo) {
+        this.hasReceivedMsgs = true;
+        agentInfo = contact.contact.agentInfo
+      } else if (contact.contact.transcript) {
+        var agentMsg = contact.contact.transcript.find(m => m.agent);
+        if (agentMsg) {
           this.hasReceivedMsgs = true;
+          agentInfo = {
+            id: agentMsg.from_id,
+            nick: agentMsg.nick,
+            bot: agentMsg.is_bot,
+            avatar: agentMsg.avatar
+          }
         }
-        this.zone.run(() => {
-          this.contact = contact;
-          this.mapContactActions();
-          this.contact.getLocalCapabilities().then((caps) => {
-            this.uiService.setLocalCaps(caps);
-          });
+      }
+      this.zone.run(() => {
+        this.contact = contact;
+        this.mapContactActions();
+        this.contact.getLocalCapabilities().then((caps) => {
+          this.uiService.setLocalCaps(caps);
         });
-        this.vivocha.pageRequest('interactionCreated', contact);
-
-        this.interactionReady();
-
-        this.zone.run(() => {
-          this.uiService.initializeProtocol(context, {
-            initialOffer: contact.initial_offer
-          });
-          this.contact.getMedia().then((media) => {
-            this.zone.run(() => {
-              const agentInfo = this.contact.contact.agentInfo;
-              this.logger.log('LOCAL JOIN', agentInfo, this.contact);
-              if (agentInfo) {
-                this.uiService.setUiReady();
-                const agent: AgentState = {
-                  id: agentInfo.id,
-                  nick: agentInfo.nick,
-                  is_bot: !!agentInfo.bot,
-                  is_agent: !agentInfo.bot,
-                };
-                if (agentInfo.avatar) {
-                  agent.avatar = agentInfo.avatar;
-                } else if (this.context.variables.agentAvatarDefault) {
-                  agent.avatar = this.context.variables.agentAvatarDefault;
-                }
-                this.agent = agent;
-                this.uiService.setAgent(agent);
-                if (this.context.variables.showAgentInfoOnTopBar) {
-                  this.uiService.setTopBarWithAgentInfo(agent);
-                } else {
-                  this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
-                }
-                this.protocolService.setMediaChange(media);
-                // TODO remove is_bot check once the restore media is able to detect the capabilitites from bot
-                if (Object.keys(media).length > 1 || (this.agent && this.agent.is_bot)) {
-                  this.uiService.initializeMedia(media);
-                } else {
-                  this.uiService.setMinimizedState();
-                }
-                this.checkForTranscript();
-                this.sendWelcomeMessage();
-              } else {
-                this.dcService.setResolved();
-                this.uiService.setUiReady();
-                this.uiService.showQueuePanel();
-                this.track('queue screen - resume');
-              }
-            });
-          });
-        });
-
-      }, (err) => {
-        this.vivocha.pageRequest('interactionFailed', err.message);
-        this.uiService.setCreationFailed();
-        this.track('resume failed');
-        setTimeout(() => {
-          this.closeApp();
-          this.track('iframe app removed');
-        }, 2000);
       });
-    });
+      this.vivocha.pageRequest('interactionCreated', contact);
+      this.interactionReady();
+
+      this.zone.run(async () => {
+        this.uiService.initializeProtocol(context, {
+          initialOffer: contact.initial_offer
+        });
+        const media = await this.contact.getMedia();
+        this.zone.run(() => {
+          this.logger.log('LOCAL JOIN', agentInfo, this.contact);
+          if (agentInfo) {
+            this.uiService.setUiReady();
+            const agent: AgentState = {
+              id: agentInfo.id,
+              nick: agentInfo.nick,
+              is_bot: !!agentInfo.bot,
+              is_agent: !agentInfo.bot,
+            };
+            if (agentInfo.avatar) {
+              agent.avatar = agentInfo.avatar;
+            } else if (this.context.variables.agentAvatarDefault) {
+              agent.avatar = this.context.variables.agentAvatarDefault;
+            }
+            this.agent = agent;
+            this.uiService.setAgent(agent);
+            if (this.context.variables.showAgentInfoOnTopBar) {
+              this.uiService.setTopBarWithAgentInfo(agent);
+            } else {
+              this.uiService.setTopBar({ title: 'STRINGS.TOPBAR.TITLE_DEFAULT', subtitle: 'STRINGS.TOPBAR.SUBTITLE_DEFAULT' });
+            }
+            this.protocolService.setMediaChange(media);
+            // TODO remove is_bot check once the restore media is able to detect the capabilitites from bot
+            if (Object.keys(media).length > 1 || (this.agent && this.agent.is_bot)) {
+              this.uiService.initializeMedia(media);
+            } else {
+              this.uiService.setMinimizedState();
+            }
+            this.checkForTranscript();
+            this.sendWelcomeMessage();
+          } else {
+            this.dcService.setResolved();
+            this.uiService.setUiReady();
+            this.uiService.showQueuePanel();
+            this.track('queue screen - resume');
+          }
+        });
+      });
+    } catch (err) {
+      console.error(err);
+      this.vivocha.pageRequest('interactionFailed', err.message);
+      this.uiService.setCreationFailed();
+      this.track('resume failed');
+      setTimeout(() => {
+        this.closeApp();
+        this.track('iframe app removed');
+      }, 2000);
+    }
+  }
+  async resumeConversation(context: any) {
+    this.track('resuming conversation');
+    this.uiService.setMinimizedState();
+    this.conversationIdle = true;
+
+    const customerToken = await this.vivocha.pageRequest('getCustomerToken');
+    const conversation = await this.vivocha.pageRequest('getConversation', context.conversationId);
+
+    if (customerToken && conversation && conversation.previousContacts && conversation.previousContacts.length) {
+      const lastContact = conversation.previousContacts[conversation.previousContacts.length - 1];
+      this.logger.log('resumeConversation lastContact', lastContact);
+      if (lastContact.unread && lastContact.unread.visitor) {
+        for (let i = 0; i < lastContact.unread.visitor; i++) this.uiService.newMessageReceived();
+      }
+    }
+
+    this.conversationCheckTimer = setTimeout(() => this.checkConversationState(), this.conversationCheckTimeout);
   }
   sendAttachment(upload) {
     this.uiService.setUploading();
@@ -1325,8 +1439,8 @@ export class VvcContactWrap {
           this.uiService.setDissuasion();
           this.track('dissuaded');
         } else {
-          this.uiService.setCreationFailed();
-          this.track('creation failed', reason);
+          this.uiService.setCreationFailed(event);
+          this.track('creation failed', {reason,event});
         }
       }
     });
