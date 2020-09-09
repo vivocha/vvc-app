@@ -1252,6 +1252,120 @@
         "state": "final"
       }
     }
+  },{
+    "id": "META.VARIABLES.APP.INITIAL_BOTTOM",
+    "values": {
+      "de": {
+        "value": "Initial bottom margin of the application (desktop version).",
+        "state": "new"
+      },
+      "en": {
+        "value": "Initial bottom margin of the application (desktop version).",
+        "state": "new"
+      },
+      "es": {
+        "value": "Initial bottom margin of the application (desktop version).",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Initial bottom margin of the application (desktop version).",
+        "state": "new"
+      },
+      "it": {
+        "value": "margine inferiore iniziale dell'applicazione (versione desktop).",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Initial bottom margin of the application (desktop version).",
+        "state": "new"
+      }
+    }
+  },{
+    "id": "META.VARIABLES.APP.INITIAL_RIGHT",
+    "values": {
+      "de": {
+        "value": "Initial right margin of the application (desktop version).",
+        "state": "new"
+      },
+      "en": {
+        "value": "Initial right margin of the application (desktop version).",
+        "state": "new"
+      },
+      "es": {
+        "value": "Initial right margin of the application (desktop version).",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Initial right margin of the application (desktop version).",
+        "state": "new"
+      },
+      "it": {
+        "value": "margine destro iniziale dell'applicazione (versione desktop).",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Initial right margin of the application (desktop version).",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.MINIMIZED_BOTTOM",
+    "values": {
+      "de": {
+        "value": "Minimized status, bottom margin (desktop version)",
+        "state": "new"
+      },
+      "en": {
+        "value": "Minimized status, bottom margin (desktop version)",
+        "state": "new"
+      },
+      "es": {
+        "value": "Minimized status, bottom margin (desktop version)",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Minimized status, bottom margin (desktop version)o",
+        "state": "new"
+      },
+      "it": {
+        "value": "Margine inferiore stato minimizzato (versione desktop)",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Minimized status, bottom margin (desktop version)",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.MINIMIZED_RIGHT",
+    "values": {
+      "de": {
+        "value": "Minimized status, right margin (desktop version)",
+        "state": "new"
+      },
+      "en": {
+        "value": "Minimized status, right margin (desktop version)",
+        "state": "new"
+      },
+      "es": {
+        "value": "Minimized status, right margin (desktop version)",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Minimized status, right margin (desktop version)",
+        "state": "new"
+      },
+      "it": {
+        "value": "Margine destro stato minimizzato (versione desktop)",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Minimized status, right margin (desktop version)",
+        "state": "new"
+      }
+    }
   },
   {
     "id": "META.VARIABLES.APP.PERSISTENCE_MODE",
