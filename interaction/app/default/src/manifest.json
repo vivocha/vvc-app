@@ -95,9 +95,9 @@
     {
       "id": "initialBottom",
       "nameId": "META.VARIABLES.APP.INITIAL_BOTTOM",
-      "defaultValue": "-5px",
+      "defaultValue": "-10px",
       "type": "unit",
-      "hidden": true,
+      "hidden": false,
       "categoryIds": [
         "General_DimensionAndPosition"
       ]
@@ -105,9 +105,29 @@
     {
       "id": "initialRight",
       "nameId": "META.VARIABLES.APP.INITIAL_RIGHT",
-      "defaultValue": "-5px",
+      "defaultValue": "40px",
       "type": "unit",
-      "hidden": true,
+      "hidden": false,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "minimizedBottom",
+      "nameId": "META.VARIABLES.APP.MINIMIZED_BOTTOM",
+      "defaultValue": "-10px",
+      "type": "unit",
+      "hidden": false,
+      "categoryIds": [
+        "General_DimensionAndPosition"
+      ]
+    },
+    {
+      "id": "minimizedRight",
+      "nameId": "META.VARIABLES.APP.MINIMIZED_RIGHT",
+      "defaultValue": "40px",
+      "type": "unit",
+      "hidden": false,
       "categoryIds": [
         "General_DimensionAndPosition"
       ]
