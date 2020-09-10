@@ -38,8 +38,8 @@ export class AppComponent implements OnInit {
       position: 'fixed',
       width: '80px',
       height: '80px',
-      right: '0',
-      bottom: '0'
+      right   : window['VVC_VAR_ASSETS']['minimizedRight'],
+      bottom  : window['VVC_VAR_ASSETS']['minimizedBottom']
     },
     minimizedCbn: {
       position: 'fixed',
@@ -64,10 +64,10 @@ export class AppComponent implements OnInit {
       position: 'fixed',
       width: window['VVC_VAR_ASSETS']['initialWidth'],
       height: window['VVC_VAR_ASSETS']['initialHeight'],
-      right: '40px',
-      bottom: '-10px'
-      // right   : window['VVC_VAR_ASSETS']['initialRight'],
-      // bottom  : window['VVC_VAR_ASSETS']['initialBottom']
+      // right: '40px',
+      // bottom: '-10px'
+      right   : window['VVC_VAR_ASSETS']['initialRight'],
+      bottom  : window['VVC_VAR_ASSETS']['initialBottom']
     },
     custom: {
       position: 'fixed',
