@@ -1153,9 +1153,9 @@ export class VvcContactWrap {
           this.hasReceivedMsgs = true;
           agentInfo = {
             id: agentMsg.from_id,
-            nick: agentMsg.nick,
+            nick: agentMsg.from_nick,
             bot: agentMsg.is_bot,
-            avatar: agentMsg.avatar
+            avatar: agentMsg.from_avatar
           }
         }
       }

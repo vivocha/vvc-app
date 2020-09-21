@@ -37,8 +37,8 @@ export const getMessageRedux = (state: MessagesState): MessagesState => {
   const messages = sorted.map( (elem, idx) => {
     let isLast = false;
     let isFirst = false;
-    const nextElem = state.list[idx + 1];
-    const prevElem = state.list[idx - 1];
+    const nextElem = sorted[idx + 1];
+    const prevElem = sorted[idx - 1];
     if (prevElem) {
       if (
         elem.type !== prevElem.type ||
