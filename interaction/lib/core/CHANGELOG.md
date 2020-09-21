@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.2...@vivocha/client-interaction-core@7.6.3) (2020-09-21)
+
+
+### Bug Fixes
+
+* **lib:** fix persistence avatar and title from script ([5a3c3de](https://github.com/vivocha/widgets/commit/5a3c3de6dbf0f2baefba4f5612963ece04d16498))
+
+
+
+
+
 ## [7.6.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.1...@vivocha/client-interaction-core@7.6.2) (2020-09-03)
 
 
