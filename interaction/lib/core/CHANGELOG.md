@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.7](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.6...@vivocha/client-interaction-core@7.6.7) (2020-09-23)
+
+
+### Bug Fixes
+
+* **lib:** ignore agent change from messages without from_id (e.g. read from script) ([5b2fbe3](https://github.com/vivocha/widgets/commit/5b2fbe34b478fcfa82d7ea53b48324dd5d60dd5f))
+
+
+
+
+
 ## [7.6.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.5...@vivocha/client-interaction-core@7.6.6) (2020-09-23)
 
 
