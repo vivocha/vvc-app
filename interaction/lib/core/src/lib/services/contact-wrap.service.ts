@@ -994,8 +994,9 @@ export class VvcContactWrap {
         user: msg.from_id,
         nick: msg.from_nick,
         is_bot: msg.is_bot,
+        avatar: msg.from_avatar
       };
-      if (agentInfo.avatar && agentInfo.id === msg.from_id) {
+      if (!joinedAgent.avatar && agentInfo.avatar && agentInfo.id === msg.from_id) {
         joinedAgent.avatar = agentInfo.avatar;
       }
       await this.onAgentJoin(joinedAgent);
