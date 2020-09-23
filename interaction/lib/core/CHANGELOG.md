@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.5...@vivocha/client-interaction-core@7.6.6) (2020-09-23)
+
+
+### Bug Fixes
+
+* **lib:** add avatar ([2bd90eb](https://github.com/vivocha/widgets/commit/2bd90ebf6264138e259a353cd16e919882fdf34e))
+
+
+
+
+
 ## [7.6.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.4...@vivocha/client-interaction-core@7.6.5) (2020-09-23)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.4...@vivocha/client-interaction-layout@7.5.5) (2020-09-23)
+
+
+### Bug Fixes
+
+* **lib:** add layout src to npm package ([ddc5a25](https://github.com/vivocha/widgets/commit/ddc5a252535f42ccfd391e0c2fd51848aa8fda24))
+
+
+
+
+
 ## [7.5.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.3...@vivocha/client-interaction-layout@7.5.4) (2020-09-03)
 
 
