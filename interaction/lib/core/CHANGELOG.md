@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.4...@vivocha/client-interaction-core@7.6.5) (2020-09-23)
+
+
+### Bug Fixes
+
+* **lib:** restoree fallback to nick and avatar on agentMsg ([c9e0db4](https://github.com/vivocha/widgets/commit/c9e0db42a5286430495aa4301bd21211d9d21e9f))
+
+
+
+
+
 ## [7.6.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.3...@vivocha/client-interaction-core@7.6.4) (2020-09-23)
 
 
