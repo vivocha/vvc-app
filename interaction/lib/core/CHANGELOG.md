@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.3...@vivocha/client-interaction-core@7.6.4) (2020-09-23)
+
+
+### Bug Fixes
+
+* **lib:** check for agent change on raw message ([42704bb](https://github.com/vivocha/widgets/commit/42704bbb3180b0ad7b785e587fcdbef1f47f47bb))
+
+
+
+
+
 ## [7.6.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.2...@vivocha/client-interaction-core@7.6.3) (2020-09-21)
 
 
