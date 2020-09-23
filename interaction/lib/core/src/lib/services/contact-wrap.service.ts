@@ -987,7 +987,7 @@ export class VvcContactWrap {
     }
   }
   async onRawMessage(msg) {
-    if (msg.agent && (!this.joinedByAgent || msg.from_id !== (this.agent && this.agent.id))) {
+    if (msg.agent && (!this.joinedByAgent || (msg.from_id && msg.from_id !== (this.agent && this.agent.id)))) {
       this.cancelDissuasionTimeout();
       const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
       const joinedAgent: any = {
