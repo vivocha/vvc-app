@@ -8,7 +8,8 @@
     "clean:all": "npm run clean && rm -rf node_modules",
     "precommit": "npm run build",
     "build": "ng-packagr -p ng-package.json",
-    "build:all": "npm run clean:all && npm install && npm run build"
+    "build:all": "npm run clean:all && npm install && npm run build",
+    "postbuild": "cp -a src dist/src"
   },
   "main": "dist/bundles/vivocha-client-interaction-layout.umd.js",
   "module": "dist/fesm5/vivocha-client-interaction-layout.js",
