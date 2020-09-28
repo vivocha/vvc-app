@@ -28,7 +28,7 @@ export class TemplateListComponent implements OnInit {
     this.msgElement = this.tplList.nativeElement;
     this.listElement = this.tplList.nativeElement.closest('#vvc-messages');
 
-    const doCheckForRead = this.message && this.message.agent && !this.message.delivered ;
+    const doCheckForRead = this.message && this.message.agent && !this.message.delivered && !this.message.read;
     if (doCheckForRead){
       setTimeout( () => {
         if (this.isInView()){

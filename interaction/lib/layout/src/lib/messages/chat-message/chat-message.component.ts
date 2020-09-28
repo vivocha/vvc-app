@@ -39,7 +39,7 @@ export class ChatMessageComponent implements OnInit {
     this.msgElement = this.chatMsg.nativeElement;
     this.listElement = this.chatMsg.nativeElement.closest('#vvc-messages');
 
-    const doCheckForRead = this.message && (this.message.type === 'chat') && this.message.isAgent && !this.message.delivered ;
+    const doCheckForRead = this.message && (this.message.type === 'chat') && this.message.isAgent && !this.message.delivered && !this.message.read;
     if (doCheckForRead){
       setTimeout( () => {
         if (this.isInView()){

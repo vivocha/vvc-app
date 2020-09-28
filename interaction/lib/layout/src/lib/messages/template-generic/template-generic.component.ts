@@ -46,7 +46,7 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
     this.msgElement = this.tplGen.nativeElement;
     this.listElement = this.tplGen.nativeElement.closest('#vvc-messages');
 
-    const doCheckForRead = this.message && this.message.agent && !this.message.delivered ;
+    const doCheckForRead = this.message && this.message.agent && !this.message.delivered && !this.message.read;
     if (doCheckForRead){
       setTimeout( () => {
         if (this.isInView()){

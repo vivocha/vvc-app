@@ -20,6 +20,7 @@ export class VvcContactWrap {
   private context;
   private logger = console;
   private _ids = {};
+  private readIds = {};
 
   lastSystemMessageId;
   agent;
@@ -800,7 +801,12 @@ export class VvcContactWrap {
     this.setDimension(dim);
   }
   markRead(msgId: string) {
-    if (this.contact.sendRead) this.contact.sendRead(msgId);
+    if (this.contact.sendRead) {
+      if (!this.readIds[msgId]) {
+        this.contact.sendRead(msgId);
+        this.readIds[msgId] = msgId;
+      }
+    }
   }
   mergeOffer(diffOffer, cb) {
     this.contact.mergeMedia(diffOffer).then(mergedMedia => {

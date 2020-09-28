@@ -41,7 +41,7 @@ export class QuickRepliesComponent implements OnInit, OnDestroy {
     this.msgElement = this.qrMsg.nativeElement;
     this.listElement = this.qrMsg.nativeElement.closest('#vvc-messages');
 
-    const doCheckForRead = this.message && this.message.agent && !this.message.delivered ;
+    const doCheckForRead = this.message && this.message.agent && !this.message.delivered && !this.message.read;
     if (doCheckForRead){
       setTimeout( () => {
         if (this.isInView()){
