@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.5...@vivocha/client-interaction-layout@7.5.6) (2020-09-28)
+
+
+### Bug Fixes
+
+* **lib:** avoid send read resend ([17d3d02](https://github.com/vivocha/widgets/commit/17d3d02fc0868ea87199898a06d9b84665b1df74))
+
+
+
+
+
 ## [7.5.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.4...@vivocha/client-interaction-layout@7.5.5) (2020-09-23)
 
 
