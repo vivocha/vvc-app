@@ -8,6 +8,8 @@
     "push:halo": "cd vvc-halo && vvc widget push -g && vvc widget activate -g && cd ..",
     "push:popup": "cd vvc-popup && vvc widget push -g && vvc widget activate -g && cd ..",
     "push:sidetab": "cd vvc-sidetab && vvc widget push -g && vvc widget activate -g && cd ..",
-    "push:all": "npm run push:button && npm run push:halo && npm run push:popup && npm run push:sidetab"
+    "_push:all": "npm run push:button && npm run push:halo && npm run push:popup && npm run push:sidetab",
+    "push:all": "node push-widgets -all",
+    "push:all:activate": "node push-widgets -all -a"
   }
 }
