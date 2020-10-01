@@ -2,12 +2,28 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Taste mit Animation",
+        "state": "final"
+      },
       "en": {
-        "value": "Engagement Fab Button",
+        "value": "Button with animation",
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón con animación",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton avec animation",
         "state": "final"
       },
       "it": {
         "value": "Bottone con animazione",
+        "state": "final"
+      },
+      "ja": {
+        "value": "アニメーション付きボタン",
         "state": "final"
       }
     }
@@ -15,38 +31,28 @@
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Fab Taste",
+        "state": "final"
+      },
       "en": {
         "value": "Fab Button",
         "state": "final"
       },
+      "es": {
+        "value": "Fab Button",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton Fab",
+        "state": "final"
+      },
       "it": {
         "value": "Fab Button",
         "state": "final"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.TOOLTIP.SYNC",
-    "values": {
-      "en": {
-        "value": "sync",
-        "state": "final"
       },
-      "it": {
-        "value": "sync",
-        "state": "final"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.TOOLTIP.INBOUND",
-    "values": {
-      "en": {
-        "value": "inbound",
-        "state": "final"
-      },
-      "it": {
-        "value": "inbound",
+      "ja": {
+        "value": "FABボタン",
         "state": "final"
       }
     }
@@ -54,51 +60,28 @@
   {
     "id": "STRINGS.TOOLTIP.CBN",
     "values": {
+      "de": {
+        "value": "CBN",
+        "state": "final"
+      },
       "en": {
-        "value": "cbn",
+        "value": "CBN",
+        "state": "final"
+      },
+      "es": {
+        "value": "CBN",
+        "state": "final"
+      },
+      "fr": {
+        "value": "CBN",
         "state": "final"
       },
       "it": {
-        "value": "cbn",
-        "state": "final"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.TOOLTIP.WEBLEAD",
-    "values": {
-      "en": {
-        "value": "weblead",
+        "value": "CBN",
         "state": "final"
       },
-      "it": {
-        "value": "weblead",
-        "state": "final"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.TOOLTIP.VIDEO",
-    "values": {
-      "en": {
-        "value": "video",
-        "state": "final"
-      },
-      "it": {
-        "value": "video",
-        "state": "final"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.TOOLTIP.VOICE",
-    "values": {
-      "en": {
-        "value": "voice",
-        "state": "final"
-      },
-      "it": {
-        "value": "voice",
+      "ja": {
+        "value": "CBN",
         "state": "final"
       }
     }
@@ -106,12 +89,173 @@
   {
     "id": "STRINGS.TOOLTIP.CHAT",
     "values": {
+      "de": {
+        "value": "Chat",
+        "state": "final"
+      },
       "en": {
-        "value": "chat",
+        "value": "Chat",
+        "state": "final"
+      },
+      "es": {
+        "value": "Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Chat",
         "state": "final"
       },
       "it": {
-        "value": "chat",
+        "value": "Chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャット",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.INBOUND",
+    "values": {
+      "de": {
+        "value": "Inbound",
+        "state": "final"
+      },
+      "en": {
+        "value": "Inbound",
+        "state": "final"
+      },
+      "es": {
+        "value": "Entrante",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Entrant",
+        "state": "final"
+      },
+      "it": {
+        "value": "Inbound",
+        "state": "final"
+      },
+      "ja": {
+        "value": "インバウンド",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.SYNC",
+    "values": {
+      "de": {
+        "value": "Sync",
+        "state": "final"
+      },
+      "en": {
+        "value": "Sync",
+        "state": "final"
+      },
+      "es": {
+        "value": "Sincronizar",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Sync",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sync",
+        "state": "final"
+      },
+      "ja": {
+        "value": "同期",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.VIDEO",
+    "values": {
+      "de": {
+        "value": "Video",
+        "state": "final"
+      },
+      "en": {
+        "value": "Video",
+        "state": "final"
+      },
+      "es": {
+        "value": "Vídeo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vidéo",
+        "state": "final"
+      },
+      "it": {
+        "value": "Video",
+        "state": "final"
+      },
+      "ja": {
+        "value": "ビデオ",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.VOICE",
+    "values": {
+      "de": {
+        "value": "Sprache",
+        "state": "final"
+      },
+      "en": {
+        "value": "Voice",
+        "state": "final"
+      },
+      "es": {
+        "value": "Voz",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Voix",
+        "state": "final"
+      },
+      "it": {
+        "value": "Voice",
+        "state": "final"
+      },
+      "ja": {
+        "value": "音声",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.TOOLTIP.WEBLEAD",
+    "values": {
+      "de": {
+        "value": "Weblead",
+        "state": "final"
+      },
+      "en": {
+        "value": "Weblead",
+        "state": "final"
+      },
+      "es": {
+        "value": "Weblead",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Weblead",
+        "state": "final"
+      },
+      "it": {
+        "value": "Weblead",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Webリード",
         "state": "final"
       }
     }

@@ -78,7 +78,7 @@
       },
       "it": {
         "value": "PHONE",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "電話",
@@ -165,7 +165,7 @@
       },
       "it": {
         "value": "DAL WEB",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "ウェブから",

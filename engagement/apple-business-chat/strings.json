@@ -1,92 +1,204 @@
 [
   {
-    "id": "NAME",
-    "values": {
-      "en": {
-        "value": "Apple Business Chat",
-        "state": "new"
-      },
-      "it": {
-        "value": "Apple Business Chat",
-        "state": "new"
-      }
-    }
-  },
-  {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Taste für Apple Business Chat",
+        "state": "final"
+      },
       "en": {
         "value": "Apple Business Chat button",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "Botón para Apple Business Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Bouton pour Apple Business Chat",
+        "state": "final"
       },
       "it": {
-        "value": "bottone per Apple Business Chat",
-        "state": "new"
+        "value": "Bottone per Apple Business Chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Apple Business Chat用ボタン",
+        "state": "final"
       }
     }
   },
   {
-    "id": "VARIABLES.ABC_ID",
+    "id": "NAME",
     "values": {
+      "de": {
+        "value": "Apple Business Chat",
+        "state": "final"
+      },
       "en": {
-        "value": "Apple Business Chat Id",
-        "state": "new"
+        "value": "Apple Business Chat",
+        "state": "final"
+      },
+      "es": {
+        "value": "Apple Business Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Apple Business Chat",
+        "state": "final"
       },
       "it": {
-        "value": "Apple Business Chat Id",
-        "state": "new"
+        "value": "Apple Business Chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Apple Business Chat",
+        "state": "final"
       }
     }
   },
   {
     "id": "SETTINGS.ABC_ID_PH",
     "values": {
+      "de": {
+        "value": "Ihre Apple Business Chat ID",
+        "state": "final"
+      },
       "en": {
         "value": "Your Apple Business Chat id",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "Tu ID de Apple Business Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Votre ID Apple Business Chat",
+        "state": "final"
       },
       "it": {
-        "value": "il tuo id Apple Business Chat",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.CTA",
-    "values": {
-      "en": {
-        "value": "Got questions?",
-        "state": "new"
+        "value": "Il tuo id Apple Business Chat",
+        "state": "final"
       },
-      "it": {
-        "value": "Qualche domanda?",
-        "state": "new"
+      "ja": {
+        "value": "あなたのApple Business Chat ID",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.BODY",
     "values": {
+      "de": {
+        "value": "Chat Nachricht",
+        "state": "final"
+      },
       "en": {
         "value": "Chat Message",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "Mensaje de chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Message de chat",
+        "state": "final"
       },
       "it": {
         "value": "Messaggio di chat",
-        "state": "new"
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャットメッセージ",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.CONTEXT",
     "values": {
+      "de": {
+        "value": "Sprechen Sie jetzt mit uns",
+        "state": "final"
+      },
       "en": {
         "value": "Chat with a financial advisor now.",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "Habla ahora con nosotros",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Parlez-nous maintenant",
+        "state": "final"
       },
       "it": {
         "value": "Parla ora con noi",
-        "state": "new"
+        "state": "final"
+      },
+      "ja": {
+        "value": "今すぐお問い合わせください",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.CTA",
+    "values": {
+      "de": {
+        "value": "Irgendwelche Fragen?",
+        "state": "final"
+      },
+      "en": {
+        "value": "Got questions?",
+        "state": "final"
+      },
+      "es": {
+        "value": "¿Alguna pregunta?",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Des questions ?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Qualche domanda?",
+        "state": "final"
+      },
+      "ja": {
+        "value": "何かご不明な点は？",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "VARIABLES.ABC_ID",
+    "values": {
+      "de": {
+        "value": "ID Apple Business Chat-",
+        "state": "final"
+      },
+      "en": {
+        "value": "Apple Business Chat Id",
+        "state": "final"
+      },
+      "es": {
+        "value": "ID de Apple Business Chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "ID Apple Business Chat",
+        "state": "final"
+      },
+      "it": {
+        "value": "Apple Business Chat Id",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Apple Business Chat ID",
+        "state": "final"
       }
     }
   }

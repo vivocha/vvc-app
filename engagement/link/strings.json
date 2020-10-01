@@ -2,16 +2,28 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Vivocha Engagement Links",
+        "state": "final"
+      },
       "en": {
         "value": "Vivocha Link Engage",
         "state": "final"
       },
       "es": {
-        "value": "Enlace de participación de Vivocha",
+        "value": "Enlace de participación Vivocha",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Lien d’engagement Vivocha",
         "state": "final"
       },
       "it": {
         "value": "Link di ingaggio Vivocha",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Vivochaエンゲージメントのリンク",
         "state": "final"
       }
     }
@@ -19,6 +31,10 @@
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Link",
+        "state": "final"
+      },
       "en": {
         "value": "Link",
         "state": "final"
@@ -27,8 +43,16 @@
         "value": "Enlace",
         "state": "final"
       },
+      "fr": {
+        "value": "Lien",
+        "state": "final"
+      },
       "it": {
         "value": "Link",
+        "state": "final"
+      },
+      "ja": {
+        "value": "リンク",
         "state": "final"
       }
     }
@@ -36,6 +60,10 @@
   {
     "id": "STRINGS.LINK_TEXT",
     "values": {
+      "de": {
+        "value": "in den Chat eintreten",
+        "state": "final"
+      },
       "en": {
         "value": "chat with us",
         "state": "final"
@@ -44,8 +72,16 @@
         "value": "entrar al chat",
         "state": "final"
       },
+      "fr": {
+        "value": "accéder au chat",
+        "state": "final"
+      },
       "it": {
         "value": "entra in chat",
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャットに入る",
         "state": "final"
       }
     }
@@ -53,16 +89,28 @@
   {
     "id": "VARIABLES.LINK_COLOR",
     "values": {
+      "de": {
+        "value": "Farbe des Textes",
+        "state": "final"
+      },
       "en": {
-        "value": "text color",
+        "value": "text colour",
         "state": "final"
       },
       "es": {
         "value": "color del texto",
         "state": "final"
       },
+      "fr": {
+        "value": "couleur du texte",
+        "state": "final"
+      },
       "it": {
         "value": "colore testo",
+        "state": "final"
+      },
+      "ja": {
+        "value": "文字色",
         "state": "final"
       }
     }

@@ -78,7 +78,7 @@
       },
       "it": {
         "value": "PHONE",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "電話",
@@ -136,7 +136,7 @@
       },
       "it": {
         "value": "ti contattiamo noi",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "こちらからご連絡いたします",
@@ -165,7 +165,7 @@
       },
       "it": {
         "value": "DAL WEB",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "ウェブから",
@@ -310,7 +310,7 @@
       },
       "it": {
         "value": "EMAIL",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "Eメール",

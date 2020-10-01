@@ -20,7 +20,7 @@
       },
       "it": {
         "value": "Avatar personalizzabile con badge, posizione e media iniziale",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "バッジや位置、最初のメディアでカスタマイズ可能なアバター",
@@ -49,7 +49,7 @@
       },
       "it": {
         "value": "Halo Button",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "Haloボタン",
@@ -107,7 +107,7 @@
       },
       "it": {
         "value": "Posizionamento Orizzontale",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "横配置",
@@ -136,7 +136,7 @@
       },
       "it": {
         "value": "Media da usare per iniziare il contatto",
-        "state": "needs-review"
+        "state": "final"
       },
       "ja": {
         "value": "問い合わせ開始に使用するメディア",

@@ -2,12 +2,28 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Amazon Ruf mich später an",
+        "state": "final"
+      },
       "en": {
+        "value": "Amazon Call Me Later",
+        "state": "final"
+      },
+      "es": {
+        "value": "Amazon Call Me Later",
+        "state": "final"
+      },
+      "fr": {
         "value": "Amazon Call Me Later",
         "state": "final"
       },
       "it": {
         "value": "Amazon Call Me Later",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Amazon 後ほどおかけください",
         "state": "final"
       }
     }
@@ -15,11 +31,27 @@
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Amazon Connect",
+        "state": "final"
+      },
       "en": {
         "value": "Amazon Connect",
         "state": "final"
       },
+      "es": {
+        "value": "Amazon Connect",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Amazon Connect",
+        "state": "final"
+      },
       "it": {
+        "value": "Amazon Connect",
+        "state": "final"
+      },
+      "ja": {
         "value": "Amazon Connect",
         "state": "final"
       }
