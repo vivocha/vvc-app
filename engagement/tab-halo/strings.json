@@ -2,91 +2,203 @@
   {
     "id": "DESCRIPTION",
     "values": {
+      "de": {
+        "value": "Seitentabulator auf Desktop, Halo für mobile Geräte",
+        "state": "final"
+      },
       "en": {
         "value": "Sidetab for desktop, halo for mobile",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "Sidetab en escritorio, Halo para móvil",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Onglet sur ordinateur de bureau, halo pour mobile",
+        "state": "final"
       },
       "it": {
         "value": "Sidetab su desktop, halo per mobile",
-        "state": "new"
+        "state": "final"
+      },
+      "ja": {
+        "value": "デスクトップのサイドタブ、モバイル用Halo",
+        "state": "final"
       }
     }
   },
   {
     "id": "NAME",
     "values": {
+      "de": {
+        "value": "Tab Halo",
+        "state": "final"
+      },
       "en": {
         "value": "Tab Halo",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "Tab Halo",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Onglet Halo",
+        "state": "final"
       },
       "it": {
         "value": "Tab Halo",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.NEED_HELP",
-    "values": {
-      "en": {
-        "value": "Coverage<br />Verification",
-        "state": "new"
+        "state": "final"
       },
-      "it": {
-        "value": "Verifica<br />Copertura",
-        "state": "new"
-      }
-    }
-  },
-  {
-    "id": "STRINGS.NEED_HELP_INFO",
-    "values": {
-      "en": {
-        "value": "Verify coverage or get more info",
-        "state": "new"
-      },
-      "it": {
-        "value": "Verifica la copertura o richiedi informazioni",
-        "state": "new"
+      "ja": {
+        "value": "Haloタブ",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.ENGAGE_OPT1",
     "values": {
+      "de": {
+        "value": "in Chat eintreten",
+        "state": "final"
+      },
       "en": {
-        "value": "let's chat",
-        "state": "new"
+        "value": "enter chat",
+        "state": "final"
+      },
+      "es": {
+        "value": "entrar al chat",
+        "state": "final"
+      },
+      "fr": {
+        "value": "accéder au chat",
+        "state": "final"
       },
       "it": {
         "value": "entra in chat",
-        "state": "new"
+        "state": "final"
+      },
+      "ja": {
+        "value": "チャットに入る",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.ENGAGE_OPT2",
     "values": {
+      "de": {
+        "value": "rufen Sie uns an",
+        "state": "final"
+      },
       "en": {
         "value": "call us by phone",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "llámanos al teléfono",
+        "state": "final"
+      },
+      "fr": {
+        "value": "nous contacter par téléphone",
+        "state": "final"
       },
       "it": {
         "value": "chiamaci al telefono",
-        "state": "new"
+        "state": "final"
+      },
+      "ja": {
+        "value": "お電話でお問い合わせください",
+        "state": "final"
       }
     }
   },
   {
     "id": "STRINGS.ENGAGE_OPT3",
     "values": {
+      "de": {
+        "value": "Weblead",
+        "state": "final"
+      },
       "en": {
         "value": "weblead",
-        "state": "new"
+        "state": "final"
+      },
+      "es": {
+        "value": "weblead",
+        "state": "final"
+      },
+      "fr": {
+        "value": "weblead",
+        "state": "final"
       },
       "it": {
         "value": "weblead",
-        "state": "new"
+        "state": "final"
+      },
+      "ja": {
+        "value": "Webリード",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.NEED_HELP",
+    "values": {
+      "de": {
+        "value": "Abdeckung <br />überprüfen",
+        "state": "final"
+      },
+      "en": {
+        "value": "Coverage<br />Verification",
+        "state": "final"
+      },
+      "es": {
+        "value": "Comprobar<br />cobertura",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vérifier<br />Couverture",
+        "state": "final"
+      },
+      "it": {
+        "value": "Verifica<br />Copertura",
+        "state": "final"
+      },
+      "ja": {
+        "value": "確認<br />カバー",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.NEED_HELP_INFO",
+    "values": {
+      "de": {
+        "value": "Abdeckung prüfen oder Informationen anfordern",
+        "state": "final"
+      },
+      "en": {
+        "value": "Verify coverage or request info",
+        "state": "final"
+      },
+      "es": {
+        "value": "Comprueba la cobertura o solicita información",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Vérifier la couverture ou demander des informations",
+        "state": "final"
+      },
+      "it": {
+        "value": "Verifica la copertura o richiedi informazioni",
+        "state": "final"
+      },
+      "ja": {
+        "value": "カバーを確認または情報を要求",
+        "state": "final"
       }
     }
   }

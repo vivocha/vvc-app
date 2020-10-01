@@ -23,7 +23,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "登録の ためメディアによってサイドタグが取り除かれました",
+        "value": "エンゲージメントメディア選択用の非固定式サイドラベル",
         "state": "final"
       }
     }
@@ -139,7 +139,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "弊社がご連絡",
+        "value": "弊社よりご連絡差し上げます",
         "state": "final"
       }
     }
@@ -168,7 +168,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "ウェブから",
+        "value": "ウェブサイトから",
         "state": "final"
       }
     }
@@ -197,7 +197,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "どの方法でお問い合わせしたいですか?",
+        "value": "ご希望の連絡方法",
         "state": "final"
       }
     }
@@ -205,12 +205,28 @@
   {
     "id": "STRINGS.INBOUND",
     "values": {
+      "de": {
+        "value": "RUFEN SIE UNS AN",
+        "state": "final"
+      },
       "en": {
         "value": "CALL US",
         "state": "final"
       },
+      "es": {
+        "value": "LLÁMANOS",
+        "state": "final"
+      },
+      "fr": {
+        "value": "APPELEZ-NOUS",
+        "state": "final"
+      },
       "it": {
         "value": "CHIAMACI",
+        "state": "final"
+      },
+      "ja": {
+        "value": "お電話ください",
         "state": "final"
       }
     }
@@ -239,7 +255,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "ヘルプ?",
+        "value": "サポートをご希望ですか？",
         "state": "final"
       }
     }
@@ -268,7 +284,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "又は弊社が連絡",
+        "value": "または弊社からご連絡差し上げます",
         "state": "final"
       }
     }
@@ -384,7 +400,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "横配置",
+        "value": "横画面表示",
         "state": "final"
       }
     }
@@ -413,7 +429,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "初期カラー",
+        "value": "原色",
         "state": "final"
       }
     }
@@ -442,7 +458,7 @@
         "state": "final"
       },
       "ja": {
-        "value": "縦配置",
+        "value": "縦画面表示",
         "state": "final"
       }
     }
