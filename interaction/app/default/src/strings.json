@@ -5537,5 +5537,18 @@
         "state": "final"
       }
     }
+  },
+  {
+    "id": "STRINGS.MESSAGES.SERVER_REJECTED_UPLOAD",
+    "values": {
+      "it": {
+        "value": "Upload non completato: il file non è stato accettato dal server",
+        "state": "final"
+      },
+      "en": {
+        "value": "Upload error: the file has been rejected by the server",
+        "state": "final"
+      }
+    }
   }
 ]

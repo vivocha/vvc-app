@@ -1255,7 +1255,13 @@ export class VvcContactWrap {
       this.zone.run(() => {
         this.uiService.setUploaded();
       });
-    });
+    }).catch(err => {
+      this.logger.error('contact.attach error', err);
+      this.zone.run(() => {
+        this.uiService.setUploaded();
+        this.messageService.sendSystemMessage('STRINGS.MESSAGES.SERVER_REJECTED_UPLOAD');
+      });
+    })
   }
   sendIsWriting() {
     if (!this.autoChat && this.contact) {
