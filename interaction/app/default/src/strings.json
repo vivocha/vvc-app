@@ -5542,11 +5542,11 @@
     "id": "STRINGS.MESSAGES.SERVER_REJECTED_UPLOAD",
     "values": {
       "it": {
-        "value": "Upload non completato: il file non è stato accettato dal server",
+        "value": "<span style='color: red;'>Upload non completato: il file non è stato accettato dal server</span>",
         "state": "final"
       },
       "en": {
-        "value": "Upload error: the file has been rejected by the server",
+        "value": "<span style='color: red;'>Upload error: the file has been rejected by the server</span>",
         "state": "final"
       }
     }
