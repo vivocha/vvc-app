@@ -27,6 +27,16 @@ export class MediaContainerComponent implements AfterViewInit {
     this.ngAfterViewInited = true;
     this.cd.detectChanges();
 
+    if (
+      !this.context.videoRxStream &&
+      !this.context.videoTxStream &&
+      this.context.screenRxStream &&
+      this.bigVideo &&
+      this.bigVideo.nativeElement.paused
+    ) {
+      this.bigVideo.nativeElement.muted = true;
+      this.cd.detectChanges();
+    }
   }
   canHideSmallVideo() {
     return !this.hideSmallVideo && (this.isLocalVideoVisible || this.isRemoteVideoVisible);
