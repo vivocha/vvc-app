@@ -4437,6 +4437,45 @@
     }
   },
   {
+    "id": "STRINGS.MESSAGES.REQUEST_SCREENSHARING",
+    "values": {
+      "en": {
+        "value": "Would you like to accept the screensharing request?",
+        "state": "final"
+      },
+      "it": {
+        "value": "Vuoi accettare la richiesta di condivisione schermo?",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.REQUEST_SCREENSHARING_ACCEPTED",
+    "values": {
+      "en": {
+        "value": "Screen sharing session accepted",
+        "state": "final"
+      },
+      "it": {
+        "value": "Sessione di condivisione schermo accettata",
+        "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.MESSAGES.REQUEST_SCREENSHARING_REJECTED",
+    "values": {
+      "en": {
+        "value": "Screen sharing session rejected",
+        "state": "final"
+      },
+      "it": {
+        "value": "Hai rifiutato la sessione di condivisione moduli",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "STRINGS.MESSAGES.TRANSFERRED",
     "values": {
       "de": {
