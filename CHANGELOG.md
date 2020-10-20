@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.6.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.17...@vivocha/client-interaction@7.6.0) (2020-10-20)
+
+
+### Bug Fixes
+
+* **core:** handle file upload promise reject ([d9e8840](https://github.com/vivocha/vvc-app/commit/d9e8840a5d4ee0723d6fab6824c5de0b5e63ccdd))
+* **core:** red upload error message ([8f590ed](https://github.com/vivocha/vvc-app/commit/8f590edcf612865b99415fc66fc58c8d6b5b25b7))
+* **strings:** add STRINGS.MESSAGES.REQUEST_SCREENSHARING_* strings ([259e40c](https://github.com/vivocha/vvc-app/commit/259e40c7bf763f5cd827dadeeb0d0cc9bd76e0ce))
+
+
+### Features
+
+* **translations:** add widgets + default app translations and revisions ([960e13f](https://github.com/vivocha/vvc-app/commit/960e13f005bf0ac7b650bc37074b1ba78896dab3))
+
+
+
+
+
 ## [7.5.17](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.16...@vivocha/client-interaction@7.5.17) (2020-09-28)
 
 **Note:** Version bump only for package @vivocha/client-interaction
