@@ -12,7 +12,8 @@
     "clean:artifacts": "lerna run clean --parallel",
     "clean:packages": "lerna clean -y",
     "clean:root": "npx rimraf node_modules",
-    "commit": "./node_modules/.bin/git-cz"
+    "commit": "./node_modules/.bin/git-cz",
+    "codebuild": "./build.sh -i aws/codebuild/standard:3.0 -a `pwd`/artifacts -s `pwd` -m -c -e .env"
   },
   "config": {
     "commitizen": {
