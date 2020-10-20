@@ -81,7 +81,10 @@ export class VvcContactWrap {
   }
   addChatToFullScreen(show) {
     this.uiService.setFullScreenChat(show);
-    if (this.context.mediaPreset !== 'chat') {
+    // if (this.context.mediaPreset !== 'chat') {
+    //   this.askForUpgrade('Chat');
+    // }
+    if (!this.protocolService.isAlreadyConnectedWith('Chat')) {
       this.askForUpgrade('Chat');
     }
   }
@@ -1510,7 +1513,12 @@ export class VvcContactWrap {
         this.zone.run(() => {
           this.uiService.setInTransit(false);
         });
-      });
+      }).catch(err => {
+        console.log('offer rejected', err);
+        this.zone.run(() => {
+          this.uiService.setInTransit(false);
+        });
+      })
     });
   }
   track(id: string, obj?: any) {
