@@ -13,6 +13,7 @@
     "clean:packages": "lerna clean -y",
     "clean:root": "npx rimraf node_modules",
     "commit": "./node_modules/.bin/git-cz",
+    "precodebuild": "npm run clean",
     "codebuild": "./build.sh -i aws/codebuild/standard:3.0 -a `pwd`/artifacts -s `pwd` -m -c -e .env"
   },
   "config": {
