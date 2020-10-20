@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.9](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.8...@vivocha/client-interaction-core@7.6.9) (2020-10-20)
+
+
+### Bug Fixes
+
+* **core:** fullscreen bugfixes ([4f3ca0e](https://github.com/vivocha/widgets/commit/4f3ca0e7fdb1a96fa1bcfef7cef576627eee01c9)), closes [#2](https://github.com/vivocha/widgets/issues/2)
+* **core:** handle file upload promise reject ([d9e8840](https://github.com/vivocha/widgets/commit/d9e8840a5d4ee0723d6fab6824c5de0b5e63ccdd))
+
+
+
+
+
 ## [7.6.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.7...@vivocha/client-interaction-core@7.6.8) (2020-09-28)
 
 

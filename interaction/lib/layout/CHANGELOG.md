@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.7](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.6...@vivocha/client-interaction-layout@7.5.7) (2020-10-20)
+
+
+### Bug Fixes
+
+* **layout:** fix black video box on screensharing ([d34160c](https://github.com/vivocha/widgets/commit/d34160c063469b1c6089e56a3abd739444b4fb81)), closes [#1](https://github.com/vivocha/widgets/issues/1)
+
+
+
+
+
 ## [7.5.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.5...@vivocha/client-interaction-layout@7.5.6) (2020-09-28)
 
 

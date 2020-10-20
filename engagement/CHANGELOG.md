@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.3...@vivocha/client-visitor-default-widgets@7.5.0) (2020-10-20)
+
+
+### Bug Fixes
+
+* **vvc-barebone:** missing required type prop in manifest.json ([907f4b5](https://github.com/vivocha/widgets/commit/907f4b5cd8a1c583b7790350607edb03595b2406))
+
+
+### Features
+
+* **repo:** add simple node script to push & activate all engagement widgets ([ee000ea](https://github.com/vivocha/widgets/commit/ee000ea41732458df47230184434e06fa465567f))
+* **translations:** add tab-halo and sidetab translations/revisions ([e9a5bef](https://github.com/vivocha/widgets/commit/e9a5bef79a9ac4de77b59a93b042a1641905ad69))
+* **translations:** add widgets + default app translations and revisions ([960e13f](https://github.com/vivocha/widgets/commit/960e13f005bf0ac7b650bc37074b1ba78896dab3))
+
+
+
+
+
 ## [7.4.3](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.2...@vivocha/client-visitor-default-widgets@7.4.3) (2020-05-13)
 
 
