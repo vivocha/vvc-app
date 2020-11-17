@@ -272,12 +272,8 @@ export class VvcContactWrap {
     this.vivocha.pageRequest('interactionCreation', conf, (opts: ClientContactCreationOptions = conf) => {
       this.logger.log('pre-routing callback. opts:', opts);
       this.interactionStart = +new Date();
-      const timeout = (this.vivocha.dot(this.context, 'routing.dissuasionTimeout') || 60) * 1000;
-      this.dissuasionTimer = setTimeout(() => {
-        this.leave('dissuasion').then(() => {
-          this.setRecallOrLeave('timeout', 'dissuasion');
-        });
-      }, timeout);
+      const timeout = this.getDefaultDissuasionTimeoutMs();
+      this.setDissuasionTimer(timeout);
       this.track('creating contact');
       this.vivocha.createContact(opts, this.mapContact()).then((contact) => {
         this.zone.run(() => {
@@ -1143,6 +1139,16 @@ export class VvcContactWrap {
     this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
     this.uiService.setOfferRejected();
   }
+  getDefaultDissuasionTimeoutMs(): number {
+    return (this.vivocha.dot(this.context, 'routing.dissuasionTimeout') || 60) * 1000;
+  }
+  setDissuasionTimer(timeout: number) {
+    this.dissuasionTimer = setTimeout(() => {
+      this.leave('dissuasion').then(() => {
+        this.setRecallOrLeave('timeout', 'dissuasion');
+      });
+    }, timeout);
+  }
   async resumeContact(context: any) {
     try {
       this.track('resuming contact');
@@ -1219,6 +1225,17 @@ export class VvcContactWrap {
             this.dcService.setResolved();
             this.uiService.setUiReady();
             this.uiService.showQueuePanel();
+
+            const createdAt = new Date(contact.contact.ts);
+            const now = new Date();
+            const elapsed = now.getTime() - createdAt.getTime();
+            const t = this.getDefaultDissuasionTimeoutMs();
+
+            if(elapsed < t) {
+              const tt = t-elapsed;
+              this.logger.log('set dissuasion timer for', tt, 'ms');
+              this.setDissuasionTimer(tt);
+            }
             this.track('queue screen - resume');
           }
         });
