@@ -1235,7 +1235,10 @@ export class VvcContactWrap {
               const tt = t-elapsed;
               this.logger.log('set dissuasion timer for', tt, 'ms');
               this.setDissuasionTimer(tt);
+            } else {
+              this.logger.warn('dissuaded', elapsed, t);
             }
+
             this.track('queue screen - resume');
           }
         });
