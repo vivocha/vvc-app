@@ -244,10 +244,19 @@ export class VvcDataCollectionService {
       dc.fields.forEach( elem => {
         const hasDefault = (typeof elem.defaultConstant !== 'undefined') && elem.defaultConstant != null;
         data[elem.id] = (hasDefault && elem.type !== 'boolean') ? elem.defaultConstant.toString() : elem.defaultConstant;
+
+        /*
+          When the whole data-collection is hidden, the CustomerInfo console-app will receive
+          an empty data array and the agent will not be able to edit the field.
+          Sending an empty string as field value is a workaround that will display the field on agent side
+        */
+        if(!data[elem.id] && elem.hidden && elem.editable) {
+          data[elem.id] = '';
+        }
       });
     }
     const dataCollection = {
-      dcDefinition : dc,
+      dcDefinition: dc,
       dcData: data
     };
     this.logger.log('submitting hidden dc', dataCollection);
