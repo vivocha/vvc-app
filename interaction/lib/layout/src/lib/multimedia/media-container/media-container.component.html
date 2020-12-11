@@ -50,7 +50,7 @@
          [srcObject]="context.voiceRxStream"></audio>
 
   <div class="big-video"
-       *ngIf="isBigVideoVisible"
+       [hidden]="!isBigVideoVisible"
        (dblclick)="minMaxVideo()">
     <video autoplay playsinline
            #bigVideo
