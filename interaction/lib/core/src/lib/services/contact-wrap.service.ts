@@ -800,7 +800,7 @@ export class VvcContactWrap {
     this.setDimension(dim);
   }
   markRead(msgId: string) {
-    if (this.contact.sendRead) {
+    if (this.contact && this.contact.sendRead) {
       if (!this.readIds[msgId]) {
         this.contact.sendRead(msgId);
         this.readIds[msgId] = msgId;
