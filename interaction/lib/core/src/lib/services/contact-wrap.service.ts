@@ -703,7 +703,9 @@ export class VvcContactWrap {
       {
         event: 'capabilities',
         handler: caps => {
-          this.uiService.setRemoteCaps(caps);
+          this.zone.run(() => {
+            this.uiService.setRemoteCaps(caps);
+          });
         }
       },
       {
