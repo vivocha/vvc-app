@@ -221,7 +221,8 @@ export class VvcContactWrap {
             type: 'chat',
             meta: meta,
             from_nick: msg.from_nick,
-            from_id: msg.from_id
+            from_id: msg.from_id,
+            ts: msg.ts
           };
           if (msg.agent) {
             this.messageService.addChatMessage(attachment, this.agent, this.visitorNick);
