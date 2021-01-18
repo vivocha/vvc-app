@@ -15,7 +15,7 @@ const initialState = {
   protocol: { contactStarted: false }
 };
 
-export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState {
+export function reducer(state: WidgetState = initialState, action: fromWidget.WidgetActions): WidgetState {  
   switch (action.type) {
     case fromWidget.WIDGET_CLOSED_BY_AGENT: {
       const context = Object.assign({}, state.context, { closedByAgent: true, showClosePanel: false, isMinimized: false });
@@ -69,6 +69,9 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
     case fromWidget.WIDGET_INIT_CONTEXT: {
       const context = Object.assign({}, state.context, { ...action.payload});
+      if(action.payload.mediaPreset === "sync"){
+        context.isMinimized = true;
+      }
       return Object.assign({}, state, { context: context} );
     }
     case fromWidget.WIDGET_INIT_MULTIMEDIA: {
@@ -282,6 +285,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
     }
     default: return state;
   }
+
 }
 
 
