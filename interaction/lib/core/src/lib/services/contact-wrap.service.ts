@@ -1224,8 +1224,6 @@ export class VvcContactWrap {
             // TODO remove is_bot check once the restore media is able to detect the capabilitites from bot
             if (Object.keys(media).length > 1 || (this.agent && this.agent.is_bot)) {
               this.uiService.initializeMedia(media);
-            } else {
-              this.uiService.setMinimizedState();
             }
             this.checkForTranscript();
             this.sendWelcomeMessage();
