@@ -890,6 +890,11 @@ export class VvcContactWrap {
     });
   }
   onAgentRequest(message, cb) {
+    switch(message){
+      case 'request_seamless_cobrowsing':
+        this.setNormalScreen();
+        break;
+    }
     this.agentRequestCallback = cb;
     this.lastSystemMessageId = this.messageService.sendRequestMessage(message);
   }
