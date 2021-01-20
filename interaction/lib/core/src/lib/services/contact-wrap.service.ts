@@ -1199,6 +1199,9 @@ export class VvcContactWrap {
         this.contact.getLocalCapabilities().then((caps) => {
           this.uiService.setLocalCaps(caps);
         });
+        this.contact.getRemoteCapabilities().then(caps => {
+          this.uiService.setRemoteCaps(caps);
+        });
       });
       this.vivocha.pageRequest('interactionCreated', contact);
       this.interactionReady();
