@@ -315,7 +315,10 @@ export class AppComponent implements OnInit {
       this.closeDimensions = context.isMobile ? this.dimensions.fullscreen : this.dimensions.normal;
     }
     this.interactionService.setDimensions(this.closeDimensions);
-    if (context.mediaPreset === 'sync' || (!!context.conversationId && !context.persistenceId)) {
+
+    // TODO review this check
+    // if (context.mediaPreset === 'sync' || (!!context.conversationId && !context.persistenceId)) {
+    if (context.mediaPreset === 'sync' || !!context.conversationId) {
       this.interactionService.setDimensions(this.dimensions.minimized);
     }
   }
