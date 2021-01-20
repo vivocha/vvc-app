@@ -193,7 +193,8 @@ export class VvcInteractionService {
     this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
-    this.askForChatUpgrade();
+    // TODO review this request
+    // this.askForChatUpgrade();
     if (!isFullScreen) {
       const variables = this.getVariables();
       if (variables['rememberPositionAfterMinimize'] && this.dragged) {

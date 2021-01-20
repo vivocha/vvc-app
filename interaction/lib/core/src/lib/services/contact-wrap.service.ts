@@ -92,39 +92,42 @@ export class VvcContactWrap {
     if (media !== 'Chat') {
       this.uiService.setIsOffering(media);
     }
-    this.contact.getMediaOffer().then(offer => {
-      if (media === 'Chat') {
-        offer[media] = {
-          tx: 'required',
-          rx: 'required'
-        };
-      } else {
-        offer[media] = {
-          tx: 'required',
-          rx: 'required',
-          via: 'net',
-          engine: 'WebRTC'
-        };
-      }
-      if (media === 'Video') {
-        offer['Voice'] = {
-          tx: 'required',
-          rx: 'required',
-          via: 'net',
-          engine: 'WebRTC'
-        };
-      }
-      this.contact.offerMedia(offer).then(() => {
-        this.zone.run(() => {
+    if(this.contact) {
+      this.contact.getMediaOffer().then(offer => {
+        if (media === 'Chat') {
+          offer[media] = {
+            tx: 'required',
+            rx: 'required'
+          };
+        } else {
+          offer[media] = {
+            tx: 'required',
+            rx: 'required',
+            via: 'net',
+            engine: 'WebRTC'
+          };
+        }
+        if (media === 'Video') {
+          offer['Voice'] = {
+            tx: 'required',
+            rx: 'required',
+            via: 'net',
+            engine: 'WebRTC'
+          };
+        }
+        this.contact.offerMedia(offer).then(() => {
+          this.zone.run(() => {
 
-        });
-      }, (err) => {
-        this.zone.run(() => {
-          this.uiService.setOfferRejected();
+          });
+        }, (err) => {
+          this.zone.run(() => {
+            this.uiService.setOfferRejected();
+          });
         });
       });
-    });
-
+    } else {
+      console.log('MISSING CONTACT!');
+    }
   }
   attachDataAndCreateContact(context) {
     const contactOptions: { data: any[], nick?: string } = { data: [] };
