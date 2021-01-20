@@ -60,9 +60,11 @@ export class VvcProtocolService {
   }
   isAlreadyConnectedWith(media) {
     return (
+      this.lastMediaChange &&
       this.lastMediaChange[media] &&
       this.lastMediaChange[media].tx &&
-      this.lastMediaChange[media].rx);
+      this.lastMediaChange[media].rx
+    );
   }
   mergeOffer(diffOffer) {
     for (const m in diffOffer) {

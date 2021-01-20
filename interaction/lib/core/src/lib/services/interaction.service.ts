@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable, fromEvent } from 'rxjs';
 import { skipUntil, takeUntil, repeat } from 'rxjs/operators';
 import { NewEvent } from '../store/actions/events.actions';
+import { VvcProtocolService } from './protocol.service';
 
 @Injectable()
 export class VvcInteractionService {
@@ -34,6 +35,7 @@ export class VvcInteractionService {
     private store: Store<AppState>,
     private contextService: VvcContextService,
     private contactService: VvcContactWrap,
+    private protocolService: VvcProtocolService,
     private translateService: TranslateService
   ) {
   }
@@ -53,6 +55,11 @@ export class VvcInteractionService {
   }
   askForVoiceUpgrade() {
     this.contactService.askForUpgrade('Voice');
+  }
+  askForChatUpgrade() {
+    if(!this.protocolService.isAlreadyConnectedWith("Chat")) { 
+      this.contactService.askForUpgrade('Chat');
+    }
   }
   changeLang(lang) {
     this.translateService.use(lang);
@@ -186,6 +193,7 @@ export class VvcInteractionService {
     this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
+    this.askForChatUpgrade();
     if (!isFullScreen) {
       const variables = this.getVariables();
       if (variables['rememberPositionAfterMinimize'] && this.dragged) {

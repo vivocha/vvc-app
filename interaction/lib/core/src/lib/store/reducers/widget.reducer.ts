@@ -405,6 +405,8 @@ export const getUiStateRedux = (
 
   const canMinimize = widgetState.context.campaign ? !(widgetState.context.campaign.channels.web.interaction || {}).selector : true;
 
+  console.log("[REDUCER - widgetState]", widgetState);
+
     return {
       agent: widgetState.agent,
       messages: [...messagesState.list],

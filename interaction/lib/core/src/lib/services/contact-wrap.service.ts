@@ -483,6 +483,7 @@ export class VvcContactWrap {
         switch (e.type) {
           case 'joined':
             this.onJoined(e.data);
+            console.log("[1]");
             break;
           case 'rawmessage':
             this.processRawMessage(e.data);
@@ -633,6 +634,7 @@ export class VvcContactWrap {
           if (this.interactionCreated) {
             this.debug('joined', c);
             this.onJoined(c);
+            console.log("[2]",  c);
           } else {
             this.debug('joined', c, 'queued');
             this.interactionEvtQueue.push({ type: 'joined', data: c });
@@ -704,6 +706,7 @@ export class VvcContactWrap {
       {
         event: 'capabilities',
         handler: caps => {
+          console.log("[] ----------->", caps);
           this.zone.run(() => {
             this.uiService.setRemoteCaps(caps);
           });
@@ -763,6 +766,12 @@ export class VvcContactWrap {
               this.setTransferTimer();
             }
           });
+        }
+      },
+      {
+        event: 'synced',
+        handler: (info) => {
+          console.log("[synced]", info);
         }
       }
     ];
@@ -923,6 +932,7 @@ export class VvcContactWrap {
     });
   }
   onJoined(data) {
+    console.log("[3]", data);
     if (data.user) {
       this.cancelDissuasionTimeout();
       this.onAgentJoin(data);
