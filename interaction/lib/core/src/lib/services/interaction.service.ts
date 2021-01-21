@@ -20,14 +20,10 @@ export class VvcInteractionService {
    */
   dragged: any | boolean = false;
 
-  /**
-   * Local reference that indicates that the #setFullScreen method was called
-   */
-  isFullScreen: boolean = false;
-
   private vivocha;
   private logger = console;
   private context: ContextState;
+  private uiState: UiState;
 
   agentRequestCallback;
 
@@ -40,7 +36,7 @@ export class VvcInteractionService {
   ) {
   }
 
-  /**** PUBLIC METHOD ****/
+  /**** PUBLIC METHODS ****/
   acceptAgentRequest(requestId) {
     this.contactService.acceptAgentRequest(requestId);
   }
@@ -82,6 +78,10 @@ export class VvcInteractionService {
   }
   getState(): Observable<UiState> {
     return this.store.pipe(select(getUiState));
+  }
+  setUiState(uiState: UiState) {
+    this.uiState = uiState;
+    this.contactService.setUiState(uiState);
   }
   getVariables() {
     const context: any = this.contextService.getContext();

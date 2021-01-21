@@ -5,7 +5,7 @@ import { objectToDataCollection } from '@vivocha/public-entities/dist/wrappers/d
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Observable, Subject } from 'rxjs';
 import { NewEvent } from '../store/actions/events.actions';
-import { AgentState, CbnStatus, DataCollectionCompleted, Dimension, InboundStateList, LeftScrollOffset } from '../store/models.interface';
+import { AgentState, CbnStatus, DataCollectionCompleted, Dimension, InboundStateList, LeftScrollOffset, UiState } from '../store/models.interface';
 import { AppState } from '../store/reducers/main.reducer';
 import { VvcDataCollectionService } from './data-collection.service';
 import { VvcMessageService } from './messages.service';
@@ -21,6 +21,7 @@ export class VvcContactWrap {
   private logger = console;
   private _ids = {};
   private readIds = {};
+  private uiState: UiState;
 
   lastSystemMessageId;
   agent;
@@ -413,6 +414,25 @@ export class VvcContactWrap {
   hasRecallForNoAgent() {
     return false;
   }
+  handleScreenOnAgentRequest() {
+    this.logger.log('contact-service.handleScreenOnAgentRequest', this.uiState);
+    if(!this.uiState.isFullScreen && this.uiState.isMinimized) {
+      this.uiService.setNormalScreen();
+      this.vivocha.setNormalScreen();
+      this.vivocha.pageRequest('setSize', {
+        width: this.context.variables.initialWidth,
+        height: this.context.variables.initialHeight
+      });
+      this.vivocha.pageRequest('setPosition', {
+        right: this.context.variables.initialRight,
+        bottom: this.context.variables.initialBottom
+      });
+    } else if(this.uiState.isFullScreen) {
+      this.uiService.setFullScreenChat(true);
+    } else if(!this.uiState.isChatVisible) {
+      this.uiService.setMinimizedMedia();
+    }
+  }
   hideChat() {
     this.uiService.hideChat();
   }
@@ -489,7 +509,6 @@ export class VvcContactWrap {
         switch (e.type) {
           case 'joined':
             this.onJoined(e.data);
-            console.log("[1]");
             break;
           case 'rawmessage':
             this.processRawMessage(e.data);
@@ -640,7 +659,6 @@ export class VvcContactWrap {
           if (this.interactionCreated) {
             this.debug('joined', c);
             this.onJoined(c);
-            console.log("[2]",  c);
           } else {
             this.debug('joined', c, 'queued');
             this.interactionEvtQueue.push({ type: 'joined', data: c });
@@ -904,9 +922,9 @@ export class VvcContactWrap {
     });
   }
   onAgentRequest(message, cb) {
-    switch(message){
+    switch(message) {
       case 'request_seamless_cobrowsing':
-        this.setNormalScreen();
+        this.handleScreenOnAgentRequest();
         break;
     }
     this.agentRequestCallback = cb;
@@ -937,7 +955,6 @@ export class VvcContactWrap {
     });
   }
   onJoined(data) {
-    console.log("[3]", data);
     if (data.user) {
       this.cancelDissuasionTimeout();
       this.onAgentJoin(data);
@@ -1161,6 +1178,9 @@ export class VvcContactWrap {
     this.incomingCallback('error', {});
     this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
     this.uiService.setOfferRejected();
+  }
+  setUiState(uiState: UiState) {
+    this.uiState = uiState;
   }
   getDefaultDissuasionTimeoutMs(): number {
     return (this.vivocha.dot(this.context, 'routing.dissuasionTimeout') || 60) * 1000;
