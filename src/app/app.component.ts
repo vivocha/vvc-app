@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {VvcInteractionService, Dimension, UiState} from '@vivocha/client-interaction-core';
 import {ChatAreaComponent} from '@vivocha/client-interaction-layout';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 interface Dimensions {
   [key: string]: Dimension;
@@ -11,7 +11,7 @@ interface Dimensions {
   selector: 'vvc-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   @ViewChild(ChatAreaComponent, {static: false}) chat: ChatAreaComponent;
 
@@ -89,6 +89,8 @@ export class AppComponent implements OnInit {
     }
   };
 
+  private appUiStateSub: Subscription;
+
   public closeDimensions: Dimension;
 
   public selector: string | null = null;
@@ -99,7 +101,14 @@ export class AppComponent implements OnInit {
     this.appState$ = this.interactionService.getState();
     this.interactionService.init().subscribe(context => this.setInitialDimensions(context));
     this.interactionService.events().subscribe(evt => this.listenForEvents(evt));
-    //this.interactionService.getState().subscribe( state => console.log(JSON.stringify(state, null, 2)));
+
+    // listen to uiState changes in order to update the local reference used in services
+    this.appUiStateSub = this.appState$.subscribe(uiState => {
+      this.interactionService.setUiState(uiState);
+    });
+  }
+  ngOnDestroy() {
+    this.appUiStateSub.unsubscribe();
   }
   acceptAgentRequest(requestId) {
     this.interactionService.acceptAgentRequest(requestId);
