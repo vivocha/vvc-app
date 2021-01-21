@@ -57,9 +57,7 @@ export class VvcInteractionService {
     this.contactService.askForUpgrade('Voice');
   }
   askForChatUpgrade() {
-    if(!this.protocolService.isAlreadyConnectedWith("Chat")) { 
-      this.contactService.askForUpgrade('Chat');
-    }
+    this.contactService.askForUpgrade('Chat');
   }
   changeLang(lang) {
     this.translateService.use(lang);
@@ -193,8 +191,9 @@ export class VvcInteractionService {
     this.contactService.minimize(minimize, isFullScreen, positionObject, sizeObject);
   }
   maximizeWidget(isFullScreen: boolean, dim: Dimension) {
-    // TODO review this request
-    // this.askForChatUpgrade();
+    if(!this.protocolService.isAlreadyConnectedWith("Chat")) { 
+      this.askForChatUpgrade();
+    }
     if (!isFullScreen) {
       const variables = this.getVariables();
       if (variables['rememberPositionAfterMinimize'] && this.dragged) {

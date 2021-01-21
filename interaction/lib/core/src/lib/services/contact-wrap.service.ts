@@ -126,7 +126,7 @@ export class VvcContactWrap {
         });
       });
     } else {
-      console.log('MISSING CONTACT!');
+      this.logger.warn('contact-service.askForUpgrade missing contact', this);
     }
   }
   attachDataAndCreateContact(context) {
@@ -423,6 +423,7 @@ export class VvcContactWrap {
     this.context = context;
     this.dcService.setInitialContext(context, vivocha);
     if (this.isInPersistence()) {
+      this.logger.log('contact-service.initializeContact resuming contact', this.context);
       this.resumeContact(context);
       if (this.dcService.hasSurvey()) {
         this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionCompleted) => {
@@ -432,8 +433,10 @@ export class VvcContactWrap {
         });
       }
     } else if (this.isInConversation()) {
+      this.logger.log('contact-service.initializeContact resuming conversation', this.context);
       this.resumeConversation(context);
     } else {
+      this.logger.log('contact-service.initializeContact', this.context);
       this.dcService.onDataCollectionCompleted().subscribe((data: DataCollectionCompleted) => {
         this.logger.log('onDataCollectionCompleted. data:', data);
         if (data) {
@@ -709,7 +712,6 @@ export class VvcContactWrap {
       {
         event: 'capabilities',
         handler: caps => {
-          console.log("[] ----------->", caps);
           this.zone.run(() => {
             this.uiService.setRemoteCaps(caps);
           });
