@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.6.0...@vivocha/client-interaction@7.6.1) (2021-02-01)
+
+
+### Bug Fixes
+
+* improve check on agent request (request_seamless_cobrowsing) ([12b3ce5](https://github.com/vivocha/vvc-app/commit/12b3ce5478a13ecd2d6e9c4af4a724ae59149c83))
+* **app:** fix dimensions on persistence when conversations:true ([0dd0eb7](https://github.com/vivocha/vvc-app/commit/0dd0eb74c95dc19a56b3b9a31fc10e56be3537e7))
+* **app:** fix regression - restore app behaviour on presistence ([948aa67](https://github.com/vivocha/vvc-app/commit/948aa67a08fdd3890e13ec7a7373c565cd9d4a27))
+* **strings:** fix default interaction-app strings ([1267673](https://github.com/vivocha/vvc-app/commit/12676737ae5e26f1016f0c361bd3a660ca621663))
+
+
+
+
+
 # [7.6.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.5.17...@vivocha/client-interaction@7.6.0) (2020-10-20)
 
 
