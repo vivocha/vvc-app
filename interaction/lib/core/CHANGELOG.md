@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.10](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.9...@vivocha/client-interaction-core@7.6.10) (2021-02-01)
+
+
+### Bug Fixes
+
+* clean ([decd444](https://github.com/vivocha/widgets/commit/decd44401831707cdb25082481306496c1aa8b60))
+* improve check on agent request (request_seamless_cobrowsing) ([12b3ce5](https://github.com/vivocha/widgets/commit/12b3ce5478a13ecd2d6e9c4af4a724ae59149c83))
+* **core:** ask remote capabilities on context sync/resume ([7e8b9e1](https://github.com/vivocha/widgets/commit/7e8b9e16ee91f7c882d7cadc6296c2130d5c7ec2))
+* **core:** fix glitch on sync + persistence ([51d73e4](https://github.com/vivocha/widgets/commit/51d73e44f0a98672508e556c2055177c64058b30))
+* **core:** fix minimized glitch on sync ([87e8860](https://github.com/vivocha/widgets/commit/87e8860f3ebe743f5e45d4af79d530965ae3a8e9))
+* **core:** fix missing ts on attachment messages ([2f183c1](https://github.com/vivocha/widgets/commit/2f183c17414221956672a7a242ea3a82a78ee414)), closes [#5](https://github.com/vivocha/widgets/issues/5)
+* **core:** force angular scope sync to display upload button ([0c868e4](https://github.com/vivocha/widgets/commit/0c868e41af82163ce6ba4f5433292978b7facbb4))
+* **core:** handle hidden field editable by agent ([740a3fd](https://github.com/vivocha/widgets/commit/740a3fddb3353f9fdd87d42f62c3e5ed5330e925)), closes [#4](https://github.com/vivocha/widgets/issues/4)
+* **core:** improve sendRead check ([636baaf](https://github.com/vivocha/widgets/commit/636baaf8c40e3d2aabcf88162e5b910246a88aa0))
+* **core:** set dissuasion timer after resume ([8760b73](https://github.com/vivocha/widgets/commit/8760b731247615c91730b30bba0265de47dd9c7f)), closes [#42](https://github.com/vivocha/widgets/issues/42)
+
+
+
+
+
 ## [7.6.9](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.8...@vivocha/client-interaction-core@7.6.9) (2020-10-20)
 
 

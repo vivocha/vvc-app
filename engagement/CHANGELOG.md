@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.1](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.5.0...@vivocha/client-visitor-default-widgets@7.5.1) (2021-02-01)
+
+
+### Bug Fixes
+
+* **client-visitor-default-widgets:** fix vvc-popup translation ([a511569](https://github.com/vivocha/widgets/commit/a511569f5a7d25393e2e69d6a640b47282eb0f50))
+
+
+
+
+
 # [7.5.0](https://github.com/vivocha/widgets/compare/@vivocha/client-visitor-default-widgets@7.4.3...@vivocha/client-visitor-default-widgets@7.5.0) (2020-10-20)
 
 

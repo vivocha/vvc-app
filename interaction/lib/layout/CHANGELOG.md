@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.7...@vivocha/client-interaction-layout@7.5.8) (2021-02-01)
+
+
+### Bug Fixes
+
+* **layout:** black video on screencasting (chrome) ([7b94717](https://github.com/vivocha/widgets/commit/7b947179f63bb0082663bf869bf4245d026bda05))
+* **layout:** open call prompt with tap ([5c8ac41](https://github.com/vivocha/widgets/commit/5c8ac4102dcbb0212ebeaab9485c37389dfa095a))
+* **layout:** validate phonenum field when has a value ([a540a97](https://github.com/vivocha/widgets/commit/a540a9724c1ca76804066054ec7f9934e7b3a458)), closes [#3](https://github.com/vivocha/widgets/issues/3)
+
+
+
+
+
 ## [7.5.7](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.6...@vivocha/client-interaction-layout@7.5.7) (2020-10-20)
 
 
