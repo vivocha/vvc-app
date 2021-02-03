@@ -1,8 +1,8 @@
 <div #tplGen class="tpl-navigation">
 
-  <div class="tpl-left" *ngIf="message.elements.length > 1" (click)="scrollLeft()"></div>
+  <div class="tpl-left" *ngIf="message.elements.length > 1 && scrollOffset > 0" (click)="scrollLeft()"></div>
 
-  <div class="tpl-right" *ngIf="message.elements.length > 1" (click)="scrollRight()"></div>
+  <div class="tpl-right" *ngIf="message.elements.length > 1 && scrollOffset <= lastCarouselElem" (click)="scrollRight()"></div>
 
   <div #carousel
        class="tpl-container"

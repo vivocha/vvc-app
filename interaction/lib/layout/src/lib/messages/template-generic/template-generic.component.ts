@@ -24,7 +24,10 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
   @ViewChild('tplGen', {static: true}) tplGen: ElementRef;
 
   scrollOffset = 0;
+  lastCarouselElem = 0;
   transition = 'none';
+
+  private carouselElemWith = 260;
 
   private msgElement: HTMLDivElement;
   private listElement: HTMLDivElement;
@@ -42,6 +45,9 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
     if (this.message) {
       this.scrollOffset = this.message.scrollLeft;
       this.transition = 'smooth';
+      if(this.message.elements.length > 1){
+        this.lastCarouselElem = ((this.message.elements.length -1) * this.carouselElemWith) - 1;
+      }
     }
     this.msgElement = this.tplGen.nativeElement;
     this.listElement = this.tplGen.nativeElement.closest('#vvc-messages');
@@ -93,11 +99,11 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
   }
 
   scrollRight() {
-    this.scrollOffset = this.scrollOffset + 260;
+    this.scrollOffset = this.scrollOffset + this.carouselElemWith;
   }
 
   scrollLeft() {
-    this.scrollOffset = this.scrollOffset - 260;
+    this.scrollOffset = this.scrollOffset - this.carouselElemWith;
   }
 
   defaultAction(elem) {
