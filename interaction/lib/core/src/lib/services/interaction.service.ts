@@ -11,6 +11,8 @@ import { Observable, fromEvent } from 'rxjs';
 import { skipUntil, takeUntil, repeat } from 'rxjs/operators';
 import { NewEvent } from '../store/actions/events.actions';
 import { VvcProtocolService } from './protocol.service';
+import { VvcUiService } from './ui.service';
+import { ContactMediaOffer } from '@vivocha/public-entities';
 
 @Injectable()
 export class VvcInteractionService {
@@ -32,7 +34,8 @@ export class VvcInteractionService {
     private contextService: VvcContextService,
     private contactService: VvcContactWrap,
     private protocolService: VvcProtocolService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private uiService: VvcUiService
   ) {
   }
 
@@ -329,5 +332,11 @@ export class VvcInteractionService {
   }
   upgradeInboundToChat() {
     this.contactService.upgradeInboundToChat();
+  }
+  offerMedia(media): Promise<ContactMediaOffer> {
+    return this.contactService.offerMedia(media);
+  }
+  showIsOffering(media) {
+    this.uiService.setIsOffering(media);
   }
 }

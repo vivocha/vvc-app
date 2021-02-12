@@ -468,6 +468,8 @@ export const getUiStateRedux = (
     videoRxStream: remoteVideoStream,
     videoTxStream: localVideoStream,
     screenRxStream: screenRxStream,
-    webleadSent: widgetState.context && widgetState.context.webleadSent
+    webleadSent: widgetState.context && widgetState.context.webleadSent,
+    isRemoteVideoConnecting: isRemoteVideoConnecting,
+    isLocalVideoConnecting: isLocalVideoConnecting
   }
 };

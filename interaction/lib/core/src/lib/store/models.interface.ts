@@ -208,6 +208,8 @@ export interface UiState {
   isClosed: boolean;
   isClosedByAgent: boolean;
   isClosedByVisitor: boolean;
+  isLocalVideoConnecting: boolean;
+  isRemoteVideoConnecting: boolean;
   isMediaConnected: boolean;
   isMediaConnecting: boolean;
   isMediaVisible: boolean;

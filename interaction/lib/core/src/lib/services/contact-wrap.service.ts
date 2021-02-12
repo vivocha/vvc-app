@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ClientContactCreationOptions } from '@vivocha/public-entities/dist/contact';
+import { ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/public-entities/dist/contact';
 import { objectToDataCollection } from '@vivocha/public-entities/dist/wrappers/data_collection';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Observable, Subject } from 'rxjs';
@@ -1599,5 +1599,22 @@ export class VvcContactWrap {
   }
   upgradeInboundToChat() {
     this.uiService.upgradeInboundToChat();
+  }
+  
+  offerMedia(o1): Promise<ContactMediaOffer> {
+    return this.contact.getMediaOffer()
+      .then(o2 => {
+        const o3 = Object.assign({}, o2, o1);
+        return this.contact.offerMedia(o3)
+          .then(() => {
+            return this.zone.run(() => {
+            });
+          })
+          .catch(() => {
+            this.zone.run(() => {
+              this.uiService.setOfferRejected();
+            });
+          });
+      });
   }
 }
