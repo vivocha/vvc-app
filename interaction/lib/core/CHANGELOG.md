@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.7.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.10...@vivocha/client-interaction-core@7.7.0) (2021-02-15)
+
+
+### Features
+
+* **client-interaction-core:** expose offerMedia() and isRemote/isLocalVideoConnecting variables ([9abdea8](https://github.com/vivocha/widgets/commit/9abdea8e110728cbc326696f955a54d1e56d420a))
+
+
+
+
+
 ## [7.6.10](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.9...@vivocha/client-interaction-core@7.6.10) (2021-02-01)
 
 

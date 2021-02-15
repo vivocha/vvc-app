@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.5.9](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.8...@vivocha/client-interaction-layout@7.5.9) (2021-02-15)
+
+
+### Bug Fixes
+
+* **client-interaction-layout:** blocked carousel's scroll on latest item ([4085967](https://github.com/vivocha/widgets/commit/4085967f65cfdd589558af77c08981b22ad66e83)), closes [#29](https://github.com/vivocha/widgets/issues/29)
+
+
+
+
+
 ## [7.5.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.7...@vivocha/client-interaction-layout@7.5.8) (2021-02-01)
 
 
