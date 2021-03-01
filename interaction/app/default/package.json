@@ -83,6 +83,7 @@
     "autolinker": "^1.6.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "3.3.3",
+    "element-closest-polyfill": "^1.0.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
