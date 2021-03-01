@@ -2139,6 +2139,20 @@ body, input, textarea{ font-family: $appFontFamily; }
     height: 100%;
     width: 100%;
   }
+  &.mobile{ 
+    #vvc-normal-container{
+      #vvc-chat{
+        #vvc-messages{
+          .tpl-navigation{
+            .tpl-right,
+            .tpl-left {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 #vvc-minimized-layout {
   @include minimized();
