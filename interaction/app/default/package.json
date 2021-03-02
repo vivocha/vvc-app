@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction",
-  "version": "7.6.2",
+  "version": "7.6.3",
   "private": true,
   "description": "Vivocha Interaction Application",
   "scripts": {

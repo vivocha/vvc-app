@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.3](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.6.2...@vivocha/client-interaction@7.6.3) (2021-03-02)
+
+
+### Bug Fixes
+
+* **client-interaction:** ie11 support for closest method ([34f9224](https://github.com/vivocha/vvc-app/commit/34f9224eb467855af1094078c5bcadf0af34ad90))
+* **client-interaction:** show carousel button on mobile ([eac6ec0](https://github.com/vivocha/vvc-app/commit/eac6ec0671e8949f1f744f61ddc24bbfe351ef2b)), closes [#8](https://github.com/vivocha/vvc-app/issues/8)
+
+
+
+
+
 ## [7.6.2](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.6.1...@vivocha/client-interaction@7.6.2) (2021-02-15)
 
 **Note:** Version bump only for package @vivocha/client-interaction
