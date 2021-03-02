@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction",
-  "version": "7.6.3",
+  "version": "7.7.0",
   "private": true,
   "description": "Vivocha Interaction Application",
   "scripts": {
@@ -78,15 +78,15 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@vivocha/client-interaction-core": "^7.7.0",
-    "@vivocha/client-interaction-layout": "^7.5.9",
+    "@vivocha/client-interaction-layout": "^7.6.0",
     "@vivocha/public-entities": "^7.0.11",
     "autolinker": "^1.6.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "3.3.3",
     "element-closest-polyfill": "^1.0.2",
+    "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "hammerjs": "^2.0.8"
+    "zone.js": "~0.9.1"
   }
 }
