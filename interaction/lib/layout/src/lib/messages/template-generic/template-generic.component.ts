@@ -111,4 +111,17 @@ export class TemplateGenericComponent implements OnInit, OnDestroy {
       this.action.emit(elem.default_action);
     }
   }
+
+  swipe(ev){
+    if(ev === "swiperight"){
+      if(this.message.elements.length > 1 && this.scrollOffset > 0){
+        this.scrollLeft();
+      }
+    }
+    if(ev === "swipeleft"){
+      if(this.message.elements.length > 1 && this.scrollOffset <= this.lastCarouselElem){
+        this.scrollRight();
+      }
+    }
+  }
 }

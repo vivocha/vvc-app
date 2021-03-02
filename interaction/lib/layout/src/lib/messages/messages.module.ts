@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import 'hammerjs';
 
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { SystemMessageComponent } from './system-message/system-message.component';
@@ -20,7 +21,7 @@ const components = [
   QuickRepliesComponent,
   RequestMessageComponent,
   LinkMessageComponent,
-  VvcLinkPipe
+  VvcLinkPipe,
 ];
 
 @NgModule({

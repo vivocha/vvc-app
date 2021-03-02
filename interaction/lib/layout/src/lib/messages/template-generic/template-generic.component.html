@@ -8,7 +8,9 @@
        class="tpl-container"
        [scrollLeft]="scrollOffset || 0"
        [style.scroll-behavior]="transition"
-       [ngClass]="{'carousel' : (message.elements.length > 1) }">
+       [ngClass]="{'carousel' : (message.elements.length > 1) }"
+       (swipeleft)="swipe($event.type)" 
+       (swiperight)="swipe($event.type)">
 
     <div *ngFor="let elem of message.elements" class="tpl-element" [ngClass]="{'carousel' : (message.elements.length > 1) }">
       <div class="vvc-template-inner">
