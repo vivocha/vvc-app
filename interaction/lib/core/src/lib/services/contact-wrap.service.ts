@@ -984,10 +984,14 @@ export class VvcContactWrap {
       this.leave('remote').then(() => {
         this.zone.run(() => {
           this.uiService.setClosedByAgent();
-          this.track('closed by agent');
           this.store.dispatch(new NewEvent({ type: 'closedByAgent', data: obj }));
-
-          this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+          if(obj.reason === "disconnect"){
+            this.track('agent disconnected');
+            this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_TIMEOUT');
+          }else{
+            this.track('closed by agent');
+            this.messageService.sendSystemMessage('STRINGS.MESSAGES.REMOTE_CLOSE');
+          }
           this.isClosed = true;
           this.vivocha.pageRequest('interactionClosed', 'closed');
         });
