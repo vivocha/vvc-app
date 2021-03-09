@@ -395,13 +395,20 @@ export const getUiStateRedux = (
                                       dataCollectionState.lastCompleted.type !== 'survey'
                                     )
                                   );
+  const is_bot                  = widgetState.agent ? (widgetState.agent.is_bot ? true : false) : false;
   const canUploadFile           = widgetState.chat && widgetState.chat.canUploadFiles &&
-                                  (
-                                    widgetState.protocol.remoteCaps &&
-                                    widgetState.protocol.remoteCaps.Media &&
-                                    widgetState.protocol.remoteCaps.Media.Sharing &&
-                                    widgetState.protocol.remoteCaps.Media.Sharing.FileTransfer
-                                  );
+                                    (
+                                      is_bot
+                                      ? 
+                                        true
+                                      :
+                                        (
+                                          widgetState.protocol.remoteCaps &&
+                                          widgetState.protocol.remoteCaps.Media &&
+                                          widgetState.protocol.remoteCaps.Media.Sharing &&
+                                          widgetState.protocol.remoteCaps.Media.Sharing.FileTransfer
+                                        )
+                                    );
 
   const canMinimize = widgetState.context.campaign ? !(widgetState.context.campaign.channels.web.interaction || {}).selector : true;
 
