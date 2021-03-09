@@ -4205,6 +4205,35 @@
     }
   },
   {
+    "id": "STRINGS.MESSAGES.REMOTE_TIMEOUT",
+    "values": {
+      "de": {
+        "value": "Der Agent hat den Kontakt beendet",
+        "state": "final"
+      },
+      "en": {
+        "value": "The agent has disconnected",
+        "state": "final"
+      },
+      "es": {
+        "value": "El operador ha cortado la comunicación",
+        "state": "final"
+      },
+      "fr": {
+        "value": "L’agent a quitté le contact",
+        "state": "final"
+      },
+      "it": {
+        "value": "L'operatore ha chiuso il contatto",
+        "state": "final"
+      },
+      "ja": {
+        "value": "オペレーターとの通信が途切れました",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "STRINGS.MESSAGES.REQUEST_ACCEPT",
     "values": {
       "de": {
