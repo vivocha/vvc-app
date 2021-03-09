@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.6.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.9...@vivocha/client-interaction-layout@7.6.0) (2021-03-02)
+
+
+### Features
+
+* **client-interaction:** swipe on generic template - carousel ([eaace75](https://github.com/vivocha/widgets/commit/eaace7569b3f5dfe8d6bb3bbe100ce888e4fb87d))
+
+
+
+
+
 ## [7.5.9](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.5.8...@vivocha/client-interaction-layout@7.5.9) (2021-02-15)
 
 
