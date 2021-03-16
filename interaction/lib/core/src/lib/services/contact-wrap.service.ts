@@ -544,6 +544,12 @@ export class VvcContactWrap {
   leave(reason?: string) {
     return new Promise((resolve, reject) => {
       if (this.contact) {
+
+        if(this.isClosed){ 
+          resolve('closed');
+          return;
+        }
+
         const now = +new Date();
         const contactTime = (now - this.interactionStart);
         const ev = reason ? reason : (this.hasReceivedMsgs ? 'closed' : (contactTime > 10000 ? 'abandoned' : 'cancelled'));
