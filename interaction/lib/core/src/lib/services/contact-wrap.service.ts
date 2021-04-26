@@ -159,6 +159,9 @@ export class VvcContactWrap {
     if (this.transferTimer) {
       clearTimeout(this.transferTimer);
       delete this.transferTimer;
+      this.contact.getRemoteCapabilities().then(caps => {
+        this.uiService.setRemoteCaps(caps);
+      });
     }
   }
   cbnStatusChanged(id, info) {
