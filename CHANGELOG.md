@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.8.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.7.0...@vivocha/client-interaction@7.8.0) (2021-05-21)
+
+
+### Features
+
+* **client-interaction:** new courtesy message for agent disconnection ([eb8e018](https://github.com/vivocha/vvc-app/commit/eb8e018fde6ef79df2cef126b4df5ab57f398b00))
+
+
+
+
+
 # [7.7.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.6.3...@vivocha/client-interaction@7.7.0) (2021-03-02)
 
 
