@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.8.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.7.0...@vivocha/client-interaction-core@7.8.0) (2021-05-21)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** prevent leave on closed contacts ([b3c7d68](https://github.com/vivocha/widgets/commit/b3c7d6850907f54a826844df437277486ce7cd51))
+* **client-interaction-core:** show upload button after transfer by the bot ([599b721](https://github.com/vivocha/widgets/commit/599b72139f1aa2e05efc73ed15b23980772be273)), closes [#7](https://github.com/vivocha/widgets/issues/7)
+* **client-interaction-layout:** enable clip to send attachment to a bot agent ([69ea189](https://github.com/vivocha/widgets/commit/69ea189fdc55be00e571d69be2b637a28c7b5ffb))
+
+
+### Features
+
+* **client-interaction-core:** add possibility do set message for agent disconnection ([c94593f](https://github.com/vivocha/widgets/commit/c94593f28e5a15b6e5339bd901c51d006e25c89a))
+
+
+
+
+
 # [7.7.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.6.10...@vivocha/client-interaction-core@7.7.0) (2021-02-15)
 
 
