@@ -143,7 +143,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const step = this.getCloseStep(context);
     this.interactionService.track('close-contact', step);
     // console.log('CLOSE CONTACT', step, context.variables, context);
-
+    this.trackMinizedStatus(false);
     switch (step) {
       case 'remove-app':
         this.closeApp();
@@ -189,6 +189,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
   expandWidget(isFullScreen) {
+    this.trackMinizedStatus(false);
     this.interactionService.maximizeWidget(isFullScreen, (isFullScreen || this.isMobile) ? this.dimensions.fullscreen : this.dimensions.normal);
   }
   getCloseStep(context) {
@@ -277,15 +278,26 @@ export class AppComponent implements OnInit, OnDestroy {
     this.interactionService.minimizeWidget(isMobile ? this.dimensions.minimizedCbnMobile : this.dimensions.minimizedCbn);
   }
   minimizeWidget() {
+    this.trackMinizedStatus(true);
     this.interactionService.minimizeWidget(this.dimensions.minimized);
   }
   minimizeMedia() {
     this.interactionService.minimizeMedia();
   }
+  trackMinizedStatus(status){
+    if(status){
+      sessionStorage.setItem("vvcMinimizedStatus", status);
+    }else{
+      sessionStorage.removeItem("vvcMinimizedStatus");
+    }
+  }
   muteToggle(muted) {
     this.interactionService.muteToggle(muted);
   }
   openAttachment(url: string, click?: boolean) {
+    if(this.isMobile){
+      this.minimizeWidget();
+    }
     this.interactionService.openAttachment(url, click);
   }
   processAction(action) {
@@ -329,6 +341,9 @@ export class AppComponent implements OnInit, OnDestroy {
     // if (context.mediaPreset === 'sync' || (!!context.conversationId && !context.persistenceId)) {
     if (context.mediaPreset === 'sync' || !!context.conversationId) {
       this.interactionService.setDimensions(this.dimensions.minimized);
+    }
+    if (sessionStorage.vvcMinimizedStatus && context.variables && (context.variables.rememberMinimizedStatus || (context.variables.minimizeOnLink && this.isMobile))) {
+      this.minimizeWidget();
     }
   }
   showCloseDialog(context) {

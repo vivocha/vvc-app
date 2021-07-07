@@ -377,31 +377,31 @@
     }
   },
   {
-    "id": "META.GROUPS.DimensionAndPosition",
+    "id": "META.GROUPS.Minimized",
     "values": {
       "de": {
-        "value": "Abmessungen und Platzierung",
-        "state": "final"
+        "value": "Minimized State",
+        "state": "new"
       },
       "en": {
-        "value": "Dimensions and position",
+        "value": "Minimized State",
         "state": "final"
       },
       "es": {
-        "value": "Dimensiones y posicionamiento",
-        "state": "final"
+        "value": "Minimized State",
+        "state": "new"
       },
       "fr": {
-        "value": "Dimensions et positionnement",
-        "state": "final"
+        "value": "Minimized State",
+        "state": "new"
       },
       "it": {
-        "value": "Dimensioni e posizionamento",
+        "value": "Stato minimizzato",
         "state": "final"
       },
       "ja": {
-        "value": "サイズと位置",
-        "state": "final"
+        "value": "Minimized State",
+        "state": "new"
       }
     }
   },
@@ -1388,6 +1388,64 @@
       "ja": {
         "value": "アプリの初期幅サイズ(デスクトップ ヴァージョン)",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.MINIMIZE_ON_LINK",
+    "values": {
+      "de": {
+        "value": "On Mobile, Minimize chat on Link's Click",
+        "state": "new"
+      },
+      "en": {
+        "value": "On Mobile, Minimize chat on Link's Click",
+        "state": "final"
+      },
+      "es": {
+        "value": "On Mobile, Minimize chat on Link's Click",
+        "state": "new"
+      },
+      "fr": {
+        "value": "On Mobile, Minimize chat on Link's Click",
+        "state": "new"
+      },
+      "it": {
+        "value": "Minimizza la chat quando si clicca su un link da dispositivo Mobile",
+        "state": "final"
+      },
+      "ja": {
+        "value": "On Mobile, Minimize chat on Link's Click",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.APP.REMEMBER_MINIMIZED_STATUS",
+    "values": {
+      "de": {
+        "value": "Remember minimized status on page refresh",
+        "state": "new"
+      },
+      "en": {
+        "value": "Remember minimized status on page refresh",
+        "state": "final"
+      },
+      "es": {
+        "value": "Remember minimized status on page refresh",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Remember minimized status on page refresh",
+        "state": "new"
+      },
+      "it": {
+        "value": "Ricorda lo stato minimizzato al refresh della pagina",
+        "state": "final"
+      },
+      "ja": {
+        "value": "Remember minimized status on page refresh",
+        "state": "new"
       }
     }
   },
