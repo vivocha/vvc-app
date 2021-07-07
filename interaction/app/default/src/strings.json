@@ -1395,27 +1395,27 @@
     "id": "META.VARIABLES.APP.MINIMIZE_ON_LINK",
     "values": {
       "de": {
-        "value": "On Mobile, Minimize chat on Link's Click",
+        "value": "On mobile web sites, minimize the chat when a link is clicked.",
         "state": "new"
       },
       "en": {
-        "value": "On Mobile, Minimize chat on Link's Click",
+        "value": "On mobile web sites, minimize the chat when a link is clicked.",
         "state": "final"
       },
       "es": {
-        "value": "On Mobile, Minimize chat on Link's Click",
+        "value": "On mobile web sites, minimize the chat when a link is clicked.",
         "state": "new"
       },
       "fr": {
-        "value": "On Mobile, Minimize chat on Link's Click",
+        "value": "On mobile web sites, minimize the chat when a link is clicked.",
         "state": "new"
       },
       "it": {
-        "value": "Minimizza la chat quando si clicca su un link da dispositivo Mobile",
+        "value": "Su portali Web Mobile, Minimizza la chat quando si clicca su un link.",
         "state": "final"
       },
       "ja": {
-        "value": "On Mobile, Minimize chat on Link's Click",
+        "value": "On mobile web sites, minimize the chat when a link is clicked.",
         "state": "new"
       }
     }
