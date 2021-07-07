@@ -63,6 +63,26 @@
       ]
     },
     {
+      "id": "minimizeOnLink",
+      "nameId": "META.VARIABLES.APP.MINIMIZE_ON_LINK",
+      "defaultValue": false,
+      "type": "boolean",
+      "hidden": false,
+      "categoryIds": [
+        "General_Minimized"
+      ]
+    },
+    {
+      "id": "rememberMinimizedStatus",
+      "nameId": "META.VARIABLES.APP.REMEMBER_MINIMIZED_STATUS",
+      "defaultValue": false,
+      "type": "boolean",
+      "hidden": false,
+      "categoryIds": [
+        "General_Minimized"
+      ]
+    },
+    {
       "id": "enableDebug",
       "nameId": "META.VARIABLES.APP.ENABLE_DEBUG",
       "defaultValue": false,
