@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.9.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.8.0...@vivocha/client-interaction@7.9.0) (2021-07-14)
+
+
+### Bug Fixes
+
+* **client-interaction:** fix on strings ([b9b81e8](https://github.com/vivocha/vvc-app/commit/b9b81e83bf617df00e2725ca8217ca1796f0af78))
+
+
+### Features
+
+* **client-interaction:** remember minimized status on persistence, mimize mobile chat on link click ([d4dfeb6](https://github.com/vivocha/vvc-app/commit/d4dfeb61c821bb136ecc0335e3a019128bbe3857))
+
+
+
+
+
 # [7.8.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.7.0...@vivocha/client-interaction@7.8.0) (2021-05-21)
 
 
