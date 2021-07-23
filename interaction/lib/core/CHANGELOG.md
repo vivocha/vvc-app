@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.0...@vivocha/client-interaction-core@7.8.1) (2021-07-23)
+
+
+### Bug Fixes
+
+* **core:** fix vivocha issue 41 - screen sharing request silently fails on firefox ([efb207f](https://github.com/vivocha/widgets/commit/efb207f0476260704c1acd59ecb76d080052756b))
+
+
+
+
+
 # [7.8.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.7.0...@vivocha/client-interaction-core@7.8.0) (2021-05-21)
 
 
