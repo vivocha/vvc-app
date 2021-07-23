@@ -639,6 +639,14 @@ export class VvcContactWrap {
   mapContact() {
     const contactHandlers = [
       {
+        event: 'MediaChange.Screen.UserInitiatedActionNeeded',
+        handler: (cb) => {
+          this.zone.run(() => {
+            this.onAgentRequest('REQUEST_SCREENSHARING', cb);
+          })
+        }
+      },
+      {
         event: 'agentrequest',
         handler: (message, cb) => {
           this.zone.run(() => {
