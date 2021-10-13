@@ -285,10 +285,12 @@ export class AppComponent implements OnInit, OnDestroy {
     this.interactionService.minimizeMedia();
   }
   trackMinizedStatus(status){
-    if(status){
-      sessionStorage.setItem("vvcMinimizedStatus", status);
-    }else{
-      sessionStorage.removeItem("vvcMinimizedStatus");
+    if(this.supportsStorages()){
+      if(status){
+        sessionStorage.setItem("vvcMinimizedStatus", status);
+      }else{
+        sessionStorage.removeItem("vvcMinimizedStatus");
+      }
     }
   }
   muteToggle(muted) {
@@ -342,8 +344,10 @@ export class AppComponent implements OnInit, OnDestroy {
     if (context.mediaPreset === 'sync' || !!context.conversationId) {
       this.interactionService.setDimensions(this.dimensions.minimized);
     }
-    if (sessionStorage.vvcMinimizedStatus && context.variables && (context.variables.rememberMinimizedStatus || (context.variables.minimizeOnLink && this.isMobile))) {
-      this.minimizeWidget();
+    if(this.supportsStorages()){
+      if (sessionStorage.vvcMinimizedStatus && context.variables && (context.variables.rememberMinimizedStatus || (context.variables.minimizeOnLink && this.isMobile))) {
+        this.minimizeWidget();
+      }
     }
   }
   showCloseDialog(context) {
@@ -390,5 +394,18 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   videoToggle(show) {
     this.interactionService.toggleVideo(show);
+  }
+  supportsStorages() { try { 
+    return (!!window.localStorage
+      && !!window.sessionStorage
+      && typeof localStorage.getItem === 'function'
+      && typeof localStorage.setItem === 'function'
+      && typeof localStorage.removeItem === 'function'
+      && typeof sessionStorage.getItem === 'function'
+      && typeof sessionStorage.setItem === 'function'
+      && typeof sessionStorage.removeItem === 'function')
+    } catch(e) {
+      return false
+    };
   }
 }
