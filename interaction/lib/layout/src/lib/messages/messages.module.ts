@@ -21,7 +21,7 @@ const components = [
   QuickRepliesComponent,
   RequestMessageComponent,
   LinkMessageComponent,
-  VvcLinkPipe,
+  VvcLinkPipe
 ];
 
 @NgModule({
