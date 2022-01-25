@@ -1527,6 +1527,7 @@ export class VvcContactWrap {
         // process a recontact
         this.track('recontact processing');
         this.context.mediaPreset = presets.availablePresetModes[0].offer;
+        this.context.interactionMode = presets.availablePresetModes[0];
         if (
           presets.availablePresetModes[0].dataCollectionId &&
           presets.availablePresetModes[0].dataCollectionId !== ''
