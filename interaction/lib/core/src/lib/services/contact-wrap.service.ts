@@ -211,34 +211,46 @@ export class VvcContactWrap {
       const msg = transcript[m];
       switch (msg.type) {
         case 'text':
-          const agent = (msg.agent) ? this.agent : false;
-          if (msg.quick_replies) {
-            this.messageService.addQuickRepliesMessage(msg, this.agent);
-          } else if (msg.template) {
-            this.messageService.addTemplateMessage(msg, this.agent);
+          if(msg.agent && !msg.delivered){
+            this.onRawMessage(msg);
           } else {
-            this.messageService.addChatMessage(msg, agent, this.visitorNick);
+            const agent = (msg.agent) ? this.agent : false;
+            if (msg.quick_replies) {
+              this.messageService.addQuickRepliesMessage(msg, this.agent);
+            } else if (msg.template) {
+              this.messageService.addTemplateMessage(msg, this.agent);
+            } else {
+              this.messageService.addChatMessage(msg, agent, this.visitorNick);
+            }
           }
           break;
         case 'attachment':
-          const meta = msg.meta;
-          meta.url = (msg.url) ? msg.url : meta.originalUrl;
-          const attachment = {
-            body: meta.desc || meta.originalName,
-            type: 'chat',
-            meta: meta,
-            from_nick: msg.from_nick,
-            from_id: msg.from_id,
-            ts: msg.ts
-          };
-          if (msg.agent) {
-            this.messageService.addChatMessage(attachment, this.agent, this.visitorNick);
+          if(msg.agent && !msg.delivered){
+            this.onRawMessage(msg);
           } else {
-            this.messageService.addChatMessage(attachment, null, this.visitorNick);
+            const meta = msg.meta;
+            meta.url = (msg.url) ? msg.url : meta.originalUrl;
+            const attachment = {
+              body: meta.desc || meta.originalName,
+              type: 'chat',
+              meta: meta,
+              from_nick: msg.from_nick,
+              from_id: msg.from_id,
+              ts: msg.ts
+            };
+            if (msg.agent) {
+              this.messageService.addChatMessage(attachment, this.agent, this.visitorNick);
+            } else {
+              this.messageService.addChatMessage(attachment, null, this.visitorNick);
+            }
           }
           break;
         case 'link':
-          this.messageService.addLinkMessage(msg.url, msg.from_id, msg.from_nick, msg.desc, msg.agent);
+          if(msg.agent && !msg.delivered){
+            this.onRawMessage(msg);
+          } else {
+            this.messageService.addLinkMessage(msg.url, msg.from_id, msg.from_nick, msg.desc, msg.agent);
+          }
           break;
       }
     }
