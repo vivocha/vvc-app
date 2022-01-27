@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.1...@vivocha/client-interaction-layout@7.6.2) (2022-01-27)
+
+
+### Bug Fixes
+
+* **client-interaction-layout:** encode HTML in agent messages ([0278170](https://github.com/vivocha/widgets/commit/0278170424e82a01a95e316fcef513b13bac9973))
+
+
+
+
+
 ## [7.6.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.0...@vivocha/client-interaction-layout@7.6.1) (2021-05-21)
 
 **Note:** Version bump only for package @vivocha/client-interaction-layout

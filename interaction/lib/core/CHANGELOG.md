@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.1...@vivocha/client-interaction-core@7.8.2) (2022-01-27)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** fix missing script message in slow network conditions ([c005ae6](https://github.com/vivocha/widgets/commit/c005ae6b2d05bc31685817f567e180cf6de312dd)), closes [#101](https://github.com/vivocha/widgets/issues/101)
+* **client-interaction-core:** fix wrong email on dissuasion or other moods ([e2fb8d4](https://github.com/vivocha/widgets/commit/e2fb8d4852900c76906f6ea933fddab8948e33f5)), closes [#99](https://github.com/vivocha/widgets/issues/99)
+
+
+
+
+
 ## [7.8.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.0...@vivocha/client-interaction-core@7.8.1) (2021-07-23)
 
 

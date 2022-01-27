@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.2](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.1...@vivocha/client-interaction@7.9.2) (2022-01-27)
+
+
+### Bug Fixes
+
+* **client-interaction:** fix minimize status when refresh with active conversation ([d139f63](https://github.com/vivocha/vvc-app/commit/d139f631aa52813703f01b62efc3d45e410cb92f)), closes [#11](https://github.com/vivocha/vvc-app/issues/11)
+
+
+
+
+
 ## [7.9.1](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.0...@vivocha/client-interaction@7.9.1) (2021-07-23)
 
 **Note:** Version bump only for package @vivocha/client-interaction
