@@ -339,10 +339,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     this.interactionService.setDimensions(this.closeDimensions);
 
-    // TODO review this check
-    // if (context.mediaPreset === 'sync' || (!!context.conversationId && !context.persistenceId)) {
     if (context.mediaPreset === 'sync' || !!context.conversationId) {
-      this.interactionService.setDimensions(this.dimensions.minimized);
+      this.minimizeWidget();
     }
     if(this.supportsStorages()){
       if (sessionStorage.vvcMinimizedStatus && context.variables && (context.variables.rememberMinimizedStatus || (context.variables.minimizeOnLink && this.isMobile))) {
