@@ -77,6 +77,10 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     margin: 0 auto;
     width: 208px;
     height: 40px;
+    
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
 
     label {
       float: right;
