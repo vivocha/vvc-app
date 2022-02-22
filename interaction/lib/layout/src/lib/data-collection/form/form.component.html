@@ -4,7 +4,7 @@
     <div *ngFor="let elem of fields">
       <div class="vvc-input"
            *ngIf="elem.showElement"
-           [ngClass]="{'error' : form.get(elem.id) && form.get(elem.id).errors && form.get(elem.id).touched}">
+           [ngClass]="{'error' : form.get(elem.id) && form.get(elem.id).errors && form.get(elem.id).touched, 'vvc-checkbox': getInputElement(elem) === 'checkbox'}">
 
         <label *ngIf="elem.format !== 'message'">{{ (elem.labelId | translate) || elem.id }}<span *ngIf="elem.required" class="required"> *</span></label>
 
