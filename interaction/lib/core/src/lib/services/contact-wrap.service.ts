@@ -1065,6 +1065,7 @@ export class VvcContactWrap {
     }
   }
   async onRawMessage(msg) {
+    msg.from_nick = encodeURIComponent(msg.from_nick);
     if (msg.agent && (!this.joinedByAgent || (msg.from_id && msg.from_id !== (this.agent && this.agent.id)))) {
       this.cancelDissuasionTimeout();
       const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
