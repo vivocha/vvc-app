@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ClientContactCreationOptions, ContactMediaOffer } from '@vivocha/public-entities/dist/contact';
 import { objectToDataCollection } from '@vivocha/public-entities/dist/wrappers/data_collection';
+import * as DOMPurify from 'dompurify';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Observable, Subject } from 'rxjs';
 import { NewEvent } from '../store/actions/events.actions';
@@ -11,6 +12,8 @@ import { VvcDataCollectionService } from './data-collection.service';
 import { VvcMessageService } from './messages.service';
 import { VvcProtocolService } from './protocol.service';
 import { VvcUiService } from './ui.service';
+
+
 
 @Injectable()
 export class VvcContactWrap {
@@ -933,7 +936,7 @@ export class VvcContactWrap {
       this.zone.run(() => {
         const agent: AgentState = {
           id: join.user,
-          nick: join.nick,
+          nick: DOMPurify.sanitize(join.nick),
           is_bot: !!join.is_bot,
           is_agent: !join.is_bot,
         };
@@ -1065,7 +1068,6 @@ export class VvcContactWrap {
     }
   }
   async onRawMessage(msg) {
-    msg.from_nick = encodeURIComponent(msg.from_nick);
     if (msg.agent && (!this.joinedByAgent || (msg.from_id && msg.from_id !== (this.agent && this.agent.id)))) {
       this.cancelDissuasionTimeout();
       const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
