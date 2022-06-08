@@ -217,13 +217,26 @@ export class VvcContactWrap {
           if(msg.agent && !msg.delivered){
             this.onRawMessage(msg);
           } else {
-            const agent = (msg.agent) ? this.agent : false;
+            let tmpAgent = (msg.agent) ? {...this.agent} : false;
+            /**
+             * check previous messages metadata to reassign correct agent id, nick and avatar
+             * Also check if the message was sent by a Bot.
+             * This will allow the Chat app to correctly render complex messages with HTML or similar 
+             */
+            if(tmpAgent.id != undefined && msg.from_id != undefined && tmpAgent.id != msg.from_id){
+              tmpAgent.is_bot = msg.is_bot;
+              tmpAgent.id = msg.from_id;
+              tmpAgent.nick = msg.from_nick
+              if(tmpAgent.avatar){
+                tmpAgent.avatar = msg.from_avatar ? msg.from_avatar : this.context.variables.agentAvatarDefault
+              }
+            }
             if (msg.quick_replies) {
               this.messageService.addQuickRepliesMessage(msg, this.agent);
             } else if (msg.template) {
               this.messageService.addTemplateMessage(msg, this.agent);
             } else {
-              this.messageService.addChatMessage(msg, agent, this.visitorNick);
+              this.messageService.addChatMessage(msg, tmpAgent, this.visitorNick);
             }
           }
           break;
