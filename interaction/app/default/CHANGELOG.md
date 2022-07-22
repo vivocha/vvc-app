@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.4](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.3...@vivocha/client-interaction@7.9.4) (2022-07-22)
+
+
+### Bug Fixes
+
+* add .nvmrc ([398a970](https://github.com/vivocha/vvc-app/commit/398a97063f60ff418b68f2f87541904857fed84e))
+
+
+
+
+
 ## [7.9.3](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.2...@vivocha/client-interaction@7.9.3) (2022-07-22)
 
 
