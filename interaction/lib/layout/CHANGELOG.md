@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.2...@vivocha/client-interaction-layout@7.6.3) (2022-07-22)
+
+
+### Bug Fixes
+
+* **client-interaction-layou:** change svg id to prevent glitch ([0882f2b](https://github.com/vivocha/widgets/commit/0882f2bb5d640c065e49223939dc757171981e83)), closes [#19](https://github.com/vivocha/widgets/issues/19)
+* **client-interaction-layout:** fix checkbox alignment ([e900c08](https://github.com/vivocha/widgets/commit/e900c0807923917b0bd1ff0df9205a9e54afe598)), closes [#17](https://github.com/vivocha/widgets/issues/17)
+
+
+
+
+
 ## [7.6.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.1...@vivocha/client-interaction-layout@7.6.2) (2022-01-27)
 
 

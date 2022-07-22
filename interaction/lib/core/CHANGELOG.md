@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.2...@vivocha/client-interaction-core@7.8.3) (2022-07-22)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** encode agent Nickame to prevent inject ([184a213](https://github.com/vivocha/widgets/commit/184a213836bb383b4cf2bad134a8cc9ba5582fe8))
+* **client-interaction-core:** encode agent Nickame to prevent inject ([b937e8e](https://github.com/vivocha/widgets/commit/b937e8e3d4ba3a0cbde866fa2d2b6437600bc2bc))
+* **client-interaction-core:** on persistance use correct message's agent info ([23e5900](https://github.com/vivocha/widgets/commit/23e5900c1ac8c88732c9b56d0f437fb212fc706d))
+
+
+
+
+
 ## [7.8.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.1...@vivocha/client-interaction-core@7.8.2) (2022-01-27)
 
 

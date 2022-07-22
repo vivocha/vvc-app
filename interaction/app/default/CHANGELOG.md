@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.3](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.2...@vivocha/client-interaction@7.9.3) (2022-07-22)
+
+
+### Bug Fixes
+
+* **client-interaction:** fix checkbox alignment ([70fe9fb](https://github.com/vivocha/vvc-app/commit/70fe9fb88b43beee5c910ac15b737fdd2802b70c)), closes [#17](https://github.com/vivocha/vvc-app/issues/17)
+* **client-interaction-layout:** fix rating alignment ([222f0a1](https://github.com/vivocha/vvc-app/commit/222f0a1f4d058d78e23a047fcf3bcd86f2f54f6c)), closes [#16](https://github.com/vivocha/vvc-app/issues/16)
+
+
+
+
+
 ## [7.9.2](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.1...@vivocha/client-interaction@7.9.2) (2022-01-27)
 
 
