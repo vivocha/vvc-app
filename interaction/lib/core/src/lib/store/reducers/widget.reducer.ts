@@ -427,21 +427,6 @@ export const getUiStateRedux = (
 
   const canMinimize = widgetState.context.campaign ? !(widgetState.context.campaign.channels.web.interaction || {}).selector : true;
 
-try {
-  console.log("%c[canLocalVideo]", "color:Thistle; font-weight: bold;", canLocalVideo);
-  console.log("%c[canStartVideo]", "color:Thistle; font-weight: bold;", canStartVideo);
-  console.log("%c[both]", "color:Thistle; font-weight: bold;", canLocalVideo && canStartVideo);
-
-  console.log("%c[widgetState]", "color:Thistle; font-weight: bold;", widgetState);
-  console.log("%c[widgetState.protocol.canStartVideo]", "color:Thistle; font-weight: bold;", widgetState.protocol.canStartVideo);
-  console.log("%c[widgetState.agent]", "color:Thistle; font-weight: bold;", widgetState.agent);
-  console.log("%c[widgetState.agent.is_agent]", "color:Thistle; font-weight: bold;", widgetState.agent.is_agent);
-  console.log("%c[!hasLocalVideo]", "color:Thistle; font-weight: bold;", !hasLocalVideo);
-  console.log("%c[!isVideoConnecting]", "color:Thistle; font-weight: bold;", !isVideoConnecting);
-} catch (e){
-  console.error(e)
-}
-
   return {
     agent: widgetState.agent,
     messages: [...messagesState.list],
