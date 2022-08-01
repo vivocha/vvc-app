@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.3...@vivocha/client-interaction-core@7.8.4) (2022-08-01)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** check remote caps to activate/deactivate video/audio ([1f56365](https://github.com/vivocha/widgets/commit/1f563656354ac344683dfe8c88a5afa73d84d55b)), closes [#20](https://github.com/vivocha/widgets/issues/20)
+* **client-interaction-core:** remove comments ([8fe4c67](https://github.com/vivocha/widgets/commit/8fe4c67f066b04d7e254fc49d36a5c31b0fd918f)), closes [#20](https://github.com/vivocha/widgets/issues/20)
+
+
+
+
+
 ## [7.8.3](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.2...@vivocha/client-interaction-core@7.8.3) (2022-07-22)
 
 
