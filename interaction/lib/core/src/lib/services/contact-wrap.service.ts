@@ -66,6 +66,8 @@ export class VvcContactWrap {
   conversationCheckTimer;
   conversationCheckTimeout = 10000;
 
+  DOMPurifyConfig = { ALLOWED_TAGS: ['p', '#text'], KEEP_CONTENT: false };
+
   constructor(
     private store: Store<AppState>,
     private dcService: VvcDataCollectionService,
@@ -226,7 +228,7 @@ export class VvcContactWrap {
             if(tmpAgent.id != undefined && msg.from_id != undefined && tmpAgent.id != msg.from_id){
               tmpAgent.is_bot = msg.is_bot;
               tmpAgent.id = msg.from_id;
-              tmpAgent.nick = msg.from_nick
+              tmpAgent.nick = DOMPurify.sanitize(msg.from_nick, this.DOMPurifyConfig)
               if(tmpAgent.avatar){
                 tmpAgent.avatar = msg.from_avatar ? msg.from_avatar : this.context.variables.agentAvatarDefault
               }
@@ -949,7 +951,7 @@ export class VvcContactWrap {
       this.zone.run(() => {
         const agent: AgentState = {
           id: join.user,
-          nick: DOMPurify.sanitize(join.nick),
+          nick: DOMPurify.sanitize(join.nick, this.DOMPurifyConfig),
           is_bot: !!join.is_bot,
           is_agent: !join.is_bot,
         };
@@ -1086,7 +1088,7 @@ export class VvcContactWrap {
       const agentInfo = this.vivocha.dot(this, 'contact.contact.agentInfo') || {};
       const joinedAgent: any = {
         user: msg.from_id,
-        nick: msg.from_nick,
+        nick: DOMPurify.sanitize(msg.from_nick, this.DOMPurifyConfig),
         is_bot: msg.is_bot,
         avatar: msg.from_avatar
       };
@@ -1261,7 +1263,7 @@ export class VvcContactWrap {
           this.hasReceivedMsgs = true;
           agentInfo = {
             id: agentMsg.from_id,
-            nick: agentMsg.from_nick || agentMsg.nick,
+            nick: DOMPurify.sanitize(agentMsg.from_nick || agentMsg.nick, this.DOMPurifyConfig),
             bot: agentMsg.is_bot,
             avatar: agentMsg.from_avatar || agentMsg.avatar
           }

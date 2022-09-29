@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
+import * as DOMPurify from 'dompurify';
 
 import {AppState} from '../store/reducers/main.reducer';
 import {NewMessage, RemoveMessage, UpdateMessage} from '../store/actions/messages.actions';
@@ -11,6 +12,8 @@ export class VvcMessageService {
   constructor(
     private store: Store<AppState>
   ) {}
+
+  DOMPurifyConfig = { ALLOWED_TAGS: ['p', '#text'], KEEP_CONTENT: false };
 
   addChatMessage(message, agent?, visitorNick?) {
     const id = new Date().getTime().toString();
@@ -87,7 +90,7 @@ export class VvcMessageService {
       text: desc || url,
       url: url,
       from_id: from_id,
-      from_nick: from_nick,
+      from_nick: DOMPurify.sanitize(from_nick, this.DOMPurifyConfig),
       type: 'link',
       time: this.getChatTimestamp(),
       ts: new Date()
