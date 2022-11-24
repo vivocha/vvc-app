@@ -21,7 +21,7 @@
         </svg>
       </div>
       <div class="attachment-text">
-        {{ message.text }}
+        {{ message.text || message.meta.desc}}
       </div>
     </div>
     <div class="time" *ngIf="message.isLast">
