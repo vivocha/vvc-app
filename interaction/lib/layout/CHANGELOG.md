@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.4...@vivocha/client-interaction-layout@7.6.5) (2022-11-30)
+
+
+### Bug Fixes
+
+* **chat-message:** show attachment description ([742f65f](https://github.com/vivocha/widgets/commit/742f65f0e7da879f5a0e1207c22637e569bd6dec)), closes [#158](https://github.com/vivocha/widgets/issues/158)
+
+
+
+
+
 ## [7.6.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.3...@vivocha/client-interaction-layout@7.6.4) (2022-08-01)
 
 **Note:** Version bump only for package @vivocha/client-interaction-layout
