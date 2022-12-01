@@ -262,6 +262,16 @@
       ]
     },
     {
+      "id": "maxFileSize",
+      "nameId": "META.VARIABLES.CHAT.MAX_FILE_SIZE",
+      "defaultValue": "100",
+      "type": "unit",
+      "hidden": true,
+      "categoryIds": [
+        "Chat"
+      ]
+    },
+    {
       "id": "showVisitorAvatar",
       "nameId": "META.VARIABLES.CHAT.BALLOON.VISITOR.SHOW_AVATAR",
       "defaultValue": false,
