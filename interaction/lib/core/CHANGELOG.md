@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.4...@vivocha/client-interaction-core@7.8.5) (2022-11-30)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** check msg.reason on onRawMessage() to prevent script plus bot glitch ([5c888e3](https://github.com/vivocha/widgets/commit/5c888e30a13f3f084bf574eaccc05ab6e19044ae)), closes [#151](https://github.com/vivocha/widgets/issues/151)
+* **client-interaction-core:** sanitize Nickname ([ac18e12](https://github.com/vivocha/widgets/commit/ac18e12bef24bd52fe29dcccc2107b9905767dfe)), closes [#122](https://github.com/vivocha/widgets/issues/122)
+
+
+
+
+
 ## [7.8.4](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.3...@vivocha/client-interaction-core@7.8.4) (2022-08-01)
 
 
