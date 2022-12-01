@@ -26,6 +26,8 @@ export class ChatMessageComponent implements OnInit {
   private msgElement: HTMLDivElement;
   private listElement: HTMLDivElement;
 
+  previewTipe;
+
   markRead(){
     this.read.emit(this.message.id);
   }
@@ -36,6 +38,8 @@ export class ChatMessageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.previewTipe = 'preview_' + this.message.meta.mimetype.split("/")[0];
+
     this.msgElement = this.chatMsg.nativeElement;
     this.listElement = this.chatMsg.nativeElement.closest('#vvc-messages');
 

@@ -2001,6 +2001,35 @@
     }
   },
   {
+    "id": "META.VARIABLES.CHAT.MAX_FILE_SIZE",
+    "values": {
+      "de": {
+        "value": "Max upload size (Kbytes)",
+        "state": "new"
+      },
+      "en": {
+        "value": "Max upload size (Kbytes)",
+        "state": "new"
+      },
+      "es": {
+        "value": "Max upload size (Kbytes)",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Max upload size (Kbytes)",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione massima upload (Kbytes)",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Max upload size (Kbytes)",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.COLLECTOR_AVATAR",
     "values": {
       "de": {
@@ -5458,6 +5487,35 @@
       "ja": {
         "value": "ファイルを選択する",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "STRINGS.UPLOAD.TOO_BIG",
+    "values": {
+      "de": {
+        "value": "Max file size {{maxFileSize}}mb",
+        "state": "new"
+      },
+      "en": {
+        "value": "Max file size {{maxFileSize}}mb",
+        "state": "new"
+      },
+      "es": {
+        "value": "Max file size {{maxFileSize}}mb",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Max file size {{maxFileSize}}mb",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensioni massime {{maxFileSize}}mb",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Max file size {{maxFileSize}}mb",
+        "state": "new"
       }
     }
   },

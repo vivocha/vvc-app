@@ -360,13 +360,17 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
     }
   }
 }
-@mixin upload-panel($loadingBarColor: $color1){
+@mixin upload-panel($loadingBarColor: $color1, $warningColor: red){
   margin: 27px;
   padding: 8px;
   border: 1px solid #eeeeee;
   border-radius: 8px;
   display: flex;
   flex: auto;
+  .too-big {
+    text-align: center;
+    color: $warningColor;
+  }
   .vvc-upload-panel {
     display: flex;
     flex: auto;

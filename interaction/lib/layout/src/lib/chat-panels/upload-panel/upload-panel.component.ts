@@ -24,7 +24,9 @@ export class UploadPanelComponent {
   @Output() upload = new EventEmitter();
 
   dataFile;
+  tooBig;
   isImage;
+  previewTipe;
   uploadFile: File;
   fileFormRef;
 
@@ -37,19 +39,35 @@ export class UploadPanelComponent {
     }
   }
   onUploading(evt, formRef){
+    this.tooBig = false;
     const el = evt.srcElement || evt.target;
     if (el.files && el.files[0]) {
       this.fileFormRef = evt.target.files[0];
+
+      this.uploadFile = this.fileFormRef;
+      this.isImage = this.fileFormRef.type.indexOf('image/') !== -1;
+      this.previewTipe = "preview_" + this.fileFormRef.type.split("/")[0];
       const fr = new FileReader();
-      fr.onload = (e) => {
-        this.dataFile = e.target['result'];
-        this.uploadFile = this.fileFormRef;
-        this.isImage = this.fileFormRef.type.indexOf('image/') !== -1;
+
+      if(this.fileFormRef.size < (parseInt(this.context.variables.maxFileSize)*1024*1000 + 500)) { // check file size
+        if(this.isImage){ // image preview
+          fr.onload = (e) => {
+            this.dataFile = e.target['result'];
+            formRef.reset();
+            this.cdr.detectChanges();
+          };
+          fr.readAsDataURL(this.fileFormRef);
+        } else {
+          this.dataFile = true;
+          formRef.reset();
+          this.cdr.detectChanges();
+        }
+      } else {
+        this.tooBig = true;
         formRef.reset();
         this.cdr.detectChanges();
-
-      };
-      fr.readAsDataURL(this.fileFormRef);
+      }
     }
   }
+
 }
