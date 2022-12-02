@@ -38,7 +38,9 @@ export class ChatMessageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.previewTipe = 'preview_' + this.message.meta.mimetype.split("/")[0];
+    if(this.message.meta && this.message.meta.mimetype){
+      this.previewTipe = 'preview_' + this.message.meta.mimetype.split("/")[0];
+    }
 
     this.msgElement = this.chatMsg.nativeElement;
     this.listElement = this.chatMsg.nativeElement.closest('#vvc-messages');
