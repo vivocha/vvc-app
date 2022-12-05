@@ -141,7 +141,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       if (
           state.context.isMinimized ||
           state.context.cbnMode ||
-          !state.chat.isVisible ||
+          (!state.chat.isVisible && state.chat.isVisible !== undefined ) ||
           (state.media.isVisible && !state.media.isMinimized) ||
           (state.context.isFullScreen && !state.chat.showOnFullScreen)
       ) {
