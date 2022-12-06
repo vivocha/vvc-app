@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.5...@vivocha/client-interaction-layout@7.6.6) (2022-12-06)
+
+
+### Bug Fixes
+
+* **chat-message:** fix mimetype check on normal text messages ([b122e45](https://github.com/vivocha/widgets/commit/b122e45115d17dd27dda0f2ff9a7006b376323e3))
+* **misc:** check attachment size and assign file type class ([65851ec](https://github.com/vivocha/widgets/commit/65851ecd0a44fbdeb28814c198112d10036b7e53)), closes [#23](https://github.com/vivocha/widgets/issues/23)
+
+
+
+
+
 ## [7.6.5](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-layout@7.6.4...@vivocha/client-interaction-layout@7.6.5) (2022-11-30)
 
 
