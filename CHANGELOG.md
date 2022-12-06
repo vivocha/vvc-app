@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.6...@vivocha/client-interaction@7.9.7) (2022-12-06)
+
+
+### Bug Fixes
+
+* **misc:** check attachment size and assign file type class ([65851ec](https://github.com/vivocha/vvc-app/commit/65851ecd0a44fbdeb28814c198112d10036b7e53)), closes [#23](https://github.com/vivocha/vvc-app/issues/23)
+
+
+
+
+
 ## [7.9.6](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.5...@vivocha/client-interaction@7.9.6) (2022-11-30)
 
 **Note:** Version bump only for package @vivocha/client-interaction
