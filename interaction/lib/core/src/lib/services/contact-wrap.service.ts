@@ -815,6 +815,12 @@ export class VvcContactWrap {
         }
       },
       {
+        event: 'mediatimeout',
+        handler: () => {
+          this.rejectOffer();
+        }
+      },
+      {
         event: 'mediaoffer',
         handler: (offer, cb) => {
           this.zone.run(() => {
