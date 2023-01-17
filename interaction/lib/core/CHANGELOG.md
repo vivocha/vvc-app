@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.7](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.6...@vivocha/client-interaction-core@7.8.7) (2023-01-17)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** handle mediatimeout event ([857431e](https://github.com/vivocha/widgets/commit/857431eec43853ec670520b00ca70c73e5f91186))
+* **client-interaction-core:** handle new error message for mediaTimeout ([9c80a53](https://github.com/vivocha/widgets/commit/9c80a530cf72b41c18bb444b985053bef6eb0b9c))
+
+
+
+
+
 ## [7.8.6](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.5...@vivocha/client-interaction-core@7.8.6) (2022-12-06)
 
 
