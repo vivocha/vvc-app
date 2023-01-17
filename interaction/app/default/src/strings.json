@@ -2407,6 +2407,35 @@
     }
   },
   {
+    "id": "STRINGS.CALL_REJECTED_TIMEOUT",
+    "values": {
+      "de": {
+        "value": "Call Timeout",
+        "state": "new"
+      },
+      "en": {
+        "value": "Call Timeout",
+        "state": "new"
+      },
+      "es": {
+        "value": "Call Timeout",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Call Timeout",
+        "state": "new"
+      },
+      "it": {
+        "value": "Tempo di attesa scaduto",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Call Timeout",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "STRINGS.CBN.BUSY",
     "values": {
       "de": {
