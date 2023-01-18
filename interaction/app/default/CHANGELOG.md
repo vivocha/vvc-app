@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.8](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.7...@vivocha/client-interaction@7.9.8) (2023-01-17)
+
+
+### Bug Fixes
+
+* **client-interaction:** string for mediaTimeout error ([0905109](https://github.com/vivocha/vvc-app/commit/090510916109d2d2dd843fc8cc00a630b8533252))
+
+
+
+
+
 ## [7.9.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.6...@vivocha/client-interaction@7.9.7) (2022-12-06)
 
 
