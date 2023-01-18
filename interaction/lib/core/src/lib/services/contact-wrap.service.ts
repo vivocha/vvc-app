@@ -817,9 +817,6 @@ export class VvcContactWrap {
       {
         event: 'mediatimeout',
         handler: () => {
-          // this.incomingCallback('error', {});
-          // this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED_TIMEOUT');
-          // this.uiService.setOfferRejected();
           this.rejectOffer(true);
         }
       },
@@ -1235,10 +1232,10 @@ export class VvcContactWrap {
     this.messageService.sendSystemMessage('STRINGS.MESSAGES.' + requestId.toUpperCase() + '_REJECTED');
   }
   rejectOffer(timeout?:boolean) {
-    this.incomingCallback('error', {});
     if(timeout){
       this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED_TIMEOUT');
     } else {
+      this.incomingCallback('error', {});
       this.messageService.sendSystemMessage('STRINGS.CALL_REJECTED');
     }
     this.uiService.setOfferRejected();
