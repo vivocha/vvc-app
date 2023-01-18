@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.8.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.7...@vivocha/client-interaction-core@7.8.8) (2023-01-18)
+
+
+### Bug Fixes
+
+* **client-interaction-core:** send 'error' only on reject ([49ed633](https://github.com/vivocha/widgets/commit/49ed6330bcf78dd50844414f9ad24ea006568369))
+
+
+
+
+
 ## [7.8.7](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.6...@vivocha/client-interaction-core@7.8.7) (2023-01-17)
 
 
