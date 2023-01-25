@@ -127,6 +127,7 @@ export class VvcContactWrap {
           });
         }, (err) => {
           this.zone.run(() => {
+            this.messageService.sendSystemMessage('STRINGS.CALL_USER_REJECTED');
             this.uiService.setOfferRejected();
           });
         });
