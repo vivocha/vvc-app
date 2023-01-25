@@ -749,7 +749,7 @@ export class VvcContactWrap {
         event: 'localtext',
         handler: (_text) => {
           this.zone.run(() => {
-            if (this.agent && this.agent.is_bot) {
+            if (this.agent && this.agent.is_bot && !this.context.variables.disableBotAutoIsWriting) {
               this.setIsWriting();
             }
           });

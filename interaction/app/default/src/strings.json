@@ -1885,6 +1885,35 @@
     }
   },
   {
+    "id": "META.VARIABLES.CHAT.DISABLE_BOT_AUTO_IS_WRITING",
+    "values": {
+      "de": {
+        "value": "Disable automatic 'Is Writing' with Bot",
+        "state": "new"
+      },
+      "en": {
+        "value": "Disable automatic 'Is Writing' with Bot",
+        "state": "new"
+      },
+      "es": {
+        "value": "Disable automatic 'Is Writing' with Bot",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Disable automatic 'Is Writing' with Bot",
+        "state": "new"
+      },
+      "it": {
+        "value": "Disabilita 'sta scrivendo' automatico col Bot",
+        "state": "new"
+      },
+      "ja": {
+        "value": "Disable automatic 'Is Writing' with Bot",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.CHAT.READ_ACK.SHOW",
     "values": {
       "de": {
