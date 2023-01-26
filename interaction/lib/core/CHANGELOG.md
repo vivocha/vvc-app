@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.9.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.8...@vivocha/client-interaction-core@7.9.0) (2023-01-25)
+
+
+### Bug Fixes
+
+* **client-console:** show message when agent decline user media upgrade request ([9bdfd71](https://github.com/vivocha/widgets/commit/9bdfd7114c3243820c46eb71d13bc52ab2f1e76e)), closes [#172](https://github.com/vivocha/widgets/issues/172)
+
+
+### Features
+
+* **misc:** check to disable auto "is writing" with Bots agents ([4d76cbf](https://github.com/vivocha/widgets/commit/4d76cbf4fa375de3bfb03cae9f1d94a0a571a98e))
+
+
+
+
+
 ## [7.8.8](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.7...@vivocha/client-interaction-core@7.8.8) (2023-01-18)
 
 
