@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.10.0](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.10...@vivocha/client-interaction@7.10.0) (2023-01-25)
+
+
+### Bug Fixes
+
+* **misc:** show message when agent decline user media upgrade request ([878508a](https://github.com/vivocha/vvc-app/commit/878508aa3723deba5ae8f474fd8f43023cac7991)), closes [#172](https://github.com/vivocha/vvc-app/issues/172)
+
+
+### Features
+
+* **misc:** check to disable auto "is writing" with Bots agents ([4d76cbf](https://github.com/vivocha/vvc-app/commit/4d76cbf4fa375de3bfb03cae9f1d94a0a571a98e))
+
+
+
+
+
 ## [7.9.10](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.9.9...@vivocha/client-interaction@7.9.10) (2023-01-18)
 
 **Note:** Version bump only for package @vivocha/client-interaction
