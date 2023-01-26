@@ -145,6 +145,35 @@
     }
   },
   {
+    "id": "META.GROUPS.CALL_USER_TIMEOUT",
+    "values": {
+      "de": {
+        "value": "Anruf abgelehnt",
+        "state": "final"
+      },
+      "en": {
+        "value": "Call Rejected",
+        "state": "final"
+      },
+      "es": {
+        "value": "Llamada rechazada",
+        "state": "final"
+      },
+      "fr": {
+        "value": "Appel refusé",
+        "state": "final"
+      },
+      "it": {
+        "value": "Chiamata Rifiutata",
+        "state": "final"
+      },
+      "ja": {
+        "value": "通話拒否",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "META.GROUPS.CBN",
     "values": {
       "de": {
@@ -2467,28 +2496,28 @@
     "id": "STRINGS.CALL_USER_REJECTED",
     "values": {
       "de": {
-        "value": "Call Timeout",
-        "state": "new"
+        "value": "Anruf abgelehnt",
+        "state": "final"
       },
       "en": {
-        "value": "Call Timeout",
-        "state": "new"
+        "value": "Call rejected",
+        "state": "final"
       },
       "es": {
-        "value": "Call Timeout",
-        "state": "new"
+        "value": "Llamada rechazada",
+        "state": "final"
       },
       "fr": {
-        "value": "Call Timeout",
-        "state": "new"
+        "value": "Appel rejeté",
+        "state": "final"
       },
       "it": {
-        "value": "Tempo di attesa scaduto",
-        "state": "new"
+        "value": "Chiamata rifiutata",
+        "state": "final"
       },
       "ja": {
-        "value": "Call Timeout",
-        "state": "new"
+        "value": "電話が途切れました",
+        "state": "final"
       }
     }
   },
