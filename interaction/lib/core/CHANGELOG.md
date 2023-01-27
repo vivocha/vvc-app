@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.9.0...@vivocha/client-interaction-core@7.9.1) (2023-01-27)
+
+
+### Bug Fixes
+
+* manage media engine caps ([57363af](https://github.com/vivocha/widgets/commit/57363af6093d403a569afe6067393a4fea6aff28))
+
+
+
+
+
 # [7.9.0](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.8.8...@vivocha/client-interaction-core@7.9.0) (2023-01-25)
 
 
