@@ -368,18 +368,27 @@ export const getUiStateRedux = (
                                   (
                                     widgetState.protocol.remoteCaps &&
                                     widgetState.protocol.remoteCaps.MediaAvailability &&
-                                    widgetState.protocol.remoteCaps.MediaAvailability.Voice
+                                    widgetState.protocol.remoteCaps.MediaAvailability.Voice &&
+                                    widgetState.protocol.remoteCaps.Media.Voice &&
+                                    widgetState.protocol.remoteCaps.Media.Voice.Engines &&
+                                    widgetState.protocol.remoteCaps.Media.Voice.Engines.WebRTC
                                   );
   const canStartVideo           = widgetState.protocol.canStartVideo &&
                                   (
                                     widgetState.protocol.remoteCaps &&
                                     widgetState.protocol.remoteCaps.MediaAvailability &&
-                                    widgetState.protocol.remoteCaps.MediaAvailability.Video
+                                    widgetState.protocol.remoteCaps.MediaAvailability.Video &&
+                                    widgetState.protocol.remoteCaps.Media.Video &&
+                                    widgetState.protocol.remoteCaps.Media.Video.Engines &&
+                                    widgetState.protocol.remoteCaps.Media.Video.Engines.WebRTC
                                   ) &&
                                   (
                                     widgetState.protocol.remoteCaps &&
                                     widgetState.protocol.remoteCaps.MediaAvailability &&
-                                    widgetState.protocol.remoteCaps.MediaAvailability.Voice
+                                    widgetState.protocol.remoteCaps.MediaAvailability.Voice &&
+                                    widgetState.protocol.remoteCaps.Media.Voice &&
+                                    widgetState.protocol.remoteCaps.Media.Voice.Engines &&
+                                    widgetState.protocol.remoteCaps.Media.Voice.Engines.WebRTC
                                   ) &&
                                   widgetState.agent &&
                                   widgetState.agent.is_agent &&
