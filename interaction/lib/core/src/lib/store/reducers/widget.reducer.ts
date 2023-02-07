@@ -48,6 +48,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const chatState: ChatState = {
         isVisible: true,
         canUploadFiles: state.context.variables.showUploadButton,
+        ignoreCapsForUpload: state.context.variables.ignoreCapsForUpload,
         canSendEmoji: state.context.variables.showEmojiButton,
         uploadPanelOpened: false,
         emojiPanelOpened: false,
@@ -60,6 +61,7 @@ export function reducer(state: WidgetState = initialState, action: fromWidget.Wi
       const chatState: ChatState = {
         isVisible: hasChat,
         canUploadFiles: state.context.variables.showUploadButton,
+        ignoreCapsForUpload: state.context.variables.ignoreCapsForUpload,
         canSendEmoji: state.context.variables.showEmojiButton,
         uploadPanelOpened: false,
         emojiPanelOpened: false,
@@ -420,9 +422,10 @@ export const getUiStateRedux = (
                                     )
                                   );
   const is_bot                  = widgetState.agent ? (widgetState.agent.is_bot ? true : false) : false;
+  const ignore_caps             = widgetState.chat.ignoreCapsForUpload;
   const canUploadFile           = widgetState.chat && widgetState.chat.canUploadFiles &&
                                     (
-                                      is_bot
+                                      is_bot || ignore_caps
                                       ? 
                                         true
                                       :

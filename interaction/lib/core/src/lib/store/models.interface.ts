@@ -78,6 +78,7 @@ export interface ChatState {
   isChatBoxEnabled?: boolean;
   isWriting?: boolean;
   canUploadFiles: boolean;
+  ignoreCapsForUpload?: boolean;
   canSendEmoji: boolean;
   uploadPanelOpened: boolean;
   emojiPanelOpened: boolean;
