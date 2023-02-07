@@ -2320,6 +2320,19 @@
     }
   },
   {
+    "id": "META.VARIABLES.SEND_AREA.IGNORE_CAPS_FOR_UPLOAD",
+    "values": {
+      "en": {
+        "value": "Ignore agent side capabilities to show the file upload button.",
+        "state": "final"
+      },
+      "it": {
+        "value": "Ignora le funzionalità lato agente per mostrare il pulsante di invio file.",
+        "state": "final"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.TOPBAR.DEFAULT_AGENT_AVATAR",
     "values": {
       "de": {

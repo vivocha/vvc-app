@@ -226,6 +226,15 @@
       ]
     },
     {
+      "id": "ignoreCapsForUpload",
+      "nameId": "META.VARIABLES.SEND_AREA.IGNORE_CAPS_FOR_UPLOAD",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "General_FilesAndEmoji"
+      ]
+    },
+    {
       "id": "autoChat",
       "nameId": "META.VARIABLES.CHAT.AUTO_CHAT",
       "defaultValue": false,
