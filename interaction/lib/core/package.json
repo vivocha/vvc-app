@@ -1,6 +1,6 @@
 {
   "name": "@vivocha/client-interaction-core",
-  "version": "7.9.1",
+  "version": "7.9.2",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "prepare": "npm run build",

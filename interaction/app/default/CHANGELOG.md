@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.10.2](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.1...@vivocha/client-interaction@7.10.2) (2023-02-07)
+
+
+### Bug Fixes
+
+* manage ignoreCapsForUpload flag ([d485159](https://github.com/vivocha/vvc-app/commit/d48515964d8b400aabdaa5ff29c6a5c19cc4c4fe))
+
+
+
+
+
 ## [7.10.1](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.0...@vivocha/client-interaction@7.10.1) (2023-01-27)
 
 

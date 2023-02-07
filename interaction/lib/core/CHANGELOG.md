@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.9.2](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.9.1...@vivocha/client-interaction-core@7.9.2) (2023-02-07)
+
+
+### Bug Fixes
+
+* **core:** add flag to ignore capabilities to show the upload button ([b373ebd](https://github.com/vivocha/widgets/commit/b373ebd013e12168f6e774de08ef92d571aa6274))
+
+
+
+
+
 ## [7.9.1](https://github.com/vivocha/widgets/compare/@vivocha/client-interaction-core@7.9.0...@vivocha/client-interaction-core@7.9.1) (2023-01-27)
 
 
