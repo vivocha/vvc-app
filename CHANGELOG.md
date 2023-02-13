@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.10.4](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.3...@vivocha/client-interaction@7.10.4) (2023-02-13)
+
+**Note:** Version bump only for package @vivocha/client-interaction
+
+
+
+
+
 ## [7.10.3](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.2...@vivocha/client-interaction@7.10.3) (2023-02-07)
 
 **Note:** Version bump only for package @vivocha/client-interaction
