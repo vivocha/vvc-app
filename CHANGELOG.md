@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.10.8](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.7...@vivocha/client-interaction@7.10.8) (2023-07-27)
+
+
+### Bug Fixes
+
+* start chats from conversations as minimized ([1ec8e1b](https://github.com/vivocha/vvc-app/commit/1ec8e1b9438af3383c29f7e9bd7be33672b9d7ef))
+
+
+
+
+
 ## [7.10.7](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.6...@vivocha/client-interaction@7.10.7) (2023-03-09)
 
 **Note:** Version bump only for package @vivocha/client-interaction
