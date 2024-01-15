@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.10.9](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.8...@vivocha/client-interaction@7.10.9) (2024-01-15)
+
+
+### Bug Fixes
+
+* update public-entities ([437ada4](https://github.com/vivocha/vvc-app/commit/437ada42b2170ea501001641c2c417288a0a5e83))
+
+
+
+
+
 ## [7.10.8](https://github.com/vivocha/vvc-app/compare/@vivocha/client-interaction@7.10.7...@vivocha/client-interaction@7.10.8) (2023-07-27)
 
 
