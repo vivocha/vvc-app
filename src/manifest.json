@@ -373,6 +373,28 @@
       ]
     },
     {
+      "id": "agentBalloonAvatarAlignment",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.AVATAR_ALIGNMENT",
+      "defaultValue": "top",
+      "type": "enum",
+      "options": [
+        "top",
+        "bottom"
+      ],
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
+      "id": "showQuickRepliesAsBalloon",
+      "nameId": "META.VARIABLES.CHAT.SHOW_QUICK_REPLIES_AS_BALLOON",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
       "id": "agentAvatarDefault",
       "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
       "defaultValue": "./assets/static/agent_default.png",
