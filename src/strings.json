@@ -493,6 +493,35 @@
     }
   },
   {
+    "id": "META.GROUPS.DimensionAndPosition",
+    "values": {
+      "de": {
+        "value": "Größe und Positionierung",
+        "state": "new"
+      },
+      "en": {
+        "value": "Size and positioning",
+        "state": "new"
+      },
+      "es": {
+        "value": "Tamaño y posicionamiento",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Taille et positionnement",
+        "state": "new"
+      },
+      "it": {
+        "value": "Dimensione e posizionamento",
+        "state": "new"
+      },
+      "ja": {
+        "value": "サイズと配置",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.GROUPS.FilesAndEmoji",
     "values": {
       "de": {
@@ -1707,6 +1736,64 @@
       "ja": {
         "value": "エージェントのチャット吹き出しのテキストカラー",
         "state": "final"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.AVATAR_ALIGNMENT",
+    "values": {
+      "de": {
+        "value": "Agenten-Avatar-Ausrichtung",
+        "state": "new"
+      },
+      "en": {
+        "value": "Agent avatar alignment",
+        "state": "new"
+      },
+      "es": {
+        "value": "Alineación del avatar del agente",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Alignement de l'avatar de l'agent",
+        "state": "new"
+      },
+      "it": {
+        "value": "Allineamento avatar agente",
+        "state": "new"
+      },
+      "ja": {
+        "value": "エージェントのアバターの配置",
+        "state": "new"
+      }
+    }
+  },
+  {
+    "id": "META.VARIABLES.CHAT.SHOW_QUICK_REPLIES_AS_BALLOON",
+    "values": {
+      "de": {
+        "value": "Zeige Schnellantworten wie eine normale Nachricht an",
+        "state": "new"
+      },
+      "en": {
+        "value": "Display Quick Replies as a normal message",
+        "state": "new"
+      },
+      "es": {
+        "value": "Mostrar respuestas rápidas como un mensaje normal",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Afficher les réponses rapides comme un message normal",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza Quick Replies come un messaggio normale",
+        "state": "new"
+      },
+      "ja": {
+        "value": "クイック返信を通常のメッセージとして表示する",
+        "state": "new"
       }
     }
   },
