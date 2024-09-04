@@ -1255,7 +1255,6 @@ $icon-survey-smile-off: './assets/static/icons/smile-off.png';
       content: "";
       position: absolute;
       width: 0;
-      top: 17px;
       @if ($alignAvatar == 'top'){
         top: 17px;
       }
