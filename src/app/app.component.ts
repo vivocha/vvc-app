@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public messages: Array<any>;
   public disableMessageGrouping: boolean = window['VVC_VAR_ASSETS']['showAgentAvatarInAllMessages'];
-
+  public showQuickRepliesAsBalloon: boolean = window['VVC_VAR_ASSETS']['showQuickRepliesAsBalloon'];
   public appState$: Observable<UiState>;
 
   public closeModalVisible = false;

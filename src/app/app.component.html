@@ -84,6 +84,7 @@
                                  (accept)="acceptAgentRequest($event)"
                                  (reject)="rejectAgentRequest($event)"></vvc-request-message>
             <vvc-quick-replies [message]="m" *ngIf="m.type === 'quick-replies'"
+                               [showQuickRepliesAsBalloon]="showQuickRepliesAsBalloon"
                                (read)="markRead($event)"
                                (scrollUpdate)="updateLeftScrollOffset($event)"
                                (action)="processQuickReply($event)"></vvc-quick-replies>
