@@ -354,6 +354,15 @@
       ]
     },
     {
+      "id": "showAgentAvatarInAllMessages",
+      "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR_IN_ALL_MESSAGES",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
       "id": "showAgentBalloonArrow",
       "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_ARROW",
       "defaultValue": true,

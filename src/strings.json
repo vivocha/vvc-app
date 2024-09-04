@@ -1885,6 +1885,35 @@
     }
   },
   {
+    "id": "META.VARIABLES.CHAT.BALLOON.AGENT.SHOW_AVATAR_IN_ALL_MESSAGES",
+    "values": {
+      "de": {
+        "value": "Avatar des Agenten in allen Chatnachrichten anzeigen",
+        "state": "new"
+      },
+      "en": {
+        "value": "Display agent avatar in all chat messages",
+        "state": "new"
+      },
+      "es": {
+        "value": "Mostrar el avatar del agente en todos los mensajes de chat",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Afficher l'avatar de l'agent dans tous les messages de chat",
+        "state": "new"
+      },
+      "it": {
+        "value": "Visualizza avatar dell'agente in tutti i messaggi di chat",
+        "state": "new"
+      },
+      "ja": {
+        "value": "すべてのチャットメッセージにエージェントのアバターを表示する",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.CHAT.BALLOON.VISITOR.COLOR",
     "values": {
       "de": {

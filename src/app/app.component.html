@@ -76,6 +76,7 @@
             <vvc-link-message [message]="m" *ngIf="m.type === 'link'"
                               (linkClicked)="openAttachment($event, true)"></vvc-link-message>
             <vvc-chat-message [message]="m" *ngIf="m.type === 'chat'"
+                              [disableMessageGrouping]="disableMessageGrouping"
                               (read)="markRead($event)"
                               (resend)="sendFailed($event)"
                               (showDoc)="openAttachment($event, true)"></vvc-chat-message>

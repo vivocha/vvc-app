@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, OnDestroy {
   @ViewChild(ChatAreaComponent, {static: false}) chat: ChatAreaComponent;
 
   public messages: Array<any>;
+  public disableMessageGrouping: boolean = window['VVC_VAR_ASSETS']['showAgentAvatarInAllMessages'];
 
   public appState$: Observable<UiState>;
 
@@ -393,7 +394,7 @@ export class AppComponent implements OnInit, OnDestroy {
   videoToggle(show) {
     this.interactionService.toggleVideo(show);
   }
-  supportsStorages() { try { 
+  supportsStorages() { try {
     return (!!window.localStorage
       && !!window.sessionStorage
       && typeof localStorage.getItem === 'function'
