@@ -404,6 +404,20 @@
       ]
     },
     {
+      "id": "quickRepliesBehaviour",
+      "nameId": "META.VARIABLES.CHAT.QUICK_REPLIES_BEHAVIOUR",
+      "defaultValue": "nothing",
+      "type": "enum",
+      "options": [
+        "nothing",
+        "disable_buttons",
+        "remove_buttons"
+      ],
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
       "id": "agentAvatarDefault",
       "nameId": "META.VARIABLES.CHAT.BALLOON.AGENT.DEFAULT_AVATAR",
       "defaultValue": "./assets/static/agent_default.png",
