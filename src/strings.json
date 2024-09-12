@@ -1798,6 +1798,35 @@
     }
   },
   {
+    "id": "META.VARIABLES.CHAT.HIDE_QUICK_REPLIES_BODY_WHEN_EMPTY",
+    "values": {
+      "de": {
+        "value": "Entferne den Körper der Schnellantworten, wenn er leer ist",
+        "state": "new"
+      },
+      "en": {
+        "value": "Remove the body of quick replies when it is empty",
+        "state": "new"
+      },
+      "es": {
+        "value": "Eliminar el cuerpo de las respuestas rápidas cuando esté vacío",
+        "state": "new"
+      },
+      "fr": {
+        "value": "Supprimer le corps des réponses rapides lorsqu'il est vide",
+        "state": "new"
+      },
+      "it": {
+        "value": "Rimuovi il corpo delle quick replies quando è vuoto",
+        "state": "new"
+      },
+      "ja": {
+        "value": "クイック返信の本文が空の場合は削除する",
+        "state": "new"
+      }
+    }
+  },
+  {
     "id": "META.VARIABLES.CHAT.QUICK_REPLIES_BEHAVIOUR",
     "values": {
       "de": {
