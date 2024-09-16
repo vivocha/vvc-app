@@ -404,6 +404,15 @@
       ]
     },
     {
+      "id": "hideQuickRepliesBodyWhenEmpty",
+      "nameId": "META.VARIABLES.CHAT.HIDE_QUICK_REPLIES_BODY_WHEN_EMPTY",
+      "defaultValue": false,
+      "type": "boolean",
+      "categoryIds": [
+        "Chat_Balloon_Agent"
+      ]
+    },
+    {
       "id": "quickRepliesBehaviour",
       "nameId": "META.VARIABLES.CHAT.QUICK_REPLIES_BEHAVIOUR",
       "defaultValue": "nothing",
