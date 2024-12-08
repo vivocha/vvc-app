@@ -26,7 +26,7 @@
     "build:all": "npm run clean:all && npm i",
     "precommit": "npm run build",
     "__precommit": "npm run build && npm run cover && npm run check-coverage",
-    "ng": "ng",
+    "dev": "ng serve client-interaction",
     "test": "ng test",
     "test:coverage": "ng test --code-coverage",
     "test:debug": "ng test -sm=false",

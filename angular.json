@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "@vivocha/client-interaction:build"
+            "browserTarget": "client-interaction:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "@vivocha/client-interaction:build:production"
+              "browserTarget": "client-interaction:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "@vivocha/client-interaction:build"
+            "browserTarget": "client-interaction:build"
           }
         },
         "test": {
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "@vivocha/client-interaction:serve"
+            "devServerTarget": "client-interaction:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "@vivocha/client-interaction:serve:production"
+              "devServerTarget": "client-interaction:serve:production"
             }
           }
         }
@@ -186,18 +186,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "@vivocha/client-interaction-ie:build"
+            "browserTarget": "client-interaction-ie:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "@vivocha/client-interaction-ie:build:production"
+              "browserTarget": "client-interaction-ie:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "@vivocha/client-interaction-ie:build"
+            "browserTarget": "client-interaction-ie:build"
           }
         },
         "test": {
@@ -234,11 +234,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "@vivocha/client-interaction-ie:serve"
+            "devServerTarget": "client-interaction-ie:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "@vivocha/client-interaction-ie:serve:production"
+              "devServerTarget": "client-interaction-ie:serve:production"
             }
           }
         }
